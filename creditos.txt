@@ -4,3 +4,6 @@ flags - https://lukasfdahl.itch.io/amarican-flags
 
 audios
 scream male - https://freesound.org/people/DeltaCode/sounds/668349/
+
+shaders
+crt - @arlez80 あるる / きのもと 結衣 ( Yui Kinomoto )

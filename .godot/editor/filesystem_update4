@@ -4,3 +4,4 @@ res://default_bus_layout.tres
 res://Interface/ConfigMenu/volume.gd
 res://Scripts/global.gd
 res://Interface/Menu/menu.gd
+res://Shaders/CRT.gdshader
