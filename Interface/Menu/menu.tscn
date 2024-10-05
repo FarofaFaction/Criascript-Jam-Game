@@ -65,6 +65,6 @@ horizontal_alignment = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_2u4d0")
-pitch_scale = 0.5
+pitch_scale = 0.25
 autoplay = true
 mix_target = 1
