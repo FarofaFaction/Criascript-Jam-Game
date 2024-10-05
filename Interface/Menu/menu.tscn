@@ -15,6 +15,17 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ejqst")
 
+[node name="LocalizationTools" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="StartGameText" type="Label" parent="LocalizationTools"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Iniciar"
+
 [node name="Background" type="TextureRect" parent="."]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 1

@@ -1,7 +1,7 @@
 extends Control
 
 const LenguageMenu := "res://Interface/LenguageMenu/lenguage_menu.tscn"
-const ResolutionMenu := "res://Interface/ResolutionMenu/resoltutionMenu.tscn"
+const ConfigMenu := "res://Interface/ConfigMenu/config_menu.tscn"
 const MenuMenu := "res://Interface/Menu/menu_options.tscn"
 
 var current_index: int = 0
@@ -11,13 +11,14 @@ func _load_intro():
 	var MenuNode: Menu
 	MenuNode = preload(MenuMenu).instantiate()
 	add_child(MenuNode)
-	var ResolutionNode: Menu
-	ResolutionNode = preload(ResolutionMenu).instantiate()
-	ResolutionNode.backup_button = MenuNode.init_button
-	add_child(ResolutionNode)
+	var ConfigNode: Menu
+	ConfigNode = preload(ConfigMenu).instantiate()
+	ConfigNode.init_button.get_parent().get_node("ExitConfig").text = $LocalizationTools/StartGameText.text
+	ConfigNode.backup_button = MenuNode.init_button
+	add_child(ConfigNode)
 	var LenguageNode: Menu
 	LenguageNode = preload(LenguageMenu).instantiate()
-	LenguageNode.backup_button = ResolutionNode.init_button
+	LenguageNode.backup_button = ConfigNode.init_button
 	add_child(LenguageNode)
 	pass
 

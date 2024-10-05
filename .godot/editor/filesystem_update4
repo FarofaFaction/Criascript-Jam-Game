@@ -1,3 +1,6 @@
 res://Interface/Menu/menu.tscn
 res://Interface/ConfigMenu/config_menu.tscn
 res://default_bus_layout.tres
+res://Interface/ConfigMenu/volume.gd
+res://Scripts/global.gd
+res://Interface/Menu/menu.gd
