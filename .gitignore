@@ -8,6 +8,7 @@ export_presets.cfg
 .godot\editor\filesystem_cache*
 .godot\editor\room.tscn-editstate-*
 .godot\editor\*
+.godot\imported\*
 
 # Imported translations (automatically generated from CSV files)
 *.translation
