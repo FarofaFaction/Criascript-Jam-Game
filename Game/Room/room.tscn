@@ -10,114 +10,112 @@
 
 [node name="Room" type="Node2D"]
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0, 0, 0, 1)
-
 [node name="CanvasLayer" parent="." instance=ExtResource("1_604fw")]
 
-[node name="RoomOne" type="Node2D" parent="."]
+[node name="Room_1" type="Node2D" parent="."]
 
-[node name="Floor" type="ColorRect" parent="RoomOne"]
+[node name="Floor" type="ColorRect" parent="Room_1"]
 offset_right = 1905.0
 offset_bottom = 1091.0
 color = Color(0.184384, 0.0896672, 1.20327e-08, 1)
 
-[node name="wall3" parent="RoomOne" instance=ExtResource("1_2ok7y")]
+[node name="wall3" parent="Room_1" instance=ExtResource("1_2ok7y")]
 position = Vector2(63, 608.5)
 scale = Vector2(0.235935, 1.84936)
 
-[node name="wall4" parent="RoomOne" instance=ExtResource("1_2ok7y")]
+[node name="wall4" parent="Room_1" instance=ExtResource("1_2ok7y")]
 position = Vector2(453, 1026)
 rotation = 1.5708
 scale = Vector2(0.235935, 1.25408)
 
-[node name="wall5" parent="RoomOne" instance=ExtResource("1_2ok7y")]
+[node name="wall5" parent="Room_1" instance=ExtResource("1_2ok7y")]
 position = Vector2(1094, 1026)
 rotation = 1.5708
 scale = Vector2(0.235935, 1.25408)
 
-[node name="wall6" parent="RoomOne" instance=ExtResource("1_2ok7y")]
+[node name="wall6" parent="Room_1" instance=ExtResource("1_2ok7y")]
 position = Vector2(1573, 1026)
 rotation = 1.5708
 scale = Vector2(0.235935, 1.25408)
 
-[node name="wall7" parent="RoomOne" instance=ExtResource("1_2ok7y")]
+[node name="wall7" parent="Room_1" instance=ExtResource("1_2ok7y")]
 position = Vector2(1836, 539.75)
 scale = Vector2(0.235935, 1.61071)
 
-[node name="wall8" parent="RoomOne" instance=ExtResource("1_2ok7y")]
+[node name="wall8" parent="Room_1" instance=ExtResource("1_2ok7y")]
 position = Vector2(1467.06, 63)
 rotation = 1.5708
 scale = Vector2(0.235935, 1.64589)
 
-[node name="wall9" parent="RoomOne" instance=ExtResource("1_2ok7y")]
+[node name="wall9" parent="Room_1" instance=ExtResource("1_2ok7y")]
 position = Vector2(422.825, 63)
 rotation = 1.5708
 scale = Vector2(0.235935, 1.63437)
 
-[node name="RoomOne2" type="Node2D" parent="."]
+[node name="Room_2" type="Node2D" parent="."]
+position = Vector2(0, -2)
 
-[node name="Floor" type="ColorRect" parent="RoomOne2"]
+[node name="Floor" type="ColorRect" parent="Room_2"]
 offset_right = 1905.0
 offset_bottom = 1943.0
 color = Color(0.184384, 0.0896672, 1.20327e-08, 1)
 
-[node name="wall3" parent="RoomOne2" instance=ExtResource("1_2ok7y")]
+[node name="wall3" parent="Room_2" instance=ExtResource("1_2ok7y")]
 position = Vector2(63, 608.5)
 scale = Vector2(0.235935, 1.84936)
 Layer = 1
 
-[node name="wall13" parent="RoomOne2" instance=ExtResource("1_2ok7y")]
+[node name="wall13" parent="Room_2" instance=ExtResource("1_2ok7y")]
 position = Vector2(470, 1617)
 scale = Vector2(0.235935, 1.21506)
 Layer = 1
 
-[node name="wall5" parent="RoomOne2" instance=ExtResource("1_2ok7y")]
+[node name="wall5" parent="Room_2" instance=ExtResource("1_2ok7y")]
 position = Vector2(55, 1458)
 scale = Vector2(0.235935, 1.84936)
 Layer = 1
 
-[node name="wall10" parent="RoomOne2" instance=ExtResource("1_2ok7y")]
+[node name="wall10" parent="Room_2" instance=ExtResource("1_2ok7y")]
 position = Vector2(1845, 1466)
 scale = Vector2(0.235935, 1.84936)
 Layer = 1
 
-[node name="wall4" parent="RoomOne2" instance=ExtResource("1_2ok7y")]
+[node name="wall4" parent="Room_2" instance=ExtResource("1_2ok7y")]
 position = Vector2(453, 1026)
 rotation = 1.5708
 scale = Vector2(0.235935, 1.25408)
 Layer = 1
 
-[node name="wall6" parent="RoomOne2" instance=ExtResource("1_2ok7y")]
+[node name="wall6" parent="Room_2" instance=ExtResource("1_2ok7y")]
 position = Vector2(1573, 1026)
 rotation = 1.5708
 scale = Vector2(0.235935, 1.25408)
 Layer = 1
 
-[node name="wall11" parent="RoomOne2" instance=ExtResource("1_2ok7y")]
+[node name="wall11" parent="Room_2" instance=ExtResource("1_2ok7y")]
 position = Vector2(951.931, 1887)
 rotation = 1.5708
 scale = Vector2(0.235935, 3.50842)
 Layer = 1
 
-[node name="wall12" parent="RoomOne2" instance=ExtResource("1_2ok7y")]
+[node name="wall12" parent="Room_2" instance=ExtResource("1_2ok7y")]
 position = Vector2(969, 1350)
 rotation = 1.5708
 scale = Vector2(0.235935, 2.18597)
 Layer = 1
 
-[node name="wall7" parent="RoomOne2" instance=ExtResource("1_2ok7y")]
+[node name="wall7" parent="Room_2" instance=ExtResource("1_2ok7y")]
 position = Vector2(1836, 539.75)
 scale = Vector2(0.235935, 1.61071)
 Layer = 1
 
-[node name="wall8" parent="RoomOne2" instance=ExtResource("1_2ok7y")]
+[node name="wall8" parent="Room_2" instance=ExtResource("1_2ok7y")]
 position = Vector2(1467.06, 63)
 rotation = 1.5708
 scale = Vector2(0.235935, 1.64589)
 Layer = 1
 
-[node name="wall9" parent="RoomOne2" instance=ExtResource("1_2ok7y")]
+[node name="wall9" parent="Room_2" instance=ExtResource("1_2ok7y")]
 position = Vector2(422.825, 63)
 rotation = 1.5708
 scale = Vector2(0.235935, 1.63437)
@@ -133,9 +131,22 @@ texture = ExtResource("2_v4eaw")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("CircleShape2D_najv8")
 
-[node name="PointLight2D" type="PointLight2D" parent="CharacterBody2D"]
+[node name="Ilumination" type="Node2D" parent="CharacterBody2D"]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="CharacterBody2D/Ilumination"]
+position = Vector2(-992, -560)
+color = Color(0, 0, 0, 1)
+
+[node name="BigLight" type="PointLight2D" parent="CharacterBody2D/Ilumination"]
+color = Color(0.389287, 0.389287, 0.389287, 1)
+blend_mode = 2
 shadow_enabled = true
 texture = ExtResource("5_ac5do")
 texture_scale = 10.0
+
+[node name="SmallLight" type="PointLight2D" parent="CharacterBody2D/Ilumination"]
+blend_mode = 2
+shadow_enabled = true
+texture = ExtResource("5_ac5do")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
