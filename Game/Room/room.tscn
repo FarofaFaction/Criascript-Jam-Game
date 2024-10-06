@@ -6,15 +6,15 @@
 [ext_resource type="Texture2D" uid="uid://c08dxlio5mx4f" path="res://icon.svg" id="2_v4eaw"]
 [ext_resource type="Texture2D" uid="uid://bchofwuy1kere" path="res://Objects/ToolAssets/blank_circle.png" id="5_ac5do"]
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_nfg62"]
+closed = false
+polygon = PackedVector2Array(1662, 186, 1662, -342, 3506, -326, 3522, 1018, 1642, 1022, 1646, 362)
+
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_c7v3x"]
 light_mode = 2
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_qg7gp"]
 light_mode = 2
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_nfg62"]
-closed = false
-polygon = PackedVector2Array(1662, 186, 1662, -342, 3506, -326, 3522, 1018, 1642, 1022, 1646, 362)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_2258t"]
 light_mode = 2
@@ -31,7 +31,13 @@ size = Vector2(116, 110)
 [node name="CanvasLayer" parent="." instance=ExtResource("1_604fw")]
 visible = false
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="LightTesting" type="Node2D" parent="."]
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="LightTesting"]
+visible = false
+occluder = SubResource("OccluderPolygon2D_nfg62")
+
+[node name="ColorRect" type="ColorRect" parent="LightTesting"]
 visible = false
 light_mask = 2
 visibility_layer = 2
@@ -42,7 +48,7 @@ offset_right = 3994.0
 offset_bottom = 1969.0
 color = Color(0.240606, 0.147279, 0, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="."]
+[node name="ColorRect2" type="ColorRect" parent="LightTesting"]
 visible = false
 material = SubResource("CanvasItemMaterial_qg7gp")
 offset_left = 1655.0
@@ -51,10 +57,8 @@ offset_right = 3523.0
 offset_bottom = 1035.0
 color = Color(0.330057, 0.002266, 0.160166, 1)
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-occluder = SubResource("OccluderPolygon2D_nfg62")
-
 [node name="Room_1" type="Node2D" parent="."]
+visible = false
 
 [node name="Floor" type="ColorRect" parent="Room_1"]
 offset_right = 1905.0
@@ -95,7 +99,6 @@ rotation = 1.5708
 scale = Vector2(0.235935, 1.63437)
 
 [node name="Room_2" type="Node2D" parent="."]
-visible = false
 material = SubResource("CanvasItemMaterial_2258t")
 position = Vector2(276, 462)
 
@@ -109,52 +112,63 @@ metadata/_edit_use_anchors_ = true
 [node name="wall3" parent="Room_2" instance=ExtResource("1_2ok7y")]
 position = Vector2(63, 608.5)
 scale = Vector2(0.235935, 1.84936)
+CollisionLayer = 1
 
 [node name="wall13" parent="Room_2" instance=ExtResource("1_2ok7y")]
 position = Vector2(470, 1617)
 scale = Vector2(0.235935, 1.21506)
+CollisionLayer = 1
 
 [node name="wall5" parent="Room_2" instance=ExtResource("1_2ok7y")]
 position = Vector2(55, 1458)
 scale = Vector2(0.235935, 1.84936)
+CollisionLayer = 1
 
 [node name="wall10" parent="Room_2" instance=ExtResource("1_2ok7y")]
 position = Vector2(1845, 1466)
 scale = Vector2(0.235935, 1.84936)
+CollisionLayer = 1
 
 [node name="wall4" parent="Room_2" instance=ExtResource("1_2ok7y")]
 position = Vector2(453, 1026)
 rotation = 1.5708
 scale = Vector2(0.235935, 1.25408)
+CollisionLayer = 1
 
 [node name="wall6" parent="Room_2" instance=ExtResource("1_2ok7y")]
 position = Vector2(1573, 1026)
 rotation = 1.5708
 scale = Vector2(0.235935, 1.25408)
+CollisionLayer = 1
 
 [node name="wall11" parent="Room_2" instance=ExtResource("1_2ok7y")]
 position = Vector2(951.931, 1887)
 rotation = 1.5708
 scale = Vector2(0.235935, 3.50842)
+CollisionLayer = 1
 
 [node name="wall12" parent="Room_2" instance=ExtResource("1_2ok7y")]
 position = Vector2(969, 1350)
 rotation = 1.5708
 scale = Vector2(0.235935, 2.18597)
+CollisionLayer = 1
 
 [node name="wall7" parent="Room_2" instance=ExtResource("1_2ok7y")]
 position = Vector2(1836, 539.75)
 scale = Vector2(0.235935, 1.61071)
+CollisionLayer = 1
 
 [node name="wall8" parent="Room_2" instance=ExtResource("1_2ok7y")]
 position = Vector2(1467.06, 63)
 rotation = 1.5708
 scale = Vector2(0.235935, 1.64589)
+CollisionLayer = 1
 
 [node name="wall9" parent="Room_2" instance=ExtResource("1_2ok7y")]
 position = Vector2(422.825, 63)
 rotation = 1.5708
 scale = Vector2(0.235935, 1.63437)
+CollisionLayer = 1
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Room_2"]
 position = Vector2(-4, 0)
@@ -163,8 +177,8 @@ occluder_light_mask = 2
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(935, 276)
-collision_layer = 0
-collision_mask = 0
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_oiii0")
 metadata/_edit_group_ = true
 
@@ -178,7 +192,6 @@ texture = ExtResource("2_v4eaw")
 
 [node name="BigLight" type="PointLight2D" parent="CharacterBody2D/Ilumination"]
 blend_mode = 2
-shadow_enabled = true
 texture = ExtResource("5_ac5do")
 texture_scale = 10.0
 
@@ -186,7 +199,6 @@ texture_scale = 10.0
 position = Vector2(0, 45)
 blend_mode = 2
 range_item_cull_mask = 2
-shadow_enabled = true
 shadow_item_cull_mask = 2
 texture = ExtResource("5_ac5do")
 texture_scale = 10.0
