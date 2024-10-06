@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://ca2c7jnemw4ie"]
+
+[ext_resource type="Texture2D" uid="uid://cn3iwxhr4dylf" path="res://blacksquare.png" id="1_2pqu3"]
+[ext_resource type="Script" path="res://Objects/wall.gd" id="2_y3r3l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rh64h"]
+size = Vector2(520, 520)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ywmh4"]
+polygon = PackedVector2Array(-250, -250, 250, -250, 250, 250, -250, 250)
+
+[node name="wall" type="Sprite2D"]
+self_modulate = Color(0, 0, 0, 1)
+texture = ExtResource("1_2pqu3")
+script = ExtResource("2_y3r3l")
+
+[node name="Collision" type="StaticBody2D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision"]
+shape = SubResource("RectangleShape2D_rh64h")
+metadata/_edit_group_ = true
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Collision"]
+occluder = SubResource("OccluderPolygon2D_ywmh4")

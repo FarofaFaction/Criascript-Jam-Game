@@ -5,3 +5,6 @@ res://Interface/ConfigMenu/volume.gd
 res://Scripts/global.gd
 res://Interface/Menu/menu.gd
 res://Shaders/CRT.gdshader
+res://Game/Room/room.tscn
+res://Objects/wall.tscn
+res://Objects/wall.gd
