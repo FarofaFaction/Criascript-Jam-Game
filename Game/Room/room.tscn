@@ -14,7 +14,6 @@
 color = Color(0, 0, 0, 1)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("1_604fw")]
-visible = false
 
 [node name="RoomOne" type="Node2D" parent="."]
 
@@ -137,5 +136,6 @@ shape = SubResource("CircleShape2D_najv8")
 [node name="PointLight2D" type="PointLight2D" parent="CharacterBody2D"]
 shadow_enabled = true
 texture = ExtResource("5_ac5do")
+texture_scale = 10.0
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
