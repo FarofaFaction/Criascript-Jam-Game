@@ -6,9 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://c08dxlio5mx4f" path="res://icon.svg" id="2_v4eaw"]
 [ext_resource type="Texture2D" uid="uid://bchofwuy1kere" path="res://Objects/ToolAssets/blank_circle.png" id="5_ac5do"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_najv8"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_shqjl"]
+size = Vector2(116, 110)
 
 [node name="Room" type="Node2D"]
+
+[node name="CanvasLayer" parent="." instance=ExtResource("1_604fw")]
+visible = false
 
 [node name="Room_1" type="Node2D" parent="."]
 
@@ -121,17 +125,18 @@ Layer = 1
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(992, 562)
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_oiii0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_shqjl")
 
 [node name="Icon" type="Sprite2D" parent="CharacterBody2D"]
 texture = ExtResource("2_v4eaw")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-shape = SubResource("CircleShape2D_najv8")
-
 [node name="Ilumination" type="Node2D" parent="CharacterBody2D"]
-
-[node name="CanvasLayer" parent="CharacterBody2D/Ilumination" instance=ExtResource("1_604fw")]
+visible = false
 
 [node name="CanvasModulate" type="CanvasModulate" parent="CharacterBody2D/Ilumination"]
 position = Vector2(-992, -560)
