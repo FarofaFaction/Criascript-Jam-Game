@@ -1,13 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://b46ln0l8u82r0"]
+[gd_scene load_steps=7 format=3 uid="uid://b46ln0l8u82r0"]
 
 [ext_resource type="PackedScene" uid="uid://ca2c7jnemw4ie" path="res://Objects/wall.tscn" id="1_2ok7y"]
 [ext_resource type="PackedScene" uid="uid://dmkbsln86fgm7" path="res://Objects/CRTShader.tscn" id="1_604fw"]
 [ext_resource type="Script" path="res://Game/Player/player.gd" id="1_oiii0"]
 [ext_resource type="Texture2D" uid="uid://c08dxlio5mx4f" path="res://icon.svg" id="2_v4eaw"]
+[ext_resource type="Texture2D" uid="uid://bchofwuy1kere" path="res://Objects/ToolAssets/blank_circle.png" id="5_ac5do"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_najv8"]
 
 [node name="Room" type="Node2D"]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("1_604fw")]
 visible = false
@@ -129,3 +133,9 @@ texture = ExtResource("2_v4eaw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("CircleShape2D_najv8")
+
+[node name="PointLight2D" type="PointLight2D" parent="CharacterBody2D"]
+shadow_enabled = true
+texture = ExtResource("5_ac5do")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
