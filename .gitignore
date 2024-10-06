@@ -5,6 +5,8 @@
 .import/
 export.cfg
 export_presets.cfg
+.godot\editor\filesystem_cache*
+.godot\editor\room.tscn-editstate-*
 
 # Imported translations (automatically generated from CSV files)
 *.translation
@@ -13,3 +15,5 @@ export_presets.cfg
 .mono/
 data_*/
 mono_crash.*.json
+.godot/editor/room.tscn-editstate-542deb87b60621c39b4da200e9d2958b.cfg
+.godot/editor/filesystem_cache8
