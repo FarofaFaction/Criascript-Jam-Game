@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://b46ln0l8u82r0"]
+[gd_scene load_steps=34 format=3 uid="uid://b46ln0l8u82r0"]
 
 [ext_resource type="PackedScene" uid="uid://ca2c7jnemw4ie" path="res://Objects/wall.tscn" id="1_2ok7y"]
 [ext_resource type="PackedScene" uid="uid://dmkbsln86fgm7" path="res://Objects/CanvasLayer.tscn" id="1_604fw"]
@@ -110,6 +110,21 @@ radius = 21.0238
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_odx0j"]
 size = Vector2(16, 6.5)
+
+[sub_resource type="Gradient" id="Gradient_cqdvo"]
+offsets = PackedFloat32Array(0.0549451, 0.879121)
+colors = PackedColorArray(0.259902, 3.29395e-07, 8.42288e-08, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_qalwi"]
+gradient = SubResource("Gradient_cqdvo")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_phj88"]
+particle_flag_disable_z = true
+spread = 7.273
+initial_velocity_min = 40.0
+initial_velocity_max = 60.0
+gravity = Vector3(0, 96, 0)
+color_ramp = SubResource("GradientTexture1D_qalwi")
 
 [node name="Room" type="Node2D"]
 y_sort_enabled = true
@@ -428,3 +443,12 @@ vomit_timer = NodePath("Timer")
 [node name="Timer" type="Timer" parent="Enemy/State Machine/EnemyVomitAtack"]
 wait_time = 3.0
 one_shot = true
+
+[node name="VomitSpray" type="GPUParticles2D" parent="Enemy/State Machine/EnemyVomitAtack"]
+position = Vector2(1105, 415)
+rotation = -0.0748316
+amount = 300
+process_material = SubResource("ParticleProcessMaterial_phj88")
+lifetime = 0.5
+explosiveness = 0.1
+fixed_fps = 12
