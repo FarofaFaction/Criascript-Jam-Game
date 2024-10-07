@@ -9,6 +9,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_init_pressed() -> void:
+	Global.change_scene("Game")
 	pass # Replace with function body.
 
 func _on_config_pressed() -> void:

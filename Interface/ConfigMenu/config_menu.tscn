@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bi0w8f3fbx3tv"]
+[gd_scene load_steps=12 format=3 uid="uid://bi0w8f3fbx3tv"]
 
 [ext_resource type="Script" path="res://Interface/ConfigMenu/config_menu.gd" id="1_mpwmf"]
 [ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="2_qgxes"]
@@ -8,6 +8,11 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rqsdc"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_avxtw"]
+color = Color(0.882353, 0, 0, 1)
+thickness = 10
+vertical = true
 
 [sub_resource type="LabelSettings" id="LabelSettings_p6c4i"]
 font_size = 64
@@ -52,7 +57,7 @@ offset_right = 768.0
 offset_bottom = 349.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_qgxes")
-theme_override_font_sizes/font_size = 128
+theme_override_font_sizes/font_size = 124
 text = "Configurações"
 horizontal_alignment = 1
 
@@ -95,6 +100,7 @@ theme_type_variation = &"FlatButton"
 theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_qgxes")
 theme_override_font_sizes/font_size = 64
+theme_override_styles/focus = SubResource("StyleBoxLine_avxtw")
 text = "Resolução"
 
 [node name="Volume" type="HBoxContainer" parent="ConfigPanel/OptionsContainer"]
@@ -139,6 +145,7 @@ theme_type_variation = &"FlatButton"
 theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_qgxes")
 theme_override_font_sizes/font_size = 64
+theme_override_styles/focus = SubResource("StyleBoxLine_avxtw")
 text = "Idioma"
 
 [node name="VSplitContainer" type="VSplitContainer" parent="ConfigPanel/OptionsContainer"]
@@ -156,6 +163,7 @@ theme_type_variation = &"FlatButton"
 theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_qgxes")
 theme_override_font_sizes/font_size = 64
+theme_override_styles/focus = SubResource("StyleBoxLine_avxtw")
 text = "Fechar"
 
 [connection signal="pressed" from="ConfigPanel/OptionsContainer/FullScreen" to="." method="_on_full_screen_pressed"]

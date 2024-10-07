@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bpslbi4lr2l1y"]
+[gd_scene load_steps=8 format=3 uid="uid://bpslbi4lr2l1y"]
 
 [ext_resource type="Script" path="res://Interface/LenguageMenu/lenguage_menu.gd" id="1_2svfb"]
 [ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="2_w4avm"]
@@ -7,6 +7,13 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rqsdc"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ekrdv"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_1yrt8"]
+color = Color(0.882353, 0, 0, 1)
+thickness = 10
+vertical = true
 
 [node name="LenguageMenu" type="Control" node_paths=PackedStringArray("init_button")]
 process_mode = 3
@@ -88,16 +95,15 @@ stretch_mode = 4
 
 [node name="English" type="Button" parent="Panel/OptionsContainer/English"]
 layout_mode = 2
-focus_neighbor_left = NodePath("../../Portuguese/Portuguese")
-focus_neighbor_top = NodePath("../../Portuguese/Portuguese")
-focus_neighbor_right = NodePath("../../Portuguese/Portuguese")
+focus_neighbor_top = NodePath("../../Quit")
 focus_neighbor_bottom = NodePath("../../Portuguese/Portuguese")
 focus_next = NodePath("../../Portuguese/Portuguese")
-focus_previous = NodePath("../../Portuguese/Portuguese")
+focus_previous = NodePath("../../Quit")
 theme_type_variation = &"FlatButton"
 theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_w4avm")
 theme_override_font_sizes/font_size = 64
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ekrdv")
 text = "English"
 
 [node name="Portuguese" type="HBoxContainer" parent="Panel/OptionsContainer"]
@@ -112,17 +118,35 @@ stretch_mode = 4
 
 [node name="Portuguese" type="Button" parent="Panel/OptionsContainer/Portuguese"]
 layout_mode = 2
-focus_neighbor_left = NodePath("../../English/English")
 focus_neighbor_top = NodePath("../../English/English")
-focus_neighbor_right = NodePath("../../English/English")
-focus_neighbor_bottom = NodePath("../../English/English")
-focus_next = NodePath("../../English/English")
+focus_neighbor_bottom = NodePath("../../Quit")
+focus_next = NodePath("../../Quit")
 focus_previous = NodePath("../../English/English")
 theme_type_variation = &"FlatButton"
 theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_w4avm")
 theme_override_font_sizes/font_size = 64
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ekrdv")
 text = "PT-BR"
+
+[node name="VSplitContainer" type="VSplitContainer" parent="Panel/OptionsContainer"]
+custom_minimum_size = Vector2(0, 72)
+layout_mode = 2
+
+[node name="Quit" type="Button" parent="Panel/OptionsContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Portuguese/Portuguese")
+focus_neighbor_bottom = NodePath("../English/English")
+focus_next = NodePath("../English/English")
+focus_previous = NodePath("../Portuguese/Portuguese")
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_w4avm")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/focus = SubResource("StyleBoxLine_1yrt8")
+text = "Pronto
+"
 
 [connection signal="pressed" from="Panel/OptionsContainer/English/English" to="." method="_on_english_pressed"]
 [connection signal="pressed" from="Panel/OptionsContainer/Portuguese/Portuguese" to="." method="_on_portuguese_pressed"]
+[connection signal="pressed" from="Panel/OptionsContainer/Quit" to="." method="_on_quit_pressed"]

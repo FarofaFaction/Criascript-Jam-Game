@@ -12,6 +12,21 @@ func _ready() -> void:
 	_init_audio()
 	pass # Replace with function body.
 
+const MenuMenu := "res://Interface/Menu/menu.tscn"
+const Game := "res://Game/Room/room.tscn"
+#const ss := str(1)
+
+func change_scene(scene: String):
+	#var node
+	if (scene == "Menu"):
+		#node = preload(MenuMenu).instantiate()
+		get_tree().change_scene_to_file(MenuMenu)
+	elif (scene == "Game"):
+		get_tree().change_scene_to_file(Game)
+	else:
+		return
+	#get_tree().change_scene_to_file(MenuMenu)
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
