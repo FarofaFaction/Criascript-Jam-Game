@@ -2,8 +2,8 @@ extends Control
 
 # Variables to control the time
 @onready var TimeLabel : Label = $TimeLabel
-var total_time: float = 0.0
 @onready var timer = set_time(18, 0)
+var total_time: float = 0.0
 var seconds_per_minute: float = 60 * 8  # 8 hours in seconds (480 seconds) for 1 minute of gameplay
 var timestop := true
 

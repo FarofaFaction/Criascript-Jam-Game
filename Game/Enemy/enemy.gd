@@ -1,6 +1,7 @@
 extends CharacterBody2D
 class_name Enemy
 
+@export var LastTarget : Node
 @export var Target : Node
 @export var DetectionArea : Area2D
 @export var SelfArea : Area2D

@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://b46ln0l8u82r0"]
+[gd_scene load_steps=31 format=3 uid="uid://b46ln0l8u82r0"]
 
 [ext_resource type="PackedScene" uid="uid://ca2c7jnemw4ie" path="res://Objects/wall.tscn" id="1_2ok7y"]
 [ext_resource type="PackedScene" uid="uid://dmkbsln86fgm7" path="res://Objects/CanvasLayer.tscn" id="1_604fw"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://Game/state_machine.gd" id="7_u8mnb"]
 [ext_resource type="Script" path="res://Game/Enemy/State_idle.gd" id="8_wevek"]
 [ext_resource type="Script" path="res://Game/Enemy/State_follow.gd" id="9_hlltg"]
+[ext_resource type="Script" path="res://Game/Enemy/State_VomitAtack.gd" id="12_8mu51"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_nfg62"]
 closed = false
@@ -418,3 +419,12 @@ enemy = NodePath("../..")
 [node name="EnemyFollow" type="Node" parent="Enemy/State Machine" node_paths=PackedStringArray("enemy")]
 script = ExtResource("9_hlltg")
 enemy = NodePath("../..")
+
+[node name="EnemyVomitAtack" type="Node" parent="Enemy/State Machine" node_paths=PackedStringArray("enemy", "vomit_timer")]
+script = ExtResource("12_8mu51")
+enemy = NodePath("../..")
+vomit_timer = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="Enemy/State Machine/EnemyVomitAtack"]
+wait_time = 3.0
+one_shot = true

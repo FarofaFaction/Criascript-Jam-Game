@@ -33,6 +33,8 @@ func Physics_Update():
 		enemy.velocity = _move_direction.normalized() * enemy.speed
 	else:
 		enemy.velocity = Vector2.ZERO
+		enemy.LastTarget = enemy.Target
+		Transitioned.emit(self, "EnemyVomitAtack")
 	pass
 
 func body_shape_exited(body):
