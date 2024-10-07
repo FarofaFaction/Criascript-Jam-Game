@@ -31,6 +31,6 @@ func _ready():
 		add_child(node)
 	pass
 
-func _process(delta):
+func _process(_delta):
 	# Verifica se o node atual foi concluído
 	return

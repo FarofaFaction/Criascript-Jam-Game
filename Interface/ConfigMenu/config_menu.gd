@@ -3,7 +3,7 @@ extends Menu
 func _ready() -> void:
 	pass
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func _on_full_screen_pressed() -> void:

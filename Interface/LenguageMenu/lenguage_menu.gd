@@ -3,7 +3,7 @@ extends Menu
 func _ready() -> void:
 	pass # Replace with function body.
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func _on_english_pressed() -> void:
