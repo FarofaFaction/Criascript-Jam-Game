@@ -1,10 +1,9 @@
-[gd_scene load_steps=29 format=3 uid="uid://b46ln0l8u82r0"]
+[gd_scene load_steps=28 format=3 uid="uid://b46ln0l8u82r0"]
 
 [ext_resource type="PackedScene" uid="uid://ca2c7jnemw4ie" path="res://Objects/wall.tscn" id="1_2ok7y"]
 [ext_resource type="PackedScene" uid="uid://dmkbsln86fgm7" path="res://Objects/CanvasLayer.tscn" id="1_604fw"]
 [ext_resource type="Script" path="res://Game/Player/player.gd" id="1_oiii0"]
 [ext_resource type="Texture2D" uid="uid://boce3olqcv7iq" path="res://Objects/mapa 1.png" id="2_g62a8"]
-[ext_resource type="Texture2D" uid="uid://c08dxlio5mx4f" path="res://icon.svg" id="2_v4eaw"]
 [ext_resource type="Texture2D" uid="uid://bchofwuy1kere" path="res://Objects/ToolAssets/blank_circle.png" id="5_ac5do"]
 [ext_resource type="Texture2D" uid="uid://dgq2m1cnwgbv" path="res://Game/Player/idle.png" id="5_ec2ay"]
 [ext_resource type="Texture2D" uid="uid://ji8y8qki3vcm" path="res://Game/Player/run.png" id="6_aong0"]
@@ -103,7 +102,7 @@ animations = [{
 size = Vector2(14, 5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_odx0j"]
-size = Vector2(116, 47)
+size = Vector2(16, 6.5)
 
 [node name="Room" type="Node2D"]
 y_sort_enabled = true
@@ -120,8 +119,7 @@ offset_bottom = 956.0
 color = Color(0.392157, 0.392157, 0.392157, 1)
 
 [node name="WallTest" type="Sprite2D" parent="Room_3"]
-position = Vector2(1115, 495)
-scale = Vector2(1.5, 1.5)
+position = Vector2(1103, 495)
 texture = ExtResource("2_g62a8")
 
 [node name="wall" parent="Room_3" instance=ExtResource("1_2ok7y")]
@@ -324,33 +322,22 @@ occluder_light_mask = 2
 
 [node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("spritePlayer") groups=["Player"]]
 y_sort_enabled = true
-position = Vector2(935, 391)
+position = Vector2(952, 431)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_oiii0")
-spritePlayer = NodePath("AnimatedSprite2D")
+spritePlayer = NodePath("Sprite")
 metadata/_edit_group_ = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+[node name="Sprite" type="AnimatedSprite2D" parent="Player"]
 sprite_frames = SubResource("SpriteFrames_amjbx")
-animation = &"Run"
+animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.970006
-
-[node name="Icon" type="Sprite2D" parent="Player"]
-visible = false
-self_modulate = Color(0.059126, 0.0591259, 0.0591259, 1)
-scale = Vector2(1, 2.23438)
-texture = ExtResource("2_v4eaw")
-
-[node name="Icon2" type="Sprite2D" parent="Player/Icon"]
-position = Vector2(0, -33.1189)
-scale = Vector2(1, 0.447552)
-texture = ExtResource("2_v4eaw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(0, 12.5)
 shape = SubResource("RectangleShape2D_shqjl")
+disabled = true
 
 [node name="Ilumination" type="Node2D" parent="Player"]
 
@@ -378,40 +365,37 @@ texture = ExtResource("5_ac5do")
 zoom = Vector2(5, 5)
 position_smoothing_enabled = true
 
-[node name="Enemy" type="CharacterBody2D" parent="." node_paths=PackedStringArray("player")]
-visible = false
+[node name="Enemy" type="CharacterBody2D" parent="." node_paths=PackedStringArray("animationPlayer", "player")]
 y_sort_enabled = true
-position = Vector2(1118, 391)
+position = Vector2(1103, 424)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("6_yuitw")
+animationPlayer = NodePath("Sprite")
 player = NodePath("../Player")
 metadata/_edit_group_ = true
 
-[node name="Icon" type="Sprite2D" parent="Enemy"]
-self_modulate = Color(0.268632, 0, 0.00104424, 1)
-scale = Vector2(1, 2.23438)
-texture = ExtResource("2_v4eaw")
-
-[node name="Icon2" type="Sprite2D" parent="Enemy/Icon"]
-modulate = Color(1, 0.0784314, 0.164706, 1)
-position = Vector2(0, -33.1189)
-scale = Vector2(1, 0.447552)
-texture = ExtResource("2_v4eaw")
+[node name="Sprite" type="AnimatedSprite2D" parent="Enemy"]
+modulate = Color(1, 0, 0, 1)
+sprite_frames = SubResource("SpriteFrames_amjbx")
+animation = &"Idle"
+autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
-position = Vector2(0, 114.5)
+position = Vector2(0, 12)
 shape = SubResource("RectangleShape2D_odx0j")
 
 [node name="State Machine" type="Node" parent="Enemy" node_paths=PackedStringArray("initial_state")]
 script = ExtResource("7_u8mnb")
-initial_state = NodePath("EnemyFollow")
+initial_state = NodePath("EnemyIdle")
 
 [node name="EnemyIdle" type="Node" parent="Enemy/State Machine" node_paths=PackedStringArray("enemy")]
 script = ExtResource("8_wevek")
 enemy = NodePath("../..")
-move_speed = 120.0
+move_speed = 20.0
 
 [node name="EnemyFollow" type="Node" parent="Enemy/State Machine" node_paths=PackedStringArray("enemy")]
 script = ExtResource("9_hlltg")
 enemy = NodePath("../..")
+move_speed = 100.0
+distance = 10

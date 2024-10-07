@@ -31,7 +31,7 @@ func Physics_Update():
 		enemy.velocity = direction.normalized() * move_speed
 	else:
 		enemy.velocity = Vector2.ZERO
-		return
+		#return
 	if direction.length() > (distance * 2):
 		Transitioned.emit(self, "EnemyIdle")
 	pass
