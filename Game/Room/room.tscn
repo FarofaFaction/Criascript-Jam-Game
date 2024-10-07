@@ -120,7 +120,7 @@ offset_bottom = 956.0
 color = Color(0.392157, 0.392157, 0.392157, 1)
 
 [node name="WallTest" type="Sprite2D" parent="Room_3"]
-position = Vector2(1118, 462)
+position = Vector2(1115, 495)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_g62a8")
 
@@ -335,7 +335,7 @@ metadata/_edit_group_ = true
 sprite_frames = SubResource("SpriteFrames_amjbx")
 animation = &"Run"
 autoplay = "Idle"
-frame_progress = 0.407866
+frame_progress = 0.970006
 
 [node name="Icon" type="Sprite2D" parent="Player"]
 visible = false
@@ -375,9 +375,11 @@ texture = ExtResource("5_ac5do")
 [node name="CanvasModulate" type="CanvasModulate" parent="Player/Ilumination"]
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(3, 3)
+zoom = Vector2(5, 5)
+position_smoothing_enabled = true
 
 [node name="Enemy" type="CharacterBody2D" parent="." node_paths=PackedStringArray("player")]
+visible = false
 y_sort_enabled = true
 position = Vector2(1118, 391)
 collision_layer = 0
