@@ -1,0 +1,183 @@
+[gd_scene load_steps=23 format=3 uid="uid://cw6wpkdy5ckht"]
+
+[ext_resource type="Script" path="res://Game/Enemy/enemy.gd" id="1_dhjc1"]
+[ext_resource type="Texture2D" uid="uid://dgq2m1cnwgbv" path="res://Game/Player/idle.png" id="2_oacfn"]
+[ext_resource type="Texture2D" uid="uid://ji8y8qki3vcm" path="res://Game/Player/run.png" id="3_ppg21"]
+[ext_resource type="Script" path="res://Game/state_machine.gd" id="4_ua4s5"]
+[ext_resource type="Script" path="res://Game/Enemy/State_idle.gd" id="5_vodak"]
+[ext_resource type="Script" path="res://Game/Enemy/State_follow.gd" id="6_d7lxm"]
+[ext_resource type="Script" path="res://Game/Enemy/State_VomitAtack.gd" id="7_2xmc2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8ubhu"]
+radius = 129.557
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_318iq"]
+radius = 16.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsx66"]
+atlas = ExtResource("2_oacfn")
+region = Rect2(1, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_880vf"]
+atlas = ExtResource("2_oacfn")
+region = Rect2(18, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yjrqb"]
+atlas = ExtResource("2_oacfn")
+region = Rect2(35, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55uco"]
+atlas = ExtResource("2_oacfn")
+region = Rect2(52, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ye423"]
+atlas = ExtResource("3_ppg21")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyfos"]
+atlas = ExtResource("3_ppg21")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1j1xw"]
+atlas = ExtResource("3_ppg21")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84bky"]
+atlas = ExtResource("3_ppg21")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_amjbx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rsx66")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_880vf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yjrqb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55uco")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ye423")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pyfos")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1j1xw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84bky")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 5.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_cqdvo"]
+offsets = PackedFloat32Array(0.0549451, 0.879121)
+colors = PackedColorArray(0.259902, 3.29395e-07, 8.42288e-08, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_qalwi"]
+gradient = SubResource("Gradient_cqdvo")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_phj88"]
+particle_flag_disable_z = true
+spread = 10.0
+initial_velocity_min = 60.0
+initial_velocity_max = 70.0
+gravity = Vector3(0, 96, 0)
+color_ramp = SubResource("GradientTexture1D_qalwi")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_odx0j"]
+size = Vector2(16, 6.5)
+
+[node name="RedGuy" type="CharacterBody2D" node_paths=PackedStringArray("DetectionArea", "SelfArea", "animationPlayer")]
+y_sort_enabled = true
+position = Vector2(1102, 428)
+collision_layer = 2
+collision_mask = 2
+motion_mode = 1
+script = ExtResource("1_dhjc1")
+DetectionArea = NodePath("DetectionArea")
+SelfArea = NodePath("SelfArea")
+speed = 100
+animationPlayer = NodePath("Sprite")
+metadata/_edit_group_ = true
+metadata/_edit_pinned_properties_ = [&"DetectionArea", &"SelfArea", &"speed", &"animationPlayer"]
+
+[node name="DetectionArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2147483648
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+shape = SubResource("CircleShape2D_8ubhu")
+
+[node name="SelfArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2147483648
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SelfArea"]
+position = Vector2(0, 12)
+shape = SubResource("CircleShape2D_318iq")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+sprite_frames = SubResource("SpriteFrames_amjbx")
+animation = &"Idle"
+autoplay = "Idle"
+
+[node name="VomitAtack" type="Node2D" parent="Sprite"]
+
+[node name="VomitSpray" type="GPUParticles2D" parent="Sprite/VomitAtack"]
+position = Vector2(2, -9)
+emitting = false
+amount = 300
+process_material = SubResource("ParticleProcessMaterial_phj88")
+lifetime = 0.5
+explosiveness = 0.1
+fixed_fps = 10
+collision_base_size = 2.0
+
+[node name="VomitRayCast" type="RayCast2D" parent="Sprite/VomitAtack"]
+position = Vector2(1, 1)
+target_position = Vector2(24, 0)
+collision_mask = 2147483648
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_odx0j")
+
+[node name="State Machine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("4_ua4s5")
+initial_state = NodePath("EnemyIdle")
+
+[node name="EnemyIdle" type="Node" parent="State Machine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("5_vodak")
+enemy = NodePath("../..")
+
+[node name="EnemyFollow" type="Node" parent="State Machine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("6_d7lxm")
+enemy = NodePath("../..")
+
+[node name="EnemyVomitAtack" type="Node" parent="State Machine" node_paths=PackedStringArray("vomit_raycast", "vomit", "enemy", "vomit_timer")]
+script = ExtResource("7_2xmc2")
+vomit_raycast = NodePath("../../Sprite/VomitAtack/VomitRayCast")
+vomit = NodePath("../../Sprite/VomitAtack/VomitSpray")
+enemy = NodePath("../..")
+vomit_timer = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="State Machine/EnemyVomitAtack"]
+wait_time = 3.0
+one_shot = true

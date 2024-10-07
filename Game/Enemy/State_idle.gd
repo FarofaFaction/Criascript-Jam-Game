@@ -29,7 +29,7 @@ func Update():
 func Physics_Update():
 	if !enemy:
 		Transitioned.emit(self, "EnemyFollow")
-	move_direction = Vector2(0, -1)
+	#move_direction = Vector2(0, -1)
 	enemy.velocity = move_direction * (enemy.speed / 5)
 
 	if (enemy.Target):
