@@ -390,8 +390,6 @@ collision_mask = 3
 shape = SubResource("CircleShape2D_8ubhu")
 
 [node name="SelfArea" type="Area2D" parent="Enemy"]
-collision_layer = 3
-collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/SelfArea"]
 position = Vector2(0, 12)
@@ -418,3 +416,5 @@ enemy = NodePath("../..")
 [node name="EnemyFollow" type="Node" parent="Enemy/State Machine" node_paths=PackedStringArray("enemy")]
 script = ExtResource("9_hlltg")
 enemy = NodePath("../..")
+move_speed = 100.0
+distance = 50

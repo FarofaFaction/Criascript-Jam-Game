@@ -1,37 +1,43 @@
 extends State
 class_name EnemyFollow
 
-@export var enemy : CharacterBody2D
-@export var move_speed := 290.0
-@export var distance := 250
-var player = CharacterBody2D
-var move_direction : Vector2
-#var wander_time : float
+@export var enemy : Enemy
+var _move_direction : Vector2 = Vector2.ZERO
 
-#func randomize_wander():
-	#move_direction = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()
-	#wander_time = randf_range(1, 3)
-# Called when the node enters the scene tree for the first time.
 func Enter():
-	player = get_tree().get_first_node_in_group("Player")
+	if (!enemy || !enemy.DetectionArea):
+		print("Eenter EnemyFollow (!enemy || !enemy.DetectionArea):")
+		return
+	enemy.DetectionArea.connect("body_exited", body_shape_exited)
+
+func Exit():
+	if (!enemy || !enemy.DetectionArea):
+		print("Exit EnemyFollow (!enemy || !enemy.DetectionArea):")
+		return
+	enemy.Target = null
+	enemy.DetectionArea.disconnect("body_exited", body_shape_exited)
+	pass
 
 func Update():
-	#if wander_time > 0:
-		#wander_time -= 0.016
-	#else:
-		#randomize_wander()
+	if (!enemy):
+		return
+	if (!enemy.Target || !enemy.SelfArea):
+		Transitioned.emit(self, "EnemyIdle")
+		return
 	pass
 
 func Physics_Update():
-	if (!enemy || !player):
-		return
-	var direction = player.global_position - enemy.global_position
+	_move_direction = enemy.Target.global_position - enemy.global_position
 	
-	if direction.length() > distance:
-		enemy.velocity = direction.normalized() * move_speed
+	if  !(enemy.SelfArea.overlaps_body(enemy.Target)):
+		enemy.velocity = _move_direction.normalized() * enemy.speed
 	else:
 		enemy.velocity = Vector2.ZERO
-		#return
-	if direction.length() > (distance * 2):
+	pass
+
+func body_shape_exited(body):
+	if (body == enemy.Target):
+		print(body.name + " Exited on " + self.name + " Detection Area (Follow)")
 		Transitioned.emit(self, "EnemyIdle")
 	pass
+	
