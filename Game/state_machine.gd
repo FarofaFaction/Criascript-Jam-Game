@@ -18,18 +18,18 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if current_state:
 		current_state.Update()
 	pass
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if current_state:
 		current_state.Physics_Update()
 	pass
 
 func on_child_transition(state: State, new_state_name: String):
-	if	current_state is not State:
+	if	state != current_state:
 		return
 	var new_state = states.get(new_state_name.to_lower())
 	if (!new_state):

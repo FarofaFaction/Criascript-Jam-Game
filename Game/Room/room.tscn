@@ -1,10 +1,13 @@
-[gd_scene load_steps=16 format=3 uid="uid://b46ln0l8u82r0"]
+[gd_scene load_steps=29 format=3 uid="uid://b46ln0l8u82r0"]
 
 [ext_resource type="PackedScene" uid="uid://ca2c7jnemw4ie" path="res://Objects/wall.tscn" id="1_2ok7y"]
-[ext_resource type="PackedScene" uid="uid://dmkbsln86fgm7" path="res://Objects/CRTShader.tscn" id="1_604fw"]
+[ext_resource type="PackedScene" uid="uid://dmkbsln86fgm7" path="res://Objects/CanvasLayer.tscn" id="1_604fw"]
 [ext_resource type="Script" path="res://Game/Player/player.gd" id="1_oiii0"]
+[ext_resource type="Texture2D" uid="uid://boce3olqcv7iq" path="res://Objects/mapa 1.png" id="2_g62a8"]
 [ext_resource type="Texture2D" uid="uid://c08dxlio5mx4f" path="res://icon.svg" id="2_v4eaw"]
 [ext_resource type="Texture2D" uid="uid://bchofwuy1kere" path="res://Objects/ToolAssets/blank_circle.png" id="5_ac5do"]
+[ext_resource type="Texture2D" uid="uid://dgq2m1cnwgbv" path="res://Game/Player/idle.png" id="5_ec2ay"]
+[ext_resource type="Texture2D" uid="uid://ji8y8qki3vcm" path="res://Game/Player/run.png" id="6_aong0"]
 [ext_resource type="Script" path="res://Game/Enemy/enemy.gd" id="6_yuitw"]
 [ext_resource type="Script" path="res://Game/state_machine.gd" id="7_u8mnb"]
 [ext_resource type="Script" path="res://Game/Enemy/State_idle.gd" id="8_wevek"]
@@ -27,13 +30,153 @@ light_mode = 2
 closed = false
 polygon = PackedVector2Array(1061, -2, 1060, 119, 844, 111, 844, -3)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3ldy"]
+atlas = ExtResource("5_ec2ay")
+region = Rect2(0, 0, 17, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ahmu"]
+atlas = ExtResource("5_ec2ay")
+region = Rect2(17, 0, 17, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ve2te"]
+atlas = ExtResource("5_ec2ay")
+region = Rect2(34, 0, 17, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2e72"]
+atlas = ExtResource("5_ec2ay")
+region = Rect2(51, 0, 17, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ye423"]
+atlas = ExtResource("6_aong0")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyfos"]
+atlas = ExtResource("6_aong0")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1j1xw"]
+atlas = ExtResource("6_aong0")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84bky"]
+atlas = ExtResource("6_aong0")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_amjbx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f3ldy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ahmu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ve2te")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2e72")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ye423")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pyfos")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1j1xw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84bky")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_shqjl"]
-size = Vector2(116, 110)
+size = Vector2(14, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_odx0j"]
+size = Vector2(116, 47)
 
 [node name="Room" type="Node2D"]
+y_sort_enabled = true
 
 [node name="CanvasLayer" parent="." instance=ExtResource("1_604fw")]
+
+[node name="Room_3" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Room_3"]
+offset_left = -982.0
+offset_top = -754.0
+offset_right = 2520.0
+offset_bottom = 956.0
+color = Color(0.392157, 0.392157, 0.392157, 1)
+
+[node name="WallTest" type="Sprite2D" parent="Room_3"]
+position = Vector2(1118, 462)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_g62a8")
+
+[node name="wall" parent="Room_3" instance=ExtResource("1_2ok7y")]
+position = Vector2(195, 506)
+scale = Vector2(0.235935, 1.84936)
+CollisionLayer = 1
+
+[node name="wall2" parent="Room_3" instance=ExtResource("1_2ok7y")]
+position = Vector2(2011, 874.251)
+scale = Vector2(0.235935, 3.15699)
+CollisionLayer = 1
+
+[node name="wall8" parent="Room_3" instance=ExtResource("1_2ok7y")]
+position = Vector2(195, 1180)
+scale = Vector2(0.235935, 2.27314)
+CollisionLayer = 1
+
+[node name="wall3" parent="Room_3" instance=ExtResource("1_2ok7y")]
+position = Vector2(342, 931)
+rotation = 1.5708
+scale = Vector2(0.235935, 3.16159)
+CollisionLayer = 1
+
+[node name="wall7" parent="Room_3" instance=ExtResource("1_2ok7y")]
+position = Vector2(1136.9, 1708)
+rotation = 1.5708
+scale = Vector2(0.235935, 3.60478)
+CollisionLayer = 1
+
+[node name="wall9" parent="Room_3" instance=ExtResource("1_2ok7y")]
+position = Vector2(1259, 1257)
+rotation = 1.5708
+scale = Vector2(0.235935, 3.16159)
+CollisionLayer = 1
+
+[node name="wall4" parent="Room_3" instance=ExtResource("1_2ok7y")]
 visible = false
+position = Vector2(916.752, 326)
+rotation = 1.5708
+scale = Vector2(0.235935, 2.06087)
+CollisionLayer = 1
+
+[node name="wall5" parent="Room_3" instance=ExtResource("1_2ok7y")]
+visible = false
+position = Vector2(1747.32, 240)
+rotation = 1.5708
+scale = Vector2(0.235935, 0.973102)
+CollisionLayer = 1
+
+[node name="wall6" parent="Room_3" instance=ExtResource("1_2ok7y")]
+visible = false
+position = Vector2(305.679, 266)
+rotation = 1.5708
+scale = Vector2(0.235935, 0.204758)
+CollisionLayer = 1
 
 [node name="LightTesting" type="Node2D" parent="."]
 
@@ -104,7 +247,7 @@ scale = Vector2(0.235935, 1.63437)
 
 [node name="Room_2" type="Node2D" parent="."]
 material = SubResource("CanvasItemMaterial_2258t")
-position = Vector2(276, 462)
+position = Vector2(3523, 462)
 
 [node name="Floor" type="ColorRect" parent="Room_2"]
 use_parent_material = true
@@ -179,18 +322,35 @@ position = Vector2(-4, 0)
 occluder = SubResource("OccluderPolygon2D_gjdmj")
 occluder_light_mask = 2
 
-[node name="Player" type="CharacterBody2D" parent="." groups=["Player"]]
-position = Vector2(935, 276)
-collision_layer = 2
+[node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("spritePlayer") groups=["Player"]]
+y_sort_enabled = true
+position = Vector2(935, 391)
+collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_oiii0")
+spritePlayer = NodePath("AnimatedSprite2D")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-shape = SubResource("RectangleShape2D_shqjl")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+sprite_frames = SubResource("SpriteFrames_amjbx")
+animation = &"Run"
+autoplay = "Idle"
+frame_progress = 0.407866
 
 [node name="Icon" type="Sprite2D" parent="Player"]
+visible = false
+self_modulate = Color(0.059126, 0.0591259, 0.0591259, 1)
+scale = Vector2(1, 2.23438)
 texture = ExtResource("2_v4eaw")
+
+[node name="Icon2" type="Sprite2D" parent="Player/Icon"]
+position = Vector2(0, -33.1189)
+scale = Vector2(1, 0.447552)
+texture = ExtResource("2_v4eaw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(0, 12.5)
+shape = SubResource("RectangleShape2D_shqjl")
 
 [node name="Ilumination" type="Node2D" parent="Player"]
 
@@ -215,21 +375,31 @@ texture = ExtResource("5_ac5do")
 [node name="CanvasModulate" type="CanvasModulate" parent="Player/Ilumination"]
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(3, 3)
 
 [node name="Enemy" type="CharacterBody2D" parent="." node_paths=PackedStringArray("player")]
-position = Vector2(1118, 276)
-collision_layer = 2
+y_sort_enabled = true
+position = Vector2(1118, 391)
+collision_layer = 0
 collision_mask = 2
 script = ExtResource("6_yuitw")
 player = NodePath("../Player")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
-shape = SubResource("RectangleShape2D_shqjl")
-
 [node name="Icon" type="Sprite2D" parent="Enemy"]
-modulate = Color(1, 0.0784314, 0.164706, 1)
+self_modulate = Color(0.268632, 0, 0.00104424, 1)
+scale = Vector2(1, 2.23438)
 texture = ExtResource("2_v4eaw")
+
+[node name="Icon2" type="Sprite2D" parent="Enemy/Icon"]
+modulate = Color(1, 0.0784314, 0.164706, 1)
+position = Vector2(0, -33.1189)
+scale = Vector2(1, 0.447552)
+texture = ExtResource("2_v4eaw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
+position = Vector2(0, 114.5)
+shape = SubResource("RectangleShape2D_odx0j")
 
 [node name="State Machine" type="Node" parent="Enemy" node_paths=PackedStringArray("initial_state")]
 script = ExtResource("7_u8mnb")
