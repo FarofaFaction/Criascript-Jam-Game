@@ -12,11 +12,11 @@ func randomize_wander():
 func Enter():
 	if !enemy:
 		return
-	enemy.DetectionArea.connect("body_entered", body_shape_entered)
+	enemy.DetectionArea.connect("area_entered", body_area_entered)
 	randomize_wander()
 
 func Exit():
-	enemy.DetectionArea.disconnect("body_entered", body_shape_entered)
+	enemy.DetectionArea.disconnect("area_entered", body_area_entered)
 	pass
 
 func Update():
@@ -29,14 +29,16 @@ func Update():
 func Physics_Update():
 	if !enemy:
 		Transitioned.emit(self, "EnemyFollow")
+	move_direction = Vector2(0, -1)
 	enemy.velocity = move_direction * (enemy.speed / 5)
 
 	if (enemy.Target):
 		Transitioned.emit(self, "EnemyFollow")
 	pass
 
-func body_shape_entered(body):
-	if !body.is_in_group("Player"):
+func body_area_entered(area):
+	var body = area.get_parent()
+	if !body || !body.is_in_group("Player"):
 		print(body.name + ",Invalid Entered on " + self.name + " Detection Area (Idle)")
 		return
 	print(body.name + " Entered on " + self.name + " Detection Area (Idle)")

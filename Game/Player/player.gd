@@ -1,7 +1,10 @@
 extends CharacterBody2D
+class_name PlayerClass
 
 @export var spritePlayer: AnimatedSprite2D
-var Sanity = 100
+@export var Hitbox :Area2D
+
+var Sanity := 100.0
 const SPEED = 100.0
 const JUMP_VELOCITY = -400.0
 
@@ -31,3 +34,6 @@ func _physics_process(_delta: float) -> void:
 			spritePlayer.flip_h = false
 		#print("Gabriel")
 	move_and_slide()
+
+func take_damage(damage: float):
+	Sanity -= damage
