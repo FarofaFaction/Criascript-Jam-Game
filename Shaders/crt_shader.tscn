@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbs8kdjubysdg"]
+
+[ext_resource type="Shader" path="res://Shaders/CRT.gdshader" id="1_8es72"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ncrr3"]
+shader = ExtResource("1_8es72")
+shader_parameter/crt_curve = 0.02
+shader_parameter/crt_scan_line_color = 0.347
+shader_parameter/aperture_grille_rate = 0.6
+shader_parameter/aparture_grille_cut_rate = 0.885
+shader_parameter/rf_switch_esque_blur = 1.0
+shader_parameter/white_noise_rate = 0.0
+
+[node name="CRTShader" type="ColorRect"]
+top_level = true
+material = SubResource("ShaderMaterial_ncrr3")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

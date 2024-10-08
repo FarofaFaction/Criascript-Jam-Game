@@ -29,12 +29,15 @@ func change_scene(scene: String):
 		#get_tree().change_scene_to_file(Game)
 	else:
 		return
+	Transition.transition("fade_to_black")
+	await Transition.on_transition_finished
 	get_tree().change_scene_to_file(Loading)
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
+
 
 func _init_audio():
 	bus_index = AudioServer.get_bus_index(bus_name)

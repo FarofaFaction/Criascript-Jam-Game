@@ -13,6 +13,9 @@ var Sanity := 100.0
 var _is_running := false
 const SPEED = 100.0
 
+func _ready() -> void:
+	Transition.transition("fade_out_black")
+
 func _move_speed_controler():
 	if Input.is_action_pressed("Run"):
 		_is_running = true

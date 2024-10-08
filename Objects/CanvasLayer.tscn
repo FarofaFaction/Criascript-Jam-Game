@@ -1,19 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dmkbsln86fgm7"]
+[gd_scene load_steps=6 format=3 uid="uid://dmkbsln86fgm7"]
 
-[ext_resource type="Shader" path="res://Shaders/CRT.gdshader" id="1_pj1yy"]
 [ext_resource type="Script" path="res://Interface/PlayerInterface/sanity.gd" id="2_6m3ts"]
 [ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="2_75npj"]
 [ext_resource type="Script" path="res://Interface/PlayerInterface/timer.gd" id="3_eetj6"]
 [ext_resource type="PackedScene" uid="uid://bcbwi06gudnxm" path="res://Interface/Pause/in_game_pause.tscn" id="4_ab67x"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ncrr3"]
-shader = ExtResource("1_pj1yy")
-shader_parameter/crt_curve = 0.02
-shader_parameter/crt_scan_line_color = 0.347
-shader_parameter/aperture_grille_rate = 0.6
-shader_parameter/aparture_grille_cut_rate = 0.885
-shader_parameter/rf_switch_esque_blur = 1.0
-shader_parameter/white_noise_rate = 0.0
+[ext_resource type="PackedScene" uid="uid://cbs8kdjubysdg" path="res://Shaders/crt_shader.tscn" id="5_7b262"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
@@ -99,11 +90,4 @@ color = Color(0, 0, 0, 1)
 
 [node name="InGamePause" parent="." instance=ExtResource("4_ab67x")]
 
-[node name="CRTShader" type="ColorRect" parent="."]
-top_level = true
-material = SubResource("ShaderMaterial_ncrr3")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="CRTShader" parent="." instance=ExtResource("5_7b262")]

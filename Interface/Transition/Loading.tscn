@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://clkvm2833frs8"]
+[gd_scene load_steps=4 format=3 uid="uid://clkvm2833frs8"]
 
 [ext_resource type="Script" path="res://Interface/Transition/loading.gd" id="1_5xqog"]
 [ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="1_lrlks"]
+[ext_resource type="PackedScene" uid="uid://cbs8kdjubysdg" path="res://Shaders/crt_shader.tscn" id="3_xcns5"]
 
 [node name="Loading" type="CanvasLayer"]
 script = ExtResource("1_5xqog")
@@ -40,3 +41,5 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_lrlks")
 theme_override_font_sizes/font_size = 64
 text = "Carregando"
+
+[node name="CRTShader" parent="." instance=ExtResource("3_xcns5")]

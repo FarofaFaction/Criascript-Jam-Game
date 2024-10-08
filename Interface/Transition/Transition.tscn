@@ -1,72 +1,73 @@
-[gd_scene load_steps=5 format=3 uid="uid://c3ij7q3uf2yfq"]
+[gd_scene load_steps=6 format=3 uid="uid://c3ij7q3uf2yfq"]
 
-[sub_resource type="Animation" id="Animation_vp2ji"]
+[ext_resource type="Script" path="res://Interface/Transition/transition.gd" id="1_xjruj"]
+
+[sub_resource type="Animation" id="Animation_0cyl6"]
+resource_name = "fade_to_black"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_rha2t"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
+tracks/0/path = NodePath(".:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0, 0, 0, 1)]
+"values": [Color(0, 0, 0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_q7t25"]
-resource_name = "FadeOut"
-length = 0.5
+[sub_resource type="Animation" id="Animation_ky8g5"]
+resource_name = "fade_out_black"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
+tracks/0/path = NodePath(".:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_lglii"]
-resource_name = "FadeIn"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_bsubl"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5kyfc"]
 _data = {
-"FadeIn": SubResource("Animation_lglii"),
-"FadeOut": SubResource("Animation_q7t25"),
-"RESET": SubResource("Animation_vp2ji")
+"RESET": SubResource("Animation_rha2t"),
+"fade_out_black": SubResource("Animation_ky8g5"),
+"fade_to_black": SubResource("Animation_0cyl6")
 }
 
-[node name="Transition" type="Node2D"]
+[node name="Transition" type="CanvasLayer"]
+script = ExtResource("1_xjruj")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+color = Color(0, 0, 0, 0)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../ColorRect")
 libraries = {
-"": SubResource("AnimationLibrary_bsubl")
+"": SubResource("AnimationLibrary_5kyfc")
 }
+speed_scale = 0.5
