@@ -1,7 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://7sspjh77o6vm"]
+[gd_scene load_steps=20 format=3 uid="uid://7sspjh77o6vm"]
 
 [ext_resource type="Script" path="res://Game/Player/player.gd" id="1_n8fh7"]
 [ext_resource type="AudioStream" uid="uid://bgegloq6p5nx7" path="res://Audio/Effects/Male_Hurt_-_Sound_Effect.wav" id="2_4feee"]
+[ext_resource type="AudioStream" uid="uid://cm70m3qagwuin" path="res://Audio/Effects/668349__deltacode__8bit-scream.wav" id="2_aigqn"]
 [ext_resource type="AudioStream" uid="uid://b2obv3esujl8x" path="res://Audio/Effects/andando.mp3" id="2_gyrqa"]
 [ext_resource type="Texture2D" uid="uid://dgq2m1cnwgbv" path="res://Game/Player/idle.png" id="2_jplro"]
 [ext_resource type="AudioStream" uid="uid://cdtjj7teyvys5" path="res://Audio/Effects/correndo.mp3" id="3_8k3q0"]
@@ -90,6 +91,7 @@ collision_layer = 2
 collision_mask = 2
 motion_mode = 1
 script = ExtResource("1_n8fh7")
+dying_sound = ExtResource("2_aigqn")
 walking_sound = ExtResource("2_gyrqa")
 running_sound = ExtResource("3_8k3q0")
 spritePlayer = NodePath("Sprite")
@@ -103,7 +105,6 @@ metadata/_edit_pinned_properties_ = [&"walking_sound", &"running_sound"]
 
 [node name="DamageAudioPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_4feee")
-pitch_scale = 0.5
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_amjbx")

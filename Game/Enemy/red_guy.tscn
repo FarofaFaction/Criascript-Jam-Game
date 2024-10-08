@@ -171,13 +171,18 @@ enemy = NodePath("../..")
 script = ExtResource("6_d7lxm")
 enemy = NodePath("../..")
 
-[node name="EnemyVomitAtack" type="Node" parent="State Machine" node_paths=PackedStringArray("vomit_raycast", "vomit", "enemy", "vomit_timer")]
+[node name="EnemyVomitAtack" type="Node" parent="State Machine" node_paths=PackedStringArray("vomit_raycast", "vomit", "enemy", "vomit_timer", "damage_start_timer")]
 script = ExtResource("7_2xmc2")
 vomit_raycast = NodePath("../../Sprite/VomitAtack/VomitRayCast")
 vomit = NodePath("../../Sprite/VomitAtack/VomitSpray")
 enemy = NodePath("../..")
 vomit_timer = NodePath("Timer")
+damage_start_timer = NodePath("DamageStartTimer")
+metadata/_edit_pinned_properties_ = [&"damage_start_timer"]
 
 [node name="Timer" type="Timer" parent="State Machine/EnemyVomitAtack"]
 wait_time = 3.0
 one_shot = true
+
+[node name="DamageStartTimer" type="Timer" parent="State Machine/EnemyVomitAtack"]
+wait_time = 0.25

@@ -7,7 +7,9 @@ var _vomited_object
 @export var enemy : Enemy
 @export var vomit_duration := 1
 @export var vomit_timer : Timer
+@export var damage_start_timer : Timer
 var _direction := Vector2.ZERO
+var _doing_damage := false
 
 func Enter():
 	print("StartVomitAtack")
@@ -17,10 +19,14 @@ func Enter():
 	vomit_timer.connect("timeout", vomit_timeout)
 	vomit_timer.wait_time = vomit_duration
 	vomit_timer.start()
+	damage_start_timer.connect("timeout", start_do_damage)
+	damage_start_timer.start()
 	vomit.emitting = true
 
 func Exit():
+	_doing_damage = false
 	vomit.emitting = false
+	damage_start_timer.disconnect("timeout", start_do_damage)
 	vomit_timer.disconnect("timeout", vomit_timeout)
 	pass
 
@@ -40,11 +46,12 @@ func Physics_Update():
 	#_direction = (enemy.global_position - enemy.LastTarget.global_position).normalized()
 	vomit.look_at(enemy.LastTarget.global_position)
 	vomit_raycast.look_at(enemy.LastTarget.global_position)
+	if (!_doing_damage):
+		return
 	_vomited_object = vomit_raycast.get_collider()
 	if (_vomited_object && (_vomited_object.get_parent() == enemy.LastTarget)):
 		if enemy.LastTarget is PlayerClass:
 			enemy.LastTarget.take_damage(0.5)
-		pass
 	pass
 
 func vomit_timeout():
@@ -55,3 +62,6 @@ func vomit_timeout():
 	Transitioned.emit(self, "EnemyFollow")
 	pass
 	
+func start_do_damage():
+	_doing_damage = true
+	pass

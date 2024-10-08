@@ -10,18 +10,12 @@ func _ready() -> void:
 	animation_player.animation_finished.connect(_on_animation_finished)
 	pass
 
-func _on_animation_finished(anim_name):
+func _on_animation_finished(_anim_name): #O signal recebido precisa desse parametro, mesmo que eu nao use
 	on_transition_finished.emit()
 	color_rect.visible = false
 	pass
 
 func transition(anim_name : String):
 	color_rect.visible = true
-	if (anim_name == "fade_to_black"):
-		animation_player.play("fade_to_black")
-	elif (anim_name == "fade_out_black"):
-		animation_player.play("fade_out_black")
-	else:
-		print("Transition Not Found")
-		on_transition_finished.emit()
+	animation_player.play(anim_name)
 	pass

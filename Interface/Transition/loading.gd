@@ -8,7 +8,7 @@ func _ready():
 	ResourceLoader.load_threaded_request(next_scene_path) # Starts the loading process behind the scenes
 
 
-func _process(delta):
+func _process(_delta):
 	if ResourceLoader.load_threaded_get_status(next_scene_path) == ResourceLoader.THREAD_LOAD_LOADED: # Checks to see if the file is finished loading
 		set_process(false) # Stops the process function; otherwise this block will be called multiple times and cause errors
 		#await get_tree().create_timer(1).timeout # Added a delay for testing purposes. Can be removed in the final game.
