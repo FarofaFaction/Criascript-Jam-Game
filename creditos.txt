@@ -4,6 +4,7 @@ flags - https://lukasfdahl.itch.io/amarican-flags
 
 audios
 scream male - https://freesound.org/people/DeltaCode/sounds/668349/
+fast knocking - https://freesound.org/people/perrybassin/sounds/686795/
 
 musicas:
 som de fundo asssustador - https://freesound.org/people/kwahmah_02/sounds/275563/
