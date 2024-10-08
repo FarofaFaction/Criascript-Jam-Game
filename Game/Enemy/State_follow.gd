@@ -22,12 +22,10 @@ func Enter():
 	enemy.DetectionArea.connect("area_exited", body_area_exited)
 
 func Exit():
-	if (!enemy || !enemy.DetectionArea || !enemy.Target is PlayerClass):
-		print("Exit EnemyFollow (!enemy || !enemy.DetectionArea):")
-		return
 	#timer.queue_free()
-	#timer = null
-	enemy.Target = null
+	#timer = null7
+	if (enemy):
+		enemy.Target = null
 	print("Exit Follow State")
 	if (enemy.DetectionArea.is_connected("area_exited", body_area_exited)):
 		enemy.DetectionArea.disconnect("area_exited", body_area_exited)
