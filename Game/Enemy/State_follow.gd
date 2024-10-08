@@ -18,6 +18,7 @@ func Enter():
 	#timer = Timer.new()
 	#timer.wait_time = 1
 	#timer.start()
+	
 	enemy.DetectionArea.connect("area_exited", body_area_exited)
 
 func Exit():
@@ -28,7 +29,8 @@ func Exit():
 	#timer = null
 	enemy.Target = null
 	print("Exit Follow State")
-	enemy.DetectionArea.disconnect("area_exited", body_area_exited)
+	if (enemy.DetectionArea.is_connected("area_exited", body_area_exited)):
+		enemy.DetectionArea.disconnect("area_exited", body_area_exited)
 	pass
 
 func Update():
@@ -59,5 +61,7 @@ func body_area_exited(area):
 	if (body && body == enemy.Target):
 		print(body.name + " Exited on " + self.name + " Detection Area (Follow)")
 		Transitioned.emit(self, "EnemyIdle")
+		if (enemy.DetectionArea.is_connected("area_exited", body_area_exited)):
+			enemy.DetectionArea.disconnect("area_exited", body_area_exited)
 	pass
 	

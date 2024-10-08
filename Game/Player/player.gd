@@ -3,7 +3,8 @@ class_name PlayerClass
 
 @export var spritePlayer: AnimatedSprite2D
 @export var Hitbox :Area2D
-
+@export var StepsAudioPlayer: AudioStreamPlayer2D
+@export var DamageAudioPlayer: AudioStreamPlayer2D
 var Sanity := 100.0
 const SPEED = 100.0
 const JUMP_VELOCITY = -400.0
@@ -36,4 +37,6 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 func take_damage(damage: float):
+	if (!DamageAudioPlayer.playing):
+		DamageAudioPlayer.play()
 	Sanity -= damage

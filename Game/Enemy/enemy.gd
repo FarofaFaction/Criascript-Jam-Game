@@ -7,8 +7,14 @@ var Target : Node
 @export var SelfArea : Area2D
 @export var speed: int = 100
 @export var animationPlayer : AnimatedSprite2D
+@export var ParticleWeapon: GPUParticles2D
 #@export var player: CharacterBody2D
 
+func _ready() -> void:
+	if ParticleWeapon:
+		ParticleWeapon.emitting = false
+	pass
+	
 func _physics_process(_delta: float) -> void:
 
 	if (!velocity):
