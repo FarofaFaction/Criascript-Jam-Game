@@ -62,6 +62,8 @@ offset_top = 87.0
 offset_right = 1675.0
 offset_bottom = 127.0
 script = ExtResource("3_eetj6")
+seconds_per_minute = 1.0
+timestop = false
 
 [node name="TimeLabel" type="Label" parent="Timer"]
 layout_mode = 0
