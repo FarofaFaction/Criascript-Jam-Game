@@ -20,3 +20,4 @@ mono_crash.*.json
 .godot/editor/room.tscn-editstate-542deb87b60621c39b4da200e9d2958b.cfg
 .godot/editor/filesystem_cache8
 *.cfg
+.godot/uid_cache.bin
