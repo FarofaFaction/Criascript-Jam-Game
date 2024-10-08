@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dmkbsln86fgm7"]
+[gd_scene load_steps=5 format=3 uid="uid://dmkbsln86fgm7"]
 
 [ext_resource type="Script" path="res://Interface/PlayerInterface/sanity.gd" id="2_6m3ts"]
 [ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="2_75npj"]
-[ext_resource type="Script" path="res://Interface/PlayerInterface/timer.gd" id="3_eetj6"]
 [ext_resource type="PackedScene" uid="uid://bcbwi06gudnxm" path="res://Interface/Pause/in_game_pause.tscn" id="4_ab67x"]
 [ext_resource type="PackedScene" uid="uid://cbs8kdjubysdg" path="res://Shaders/crt_shader.tscn" id="5_7b262"]
 
@@ -53,42 +52,6 @@ theme_override_constants/shadow_offset_x = 6
 theme_override_fonts/font = ExtResource("2_75npj")
 theme_override_font_sizes/font_size = 24
 text = "Sanidade"
-
-[node name="Timer" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 1635.0
-offset_top = 87.0
-offset_right = 1675.0
-offset_bottom = 127.0
-script = ExtResource("3_eetj6")
-seconds_per_minute = 1.0
-timestop = false
-
-[node name="TimeLabel" type="Label" parent="Timer"]
-layout_mode = 0
-offset_left = 93.0
-offset_top = -15.0
-offset_right = 189.0
-offset_bottom = 9.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_75npj")
-theme_override_font_sizes/font_size = 24
-text = "Time"
-
-[node name="ColorRect" type="ColorRect" parent="Timer/TimeLabel"]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -23.0
-offset_top = -16.0
-offset_right = 23.0
-offset_bottom = 16.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
 
 [node name="InGamePause" parent="." instance=ExtResource("4_ab67x")]
 

@@ -2,15 +2,19 @@ extends Control
 class_name  Watch
 
 # Variables to control the time
-@onready var TimeLabel : Label = $TimeLabel
-@onready var timer = set_time(18, 0)
+var text: String
 var total_time: float = 0.0
-@export var seconds_per_minute: float = 60 * 8  # 8 hours in seconds (480 seconds) for 1 minute of gameplay
-@export var timestop := true
+var seconds_per_minute: float = 60 * 8  # 8 hours in seconds (480 seconds) for 1 minute of gameplay
+#var timestop := true
+var timestop := false
 var hours: int
 var minutes: int
 var seconds: int
 
+func _ready() -> void:
+	set_time(18, 0)
+	pass
+	
 func _run_clock(_delta: float):
 	total_time += (_delta * seconds_per_minute)
 
@@ -18,8 +22,8 @@ func _run_clock(_delta: float):
 	minutes = int(int(total_time) % 3600 / 60)
 	seconds = int(int(total_time) % 60)
 	# Format the time
-	TimeLabel.text = "%02d:%02d" % [hours, minutes]
-	TimeLabel.text = "%02d:%02d:%02d" % [hours, minutes, seconds]
+	text = "%02d:%02d" % [hours, minutes]
+	#text = "%02d:%02d:%02d" % [hours, minutes, seconds]
 	pass
 
 func start():
@@ -44,6 +48,6 @@ func set_time(hour: int, minute: int):
 
 	total_time = float(total_seconds)
 
-	var hours: int = int(total_time / 3600) % 24
-	var minutes: int = int(int(total_time) % 3600 / 60)
-	TimeLabel.text = "%02d:%02d" % [hours, minutes]
+	hours = int(total_time / 3600) % 24
+	minutes = int(int(total_time) % 3600 / 60)
+	text = "%02d:%02d" % [hours, minutes]
