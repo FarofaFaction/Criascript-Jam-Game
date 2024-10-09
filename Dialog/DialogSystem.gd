@@ -10,7 +10,8 @@ var data: Dictionary = {}
 @export var _faceset: TextureRect = null
 
 func _ready() -> void:
-	print("maicou")
+	process_mode = Node.PROCESS_MODE_ALWAYS
+	$CanvasLayer.visible = false
 	pass
 	
 func _initialize_dialog():
@@ -32,8 +33,9 @@ func _process(delta: float) -> void:
 	pass
 
 func start_dialog():
-	visible = true
+	$CanvasLayer.visible = true
 	get_tree().paused = true
+	_initialize_dialog()
 	pass
 
 func _run_dialog(delta: float) -> void:
@@ -50,6 +52,8 @@ func _run_dialog(delta: float) -> void:
 	pass
 
 func _finish_dialog():
-	queue_free()
+	data = {}
+	$CanvasLayer.visible = false
+	_id = 0
 	get_tree().paused = false
 	pass
