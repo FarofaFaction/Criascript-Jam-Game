@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://7sspjh77o6vm"]
+[gd_scene load_steps=21 format=3 uid="uid://7sspjh77o6vm"]
 
 [ext_resource type="Script" path="res://Game/Player/player.gd" id="1_n8fh7"]
 [ext_resource type="AudioStream" uid="uid://bgegloq6p5nx7" path="res://Audio/Effects/Male_Hurt_-_Sound_Effect.wav" id="2_4feee"]
@@ -84,13 +84,17 @@ size = Vector2(14, 5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cgdn2"]
 size = Vector2(10, 25)
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("spritePlayer", "Hitbox", "StepsAudioPlayer", "DamageAudioPlayer") groups=["Player"]]
+[sub_resource type="CircleShape2D" id="CircleShape2D_hrrjj"]
+radius = 17.0
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("InteractArea", "spritePlayer", "Hitbox", "StepsAudioPlayer", "DamageAudioPlayer") groups=["Player"]]
 y_sort_enabled = true
 position = Vector2(952, 431)
 collision_layer = 2
 collision_mask = 2
 motion_mode = 1
 script = ExtResource("1_n8fh7")
+InteractArea = NodePath("InteractArea")
 dying_sound = ExtResource("2_aigqn")
 walking_sound = ExtResource("2_gyrqa")
 running_sound = ExtResource("3_8k3q0")
@@ -148,3 +152,12 @@ collision_mask = 0
 [node name="Hitbox" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_cgdn2")
+
+[node name="InteractArea" type="Area2D" parent="."]
+collision_layer = 2147483648
+collision_mask = 0
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
+position = Vector2(0, 12)
+shape = SubResource("CircleShape2D_hrrjj")
