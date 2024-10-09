@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1qo76acvn1ua"]
+
+[ext_resource type="Script" path="res://Game/Quests/DoctorKnocking/RedGuyTime/red_guy_time.gd" id="1_tx5mw"]
+
+[node name="RedGuyTime" type="Node"]
+script = ExtResource("1_tx5mw")

@@ -3,8 +3,12 @@ class_name Stage
 
 @onready var my_quest = get_parent()
 
-#func _ready() -> void:
-	#pass # Replace with function body.
+func _ready() -> void:
+	if !init_stage():
+		return
+	GlobalTimer.set_time(18, 0)
+	GlobalTimer.set_speed(6)
+	pass
 #
 #
 #func _process(_delta: float) -> void:

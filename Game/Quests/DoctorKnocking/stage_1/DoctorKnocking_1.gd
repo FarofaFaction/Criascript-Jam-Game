@@ -26,5 +26,6 @@ func _process(_delta: float) -> void:
 	pass
 
 func Interaction():
+	my_quest.load_stage("RedGuy")
 	my_quest.remove_stage(self.name)
 	pass
