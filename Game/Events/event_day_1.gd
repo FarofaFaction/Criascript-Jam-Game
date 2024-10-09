@@ -15,7 +15,7 @@ func _process(_delta: float) -> void:
 		return
 	if GlobalTimer.minutes < 0:
 		return
-	if (!$DoctorKnocking.playing):
-		$DoctorKnocking.play()
+	if (!$Door/KnockingSound.playing):
+		$Door/KnockingSound.play()
 		#event_1 = true
 	pass

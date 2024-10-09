@@ -17,7 +17,6 @@ signal PlayerDied
 var _died := false
 var _is_running := false
 const SPEED = 100.0
-var _interactible: Node2D
 
 func _ready() -> void:
 	PlayerDied.connect(on_player_died)
@@ -95,26 +94,3 @@ func on_player_died():
 	_died = true
 	Global.change_scene("Game")
 	pass
-
-func _interaction_controler():
-	if !_interactible:
-		return
-	if !_interactible.has_method("Interaction()"):
-		return
-	if (Input.is_action_just_pressed("interact")):
-		_interactible.interact()
-	pass
-
-func _interactible_entered(area) -> void:
-	var node = area.get_parent()
-	if !node || !node.has_method("Interaction()"):
-		return
-	_interactible = node
-	pass # Replace with function body.
-
-func _interactible_exited(area) -> void:
-	var node = area.get_parent()
-	if !node || !node.has_method("Interaction()"):
-		return
-	_interactible = null
-	pass 
