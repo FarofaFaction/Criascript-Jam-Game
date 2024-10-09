@@ -65,10 +65,10 @@ grow_vertical = 2
 
 [node name="Background" type="Control" parent="DialogSystem"]
 anchors_preset = 0
-offset_left = 520.0
-offset_top = 592.0
-offset_right = 1376.0
-offset_bottom = 1032.0
+offset_left = 504.0
+offset_top = 656.0
+offset_right = 1392.0
+offset_bottom = 968.0
 
 [node name="ColorRect" type="ColorRect" parent="DialogSystem/Background"]
 layout_mode = 1
@@ -89,19 +89,48 @@ offset_right = 1240.0
 offset_bottom = 928.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="DialogSystem/TextPlace"]
+layout_mode = 2
+offset_left = -40.0
+offset_right = 656.0
+offset_bottom = 216.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="RichTextLabel" parent="DialogSystem/TextPlace/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_75npj")
+theme_override_font_sizes/normal_font_size = 32
+text = "Com está caixa de Dialogo eu  te Chamo de Amigo, agradeço a  curiosidade de vir aqui fuçar  Meu Codigo."
+fit_content = true
+
+[node name="Name" type="Control" parent="DialogSystem"]
+anchors_preset = 0
+offset_left = 560.0
+offset_top = 616.0
+offset_right = 792.0
+offset_bottom = 688.0
+
+[node name="Label" type="Label" parent="DialogSystem/Name"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_75npj")
+theme_override_font_sizes/font_size = 36
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Label" type="Label" parent="DialogSystem/TextPlace/VBoxContainer"]
-layout_mode = 2
-text = "TextPlaceHolder
-"
+[node name="ColorRect" type="ColorRect" parent="DialogSystem/Name/Label"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
 [node name="CRTShader" parent="." instance=ExtResource("5_7b262")]
-visible = false
-offset_top = 80.0
-offset_bottom = 80.0
