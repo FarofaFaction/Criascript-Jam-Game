@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://wttewp7c4g6k"]
+
+[ext_resource type="AudioStream" uid="uid://b07cj7ebpal6l" path="res://Audio/Effects/509396__tc630__knock-knock-knock.wav" id="1_acdop"]
+
+[node name="KnockingSound" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_acdop")
+volume_db = 4.0
+max_distance = 400.0
