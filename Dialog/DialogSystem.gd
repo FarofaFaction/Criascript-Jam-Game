@@ -28,14 +28,16 @@ func _initialize_dialog():
 		pass
 
 func _process(delta: float) -> void:
-	if (visible):
+	if ($CanvasLayer.visible):
 		_run_dialog(delta)
 	pass
 
 func start_dialog():
 	$CanvasLayer.visible = true
-	get_tree().paused = true
 	_initialize_dialog()
+	get_tree().paused = true
+	#for i in data:
+		#print(data[i]["title"])
 	pass
 
 func _run_dialog(delta: float) -> void:

@@ -1,6 +1,7 @@
 extends Stage
 
 @onready var KnockingSound = $KnockingSound
+var _can_open := false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if !init_stage():
@@ -17,15 +18,19 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if GlobalTimer.hours < 18:
-		return
-	if GlobalTimer.minutes < 1:
+	if (GlobalTimer.hours >= 18 && GlobalTimer.minutes >= 1):
+		_can_open = true
+	if (!_can_open):
 		return
 	if (!KnockingSound.playing):
 		KnockingSound.play()
 	pass
 
 func Interaction():
-	my_quest.load_stage("RedGuy")
+	if (!_can_open):
+		return
+	var node = preload("res://Dialog/DialogClass/DialogClass.tscn").instantiate()
+	add_child(node)
+	#my_quest.load_stage("RedGuy")
 	my_quest.remove_stage(self.name)
 	pass

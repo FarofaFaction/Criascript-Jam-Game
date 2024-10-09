@@ -16,6 +16,7 @@ var _dialog_data: Dictionary = {
 func _ready() -> void:
 	for child in get_children():
 		if child is SpeakClass:
+			#print(child.name)
 			_dialog_data[_id] = {
 				"title": child.speaker,
 				"dialog": child.text,
@@ -28,9 +29,9 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("Power"):
-		DialogSystem.data = _dialog_data
-		DialogSystem.start_dialog()
-	pass
+## Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta: float) -> void:
+	#if Input.is_action_just_pressed("Power"):
+		#DialogSystem.data = _dialog_data
+		#DialogSystem.start_dialog()
+	#pass
