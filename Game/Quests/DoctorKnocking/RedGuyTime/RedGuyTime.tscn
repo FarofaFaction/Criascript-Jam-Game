@@ -4,3 +4,6 @@
 
 [node name="RedGuyTime" type="Node"]
 script = ExtResource("1_tx5mw")
+
+[node name="Node2D" type="Node2D" parent="."]
+y_sort_enabled = true

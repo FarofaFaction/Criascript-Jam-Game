@@ -6,9 +6,12 @@ func _ready() -> void:
 	GlobalTimer.set_speed(60)
 	var pos: Node2D = my_quest.get_tool("door")
 	if pos:
-		var node = preload("res://Game/Enemy/red_guy.tscn").instantiate()
-		node.global_position = pos.global_position
-		add_child(node)
+		for i in 30:
+			var node = preload("res://Game/Enemy/red_guy.tscn").instantiate()
+			node.global_position = pos.global_position
+			$Node2D.add_child(node)
+			i += 1
+			print(i)
 		
 	pass
 #
