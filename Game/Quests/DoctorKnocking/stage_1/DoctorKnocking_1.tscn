@@ -46,7 +46,8 @@ offset_right = 40.0
 offset_bottom = 40.0
 text = "Bom Dia Dorminhoco"
 script = ExtResource("5_xkpak")
-speaker = "Doutor"
+image = "res://Dialog/Characters/Doctor/DoctorPortrait.jpg"
+speaker = "Doctor"
 
 [node name="SpeakClass3" type="RichTextLabel" parent="CanvasLayer/DialogWithOptions"]
 layout_mode = 0
@@ -54,7 +55,8 @@ offset_right = 40.0
 offset_bottom = 40.0
 text = "Pronto Pra Tomar Seu Remedio ?"
 script = ExtResource("5_xkpak")
-speaker = "Doutor"
+image = "res://Dialog/Characters/Doctor/DoctorPortrait.jpg"
+speaker = "Doctor"
 
 [node name="DialogMenu" type="Control" parent="CanvasLayer/DialogWithOptions" node_paths=PackedStringArray("options_conection")]
 process_mode = 3
@@ -215,7 +217,8 @@ offset_right = 40.0
 offset_bottom = 40.0
 text = "Muito Bem, Até Mais Tarde"
 script = ExtResource("5_xkpak")
-speaker = "lol"
+image = "res://Dialog/Characters/Doctor/DoctorPortrait.jpg"
+speaker = "Doctor"
 
 [connection signal="pressed" from="CanvasLayer/DialogWithOptions/DialogMenu/Panel/OptionsContainer/Option1" to="CanvasLayer/DialogWithOptions/DialogMenu" method="_on_option_1_pressed"]
 [connection signal="pressed" from="CanvasLayer/DialogWithOptions/DialogMenu/Panel/OptionsContainer/Option2" to="CanvasLayer/DialogWithOptions/DialogMenu" method="_on_option_2_pressed"]

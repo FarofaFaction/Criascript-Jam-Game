@@ -12,7 +12,7 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
-@onready var shader_material = $"../../CanvasLayer/ColorRect".material
+#@onready var shader_material = $"../../CanvasLayer/ColorRect".material
 
 func _process(delta):
 	# Obtenha a posição global do node
@@ -26,4 +26,4 @@ func _process(delta):
 	var real_center = global_pos / screen_size
 
 	# Atualize o uniform do shader material.set_shader_parameter("TextureMask", textureImage)
-	shader_material.set_shader_parameter("real_center", real_center)
+	#shader_material.set_shader_parameter("real_center", real_center)

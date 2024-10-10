@@ -1,61 +1,93 @@
 shader_type canvas_item;
 
-varying mat4 angle;
-varying mat4 anti_angle;
+uniform float shake: hint_range(0, 10) = 0.015;
+uniform float noiseQuality: hint_range(0.1, 250, 0.1) = 250;
+uniform float noiseIntensity: hint_range(0, 0.05, 0.001) = 0.001;
+uniform float offsetIntensity: hint_range(0, 0.05, 0.0001) = 0.0045;
+uniform float colorOffsetIntensity: hint_range(0.1, 1.5, 0.001) = 0.2;
+uniform float pixelSize: hint_range(1, 1024) = 200.0;
+uniform float grainIntensity: hint_range(0, 1) = 0.04; // Intensity of film grain
 
-void vertex() {
-	angle=mat4(mat3(MODEL_MATRIX))+mat4(vec4(0.),vec4(0.),vec4(0.,0.,1.,0.),vec4(0.,0.,0.,1.));
-	
-	mat3 rotation = mat3(angle);
-    
-    mat3 inverseRotation3x3 = transpose(rotation);
-    
-    mat4 inverseRotation4x4 =mat4(inverseRotation3x3)+mat4(vec4(0.),vec4(0.),vec4(0.,0.,1.,0.),vec4(0.,0.,0.,1.));
-	anti_angle=inverseRotation4x4;
+uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_nearest;
+uniform sampler2D overlay_texture : hint_default_transparent;
+uniform bool use_overlay = true; // Toggle for using overlay texture
+uniform bool use_lens_distortion = true; // Toggle for using lens distortion
+
+uniform vec4 overlay_color : source_color = vec4(1.0, 1.0, 1.0, 10.0); // Allow changing overlay color
+uniform float lens_distortion_strength: hint_range(0, 0.1) = 0.05; // Strength of lens distortion effect
+
+varying vec2 previous_pos; // Previous fragment position
+
+float rand(vec2 co)
+{
+    return fract(sin(dot(co.xy, vec2(12.9898, 78.233))) * 43758.5453);
+}
+
+float verticalBar(float pos, float uvY, float offset)
+{
+    float edge0 = (pos - shake);
+    float edge1 = (pos + shake);
+
+    float x = smoothstep(edge0, pos, uvY) * offset;
+    x -= smoothstep(pos, edge1, uvY) * offset;
+    return x;
 }
 
 void fragment() {
-	float pixel_sc=32.;
-	float pixel_size=1./pixel_sc;
-	
-	vec2 uv=UV-.5;
-	uv*=pixel_sc;
-	uv=(anti_angle*vec4(floor((angle*vec4(uv,0.,1.)).xy),0.,1.)).xy/(pixel_sc-1.)+.5+pixel_size/2.;
-	
-	vec4 color_1=texture(TEXTURE,uv);
-	
-	color_1.a=step(0.5,color_1.a);
+    vec2 iResolution = 1.0 / SCREEN_PIXEL_SIZE;
+    vec2 uv = FRAGCOORD.xy / iResolution.xy;
 
-	vec3 color_c=color_1.rgb;
-	vec3 color_up=texture(TEXTURE,vec2(uv.x,uv.y+pixel_size)).rgb;
-	vec3 color_down=texture(TEXTURE,vec2(uv.x,uv.y-pixel_size)).rgb;
-	vec3 color_right=texture(TEXTURE,vec2(uv.x+pixel_size,uv.y)).rgb;
-	vec3 color_left=texture(TEXTURE,vec2(uv.x-pixel_size,uv.y)).rgb;
-	vec3 color_up_right=texture(TEXTURE,vec2(uv.x+pixel_size,uv.y+pixel_size)).rgb;
-	vec3 color_down_right=texture(TEXTURE,vec2(uv.x+pixel_size,uv.y-pixel_size)).rgb;
-	vec3 color_down_left=texture(TEXTURE,vec2(uv.x-pixel_size,uv.y-pixel_size)).rgb;
-	vec3 color_up_left=texture(TEXTURE,vec2(uv.x-pixel_size,uv.y+pixel_size)).rgb;
+    // Calculate velocity
+    vec2 velocity = uv - previous_pos;
 
-	float l1=length(color_c-color_up);
-	float l2=length(color_c-color_down);
-	float l3=length(color_c-color_right);
-	float l4=length(color_c-color_left);
-	float l5=length(color_c-color_up_right);
-	float l6=length(color_c-color_down_right);
-	float l7=length(color_c-color_down_left);
-	float l8=length(color_c-color_up_left);
+    // Apply pixelation effect
+    uv = floor(uv * pixelSize) / pixelSize;
 
-	float min_l=min(min(min(l1,l2),min(l3,l4)),min(min(l5,l6),min(l7,l8)));
+    // Add vertical bars distortion
+    for (float i = 0.0; i < 0.71; i += 0.1313)
+    {
+        float d = mod(TIME * i, 1.7);
+        float o = sin(1.0 - tan(TIME * 0.24 * i));
+        o *= offsetIntensity;
+        uv.x += verticalBar(d, uv.y, o);
+    }
 
-	float bender=0.0;
+    // Add noise distortion
+    float uvY = uv.y * noiseQuality;
+    uvY = float(int(uvY)) * (1.0 / noiseQuality);
+    float noise = rand(vec2(TIME * 0.00001, uvY));
+    uv.x += noise * noiseIntensity;
 
-	COLOR=color_1;
-	COLOR=abs(min_l-l1)<0.00001?vec4(mix(color_up,color_c,bender),color_1.a):color_1;
-	COLOR=abs(min_l-l2)<0.00001?vec4(mix(color_down,COLOR.rgb,bender),COLOR.a):COLOR;
-	COLOR=abs(min_l-l3)<0.00001?vec4(mix(color_right,COLOR.rgb,bender),COLOR.a):COLOR;
-	COLOR=abs(min_l-l4)<0.00001?vec4(mix(color_left,COLOR.rgb,bender),COLOR.a):COLOR;
-	COLOR=abs(min_l-l5)<0.00001?vec4(mix(color_up_right,COLOR.rgb,bender),COLOR.a):COLOR;
-	COLOR=abs(min_l-l6)<0.00001?vec4(mix(color_down_right,COLOR.rgb,bender),COLOR.a):COLOR;
-	COLOR=abs(min_l-l7)<0.00001?vec4(mix(color_down_left,COLOR.rgb,bender),COLOR.a):COLOR;
-	COLOR=abs(min_l-l8)<0.00001?vec4(mix(color_up_left,COLOR.rgb,bender),COLOR.a):COLOR;
+    // Add color offset distortion
+    vec2 offsetR = vec2(0.006 * sin(TIME), 0.0) * colorOffsetIntensity;
+    vec2 offsetG = vec2(0.0073 * cos(TIME * 0.97), 0.0) * colorOffsetIntensity;
+
+    float r = texture(screen_texture, uv + offsetR).r;
+    float g = texture(screen_texture, uv + offsetG).g;
+    float b = texture(screen_texture, uv).b;
+
+    vec4 tex = vec4(r, g, b, 1.0);
+
+    // Overlay with an optional texture
+    if (use_overlay) {
+        vec4 overlayColor = texture(overlay_texture, uv) * overlay_color; // Apply overlay color
+        tex = mix(tex, overlayColor, overlayColor.a);
+    }
+
+    // Add film grain
+    float grain = rand(uv) * 2.0 - 1.0; // Range from -1 to 1
+    tex.rgb += grainIntensity * grain;
+
+    // Apply lens distortion
+    if (use_lens_distortion) {
+        vec2 distortion = uv * lens_distortion_strength * (uv - 1.0);
+        vec4 distorted_tex = texture(screen_texture, uv + distortion);
+        tex = mix(tex, distorted_tex, 0.5);
+    }
+
+    // Apply final color
+    COLOR = tex;
+
+    // Store current position for next frame
+    previous_pos = FRAGCOORD.xy / iResolution.xy;
 }

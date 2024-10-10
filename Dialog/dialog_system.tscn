@@ -1,8 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://dnjl7rgdhs5bg"]
+[gd_scene load_steps=7 format=3 uid="uid://dnjl7rgdhs5bg"]
 
 [ext_resource type="Script" path="res://Dialog/DialogSystem.gd" id="1_wkovl"]
 [ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="2_2408k"]
 [ext_resource type="Texture2D" uid="uid://d0p74ybivffs7" path="res://icon.svg" id="3_jt31u"]
+[ext_resource type="Shader" path="res://Shaders/pasteurization.gdshader" id="3_woav5"]
+[ext_resource type="Texture2D" uid="uid://de0dxq4ujoxsc" path="res://Dialog/Characters/Doctor/DoctorPortrait.jpg" id="5_mdppr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tyvjr"]
+shader = ExtResource("3_woav5")
+shader_parameter/level1 = Color(0, 0, 0, 1)
+shader_parameter/level2 = Color(0.999995, 0.415187, 0.387327, 1)
+shader_parameter/level3 = Color(1, 1, 1, 1)
+shader_parameter/level4 = Color(1, 1, 1, 1)
+shader_parameter/threshold1 = 0.597
+shader_parameter/threshold2 = 0.717
+shader_parameter/threshold3 = 0.56
 
 [node name="DialogSystem" type="Control" node_paths=PackedStringArray("_name", "_dialog", "_faceset")]
 layout_mode = 3
@@ -142,6 +154,17 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="IconLeft" type="TextureRect" parent="CanvasLayer/DialogBox"]
+layout_mode = 0
+offset_left = 187.0
+offset_top = 704.0
+offset_right = 512.0
+offset_bottom = 1032.0
+texture = ExtResource("5_mdppr")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="IconLeft2" type="TextureRect" parent="CanvasLayer/DialogBox"]
+material = SubResource("ShaderMaterial_tyvjr")
 layout_mode = 0
 offset_left = 187.0
 offset_top = 704.0
