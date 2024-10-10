@@ -1,19 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bm25056tyrsyl"]
+[gd_scene load_steps=5 format=3 uid="uid://bm25056tyrsyl"]
 
 [ext_resource type="Texture2D" uid="uid://dbwtrfalr2xno" path="res://Interface/Menu/menu.jpg" id="1_akneg"]
 [ext_resource type="Script" path="res://Interface/Menu/menu.gd" id="1_ejqst"]
-[ext_resource type="Shader" path="res://Shaders/CRT.gdshader" id="2_28b82"]
 [ext_resource type="AudioStream" uid="uid://cvk4wj6g3d5io" path="res://Audio/Music/509924__supergamersvk__horror-chase-loop.wav" id="4_2u4d0"]
 [ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="4_5i31b"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ncrr3"]
-shader = ExtResource("2_28b82")
-shader_parameter/crt_curve = 0.02
-shader_parameter/crt_scan_line_color = 0.347
-shader_parameter/aperture_grille_rate = 0.6
-shader_parameter/aparture_grille_cut_rate = 0.885
-shader_parameter/rf_switch_esque_blur = 1.0
-shader_parameter/white_noise_rate = 0.0
 
 [node name="Menu" type="Control"]
 process_mode = 3
@@ -24,17 +14,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ejqst")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="CRTShader" type="ColorRect" parent="CanvasLayer"]
-top_level = true
-material = SubResource("ShaderMaterial_ncrr3")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="LocalizationTools" type="Control" parent="."]
 anchors_preset = 0

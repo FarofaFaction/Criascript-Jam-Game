@@ -1,5 +1,6 @@
 extends Node
 
+signal game_paused
 var first_play := true
 var on_menu := false
 

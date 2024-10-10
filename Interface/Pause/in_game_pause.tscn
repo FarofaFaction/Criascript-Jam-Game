@@ -5,3 +5,5 @@
 [node name="InGamePause" type="Node"]
 process_mode = 3
 script = ExtResource("1_3so0f")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]

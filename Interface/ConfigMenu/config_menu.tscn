@@ -33,6 +33,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mpwmf")
 init_button = NodePath("ConfigPanel/OptionsContainer/FullScreen")
+searchButtons = true
 metadata/_edit_pinned_properties_ = [&"init_button"]
 
 [node name="BackgroundColor" type="ColorRect" parent="."]

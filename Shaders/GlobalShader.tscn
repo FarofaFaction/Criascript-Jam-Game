@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dl0nwilcpiu31"]
+
+[ext_resource type="PackedScene" uid="uid://cbs8kdjubysdg" path="res://Shaders/crt_shader.tscn" id="1_htbo6"]
+
+[node name="GlobalShader" type="CanvasLayer"]
+layer = 10
+
+[node name="CRTShader" parent="." instance=ExtResource("1_htbo6")]

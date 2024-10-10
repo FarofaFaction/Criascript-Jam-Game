@@ -21,7 +21,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_k5t45")
 init_button = NodePath("ConfigPanel/OptionsContainer/Init")
-searchButtons = null
 metadata/_edit_pinned_properties_ = [&"init_button"]
 
 [node name="ConfigPanel" type="Panel" parent="."]
