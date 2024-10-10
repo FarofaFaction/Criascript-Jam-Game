@@ -14,7 +14,7 @@ var _dialog_data: Dictionary = {
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	for child in get_children():
-		if child is Menu:
+		if child is DialogMenu:
 			_add_menu(child)
 			_id += 1
 		if child is SpeakClass:
