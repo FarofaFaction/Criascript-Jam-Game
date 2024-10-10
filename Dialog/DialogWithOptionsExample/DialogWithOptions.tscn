@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://blo55363gl0x8"]
+
+[ext_resource type="Script" path="res://Dialog/DialogClass/dialog_class.gd" id="1_b4wxe"]
+[ext_resource type="Script" path="res://Dialog/DialogClass/speak_class.gd" id="2_qgrj7"]
+[ext_resource type="PackedScene" uid="uid://bi0w8f3fbx3tv" path="res://Interface/ConfigMenu/config_menu.tscn" id="3_04qlc"]
+
+[node name="DialogWithOptions" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_b4wxe")
+
+[node name="SpeakClass" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+text = "aaaaaaaaaaaa"
+script = ExtResource("2_qgrj7")
+speaker = "lol"
+
+[node name="ConfigMenu" parent="." instance=ExtResource("3_04qlc")]
+layout_mode = 1

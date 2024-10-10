@@ -9,6 +9,7 @@ var data: Dictionary = {}
 @export var _name: Label
 @export var _dialog: RichTextLabel
 @export var _faceset: TextureRect
+var on_options
 
 # Chamado quando o nó entra na árvore
 func _ready() -> void:
@@ -24,6 +25,11 @@ func start_dialog() -> void:
 
 func _initialize_dialog() -> void:
 	if data.is_empty():
+		return
+	if data[_id] is Menu:
+		var node = data[_id].instantiate()
+		add_child(node)
+		on_options = true
 		return
 	_update_dialog_elements()
 	_show_dialog_gradually()
@@ -44,6 +50,8 @@ func _show_dialog_gradually() -> void:
 
 # Chamado a cada frame
 func _process(delta: float) -> void:
+	if (on_options):
+		return
 	if InGamePause.game_paused:
 		return
 	if $CanvasLayer.visible:
