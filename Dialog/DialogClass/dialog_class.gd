@@ -30,6 +30,7 @@ func _destroy_self():
 	self.queue_free()
 
 func _start_dialog():
+	#visible = true
 	for child in get_children():
 		if child is DialogMenu:
 			_add_menu(child)

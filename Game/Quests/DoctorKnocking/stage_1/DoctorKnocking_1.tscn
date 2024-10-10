@@ -1,32 +1,46 @@
-[gd_scene load_steps=8 format=3 uid="uid://csq5h4507pd3r"]
+[gd_scene load_steps=11 format=3 uid="uid://csq5h4507pd3r"]
 
 [ext_resource type="Script" path="res://Game/Quests/DoctorKnocking/stage_1/DoctorKnocking_1.gd" id="1_w2ti7"]
 [ext_resource type="PackedScene" uid="uid://wttewp7c4g6k" path="res://Game/Quests/DoctorKnocking/stage_1/knocking_sound.tscn" id="2_peg6k"]
 [ext_resource type="PackedScene" uid="uid://6fw6kl4t5n7x" path="res://Objects/interactible_area.tscn" id="3_yepy7"]
 [ext_resource type="Script" path="res://Dialog/DialogClass/dialog_class.gd" id="4_h8epj"]
 [ext_resource type="Script" path="res://Dialog/DialogClass/speak_class.gd" id="5_xkpak"]
-[ext_resource type="PackedScene" uid="uid://baklw2eb62qgd" path="res://Dialog/DialogMenuClass/DialogMenu.tscn" id="6_lo73l"]
+[ext_resource type="Script" path="res://Dialog/DialogMenuClass/dialog_menu.gd" id="6_uk3d7"]
 [ext_resource type="Script" path="res://Game/Quests/DoctorKnocking/stage_1/doctor_options_dialog.gd" id="7_g1pol"]
+[ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="7_hy3ge"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rqsdc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_avxtw"]
+color = Color(0.882353, 0, 0, 1)
+thickness = 10
+vertical = true
 
 [node name="DoctorKnocking1" type="Node2D" node_paths=PackedStringArray("dialog")]
 script = ExtResource("1_w2ti7")
-dialog = NodePath("DialogWithOptions")
+dialog = NodePath("CanvasLayer/DialogWithOptions")
 
 [node name="KnockingSound" parent="." instance=ExtResource("2_peg6k")]
 
 [node name="InteractibleArea" parent="." instance=ExtResource("3_yepy7")]
 
-[node name="DialogWithOptions" type="Control" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DialogWithOptions" type="Control" parent="CanvasLayer"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 script = ExtResource("4_h8epj")
 auto_start = false
 
-[node name="SpeakClass" type="RichTextLabel" parent="DialogWithOptions"]
+[node name="SpeakClass" type="RichTextLabel" parent="CanvasLayer/DialogWithOptions"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -34,7 +48,7 @@ text = "Bom Dia Dorminhoco"
 script = ExtResource("5_xkpak")
 speaker = "Doutor"
 
-[node name="SpeakClass3" type="RichTextLabel" parent="DialogWithOptions"]
+[node name="SpeakClass3" type="RichTextLabel" parent="CanvasLayer/DialogWithOptions"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -42,50 +56,159 @@ text = "Pronto Pra Tomar Seu Remedio ?"
 script = ExtResource("5_xkpak")
 speaker = "Doutor"
 
-[node name="DialogMenu" parent="DialogWithOptions" node_paths=PackedStringArray("options_conection") instance=ExtResource("6_lo73l")]
+[node name="DialogMenu" type="Control" parent="CanvasLayer/DialogWithOptions" node_paths=PackedStringArray("options_conection")]
+process_mode = 3
 layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -136.0
+offset_bottom = -136.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_uk3d7")
 options_conection = NodePath("OptionsTest")
-start_visible = false
 option_3_visible = false
 option_4_visible = false
+searchButtons = true
 
-[node name="OptionsTest" type="Control" parent="DialogWithOptions/DialogMenu" node_paths=PackedStringArray("my_stage")]
+[node name="BackgroundColor" type="ColorRect" parent="CanvasLayer/DialogWithOptions/DialogMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.301042
+anchor_top = 0.384259
+anchor_right = 0.716667
+anchor_bottom = 0.602778
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="BackgroundColor2" type="ColorRect" parent="CanvasLayer/DialogWithOptions/DialogMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.301042
+anchor_top = 0.317593
+anchor_right = 0.716667
+anchor_bottom = 0.536112
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Name" type="Label" parent="CanvasLayer/DialogWithOptions/DialogMenu"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -755.0
+offset_top = 349.0
+offset_right = 781.0
+offset_bottom = 477.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_hy3ge")
+theme_override_font_sizes/font_size = 48
+text = "Escolha"
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="CanvasLayer/DialogWithOptions/DialogMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rqsdc")
+
+[node name="OptionsContainer" type="VBoxContainer" parent="CanvasLayer/DialogWithOptions/DialogMenu/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -310.0
+offset_top = -91.5
+offset_right = 310.0
+offset_bottom = 91.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Option1" type="Button" parent="CanvasLayer/DialogWithOptions/DialogMenu/Panel/OptionsContainer"]
+layout_mode = 2
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_hy3ge")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxLine_avxtw")
+text = "Option 1
+"
+
+[node name="Option2" type="Button" parent="CanvasLayer/DialogWithOptions/DialogMenu/Panel/OptionsContainer"]
+layout_mode = 2
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_hy3ge")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxLine_avxtw")
+text = "Option 2"
+
+[node name="Option3" type="Button" parent="CanvasLayer/DialogWithOptions/DialogMenu/Panel/OptionsContainer"]
+layout_mode = 2
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_hy3ge")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxLine_avxtw")
+text = "Option 3"
+
+[node name="Option4" type="Button" parent="CanvasLayer/DialogWithOptions/DialogMenu/Panel/OptionsContainer"]
+layout_mode = 2
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_hy3ge")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxLine_avxtw")
+text = "Option 4"
+
+[node name="OptionsTest" type="Control" parent="CanvasLayer/DialogWithOptions/DialogMenu" node_paths=PackedStringArray("my_stage")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("7_g1pol")
-my_stage = NodePath("../../..")
+my_stage = NodePath("../../../..")
 
-[node name="option1" type="Label" parent="DialogWithOptions/DialogMenu/OptionsTest"]
+[node name="option1" type="Label" parent="CanvasLayer/DialogWithOptions/DialogMenu/OptionsTest"]
 layout_mode = 0
 offset_top = 136.0
 offset_right = 40.0
 offset_bottom = 159.0
 text = "Sim"
 
-[node name="option2" type="Label" parent="DialogWithOptions/DialogMenu/OptionsTest"]
+[node name="option2" type="Label" parent="CanvasLayer/DialogWithOptions/DialogMenu/OptionsTest"]
 layout_mode = 0
 offset_top = 136.0
 offset_right = 40.0
 offset_bottom = 159.0
 text = "Não"
 
-[node name="option3" type="Label" parent="DialogWithOptions/DialogMenu/OptionsTest"]
+[node name="option3" type="Label" parent="CanvasLayer/DialogWithOptions/DialogMenu/OptionsTest"]
 layout_mode = 0
 offset_top = 136.0
 offset_right = 40.0
 offset_bottom = 159.0
 text = "Não"
 
-[node name="option4" type="Label" parent="DialogWithOptions/DialogMenu/OptionsTest"]
+[node name="option4" type="Label" parent="CanvasLayer/DialogWithOptions/DialogMenu/OptionsTest"]
 layout_mode = 0
 offset_top = 136.0
 offset_right = 40.0
 offset_bottom = 159.0
 text = "Não"
 
-[node name="SpeakClass2" type="RichTextLabel" parent="DialogWithOptions"]
+[node name="SpeakClass2" type="RichTextLabel" parent="CanvasLayer/DialogWithOptions"]
 visible = false
 layout_mode = 0
 offset_right = 40.0
@@ -93,3 +216,8 @@ offset_bottom = 40.0
 text = "Muito Bem, Até Mais Tarde"
 script = ExtResource("5_xkpak")
 speaker = "lol"
+
+[connection signal="pressed" from="CanvasLayer/DialogWithOptions/DialogMenu/Panel/OptionsContainer/Option1" to="CanvasLayer/DialogWithOptions/DialogMenu" method="_on_option_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/DialogWithOptions/DialogMenu/Panel/OptionsContainer/Option2" to="CanvasLayer/DialogWithOptions/DialogMenu" method="_on_option_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/DialogWithOptions/DialogMenu/Panel/OptionsContainer/Option3" to="CanvasLayer/DialogWithOptions/DialogMenu" method="_on_option_3_pressed"]
+[connection signal="pressed" from="CanvasLayer/DialogWithOptions/DialogMenu/Panel/OptionsContainer/Option4" to="CanvasLayer/DialogWithOptions/DialogMenu" method="_on_option_4_pressed"]

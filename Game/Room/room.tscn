@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b46ln0l8u82r0"]
+[gd_scene load_steps=18 format=3 uid="uid://b46ln0l8u82r0"]
 
 [ext_resource type="PackedScene" uid="uid://ca2c7jnemw4ie" path="res://Objects/wall.tscn" id="1_2ok7y"]
 [ext_resource type="Script" path="res://Game/Room/room.gd" id="1_3vij1"]
@@ -6,8 +6,17 @@
 [ext_resource type="Script" path="res://Game/Quests/DoctorKnocking/doctor_knocking.gd" id="2_4ura0"]
 [ext_resource type="Texture2D" uid="uid://boce3olqcv7iq" path="res://Objects/mapa 1.png" id="2_g62a8"]
 [ext_resource type="PackedScene" uid="uid://7sspjh77o6vm" path="res://Game/Player/player.tscn" id="4_i14w1"]
+[ext_resource type="Shader" path="res://Shaders/4Colors.gdshader" id="4_ylxm3"]
 [ext_resource type="PackedScene" uid="uid://cxpyp7yoxaixr" path="res://Objects/room_clock.tscn" id="4_yqami"]
 [ext_resource type="AudioStream" uid="uid://dlxpad3bry0wj" path="res://Audio/Music/fundo_assustador.mp3" id="6_457a2"]
+[ext_resource type="Texture2D" uid="uid://vks35nwq3a23" path="res://Shaders/PixelartPallets/pallet_3.png" id="6_kcgnj"]
+[ext_resource type="PackedScene" uid="uid://c4ofme5aqmxny" path="res://Shaders/ShockWave.tscn" id="7_a8e8t"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lk8v6"]
+shader = ExtResource("4_ylxm3")
+shader_parameter/brightness = 0.0
+shader_parameter/source_palette = ExtResource("6_kcgnj")
+shader_parameter/target_palette = ExtResource("6_kcgnj")
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_nfg62"]
 closed = false
@@ -32,29 +41,32 @@ script = ExtResource("1_3vij1")
 
 [node name="CanvasLayer" parent="." instance=ExtResource("1_604fw")]
 
-[node name="Quests" type="Node2D" parent="."]
-
-[node name="DoctorKnocking" type="Node2D" parent="Quests" node_paths=PackedStringArray("DoorSoundOrigin")]
-script = ExtResource("2_4ura0")
-DoorSoundOrigin = NodePath("tools/DoorSoundOrigin")
-
-[node name="tools" type="Node2D" parent="Quests/DoctorKnocking"]
-
-[node name="DoorSoundOrigin" type="Marker2D" parent="Quests/DoctorKnocking/tools"]
-position = Vector2(1063, 410)
+[node name="ColorRect" parent="CanvasLayer" instance=ExtResource("7_a8e8t")]
+material = SubResource("ShaderMaterial_lk8v6")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Room_3" type="Node2D" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="Room_3"]
-offset_left = -982.0
-offset_top = -754.0
-offset_right = 2520.0
-offset_bottom = 956.0
+offset_left = -594.0
+offset_top = -371.0
+offset_right = 2908.0
+offset_bottom = 1339.0
 color = Color(0.392157, 0.392157, 0.392157, 1)
+metadata/_edit_lock_ = true
 
 [node name="WallTest" type="Sprite2D" parent="Room_3"]
-position = Vector2(1103, 495)
+position = Vector2(1063, 483)
 texture = ExtResource("2_g62a8")
+metadata/_edit_lock_ = true
 
 [node name="RoomClock" parent="Room_3" instance=ExtResource("4_yqami")]
 position = Vector2(1025, 360)
@@ -112,6 +124,17 @@ position = Vector2(305.679, 266)
 rotation = 1.5708
 scale = Vector2(0.235935, 0.204758)
 CollisionLayer = 1
+
+[node name="Quests" type="Node2D" parent="."]
+
+[node name="DoctorKnocking" type="Node2D" parent="Quests" node_paths=PackedStringArray("DoorSoundOrigin")]
+script = ExtResource("2_4ura0")
+DoorSoundOrigin = NodePath("tools/DoorSoundOrigin")
+
+[node name="tools" type="Node2D" parent="Quests/DoctorKnocking"]
+
+[node name="DoorSoundOrigin" type="Marker2D" parent="Quests/DoctorKnocking/tools"]
+position = Vector2(1023, 397)
 
 [node name="LightTesting" type="Node2D" parent="."]
 
@@ -258,9 +281,12 @@ occluder = SubResource("OccluderPolygon2D_gjdmj")
 occluder_light_mask = 2
 
 [node name="Player" parent="." instance=ExtResource("4_i14w1")]
+position = Vector2(954, 444)
+metadata/_edit_lock_ = true
 
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("6_457a2")
 autoplay = true
