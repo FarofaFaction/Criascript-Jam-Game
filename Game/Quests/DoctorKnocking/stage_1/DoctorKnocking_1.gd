@@ -42,7 +42,7 @@ func Interaction():
 		return
 	_door_opened = true
 	dialog._start_dialog()
-	#var node = preload("res://Dialog/DialogWithOptionsExample/DialogWithOptions.tscn").instantiate()
+	#var node = preload("res://Dialog/DialogClass/DialogClass.tscn").instantiate()
 	#add_child(node)
 	#my_quest.load_stage("RedGuy")
 	#my_quest.remove_stage(self.name)

@@ -49,12 +49,13 @@ start_visible = false
 option_3_visible = false
 option_4_visible = false
 
-[node name="OptionsTest" type="Control" parent="DialogWithOptions/DialogMenu"]
+[node name="OptionsTest" type="Control" parent="DialogWithOptions/DialogMenu" node_paths=PackedStringArray("my_stage")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("7_g1pol")
+my_stage = NodePath("../../..")
 
 [node name="option1" type="Label" parent="DialogWithOptions/DialogMenu/OptionsTest"]
 layout_mode = 0

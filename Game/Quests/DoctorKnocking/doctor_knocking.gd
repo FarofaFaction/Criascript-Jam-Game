@@ -5,7 +5,7 @@ const DoctorKnocking = "res://Game/Quests/DoctorKnocking/stage_1/DoctorKnocking_
 const RedGuy = "res://Game/Quests/DoctorKnocking/RedGuyTime/RedGuyTime.tscn"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	add_stage("DoctorKnocking", "res://Game/Quests/DoctorKnocking/stage_1/DoctorKnocking_1.tscn")
+	add_stage("DoctorKnocking", DoctorKnocking)
 	add_tool("door", DoorSoundOrigin)
 	add_stage("RedGuy", RedGuy)
 	load_stage("DoctorKnocking")

@@ -5,6 +5,7 @@ var _dialog_data: Dictionary = {
 }
 
 @export var auto_start := true
+#@export var auto_destroy := false
 #var _dialog_data: Dictionary = {
 	#0: {
 		#"faceset": "image_path",
@@ -18,7 +19,15 @@ var _dialog_data: Dictionary = {
 func _ready() -> void:
 	if auto_start:
 		_start_dialog()
+	#if auto_destroy:
+		#await DialogSystem.finish_dialog
+		#_destroy_self()
 	pass
+
+func _destroy_self():
+	print("destroyng dialog instance")
+	get_parent().remove_child(self)
+	self.queue_free()
 
 func _start_dialog():
 	for child in get_children():

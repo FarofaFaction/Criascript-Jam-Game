@@ -44,7 +44,6 @@ func hide_menu():
 	get_parent().remove_child(self)
 	DialogSystem.on_options = false
 	visible = false
-	Input.action_press("Interact")
 	InGamePause.current_menu = null
 	queue_free()
 
@@ -62,8 +61,8 @@ func _on_option_2_pressed() -> void:
 	if (!options_conection):
 		hide_menu()
 		return
-	if options_conection.has_method("option1"):
-		options_conection.option1()
+	if options_conection.has_method("option2"):
+		options_conection.option2()
 	hide_menu()
 	pass # Replace with function body.
 
@@ -72,8 +71,10 @@ func _on_option_3_pressed() -> void:
 	if (!options_conection):
 		hide_menu()
 		return
-	if options_conection.has_method("option1"):
-		options_conection.option1()
+	if options_conection.has_method("option3"):
+		options_conection.option3()
+	else:
+		print("not found option")
 	hide_menu()
 	pass # Replace with function body.
 
@@ -82,7 +83,7 @@ func _on_option_4_pressed() -> void:
 	if (!options_conection):
 		hide_menu()
 		return
-	if options_conection.has_method("option1"):
-		options_conection.option1()
+	if options_conection.has_method("option4"):
+		options_conection.option4()
 	hide_menu()
 	pass # Replace with function body.
