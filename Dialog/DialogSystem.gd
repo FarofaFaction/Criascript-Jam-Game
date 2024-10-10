@@ -17,6 +17,7 @@ func _ready() -> void:
 
 # Métodos de Inicialização
 func start_dialog() -> void:
+	InGamePause.hold_pause = true
 	$CanvasLayer.visible = true
 	_initialize_dialog()
 	get_tree().paused = true
@@ -24,7 +25,6 @@ func start_dialog() -> void:
 func _initialize_dialog() -> void:
 	if data.is_empty():
 		return
-
 	_update_dialog_elements()
 	_show_dialog_gradually()
 
@@ -44,6 +44,8 @@ func _show_dialog_gradually() -> void:
 
 # Chamado a cada frame
 func _process(delta: float) -> void:
+	if InGamePause.game_paused:
+		return
 	if $CanvasLayer.visible:
 		_run_dialog(delta)
 
@@ -64,4 +66,5 @@ func _finish_dialog() -> void:
 	data = {}
 	$CanvasLayer.visible = false
 	_id = 0
+	InGamePause.hold_pause = false
 	get_tree().paused = false

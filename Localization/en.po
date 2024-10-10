@@ -33,6 +33,10 @@ msgstr "English"
 msgid "PT-BR"
 msgstr "PT-BR"
 
+#: Interface/LenguageMenu/lenguage_menu.tscn
+msgid "Pronto\n"
+msgstr ""
+
 #: Interface/Menu/menu_options.tscn
 msgid "Iniciar"
 msgstr "Start"
@@ -51,8 +55,8 @@ msgstr "Exit"
 
 #: Interface/ConfigMenu/config_menu.tscn
 #: Interface/ResolutionMenu/resoltutionMenu.tscn
-msgid "Tela Cheia"
-msgstr "Fullscreen"
+msgid "Resolução"
+msgstr "Resolution"
 
 #: Interface/ConfigMenu/config_menu.tscn
 msgid "Vol"
@@ -64,8 +68,8 @@ msgid "Fechar"
 msgstr "Close"
 
 #: Interface/ResolutionMenu/resoltutionMenu.tscn
-msgid "Resolução"
-msgstr "Resolution"
+msgid "Tela Cheia"
+msgstr "Fullscreen"
 
 #: Interface/ResolutionMenu/resoltutionMenu.tscn
 msgid "Janela = 1920 : 1080"
@@ -74,3 +78,39 @@ msgstr "Window = 1920 : 1080"
 #: Interface/ResolutionMenu/resoltutionMenu.tscn
 msgid "Janela = 1280 : 720"
 msgstr "Window = 1280 : 720"
+
+#: Dialog/DialogClass/DialogClass.tscn
+msgid "Ola"
+msgstr "Hello"
+
+#: Dialog/DialogClass/DialogClass.tscn
+msgid "Queria Apenas"
+msgstr "Just wanted"
+
+#: Dialog/DialogClass/DialogClass.tscn
+msgid "Testar Esse Sistema de Dialogo"
+msgstr "Test this dialog system"
+
+#: Dialog/DialogClass/DialogClass.tscn
+msgid "Acho que nao funcionou"
+msgstr "I don't think it worked"
+
+#: Dialog/DialogClass/DialogClass.tscn
+msgid "Funcionou Sim"
+msgstr "It worked"
+
+#: Dialog/DialogClass/DialogClass.tscn
+msgid "Entao Ta Bom"
+msgstr "Ok so"
+
+#: Dialog/DialogClass/DialogClass.tscn
+msgid "ATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACAR"
+msgstr "ATTACK ATTACK ATTACK ATTACK ATTACK ATTACK ATTACK ATTACK ATTACK ATTACK ATTACK ATTACK ATTACK ATTACK"
+
+#: Dialog/dialog_system.tscn
+msgid "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+msgstr "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+
+#: Dialog/dialog_system.tscn
+msgid "\tNome"
+msgstr ""

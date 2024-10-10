@@ -23,6 +23,7 @@ func _load_intro():
 	pass
 
 func _ready():
+	InGamePause.monitoring = false
 	if Global.first_play:
 		_load_intro()
 		Global.first_play = false

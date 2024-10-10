@@ -1,8 +1,6 @@
 extends Node
 
-signal game_paused
 var first_play := true
-var on_menu := false
 
 # AUDIO
 var bus_name: String = "Master"
@@ -27,6 +25,7 @@ func change_scene(scene: String):
 		current_scene = MenuMenu
 	elif (scene == "Game"):
 		current_scene = Game
+		InGamePause.monitoring = true
 		#get_tree().change_scene_to_file(Game)
 	else:
 		return

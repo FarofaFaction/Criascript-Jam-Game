@@ -5,7 +5,7 @@ var _button_array: Array[Button]
 
 @export var init_button: Button
 @export var backup_button: Button
-@onready var init_button_grab = _grab_init_button()
+@onready var _on_ready_init_button_grab = _grab_init_button()
 @export var searchButtons := false
 #@onready var print_Result = _debug()
 

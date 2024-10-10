@@ -3,6 +3,8 @@
 # res://Interface/Menu/menu_options.tscn
 # res://Interface/ConfigMenu/config_menu.tscn
 # res://Interface/ResolutionMenu/resoltutionMenu.tscn
+# res://Dialog/DialogClass/DialogClass.tscn
+# res://Dialog/dialog_system.tscn
 #
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -33,6 +35,10 @@ msgstr "English"
 msgid "PT-BR"
 msgstr "PT-BR"
 
+#: Interface/LenguageMenu/lenguage_menu.tscn
+msgid "Pronto\n"
+msgstr "Pronto\n"
+
 #: Interface/Menu/menu_options.tscn
 msgid "Iniciar"
 msgstr "Iniciar"
@@ -51,8 +57,8 @@ msgstr "Sair"
 
 #: Interface/ConfigMenu/config_menu.tscn
 #: Interface/ResolutionMenu/resoltutionMenu.tscn
-msgid "Tela Cheia"
-msgstr "Tela Cheia"
+msgid "Resolução"
+msgstr "Resolução"
 
 #: Interface/ConfigMenu/config_menu.tscn
 msgid "Vol"
@@ -64,8 +70,8 @@ msgid "Fechar"
 msgstr "Fechar"
 
 #: Interface/ResolutionMenu/resoltutionMenu.tscn
-msgid "Resolução"
-msgstr "Resolução"
+msgid "Tela Cheia"
+msgstr "Tela Cheia"
 
 #: Interface/ResolutionMenu/resoltutionMenu.tscn
 msgid "Janela = 1920 : 1080"
@@ -74,3 +80,39 @@ msgstr "Janela = 1920 : 1080"
 #: Interface/ResolutionMenu/resoltutionMenu.tscn
 msgid "Janela = 1280 : 720"
 msgstr "Janela = 1280 : 720"
+
+#: Dialog/DialogClass/DialogClass.tscn
+msgid "Ola"
+msgstr "Ola"
+
+#: Dialog/DialogClass/DialogClass.tscn
+msgid "Queria Apenas"
+msgstr "Queria Apenas"
+
+#: Dialog/DialogClass/DialogClass.tscn
+msgid "Testar Esse Sistema de Dialogo"
+msgstr "Testar Esse Sistema de Dialogo"
+
+#: Dialog/DialogClass/DialogClass.tscn
+msgid "Acho que nao funcionou"
+msgstr "Acho que nao funcionou"
+
+#: Dialog/DialogClass/DialogClass.tscn
+msgid "Funcionou Sim"
+msgstr "Funcionou Sim"
+
+#: Dialog/DialogClass/DialogClass.tscn
+msgid "Entao Ta Bom"
+msgstr "Entao Ta Bom"
+
+#: Dialog/DialogClass/DialogClass.tscn
+msgid "ATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACAR"
+msgstr "ATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACAR"
+
+#: Dialog/dialog_system.tscn
+msgid "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+msgstr "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+
+#: Dialog/dialog_system.tscn
+msgid "\tNome"
+msgstr "\tNome"
