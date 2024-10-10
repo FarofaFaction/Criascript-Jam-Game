@@ -6,10 +6,11 @@
 [ext_resource type="Script" path="res://Dialog/DialogClass/dialog_class.gd" id="4_h8epj"]
 [ext_resource type="Script" path="res://Dialog/DialogClass/speak_class.gd" id="5_xkpak"]
 [ext_resource type="PackedScene" uid="uid://baklw2eb62qgd" path="res://Dialog/DialogMenuClass/DialogMenu.tscn" id="6_lo73l"]
-[ext_resource type="PackedScene" uid="uid://damhdjbepus0m" path="res://Dialog/DialogWithOptionsExample/options_test.tscn" id="7_rfo7b"]
+[ext_resource type="Script" path="res://Game/Quests/DoctorKnocking/stage_1/doctor_options_dialog.gd" id="7_g1pol"]
 
-[node name="DoctorKnocking1" type="Node2D"]
+[node name="DoctorKnocking1" type="Node2D" node_paths=PackedStringArray("dialog")]
 script = ExtResource("1_w2ti7")
+dialog = NodePath("DialogWithOptions")
 
 [node name="KnockingSound" parent="." instance=ExtResource("2_peg6k")]
 
@@ -23,6 +24,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("4_h8epj")
+auto_start = false
 
 [node name="SpeakClass" type="RichTextLabel" parent="DialogWithOptions"]
 layout_mode = 0
@@ -32,18 +34,61 @@ text = "Bom Dia Dorminhoco"
 script = ExtResource("5_xkpak")
 speaker = "Doutor"
 
+[node name="SpeakClass3" type="RichTextLabel" parent="DialogWithOptions"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+text = "Pronto Pra Tomar Seu Remedio ?"
+script = ExtResource("5_xkpak")
+speaker = "Doutor"
+
 [node name="DialogMenu" parent="DialogWithOptions" node_paths=PackedStringArray("options_conection") instance=ExtResource("6_lo73l")]
 layout_mode = 1
 options_conection = NodePath("OptionsTest")
 start_visible = false
+option_3_visible = false
+option_4_visible = false
 
-[node name="OptionsTest" parent="DialogWithOptions/DialogMenu" instance=ExtResource("7_rfo7b")]
+[node name="OptionsTest" type="Control" parent="DialogWithOptions/DialogMenu"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("7_g1pol")
+
+[node name="option1" type="Label" parent="DialogWithOptions/DialogMenu/OptionsTest"]
+layout_mode = 0
+offset_top = 136.0
+offset_right = 40.0
+offset_bottom = 159.0
+text = "Sim"
+
+[node name="option2" type="Label" parent="DialogWithOptions/DialogMenu/OptionsTest"]
+layout_mode = 0
+offset_top = 136.0
+offset_right = 40.0
+offset_bottom = 159.0
+text = "Não"
+
+[node name="option3" type="Label" parent="DialogWithOptions/DialogMenu/OptionsTest"]
+layout_mode = 0
+offset_top = 136.0
+offset_right = 40.0
+offset_bottom = 159.0
+text = "Não"
+
+[node name="option4" type="Label" parent="DialogWithOptions/DialogMenu/OptionsTest"]
+layout_mode = 0
+offset_top = 136.0
+offset_right = 40.0
+offset_bottom = 159.0
+text = "Não"
 
 [node name="SpeakClass2" type="RichTextLabel" parent="DialogWithOptions"]
 visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-text = "bbbbbbbbbbb"
+text = "Muito Bem, Até Mais Tarde"
 script = ExtResource("5_xkpak")
 speaker = "lol"

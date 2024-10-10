@@ -8,29 +8,32 @@ var current_menu : Menu
 const PauseMenu := "res://Interface/Pause/pause_options.tscn"
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	#print(monitoring)
 	if (!monitoring):
 		return
 	if Input.is_action_just_pressed("ui_cancel"):
 		if (game_paused):
-			remove_childs()
-			game_paused = false
-			if 	current_menu:
-				current_menu._grab_init_button()
-				return
-			if !hold_pause:
-				get_tree().paused = false
+			dispause()
 		else:
-			var node = preload(PauseMenu).instantiate()
-			$CanvasLayer.add_child(node)
-			get_tree().paused = true
-			game_paused = true
+			pause()
 		pass
 	pass
 
-func _pause():
+func dispause():
+	remove_childs()
+	game_paused = false
+	if 	current_menu:
+		current_menu._grab_init_button()
+		return
+	if !hold_pause:
+		get_tree().paused = false
 	pass
 	
-func _dispause():
+func pause():
+	var node = preload(PauseMenu).instantiate()
+	$CanvasLayer.add_child(node)
+	get_tree().paused = true
+	game_paused = true
 	pass
 
 func remove_childs():

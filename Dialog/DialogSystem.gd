@@ -1,6 +1,8 @@
 extends Control
 
 # Variáveis de controle
+signal finish_dialog
+
 var _step: float = 0.02
 var _id: int = 0
 var data: Dictionary = {}
@@ -74,6 +76,7 @@ func _run_dialog(delta: float) -> void:
 
 func _finish_dialog() -> void:
 	data = {}
+	finish_dialog.emit()
 	$CanvasLayer.visible = false
 	_id = 0
 	InGamePause.hold_pause = false

@@ -41,7 +41,7 @@ DoorSoundOrigin = NodePath("tools/DoorSoundOrigin")
 [node name="tools" type="Node2D" parent="Quests/DoctorKnocking"]
 
 [node name="DoorSoundOrigin" type="Marker2D" parent="Quests/DoctorKnocking/tools"]
-position = Vector2(1062, 408)
+position = Vector2(1063, 410)
 
 [node name="Room_3" type="Node2D" parent="."]
 

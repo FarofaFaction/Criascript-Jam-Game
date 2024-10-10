@@ -21,7 +21,7 @@ func _on_config_pressed() -> void:
 
 
 func _on_exit_menu_pressed() -> void:
-	get_tree().paused = false
+	InGamePause.dispause()
 	Global.change_scene("Menu")
 	pass # Replace with function body.
 
