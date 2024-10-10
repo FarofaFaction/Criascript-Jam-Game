@@ -28,7 +28,7 @@ func _initialize_dialog() -> void:
 		return
 	if data[_id] is DialogMenu:
 		var node = data[_id]
-		add_child(node)
+		$CanvasLayer.add_child(node)
 		if !node.show_menu():
 			return
 		on_options = true

@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://csq5h4507pd3r"]
+[gd_scene load_steps=8 format=3 uid="uid://csq5h4507pd3r"]
 
 [ext_resource type="Script" path="res://Game/Quests/DoctorKnocking/stage_1/DoctorKnocking_1.gd" id="1_w2ti7"]
 [ext_resource type="PackedScene" uid="uid://wttewp7c4g6k" path="res://Game/Quests/DoctorKnocking/stage_1/knocking_sound.tscn" id="2_peg6k"]
 [ext_resource type="PackedScene" uid="uid://6fw6kl4t5n7x" path="res://Objects/interactible_area.tscn" id="3_yepy7"]
+[ext_resource type="Script" path="res://Dialog/DialogClass/dialog_class.gd" id="4_h8epj"]
+[ext_resource type="Script" path="res://Dialog/DialogClass/speak_class.gd" id="5_xkpak"]
+[ext_resource type="PackedScene" uid="uid://baklw2eb62qgd" path="res://Dialog/DialogMenuClass/DialogMenu.tscn" id="6_lo73l"]
+[ext_resource type="PackedScene" uid="uid://damhdjbepus0m" path="res://Dialog/DialogWithOptionsExample/options_test.tscn" id="7_rfo7b"]
 
 [node name="DoctorKnocking1" type="Node2D"]
 script = ExtResource("1_w2ti7")
@@ -10,3 +14,36 @@ script = ExtResource("1_w2ti7")
 [node name="KnockingSound" parent="." instance=ExtResource("2_peg6k")]
 
 [node name="InteractibleArea" parent="." instance=ExtResource("3_yepy7")]
+
+[node name="DialogWithOptions" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_h8epj")
+
+[node name="SpeakClass" type="RichTextLabel" parent="DialogWithOptions"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+text = "Bom Dia Dorminhoco"
+script = ExtResource("5_xkpak")
+speaker = "Doutor"
+
+[node name="DialogMenu" parent="DialogWithOptions" node_paths=PackedStringArray("options_conection") instance=ExtResource("6_lo73l")]
+layout_mode = 1
+options_conection = NodePath("OptionsTest")
+start_visible = false
+
+[node name="OptionsTest" parent="DialogWithOptions/DialogMenu" instance=ExtResource("7_rfo7b")]
+
+[node name="SpeakClass2" type="RichTextLabel" parent="DialogWithOptions"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+text = "bbbbbbbbbbb"
+script = ExtResource("5_xkpak")
+speaker = "lol"

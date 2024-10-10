@@ -30,6 +30,7 @@ start_visible = false
 [node name="OptionsTest" parent="DialogMenu" instance=ExtResource("4_1j7kf")]
 
 [node name="SpeakClass2" type="RichTextLabel" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0

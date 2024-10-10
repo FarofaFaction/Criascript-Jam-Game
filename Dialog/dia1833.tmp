@@ -1,0 +1,152 @@
+[gd_scene load_steps=4 format=3 uid="uid://dnjl7rgdhs5bg"]
+
+[ext_resource type="Script" path="res://Dialog/DialogSystem.gd" id="1_wkovl"]
+[ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="2_2408k"]
+[ext_resource type="Texture2D" uid="uid://d0p74ybivffs7" path="res://icon.svg" id="3_jt31u"]
+
+[node name="DialogSystem" type="Control" node_paths=PackedStringArray("_name", "_dialog", "_faceset")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wkovl")
+_name = NodePath("CanvasLayer/DialogBox/Name/Label")
+_dialog = NodePath("CanvasLayer/DialogBox/TextPlace/Text")
+_faceset = NodePath("CanvasLayer/DialogBox/IconLeft")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DialogBox" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_right = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="NameBackground" type="Control" parent="CanvasLayer/DialogBox"]
+anchors_preset = 0
+offset_left = 124.0
+offset_top = 592.0
+offset_right = 568.0
+offset_bottom = 664.0
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/DialogBox/NameBackground"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0225225
+anchor_top = -0.138889
+anchor_right = 1.02252
+anchor_bottom = 1.13889
+offset_right = 3.05176e-05
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Background" type="Control" parent="CanvasLayer/DialogBox"]
+anchors_preset = 0
+offset_left = 124.0
+offset_top = 648.0
+offset_right = 1720.0
+offset_bottom = 1080.0
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/DialogBox/Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer/DialogBox/Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0, 0, 0, 1)
+
+[node name="TextPlace" type="Control" parent="CanvasLayer/DialogBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="Text" type="RichTextLabel" parent="CanvasLayer/DialogBox/TextPlace"]
+layout_mode = 2
+offset_left = 576.0
+offset_top = 704.0
+offset_right = 1600.0
+offset_bottom = 1024.0
+theme_override_fonts/normal_font = ExtResource("2_2408k")
+theme_override_font_sizes/normal_font_size = 32
+text = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+fit_content = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/DialogBox/TextPlace"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Name" type="Control" parent="CanvasLayer/DialogBox"]
+anchors_preset = 0
+offset_left = 124.0
+offset_top = 592.0
+offset_right = 568.0
+offset_bottom = 664.0
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/DialogBox/Name"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_2408k")
+theme_override_font_sizes/font_size = 36
+text = "	Nome"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer/DialogBox/Name/Label"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="IconLeft" type="TextureRect" parent="CanvasLayer/DialogBox"]
+layout_mode = 0
+offset_left = 187.0
+offset_top = 704.0
+offset_right = 512.0
+offset_bottom = 1032.0
+texture = ExtResource("3_jt31u")
+expand_mode = 1
+stretch_mode = 4

@@ -29,7 +29,7 @@ func _process(_delta: float) -> void:
 func Interaction():
 	if (!_can_open):
 		return
-	var node = preload("res://Dialog/DialogClass/DialogClass.tscn").instantiate()
+	var node = preload("res://Dialog/DialogWithOptionsExample/DialogWithOptions.tscn").instantiate()
 	add_child(node)
 	#my_quest.load_stage("RedGuy")
 	my_quest.remove_stage(self.name)

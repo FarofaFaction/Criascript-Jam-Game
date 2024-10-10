@@ -3,6 +3,8 @@ class_name Dialog
 var _id := 0
 var _dialog_data: Dictionary = {
 }
+
+@export var auto_start := true
 #var _dialog_data: Dictionary = {
 	#0: {
 		#"faceset": "image_path",
@@ -12,7 +14,13 @@ var _dialog_data: Dictionary = {
 #}
 
 # Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
+	if auto_start:
+		_start_dialog()
+	pass
+
+func _start_dialog():
 	for child in get_children():
 		if child is DialogMenu:
 			_add_menu(child)
