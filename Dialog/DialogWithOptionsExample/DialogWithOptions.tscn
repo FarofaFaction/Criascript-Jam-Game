@@ -1,12 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://blo55363gl0x8"]
+[gd_scene load_steps=5 format=3 uid="uid://blo55363gl0x8"]
 
 [ext_resource type="Script" path="res://Dialog/DialogClass/dialog_class.gd" id="1_b4wxe"]
 [ext_resource type="Script" path="res://Dialog/DialogClass/speak_class.gd" id="2_qgrj7"]
-[ext_resource type="PackedScene" uid="uid://bi0w8f3fbx3tv" path="res://Interface/ConfigMenu/config_menu.tscn" id="3_04qlc"]
+[ext_resource type="PackedScene" uid="uid://baklw2eb62qgd" path="res://Dialog/DialogMenuClass/DialogMenu.tscn" id="3_t1s3n"]
+[ext_resource type="PackedScene" uid="uid://damhdjbepus0m" path="res://Dialog/DialogWithOptionsExample/options_test.tscn" id="4_1j7kf"]
 
 [node name="DialogWithOptions" type="Control"]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_b4wxe")
 
 [node name="SpeakClass" type="RichTextLabel" parent="."]
@@ -17,5 +22,17 @@ text = "aaaaaaaaaaaa"
 script = ExtResource("2_qgrj7")
 speaker = "lol"
 
-[node name="ConfigMenu" parent="." instance=ExtResource("3_04qlc")]
+[node name="DialogMenu" parent="." node_paths=PackedStringArray("options_conection") instance=ExtResource("3_t1s3n")]
 layout_mode = 1
+options_conection = NodePath("OptionsTest")
+start_visible = false
+
+[node name="OptionsTest" parent="DialogMenu" instance=ExtResource("4_1j7kf")]
+
+[node name="SpeakClass2" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+text = "bbbbbbbbbbb"
+script = ExtResource("2_qgrj7")
+speaker = "lol"

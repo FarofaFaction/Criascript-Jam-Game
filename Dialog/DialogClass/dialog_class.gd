@@ -33,6 +33,7 @@ func _add_label(child: SpeakClass):
 	}
 
 func _add_menu(child: Menu):
+	remove_child(child)
 	_dialog_data[_id] = child
 
 ### Called every frame. 'delta' is the elapsed time since the previous frame.

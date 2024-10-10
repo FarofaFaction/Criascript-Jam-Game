@@ -26,9 +26,11 @@ func start_dialog() -> void:
 func _initialize_dialog() -> void:
 	if data.is_empty():
 		return
-	if data[_id] is Menu:
-		var node = data[_id].instantiate()
+	if data[_id] is DialogMenu:
+		var node = data[_id]
 		add_child(node)
+		if !node.show_menu():
+			return
 		on_options = true
 		return
 	_update_dialog_elements()

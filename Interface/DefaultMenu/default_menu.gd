@@ -16,7 +16,9 @@ func _debug():
 func _grab_init_button():
 	if (init_button):
 		init_button.grab_focus()
+		return
 	if (searchButtons):
+		find_buttons(self)
 		setup_buttons()
 
 func _add_menu(menu_instance: Menu) -> void:
@@ -71,10 +73,11 @@ func setup_buttons() -> void:
 			pass
 	
 	# Define o botão inicial para receber o foco
-	if !init_button && _button_array.size() > 0:
+	if init_button:
+		return
+	if _button_array.size() > 0:
 		_button_array[0].grab_focus()
-	else:
-		_grab_init_button()
+		init_button = _button_array[0]
 
 # Método chamado ao pressionar um botão
 func _on_button_pressed(index: int) -> void:

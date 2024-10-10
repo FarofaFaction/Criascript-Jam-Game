@@ -1,0 +1,121 @@
+[gd_scene load_steps=5 format=3 uid="uid://baklw2eb62qgd"]
+
+[ext_resource type="Script" path="res://Dialog/DialogMenuClass/dialog_menu.gd" id="1_lw6cn"]
+[ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="2_y8i08"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rqsdc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_avxtw"]
+color = Color(0.882353, 0, 0, 1)
+thickness = 10
+vertical = true
+
+[node name="DialogMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -136.0
+offset_bottom = -136.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lw6cn")
+start_visible = true
+searchButtons = true
+metadata/_edit_pinned_properties_ = [&"init_button"]
+
+[node name="BackgroundColor" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.301042
+anchor_top = 0.384259
+anchor_right = 0.716667
+anchor_bottom = 0.602778
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Name" type="Label" parent="."]
+visible = false
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -768.0
+offset_top = 221.0
+offset_right = 768.0
+offset_bottom = 349.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_y8i08")
+theme_override_font_sizes/font_size = 124
+text = "Configurações"
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rqsdc")
+
+[node name="OptionsContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -310.0
+offset_top = -91.5
+offset_right = 310.0
+offset_bottom = 91.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Option1" type="Button" parent="Panel/OptionsContainer"]
+layout_mode = 2
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_y8i08")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxLine_avxtw")
+text = "Option 1
+"
+
+[node name="Option2" type="Button" parent="Panel/OptionsContainer"]
+layout_mode = 2
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_y8i08")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxLine_avxtw")
+text = "Option 2"
+
+[node name="Option3" type="Button" parent="Panel/OptionsContainer"]
+layout_mode = 2
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_y8i08")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxLine_avxtw")
+text = "Option 3"
+
+[node name="Option4" type="Button" parent="Panel/OptionsContainer"]
+layout_mode = 2
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_y8i08")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxLine_avxtw")
+text = "Option 4"
+
+[connection signal="pressed" from="Panel/OptionsContainer/Option1" to="." method="_on_option_1_pressed"]
+[connection signal="pressed" from="Panel/OptionsContainer/Option2" to="." method="_on_option_2_pressed"]
+[connection signal="pressed" from="Panel/OptionsContainer/Option3" to="." method="_on_option_3_pressed"]
+[connection signal="pressed" from="Panel/OptionsContainer/Option4" to="." method="_on_option_4_pressed"]

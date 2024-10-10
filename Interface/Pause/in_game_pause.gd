@@ -16,7 +16,6 @@ func _process(_delta: float) -> void:
 			game_paused = false
 			if 	current_menu:
 				current_menu._grab_init_button()
-				current_menu = null
 				return
 			if !hold_pause:
 				get_tree().paused = false
