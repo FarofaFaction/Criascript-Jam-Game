@@ -9,11 +9,11 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tyvjr"]
 shader = ExtResource("3_woav5")
 shader_parameter/level1 = Color(0, 0, 0, 1)
-shader_parameter/level2 = Color(0.999995, 0.415187, 0.387327, 1)
-shader_parameter/level3 = Color(1, 1, 1, 1)
-shader_parameter/level4 = Color(1, 1, 1, 1)
-shader_parameter/threshold1 = 0.597
-shader_parameter/threshold2 = 0.717
+shader_parameter/level2 = Color(0.692254, 0, 0.0940742, 1)
+shader_parameter/level3 = Color(0.690196, 0.34902, 0, 1)
+shader_parameter/level4 = Color(1, 1, 0.0117647, 0.521569)
+shader_parameter/threshold1 = 0.097
+shader_parameter/threshold2 = 0.747
 shader_parameter/threshold3 = 0.56
 
 [node name="DialogSystem" type="Control" node_paths=PackedStringArray("_name", "_dialog", "_faceset")]
@@ -163,7 +163,7 @@ texture = ExtResource("5_mdppr")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="IconLeft2" type="TextureRect" parent="CanvasLayer/DialogBox"]
+[node name="PortraitShader" type="TextureRect" parent="CanvasLayer/DialogBox"]
 material = SubResource("ShaderMaterial_tyvjr")
 layout_mode = 0
 offset_left = 187.0
