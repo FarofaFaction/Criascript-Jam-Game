@@ -42,6 +42,7 @@ script = ExtResource("1_3vij1")
 [node name="CanvasLayer" parent="." instance=ExtResource("1_604fw")]
 
 [node name="ColorRect" parent="CanvasLayer" instance=ExtResource("7_a8e8t")]
+visible = false
 material = SubResource("ShaderMaterial_lk8v6")
 anchors_preset = 15
 anchor_right = 1.0
