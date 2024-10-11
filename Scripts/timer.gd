@@ -41,6 +41,11 @@ func start():
 func stop():
 	timestop = true
 
+func is_time(hour: int, minute: int):
+	if (minutes == minute && hour == hours):
+		return true
+	return false
+	
 #tempo real speed = 1
 #1 minuto por segundo = 60
 #x horas em um minuto = 60 * x

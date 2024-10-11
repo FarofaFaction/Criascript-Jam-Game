@@ -1,5 +1,5 @@
 extends State
-class_name EnemyIdle
+class_name Idle
 
 @export var enemy : Enemy
 var move_direction : Vector2
