@@ -5,6 +5,18 @@
 # res://Interface/ResolutionMenu/resoltutionMenu.tscn
 # res://Dialog/DialogClass/DialogClass.tscn
 # res://Dialog/dialog_system.tscn
+# res://Dialog/DialogMenuClass/DialogMenu.tscn
+# res://Dialog/DialogWithOptionsExample/DialogWithOptions.tscn
+# res://Game/Room/room.tscn
+# res://Game/Quests/DoctorKnocking/stage_1/knocking_sound.tscn
+# res://Game/Quests/DoctorKnocking/stage_1/DoctorKnocking_1.tscn
+# res://Game/Quests/DoctorKnocking/RedGuyTime/RedGuyTime.tscn
+# res://Game/Enemy/red_guy.tscn
+# res://Interface/Menu/menu.tscn
+# res://Interface/Pause/in_game_pause.tscn
+# res://Interface/Pause/pause_options.tscn
+# res://Interface/Transition/Loading.tscn
+# res://Interface/Transition/Transition.tscn
 #
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -34,15 +46,19 @@ msgid "Pronto\n"
 msgstr ""
 
 #: Interface/Menu/menu_options.tscn
+#: Interface/Menu/menu.tscn
 msgid "Iniciar"
 msgstr ""
 
 #: Interface/Menu/menu_options.tscn
+#: Interface/Pause/pause_options.tscn
 msgid "Continuar"
 msgstr ""
 
 #: Interface/Menu/menu_options.tscn
 #: Interface/ConfigMenu/config_menu.tscn
+#: Dialog/DialogMenuClass/DialogMenu.tscn
+#: Interface/Pause/pause_options.tscn
 msgid "Configurações"
 msgstr ""
 
@@ -110,4 +126,80 @@ msgstr ""
 
 #: Dialog/dialog_system.tscn
 msgid "\tNome"
+msgstr ""
+
+#: Dialog/DialogMenuClass/DialogMenu.tscn
+#: Game/Quests/DoctorKnocking/stage_1/DoctorKnocking_1.tscn
+msgid "Option 1\n"
+msgstr ""
+
+#: Dialog/DialogMenuClass/DialogMenu.tscn
+#: Game/Quests/DoctorKnocking/stage_1/DoctorKnocking_1.tscn
+msgid "Option 2"
+msgstr ""
+
+#: Dialog/DialogMenuClass/DialogMenu.tscn
+#: Game/Quests/DoctorKnocking/stage_1/DoctorKnocking_1.tscn
+msgid "Option 3"
+msgstr ""
+
+#: Dialog/DialogMenuClass/DialogMenu.tscn
+#: Game/Quests/DoctorKnocking/stage_1/DoctorKnocking_1.tscn
+msgid "Option 4"
+msgstr ""
+
+#: Dialog/DialogWithOptionsExample/DialogWithOptions.tscn
+msgid "aaaaaaaaaaaa"
+msgstr ""
+
+#: Dialog/DialogWithOptionsExample/DialogWithOptions.tscn
+msgid "bbbbbbbbbbb"
+msgstr ""
+
+#: Game/Quests/DoctorKnocking/stage_1/DoctorKnocking_1.tscn
+msgid "Bom Dia Dorminhoco"
+msgstr ""
+
+#: Game/Quests/DoctorKnocking/stage_1/DoctorKnocking_1.tscn
+msgid "Pronto Pra Tomar Seu Remedio ?"
+msgstr ""
+
+#: Game/Quests/DoctorKnocking/stage_1/DoctorKnocking_1.tscn
+msgid "Escolha"
+msgstr ""
+
+#: Game/Quests/DoctorKnocking/stage_1/DoctorKnocking_1.tscn
+msgid "Sim"
+msgstr ""
+
+#: Game/Quests/DoctorKnocking/stage_1/DoctorKnocking_1.tscn
+msgid "Não"
+msgstr ""
+
+#: Game/Quests/DoctorKnocking/stage_1/DoctorKnocking_1.tscn
+msgid "Muito Bem, Até Mais Tarde"
+msgstr ""
+
+#: Interface/Menu/menu.tscn
+msgid ""
+"Escapefrom\r\n"
+"Asylum\r\n"
+msgstr ""
+
+#: Interface/Pause/pause_options.tscn
+msgid "Pause"
+msgstr ""
+
+#: Interface/Pause/pause_options.tscn
+msgid "Menu"
+msgstr ""
+
+#: Interface/Pause/pause_options.tscn
+msgid ""
+"Fechar\n"
+"Jogo"
+msgstr ""
+
+#: Interface/Transition/Loading.tscn
+msgid "Carregando"
 msgstr ""
