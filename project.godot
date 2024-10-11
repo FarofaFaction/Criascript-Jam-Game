@@ -24,6 +24,7 @@ GlobalTimer="*res://Scripts/timer.gd"
 InGamePause="*res://Interface/Pause/in_game_pause.tscn"
 GlobalShader="*res://Shaders/GlobalShader.tscn"
 DialogSystem="*res://Dialog/dialog_system.tscn"
+AsylumClock="*res://Scripts/AsylumClock.tscn"
 
 [dialogic]
 

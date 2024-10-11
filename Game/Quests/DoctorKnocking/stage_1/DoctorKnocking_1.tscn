@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://csq5h4507pd3r"]
+[gd_scene load_steps=12 format=3 uid="uid://csq5h4507pd3r"]
 
 [ext_resource type="Script" path="res://Game/Quests/DoctorKnocking/stage_1/DoctorKnocking_1.gd" id="1_w2ti7"]
 [ext_resource type="PackedScene" uid="uid://wttewp7c4g6k" path="res://Game/Quests/DoctorKnocking/stage_1/knocking_sound.tscn" id="2_peg6k"]
 [ext_resource type="PackedScene" uid="uid://6fw6kl4t5n7x" path="res://Objects/interactible_area.tscn" id="3_yepy7"]
 [ext_resource type="Script" path="res://Dialog/DialogClass/dialog_class.gd" id="4_h8epj"]
 [ext_resource type="Script" path="res://Dialog/DialogClass/speak_class.gd" id="5_xkpak"]
+[ext_resource type="Texture2D" uid="uid://de0dxq4ujoxsc" path="res://Dialog/Characters/Doctor/DoctorPortrait.jpg" id="6_mqse4"]
 [ext_resource type="Script" path="res://Dialog/DialogMenuClass/dialog_menu.gd" id="6_uk3d7"]
 [ext_resource type="Script" path="res://Game/Quests/DoctorKnocking/stage_1/doctor_options_dialog.gd" id="7_g1pol"]
 [ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="7_hy3ge"]
@@ -46,7 +47,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 text = "Bom Dia Dorminhoco"
 script = ExtResource("5_xkpak")
-image = "res://Dialog/Characters/Doctor/DoctorPortrait.jpg"
+texture = ExtResource("6_mqse4")
 speaker = "Doctor"
 
 [node name="SpeakClass3" type="RichTextLabel" parent="CanvasLayer/DialogWithOptions"]
@@ -55,7 +56,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 text = "Pronto Pra Tomar Seu Remedio ?"
 script = ExtResource("5_xkpak")
-image = "res://Dialog/Characters/Doctor/DoctorPortrait.jpg"
+texture = ExtResource("6_mqse4")
 speaker = "Doctor"
 
 [node name="DialogMenu" type="Control" parent="CanvasLayer/DialogWithOptions" node_paths=PackedStringArray("options_conection")]
@@ -217,7 +218,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 text = "Muito Bem, Até Mais Tarde"
 script = ExtResource("5_xkpak")
-image = "res://Dialog/Characters/Doctor/DoctorPortrait.jpg"
+texture = ExtResource("6_mqse4")
 speaker = "Doctor"
 
 [connection signal="pressed" from="CanvasLayer/DialogWithOptions/DialogMenu/Panel/OptionsContainer/Option1" to="CanvasLayer/DialogWithOptions/DialogMenu" method="_on_option_1_pressed"]

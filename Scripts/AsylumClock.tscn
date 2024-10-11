@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cic5nyibytwpv"]
+
+[ext_resource type="AudioStream" uid="uid://cq762hm74x4ew" path="res://Audio/Effects/Clock.mp3" id="1_fen84"]
+[ext_resource type="Script" path="res://Scripts/asylum_clock.gd" id="1_mwlha"]
+
+[node name="AsylumClock" type="Node"]
+script = ExtResource("1_mwlha")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_fen84")

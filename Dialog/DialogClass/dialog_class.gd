@@ -47,7 +47,7 @@ func _add_label(child: SpeakClass):
 	_dialog_data[_id] = {
 		"title": child.speaker,
 		"dialog": child.text,
-		"faceset": child.image
+		"faceset": child.texture
 	}
 
 func _add_menu(child: Menu):

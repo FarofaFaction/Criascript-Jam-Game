@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://Dialog/DialogSystem.gd" id="1_wkovl"]
 [ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="2_2408k"]
+[ext_resource type="Texture2D" uid="uid://c2ojth3poy1um" path="res://Dialog/Characters/Character/psychiatric_patient.jpg" id="3_b4pyj"]
 [ext_resource type="Texture2D" uid="uid://d0p74ybivffs7" path="res://icon.svg" id="3_jt31u"]
 [ext_resource type="Shader" path="res://Shaders/pasteurization.gdshader" id="3_woav5"]
-[ext_resource type="Texture2D" uid="uid://de0dxq4ujoxsc" path="res://Dialog/Characters/Doctor/DoctorPortrait.jpg" id="5_mdppr"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tyvjr"]
 shader = ExtResource("3_woav5")
@@ -159,7 +159,7 @@ offset_left = 187.0
 offset_top = 704.0
 offset_right = 512.0
 offset_bottom = 1032.0
-texture = ExtResource("5_mdppr")
+texture = ExtResource("3_b4pyj")
 expand_mode = 1
 stretch_mode = 4
 

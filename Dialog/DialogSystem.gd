@@ -42,7 +42,7 @@ func _initialize_dialog() -> void:
 func _update_dialog_elements() -> void:
 	_name.text = data[_id]["title"]
 	_dialog.text = data[_id]["dialog"]
-	_faceset.texture = load(data[_id]["faceset"])
+	_faceset.texture = data[_id]["faceset"]
 	_dialog.visible_characters = 0 
 
 # Mostra o diálogo gradualmente

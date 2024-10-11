@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://blo55363gl0x8"]
+[gd_scene load_steps=7 format=3 uid="uid://blo55363gl0x8"]
 
 [ext_resource type="Script" path="res://Dialog/DialogClass/dialog_class.gd" id="1_b4wxe"]
 [ext_resource type="Script" path="res://Dialog/DialogClass/speak_class.gd" id="2_qgrj7"]
+[ext_resource type="Texture2D" uid="uid://c2ojth3poy1um" path="res://Dialog/Characters/Character/psychiatric_patient.jpg" id="3_cn05y"]
 [ext_resource type="PackedScene" uid="uid://baklw2eb62qgd" path="res://Dialog/DialogMenuClass/DialogMenu.tscn" id="3_t1s3n"]
 [ext_resource type="PackedScene" uid="uid://damhdjbepus0m" path="res://Dialog/DialogWithOptionsExample/options_test.tscn" id="4_1j7kf"]
+[ext_resource type="Texture2D" uid="uid://de0dxq4ujoxsc" path="res://Dialog/Characters/Doctor/DoctorPortrait.jpg" id="6_a21ck"]
 
 [node name="DialogWithOptions" type="Control"]
 layout_mode = 3
@@ -20,7 +22,8 @@ offset_right = 40.0
 offset_bottom = 40.0
 text = "aaaaaaaaaaaa"
 script = ExtResource("2_qgrj7")
-speaker = "lol"
+texture = ExtResource("3_cn05y")
+speaker = "You"
 
 [node name="DialogMenu" parent="." node_paths=PackedStringArray("options_conection") instance=ExtResource("3_t1s3n")]
 layout_mode = 1
@@ -36,4 +39,5 @@ offset_right = 40.0
 offset_bottom = 40.0
 text = "bbbbbbbbbbb"
 script = ExtResource("2_qgrj7")
+texture = ExtResource("6_a21ck")
 speaker = "lol"
