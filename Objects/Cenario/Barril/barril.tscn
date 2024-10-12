@@ -1,10 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://dd3c8mmg31y4"]
+[gd_scene load_steps=9 format=3 uid="uid://dd3c8mmg31y4"]
 
 [ext_resource type="Theme" uid="uid://bi5atlkw4djab" path="res://Dialog/Styles/Style.tres" id="1_7scq6"]
 [ext_resource type="Script" path="res://Objects/Cenario/Barril/barril.gd" id="1_o473l"]
 [ext_resource type="Texture2D" uid="uid://bcohknv0ous7y" path="res://Objects/Cenario/barril grande.png" id="1_tqkkq"]
 [ext_resource type="PackedScene" uid="uid://6fw6kl4t5n7x" path="res://Objects/interactible_area.tscn" id="2_lay34"]
 [ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="2_y406v"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nteog"]
+light_mode = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mqcgn"]
 bg_color = Color(0, 0, 0, 1)
@@ -29,6 +32,7 @@ script = ExtResource("1_o473l")
 scale = Vector2(0.3, 0.3)
 
 [node name="Label" type="Label" parent="Node2D"]
+material = SubResource("CanvasItemMaterial_nteog")
 offset_left = -120.0
 offset_top = -76.6667
 offset_right = 118.0

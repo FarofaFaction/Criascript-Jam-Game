@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://v7uuiioruv0j"]
+[gd_scene load_steps=12 format=3 uid="uid://v7uuiioruv0j"]
 
 [ext_resource type="PackedScene" uid="uid://b8t0b7kcbu145" path="res://Game/Npcs/Doctor/Doctor.tscn" id="1_413a8"]
 [ext_resource type="Script" path="res://Game/Loctions/PlayerRoom/player_room.gd" id="1_xkoml"]
@@ -8,11 +8,16 @@
 [ext_resource type="PackedScene" uid="uid://7sspjh77o6vm" path="res://Game/Player/player.tscn" id="5_6s2l1"]
 [ext_resource type="Texture2D" uid="uid://grx8jyxat1kd" path="res://Objects/light/light.png" id="6_0w2ae"]
 [ext_resource type="PackedScene" uid="uid://dd3c8mmg31y4" path="res://Objects/Cenario/Barril/barril.tscn" id="8_0gbjg"]
+[ext_resource type="Texture2D" uid="uid://d0ocrqcmhjk4u" path="res://Objects/Cenario/bubble.png" id="9_1evif"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s34ym"]
 load_path = "res://.godot/imported/light.png-8fdf09ef7de5c29c73dfe94c1c1879f5.ctex"
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_j8i1h"]
+load_path = "res://.godot/imported/light.png-8fdf09ef7de5c29c73dfe94c1c1879f5.ctex"
+
 [node name="PlayerRoom" type="Node2D"]
+position = Vector2(29, 30)
 script = ExtResource("1_xkoml")
 
 [node name="Illumination" type="Node2D" parent="." node_paths=PackedStringArray("ilumination_node", "BigLight", "SmallLight")]
@@ -80,3 +85,19 @@ position = Vector2(8, -4)
 [node name="Barril" parent="OrganizadosPorY/Objects" instance=ExtResource("8_0gbjg")]
 collision_layer = 2
 collision_mask = 0
+
+[node name="Bubble" type="Sprite2D" parent="OrganizadosPorY/Objects/Barril"]
+position = Vector2(0, -16)
+scale = Vector2(0.008, 0.008)
+texture = ExtResource("9_1evif")
+
+[node name="Biglight" type="PointLight2D" parent="OrganizadosPorY/Objects/Barril/Bubble"]
+scale = Vector2(125, 125)
+energy = 0.5
+texture = SubResource("CompressedTexture2D_j8i1h")
+texture_scale = 0.6
+
+[node name="Small" type="PointLight2D" parent="OrganizadosPorY/Objects/Barril/Bubble"]
+scale = Vector2(125, 125)
+texture = ExtResource("6_0w2ae")
+texture_scale = 0.2
