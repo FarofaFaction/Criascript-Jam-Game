@@ -15,7 +15,6 @@ radius = 129.557
 radius = 16.0
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7shof"]
-light_mode = 2
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rsx66"]
 atlas = ExtResource("2_oacfn")
@@ -104,20 +103,22 @@ color_ramp = SubResource("GradientTexture1D_qalwi")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_odx0j"]
 size = Vector2(16, 6.5)
 
-[node name="RedGuy" type="CharacterBody2D" node_paths=PackedStringArray("DetectionArea", "SelfArea", "animationPlayer", "ParticleWeapon")]
+[node name="RedGuy" type="CharacterBody2D" node_paths=PackedStringArray("DetectionArea", "SelfArea", "pegadas", "animationPlayer", "ParticleWeapon")]
 y_sort_enabled = true
 position = Vector2(1102, 428)
 collision_layer = 0
 collision_mask = 2
 motion_mode = 1
 script = ExtResource("1_dhjc1")
+pegadas_distance = 1
 DetectionArea = NodePath("DetectionArea")
 SelfArea = NodePath("SelfArea")
-speed = 100
+speed = 50
+pegadas = NodePath("Pegadas")
 animationPlayer = NodePath("Sprite")
 ParticleWeapon = NodePath("Sprite/VomitAtack/VomitSpray")
-metadata/_edit_group_ = true
 metadata/_edit_pinned_properties_ = [&"DetectionArea", &"SelfArea", &"speed", &"animationPlayer"]
+metadata/_edit_group_ = true
 
 [node name="DetectionArea" type="Area2D" parent="."]
 collision_layer = 0
@@ -196,3 +197,7 @@ one_shot = true
 
 [node name="DamageStartTimer" type="Timer" parent="State Machine/EnemyVomitAtack"]
 wait_time = 0.25
+
+[node name="Pegadas" type="Node2D" parent="."]
+rotation = -1.56355
+scale = Vector2(0.51, 0.729)

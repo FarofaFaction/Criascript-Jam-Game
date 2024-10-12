@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://txnf8fwbrwd7"]
+
+[ext_resource type="Texture2D" uid="uid://cfqifg6lqbw48" path="res://Objects/Cenario/pegadas vermelhas.png" id="1_82ix8"]
+
+[node name="PegadasVermelhas" type="Sprite2D"]
+position = Vector2(-271, 96)
+texture = ExtResource("1_82ix8")

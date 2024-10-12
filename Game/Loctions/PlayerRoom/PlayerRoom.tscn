@@ -99,7 +99,7 @@ position = Vector2(330, 9)
 position = Vector2(356, 157)
 
 [node name="RedGuy" parent="OrganizadosPorY/Personagens" instance=ExtResource("8_n3c21")]
-position = Vector2(403, 102)
+position = Vector2(559, 39)
 
 [node name="Objects" type="Node2D" parent="OrganizadosPorY"]
 y_sort_enabled = true
