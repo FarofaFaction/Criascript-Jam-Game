@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cw6wpkdy5ckht"]
+[gd_scene load_steps=24 format=3 uid="uid://cw6wpkdy5ckht"]
 
 [ext_resource type="Script" path="res://Game/Enemy/enemy.gd" id="1_dhjc1"]
 [ext_resource type="Texture2D" uid="uid://dgq2m1cnwgbv" path="res://Game/Player/idle.png" id="2_oacfn"]
@@ -13,6 +13,9 @@ radius = 129.557
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_318iq"]
 radius = 16.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7shof"]
+light_mode = 2
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rsx66"]
 atlas = ExtResource("2_oacfn")
@@ -133,13 +136,20 @@ shape = SubResource("CircleShape2D_318iq")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 modulate = Color(1, 0, 0, 1)
+light_mask = 524288
+visibility_layer = 524288
+material = SubResource("CanvasItemMaterial_7shof")
 sprite_frames = SubResource("SpriteFrames_amjbx")
 animation = &"Idle"
 autoplay = "Idle"
 
 [node name="VomitAtack" type="Node2D" parent="Sprite"]
+use_parent_material = true
 
 [node name="VomitSpray" type="GPUParticles2D" parent="Sprite/VomitAtack"]
+light_mask = 524288
+visibility_layer = 524288
+use_parent_material = true
 position = Vector2(2, -9)
 amount = 300
 process_material = SubResource("ParticleProcessMaterial_phj88")
