@@ -1,12 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://v7uuiioruv0j"]
+[gd_scene load_steps=6 format=3 uid="uid://v7uuiioruv0j"]
 
 [ext_resource type="PackedScene" uid="uid://b8t0b7kcbu145" path="res://Game/Npcs/Doctor/Doctor.tscn" id="1_413a8"]
 [ext_resource type="Script" path="res://Game/Loctions/PlayerRoom/player_room.gd" id="1_xkoml"]
 [ext_resource type="Texture2D" uid="uid://boce3olqcv7iq" path="res://Objects/mapa 1.png" id="2_lpg70"]
 [ext_resource type="PackedScene" uid="uid://cxpyp7yoxaixr" path="res://Objects/room_clock.tscn" id="3_mx5ei"]
+[ext_resource type="PackedScene" uid="uid://7sspjh77o6vm" path="res://Game/Player/player.tscn" id="5_6s2l1"]
 
 [node name="PlayerRoom" type="Node2D"]
-y_sort_enabled = true
 script = ExtResource("1_xkoml")
 
 [node name="BackgroundCenario" type="Node2D" parent="."]
@@ -18,17 +18,21 @@ texture = ExtResource("2_lpg70")
 [node name="RoomClock" parent="BackgroundCenario" instance=ExtResource("3_mx5ei")]
 position = Vector2(262, -67)
 
-[node name="Npcs" type="Node2D" parent="."]
+[node name="Personagens" type="Node2D" parent="."]
+y_sort_enabled = true
 
-[node name="Doctor" parent="Npcs" node_paths=PackedStringArray("exit_area", "target_area") instance=ExtResource("1_413a8")]
+[node name="Doctor" parent="Personagens" node_paths=PackedStringArray("exit_area", "target_area") instance=ExtResource("1_413a8")]
 position = Vector2(299, -20)
 exit_area = NodePath("ExitArea")
 target_area = NodePath("TargetArea")
 
-[node name="TargetArea" type="Marker2D" parent="Npcs/Doctor"]
+[node name="TargetArea" type="Marker2D" parent="Personagens/Doctor"]
 top_level = true
-position = Vector2(358, 242)
+position = Vector2(394, 66)
 
-[node name="ExitArea" type="Marker2D" parent="Npcs/Doctor"]
+[node name="ExitArea" type="Marker2D" parent="Personagens/Doctor"]
 top_level = true
 position = Vector2(298, -19)
+
+[node name="Player" parent="Personagens" instance=ExtResource("5_6s2l1")]
+position = Vector2(368, 108)

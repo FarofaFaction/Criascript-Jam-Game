@@ -1,17 +1,24 @@
 extends Area2D
 
-var _interactible : Node2D
+
+@export var moving_parent: Node
+var _interactible : Node
 var _player : PlayerClass
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var node = get_parent()
-	if node && node is Node2D:
+	if node && node is Node:
 		_interactible = node
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	_interaction_controler()
+	pass
+
+func _physics_process(_delta: float) -> void:
+	if moving_parent:
+		self.global_position = moving_parent.global_position
 	pass
 
 func _interaction_controler():
@@ -27,7 +34,9 @@ func _interaction_controler():
 
 func _player_entered(area) -> void:
 	var node = area.get_parent()
-	if !node || node is not PlayerClass:
+	if !node:
+		return
+	if node is not PlayerClass:
 		return
 	print("Player entered on interctible area")
 	_player = node

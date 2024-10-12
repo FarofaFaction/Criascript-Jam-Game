@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://b8t0b7kcbu145"]
+[gd_scene load_steps=28 format=3 uid="uid://b8t0b7kcbu145"]
 
 [ext_resource type="Script" path="res://Game/Npcs/Doctor/doctor.gd" id="1_kyepb"]
 [ext_resource type="Texture2D" uid="uid://dgq2m1cnwgbv" path="res://Game/Player/idle.png" id="2_fr85r"]
@@ -8,6 +8,13 @@
 [ext_resource type="Script" path="res://Game/Npcs/Doctor/docorIdle.gd" id="5_keikc"]
 [ext_resource type="Script" path="res://Game/Npcs/Doctor/doctorWalkIn.gd" id="5_yi6qs"]
 [ext_resource type="Script" path="res://Game/Npcs/Doctor/doctor_await.gd" id="6_hit2k"]
+[ext_resource type="Script" path="res://Dialog/DialogClass/dialog_class.gd" id="7_cblik"]
+[ext_resource type="PackedScene" uid="uid://6fw6kl4t5n7x" path="res://Objects/interactible_area.tscn" id="7_wcyvh"]
+[ext_resource type="Script" path="res://Dialog/DialogClass/speak_class.gd" id="8_6mjny"]
+[ext_resource type="Texture2D" uid="uid://c2ojth3poy1um" path="res://Dialog/Characters/Character/psychiatric_patient.jpg" id="9_c3pga"]
+[ext_resource type="PackedScene" uid="uid://baklw2eb62qgd" path="res://Dialog/DialogMenuClass/DialogMenu.tscn" id="10_kp211"]
+[ext_resource type="Texture2D" uid="uid://de0dxq4ujoxsc" path="res://Dialog/Characters/Doctor/DoctorPortrait.jpg" id="12_b0lcb"]
+[ext_resource type="Script" path="res://Game/Npcs/Doctor/Dialogo/OpDialogoComoFoiSuaNoite.gd" id="12_jx1di"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8ubhu"]
 radius = 129.557
@@ -87,14 +94,13 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_odx0j"]
 size = Vector2(16, 6.5)
 
-[node name="Doctor" type="CharacterBody2D" node_paths=PackedStringArray("target_area", "DetectionArea", "SelfArea", "animationPlayer") groups=["Npc"]]
+[node name="Doctor" type="CharacterBody2D" node_paths=PackedStringArray("DetectionArea", "SelfArea", "animationPlayer") groups=["Npc"]]
 y_sort_enabled = true
 collision_layer = 0
 collision_mask = 2
 motion_mode = 1
 script = ExtResource("1_kyepb")
 minutes_assingment = 30
-target_area = NodePath("")
 DetectionArea = NodePath("DetectionArea")
 SelfArea = NodePath("SelfArea")
 speed = 50
@@ -136,8 +142,120 @@ shape = SubResource("RectangleShape2D_odx0j")
 script = ExtResource("4_xh6v0")
 initial_state = NodePath("DoctorAwait")
 
-[node name="DoctorIdle" type="Node" parent="State Machine"]
+[node name="DoctorIdle" type="Node" parent="State Machine" node_paths=PackedStringArray("doctor", "DialogScene")]
 script = ExtResource("5_keikc")
+doctor = NodePath("../..")
+DialogScene = NodePath("CanvasLayer/AskForPill")
+
+[node name="InteractibleArea" parent="State Machine/DoctorIdle" node_paths=PackedStringArray("moving_parent") instance=ExtResource("7_wcyvh")]
+moving_parent = NodePath("../../..")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="State Machine/DoctorIdle"]
+
+[node name="AskForPill" type="Control" parent="State Machine/DoctorIdle/CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_cblik")
+auto_start = false
+
+[node name="SpeakClass" type="RichTextLabel" parent="State Machine/DoctorIdle/CanvasLayer/AskForPill"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Bom dia doutor"
+script = ExtResource("8_6mjny")
+texture = ExtResource("9_c3pga")
+speaker = "Você"
+
+[node name="SpeakClass2" type="RichTextLabel" parent="State Machine/DoctorIdle/CanvasLayer/AskForPill"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Bom dia dorminhoco"
+script = ExtResource("8_6mjny")
+texture = ExtResource("12_b0lcb")
+speaker = "Doutor"
+
+[node name="SpeakClass3" type="RichTextLabel" parent="State Machine/DoctorIdle/CanvasLayer/AskForPill"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Como foi sua noite ?"
+script = ExtResource("8_6mjny")
+texture = ExtResource("12_b0lcb")
+speaker = "Doutor"
+
+[node name="DialogMenu" parent="State Machine/DoctorIdle/CanvasLayer/AskForPill" node_paths=PackedStringArray("options_conection") instance=ExtResource("10_kp211")]
+visible = false
+layout_mode = 1
+options_conection = NodePath("OptionsTest")
+start_visible = false
+option_3_visible = false
+option_4_visible = false
+
+[node name="OptionsTest" type="Control" parent="State Machine/DoctorIdle/CanvasLayer/AskForPill/DialogMenu"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("12_jx1di")
+
+[node name="option1" type="Label" parent="State Machine/DoctorIdle/CanvasLayer/AskForPill/DialogMenu/OptionsTest"]
+layout_mode = 0
+offset_top = 136.0
+offset_right = 40.0
+offset_bottom = 159.0
+text = "Dormi bem, obrigado pela preocupação"
+
+[node name="option2" type="Label" parent="State Machine/DoctorIdle/CanvasLayer/AskForPill/DialogMenu/OptionsTest"]
+layout_mode = 0
+offset_top = 136.0
+offset_right = 40.0
+offset_bottom = 159.0
+text = "Na verdade, tive um sonho estranho"
+
+[node name="option3" type="Label" parent="State Machine/DoctorIdle/CanvasLayer/AskForPill/DialogMenu/OptionsTest"]
+layout_mode = 0
+offset_top = 136.0
+offset_right = 40.0
+offset_bottom = 159.0
+text = "."
+
+[node name="option4" type="Label" parent="State Machine/DoctorIdle/CanvasLayer/AskForPill/DialogMenu/OptionsTest"]
+layout_mode = 0
+offset_top = 136.0
+offset_right = 40.0
+offset_bottom = 159.0
+text = "Teste 1"
+
+[node name="SpeakClass4" type="RichTextLabel" parent="State Machine/DoctorIdle/CanvasLayer/AskForPill"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Interessante"
+script = ExtResource("8_6mjny")
+texture = ExtResource("12_b0lcb")
+speaker = "Doutor"
 
 [node name="DoctorAwait" type="Node" parent="State Machine" node_paths=PackedStringArray("doctor")]
 script = ExtResource("6_hit2k")
@@ -150,6 +268,3 @@ doctor = NodePath("../..")
 [node name="DoctorWalkout" type="Node" parent="State Machine" node_paths=PackedStringArray("doctor")]
 script = ExtResource("5_jqyoj")
 doctor = NodePath("../..")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(5, 5)

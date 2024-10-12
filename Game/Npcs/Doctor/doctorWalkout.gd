@@ -33,4 +33,6 @@ func Physics_Update():
 		doctor.velocity = _move_direction.normalized() * doctor.speed
 	else:
 		doctor.velocity = Vector2.ZERO
-		Transitioned.emit(self, "DoctorIdle")
+		doctor.get_parent().remove_child(doctor)
+		doctor.queue_free()
+		#Transitioned.emit(self, "DoctorIdle")

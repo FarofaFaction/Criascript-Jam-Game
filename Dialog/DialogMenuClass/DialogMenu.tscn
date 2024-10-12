@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://baklw2eb62qgd"]
+[gd_scene load_steps=6 format=3 uid="uid://baklw2eb62qgd"]
 
 [ext_resource type="Script" path="res://Dialog/DialogMenuClass/dialog_menu.gd" id="1_lw6cn"]
+[ext_resource type="Script" path="res://Dialog/DialogMenuClass/dialog_background_box.gd" id="2_11hui"]
 [ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="2_y8i08"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rqsdc"]
@@ -17,8 +18,6 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -136.0
-offset_bottom = -136.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lw6cn")
@@ -26,34 +25,21 @@ start_visible = true
 searchButtons = true
 metadata/_edit_pinned_properties_ = [&"init_button"]
 
-[node name="BackgroundColor" type="ColorRect" parent="."]
+[node name="BackgroundLine" type="ColorRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.301042
-anchor_top = 0.384259
+anchor_top = 0.335185
 anchor_right = 0.716667
 anchor_bottom = 0.602778
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 9.99988
+offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
-
-[node name="Name" type="Label" parent="."]
-visible = false
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -768.0
-offset_top = 221.0
-offset_right = 768.0
-offset_bottom = 349.0
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("2_y8i08")
-theme_override_font_sizes/font_size = 124
-text = "Configurações"
-horizontal_alignment = 1
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -64,19 +50,43 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_rqsdc")
 
+[node name="BackgroundBorder" type="ColorRect" parent="Panel" node_paths=PackedStringArray("reference")]
+layout_mode = 0
+offset_left = 332.0
+offset_top = 177.0
+offset_right = 1718.0
+offset_bottom = 684.0
+script = ExtResource("2_11hui")
+reference = NodePath("../BackgroundColor")
+
+[node name="BackgroundColor" type="ColorRect" parent="Panel" node_paths=PackedStringArray("reference")]
+layout_mode = 0
+offset_left = 332.0
+offset_top = 177.0
+offset_right = 1718.0
+offset_bottom = 684.0
+color = Color(0, 0, 0, 1)
+script = ExtResource("2_11hui")
+reference = NodePath("../OptionsContainer")
+
 [node name="OptionsContainer" type="VBoxContainer" parent="Panel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -310.0
-offset_top = -91.5
-offset_right = 310.0
-offset_bottom = 91.5
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 0
+offset_left = 177.0
+offset_top = 283.0
+offset_right = 1749.0
+offset_bottom = 545.0
+
+[node name="Name" type="Label" parent="Panel/OptionsContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_y8i08")
+theme_override_font_sizes/font_size = 42
+text = "Escolha"
+horizontal_alignment = 1
+
+[node name="VSplitContainer" type="VSplitContainer" parent="Panel/OptionsContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
 
 [node name="Option1" type="Button" parent="Panel/OptionsContainer"]
 layout_mode = 2
