@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://v7uuiioruv0j"]
+[gd_scene load_steps=9 format=3 uid="uid://v7uuiioruv0j"]
 
 [ext_resource type="PackedScene" uid="uid://b8t0b7kcbu145" path="res://Game/Npcs/Doctor/Doctor.tscn" id="1_413a8"]
 [ext_resource type="Script" path="res://Game/Loctions/PlayerRoom/player_room.gd" id="1_xkoml"]
@@ -7,13 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://cxpyp7yoxaixr" path="res://Objects/room_clock.tscn" id="3_mx5ei"]
 [ext_resource type="PackedScene" uid="uid://7sspjh77o6vm" path="res://Game/Player/player.tscn" id="5_6s2l1"]
 [ext_resource type="Texture2D" uid="uid://grx8jyxat1kd" path="res://Objects/light/light.png" id="6_0w2ae"]
-[ext_resource type="PackedScene" uid="uid://dd3c8mmg31y4" path="res://Objects/Cenario/Barril/barril.tscn" id="8_0gbjg"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s34ym"]
 load_path = "res://.godot/imported/light.png-8fdf09ef7de5c29c73dfe94c1c1879f5.ctex"
 
 [node name="PlayerRoom" type="Node2D"]
 script = ExtResource("1_xkoml")
+speed = 1480
 
 [node name="Illumination" type="Node2D" parent="." node_paths=PackedStringArray("ilumination_node", "BigLight", "SmallLight")]
 script = ExtResource("2_4cm2p")
@@ -51,32 +51,21 @@ texture = ExtResource("2_lpg70")
 [node name="RoomClock" parent="BackgroundCenario" instance=ExtResource("3_mx5ei")]
 position = Vector2(262, -67)
 
-[node name="OrganizadosPorY" type="Node2D" parent="."]
+[node name="Personagens" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="Personagens" type="Node2D" parent="OrganizadosPorY"]
-y_sort_enabled = true
-
-[node name="Doctor" parent="OrganizadosPorY/Personagens" node_paths=PackedStringArray("exit_area", "target_area") instance=ExtResource("1_413a8")]
+[node name="Doctor" parent="Personagens" node_paths=PackedStringArray("exit_area", "target_area") instance=ExtResource("1_413a8")]
 position = Vector2(299, -20)
 exit_area = NodePath("ExitArea")
 target_area = NodePath("TargetArea")
 
-[node name="TargetArea" type="Marker2D" parent="OrganizadosPorY/Personagens/Doctor"]
+[node name="TargetArea" type="Marker2D" parent="Personagens/Doctor"]
 top_level = true
 position = Vector2(394, 66)
 
-[node name="ExitArea" type="Marker2D" parent="OrganizadosPorY/Personagens/Doctor"]
+[node name="ExitArea" type="Marker2D" parent="Personagens/Doctor"]
 top_level = true
 position = Vector2(298, -19)
 
-[node name="Player" parent="OrganizadosPorY/Personagens" instance=ExtResource("5_6s2l1")]
-position = Vector2(356, 157)
-
-[node name="Objects" type="Node2D" parent="OrganizadosPorY"]
-y_sort_enabled = true
-position = Vector2(8, -4)
-
-[node name="Barril" parent="OrganizadosPorY/Objects" instance=ExtResource("8_0gbjg")]
-collision_layer = 2
-collision_mask = 0
+[node name="Player" parent="Personagens" instance=ExtResource("5_6s2l1")]
+position = Vector2(368, 108)

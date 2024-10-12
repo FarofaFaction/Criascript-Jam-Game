@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://b8t0b7kcbu145"]
+[gd_scene load_steps=27 format=3 uid="uid://b8t0b7kcbu145"]
 
 [ext_resource type="Script" path="res://Game/Npcs/Doctor/doctor.gd" id="1_kyepb"]
 [ext_resource type="Texture2D" uid="uid://dgq2m1cnwgbv" path="res://Game/Player/idle.png" id="2_fr85r"]
@@ -11,7 +11,6 @@
 [ext_resource type="Script" path="res://Dialog/DialogClass/dialog_class.gd" id="7_cblik"]
 [ext_resource type="PackedScene" uid="uid://6fw6kl4t5n7x" path="res://Objects/interactible_area.tscn" id="7_wcyvh"]
 [ext_resource type="Script" path="res://Dialog/DialogClass/speak_class.gd" id="8_6mjny"]
-[ext_resource type="Texture2D" uid="uid://c2ojth3poy1um" path="res://Dialog/Characters/Character/psychiatric_patient.jpg" id="9_c3pga"]
 [ext_resource type="PackedScene" uid="uid://baklw2eb62qgd" path="res://Dialog/DialogMenuClass/DialogMenu.tscn" id="10_kp211"]
 [ext_resource type="Texture2D" uid="uid://de0dxq4ujoxsc" path="res://Dialog/Characters/Doctor/DoctorPortrait.jpg" id="12_b0lcb"]
 [ext_resource type="Script" path="res://Game/Npcs/Doctor/Dialogo/OpDialogoComoFoiSuaNoite.gd" id="12_jx1di"]
@@ -163,18 +162,6 @@ grow_vertical = 2
 script = ExtResource("7_cblik")
 auto_start = false
 
-[node name="SpeakClass" type="RichTextLabel" parent="State Machine/DoctorIdle/CanvasLayer/AskForPill"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Bom dia doutor"
-script = ExtResource("8_6mjny")
-texture = ExtResource("9_c3pga")
-speaker = "Você"
-
 [node name="SpeakClass2" type="RichTextLabel" parent="State Machine/DoctorIdle/CanvasLayer/AskForPill"]
 layout_mode = 1
 anchors_preset = 15
@@ -264,7 +251,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Você tem gostado da sua rotina diária?"
+text = "Você tem gostado da sua rotina aqui no asilo??"
 script = ExtResource("8_6mjny")
 texture = ExtResource("12_b0lcb")
 speaker = "Doutor"

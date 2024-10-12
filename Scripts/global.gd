@@ -2,6 +2,7 @@ extends Node
 
 var first_play := true
 
+var player : PlayerClass
 # AUDIO
 var bus_name: String = "Master"
 var bus_index: int

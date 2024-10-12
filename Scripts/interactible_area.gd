@@ -1,11 +1,13 @@
 extends Area2D
 
-
+@export var message: Label
 @export var moving_parent: Node
 var _interactible : Node
 var _player : PlayerClass
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if message:
+		message.visible = false
 	var node = get_parent()
 	if node && node is Node:
 		_interactible = node
@@ -38,6 +40,8 @@ func _player_entered(area) -> void:
 		return
 	if node is not PlayerClass:
 		return
+	if message:
+		message.visible = true
 	print("Player entered on interctible area")
 	_player = node
 	pass # Replace with function body.
@@ -46,6 +50,16 @@ func _player_exited(area) -> void:
 	var node = area.get_parent()
 	if !node || node != _player:
 		return
+	if message:
+		message.visible = false
 	print("Player exit out interctible area")
 	_player = null
 	pass 
+	
+func show_message():
+	message.visible = true
+	pass
+
+func hide_message():
+	message.visible = false
+	pass

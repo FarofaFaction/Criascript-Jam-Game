@@ -1,0 +1,13 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://bi5atlkw4djab"]
+
+[ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="1_gihbi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b5xd6"]
+bg_color = Color(0, 0, 0, 1)
+border_color = Color(0, 0, 0, 1)
+
+[resource]
+default_font_size = 12
+Label/font_sizes/4 = 8
+Label/fonts/font = ExtResource("1_gihbi")
+Label/styles/normal = SubResource("StyleBoxFlat_b5xd6")

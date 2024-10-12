@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://7sspjh77o6vm"]
+[gd_scene load_steps=19 format=3 uid="uid://7sspjh77o6vm"]
 
 [ext_resource type="Script" path="res://Game/Player/player.gd" id="1_n8fh7"]
 [ext_resource type="AudioStream" uid="uid://bgegloq6p5nx7" path="res://Audio/Effects/Male_Hurt_-_Sound_Effect.wav" id="2_4feee"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://dgq2m1cnwgbv" path="res://Game/Player/idle.png" id="2_jplro"]
 [ext_resource type="AudioStream" uid="uid://cdtjj7teyvys5" path="res://Audio/Effects/correndo.mp3" id="3_8k3q0"]
 [ext_resource type="Texture2D" uid="uid://ji8y8qki3vcm" path="res://Game/Player/run.png" id="3_51uww"]
-[ext_resource type="Texture2D" uid="uid://bchofwuy1kere" path="res://Objects/ToolAssets/blank_circle.png" id="4_4rx7w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rsx66"]
 atlas = ExtResource("2_jplro")
@@ -114,28 +113,6 @@ autoplay = "Idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 12.5)
 shape = SubResource("RectangleShape2D_shqjl")
-
-[node name="Ilumination" type="Node2D" parent="."]
-
-[node name="BigLight" type="PointLight2D" parent="Ilumination"]
-blend_mode = 2
-texture = ExtResource("4_4rx7w")
-texture_scale = 10.0
-
-[node name="BigLight2" type="PointLight2D" parent="Ilumination"]
-position = Vector2(0, 45)
-blend_mode = 2
-range_item_cull_mask = 2
-shadow_item_cull_mask = 2
-texture = ExtResource("4_4rx7w")
-texture_scale = 10.0
-
-[node name="SmallLight" type="PointLight2D" parent="Ilumination"]
-visible = false
-shadow_enabled = true
-texture = ExtResource("4_4rx7w")
-
-[node name="CanvasModulate" type="CanvasModulate" parent="Ilumination"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(5, 5)

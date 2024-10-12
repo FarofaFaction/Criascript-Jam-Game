@@ -14,11 +14,13 @@ class_name PlayerClass
 signal PlayerDied
 
 #Local Vars
+var _can_run := true
 var _died := false
 var _is_running := false
-const SPEED = 100.0
+@export var SPEED = 50.0
 
 func _ready() -> void:
+	Global.player = self
 	PlayerDied.connect(on_player_died)
 	Transition.transition("fade_out_black")
 
@@ -28,7 +30,7 @@ func _move_speed_controler():
 	else:
 		_is_running = false
 	var input_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	if (_is_running):
+	if (_is_running && _can_run):
 		self.velocity = input_direction * SPEED * 2
 	else:
 		self.velocity = input_direction * SPEED
