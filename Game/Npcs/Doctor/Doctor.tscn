@@ -257,6 +257,71 @@ script = ExtResource("8_6mjny")
 texture = ExtResource("12_b0lcb")
 speaker = "Doutor"
 
+[node name="SpeakClass5" type="RichTextLabel" parent="State Machine/DoctorIdle/CanvasLayer/AskForPill"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Você tem gostado da sua rotina diária?"
+script = ExtResource("8_6mjny")
+texture = ExtResource("12_b0lcb")
+speaker = "Doutor"
+
+[node name="DialogMenu2" parent="State Machine/DoctorIdle/CanvasLayer/AskForPill" node_paths=PackedStringArray("options_conection") instance=ExtResource("10_kp211")]
+visible = false
+layout_mode = 1
+options_conection = NodePath("OptionsTest")
+start_visible = false
+option_4_visible = false
+
+[node name="OptionsTest" type="Control" parent="State Machine/DoctorIdle/CanvasLayer/AskForPill/DialogMenu2"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("12_jx1di")
+
+[node name="option1" type="Label" parent="State Machine/DoctorIdle/CanvasLayer/AskForPill/DialogMenu2/OptionsTest"]
+layout_mode = 0
+offset_top = 136.0
+offset_right = 40.0
+offset_bottom = 159.0
+text = "Sim, Estou acordando cedo 
+e fazendo exercícios que gosto"
+
+[node name="option2" type="Label" parent="State Machine/DoctorIdle/CanvasLayer/AskForPill/DialogMenu2/OptionsTest"]
+layout_mode = 0
+offset_top = 136.0
+offset_right = 40.0
+offset_bottom = 159.0
+text = "Tenho tentado me organizar,
+ mas sinto que não 
+vale a pena"
+
+[node name="option3" type="Label" parent="State Machine/DoctorIdle/CanvasLayer/AskForPill/DialogMenu2/OptionsTest"]
+layout_mode = 0
+offset_top = 136.0
+offset_right = 40.0
+offset_bottom = 159.0
+text = "Ando um pouco confuso. 
+Às vezes, não sei se estou
+ acordado ou sonhando."
+
+[node name="option4" type="Label" parent="State Machine/DoctorIdle/CanvasLayer/AskForPill/DialogMenu2/OptionsTest"]
+layout_mode = 0
+offset_top = 136.0
+offset_right = 40.0
+offset_bottom = 159.0
+text = "Acho que estou melhor, 
+mas tenho dias em que 
+sinto que o tempo não
+ passa direito."
+
 [node name="DoctorAwait" type="Node" parent="State Machine" node_paths=PackedStringArray("doctor")]
 script = ExtResource("6_hit2k")
 doctor = NodePath("../..")
