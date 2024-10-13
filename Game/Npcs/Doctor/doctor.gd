@@ -17,9 +17,9 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 
 	if (!velocity):
-		animationPlayer.play("Idle")
+		animationPlayer.play("DoctorIdle")
 	else:
-		animationPlayer.play("Run")
+		animationPlayer.play("DoctorRun")
 	if (velocity.x < 0):
 		animationPlayer.flip_h = true
 	else:

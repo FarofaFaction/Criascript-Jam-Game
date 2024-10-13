@@ -14,6 +14,7 @@ var minutes: int
 var _signal_emitted := false
 
 func _ready() -> void:
+	process_mode = self.PROCESS_MODE_PAUSABLE
 	set_time(18, 0)
 	pass
 	

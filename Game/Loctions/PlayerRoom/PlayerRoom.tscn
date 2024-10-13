@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://v7uuiioruv0j"]
+[gd_scene load_steps=8 format=3 uid="uid://v7uuiioruv0j"]
 
 [ext_resource type="PackedScene" uid="uid://b8t0b7kcbu145" path="res://Game/Npcs/Doctor/Doctor.tscn" id="1_413a8"]
 [ext_resource type="Script" path="res://Game/Loctions/PlayerRoom/player_room.gd" id="1_xkoml"]
@@ -7,13 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://cxpyp7yoxaixr" path="res://Objects/room_clock.tscn" id="3_mx5ei"]
 [ext_resource type="PackedScene" uid="uid://7sspjh77o6vm" path="res://Game/Player/player.tscn" id="5_6s2l1"]
 [ext_resource type="PackedScene" uid="uid://d2apjj0tfq2bn" path="res://Objects/Cenario/Tv/tv.tscn" id="8_55il4"]
-[ext_resource type="PackedScene" uid="uid://cw6wpkdy5ckht" path="res://Game/Enemy/red_guy.tscn" id="8_n3c21"]
 
 [node name="PlayerRoom" type="Node2D"]
 position = Vector2(29, 30)
 script = ExtResource("1_xkoml")
-init_hour = 6
-speed = 1480
 
 [node name="Illumination" parent="." instance=ExtResource("2_h147x")]
 
@@ -53,11 +50,6 @@ position = Vector2(330, 9)
 
 [node name="Player" parent="OrganizadosPorY/Personagens" instance=ExtResource("5_6s2l1")]
 position = Vector2(356, 157)
-
-[node name="RedGuy" parent="OrganizadosPorY/Personagens" node_paths=PackedStringArray("pegadasSpawnNode") instance=ExtResource("8_n3c21")]
-position = Vector2(514, 41)
-time_to_pegadas_die = 2.0
-pegadasSpawnNode = NodePath("../../../BackgroundCenario/Pegadas")
 
 [node name="Objects" type="Node2D" parent="OrganizadosPorY"]
 y_sort_enabled = true
