@@ -194,7 +194,7 @@ shape = SubResource("CircleShape2D_318iq")
 sprite_frames = SubResource("SpriteFrames_amjbx")
 animation = &"DoctorIdle"
 autoplay = "Idle"
-frame_progress = 0.205782
+frame_progress = 0.344689
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 12)

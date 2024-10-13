@@ -5,6 +5,7 @@ class_name PlayerClass
 @export var dying_sound : AudioStream
 @export var walking_sound : AudioStream
 @export var running_sound : AudioStream
+@export var ShadowPlayer: AnimatedSprite2D
 @export var spritePlayer: AnimatedSprite2D
 @export var Hitbox :Area2D
 @export var StepsAudioPlayer: AudioStreamPlayer2D
@@ -39,11 +40,16 @@ func _move_speed_controler():
 func _walk_animation_sprite_controler() -> void:
 	if (!velocity):
 		spritePlayer.play("Idle")
+		ShadowPlayer.play("Idle")
+		
 	else:
 		spritePlayer.play("Run")
+		ShadowPlayer.play("Run")
 		if (velocity.x < 0):
+			ShadowPlayer.flip_h = true
 			spritePlayer.flip_h = true
 		else:
+			ShadowPlayer.flip_h = false
 			spritePlayer.flip_h = false
 	pass
 

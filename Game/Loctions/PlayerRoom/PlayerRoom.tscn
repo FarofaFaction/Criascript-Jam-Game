@@ -10,7 +10,7 @@
 
 [node name="PlayerRoom" type="Node2D"]
 script = ExtResource("1_xkoml")
-init_hour = 19
+speed = 1480
 
 [node name="Illumination" parent="." instance=ExtResource("2_h147x")]
 
@@ -37,7 +37,7 @@ y_sort_enabled = true
 
 [node name="Doctor" parent="OrganizadosPorY/Personagens" node_paths=PackedStringArray("exit_area", "target_area") instance=ExtResource("1_413a8")]
 position = Vector2(299, -20)
-hour_assingment = 19
+hour_assingment = 10
 exit_area = NodePath("ExitArea")
 target_area = NodePath("TargetArea")
 
@@ -47,7 +47,7 @@ position = Vector2(485, 95)
 
 [node name="ExitArea" type="Marker2D" parent="OrganizadosPorY/Personagens/Doctor"]
 top_level = true
-position = Vector2(330, 9)
+position = Vector2(299, -15)
 
 [node name="Player" parent="OrganizadosPorY/Personagens" instance=ExtResource("5_6s2l1")]
 position = Vector2(338, 157)
