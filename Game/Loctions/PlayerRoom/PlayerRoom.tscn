@@ -76,6 +76,8 @@ texture = ExtResource("2_lpg70")
 [node name="RoomClock" parent="BackgroundCenario" instance=ExtResource("3_mx5ei")]
 position = Vector2(262, -67)
 
+[node name="Pegadas" type="Node2D" parent="BackgroundCenario"]
+
 [node name="OrganizadosPorY" type="Node2D" parent="."]
 y_sort_enabled = true
 
@@ -98,8 +100,9 @@ position = Vector2(330, 9)
 [node name="Player" parent="OrganizadosPorY/Personagens" instance=ExtResource("5_6s2l1")]
 position = Vector2(356, 157)
 
-[node name="RedGuy" parent="OrganizadosPorY/Personagens" instance=ExtResource("8_n3c21")]
+[node name="RedGuy" parent="OrganizadosPorY/Personagens" node_paths=PackedStringArray("pegadasSpawnNode") instance=ExtResource("8_n3c21")]
 position = Vector2(559, 39)
+pegadasSpawnNode = NodePath("../../../BackgroundCenario/Pegadas")
 
 [node name="Objects" type="Node2D" parent="OrganizadosPorY"]
 y_sort_enabled = true
