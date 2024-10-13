@@ -50,7 +50,7 @@ top_level = true
 position = Vector2(299, -15)
 
 [node name="Player" parent="OrganizadosPorY/Personagens" instance=ExtResource("5_6s2l1")]
-position = Vector2(338, 157)
+position = Vector2(311, 138)
 
 [node name="Objects" type="Node2D" parent="OrganizadosPorY"]
 y_sort_enabled = true
