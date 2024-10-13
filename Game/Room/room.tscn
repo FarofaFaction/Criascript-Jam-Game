@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b46ln0l8u82r0"]
+[gd_scene load_steps=20 format=3 uid="uid://b46ln0l8u82r0"]
 
 [ext_resource type="PackedScene" uid="uid://ca2c7jnemw4ie" path="res://Objects/wall.tscn" id="1_2ok7y"]
 [ext_resource type="Script" path="res://Game/Room/room.gd" id="1_3vij1"]
@@ -9,7 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://7sspjh77o6vm" path="res://Game/Player/player.tscn" id="4_i14w1"]
 [ext_resource type="PackedScene" uid="uid://cxpyp7yoxaixr" path="res://Objects/room_clock.tscn" id="4_yqami"]
 [ext_resource type="AudioStream" uid="uid://dlxpad3bry0wj" path="res://Audio/Music/fundo_assustador.mp3" id="6_457a2"]
+[ext_resource type="Texture2D" uid="uid://dxsbu73aimj0g" path="res://Game/Room/mapa 1.png" id="6_nm4vl"]
 [ext_resource type="PackedScene" uid="uid://c4ofme5aqmxny" path="res://Shaders/ShockWave.tscn" id="7_a8e8t"]
+[ext_resource type="Texture2D" uid="uid://284e86ooeves" path="res://Game/Room/comodo cortina.png" id="9_gxsv4"]
+[ext_resource type="Texture2D" uid="uid://bdruvrprnv8b8" path="res://Game/Room/camas.png" id="13_0mx2o"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jlm1d"]
 shader = ExtResource("4_c38xh")
@@ -63,12 +66,16 @@ color = Color(0.392157, 0.392157, 0.392157, 1)
 metadata/_edit_lock_ = true
 
 [node name="WallTest" type="Sprite2D" parent="Room_3"]
+visible = false
 position = Vector2(1063, 483)
 texture = ExtResource("2_g62a8")
-metadata/_edit_lock_ = true
+
+[node name="Mapa1" type="Sprite2D" parent="Room_3"]
+position = Vector2(1061, 515)
+texture = ExtResource("6_nm4vl")
 
 [node name="RoomClock" parent="Room_3" instance=ExtResource("4_yqami")]
-position = Vector2(1025, 360)
+position = Vector2(1017, 352)
 
 [node name="wall" parent="Room_3" instance=ExtResource("1_2ok7y")]
 position = Vector2(195, 506)
@@ -105,9 +112,9 @@ CollisionLayer = 1
 
 [node name="wall4" parent="Room_3" instance=ExtResource("1_2ok7y")]
 visible = false
-position = Vector2(916.752, 326)
+position = Vector2(1074, 298)
 rotation = 1.5708
-scale = Vector2(0.235935, 2.06087)
+scale = Vector2(0.283176, 1.6981)
 CollisionLayer = 1
 
 [node name="wall5" parent="Room_3" instance=ExtResource("1_2ok7y")]
@@ -289,3 +296,11 @@ metadata/_edit_lock_ = true
 process_mode = 3
 stream = ExtResource("6_457a2")
 autoplay = true
+
+[node name="ComodoCortina" type="Sprite2D" parent="."]
+position = Vector2(1212, 679)
+texture = ExtResource("9_gxsv4")
+
+[node name="Camas" type="Sprite2D" parent="ComodoCortina"]
+position = Vector2(32, -29)
+texture = ExtResource("13_0mx2o")
