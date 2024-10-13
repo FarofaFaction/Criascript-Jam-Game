@@ -1,0 +1,162 @@
+[gd_scene load_steps=19 format=3 uid="uid://v7uuiioruv0j"]
+
+[ext_resource type="PackedScene" uid="uid://b8t0b7kcbu145" path="res://Game/Npcs/Doctor/Doctor.tscn" id="1_413a8"]
+[ext_resource type="Script" path="res://Game/Loctions/PlayerRoom/player_room.gd" id="1_xkoml"]
+[ext_resource type="Script" path="res://Game/Loctions/PlayerRoom/illumination.gd" id="2_4cm2p"]
+[ext_resource type="Texture2D" uid="uid://boce3olqcv7iq" path="res://Objects/mapa 1.png" id="2_lpg70"]
+[ext_resource type="PackedScene" uid="uid://cxpyp7yoxaixr" path="res://Objects/room_clock.tscn" id="3_mx5ei"]
+[ext_resource type="PackedScene" uid="uid://7sspjh77o6vm" path="res://Game/Player/player.tscn" id="5_6s2l1"]
+[ext_resource type="Texture2D" uid="uid://grx8jyxat1kd" path="res://Objects/light/light.png" id="6_0w2ae"]
+[ext_resource type="Script" path="res://Objects/Cenario/Tv/tv.gd" id="10_royjt"]
+[ext_resource type="Theme" uid="uid://bi5atlkw4djab" path="res://Dialog/Styles/Style.tres" id="11_xcvq4"]
+[ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="12_u0s6b"]
+[ext_resource type="Texture2D" uid="uid://bcohknv0ous7y" path="res://Objects/Cenario/barril grande.png" id="13_jpjwd"]
+[ext_resource type="PackedScene" uid="uid://6fw6kl4t5n7x" path="res://Objects/interactible_area.tscn" id="14_tnvf8"]
+[ext_resource type="Texture2D" uid="uid://cusk8ggfb80y3" path="res://Objects/Cenario/Tv/tv.png" id="15_e2agt"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s34ym"]
+load_path = "res://.godot/imported/light.png-8fdf09ef7de5c29c73dfe94c1c1879f5.ctex"
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nteog"]
+light_mode = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mqcgn"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s3cjc"]
+size = Vector2(16, 11)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_j8i1h"]
+load_path = "res://.godot/imported/light.png-8fdf09ef7de5c29c73dfe94c1c1879f5.ctex"
+
+[node name="PlayerRoom" type="Node2D"]
+position = Vector2(29, 30)
+script = ExtResource("1_xkoml")
+
+[node name="Illumination" type="Node2D" parent="." node_paths=PackedStringArray("ilumination_node", "BigLight", "SmallLight")]
+script = ExtResource("2_4cm2p")
+ilumination_node = NodePath("RoomLight")
+BigLight = NodePath("RoomLight/BigLight")
+SmallLight = NodePath("RoomLight/SmallLight")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Illumination"]
+color = Color(0, 0, 0, 1)
+
+[node name="BaseIlumination" type="PointLight2D" parent="Illumination"]
+position = Vector2(329, 35)
+energy = 0.2
+texture = SubResource("CompressedTexture2D_s34ym")
+texture_scale = 10.0
+
+[node name="RoomLight" type="Node2D" parent="Illumination"]
+visible = false
+position = Vector2(18, -61)
+
+[node name="SmallLight" type="PointLight2D" parent="Illumination/RoomLight"]
+position = Vector2(282, -149)
+texture = ExtResource("6_0w2ae")
+
+[node name="BigLight" type="PointLight2D" parent="Illumination/RoomLight"]
+position = Vector2(324, -179)
+texture = ExtResource("6_0w2ae")
+texture_scale = 7.0
+
+[node name="BackgroundCenario" type="Node2D" parent="."]
+
+[node name="Mapa1" type="Sprite2D" parent="BackgroundCenario"]
+position = Vector2(341, 68)
+texture = ExtResource("2_lpg70")
+
+[node name="RoomClock" parent="BackgroundCenario" instance=ExtResource("3_mx5ei")]
+position = Vector2(262, -67)
+
+[node name="OrganizadosPorY" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Personagens" type="Node2D" parent="OrganizadosPorY"]
+y_sort_enabled = true
+
+[node name="Doctor" parent="OrganizadosPorY/Personagens" node_paths=PackedStringArray("exit_area", "target_area") instance=ExtResource("1_413a8")]
+position = Vector2(299, -20)
+exit_area = NodePath("ExitArea")
+target_area = NodePath("TargetArea")
+
+[node name="TargetArea" type="Marker2D" parent="OrganizadosPorY/Personagens/Doctor"]
+top_level = true
+position = Vector2(485, 95)
+
+[node name="ExitArea" type="Marker2D" parent="OrganizadosPorY/Personagens/Doctor"]
+top_level = true
+position = Vector2(330, 9)
+
+[node name="Player" parent="OrganizadosPorY/Personagens" instance=ExtResource("5_6s2l1")]
+position = Vector2(356, 157)
+
+[node name="Objects" type="Node2D" parent="OrganizadosPorY"]
+y_sort_enabled = true
+position = Vector2(8, -4)
+
+[node name="Tv" type="RigidBody2D" parent="OrganizadosPorY/Objects" node_paths=PackedStringArray("smallLight")]
+position = Vector2(360, 157)
+collision_layer = 2
+collision_mask = 0
+mass = 10.0
+lock_rotation = true
+script = ExtResource("10_royjt")
+smallLight = NodePath("Bubble/Small")
+
+[node name="Node2D" type="Node2D" parent="OrganizadosPorY/Objects/Tv"]
+position = Vector2(-2, -11)
+scale = Vector2(0.3, 0.3)
+
+[node name="Label" type="Label" parent="OrganizadosPorY/Objects/Tv/Node2D"]
+material = SubResource("CanvasItemMaterial_nteog")
+offset_left = -120.0
+offset_top = -76.6667
+offset_right = 118.0
+offset_bottom = -53.6667
+theme = ExtResource("11_xcvq4")
+theme_override_fonts/font = ExtResource("12_u0s6b")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "[E] Segurar/Soltar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OrganizadosPorY/Objects/Tv"]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_s3cjc")
+
+[node name="BarrilGrandeFundo" type="Sprite2D" parent="OrganizadosPorY/Objects/Tv"]
+modulate = Color(0, 0, 0, 1)
+scale = Vector2(0.277, 0.277)
+texture = ExtResource("13_jpjwd")
+
+[node name="BarrilGrande" type="Sprite2D" parent="OrganizadosPorY/Objects/Tv"]
+scale = Vector2(0.252, 0.252)
+texture = ExtResource("13_jpjwd")
+
+[node name="InteractibleArea" parent="OrganizadosPorY/Objects/Tv" node_paths=PackedStringArray("message") instance=ExtResource("14_tnvf8")]
+message = NodePath("../Node2D/Label")
+
+[node name="Bubble" type="Sprite2D" parent="OrganizadosPorY/Objects/Tv"]
+position = Vector2(0, -16)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("15_e2agt")
+
+[node name="Biglight" type="PointLight2D" parent="OrganizadosPorY/Objects/Tv/Bubble"]
+position = Vector2(-40, -20)
+scale = Vector2(125, 125)
+blend_mode = 2
+texture = SubResource("CompressedTexture2D_j8i1h")
+texture_scale = 0.1
+
+[node name="Small" type="PointLight2D" parent="OrganizadosPorY/Objects/Tv/Bubble"]
+scale = Vector2(125, 125)
+energy = 0.5
+texture = ExtResource("6_0w2ae")
+texture_scale = 0.03

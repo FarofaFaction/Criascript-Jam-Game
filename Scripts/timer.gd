@@ -1,6 +1,7 @@
 extends Control
 class_name  Watch
 
+signal time_changed
 # Variables to control the time
 var text: String
 var total_time: float = 0.0
@@ -9,18 +10,26 @@ var seconds_per_minute: float = 60 * 8  # 8 hours in seconds (480 seconds) for 1
 var timestop := false
 var hours: int
 var minutes: int
-var seconds: int
+#var seconds: int
+var _signal_emitted := false
 
 func _ready() -> void:
+	process_mode = self.PROCESS_MODE_PAUSABLE
 	set_time(18, 0)
 	pass
 	
 func _run_clock(_delta: float):
 	total_time += (_delta * seconds_per_minute)
 
-	hours = int(total_time / 3600) % 24
+	var temp_hours = int(total_time / 3600) % 24
+	if temp_hours != hours:
+		_signal_emitted = false
+	hours = temp_hours
 	minutes = int(int(total_time) % 3600 / 60)
-	seconds = int(int(total_time) % 60)
+	if !_signal_emitted && minutes == 0:
+		time_changed.emit()
+		_signal_emitted = true
+	#seconds = int(int(total_time) % 60)
 	# Format the time
 	text = "%02d:%02d" % [hours, minutes]
 	#text = "%02d:%02d:%02d" % [hours, minutes, seconds]
@@ -33,6 +42,11 @@ func start():
 func stop():
 	timestop = true
 
+func is_time(hour: int, minute: int):
+	if (minutes == minute && hour == hours):
+		return true
+	return false
+	
 #tempo real speed = 1
 #1 minuto por segundo = 60
 #x horas em um minuto = 60 * x
@@ -51,3 +65,6 @@ func set_time(hour: int, minute: int):
 	hours = int(total_time / 3600) % 24
 	minutes = int(int(total_time) % 3600 / 60)
 	text = "%02d:%02d" % [hours, minutes]
+	if minutes == 0:
+		time_changed.emit()
+		_signal_emitted = true

@@ -1,14 +1,26 @@
+<<<<<<< HEAD
 [gd_scene load_steps=25 format=3 uid="uid://7sspjh77o6vm"]
+=======
+[gd_scene load_steps=21 format=3 uid="uid://7sspjh77o6vm"]
+>>>>>>> main
 
 [ext_resource type="Script" path="res://Game/Player/player.gd" id="1_n8fh7"]
+[ext_resource type="Shader" path="res://Shaders/shadow.gdshader" id="1_vlcu5"]
 [ext_resource type="AudioStream" uid="uid://bgegloq6p5nx7" path="res://Audio/Effects/Male_Hurt_-_Sound_Effect.wav" id="2_4feee"]
 [ext_resource type="AudioStream" uid="uid://cm70m3qagwuin" path="res://Audio/Effects/668349__deltacode__8bit-scream.wav" id="2_aigqn"]
 [ext_resource type="AudioStream" uid="uid://b2obv3esujl8x" path="res://Audio/Effects/andando.mp3" id="2_gyrqa"]
 [ext_resource type="Texture2D" uid="uid://dgq2m1cnwgbv" path="res://Game/Player/idle.png" id="2_jplro"]
 [ext_resource type="AudioStream" uid="uid://cdtjj7teyvys5" path="res://Audio/Effects/correndo.mp3" id="3_8k3q0"]
 [ext_resource type="Texture2D" uid="uid://ji8y8qki3vcm" path="res://Game/Player/run.png" id="3_51uww"]
+<<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://bchofwuy1kere" path="res://Objects/ToolAssets/blank_circle.png" id="4_4rx7w"]
 [ext_resource type="Texture2D" uid="uid://ciic7lp5bl7pi" path="res://Game/Player/morte.png" id="8_2qi77"]
+=======
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ejkmr"]
+shader = ExtResource("1_vlcu5")
+shader_parameter/look_right = true
+>>>>>>> main
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_atn8a"]
 atlas = ExtResource("2_jplro")
@@ -118,9 +130,8 @@ size = Vector2(14, 5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cgdn2"]
 size = Vector2(10, 25)
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("spritePlayer", "Hitbox", "StepsAudioPlayer", "DamageAudioPlayer") groups=["Player"]]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("ShadowPlayer", "spritePlayer", "Hitbox", "StepsAudioPlayer", "DamageAudioPlayer") groups=["Player"]]
 y_sort_enabled = true
-position = Vector2(952, 431)
 collision_layer = 2
 collision_mask = 2
 motion_mode = 1
@@ -128,6 +139,7 @@ script = ExtResource("1_n8fh7")
 dying_sound = ExtResource("2_aigqn")
 walking_sound = ExtResource("2_gyrqa")
 running_sound = ExtResource("3_8k3q0")
+ShadowPlayer = NodePath("Shadow")
 spritePlayer = NodePath("Sprite")
 Hitbox = NodePath("Hitbox")
 StepsAudioPlayer = NodePath("StepsAudioPlayer")
@@ -135,10 +147,25 @@ DamageAudioPlayer = NodePath("DamageAudioPlayer")
 metadata/_edit_group_ = true
 metadata/_edit_pinned_properties_ = [&"walking_sound", &"running_sound"]
 
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_left = -91325.0
+offset_top = -61561.0
+offset_right = -91285.0
+offset_bottom = -61521.0
+scale = Vector2(1e+10, 1e+10)
+
 [node name="StepsAudioPlayer" type="AudioStreamPlayer2D" parent="."]
 
 [node name="DamageAudioPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_4feee")
+
+[node name="Shadow" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_ejkmr")
+position = Vector2(0, -1)
+sprite_frames = SubResource("SpriteFrames_amjbx")
+animation = &"Idle"
+autoplay = "Idle"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_amjbx")
@@ -150,28 +177,6 @@ frame_progress = 0.568754
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 12.5)
 shape = SubResource("RectangleShape2D_shqjl")
-
-[node name="Ilumination" type="Node2D" parent="."]
-
-[node name="BigLight" type="PointLight2D" parent="Ilumination"]
-blend_mode = 2
-texture = ExtResource("4_4rx7w")
-texture_scale = 10.0
-
-[node name="BigLight2" type="PointLight2D" parent="Ilumination"]
-position = Vector2(0, 45)
-blend_mode = 2
-range_item_cull_mask = 2
-shadow_item_cull_mask = 2
-texture = ExtResource("4_4rx7w")
-texture_scale = 10.0
-
-[node name="SmallLight" type="PointLight2D" parent="Ilumination"]
-visible = false
-shadow_enabled = true
-texture = ExtResource("4_4rx7w")
-
-[node name="CanvasModulate" type="CanvasModulate" parent="Ilumination"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(5, 5)

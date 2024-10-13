@@ -6,6 +6,7 @@ signal finish_dialog
 var _step: float = 0.02
 var _id: int = 0
 var data: Dictionary = {}
+var _on_dialog := false
 
 @export_category("Objects")
 @export var _name: Label
@@ -21,6 +22,7 @@ func _ready() -> void:
 
 # Métodos de Inicialização
 func start_dialog() -> void:
+	_on_dialog = true
 	InGamePause.hold_pause = true
 	$CanvasLayer.visible = true
 	_initialize_dialog()
@@ -42,7 +44,7 @@ func _initialize_dialog() -> void:
 func _update_dialog_elements() -> void:
 	_name.text = data[_id]["title"]
 	_dialog.text = data[_id]["dialog"]
-	_faceset.texture = load(data[_id]["faceset"])
+	_faceset.texture = data[_id]["faceset"]
 	_dialog.visible_characters = 0 
 
 # Mostra o diálogo gradualmente
@@ -54,7 +56,8 @@ func _show_dialog_gradually() -> void:
 
 # Chamado a cada frame
 func _process(delta: float) -> void:
-
+	if !_on_dialog:
+		return
 	if (on_options_observer != on_options):
 		if (on_options_observer == true):
 			_id += 1
@@ -93,5 +96,6 @@ func _finish_dialog() -> void:
 	finish_dialog.emit()
 	$CanvasLayer.visible = false
 	_id = 0
+	_on_dialog = false
 	InGamePause.hold_pause = false
 	get_tree().paused = false

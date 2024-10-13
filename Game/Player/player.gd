@@ -5,6 +5,7 @@ class_name PlayerClass
 @export var dying_sound : AudioStream
 @export var walking_sound : AudioStream
 @export var running_sound : AudioStream
+@export var ShadowPlayer: AnimatedSprite2D
 @export var spritePlayer: AnimatedSprite2D
 @export var Hitbox :Area2D
 @export var StepsAudioPlayer: AudioStreamPlayer2D
@@ -14,11 +15,13 @@ class_name PlayerClass
 signal PlayerDied
 
 #Local Vars
+var _can_run := true
 var _died := false
 var _is_running := false
-const SPEED = 100.0
+@export var SPEED = 50.0
 
 func _ready() -> void:
+	Global.player = self
 	PlayerDied.connect(on_player_died)
 	Transition.transition("fade_out_black")
 
@@ -28,7 +31,7 @@ func _move_speed_controler():
 	else:
 		_is_running = false
 	var input_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	if (_is_running):
+	if (_is_running && _can_run):
 		self.velocity = input_direction * SPEED * 2
 	else:
 		self.velocity = input_direction * SPEED
@@ -37,11 +40,16 @@ func _move_speed_controler():
 func _walk_animation_sprite_controler() -> void:
 	if (!velocity):
 		spritePlayer.play("Idle")
+		ShadowPlayer.play("Idle")
+		
 	else:
 		spritePlayer.play("Run")
+		ShadowPlayer.play("Run")
 		if (velocity.x < 0):
+			ShadowPlayer.flip_h = true
 			spritePlayer.flip_h = true
 		else:
+			ShadowPlayer.flip_h = false
 			spritePlayer.flip_h = false
 	pass
 

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://txnf8fwbrwd7"]
+
+[ext_resource type="Texture2D" uid="uid://cfqifg6lqbw48" path="res://Objects/Cenario/pegadas vermelhas.png" id="1_82ix8"]
+[ext_resource type="Script" path="res://Game/Enemy/Redguy/pegadas_vermelhas.gd" id="1_alsmj"]
+
+[node name="Pegadas" type="Node2D"]
+top_level = true
+scale = Vector2(0.51, 0.729)
+script = ExtResource("1_alsmj")
+
+[node name="PegadasVermelhas" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("1_82ix8")

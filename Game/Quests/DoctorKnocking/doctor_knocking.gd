@@ -14,16 +14,16 @@ func _ready() -> void:
 
 #@onready var shader_material = $"../../CanvasLayer/ColorRect".material
 
-func _process(delta):
+#func _process(_delta):
 	# Obtenha a posição global do node
-	var global_pos = $tools/DoorSoundOrigin.global_position
+	#var global_pos = $tools/DoorSoundOrigin.global_position
 
 	# Converta a posição para coordenadas de tela (normalizadas)
 	# Converta o tamanho da tela para Vector2
-	var screen_size = Vector2(get_viewport().get_size())
-
-	# Converta a posição global para coordenadas de tela (normalizadas)
-	var real_center = global_pos / screen_size
+	#var screen_size = Vector2(get_viewport().get_size())
+#
+	## Converta a posição global para coordenadas de tela (normalizadas)
+	#var real_center = global_pos / screen_size
 
 	# Atualize o uniform do shader material.set_shader_parameter("TextureMask", textureImage)
 	#shader_material.set_shader_parameter("real_center", real_center)

@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://b1kocyemignup"]
+[gd_scene load_steps=5 format=3 uid="uid://b1kocyemignup"]
 
 [ext_resource type="Script" path="res://Dialog/DialogClass/dialog_class.gd" id="1_88w8m"]
 [ext_resource type="Script" path="res://Dialog/DialogClass/speak_class.gd" id="2_wduwi"]
+[ext_resource type="Texture2D" uid="uid://c2ojth3poy1um" path="res://Dialog/Characters/Character/psychiatric_patient.jpg" id="3_mq8m7"]
+[ext_resource type="Texture2D" uid="uid://de0dxq4ujoxsc" path="res://Dialog/Characters/Doctor/DoctorPortrait.jpg" id="4_7n3yd"]
 
 [node name="DialogClass" type="Control"]
 layout_mode = 3
@@ -18,6 +20,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 text = "Ola"
 script = ExtResource("2_wduwi")
+texture = ExtResource("3_mq8m7")
 speaker = "You"
 
 [node name="SpeakClass2" type="RichTextLabel" parent="."]
@@ -26,6 +29,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 text = "Queria Apenas"
 script = ExtResource("2_wduwi")
+texture = ExtResource("3_mq8m7")
 speaker = "You"
 
 [node name="SpeakClass3" type="RichTextLabel" parent="."]
@@ -34,6 +38,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 text = "Testar Esse Sistema de Dialogo"
 script = ExtResource("2_wduwi")
+texture = ExtResource("3_mq8m7")
 speaker = "You"
 
 [node name="SpeakClass4" type="RichTextLabel" parent="."]
@@ -42,7 +47,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 text = "Acho que nao funcionou"
 script = ExtResource("2_wduwi")
-image = "res://blacksquare.png"
+texture = ExtResource("4_7n3yd")
 speaker = "Enemy"
 
 [node name="SpeakClass5" type="RichTextLabel" parent="."]
@@ -51,6 +56,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 text = "Funcionou Sim"
 script = ExtResource("2_wduwi")
+texture = ExtResource("3_mq8m7")
 speaker = "You"
 
 [node name="SpeakClass7" type="RichTextLabel" parent="."]
@@ -59,7 +65,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 text = "Entao Ta Bom"
 script = ExtResource("2_wduwi")
-image = "res://blacksquare.png"
+texture = ExtResource("4_7n3yd")
 speaker = "Enemy"
 
 [node name="SpeakClass6" type="RichTextLabel" parent="."]
@@ -68,4 +74,5 @@ offset_right = 40.0
 offset_bottom = 40.0
 text = "ATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACAR"
 script = ExtResource("2_wduwi")
+texture = ExtResource("3_mq8m7")
 speaker = "You"

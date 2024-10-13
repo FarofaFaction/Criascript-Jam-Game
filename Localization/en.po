@@ -20,8 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.5\n"
 
-#: Interface/LenguageMenu/lenguage_menu.tscn
-#: Interface/ConfigMenu/config_menu.tscn
+#: Interface/LenguageMenu/lenguage_menu.tscn Interface/ConfigMenu/config_menu.tscn
 msgid "Idioma"
 msgstr "Language"
 
@@ -35,17 +34,17 @@ msgstr "PT-BR"
 
 #: Interface/LenguageMenu/lenguage_menu.tscn
 msgid "Pronto\n"
-msgstr ""
+msgstr "Ready\n"
 
-#: Interface/Menu/menu_options.tscn
+#: Interface/Menu/menu_options.tscn Interface/Menu/menu.tscn
 msgid "Iniciar"
 msgstr "Start"
 
-#: Interface/Menu/menu_options.tscn
+#: Interface/Menu/menu_options.tscn Interface/Pause/pause_options.tscn
 msgid "Continuar"
 msgstr "Continue"
 
-#: Interface/Menu/menu_options.tscn Interface/ConfigMenu/config_menu.tscn
+#: Interface/Menu/menu_options.tscn Interface/ConfigMenu/config_menu.tscn Dialog/DialogMenuClass/DialogMenu.tscn Interface/Pause/pause_options.tscn
 msgid "Configurações"
 msgstr "Settings"
 
@@ -53,8 +52,7 @@ msgstr "Settings"
 msgid "Sair"
 msgstr "Exit"
 
-#: Interface/ConfigMenu/config_menu.tscn
-#: Interface/ResolutionMenu/resoltutionMenu.tscn
+#: Interface/ConfigMenu/config_menu.tscn Interface/ResolutionMenu/resoltutionMenu.tscn
 msgid "Resolução"
 msgstr "Resolution"
 
@@ -62,8 +60,7 @@ msgstr "Resolution"
 msgid "Vol"
 msgstr "Vol"
 
-#: Interface/ConfigMenu/config_menu.tscn
-#: Interface/ResolutionMenu/resoltutionMenu.tscn
+#: Interface/ConfigMenu/config_menu.tscn Interface/ResolutionMenu/resoltutionMenu.tscn
 msgid "Fechar"
 msgstr "Close"
 
@@ -113,4 +110,80 @@ msgstr "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 
 #: Dialog/dialog_system.tscn
 msgid "\tNome"
+msgstr "\tName"
+
+#: Dialog/DialogMenuClass/DialogMenu.tscn Game/Quests/DoctorKnocking/stage_1/DoctorKnocking_1.tscn
+msgid "Option 1\n"
+msgstr "Option 1\n"
+
+#: Dialog/DialogMenuClass/DialogMenu.tscn Game/Quests/DoctorKnocking/stage_1/DoctorKnocking_1.tscn
+msgid "Option 2"
+msgstr "Option 2"
+
+#: Dialog/DialogMenuClass/DialogMenu.tscn Game/Quests/DoctorKnocking/stage_1/DoctorKnocking_1.tscn
+msgid "Option 3"
+msgstr "Option 3"
+
+#: Dialog/DialogMenuClass/DialogMenu.tscn Game/Quests/DoctorKnocking/stage_1/DoctorKnocking_1.tscn
+msgid "Option 4"
+msgstr "Option 4"
+
+#: Dialog/DialogWithOptionsExample/DialogWithOptions.tscn
+msgid "aaaaaaaaaaaa"
+msgstr "aaaaaaaaaaaa"
+
+#: Dialog/DialogWithOptionsExample/DialogWithOptions.tscn
+msgid "bbbbbbbbbbb"
+msgstr "bbbbbbbbbbb"
+
+#: Game/Quests/DoctorKnocking/stage_1/DoctorKnocking_1.tscn
+msgid "Bom Dia Dorminhoco"
+msgstr "Good Morning Sunshine"
+
+#: Game/Quests/DoctorKnocking/stage_1/DoctorKnocking_1.tscn
+msgid "Pronto Pra Tomar Seu Remedio ?"
+msgstr "Ready to take your medicine?"
+
+#: Game/Quests/DoctorKnocking/stage_1/DoctorKnocking_1.tscn
+msgid "Escolha"
+msgstr "Choise"
+
+#: Game/Quests/DoctorKnocking/stage_1/DoctorKnocking_1.tscn
+msgid "Sim"
+msgstr "Yes"
+
+#: Game/Quests/DoctorKnocking/stage_1/DoctorKnocking_1.tscn
+msgid "Não"
+msgstr "Not"
+
+#: Game/Quests/DoctorKnocking/stage_1/DoctorKnocking_1.tscn
+msgid "Muito Bem, Até Mais Tarde"
+msgstr "Very good, until tomorow"
+
+#: Interface/Menu/menu.tscn
+msgid ""
+"Escapefrom\r\n"
+"Asylum\r\n"
 msgstr ""
+"Escapefrom\r\n"
+"Asylum\r\n"
+
+#: Interface/Pause/pause_options.tscn
+msgid "Pause"
+msgstr "Paused"
+
+#: Interface/Pause/pause_options.tscn
+msgid "Menu"
+msgstr "Menu"
+
+#: Interface/Pause/pause_options.tscn
+msgid ""
+"Fechar\n"
+"Jogo"
+msgstr ""
+"Close\n"
+"Game"
+
+#: Interface/Transition/Loading.tscn
+msgid "Carregando"
+msgstr "Loading"
