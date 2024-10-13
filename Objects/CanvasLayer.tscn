@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Interface/PlayerInterface/sanity.gd" id="2_6m3ts"]
 [ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="2_75npj"]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="SanityInterface" type="CanvasLayer"]
 
 [node name="Sanity" type="Control" parent="."]
 layout_mode = 3
