@@ -8,7 +8,6 @@ var _vomited_object
 @export var vomit_duration := 1
 @export var vomit_timer : Timer
 @export var damage_start_timer : Timer
-var _direction := Vector2.ZERO
 var _doing_damage := false
 
 func Enter():

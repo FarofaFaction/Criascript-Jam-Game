@@ -4,6 +4,7 @@ class_name Enemy
 const pegadas_model := preload("res://Game/Enemy/Redguy/pegadas_vermelhas.tscn")
 var LastTarget: Node
 var Target: Node
+@export var time_to_pegadas_die : float = 30
 @export var pegadas_distance := 1000
 @export var DetectionArea: Area2D
 @export var SelfArea: Area2D
@@ -35,16 +36,23 @@ func _physics_process(_delta: float) -> void:
 
 func spawn_pegadas() -> void:
 	#print(distance_traveled)
-	if (!pegadasSpawnNode || pegadasSpawnReff):
+	if (!pegadasSpawnNode || !pegadasSpawnReff):
 		return
 	if distance_traveled >= pegadas_distance:
 		# Reseta a distância percorrida
 		distance_traveled = 0.0
-		#print(distance_traveled)
+
 		# Cria uma nova instância de pegadas_model
 		var pegadas_instance = pegadas_model.instantiate()
+		pegadas_instance.timetodie = time_to_pegadas_die
 		pegadasSpawnNode.add_child(pegadas_instance)
+
+		# Define a posição da pegada
 		pegadas_instance.global_position = pegadasSpawnReff.global_position
-		#print(pegadas.get_child_count())
-		# Posiciona a pegada na posição atual do inimigo
-		pegadas_instance.position = position
+
+		# Define a rotação da pegada na direção do movimento
+		var direction = velocity.normalized()  # Normaliza a direção
+		if direction.length() > 0:
+			pegadas_instance.rotation = direction.angle()  # Define a rotação
+		# Se precisar, você pode ajustar a posição para se alinhar melhor
+		# pegadas_instance.position += direction * ajuste_se necessário

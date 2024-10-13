@@ -1,10 +1,13 @@
 extends Node2D
 
+@export var color_night : Color
+@export var color_day : Color
 @export var light_off_time := 20
 @export var light_on_time := 6
 @export var ilumination_node := Node2D
 @export var BigLight : PointLight2D
 @export var SmallLight : PointLight2D
+@export var GlobalIllumination : PointLight2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GlobalTimer.time_changed.connect(check_ilumination)
@@ -22,6 +25,9 @@ func turn_light_off():
 	var tween = get_tree().create_tween()
 	tween.tween_property(BigLight, "color", color, 2)
 	tween.tween_property(SmallLight, "color", color, 2)
+	if GlobalIllumination:
+		tween.tween_property(GlobalIllumination, "color", color_night, 2)
+		#tween.tween_property(GlobalIllumination, "color", color_day, 2)
 	pass
 
 func turn_light_on():
@@ -30,6 +36,9 @@ func turn_light_on():
 	var tween = get_tree().create_tween()
 	tween.tween_property(BigLight, "color", color, 2)
 	tween.tween_property(SmallLight, "color", color, 2)
+	if GlobalIllumination:
+		tween.tween_property(GlobalIllumination, "color", color_day, 2)
+		#tween.tween_property(GlobalIllumination, "color", color_night, 2)
 	pass
 
 func check_ilumination():
