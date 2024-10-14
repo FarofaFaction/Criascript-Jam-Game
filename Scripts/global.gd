@@ -14,7 +14,7 @@ func _ready() -> void:
 
 const Loading := "res://Interface/Transition/Loading.tscn"
 const MenuMenu := "res://Interface/Menu/menu.tscn"
-const Game := "res://Game/Room/room.tscn"
+const Game := "res://Game/Loctions/PlayerRoom/PlayerRoom.tscn"
 var current_scene: String
 #const ss := str(1)
 
