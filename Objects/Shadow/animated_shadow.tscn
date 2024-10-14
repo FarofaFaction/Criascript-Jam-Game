@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqjg53nmro3w"]
+
+[ext_resource type="Shader" path="res://Shaders/shadow.gdshader" id="1_365bm"]
+[ext_resource type="Script" path="res://Objects/Shadow/animated_shadow.gd" id="2_ugyln"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jv1qq"]
+shader = ExtResource("1_365bm")
+shader_parameter/look_right = true
+
+[node name="AnimatedShadow" type="AnimatedSprite2D"]
+show_behind_parent = true
+material = SubResource("ShaderMaterial_jv1qq")
+script = ExtResource("2_ugyln")

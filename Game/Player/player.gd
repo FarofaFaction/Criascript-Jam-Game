@@ -6,7 +6,6 @@ class_name PlayerClass
 @export var dying_sound: AudioStream
 @export var walking_sound: AudioStream
 @export var running_sound: AudioStream
-@export var ShadowPlayer: AnimatedSprite2D
 @export var Sprite: AnimatedSprite2D
 @export var Hitbox: Area2D
 @export var StepsAudioPlayer: AudioStreamPlayer2D
@@ -81,11 +80,9 @@ func _set_movement_input():
 	else:
 		_is_running = false
 	if _input_direction.x < 0:
-		ShadowPlayer.flip_h = true
-		Sprite.scale.x = -1
+		Sprite.flip_h = true
 	else:
-		ShadowPlayer.flip_h = false
-		Sprite.scale.x = 1
+		Sprite.flip_h = false
 	pass
 
 func _normal_movement():
@@ -115,22 +112,16 @@ func _change_animation(new_state: AnimationState):
 		match current_animation:
 			AnimationState.IDLE:
 				Sprite.play("Idle")
-				ShadowPlayer.play("Idle")
 			AnimationState.WALK:
 				Sprite.play("Walk")
-				ShadowPlayer.play("Walk")
 			AnimationState.RUN:
 				Sprite.play("Run")
-				ShadowPlayer.play("Run")
 			AnimationState.DIE:
 				Sprite.play("Die")
-				ShadowPlayer.play("Die")
 			AnimationState.PUSH:
 				Sprite.play("Push")
-				ShadowPlayer.play("Push")
 			AnimationState.WAKE_UP:
-				Sprite.play("WakeUp")  # Certifique-se de que a animação "WakeUp" exista
-				ShadowPlayer.play("WakeUp")
+				Sprite.play("WakeUp")
 
 func _audio_steps_controller() -> void:
 	if self.velocity == Vector2.ZERO:

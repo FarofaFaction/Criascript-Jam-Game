@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://b8t0b7kcbu145"]
+[gd_scene load_steps=38 format=3 uid="uid://b8t0b7kcbu145"]
 
 [ext_resource type="Script" path="res://Game/Npcs/Doctor/doctor.gd" id="1_kyepb"]
 [ext_resource type="Texture2D" uid="uid://dgq2m1cnwgbv" path="res://Game/Player/idle.png" id="2_fr85r"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://Game/Npcs/Doctor/docorIdle.gd" id="5_keikc"]
 [ext_resource type="Script" path="res://Game/Npcs/Doctor/doctorWalkIn.gd" id="5_yi6qs"]
 [ext_resource type="Script" path="res://Game/Npcs/Doctor/doctor_await.gd" id="6_hit2k"]
+[ext_resource type="PackedScene" uid="uid://bqjg53nmro3w" path="res://Objects/Shadow/animated_shadow.tscn" id="6_q0g57"]
 [ext_resource type="Script" path="res://Dialog/DialogClass/dialog_class.gd" id="7_cblik"]
 [ext_resource type="PackedScene" uid="uid://6fw6kl4t5n7x" path="res://Objects/interactible_area.tscn" id="7_wcyvh"]
 [ext_resource type="Script" path="res://Dialog/DialogClass/speak_class.gd" id="8_6mjny"]
@@ -195,6 +196,8 @@ sprite_frames = SubResource("SpriteFrames_amjbx")
 animation = &"DoctorIdle"
 autoplay = "Idle"
 frame_progress = 0.344689
+
+[node name="AnimatedShadow" parent="Sprite" instance=ExtResource("6_q0g57")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 12)
