@@ -5,7 +5,7 @@ extends State
 func Enter():
 	if !doctor:
 		return
-	doctor.visible = false
+	#doctor.visible = false
 
 func Exit():
 	pass

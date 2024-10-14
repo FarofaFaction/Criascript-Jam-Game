@@ -3,8 +3,7 @@
 [ext_resource type="Script" path="res://Objects/Cenario/Tv/tv.gd" id="1_vjexk"]
 [ext_resource type="Theme" uid="uid://bi5atlkw4djab" path="res://Dialog/Styles/Style.tres" id="2_0cr4v"]
 [ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="3_nqx80"]
-[ext_resource type="Texture2D" uid="uid://bcohknv0ous7y" path="res://Objects/Cenario/barril grande.png" id="4_kqslc"]
-[ext_resource type="PackedScene" uid="uid://6fw6kl4t5n7x" path="res://Objects/interactible_area.tscn" id="5_g74rh"]
+[ext_resource type="Script" path="res://Scripts/interactible_area.gd" id="4_jmppi"]
 [ext_resource type="Texture2D" uid="uid://cusk8ggfb80y3" path="res://Objects/Cenario/Tv/tv.png" id="6_c6heo"]
 [ext_resource type="Texture2D" uid="uid://grx8jyxat1kd" path="res://Objects/light/light.png" id="7_tpdgd"]
 
@@ -20,7 +19,10 @@ border_width_bottom = 5
 border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s3cjc"]
-size = Vector2(16, 11)
+size = Vector2(15, 9)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h5h37"]
+radius = 12.0416
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_j8i1h"]
 load_path = "res://.godot/imported/light.png-8fdf09ef7de5c29c73dfe94c1c1879f5.ctex"
@@ -53,38 +55,39 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 6.5)
+position = Vector2(-0.5, 5.5)
 shape = SubResource("RectangleShape2D_s3cjc")
 
-[node name="BarrilGrandeFundo" type="Sprite2D" parent="."]
-modulate = Color(0, 0, 0, 1)
-scale = Vector2(0.277, 0.277)
-texture = ExtResource("4_kqslc")
-
-[node name="BarrilGrande" type="Sprite2D" parent="."]
-scale = Vector2(0.252, 0.252)
-texture = ExtResource("4_kqslc")
-
-[node name="InteractibleArea" parent="." node_paths=PackedStringArray("message") instance=ExtResource("5_g74rh")]
+[node name="InteractibleArea" type="Area2D" parent="." node_paths=PackedStringArray("message")]
+position = Vector2(0, -7)
+collision_layer = 0
+collision_mask = 2147483648
+monitorable = false
+script = ExtResource("4_jmppi")
 message = NodePath("../Node2D/Label")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractibleArea"]
+position = Vector2(0, 12)
+shape = SubResource("CircleShape2D_h5h37")
+
 [node name="Bubble" type="Sprite2D" parent="."]
-position = Vector2(0, -16)
-scale = Vector2(0.05, 0.05)
+position = Vector2(0, -5)
 texture = ExtResource("6_c6heo")
 
 [node name="Biglight" type="PointLight2D" parent="Bubble"]
-position = Vector2(-40, -20)
-scale = Vector2(125, 125)
+position = Vector2(0, -5)
 color = Color(1, 0, 1, 1)
 range_item_cull_mask = 524289
 texture = SubResource("CompressedTexture2D_j8i1h")
 texture_scale = 0.1
 
 [node name="Small" type="PointLight2D" parent="Bubble"]
-scale = Vector2(125, 125)
+position = Vector2(0, -5)
 color = Color(1, 0, 1, 1)
 energy = 0.5
 range_item_cull_mask = 524289
 texture = ExtResource("7_tpdgd")
 texture_scale = 0.03
+
+[connection signal="area_entered" from="InteractibleArea" to="InteractibleArea" method="_player_entered"]
+[connection signal="area_exited" from="InteractibleArea" to="InteractibleArea" method="_player_exited"]

@@ -6,7 +6,7 @@ class_name PlayerClass
 @export var walking_sound : AudioStream
 @export var running_sound : AudioStream
 @export var ShadowPlayer: AnimatedSprite2D
-@export var spritePlayer: AnimatedSprite2D
+@export var Sprite: AnimatedSprite2D
 @export var Hitbox :Area2D
 @export var StepsAudioPlayer: AudioStreamPlayer2D
 @export var DamageAudioPlayer: AudioStreamPlayer2D
@@ -39,18 +39,18 @@ func _move_speed_controler():
 
 func _walk_animation_sprite_controler() -> void:
 	if (!velocity):
-		spritePlayer.play("Idle")
+		Sprite.play("Idle")
 		ShadowPlayer.play("Idle")
 		
 	else:
-		spritePlayer.play("Run")
+		Sprite.play("Run")
 		ShadowPlayer.play("Run")
 		if (velocity.x < 0):
 			ShadowPlayer.flip_h = true
-			spritePlayer.flip_h = true
+			Sprite.flip_h = true
 		else:
 			ShadowPlayer.flip_h = false
-			spritePlayer.flip_h = false
+			Sprite.flip_h = false
 	pass
 
 func _audio_steps_controler() -> void:
@@ -95,7 +95,7 @@ func take_damage(damage: float):
 	Sanity -= damage
 
 func on_player_died():
-	spritePlayer.scale.y = 0.2
+	Sprite.scale.y = 0.2
 	StepsAudioPlayer.stop()
 	#DamageAudioPlayer.stop()
 	#set_process(false)
