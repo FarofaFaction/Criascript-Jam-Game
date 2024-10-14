@@ -20,6 +20,8 @@ func _ready() -> void:
 	#pass
 
 func turn_light_off():
+	if (!GlobalIllumination || !BigLight || !SmallLight):
+		return
 	var color: Color = BigLight.color
 	color.a = 0
 	var tween = get_tree().create_tween()
@@ -31,6 +33,8 @@ func turn_light_off():
 	pass
 
 func turn_light_on():
+	if (!GlobalIllumination || !BigLight || !SmallLight):
+		return
 	var color: Color = BigLight.color
 	color.a = 1
 	var tween = get_tree().create_tween()

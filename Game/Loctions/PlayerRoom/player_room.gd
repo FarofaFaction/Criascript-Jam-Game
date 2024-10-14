@@ -7,6 +7,7 @@ func _ready() -> void:
 	GlobalTimer.set_time(init_hour,0)
 	GlobalTimer.set_speed(speed)
 	InGamePause.monitoring = true
+	Transition.transition("fade_out_black")
 	pass # Replace with function body.
 
 
