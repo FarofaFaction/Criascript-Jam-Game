@@ -13,7 +13,7 @@
 [ext_resource type="Script" path="res://Dialog/DialogClass/speak_class.gd" id="11_syx6f"]
 [ext_resource type="Texture2D" uid="uid://de0dxq4ujoxsc" path="res://Dialog/Characters/Doctor/DoctorPortrait.jpg" id="12_yno7m"]
 [ext_resource type="PackedScene" uid="uid://baklw2eb62qgd" path="res://Dialog/DialogMenuClass/DialogMenu.tscn" id="13_6mhgf"]
-[ext_resource type="Script" path="res://Game/Npcs/Doctor/Dialogo/OpDialogoComoFoiSuaNoite.gd" id="14_p6jkk"]
+[ext_resource type="Script" path="res://Game/Npcs/Doctor/Dialogo/OpDialogoComoPossoAjudar.gd" id="14_p6jkk"]
 [ext_resource type="Script" path="res://Game/Npcs/Pacients/pacient_await.gd" id="15_yaa3v"]
 [ext_resource type="Script" path="res://Game/Npcs/Pacients/pacientWalkIn.gd" id="16_1r688"]
 [ext_resource type="Script" path="res://Game/Npcs/Pacients/pacientWalkout.gd" id="17_5kojs"]

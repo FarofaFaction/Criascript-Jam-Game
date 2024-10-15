@@ -91,6 +91,10 @@ func _run_dialog(delta: float) -> void:
 			_step = 0.2 * delta
 			_initialize_dialog()
 
+func _reset_dialog() -> void:
+	data = {}
+	_id = 0
+
 func _finish_dialog() -> void:
 	data = {}
 	finish_dialog.emit()

@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7t4t6rp65mrg"]
+
+[ext_resource type="Script" path="res://Dialog/DialogClass/dialog_class.gd" id="1_x3rls"]
+[ext_resource type="Script" path="res://Dialog/DialogClass/speak_class.gd" id="2_d4fyd"]
+[ext_resource type="Texture2D" uid="uid://de0dxq4ujoxsc" path="res://Dialog/Characters/Doctor/DoctorPortrait.jpg" id="3_kylqa"]
+
+[node name="Possotedar" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_x3rls")
+
+[node name="SpeakClass7" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -136.0
+offset_bottom = -136.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Vou ver o que posso fazer, me encontre na enfermaria"
+script = ExtResource("2_d4fyd")
+texture = ExtResource("3_kylqa")
+speaker = "Doutor"

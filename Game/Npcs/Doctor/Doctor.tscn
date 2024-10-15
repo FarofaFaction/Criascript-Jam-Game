@@ -16,7 +16,7 @@
 [ext_resource type="Script" path="res://Dialog/DialogClass/speak_class.gd" id="8_6mjny"]
 [ext_resource type="PackedScene" uid="uid://baklw2eb62qgd" path="res://Dialog/DialogMenuClass/DialogMenu.tscn" id="10_kp211"]
 [ext_resource type="Texture2D" uid="uid://de0dxq4ujoxsc" path="res://Dialog/Characters/Doctor/DoctorPortrait.jpg" id="12_b0lcb"]
-[ext_resource type="Script" path="res://Game/Npcs/Doctor/Dialogo/OpDialogoComoFoiSuaNoite.gd" id="12_jx1di"]
+[ext_resource type="Script" path="res://Game/Npcs/Doctor/Dialogo/OpDialogoComoPossoAjudar.gd" id="12_jx1di"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8ubhu"]
 radius = 129.557

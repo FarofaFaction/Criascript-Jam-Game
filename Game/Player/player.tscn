@@ -255,7 +255,7 @@ volume_db = -8.0
 sprite_frames = SubResource("SpriteFrames_amjbx")
 animation = &"WakeUp"
 autoplay = "Idle"
-frame_progress = 0.182538
+frame_progress = 0.922176
 
 [node name="RayCast2D" type="RayCast2D" parent="Sprite"]
 position = Vector2(1, -4)
