@@ -386,3 +386,6 @@ doctor = NodePath("../..")
 [node name="DoctorWalkout" type="Node" parent="State Machine" node_paths=PackedStringArray("doctor")]
 script = ExtResource("5_jqyoj")
 doctor = NodePath("../..")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true

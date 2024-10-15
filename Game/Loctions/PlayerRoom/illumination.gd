@@ -24,7 +24,7 @@ func turn_light_off():
 		return
 	var color: Color = BigLight.color
 	color.a = 0
-	var tween = get_tree().create_tween()
+	var tween = create_tween()
 	tween.tween_property(BigLight, "color", color, 2)
 	tween.tween_property(SmallLight, "color", color, 2)
 	if GlobalIllumination:
@@ -37,7 +37,7 @@ func turn_light_on():
 		return
 	var color: Color = BigLight.color
 	color.a = 1
-	var tween = get_tree().create_tween()
+	var tween = create_tween()
 	tween.tween_property(BigLight, "color", color, 2)
 	tween.tween_property(SmallLight, "color", color, 2)
 	if GlobalIllumination:

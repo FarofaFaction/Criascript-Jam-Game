@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b46ln0l8u82r0"]
+[gd_scene load_steps=12 format=3 uid="uid://b46ln0l8u82r0"]
 
 [ext_resource type="Script" path="res://Game/Room/room.gd" id="1_3vij1"]
 [ext_resource type="PackedScene" uid="uid://dmkbsln86fgm7" path="res://Objects/CanvasLayer.tscn" id="1_604fw"]
@@ -7,22 +7,24 @@
 [ext_resource type="Shader" path="res://Shaders/pixelart.gdshader" id="4_c38xh"]
 [ext_resource type="PackedScene" uid="uid://7sspjh77o6vm" path="res://Game/Player/player.tscn" id="4_i14w1"]
 [ext_resource type="PackedScene" uid="uid://cxpyp7yoxaixr" path="res://Objects/room_clock.tscn" id="4_yqami"]
+[ext_resource type="Texture2D" uid="uid://d0p74ybivffs7" path="res://icon.svg" id="5_n7bhf"]
 [ext_resource type="AudioStream" uid="uid://dlxpad3bry0wj" path="res://Audio/Music/fundo_assustador.mp3" id="6_457a2"]
 [ext_resource type="PackedScene" uid="uid://c4ofme5aqmxny" path="res://Shaders/ShockWave.tscn" id="7_a8e8t"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jlm1d"]
 shader = ExtResource("4_c38xh")
-shader_parameter/shake = 5.773
+shader_parameter/shake = 4.8
 shader_parameter/noiseQuality = 250.0
 shader_parameter/noiseIntensity = 0.001
 shader_parameter/offsetIntensity = 0.0045
-shader_parameter/colorOffsetIntensity = 0.2
-shader_parameter/pixelSize = 680.5
-shader_parameter/grainIntensity = 0.13
+shader_parameter/colorOffsetIntensity = 1.5
+shader_parameter/pixelSize = 913.0
+shader_parameter/grainIntensity = 0.04
 shader_parameter/use_overlay = true
 shader_parameter/use_lens_distortion = true
 shader_parameter/overlay_color = Color(1, 1, 1, 10)
-shader_parameter/lens_distortion_strength = 0.05
+shader_parameter/lens_distortion_strength = 0.1
+shader_parameter/overlay_texture = ExtResource("5_n7bhf")
 
 [node name="Room" type="Node2D"]
 y_sort_enabled = true

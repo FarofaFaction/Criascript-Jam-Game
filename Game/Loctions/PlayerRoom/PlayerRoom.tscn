@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://v7uuiioruv0j"]
+[gd_scene load_steps=22 format=3 uid="uid://v7uuiioruv0j"]
 
 [ext_resource type="PackedScene" uid="uid://b8t0b7kcbu145" path="res://Game/Npcs/Doctor/Doctor.tscn" id="1_413a8"]
 [ext_resource type="Script" path="res://Game/Loctions/PlayerRoom/player_room.gd" id="1_xkoml"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cdjdi7e3hfopn" path="res://Game/Loctions/PlayerRoom/comodo cortina 2.png" id="7_ecr0s"]
 [ext_resource type="Texture2D" uid="uid://co2ranalwxee1" path="res://Game/Loctions/PlayerRoom/comodo cortina.png" id="7_unrsb"]
 [ext_resource type="PackedScene" uid="uid://d2apjj0tfq2bn" path="res://Objects/Cenario/Tv/tv.tscn" id="8_55il4"]
+[ext_resource type="PackedScene" uid="uid://d2d1asq2fkvsq" path="res://Interface/PlayerInterface/player_interface.tscn" id="10_jdqjg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_icupd"]
 size = Vector2(35, 430)
@@ -41,6 +42,11 @@ size = Vector2(221, 11)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f6fea"]
 size = Vector2(44, 29)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_q05t7"]
+vertices = PackedVector2Array(837.758, 385.961, -201.531, 382.039, -124.25, -182.109, 884.148, -195.852)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-133, -192, 895, -206, 847, 396, -213, 392)])
 
 [node name="PlayerRoom" type="Node2D"]
 script = ExtResource("1_xkoml")
@@ -108,7 +114,7 @@ target_area = NodePath("TargetArea")
 
 [node name="TargetArea" type="Marker2D" parent="OrganizadosPorY/Personagens/Doctor"]
 top_level = true
-position = Vector2(546, 197)
+position = Vector2(533, 196)
 
 [node name="ExitArea" type="Marker2D" parent="OrganizadosPorY/Personagens/Doctor"]
 top_level = true
@@ -163,3 +169,17 @@ shape = SubResource("RectangleShape2D_f6fea")
 [node name="Tv" parent="OrganizadosPorY/Objects" instance=ExtResource("8_55il4")]
 y_sort_enabled = true
 position = Vector2(58, 0)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_q05t7")
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="NavigationRegion2D"]
+vertices = PackedVector2Array(-57, 278, 742, 278, 738, -60, 529, -61, 518, -21, 357, -25, 325, -62, 300, -21, 31, -25, -8, -52, -60, -53)
+
+[node name="NavigationObstacle2D2" type="NavigationObstacle2D" parent="NavigationRegion2D"]
+vertices = PackedVector2Array(435, 283, 311, 158, 467, 158, 464, 136, 229, 139, 230, 185, 340, 285)
+
+[node name="NavigationObstacle2D3" type="NavigationObstacle2D" parent="NavigationRegion2D"]
+vertices = PackedVector2Array(753, 167, 545, 164, 546, 134, 752, 141)
+
+[node name="PlayerInterface" parent="." instance=ExtResource("10_jdqjg")]
