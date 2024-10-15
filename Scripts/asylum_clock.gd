@@ -11,4 +11,5 @@ func _ready() -> void:
 	#pass
 
 func make_sound():
-	$AudioStreamPlayer.play()
+	if GlobalTimer.hours == 6 || GlobalTimer.hours == 12 || GlobalTimer.hours == 20:
+		$AudioStreamPlayer.play()

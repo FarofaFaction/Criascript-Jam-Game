@@ -8,6 +8,7 @@ extends Node2D
 @export var BigLight : PointLight2D
 @export var SmallLight : PointLight2D
 @export var GlobalIllumination : PointLight2D
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GlobalTimer.time_changed.connect(check_ilumination)
