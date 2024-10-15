@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://v7uuiioruv0j"]
+[gd_scene load_steps=23 format=3 uid="uid://v7uuiioruv0j"]
 
 [ext_resource type="PackedScene" uid="uid://b8t0b7kcbu145" path="res://Game/Npcs/Doctor/Doctor.tscn" id="1_413a8"]
 [ext_resource type="Script" path="res://Game/Loctions/PlayerRoom/player_room.gd" id="1_xkoml"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://co2ranalwxee1" path="res://Game/Loctions/PlayerRoom/comodo cortina.png" id="7_unrsb"]
 [ext_resource type="PackedScene" uid="uid://d2apjj0tfq2bn" path="res://Objects/Cenario/Tv/tv.tscn" id="8_55il4"]
 [ext_resource type="PackedScene" uid="uid://d2d1asq2fkvsq" path="res://Interface/PlayerInterface/player_interface.tscn" id="10_jdqjg"]
+[ext_resource type="Script" path="res://Game/Loctions/PlayerRoom/enemy_spawning.gd" id="11_1tno7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_icupd"]
 size = Vector2(35, 430)
@@ -50,10 +51,10 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-133, -192, 895, -206, 
 
 [node name="PlayerRoom" type="Node2D"]
 script = ExtResource("1_xkoml")
-init_hour = 8
 speed = 480
 
 [node name="PlayerInterface" parent="." instance=ExtResource("10_jdqjg")]
+visible = false
 
 [node name="Illumination" parent="." instance=ExtResource("2_h147x")]
 
@@ -184,3 +185,18 @@ vertices = PackedVector2Array(435, 283, 311, 158, 467, 158, 464, 136, 229, 139, 
 
 [node name="NavigationObstacle2D3" type="NavigationObstacle2D" parent="NavigationRegion2D"]
 vertices = PackedVector2Array(753, 167, 545, 164, 546, 134, 752, 141)
+
+[node name="EnemySpawning" type="Node" parent="." node_paths=PackedStringArray("possible_positions", "spawn_node")]
+script = ExtResource("11_1tno7")
+possible_positions = [NodePath("Marker2D"), NodePath("Marker2D2"), NodePath("Marker2D3")]
+spawn_node = NodePath("../OrganizadosPorY/Personagens")
+spawn_times = Array[Vector2]([Vector2(8, 0), Vector2(8, 30), Vector2(9, 0)])
+
+[node name="Marker2D" type="Marker2D" parent="EnemySpawning"]
+position = Vector2(409, -5)
+
+[node name="Marker2D2" type="Marker2D" parent="EnemySpawning"]
+position = Vector2(477, -4)
+
+[node name="Marker2D3" type="Marker2D" parent="EnemySpawning"]
+position = Vector2(445, -4)
