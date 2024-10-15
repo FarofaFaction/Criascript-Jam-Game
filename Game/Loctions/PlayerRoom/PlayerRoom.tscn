@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://v7uuiioruv0j"]
+[gd_scene load_steps=24 format=3 uid="uid://v7uuiioruv0j"]
 
 [ext_resource type="PackedScene" uid="uid://b8t0b7kcbu145" path="res://Game/Npcs/Doctor/Doctor.tscn" id="1_413a8"]
 [ext_resource type="Script" path="res://Game/Loctions/PlayerRoom/player_room.gd" id="1_xkoml"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://7sspjh77o6vm" path="res://Game/Player/player.tscn" id="5_6s2l1"]
 [ext_resource type="Texture2D" uid="uid://cdjdi7e3hfopn" path="res://Game/Loctions/PlayerRoom/comodo cortina 2.png" id="7_ecr0s"]
 [ext_resource type="Texture2D" uid="uid://co2ranalwxee1" path="res://Game/Loctions/PlayerRoom/comodo cortina.png" id="7_unrsb"]
+[ext_resource type="PackedScene" uid="uid://cjvpi1hnypje3" path="res://Game/Npcs/Pacients/Pacient.tscn" id="8_4opaa"]
 [ext_resource type="PackedScene" uid="uid://d2apjj0tfq2bn" path="res://Objects/Cenario/Tv/tv.tscn" id="8_55il4"]
 [ext_resource type="PackedScene" uid="uid://d2d1asq2fkvsq" path="res://Interface/PlayerInterface/player_interface.tscn" id="10_jdqjg"]
 [ext_resource type="Script" path="res://Game/Loctions/PlayerRoom/enemy_spawning.gd" id="11_1tno7"]
@@ -126,6 +127,21 @@ position = Vector2(328, -36)
 
 [node name="Player" parent="OrganizadosPorY/Personagens" instance=ExtResource("5_6s2l1")]
 position = Vector2(497, 161)
+
+[node name="Pacient" parent="OrganizadosPorY/Personagens" node_paths=PackedStringArray("exit_area", "target_area") instance=ExtResource("8_4opaa")]
+position = Vector2(576, 59)
+exit_area = NodePath("../Doctor/ExitArea")
+target_area = NodePath("../../../EnemySpawning/Marker2D")
+
+[node name="Pacient3" parent="OrganizadosPorY/Personagens" node_paths=PackedStringArray("exit_area", "target_area") instance=ExtResource("8_4opaa")]
+position = Vector2(501, 47)
+exit_area = NodePath("../Doctor/ExitArea")
+target_area = NodePath("../../../EnemySpawning/Marker2D")
+
+[node name="Pacient2" parent="OrganizadosPorY/Personagens" node_paths=PackedStringArray("exit_area", "target_area") instance=ExtResource("8_4opaa")]
+position = Vector2(448, 88)
+exit_area = NodePath("../Doctor/ExitArea")
+target_area = NodePath("../../../EnemySpawning/Marker2D")
 
 [node name="Objects" type="Node2D" parent="OrganizadosPorY"]
 y_sort_enabled = true
