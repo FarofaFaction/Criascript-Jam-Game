@@ -17,7 +17,7 @@ func _process(_delta: float) -> void:
 	if _spawned:
 		return
 		
-	if GlobalTimer.hours > 22:
+	if GlobalTimer.hours > 8:
 		var node = preload("res://Game/Enemy/red_guy.tscn").instantiate()
 		node.global_position = Global.player.global_position
 		node.global_position.x += 100

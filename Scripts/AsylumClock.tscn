@@ -8,3 +8,4 @@ script = ExtResource("1_mwlha")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_fen84")
+volume_db = -8.0

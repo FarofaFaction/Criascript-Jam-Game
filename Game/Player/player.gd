@@ -158,9 +158,11 @@ func take_damage(damage: float):
 		return
 	if Sanity - damage <= 0:
 		Sanity = 0
-		DamageAudioPlayer.stop()
-		DamageAudioPlayer.stream = dying_sound
-		DamageAudioPlayer.play()
+		if DamageAudioPlayer.stream != dying_sound:
+			DamageAudioPlayer.stop()
+			DamageAudioPlayer.stream = dying_sound
+		if !DamageAudioPlayer.playing:
+			DamageAudioPlayer.play()
 		_change_animation(AnimationState.DIE)
 		PlayerDied.emit()
 		return
