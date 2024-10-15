@@ -45,9 +45,9 @@ size = Vector2(221, 11)
 size = Vector2(44, 29)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_q05t7"]
-vertices = PackedVector2Array(837.758, 385.961, -201.531, 382.039, -124.25, -182.109, 884.148, -195.852)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-133, -192, 895, -206, 847, 396, -213, 392)])
+vertices = PackedVector2Array(220.102, 189.508, 309.609, 270.891, -28.1406, 270.031, 728.023, 271.969, 437.398, 271.219, 335, 168, 478.461, 168, 534.672, 173.852, 47.7813, -28.0469, 218.781, 129.133, 472.711, 125.891, 491.688, -31.0078, 536.344, 123.672, 532.57, -44.9688, 728.969, -42.1406, 728.453, 130.188, 728.313, 176.633)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5, 6, 7), PackedInt32Array(0, 2, 8, 9), PackedInt32Array(10, 9, 8, 11, 12), PackedInt32Array(13, 14, 15, 12, 11), PackedInt32Array(6, 10, 12, 7), PackedInt32Array(3, 7, 16)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(40, -38, 490, -41, 531, -55, 739, -52, 738, 282, -41, 280)])
 
 [node name="PlayerRoom" type="Node2D"]
 script = ExtResource("1_xkoml")
@@ -118,7 +118,7 @@ target_area = NodePath("TargetArea")
 
 [node name="TargetArea" type="Marker2D" parent="OrganizadosPorY/Personagens/Doctor"]
 top_level = true
-position = Vector2(533, 196)
+position = Vector2(638, -32)
 
 [node name="ExitArea" type="Marker2D" parent="OrganizadosPorY/Personagens/Doctor"]
 top_level = true
@@ -177,20 +177,18 @@ position = Vector2(58, 0)
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_q05t7")
 
-[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="NavigationRegion2D"]
-vertices = PackedVector2Array(-57, 278, 742, 278, 738, -60, 529, -61, 518, -21, 357, -25, 325, -62, 300, -21, 31, -25, -8, -52, -60, -53)
-
 [node name="NavigationObstacle2D2" type="NavigationObstacle2D" parent="NavigationRegion2D"]
 vertices = PackedVector2Array(435, 283, 311, 158, 467, 158, 464, 136, 229, 139, 230, 185, 340, 285)
+affect_navigation_mesh = true
 
 [node name="NavigationObstacle2D3" type="NavigationObstacle2D" parent="NavigationRegion2D"]
 vertices = PackedVector2Array(753, 167, 545, 164, 546, 134, 752, 141)
+affect_navigation_mesh = true
 
 [node name="EnemySpawning" type="Node" parent="." node_paths=PackedStringArray("possible_positions", "spawn_node")]
 script = ExtResource("11_1tno7")
 possible_positions = [NodePath("Marker2D"), NodePath("Marker2D2"), NodePath("Marker2D3")]
 spawn_node = NodePath("../OrganizadosPorY/Personagens")
-spawn_times = Array[Vector2]([Vector2(8, 0), Vector2(8, 30), Vector2(9, 0)])
 
 [node name="Marker2D" type="Marker2D" parent="EnemySpawning"]
 position = Vector2(409, -5)

@@ -379,13 +379,15 @@ sinto que o tempo não
 script = ExtResource("6_hit2k")
 doctor = NodePath("../..")
 
-[node name="DoctorWalkIn" type="Node" parent="State Machine" node_paths=PackedStringArray("doctor")]
+[node name="DoctorWalkIn" type="Node" parent="State Machine" node_paths=PackedStringArray("doctor", "navigation_agent")]
 script = ExtResource("5_yi6qs")
 doctor = NodePath("../..")
+navigation_agent = NodePath("../../NavigationAgent2D")
 
-[node name="DoctorWalkout" type="Node" parent="State Machine" node_paths=PackedStringArray("doctor")]
+[node name="DoctorWalkout" type="Node" parent="State Machine" node_paths=PackedStringArray("doctor", "navigation_agent")]
 script = ExtResource("5_jqyoj")
 doctor = NodePath("../..")
+navigation_agent = NodePath("../../NavigationAgent2D")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-debug_enabled = true
+path_postprocessing = 1

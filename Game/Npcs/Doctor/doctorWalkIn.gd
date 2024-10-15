@@ -1,6 +1,7 @@
 extends State
 
 @export var doctor : Doctor
+@export var navigation_agent : NavigationAgent2D
 
 func Enter():
 	if (!doctor):
@@ -26,12 +27,13 @@ func Physics_Update():
 		return
 
 	var target_position = doctor.target_area.global_position
-	var random_offset = Vector2(randf(), randf()) * 10  # Ensure you define 'random_offset'
-	var random_target_position = target_position + random_offset
-	var _move_direction = random_target_position - doctor.global_position
 
 	if doctor.global_position.distance_to(target_position) > 15:
-		doctor.velocity = _move_direction.normalized() * doctor.speed
+		navigation_agent.set_target_position(target_position)
+		var next_point = navigation_agent.get_next_path_position()
+		if next_point:
+			doctor.velocity = (next_point - doctor.global_position).normalized() * doctor.speed
 	else:
 		doctor.velocity = Vector2.ZERO
 		Transitioned.emit(self, "DoctorIdle")
+		# Transitioned.emit(self, "DoctorIdle")
