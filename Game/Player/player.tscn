@@ -1,12 +1,14 @@
-[gd_scene load_steps=37 format=3 uid="uid://7sspjh77o6vm"]
+[gd_scene load_steps=39 format=3 uid="uid://7sspjh77o6vm"]
 
 [ext_resource type="Script" path="res://Game/Player/player.gd" id="1_n8fh7"]
-[ext_resource type="AudioStream" uid="uid://bgegloq6p5nx7" path="res://Audio/Effects/Male_Hurt_-_Sound_Effect.wav" id="2_4feee"]
 [ext_resource type="AudioStream" uid="uid://cm70m3qagwuin" path="res://Audio/Effects/668349__deltacode__8bit-scream.wav" id="2_aigqn"]
 [ext_resource type="AudioStream" uid="uid://b2obv3esujl8x" path="res://Audio/Effects/andando.mp3" id="2_gyrqa"]
 [ext_resource type="Texture2D" uid="uid://dgq2m1cnwgbv" path="res://Game/Player/idle.png" id="2_jplro"]
 [ext_resource type="AudioStream" uid="uid://cdtjj7teyvys5" path="res://Audio/Effects/correndo.mp3" id="3_8k3q0"]
 [ext_resource type="Texture2D" uid="uid://ji8y8qki3vcm" path="res://Game/Player/run.png" id="3_51uww"]
+[ext_resource type="AudioStream" uid="uid://di042dugmvg12" path="res://Audio/Effects/418788__name__heartbeat-single.wav" id="5_0qbxg"]
+[ext_resource type="AudioStream" uid="uid://bty2t403cjqhw" path="res://Audio/Effects/heart_agidato.wav" id="5_dvyd2"]
+[ext_resource type="Script" path="res://Game/Player/sound_effects.gd" id="6_kpdpk"]
 [ext_resource type="Texture2D" uid="uid://blwy6auhe8l7d" path="res://Game/Player/morte.png" id="7_2x3e2"]
 [ext_resource type="Texture2D" uid="uid://bv4hn0rj5lu70" path="res://Game/Player/push.png" id="8_xjgeb"]
 [ext_resource type="Texture2D" uid="uid://fx8001c4scti" path="res://Game/Player/walk.png" id="11_d0fcl"]
@@ -219,13 +221,25 @@ Sprite = NodePath("Sprite")
 Hitbox = NodePath("Hitbox")
 StepsAudioPlayer = NodePath("StepsAudioPlayer")
 DamageAudioPlayer = NodePath("DamageAudioPlayer")
+heartbeat_sound = ExtResource("5_dvyd2")
 metadata/_edit_group_ = true
 metadata/_edit_pinned_properties_ = [&"walking_sound", &"running_sound"]
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="SoundEffects" type="Node" parent="." node_paths=PackedStringArray("heart_beats_player", "player")]
+script = ExtResource("6_kpdpk")
+heart_beats_player = NodePath("HeartBeats")
+player = NodePath("..")
+
+[node name="HeartBeats" type="AudioStreamPlayer" parent="SoundEffects"]
+stream = ExtResource("5_dvyd2")
 
 [node name="StepsAudioPlayer" type="AudioStreamPlayer2D" parent="."]
 
 [node name="DamageAudioPlayer" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_4feee")
+stream = ExtResource("5_0qbxg")
+volume_db = -8.0
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_amjbx")

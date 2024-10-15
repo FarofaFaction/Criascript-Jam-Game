@@ -7,7 +7,7 @@ var text: String
 var total_time: float = 0.0
 var seconds_per_minute: float = 60 * 8  # 8 hours in seconds (480 seconds) for 1 minute of gameplay
 #var timestop := true
-var timestop := false
+var timestop := true
 var hours: int
 var minutes: int
 #var seconds: int

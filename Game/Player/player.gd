@@ -10,6 +10,7 @@ class_name PlayerClass
 @export var Hitbox: Area2D
 @export var StepsAudioPlayer: AudioStreamPlayer2D
 @export var DamageAudioPlayer: AudioStreamPlayer2D
+@export var heartbeat_sound: AudioStream
 @export var Sanity := 100.0
 
 signal PlayerDied
@@ -21,6 +22,11 @@ var _can_run := true
 var _died := false
 var _is_running := false
 @export var SPEED = 50.0
+
+# Heartbeat control
+var heartbeat_audio_player: AudioStreamPlayer2D
+var is_heartbeat_playing := false
+var last_sanity := Sanity
 
 enum AnimationState {
 	IDLE,
@@ -41,49 +47,59 @@ enum PlayerState {
 }
 var current_state: PlayerState = PlayerState.NORMAL
 
+func _ready() -> void:
+	Global.player = self
+	PlayerDied.connect(on_player_died)
+
+	# Initialize heartbeat audio player
+	heartbeat_audio_player = AudioStreamPlayer2D.new()
+	add_child(heartbeat_audio_player)
+	heartbeat_audio_player.stream = heartbeat_sound
+	heartbeat_audio_player.volume_db = -80 # Start muted
+
+	if awaking:
+		current_state = PlayerState.WAKE_UP
+
+func _physics_process(_delta: float) -> void:
+	if current_state == PlayerState.DIE:
+		_dyng()
+		return
+	if current_state == PlayerState.WAKE_UP:
+		_awaking()
+		return	
+	if current_state == PlayerState.PUSH:
+		_pushing()
+		return
+	if current_state == PlayerState.NORMAL:
+		_normal()
+		return
+
 func _normal():
 	_set_movement_input()
 	_normal_movement()
 	_audio_steps_controller()
 	move_and_slide()
-	pass
 
 func _pushing():
 	_set_movement_input()
 	_pushing_movement()
 	_audio_steps_controller()
 	move_and_slide()
-	pass
 
 func _dyng():
 	StepsAudioPlayer.stop()
 	_change_animation(AnimationState.DIE)
 	Global.change_scene("Game")
-	pass
 
 func _awaking():
 	_change_animation(AnimationState.WAKE_UP)
 	if Sprite.frame == 3:
 		current_state = PlayerState.NORMAL
-	pass
-
-func _ready() -> void:
-	Global.player = self
-	PlayerDied.connect(on_player_died)
-	if awaking:
-		current_state = PlayerState.WAKE_UP
 
 func _set_movement_input():
 	_input_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	if Input.is_action_pressed("Run"):
-		_is_running = true
-	else:
-		_is_running = false
-	if _input_direction.x < 0:
-		Sprite.flip_h = true
-	else:
-		Sprite.flip_h = false
-	pass
+	_is_running = Input.is_action_pressed("Run")
+	Sprite.flip_h = _input_direction.x < 0
 
 func _normal_movement():
 	if _is_running and _can_run:
@@ -100,7 +116,6 @@ func _pushing_movement():
 	if _input_direction.length() > 0:
 		self.velocity = _input_direction * SPEED
 		_change_animation(AnimationState.PUSH)
-		print(current_animation)
 	else:
 		self.velocity = Vector2.ZERO
 		_change_animation(AnimationState.IDLE)
@@ -108,20 +123,13 @@ func _pushing_movement():
 func _change_animation(new_state: AnimationState):
 	if current_animation != new_state:
 		current_animation = new_state
-		
 		match current_animation:
-			AnimationState.IDLE:
-				Sprite.play("Idle")
-			AnimationState.WALK:
-				Sprite.play("Walk")
-			AnimationState.RUN:
-				Sprite.play("Run")
-			AnimationState.DIE:
-				Sprite.play("Die")
-			AnimationState.PUSH:
-				Sprite.play("Push")
-			AnimationState.WAKE_UP:
-				Sprite.play("WakeUp")
+			AnimationState.IDLE: Sprite.play("Idle")
+			AnimationState.WALK: Sprite.play("Walk")
+			AnimationState.RUN: Sprite.play("Run")
+			AnimationState.DIE: Sprite.play("Die")
+			AnimationState.PUSH: Sprite.play("Push")
+			AnimationState.WAKE_UP: Sprite.play("WakeUp")
 
 func _audio_steps_controller() -> void:
 	if self.velocity == Vector2.ZERO:
@@ -139,20 +147,6 @@ func _audio_steps_controller() -> void:
 	if not StepsAudioPlayer.playing:
 		StepsAudioPlayer.play()
 
-func _physics_process(_delta: float) -> void:
-	if	current_state == PlayerState.DIE:
-		_dyng()
-		return
-	if	current_state == PlayerState.WAKE_UP:
-		_awaking()
-		return	
-	if	current_state == PlayerState.PUSH:
-		_pushing()
-		return
-	if	current_state == PlayerState.NORMAL:
-		_normal()
-		return
-
 func take_damage(damage: float):
 	if _died:
 		return
@@ -161,7 +155,6 @@ func take_damage(damage: float):
 		if DamageAudioPlayer.stream != dying_sound:
 			DamageAudioPlayer.stop()
 			DamageAudioPlayer.stream = dying_sound
-		if !DamageAudioPlayer.playing:
 			DamageAudioPlayer.play()
 		_change_animation(AnimationState.DIE)
 		PlayerDied.emit()

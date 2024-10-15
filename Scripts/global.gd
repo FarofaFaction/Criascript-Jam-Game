@@ -23,6 +23,7 @@ func change_scene(scene: String):
 	if (scene == "Menu"):
 		#node = preload(MenuMenu).instantiate()
 		#get_tree().change_scene_to_file(MenuMenu)
+		GlobalTimer.stop()
 		current_scene = MenuMenu
 	elif (scene == "Game"):
 		current_scene = Game

@@ -50,8 +50,10 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-133, -192, 895, -206, 
 
 [node name="PlayerRoom" type="Node2D"]
 script = ExtResource("1_xkoml")
-init_hour = 6
+init_hour = 8
 speed = 480
+
+[node name="PlayerInterface" parent="." instance=ExtResource("10_jdqjg")]
 
 [node name="Illumination" parent="." instance=ExtResource("2_h147x")]
 
@@ -182,5 +184,3 @@ vertices = PackedVector2Array(435, 283, 311, 158, 467, 158, 464, 136, 229, 139, 
 
 [node name="NavigationObstacle2D3" type="NavigationObstacle2D" parent="NavigationRegion2D"]
 vertices = PackedVector2Array(753, 167, 545, 164, 546, 134, 752, 141)
-
-[node name="PlayerInterface" parent="." instance=ExtResource("10_jdqjg")]

@@ -50,7 +50,7 @@ func Physics_Update():
 	_vomited_object = vomit_raycast.get_collider()
 	if (_vomited_object && (_vomited_object.get_parent() == enemy.LastTarget)):
 		if enemy.LastTarget is PlayerClass:
-			enemy.LastTarget.take_damage(0.5)
+			enemy.LastTarget.take_damage(0.1)
 	pass
 
 func vomit_timeout():
