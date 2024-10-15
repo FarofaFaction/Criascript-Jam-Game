@@ -203,10 +203,11 @@ shape = SubResource("RectangleShape2D_odx0j")
 
 [node name="State Machine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("7_c6glj")
-initial_state = NodePath("PacientAwait")
+initial_state = NodePath("PacientIdle")
 
-[node name="PacientIdle" type="Node" parent="State Machine"]
+[node name="PacientIdle" type="Node" parent="State Machine" node_paths=PackedStringArray("pacient")]
 script = ExtResource("8_2oksb")
+pacient = NodePath("../..")
 
 [node name="InteractibleArea" parent="State Machine/PacientIdle" node_paths=PackedStringArray("moving_parent") instance=ExtResource("9_0jkyh")]
 moving_parent = NodePath("../../..")

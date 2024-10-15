@@ -1,9 +1,10 @@
-[gd_scene load_steps=24 format=3 uid="uid://v7uuiioruv0j"]
+[gd_scene load_steps=26 format=3 uid="uid://v7uuiioruv0j"]
 
 [ext_resource type="PackedScene" uid="uid://b8t0b7kcbu145" path="res://Game/Npcs/Doctor/Doctor.tscn" id="1_413a8"]
 [ext_resource type="Script" path="res://Game/Loctions/PlayerRoom/player_room.gd" id="1_xkoml"]
-[ext_resource type="PackedScene" uid="uid://dj8ktaq2ssm6j" path="res://Game/Global-illumination.tscn" id="2_h147x"]
+[ext_resource type="Script" path="res://Game/Loctions/PlayerRoom/illumination.gd" id="3_m2tlg"]
 [ext_resource type="PackedScene" uid="uid://cxpyp7yoxaixr" path="res://Objects/room_clock.tscn" id="3_mx5ei"]
+[ext_resource type="Texture2D" uid="uid://grx8jyxat1kd" path="res://Objects/light/light.png" id="4_0rwrw"]
 [ext_resource type="Texture2D" uid="uid://c5bj3otn1pl5f" path="res://Game/Loctions/PlayerRoom/mapa 1.png" id="4_enhsl"]
 [ext_resource type="PackedScene" uid="uid://7sspjh77o6vm" path="res://Game/Player/player.tscn" id="5_6s2l1"]
 [ext_resource type="Texture2D" uid="uid://cdjdi7e3hfopn" path="res://Game/Loctions/PlayerRoom/comodo cortina 2.png" id="7_ecr0s"]
@@ -12,6 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://d2apjj0tfq2bn" path="res://Objects/Cenario/Tv/tv.tscn" id="8_55il4"]
 [ext_resource type="PackedScene" uid="uid://d2d1asq2fkvsq" path="res://Interface/PlayerInterface/player_interface.tscn" id="10_jdqjg"]
 [ext_resource type="Script" path="res://Game/Loctions/PlayerRoom/enemy_spawning.gd" id="11_1tno7"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s34ym"]
+load_path = "res://.godot/imported/light.png-8fdf09ef7de5c29c73dfe94c1c1879f5.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_icupd"]
 size = Vector2(35, 430)
@@ -52,14 +56,51 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(40, -38, 490, -41, 531,
 
 [node name="PlayerRoom" type="Node2D"]
 script = ExtResource("1_xkoml")
+init_hour = 19
 speed = 480
 
 [node name="PlayerInterface" parent="." instance=ExtResource("10_jdqjg")]
-visible = false
 
-[node name="Illumination" parent="." instance=ExtResource("2_h147x")]
+[node name="Illumination" type="Node2D" parent="." node_paths=PackedStringArray("ilumination_node", "BigLight", "SmallLight", "GlobalIllumination")]
+script = ExtResource("3_m2tlg")
+color_night = Color(8.66354e-07, 0, 0.770133, 1)
+color_day = Color(1, 1, 0.466667, 0.211765)
+ilumination_node = NodePath("RoomLight")
+BigLight = NodePath("RoomLight/BigLight")
+SmallLight = NodePath("RoomLight/SmallLight")
+GlobalIllumination = NodePath("BaseIlumination")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Illumination"]
+color = Color(0, 0, 0, 1)
+
+[node name="BaseIlumination" type="PointLight2D" parent="Illumination"]
+position = Vector2(329, 35)
+color = Color(1, 1, 0.466667, 0.211765)
+energy = 0.9
+texture = SubResource("CompressedTexture2D_s34ym")
+texture_scale = 10.0
+
+[node name="RoomLight" type="Node2D" parent="Illumination"]
+position = Vector2(18, -61)
+
+[node name="SmallLight" type="PointLight2D" parent="Illumination/RoomLight"]
+position = Vector2(282, -149)
+texture = ExtResource("4_0rwrw")
+
+[node name="BigLight" type="PointLight2D" parent="Illumination/RoomLight"]
+position = Vector2(321, -82)
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("4_0rwrw")
+texture_scale = 7.0
 
 [node name="BackgroundCenario" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="BackgroundCenario"]
+offset_left = -1462.0
+offset_top = -668.0
+offset_right = 1502.0
+offset_bottom = 708.0
+color = Color(0, 0, 0, 1)
 
 [node name="Fundo" type="Node2D" parent="BackgroundCenario"]
 
@@ -126,22 +167,55 @@ top_level = true
 position = Vector2(328, -36)
 
 [node name="Player" parent="OrganizadosPorY/Personagens" instance=ExtResource("5_6s2l1")]
-position = Vector2(497, 161)
+position = Vector2(518, 206)
 
-[node name="Pacient" parent="OrganizadosPorY/Personagens" node_paths=PackedStringArray("exit_area", "target_area") instance=ExtResource("8_4opaa")]
+[node name="Pacients" type="Node2D" parent="OrganizadosPorY/Personagens"]
+y_sort_enabled = true
+
+[node name="Pacient" parent="OrganizadosPorY/Personagens/Pacients" node_paths=PackedStringArray("exit_area", "target_area") instance=ExtResource("8_4opaa")]
 position = Vector2(576, 59)
-exit_area = NodePath("../Doctor/ExitArea")
-target_area = NodePath("../../../EnemySpawning/Marker2D")
+exit_area = NodePath("../../Doctor/ExitArea")
+target_area = NodePath("../../../../EnemySpawning/Marker2D")
 
-[node name="Pacient3" parent="OrganizadosPorY/Personagens" node_paths=PackedStringArray("exit_area", "target_area") instance=ExtResource("8_4opaa")]
+[node name="Pacient4" parent="OrganizadosPorY/Personagens/Pacients" node_paths=PackedStringArray("exit_area", "target_area") instance=ExtResource("8_4opaa")]
+position = Vector2(626, 194)
+exit_area = NodePath("../../Doctor/ExitArea")
+target_area = NodePath("../../../../EnemySpawning/Marker2D")
+
+[node name="Pacient5" parent="OrganizadosPorY/Personagens/Pacients" node_paths=PackedStringArray("exit_area", "target_area") instance=ExtResource("8_4opaa")]
+position = Vector2(450, 218)
+exit_area = NodePath("../../Doctor/ExitArea")
+target_area = NodePath("../../../../EnemySpawning/Marker2D")
+
+[node name="Pacient6" parent="OrganizadosPorY/Personagens/Pacients" node_paths=PackedStringArray("exit_area", "target_area") instance=ExtResource("8_4opaa")]
+position = Vector2(542, 249)
+exit_area = NodePath("../../Doctor/ExitArea")
+target_area = NodePath("../../../../EnemySpawning/Marker2D")
+
+[node name="Pacient7" parent="OrganizadosPorY/Personagens/Pacients" node_paths=PackedStringArray("exit_area", "target_area") instance=ExtResource("8_4opaa")]
+position = Vector2(122, 214)
+exit_area = NodePath("../../Doctor/ExitArea")
+target_area = NodePath("../../../../EnemySpawning/Marker2D")
+
+[node name="Pacient8" parent="OrganizadosPorY/Personagens/Pacients" node_paths=PackedStringArray("exit_area", "target_area") instance=ExtResource("8_4opaa")]
+position = Vector2(-4, 114)
+exit_area = NodePath("../../Doctor/ExitArea")
+target_area = NodePath("../../../../EnemySpawning/Marker2D")
+
+[node name="Pacient9" parent="OrganizadosPorY/Personagens/Pacients" node_paths=PackedStringArray("exit_area", "target_area") instance=ExtResource("8_4opaa")]
+position = Vector2(244, 235)
+exit_area = NodePath("../../Doctor/ExitArea")
+target_area = NodePath("../../../../EnemySpawning/Marker2D")
+
+[node name="Pacient3" parent="OrganizadosPorY/Personagens/Pacients" node_paths=PackedStringArray("exit_area", "target_area") instance=ExtResource("8_4opaa")]
 position = Vector2(501, 47)
-exit_area = NodePath("../Doctor/ExitArea")
-target_area = NodePath("../../../EnemySpawning/Marker2D")
+exit_area = NodePath("../../Doctor/ExitArea")
+target_area = NodePath("../../../../EnemySpawning/Marker2D")
 
-[node name="Pacient2" parent="OrganizadosPorY/Personagens" node_paths=PackedStringArray("exit_area", "target_area") instance=ExtResource("8_4opaa")]
+[node name="Pacient2" parent="OrganizadosPorY/Personagens/Pacients" node_paths=PackedStringArray("exit_area", "target_area") instance=ExtResource("8_4opaa")]
 position = Vector2(448, 88)
-exit_area = NodePath("../Doctor/ExitArea")
-target_area = NodePath("../../../EnemySpawning/Marker2D")
+exit_area = NodePath("../../Doctor/ExitArea")
+target_area = NodePath("../../../../EnemySpawning/Marker2D")
 
 [node name="Objects" type="Node2D" parent="OrganizadosPorY"]
 y_sort_enabled = true
@@ -155,11 +229,6 @@ position = Vector2(112, 28)
 position = Vector2(361, 119)
 texture = ExtResource("7_unrsb")
 offset = Vector2(10, 86)
-
-[node name="CortinaLateral" type="Sprite2D" parent="OrganizadosPorY/Objects/Cortina"]
-position = Vector2(132, 125)
-texture = ExtResource("7_ecr0s")
-offset = Vector2(118, 80)
 
 [node name="Colision" type="StaticBody2D" parent="OrganizadosPorY/Objects/Cortina"]
 z_index = 10
@@ -191,6 +260,7 @@ y_sort_enabled = true
 position = Vector2(58, 0)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+visible = false
 navigation_polygon = SubResource("NavigationPolygon_q05t7")
 
 [node name="NavigationObstacle2D2" type="NavigationObstacle2D" parent="NavigationRegion2D"]
@@ -207,10 +277,52 @@ possible_positions = [NodePath("Marker2D"), NodePath("Marker2D2"), NodePath("Mar
 spawn_node = NodePath("../OrganizadosPorY/Personagens")
 
 [node name="Marker2D" type="Marker2D" parent="EnemySpawning"]
-position = Vector2(409, -5)
+position = Vector2(50, 193)
 
 [node name="Marker2D2" type="Marker2D" parent="EnemySpawning"]
-position = Vector2(477, -4)
+position = Vector2(97, 41)
 
 [node name="Marker2D3" type="Marker2D" parent="EnemySpawning"]
-position = Vector2(445, -4)
+position = Vector2(660, 28)
+
+[node name="Border" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Border"]
+z_index = 1
+offset_left = 413.0
+offset_top = 266.0
+offset_right = 801.0
+offset_bottom = 387.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Border"]
+z_index = 1
+offset_left = -308.0
+offset_top = -196.0
+offset_right = -56.0
+offset_bottom = 347.0
+color = Color(0, 0, 0, 1)
+
+[node name="CortinaLateral" type="Sprite2D" parent="Border"]
+z_index = 1
+texture_filter = 2
+position = Vector2(455, 297)
+rotation = -0.789851
+texture = ExtResource("7_ecr0s")
+offset = Vector2(118, 80)
+
+[node name="ColorRect2" type="ColorRect" parent="Border"]
+z_index = 1
+offset_left = -118.0
+offset_top = 271.0
+offset_right = 805.0
+offset_bottom = 392.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Border"]
+z_index = 1
+offset_left = 738.0
+offset_top = -188.0
+offset_right = 990.0
+offset_bottom = 355.0
+color = Color(0, 0, 0, 1)
