@@ -1,9 +1,8 @@
-[gd_scene load_steps=63 format=3 uid="uid://v7uuiioruv0j"]
+[gd_scene load_steps=61 format=3 uid="uid://v7uuiioruv0j"]
 
 [ext_resource type="Script" path="res://Game/Loctions/PlayerRoom/player_room.gd" id="1_xkoml"]
-[ext_resource type="Script" path="res://Game/Loctions/PlayerRoom/illumination.gd" id="3_m2tlg"]
+[ext_resource type="PackedScene" uid="uid://btibrxj46tnno" path="res://Game/Loctions/illumination.tscn" id="3_1g1fk"]
 [ext_resource type="PackedScene" uid="uid://cxpyp7yoxaixr" path="res://Objects/room_clock.tscn" id="3_mx5ei"]
-[ext_resource type="Texture2D" uid="uid://grx8jyxat1kd" path="res://Objects/light/light.png" id="4_0rwrw"]
 [ext_resource type="Texture2D" uid="uid://c5bj3otn1pl5f" path="res://Game/Loctions/PlayerRoom/mapa 1.png" id="4_enhsl"]
 [ext_resource type="PackedScene" uid="uid://7sspjh77o6vm" path="res://Game/Player/player.tscn" id="5_6s2l1"]
 [ext_resource type="Texture2D" uid="uid://cdjdi7e3hfopn" path="res://Game/Loctions/PlayerRoom/comodo cortina 2.png" id="7_ecr0s"]
@@ -15,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://b6pq5blreewrk" path="res://Game/Npcs/Doctor/doctor-runing.png" id="9_260ks"]
 [ext_resource type="PackedScene" uid="uid://d2d1asq2fkvsq" path="res://Interface/PlayerInterface/player_interface.tscn" id="10_jdqjg"]
 [ext_resource type="Texture2D" uid="uid://dgq2m1cnwgbv" path="res://Game/Player/idle.png" id="10_md2qc"]
-[ext_resource type="Script" path="res://Game/Loctions/PlayerRoom/enemy_spawning.gd" id="11_1tno7"]
 [ext_resource type="Texture2D" uid="uid://ji8y8qki3vcm" path="res://Game/Player/run.png" id="11_ocnsf"]
 [ext_resource type="PackedScene" uid="uid://bqjg53nmro3w" path="res://Objects/Shadow/animated_shadow.tscn" id="12_kkgh3"]
 [ext_resource type="Script" path="res://Game/state_machine.gd" id="13_b3ekg"]
@@ -30,9 +28,7 @@
 [ext_resource type="Script" path="res://Game/Npcs/Doctor/Dialogo/options_test.gd" id="21_g6cer"]
 [ext_resource type="Script" path="res://Game/Npcs/Doctor/doctorWalkIn.gd" id="22_oypi2"]
 [ext_resource type="Script" path="res://Game/Npcs/Doctor/doctorWalkout.gd" id="23_wb5fi"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s34ym"]
-load_path = "res://.godot/imported/light.png-8fdf09ef7de5c29c73dfe94c1c1879f5.ctex"
+[ext_resource type="PackedScene" uid="uid://yje2v65lwodi" path="res://Game/Enemy/enemy_spawning.tscn" id="29_y06wi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_icupd"]
 size = Vector2(35, 430)
@@ -217,41 +213,13 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(40, -38, 490, -41, 531,
 
 [node name="PlayerRoom" type="Node2D"]
 script = ExtResource("1_xkoml")
+new_game = true
+init_hour = 20
 speed = 480
 
 [node name="PlayerInterface" parent="." instance=ExtResource("10_jdqjg")]
 
-[node name="Illumination" type="Node2D" parent="." node_paths=PackedStringArray("ilumination_node", "BigLight", "SmallLight", "GlobalIllumination")]
-script = ExtResource("3_m2tlg")
-color_night = Color(8.66354e-07, 0, 0.770133, 1)
-color_day = Color(1, 1, 0.466667, 0.211765)
-ilumination_node = NodePath("RoomLight")
-BigLight = NodePath("RoomLight/BigLight")
-SmallLight = NodePath("RoomLight/SmallLight")
-GlobalIllumination = NodePath("BaseIlumination")
-
-[node name="CanvasModulate" type="CanvasModulate" parent="Illumination"]
-color = Color(0, 0, 0, 1)
-
-[node name="BaseIlumination" type="PointLight2D" parent="Illumination"]
-position = Vector2(329, 35)
-color = Color(1, 1, 0.466667, 0.211765)
-energy = 0.9
-texture = SubResource("CompressedTexture2D_s34ym")
-texture_scale = 10.0
-
-[node name="RoomLight" type="Node2D" parent="Illumination"]
-position = Vector2(18, -61)
-
-[node name="SmallLight" type="PointLight2D" parent="Illumination/RoomLight"]
-position = Vector2(282, -149)
-texture = ExtResource("4_0rwrw")
-
-[node name="BigLight" type="PointLight2D" parent="Illumination/RoomLight"]
-position = Vector2(321, -82)
-shadow_color = Color(0, 0, 0, 1)
-texture = ExtResource("4_0rwrw")
-texture_scale = 7.0
+[node name="Illumination" parent="." instance=ExtResource("3_1g1fk")]
 
 [node name="BackgroundCenario" type="Node2D" parent="."]
 
@@ -293,6 +261,11 @@ rotation = 1.5708
 shape = SubResource("RectangleShape2D_cwiyk")
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="BackgroundCenario/Fundo/ColissionBase"]
+position = Vector2(521, -85)
+rotation = -2.796
+shape = SubResource("RectangleShape2D_cwiyk")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="BackgroundCenario/Fundo/ColissionBase"]
 position = Vector2(7, -78)
 rotation = 2.4076
 shape = SubResource("RectangleShape2D_cwiyk")
@@ -366,6 +339,7 @@ initial_state = NodePath("DoctorAwait")
 
 [node name="DoctorIdle" type="Node" parent="OrganizadosPorY/Personagens/Doctor/State Machine" node_paths=PackedStringArray("doctor", "DialogScene")]
 script = ExtResource("14_0an36")
+exit_time = Vector2(18, 5)
 doctor = NodePath("../..")
 DialogScene = NodePath("CanvasLayer/AskForPill")
 
@@ -574,50 +548,41 @@ position = Vector2(518, 206)
 [node name="Pacients" type="Node2D" parent="OrganizadosPorY/Personagens"]
 y_sort_enabled = true
 
-[node name="Pacient" parent="OrganizadosPorY/Personagens/Pacients" node_paths=PackedStringArray("exit_area", "target_area") instance=ExtResource("8_4opaa")]
+[node name="Pacient" parent="OrganizadosPorY/Personagens/Pacients" node_paths=PackedStringArray("exit_area") instance=ExtResource("8_4opaa")]
 position = Vector2(576, 59)
 exit_area = NodePath("../../Doctor/ExitArea")
-target_area = NodePath("../../../../EnemySpawning/Marker2D")
 
-[node name="Pacient4" parent="OrganizadosPorY/Personagens/Pacients" node_paths=PackedStringArray("exit_area", "target_area") instance=ExtResource("8_4opaa")]
+[node name="Pacient4" parent="OrganizadosPorY/Personagens/Pacients" node_paths=PackedStringArray("exit_area") instance=ExtResource("8_4opaa")]
 position = Vector2(626, 194)
 exit_area = NodePath("../../Doctor/ExitArea")
-target_area = NodePath("../../../../EnemySpawning/Marker2D")
 
-[node name="Pacient5" parent="OrganizadosPorY/Personagens/Pacients" node_paths=PackedStringArray("exit_area", "target_area") instance=ExtResource("8_4opaa")]
+[node name="Pacient5" parent="OrganizadosPorY/Personagens/Pacients" node_paths=PackedStringArray("exit_area") instance=ExtResource("8_4opaa")]
 position = Vector2(450, 218)
 exit_area = NodePath("../../Doctor/ExitArea")
-target_area = NodePath("../../../../EnemySpawning/Marker2D")
 
-[node name="Pacient6" parent="OrganizadosPorY/Personagens/Pacients" node_paths=PackedStringArray("exit_area", "target_area") instance=ExtResource("8_4opaa")]
+[node name="Pacient6" parent="OrganizadosPorY/Personagens/Pacients" node_paths=PackedStringArray("exit_area") instance=ExtResource("8_4opaa")]
 position = Vector2(542, 249)
 exit_area = NodePath("../../Doctor/ExitArea")
-target_area = NodePath("../../../../EnemySpawning/Marker2D")
 
-[node name="Pacient7" parent="OrganizadosPorY/Personagens/Pacients" node_paths=PackedStringArray("exit_area", "target_area") instance=ExtResource("8_4opaa")]
+[node name="Pacient7" parent="OrganizadosPorY/Personagens/Pacients" node_paths=PackedStringArray("exit_area") instance=ExtResource("8_4opaa")]
 position = Vector2(122, 214)
 exit_area = NodePath("../../Doctor/ExitArea")
-target_area = NodePath("../../../../EnemySpawning/Marker2D")
 
-[node name="Pacient8" parent="OrganizadosPorY/Personagens/Pacients" node_paths=PackedStringArray("exit_area", "target_area") instance=ExtResource("8_4opaa")]
+[node name="Pacient8" parent="OrganizadosPorY/Personagens/Pacients" node_paths=PackedStringArray("exit_area") instance=ExtResource("8_4opaa")]
 position = Vector2(-4, 114)
 exit_area = NodePath("../../Doctor/ExitArea")
-target_area = NodePath("../../../../EnemySpawning/Marker2D")
 
-[node name="Pacient9" parent="OrganizadosPorY/Personagens/Pacients" node_paths=PackedStringArray("exit_area", "target_area") instance=ExtResource("8_4opaa")]
+[node name="Pacient9" parent="OrganizadosPorY/Personagens/Pacients" node_paths=PackedStringArray("exit_area") instance=ExtResource("8_4opaa")]
 position = Vector2(244, 235)
 exit_area = NodePath("../../Doctor/ExitArea")
-target_area = NodePath("../../../../EnemySpawning/Marker2D")
 
-[node name="Pacient3" parent="OrganizadosPorY/Personagens/Pacients" node_paths=PackedStringArray("exit_area", "target_area") instance=ExtResource("8_4opaa")]
+[node name="Pacient3" parent="OrganizadosPorY/Personagens/Pacients" node_paths=PackedStringArray("exit_area") instance=ExtResource("8_4opaa")]
 position = Vector2(501, 47)
 exit_area = NodePath("../../Doctor/ExitArea")
-target_area = NodePath("../../../../EnemySpawning/Marker2D")
 
-[node name="Pacient2" parent="OrganizadosPorY/Personagens/Pacients" node_paths=PackedStringArray("exit_area", "target_area") instance=ExtResource("8_4opaa")]
+[node name="Pacient2" parent="OrganizadosPorY/Personagens/Pacients" node_paths=PackedStringArray("exit_area") instance=ExtResource("8_4opaa")]
 position = Vector2(448, 88)
 exit_area = NodePath("../../Doctor/ExitArea")
-target_area = NodePath("../../../../EnemySpawning/Marker2D")
 
 [node name="Objects" type="Node2D" parent="OrganizadosPorY"]
 y_sort_enabled = true
@@ -673,19 +638,9 @@ affect_navigation_mesh = true
 vertices = PackedVector2Array(753, 167, 545, 164, 546, 134, 752, 141)
 affect_navigation_mesh = true
 
-[node name="EnemySpawning" type="Node" parent="." node_paths=PackedStringArray("possible_positions", "spawn_node")]
-script = ExtResource("11_1tno7")
-possible_positions = [NodePath("Marker2D"), NodePath("Marker2D2"), NodePath("Marker2D3")]
+[node name="EnemySpawning" parent="." node_paths=PackedStringArray("pegadas_spawn_node", "spawn_node") instance=ExtResource("29_y06wi")]
+pegadas_spawn_node = NodePath("../BackgroundCenario/Pegadas")
 spawn_node = NodePath("../OrganizadosPorY/Personagens")
-
-[node name="Marker2D" type="Marker2D" parent="EnemySpawning"]
-position = Vector2(50, 193)
-
-[node name="Marker2D2" type="Marker2D" parent="EnemySpawning"]
-position = Vector2(97, 41)
-
-[node name="Marker2D3" type="Marker2D" parent="EnemySpawning"]
-position = Vector2(660, 28)
 
 [node name="Border" type="Node2D" parent="."]
 

@@ -4,7 +4,7 @@ class_name Enemy
 const pegadas_model := preload("res://Game/Enemy/Redguy/pegadas_vermelhas.tscn")
 var LastTarget: Node
 var Target: Node
-@export var time_to_pegadas_die : float = 10
+@export var time_to_pegadas_die : float = 5
 @export var pegadas_distance := 1000
 @export var DetectionArea: Area2D
 @export var SelfArea: Area2D

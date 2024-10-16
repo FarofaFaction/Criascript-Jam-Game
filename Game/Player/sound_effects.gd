@@ -18,6 +18,8 @@ func _ready() -> void:
 
 #
 func monitor_heart_beats(_delta: float):
+	if !heart_beats_player.playing:
+		heart_beats_player.play()
 	if player.Sanity < 30:
 		heart_beats_player.volume_db += 400.0 * _delta
 		if heart_beats_player.volume_db >= 1.5:
@@ -28,8 +30,6 @@ func monitor_heart_beats(_delta: float):
 	else:
 		_heart_beats_increasing = false
 	_last_sanity = player.Sanity
-	if !heart_beats_player.playing:
-		heart_beats_player.play()
 	if _heart_beats_increasing:
 		heart_beats_player.volume_db += 100.0 * _delta
 		if heart_beats_player.volume_db >= 1:

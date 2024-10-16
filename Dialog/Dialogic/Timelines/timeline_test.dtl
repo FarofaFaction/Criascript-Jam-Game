@@ -1,12 +1,12 @@
 character: Oi Doutor, estou testando o codigo com muito\
-muito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito
+muito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito #id:11
 join Doctor leftmost
-Doctor: Parece que funcionou
+Doctor: Parece que funcionou #id:12
 leave Doctor
 join character center
-- Sim
-	Sim
+- Sim #id:13
+	Sim #id:14
 	[end_timeline]
-- Nao
-	Nao, repete
+- Nao #id:15
+	Nao, repete #id:16
 	jump 

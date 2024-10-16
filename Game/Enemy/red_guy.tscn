@@ -112,6 +112,7 @@ collision_layer = 0
 collision_mask = 2
 motion_mode = 1
 script = ExtResource("1_dhjc1")
+pegadas_distance = 800
 DetectionArea = NodePath("DetectionArea")
 SelfArea = NodePath("SelfArea")
 speed = 50

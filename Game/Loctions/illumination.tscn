@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://btibrxj46tnno"]
+
+[ext_resource type="Script" path="res://Game/Loctions/PlayerRoom/illumination.gd" id="1_an70h"]
+[ext_resource type="Texture2D" uid="uid://grx8jyxat1kd" path="res://Objects/light/light.png" id="2_7ad20"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s34ym"]
+load_path = "res://.godot/imported/light.png-8fdf09ef7de5c29c73dfe94c1c1879f5.ctex"
+
+[node name="Illumination" type="Node2D" node_paths=PackedStringArray("ilumination_node", "BigLight", "SmallLight", "GlobalIllumination")]
+script = ExtResource("1_an70h")
+color_night = Color(8.66354e-07, 0, 0.770133, 1)
+color_day = Color(1, 1, 0.466667, 0.211765)
+ilumination_node = NodePath("RoomLight")
+BigLight = NodePath("RoomLight/BigLight")
+SmallLight = NodePath("RoomLight/SmallLight")
+GlobalIllumination = NodePath("BaseIlumination")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
+
+[node name="BaseIlumination" type="PointLight2D" parent="."]
+position = Vector2(329, 35)
+color = Color(1, 1, 0.466667, 0.211765)
+energy = 0.9
+texture = SubResource("CompressedTexture2D_s34ym")
+texture_scale = 10.0
+
+[node name="RoomLight" type="Node2D" parent="."]
+position = Vector2(18, -61)
+
+[node name="SmallLight" type="PointLight2D" parent="RoomLight"]
+position = Vector2(282, -149)
+texture = ExtResource("2_7ad20")
+
+[node name="BigLight" type="PointLight2D" parent="RoomLight"]
+position = Vector2(321, -82)
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("2_7ad20")
+texture_scale = 7.0

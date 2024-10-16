@@ -1,7 +1,8 @@
 extends Node
 
+@export var pegadas_spawn_node : Node2D
 @export var possible_positions : Array[Marker2D]
-@export var spawn_node : Node
+@export var spawn_node : Node2D
 @export var spawn_times : Array[Vector2] = [Vector2(20, 0), Vector2(20, 30)]
 var enemyScene = preload("res://Game/Enemy/red_guy.tscn")
 var spawned_times : Array = []
@@ -26,6 +27,9 @@ func _process(_delta: float) -> void:
 				else:
 					enemy.global_position = Global.player.global_position
 					enemy.global_position.x += 100
+				if pegadas_spawn_node:
+					if enemy is Enemy:
+						enemy.pegadasSpawnNode =pegadas_spawn_node
 				spawn_node.add_child(enemy)
 				spawned_times.append(time)  # Track that this time has been used
 				break  # Exit the loop after spawning to prevent multiple spawns in one frame

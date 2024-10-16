@@ -1,5 +1,6 @@
 extends State
 
+@export var exit_time : Vector2 = Vector2(18,20)
 @export var doctor : Doctor
 var move_direction : Vector2
 var wander_time : float
@@ -20,7 +21,8 @@ func Update():
 	if !doctor:
 		return
 	#await  GlobalTimer.time_changed
-	if _already_speaked:
+	#if _already_speaked:
+	if GlobalTimer.hours >= exit_time[0] && GlobalTimer.minutes >= exit_time[1]:
 		Transitioned.emit(self, "DoctorWalkout")
 	pass
 

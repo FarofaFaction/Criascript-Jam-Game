@@ -1,6 +1,9 @@
 extends CharacterBody2D
 class_name PlayerClass
 
+@export var startAwake := true
+@export var zoom : float = 5
+@export var camera : Camera2D
 @export var awaking := false
 @export var InteractArea: Area2D
 @export var dying_sound: AudioStream
@@ -51,13 +54,17 @@ func _ready() -> void:
 	Global.player = self
 	PlayerDied.connect(on_player_died)
 
+	if camera:
+		camera.zoom.x = zoom
+		camera.zoom.y = zoom
 	# Initialize heartbeat audio player
+	
 	heartbeat_audio_player = AudioStreamPlayer2D.new()
 	add_child(heartbeat_audio_player)
 	heartbeat_audio_player.stream = heartbeat_sound
 	heartbeat_audio_player.volume_db = -80 # Start muted
 
-	if awaking:
+	if awaking && startAwake:
 		current_state = PlayerState.WAKE_UP
 
 func _physics_process(_delta: float) -> void:

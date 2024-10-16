@@ -1,12 +1,15 @@
 extends Node2D
+class_name Map
 
+@export var new_game := false
 @export var init_hour := 7
 @export var speed := 60
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if new_game:
+		GlobalTimer.set_time(init_hour,0)
+		GlobalTimer.set_speed(speed)
 	GlobalTimer.start()
-	GlobalTimer.set_time(init_hour,0)
-	GlobalTimer.set_speed(speed)
 	InGamePause.monitoring = true
 	Transition.transition("fade_out_black")
 	pass # Replace with function body.

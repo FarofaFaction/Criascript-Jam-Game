@@ -209,12 +209,13 @@ size = Vector2(14, 5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cgdn2"]
 size = Vector2(10, 25)
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("Sprite", "Hitbox", "StepsAudioPlayer", "DamageAudioPlayer") groups=["Player"]]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("camera", "Sprite", "Hitbox", "StepsAudioPlayer", "DamageAudioPlayer") groups=["Player"]]
 y_sort_enabled = true
 collision_layer = 2
 collision_mask = 2
 motion_mode = 1
 script = ExtResource("1_n8fh7")
+camera = NodePath("Camera2D")
 awaking = true
 dying_sound = ExtResource("2_aigqn")
 walking_sound = ExtResource("2_gyrqa")

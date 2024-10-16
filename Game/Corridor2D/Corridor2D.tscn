@@ -1,0 +1,126 @@
+[gd_scene load_steps=10 format=3 uid="uid://cgbofih11kw7m"]
+
+[ext_resource type="PackedScene" uid="uid://b4e34twd33abh" path="res://Game/Corridor2D/floor.tscn" id="1_22koa"]
+[ext_resource type="PackedScene" uid="uid://cmk1subk8bpb2" path="res://Game/Corridor2D/door.tscn" id="1_hjyqo"]
+[ext_resource type="PackedScene" uid="uid://btibrxj46tnno" path="res://Game/Loctions/illumination.tscn" id="1_ntryb"]
+[ext_resource type="Script" path="res://Game/Corridor2D/corridor_2d.gd" id="1_qny7v"]
+[ext_resource type="PackedScene" uid="uid://7sspjh77o6vm" path="res://Game/Player/player.tscn" id="2_m7p8g"]
+[ext_resource type="PackedScene" uid="uid://cxpyp7yoxaixr" path="res://Objects/room_clock.tscn" id="5_em62a"]
+[ext_resource type="PackedScene" uid="uid://yje2v65lwodi" path="res://Game/Enemy/enemy_spawning.tscn" id="5_shjpq"]
+[ext_resource type="PackedScene" uid="uid://d2d1asq2fkvsq" path="res://Interface/PlayerInterface/player_interface.tscn" id="8_yoneu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ujkmg"]
+size = Vector2(2552, 58)
+
+[node name="Corridor2d" type="Node2D"]
+script = ExtResource("1_qny7v")
+new_game = true
+init_hour = 18
+speed = 4800
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -18664.0
+offset_top = -12784.0
+offset_right = 18704.0
+offset_bottom = 12824.0
+color = Color(0, 0, 0, 1)
+
+[node name="Illumination" parent="." instance=ExtResource("1_ntryb")]
+position = Vector2(-189, -120)
+
+[node name="Cenario" type="Node2D" parent="."]
+scale = Vector2(0.2, 0.2)
+
+[node name="Background" type="Node2D" parent="Cenario"]
+
+[node name="Walls" type="Node2D" parent="Cenario/Background"]
+
+[node name="ColorRect" type="ColorRect" parent="Cenario/Background/Walls"]
+offset_left = -2120.0
+offset_top = -312.0
+offset_right = 392.0
+offset_bottom = 128.0
+
+[node name="Floordetai" type="ColorRect" parent="Cenario/Background/Walls"]
+offset_left = -2120.0
+offset_top = -48.0
+offset_right = 392.0
+offset_bottom = -25.0
+color = Color(0.786347, 0.786347, 0.786347, 1)
+
+[node name="Door" parent="Cenario/Background/Walls" instance=ExtResource("1_hjyqo")]
+position = Vector2(0, 8)
+
+[node name="Door2" parent="Cenario/Background/Walls" instance=ExtResource("1_hjyqo")]
+position = Vector2(360, 8)
+
+[node name="Door3" parent="Cenario/Background/Walls" instance=ExtResource("1_hjyqo")]
+position = Vector2(1024, 8)
+
+[node name="Door4" parent="Cenario/Background/Walls" instance=ExtResource("1_hjyqo")]
+position = Vector2(1464, 8)
+
+[node name="Door5" parent="Cenario/Background/Walls" instance=ExtResource("1_hjyqo")]
+position = Vector2(-408, 8)
+
+[node name="Floor" type="Node2D" parent="Cenario"]
+
+[node name="Floor" parent="Cenario/Floor" instance=ExtResource("1_22koa")]
+
+[node name="Floor2" parent="Cenario/Floor" instance=ExtResource("1_22koa")]
+position = Vector2(-632, 0)
+
+[node name="Floor3" parent="Cenario/Floor" instance=ExtResource("1_22koa")]
+position = Vector2(-1256, 0)
+
+[node name="Floor4" parent="Cenario/Floor" instance=ExtResource("1_22koa")]
+position = Vector2(-1888, 0)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Cenario/Floor"]
+position = Vector2(55, 80)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenario/Floor/StaticBody2D"]
+position = Vector2(-836, 27)
+shape = SubResource("RectangleShape2D_ujkmg")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Cenario/Floor"]
+position = Vector2(-20, -75)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenario/Floor/StaticBody2D2"]
+position = Vector2(-836, 27)
+shape = SubResource("RectangleShape2D_ujkmg")
+
+[node name="RoomClock" parent="." instance=ExtResource("5_em62a")]
+position = Vector2(-360, -58)
+scale = Vector2(0.5, 0.5)
+
+[node name="FloorItems" type="Node2D" parent="."]
+
+[node name="Pegadas" type="Node2D" parent="FloorItems"]
+
+[node name="OrganizadosPorY" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Personagens" type="Node2D" parent="OrganizadosPorY"]
+y_sort_enabled = true
+
+[node name="Player" parent="OrganizadosPorY/Personagens" instance=ExtResource("2_m7p8g")]
+position = Vector2(-379, -10)
+startAwake = false
+
+[node name="EnemySpawning" parent="." node_paths=PackedStringArray("pegadas_spawn_node", "possible_positions", "spawn_node") instance=ExtResource("5_shjpq")]
+pegadas_spawn_node = NodePath("../FloorItems/Pegadas")
+possible_positions = [NodePath("Marker2D4"), NodePath("Marker2D5")]
+spawn_node = NodePath("../OrganizadosPorY/Personagens")
+
+[node name="Marker2D4" type="Marker2D" parent="EnemySpawning"]
+position = Vector2(-268, 6)
+
+[node name="Marker2D5" type="Marker2D" parent="EnemySpawning"]
+position = Vector2(-306, 8)
+
+[node name="PlayerInterface" parent="." instance=ExtResource("8_yoneu")]

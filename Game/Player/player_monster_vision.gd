@@ -23,12 +23,26 @@ func _process(_delta: float) -> void:
 		light.texture_scale = 0.0
 		return
 	# Calcular a escala da luz com base na sanidade
-	var sanity_percentage = player.Sanity / player_mid_crazy
-
-	if sanity_percentage >= 1.0:
-		light.texture_scale = value_init
-	elif sanity_percentage >= 0.5:
-		light.texture_scale = lerp(value_final, value_init, sanity_percentage)
-	else:
-		light.texture_scale = value_final * 2
+	#var sanity_percentage = player.Sanity / player_mid_crazy
+#
+	#if sanity_percentage >= 1.0:
+		#light.texture_scale = value_init
+	#elif sanity_percentage >= 0.5:
+		#light.texture_scale = lerp(value_final, value_init, sanity_percentage)
+	#else:
+		#light.texture_scale = value_final * 2
+	update_texture_size(player.Sanity, light)
 	pass
+
+func update_texture_size(variable: int, texture: PointLight2D):
+	# Define os valores mínimos e máximos para o tamanho da textura e a variável
+	var min_size = 0.0
+	var max_size = 1.0
+	var min_variable = 0
+	var max_variable = 30
+
+	# Calcula a proporção baseada na variável
+	var size_factor = min_size + (max_size - min_size) * (max_variable - variable) / float(max_variable - min_variable)
+
+	# Aplica o fator de escala diretamente como um valor de 0.5 a 1
+	texture.texture_scale = size_factor
