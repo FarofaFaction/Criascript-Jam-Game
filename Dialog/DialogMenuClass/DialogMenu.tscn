@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://baklw2eb62qgd"]
 
 [ext_resource type="Script" path="res://Dialog/DialogMenuClass/dialog_menu.gd" id="1_lw6cn"]
-[ext_resource type="Script" path="res://Dialog/DialogMenuClass/dialog_background_box.gd" id="2_11hui"]
+[ext_resource type="Script" path="res://Dialog/Dialogic/Style/CustomPremade/dialog_background_box.gd" id="2_11hui"]
 [ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="2_y8i08"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rqsdc"]

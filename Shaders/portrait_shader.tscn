@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjsa2mrlybrr3"]
+
+[ext_resource type="Shader" path="res://Shaders/pasteurization.gdshader" id="1_at83l"]
+[ext_resource type="Texture2D" uid="uid://d0p74ybivffs7" path="res://icon.svg" id="2_avvwy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tyvjr"]
+shader = ExtResource("1_at83l")
+shader_parameter/level1 = Color(0, 0, 0, 1)
+shader_parameter/level2 = Color(0.692254, 0, 0.0940742, 1)
+shader_parameter/level3 = Color(0.690196, 0.34902, 0, 1)
+shader_parameter/level4 = Color(1, 1, 0.0117647, 0.521569)
+shader_parameter/threshold1 = 0.097
+shader_parameter/threshold2 = 0.747
+shader_parameter/threshold3 = 0.56
+
+[node name="PortraitShader" type="TextureRect"]
+material = SubResource("ShaderMaterial_tyvjr")
+offset_left = 187.0
+offset_top = 704.0
+offset_right = 512.0
+offset_bottom = 1032.0
+texture = ExtResource("2_avvwy")
+expand_mode = 1
+stretch_mode = 4

@@ -1,0 +1,12 @@
+character: Oi Doutor, estou testando o codigo com muito\
+muito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito
+join Doctor leftmost
+Doctor: Parece que funcionou
+leave Doctor
+join character center
+- Sim
+	Sim
+	[end_timeline]
+- Nao
+	Nao, repete
+	jump 

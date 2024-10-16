@@ -15,63 +15,84 @@ grow_vertical = 2
 script = ExtResource("1_88w8m")
 
 [node name="SpeakClass" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "Ola"
 script = ExtResource("2_wduwi")
 texture = ExtResource("3_mq8m7")
 speaker = "You"
 
 [node name="SpeakClass2" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "Queria Apenas"
 script = ExtResource("2_wduwi")
 texture = ExtResource("3_mq8m7")
 speaker = "You"
 
 [node name="SpeakClass3" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "Testar Esse Sistema de Dialogo"
 script = ExtResource("2_wduwi")
 texture = ExtResource("3_mq8m7")
 speaker = "You"
 
 [node name="SpeakClass4" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "Acho que nao funcionou"
 script = ExtResource("2_wduwi")
 texture = ExtResource("4_7n3yd")
 speaker = "Enemy"
 
 [node name="SpeakClass5" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "Funcionou Sim"
 script = ExtResource("2_wduwi")
 texture = ExtResource("3_mq8m7")
 speaker = "You"
 
 [node name="SpeakClass7" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "Entao Ta Bom"
 script = ExtResource("2_wduwi")
 texture = ExtResource("4_7n3yd")
 speaker = "Enemy"
 
 [node name="SpeakClass6" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "ATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACAR"
 script = ExtResource("2_wduwi")
 texture = ExtResource("3_mq8m7")
