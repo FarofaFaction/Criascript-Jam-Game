@@ -36,5 +36,7 @@ func Interaction():
 	if _already_speaked:
 		return
 	_already_speaked = true
-	DialogScene._start_dialog()
+	
+	Dialogic.start('timeline_test')
+	#DialogScene._start_dialog()
 	pass

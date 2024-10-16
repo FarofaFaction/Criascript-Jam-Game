@@ -1,13 +1,14 @@
-[gd_scene load_steps=40 format=3 uid="uid://cqpb3ie51rwl5"]
+[gd_scene load_steps=41 format=3 uid="uid://cqpb3ie51rwl5"]
 
 [ext_resource type="Script" path="res://Dialog/Dialogic/Style/CustomPremade/default_layout_base.gd" id="1_ifsho"]
+[ext_resource type="Script" path="res://Dialog/Dialogic/Style/CustomPremade/DialogicMenu.gd" id="2_k1fl1"]
 [ext_resource type="Script" path="res://Dialog/Dialogic/Style/CustomPremade/Portrait.gd" id="2_k3cey"]
-[ext_resource type="PackedScene" uid="uid://c1k5m0w3r40xf" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn" id="2_q4p7k"]
+[ext_resource type="PackedScene" uid="uid://c1k5m0w3r40xf" path="res://Dialog/Dialogic/Style/Premade3/FullBackground/custom_full_background_layer.tscn" id="2_q4p7k"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/Character/node_portrait_container.gd" id="4_u43w5"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Portraits/vn_portrait_layer.gd" id="5_s78ck"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/animations.gd" id="6_cy138"]
 [ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="6_rgg8c"]
-[ext_resource type="StyleBox" uid="uid://dkv1pl1c1dq6" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_default_panel.tres" id="7_3hc74"]
+[ext_resource type="StyleBox" uid="uid://dkv1pl1c1dq6" path="res://Dialog/Dialogic/Style/Premade2/VisualNovelTextbox/vn_textbox_default_panel.tres" id="7_3hc74"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/Choice/node_choice_button.gd" id="8_4wybx"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_dialog_text.gd" id="8_hiji4"]
 [ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="8_jdbgn"]
@@ -21,7 +22,7 @@
 [ext_resource type="AudioStream" uid="uid://c2viukvbub6v6" path="res://addons/dialogic/Example Assets/sound-effects/typing4.wav" id="11_3bb2b"]
 [ext_resource type="Script" path="res://Dialog/Dialogic/Style/CustomPremade/dialog_background_box.gd" id="12_m0kk7"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/autoadvance_indicator.gd" id="12_q4k2y"]
-[ext_resource type="StyleBox" uid="uid://m7gyepkysu83" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_name_label_panel.tres" id="13_3hw0c"]
+[ext_resource type="StyleBox" uid="uid://m7gyepkysu83" path="res://Dialog/Dialogic/Style/Premade2/VisualNovelTextbox/vn_textbox_name_label_panel.tres" id="13_3hw0c"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.gd" id="13_4p5k2"]
 [ext_resource type="PackedScene" uid="uid://cvgf4c6gg0tsy" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/text_input_layer.tscn" id="14_owpp1"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_name_label.gd" id="15_ukq37"]
@@ -64,9 +65,9 @@ void fragment() {
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v6cao"]
 shader = SubResource("Shader_wsm83")
 shader_parameter/level1 = Color(0, 0, 0, 1)
-shader_parameter/level2 = Color(0, 0, 0.0941176, 1)
-shader_parameter/level3 = Color(0.690196, 0.34902, 0, 1)
-shader_parameter/level4 = Color(1, 1, 0.0117647, 0.521569)
+shader_parameter/level2 = Color(0, 0, 0.14902, 1)
+shader_parameter/level3 = Color(1, 1, 1, 1)
+shader_parameter/level4 = Color(0.211765, 0.109804, 1, 1)
 shader_parameter/threshold1 = 0.097
 shader_parameter/threshold2 = 0.747
 shader_parameter/threshold3 = 0.56
@@ -268,7 +269,17 @@ vertical = true
 [sub_resource type="AudioStream" id="AudioStream_pe27w"]
 
 [node name="Custom" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_ifsho")
+
+[node name="Menu" type="Control" parent="." node_paths=PackedStringArray("init_button")]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_k1fl1")
+init_button = NodePath("../VN_ChoiceLayer/Choices/DialogicNode_ChoiceButton1")
 
 [node name="Panel" type="Panel" parent="." node_paths=PackedStringArray("texture", "filter", "SearchNode")]
 anchors_preset = 5

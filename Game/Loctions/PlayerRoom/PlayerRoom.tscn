@@ -292,6 +292,11 @@ position = Vector2(-19, -73)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_cwiyk")
 
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="BackgroundCenario/Fundo/ColissionBase"]
+position = Vector2(7, -78)
+rotation = 2.4076
+shape = SubResource("RectangleShape2D_cwiyk")
+
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="BackgroundCenario/Fundo/ColissionBase"]
 position = Vector2(635, -74)
 rotation = 1.5708
@@ -368,6 +373,7 @@ DialogScene = NodePath("CanvasLayer/AskForPill")
 moving_parent = NodePath("../../..")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle"]
+visible = false
 
 [node name="AskForPill" type="Control" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle/CanvasLayer"]
 visible = false

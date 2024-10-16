@@ -20,7 +20,7 @@ func find_sprite2d(node: Node) -> Sprite2D:
 	return null
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var  n = find_sprite2d(SearchNode)
 	if !n:
 		visible = false
