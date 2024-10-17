@@ -72,6 +72,7 @@ translation/intern/file_mode=1
 translation/intern/translation_folder="res://Localization/Dialogic"
 translation/id_counter=24
 translation/locales=["en", "pt_BR"]
+variables={}
 
 [display]
 

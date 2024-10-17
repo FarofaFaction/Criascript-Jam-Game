@@ -32,12 +32,13 @@ bigLight = NodePath("Tv/Biglight")
 position = Vector2(-0.5, 5.5)
 shape = SubResource("RectangleShape2D_s3cjc")
 
-[node name="InteractibleArea" type="Area2D" parent="."]
+[node name="InteractibleArea" type="Area2D" parent="." node_paths=PackedStringArray("messagePanel")]
 position = Vector2(0, -7)
 collision_layer = 0
 collision_mask = 2147483648
 monitorable = false
 script = ExtResource("4_jmppi")
+messagePanel = NodePath("../SacaledTextBallon/Textpanel")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractibleArea"]
 position = Vector2(0, 12)
@@ -67,3 +68,6 @@ position = Vector2(-2, -6)
 
 [connection signal="area_entered" from="InteractibleArea" to="InteractibleArea" method="_player_entered"]
 [connection signal="area_exited" from="InteractibleArea" to="InteractibleArea" method="_player_exited"]
+
+[editable path="SacaledTextBallon"]
+[editable path="SacaledTextBallon/Textpanel"]

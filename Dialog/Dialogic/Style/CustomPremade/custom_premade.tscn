@@ -1,9 +1,7 @@
-[gd_scene load_steps=41 format=3 uid="uid://cqpb3ie51rwl5"]
+[gd_scene load_steps=35 format=3 uid="uid://cqpb3ie51rwl5"]
 
 [ext_resource type="Script" path="res://Dialog/Dialogic/Style/CustomPremade/default_layout_base.gd" id="1_ifsho"]
 [ext_resource type="Script" path="res://Dialog/Dialogic/Style/CustomPremade/DialogicMenu.gd" id="2_k1fl1"]
-[ext_resource type="Script" path="res://Dialog/Dialogic/Style/CustomPremade/Portrait.gd" id="2_k3cey"]
-[ext_resource type="PackedScene" uid="uid://c1k5m0w3r40xf" path="res://Dialog/Dialogic/Style/Premade3/FullBackground/custom_full_background_layer.tscn" id="2_q4p7k"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/Character/node_portrait_container.gd" id="4_u43w5"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Portraits/vn_portrait_layer.gd" id="5_s78ck"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/animations.gd" id="6_cy138"]
@@ -28,49 +26,7 @@
 [ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_name_label.gd" id="15_ukq37"]
 [ext_resource type="PackedScene" uid="uid://lx24i8fl6uo" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/history_layer.tscn" id="16_ysui7"]
 [ext_resource type="PackedScene" uid="uid://djhnt4bpvoytr" path="res://border.tscn" id="20_1tpmf"]
-[ext_resource type="Texture2D" uid="uid://c2ojth3poy1um" path="res://Dialog/Characters/Character/psychiatric_patient.jpg" id="27_hbytw"]
-[ext_resource type="PackedScene" uid="uid://bjsa2mrlybrr3" path="res://Shaders/portrait_shader.tscn" id="28_tfkgt"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hu7tm"]
-bg_color = Color(0, 0, 0, 1)
-
-[sub_resource type="Shader" id="Shader_wsm83"]
-code = "shader_type canvas_item;
-render_mode unshaded; // Credit: LiathTheCrow for original shader code
-
-uniform vec4 level1 : source_color = vec4(0.0, 0.0, 0.0, 1.0);
-uniform vec4 level2 : source_color = vec4(0.5, 0.5, 0.5, 1.0);
-uniform vec4 level3 : source_color = vec4(1.0, 1.0, 1.0, 1.0);
-uniform vec4 level4 : source_color = vec4(1.0, 1.0, 1.0, 1.0);
-
-uniform float threshold1 	: hint_range(0.0,1.0) = .4;
-uniform float threshold2 	: hint_range(0.0,1.0) = .52;
-uniform float threshold3	: hint_range(0.0,1.0) = .8;
-uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
-
-void fragment() {
-	COLOR = texture(SCREEN_TEXTURE, SCREEN_UV).rgba;
-	float rgb_avg = (COLOR.r + COLOR.g + COLOR.b)/3.0;
-	if(rgb_avg < threshold1){
-		COLOR = level1.rgba;
-	}else if(rgb_avg < threshold2){
-		COLOR = level2.rgba;
-	}else if(rgb_avg < threshold3){
-		COLOR = level3.rgba;
-	}else{
-		COLOR = level4.rgba;
-	}
-}"
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_v6cao"]
-shader = SubResource("Shader_wsm83")
-shader_parameter/level1 = Color(0, 0, 0, 1)
-shader_parameter/level2 = Color(0, 0, 0.14902, 1)
-shader_parameter/level3 = Color(1, 1, 1, 1)
-shader_parameter/level4 = Color(0.211765, 0.109804, 1, 1)
-shader_parameter/threshold1 = 0.097
-shader_parameter/threshold2 = 0.747
-shader_parameter/threshold3 = 0.56
+[ext_resource type="PackedScene" uid="uid://c1k5m0w3r40xf" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn" id="27_oyvpa"]
 
 [sub_resource type="Animation" id="Animation_au0a2"]
 length = 0.001
@@ -281,70 +237,7 @@ offset_bottom = 40.0
 script = ExtResource("2_k1fl1")
 init_button = NodePath("../VN_ChoiceLayer/Choices/DialogicNode_ChoiceButton1")
 
-[node name="Panel" type="Panel" parent="." node_paths=PackedStringArray("texture", "filter", "SearchNode")]
-visible = false
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -336.0
-offset_top = 64.0
-offset_right = 336.0
-offset_bottom = 704.0
-grow_horizontal = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_hu7tm")
-script = ExtResource("2_k3cey")
-texture = NodePath("TextureRect")
-filter = NodePath("PortraitShader")
-SearchNode = NodePath("../VN_PortraitLayer/Portraits")
-
-[node name="TextureRect" type="TextureRect" parent="Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("27_hbytw")
-stretch_mode = 5
-
-[node name="PortraitShader" parent="Panel" instance=ExtResource("28_tfkgt")]
-material = SubResource("ShaderMaterial_v6cao")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 0.0
-offset_bottom = 0.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("27_hbytw")
-expand_mode = 0
-stretch_mode = 5
-
-[node name="WhiteBorder" parent="Panel" node_paths=PackedStringArray("reference") instance=ExtResource("20_1tpmf")]
-show_behind_parent = true
-layout_mode = 0
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 692.0
-offset_bottom = 660.0
-reference = NodePath("../BlackBorder")
-
-[node name="BlackBorder" parent="Panel" node_paths=PackedStringArray("reference") instance=ExtResource("20_1tpmf")]
-show_behind_parent = true
-layout_mode = 0
-offset_left = -10.0
-offset_top = -10.0
-offset_right = 682.0
-offset_bottom = 650.0
-color = Color(0, 0, 0, 1)
-reference = NodePath("../TextureRect")
-
-[node name="BackgroundLayer" parent="." instance=ExtResource("2_q4p7k")]
-visible = false
-apply_overrides_on_ready = true
+[node name="BackgroundLayer" parent="." instance=ExtResource("27_oyvpa")]
 
 [node name="VN_PortraitLayer" type="Control" parent="."]
 visible = false

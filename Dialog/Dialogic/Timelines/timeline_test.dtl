@@ -1,14 +1,13 @@
+[background scene="res://Dialog/Characters/Character/PlayerPortrat.tscn" fade="0.5" transition="Push Right"]
 character: Oi Doutor, estou testando o codigo com muito\
-muito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito #id:11
-join Doctor center
+muito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textwomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito #id:11
+[background scene="res://Dialog/Characters/Doctor/DoctorPortrait.tscn" fade="0.0"]
 Doctor: Parece que funcionou #id:12
-leave Doctor
-join character center
 - Sim #id:13
-	leave character
+	[background scene="res://Dialog/Characters/Character/PlayerPortrat.tscn" fade="0.0" transition="Swipe Diagonal Up Left"]
 	Sim #id:14
 	[end_timeline]
 - Nao #id:15
-	leave character
+	[background scene="res://Dialog/Characters/Character/PlayerPortrat.tscn" fade="0.0"]
 	Nao, repete #id:16
 	jump 
