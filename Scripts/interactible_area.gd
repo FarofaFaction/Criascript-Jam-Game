@@ -1,6 +1,7 @@
 extends Area2D
 class_name InteractibleArea
 
+@export var messagePanel : Panel
 @export var message: Label
 @export var moving_parent: Node
 var _interactible : Node
@@ -9,6 +10,8 @@ var _player : PlayerClass
 func _ready() -> void:
 	if message:
 		message.visible = false
+	if messagePanel:
+		messagePanel.visible = false
 	var node = get_parent()
 	if node && node is Node:
 		_interactible = node
@@ -43,6 +46,8 @@ func _player_entered(area) -> void:
 		return
 	if message:
 		message.visible = true
+	if messagePanel:
+		messagePanel.visible = true
 	print("Player entered on interctible area")
 	_player = node
 	pass # Replace with function body.
@@ -53,6 +58,8 @@ func _player_exited(area) -> void:
 		return
 	if message:
 		message.visible = false
+	if messagePanel:
+		messagePanel.visible = false
 	print("Player exit out interctible area")
 	_player = null
 	pass 

@@ -37,7 +37,7 @@ directories/dch_directory={
 directories/dtl_directory={
 "timeline_test": "res://Dialog/Dialogic/Timelines/timeline_test.dtl"
 }
-layout/style_list=["res://Dialog/Dialogic/Style/premade.tres", "res://Dialog/Dialogic/Style/Premade3/premade3.tres", "res://Dialog/Dialogic/Style/premade4/New_File.tres"]
+layout/style_list=["res://Dialog/Dialogic/Style/premade.tres"]
 layout/default_style="res://Dialog/Dialogic/Style/premade.tres"
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01

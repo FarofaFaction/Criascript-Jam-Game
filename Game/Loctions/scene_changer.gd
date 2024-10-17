@@ -9,8 +9,12 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if !interactiveArea:
-		return
-	if interactiveArea._player:
-		Global.change_scene(location)
+	#if !interactiveArea:
+		#return
+	#if interactiveArea._player:
+		
+	pass
+
+func Interaction():
+	Global.change_scene(location)
 	pass

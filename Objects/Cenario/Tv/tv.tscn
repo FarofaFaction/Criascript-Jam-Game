@@ -1,23 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://d2apjj0tfq2bn"]
+[gd_scene load_steps=10 format=3 uid="uid://d2apjj0tfq2bn"]
 
 [ext_resource type="Script" path="res://Objects/Cenario/Tv/tv.gd" id="1_vjexk"]
-[ext_resource type="Theme" uid="uid://bi5atlkw4djab" path="res://Dialog/Styles/Style.tres" id="2_0cr4v"]
-[ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="3_nqx80"]
+[ext_resource type="PackedScene" uid="uid://ck1cjro36gptd" path="res://Game/scaled_text_ballon.tscn" id="2_ggpo7"]
 [ext_resource type="Script" path="res://Scripts/interactible_area.gd" id="4_jmppi"]
 [ext_resource type="Texture2D" uid="uid://cusk8ggfb80y3" path="res://Objects/Cenario/Tv/tv.png" id="6_c6heo"]
 [ext_resource type="PackedScene" uid="uid://kf3xj3qo4pel" path="res://Objects/Shadow/shadow.tscn" id="7_gmejf"]
 [ext_resource type="Texture2D" uid="uid://grx8jyxat1kd" path="res://Objects/light/light.png" id="7_tpdgd"]
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nteog"]
-light_mode = 1
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mqcgn"]
-bg_color = Color(0, 0, 0, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s3cjc"]
 size = Vector2(15, 9)
@@ -38,34 +26,18 @@ script = ExtResource("1_vjexk")
 smallLight = NodePath("Tv/Small")
 bigLight = NodePath("Tv/Biglight")
 
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2(-2, -11)
-scale = Vector2(0.3, 0.3)
-
-[node name="Label" type="Label" parent="Node2D"]
-material = SubResource("CanvasItemMaterial_nteog")
-offset_left = -120.0
-offset_top = -76.6667
-offset_right = 118.0
-offset_bottom = -53.6667
-theme = ExtResource("2_0cr4v")
-theme_override_fonts/font = ExtResource("3_nqx80")
-theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
-text = "[E] Segurar/Soltar"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="SacaledTextBallon" parent="." instance=ExtResource("2_ggpo7")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 5.5)
 shape = SubResource("RectangleShape2D_s3cjc")
 
-[node name="InteractibleArea" type="Area2D" parent="." node_paths=PackedStringArray("message")]
+[node name="InteractibleArea" type="Area2D" parent="."]
 position = Vector2(0, -7)
 collision_layer = 0
 collision_mask = 2147483648
 monitorable = false
 script = ExtResource("4_jmppi")
-message = NodePath("../Node2D/Label")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractibleArea"]
 position = Vector2(0, 12)

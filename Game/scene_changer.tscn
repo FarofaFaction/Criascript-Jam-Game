@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpe4chlg5q0t2"]
+
+[ext_resource type="Script" path="res://Game/Loctions/scene_changer.gd" id="1_v8gmj"]
+[ext_resource type="PackedScene" uid="uid://ck1cjro36gptd" path="res://Game/scaled_text_ballon.tscn" id="2_em4we"]
+[ext_resource type="PackedScene" uid="uid://6fw6kl4t5n7x" path="res://Objects/interactible_area.tscn" id="3_yx41p"]
+
+[node name="SceneChanger" type="Node2D" node_paths=PackedStringArray("interactiveArea")]
+position = Vector2(327, -35)
+script = ExtResource("1_v8gmj")
+interactiveArea = NodePath("InteractibleArea")
+
+[node name="ScaledTextBallon" parent="." instance=ExtResource("2_em4we")]
+position = Vector2(20, 3)
+
+[node name="TextBallon" parent="ScaledTextBallon/Textpanel" index="0"]
+text = "[E] Sair"
+
+[node name="InteractibleArea" parent="." node_paths=PackedStringArray("messagePanel") instance=ExtResource("3_yx41p")]
+modulate = Color(1, 0, 1, 1)
+messagePanel = NodePath("../ScaledTextBallon/Textpanel")
+
+[editable path="ScaledTextBallon"]
+[editable path="ScaledTextBallon/Textpanel"]

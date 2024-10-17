@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://ck1cjro36gptd"]
+
+[ext_resource type="PackedScene" uid="uid://b5l5jcfiebqmr" path="res://Game/textpanel.tscn" id="1_2v0cf"]
+
+[node name="SacaledTextBallon" type="Node2D"]
+position = Vector2(-2, -11)
+scale = Vector2(0.3, 0.3)
+
+[node name="Textpanel" parent="." instance=ExtResource("1_2v0cf")]
+offset_left = -113.333
+offset_top = -73.3333
+offset_right = -0.333351
+offset_bottom = -42.3333
+
+[node name="TextBallon" parent="Textpanel" index="0"]
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 1
+grow_vertical = 1
+text = "[E] Segurar/Soltar"
+
+[editable path="Textpanel"]

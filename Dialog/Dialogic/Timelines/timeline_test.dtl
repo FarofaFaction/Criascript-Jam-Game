@@ -1,12 +1,14 @@
 character: Oi Doutor, estou testando o codigo com muito\
 muito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito #id:11
-join Doctor leftmost
+join Doctor center
 Doctor: Parece que funcionou #id:12
 leave Doctor
 join character center
 - Sim #id:13
+	leave character
 	Sim #id:14
 	[end_timeline]
 - Nao #id:15
+	leave character
 	Nao, repete #id:16
 	jump 

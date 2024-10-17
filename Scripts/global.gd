@@ -12,6 +12,7 @@ func _ready() -> void:
 	_init_audio()
 	pass # Replace with function body.
 
+const Room := "res://Game/Loctions/CommonRoom/CommomRoom.tscn"
 const Loading := "res://Interface/Transition/Loading.tscn"
 const MenuMenu := "res://Interface/Menu/menu.tscn"
 const Corridor := "res://Game/Loctions/Corridor2D/Corridor2D.tscn"
@@ -20,15 +21,13 @@ var current_scene: String
 #const ss := str(1)
 
 func change_scene(scene: String):
-	#var node
 	if (scene == "Menu"):
-		#node = preload(MenuMenu).instantiate()
-		#get_tree().change_scene_to_file(MenuMenu)
 		GlobalTimer.stop()
 		current_scene = MenuMenu
 	elif (scene == "Game"):
 		current_scene = Game
-		#get_tree().change_scene_to_file(Game)
+	elif (scene == "Room"):
+		current_scene = Room
 	elif (scene == "Corridor"):
 		current_scene = Corridor
 	else:

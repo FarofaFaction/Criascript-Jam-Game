@@ -282,6 +282,7 @@ script = ExtResource("2_k1fl1")
 init_button = NodePath("../VN_ChoiceLayer/Choices/DialogicNode_ChoiceButton1")
 
 [node name="Panel" type="Panel" parent="." node_paths=PackedStringArray("texture", "filter", "SearchNode")]
+visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5

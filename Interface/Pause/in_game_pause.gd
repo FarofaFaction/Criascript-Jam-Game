@@ -26,7 +26,8 @@ func dispause():
 		current_menu._grab_init_button()
 		return
 	if !hold_pause:
-		get_tree().paused = false
+		if get_tree():
+			get_tree().paused = false
 	pass
 	
 func pause():
