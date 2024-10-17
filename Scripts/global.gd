@@ -34,7 +34,7 @@ func change_scene(scene: String):
 		return
 	Transition.transition("fade_to_black")
 	if player:
-		player.process_mode = Node.PROCESS_MODE_DISABLED
+		player.process_mode = PROCESS_MODE_DISABLED
 	await Transition.on_transition_finished
 	get_tree().change_scene_to_file(Loading)
 	pass

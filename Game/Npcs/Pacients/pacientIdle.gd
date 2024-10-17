@@ -5,13 +5,13 @@ var move_direction : Vector2
 var wander_time : float
 
 func randomize_wander():
-	var run := randi_range(0,2)
-	if !run:
+	var stay_parado := randi_range(0,4)
+	if stay_parado:
 		move_direction = Vector2.ZERO
 		wander_time = randf_range(1, 3)
 		return
 	move_direction = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()
-	wander_time = randf_range(1, 3)
+	wander_time = randf_range(1, 2)
 
 func Enter():
 	if !pacient:

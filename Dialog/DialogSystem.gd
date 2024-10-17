@@ -17,7 +17,7 @@ var on_options := false
 
 # Chamado quando o nó entra na árvore
 func _ready() -> void:
-	process_mode = Node.PROCESS_MODE_ALWAYS
+	process_mode = PROCESS_MODE_ALWAYS
 	$CanvasLayer.visible = false
 
 # Métodos de Inicialização

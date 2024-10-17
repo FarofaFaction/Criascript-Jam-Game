@@ -1,21 +1,72 @@
-[gd_scene load_steps=12 format=3 uid="uid://cgbofih11kw7m"]
+[gd_scene load_steps=21 format=3 uid="uid://cgbofih11kw7m"]
 
 [ext_resource type="PackedScene" uid="uid://b4e34twd33abh" path="res://Game/Loctions/Corridor2D/floor.tscn" id="1_22koa"]
 [ext_resource type="PackedScene" uid="uid://cmk1subk8bpb2" path="res://Game/Loctions/Corridor2D/door.tscn" id="1_hjyqo"]
-[ext_resource type="PackedScene" uid="uid://btibrxj46tnno" path="res://Game/Loctions/illumination.tscn" id="1_ntryb"]
 [ext_resource type="Script" path="res://Game/Loctions/Corridor2D/corridor_2d.gd" id="1_qny7v"]
 [ext_resource type="PackedScene" uid="uid://7sspjh77o6vm" path="res://Game/Player/player.tscn" id="2_m7p8g"]
+[ext_resource type="Script" path="res://Game/Loctions/PlayerRoom/illumination.gd" id="2_mgxf2"]
+[ext_resource type="Texture2D" uid="uid://grx8jyxat1kd" path="res://Objects/light/light.png" id="3_mntnm"]
 [ext_resource type="PackedScene" uid="uid://cxpyp7yoxaixr" path="res://Objects/room_clock.tscn" id="5_em62a"]
 [ext_resource type="PackedScene" uid="uid://yje2v65lwodi" path="res://Game/Enemy/enemy_spawning.tscn" id="5_shjpq"]
 [ext_resource type="PackedScene" uid="uid://d2d1asq2fkvsq" path="res://Interface/PlayerInterface/player_interface.tscn" id="8_yoneu"]
 [ext_resource type="PackedScene" uid="uid://bjsa2mrlybrr3" path="res://Shaders/portrait_shader.tscn" id="9_qbdjy"]
 [ext_resource type="PackedScene" uid="uid://cpe4chlg5q0t2" path="res://Game/scene_changer.tscn" id="10_5sj7v"]
+[ext_resource type="Script" path="res://Game/Loctions/Corridor2D/local_teleporter.gd" id="11_s8mvb"]
+[ext_resource type="Script" path="res://Scripts/interactible_area.gd" id="12_i7lkc"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s34ym"]
+load_path = "res://.godot/imported/light.png-8fdf09ef7de5c29c73dfe94c1c1879f5.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ujkmg"]
 size = Vector2(2552, 58)
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_o7x6s"]
+a = Vector2(-4, -10)
+b = Vector2(-4, 14)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ixx0s"]
+a = Vector2(-4, -10)
+b = Vector2(-4, 14)
+
+[sub_resource type="Animation" id="Animation_0sn4p"]
+resource_name = "CorridorLight"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Illumination/BaseIlumination:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.0, 0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_26rqu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Illumination/BaseIlumination:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nrhah"]
+_data = {
+"CorridorLight": SubResource("Animation_0sn4p"),
+"RESET": SubResource("Animation_26rqu")
+}
+
 [node name="Corridor2d" type="Node2D"]
 script = ExtResource("1_qny7v")
+speed = 1
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -18664.0
@@ -24,8 +75,94 @@ offset_right = 18704.0
 offset_bottom = 12824.0
 color = Color(0, 0, 0, 1)
 
-[node name="Illumination" parent="." instance=ExtResource("1_ntryb")]
-position = Vector2(-189, -120)
+[node name="Illumination" type="Node2D" parent="." node_paths=PackedStringArray("ilumination_node", "BigLight", "SmallLight", "GlobalIllumination")]
+position = Vector2(-195, -552)
+script = ExtResource("2_mgxf2")
+color_night = Color(8.66354e-07, 0, 0.770133, 1)
+color_day = Color(1, 1, 0.466667, 0.211765)
+ilumination_node = NodePath("RoomLight")
+BigLight = NodePath("RoomLight/BigLight")
+SmallLight = NodePath("RoomLight/SmallLight")
+GlobalIllumination = NodePath("BaseIlumination")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Illumination"]
+color = Color(0, 0, 0, 1)
+
+[node name="BaseIlumination" type="PointLight2D" parent="Illumination"]
+blend_mode = 2
+texture = SubResource("CompressedTexture2D_s34ym")
+texture_scale = 50.0
+
+[node name="RoomLight" type="Node2D" parent="Illumination"]
+position = Vector2(18, -61)
+
+[node name="SmallLight" type="PointLight2D" parent="Illumination/RoomLight"]
+position = Vector2(282, -149)
+texture = ExtResource("3_mntnm")
+
+[node name="BigLight" type="PointLight2D" parent="Illumination/RoomLight"]
+position = Vector2(97, -578)
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("3_mntnm")
+texture_scale = 7.0
+
+[node name="Cenario3" type="Node2D" parent="."]
+position = Vector2(501, 5.96046e-08)
+scale = Vector2(0.2, 0.2)
+
+[node name="Background" type="Node2D" parent="Cenario3"]
+
+[node name="Walls" type="Node2D" parent="Cenario3/Background"]
+
+[node name="ColorRect" type="ColorRect" parent="Cenario3/Background/Walls"]
+offset_left = -2120.0
+offset_top = -312.0
+offset_right = 392.0
+offset_bottom = 128.0
+
+[node name="Floordetai" type="ColorRect" parent="Cenario3/Background/Walls"]
+offset_left = -2120.0
+offset_top = -48.0
+offset_right = 392.0
+offset_bottom = -25.0
+color = Color(0.786347, 0.786347, 0.786347, 1)
+
+[node name="Door2" parent="Cenario3/Background/Walls" instance=ExtResource("1_hjyqo")]
+position = Vector2(360, 8)
+
+[node name="Door4" parent="Cenario3/Background/Walls" instance=ExtResource("1_hjyqo")]
+position = Vector2(1464, 8)
+
+[node name="Floor" type="Node2D" parent="Cenario3"]
+
+[node name="Floor" parent="Cenario3/Floor" instance=ExtResource("1_22koa")]
+
+[node name="Floor2" parent="Cenario3/Floor" instance=ExtResource("1_22koa")]
+position = Vector2(-632, 0)
+
+[node name="Floor3" parent="Cenario3/Floor" instance=ExtResource("1_22koa")]
+position = Vector2(-1256, 0)
+
+[node name="Floor4" parent="Cenario3/Floor" instance=ExtResource("1_22koa")]
+position = Vector2(-1888, 0)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Cenario3/Floor"]
+position = Vector2(55, 80)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenario3/Floor/StaticBody2D"]
+position = Vector2(-836, 27)
+shape = SubResource("RectangleShape2D_ujkmg")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Cenario3/Floor"]
+position = Vector2(-20, -75)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenario3/Floor/StaticBody2D2"]
+position = Vector2(-836, 27)
+shape = SubResource("RectangleShape2D_ujkmg")
 
 [node name="Cenario" type="Node2D" parent="."]
 scale = Vector2(0.2, 0.2)
@@ -93,6 +230,64 @@ collision_mask = 3
 position = Vector2(-836, 27)
 shape = SubResource("RectangleShape2D_ujkmg")
 
+[node name="Cenario2" type="Node2D" parent="."]
+position = Vector2(-500, 9.53674e-07)
+scale = Vector2(0.2, 0.2)
+
+[node name="Background" type="Node2D" parent="Cenario2"]
+
+[node name="Walls" type="Node2D" parent="Cenario2/Background"]
+
+[node name="ColorRect" type="ColorRect" parent="Cenario2/Background/Walls"]
+offset_left = -2120.0
+offset_top = -312.0
+offset_right = 392.0
+offset_bottom = 128.0
+
+[node name="Floordetai" type="ColorRect" parent="Cenario2/Background/Walls"]
+offset_left = -2120.0
+offset_top = -48.0
+offset_right = 392.0
+offset_bottom = -25.0
+color = Color(0.786347, 0.786347, 0.786347, 1)
+
+[node name="Door2" parent="Cenario2/Background/Walls" instance=ExtResource("1_hjyqo")]
+position = Vector2(360, 8)
+
+[node name="Door4" parent="Cenario2/Background/Walls" instance=ExtResource("1_hjyqo")]
+position = Vector2(1464, 8)
+
+[node name="Floor" type="Node2D" parent="Cenario2"]
+
+[node name="Floor" parent="Cenario2/Floor" instance=ExtResource("1_22koa")]
+
+[node name="Floor2" parent="Cenario2/Floor" instance=ExtResource("1_22koa")]
+position = Vector2(-632, 0)
+
+[node name="Floor3" parent="Cenario2/Floor" instance=ExtResource("1_22koa")]
+position = Vector2(-1256, 0)
+
+[node name="Floor4" parent="Cenario2/Floor" instance=ExtResource("1_22koa")]
+position = Vector2(-1888, 0)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Cenario2/Floor"]
+position = Vector2(55, 80)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenario2/Floor/StaticBody2D"]
+position = Vector2(-836, 27)
+shape = SubResource("RectangleShape2D_ujkmg")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Cenario2/Floor"]
+position = Vector2(-20, -75)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cenario2/Floor/StaticBody2D2"]
+position = Vector2(-836, 27)
+shape = SubResource("RectangleShape2D_ujkmg")
+
 [node name="RoomClock" parent="." instance=ExtResource("5_em62a")]
 position = Vector2(-360, -58)
 scale = Vector2(0.5, 0.5)
@@ -109,13 +304,17 @@ y_sort_enabled = true
 y_sort_enabled = true
 
 [node name="Player" parent="OrganizadosPorY/Personagens" instance=ExtResource("2_m7p8g")]
-position = Vector2(-379, -10)
+position = Vector2(267, -6)
 startAwake = false
+
+[node name="Camera2D" parent="OrganizadosPorY/Personagens/Player" index="8"]
+position_smoothing_enabled = false
 
 [node name="EnemySpawning" parent="." node_paths=PackedStringArray("pegadas_spawn_node", "possible_positions", "spawn_node") instance=ExtResource("5_shjpq")]
 pegadas_spawn_node = NodePath("../FloorItems/Pegadas")
 possible_positions = [NodePath("Marker2D4"), NodePath("Marker2D5")]
 spawn_node = NodePath("../OrganizadosPorY/Personagens")
+spawn_times = Array[Vector2]([])
 
 [node name="Marker2D4" type="Marker2D" parent="EnemySpawning"]
 position = Vector2(-268, 6)
@@ -146,3 +345,51 @@ location = "Room"
 [node name="SceneChanger2" parent="Scenes" instance=ExtResource("10_5sj7v")]
 position = Vector2(-265, -27)
 location = "Game"
+
+[node name="LocalTeleporter" type="Node2D" parent="Scenes" node_paths=PackedStringArray("player", "mark1", "mark2", "timer", "animation_player")]
+script = ExtResource("11_s8mvb")
+player = NodePath("../../OrganizadosPorY/Personagens/Player")
+mark1 = NodePath("InteractibleArea/Marker1")
+mark2 = NodePath("InteractibleArea2/Marker2")
+timer = NodePath("Timer")
+animation_player = NodePath("AnimationPlayer")
+
+[node name="InteractibleArea" type="Area2D" parent="Scenes/LocalTeleporter"]
+position = Vector2(-697, -9)
+collision_layer = 2147483650
+collision_mask = 2147483650
+monitorable = false
+script = ExtResource("12_i7lkc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scenes/LocalTeleporter/InteractibleArea"]
+position = Vector2(4, 12)
+shape = SubResource("SegmentShape2D_o7x6s")
+
+[node name="Marker1" type="Marker2D" parent="Scenes/LocalTeleporter/InteractibleArea"]
+position = Vector2(9, 11)
+
+[node name="InteractibleArea2" type="Area2D" parent="Scenes/LocalTeleporter"]
+position = Vector2(317, -9)
+collision_layer = 2147483650
+collision_mask = 2147483650
+monitorable = false
+script = ExtResource("12_i7lkc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scenes/LocalTeleporter/InteractibleArea2"]
+position = Vector2(4, 12)
+shape = SubResource("SegmentShape2D_ixx0s")
+
+[node name="Marker2" type="Marker2D" parent="Scenes/LocalTeleporter/InteractibleArea2"]
+position = Vector2(-9.5, 3)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Scenes/LocalTeleporter"]
+libraries = {
+"": SubResource("AnimationLibrary_nrhah")
+}
+speed_scale = 2.0
+
+[node name="Timer" type="Timer" parent="Scenes/LocalTeleporter"]
+
+[connection signal="timeout" from="Scenes/LocalTeleporter/Timer" to="Scenes/LocalTeleporter" method="_on_Timer_timeout"]
+
+[editable path="OrganizadosPorY/Personagens/Player"]

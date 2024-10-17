@@ -149,3 +149,7 @@ stretch_mode = 4
 
 [node name="PortraitShader" parent="CanvasLayer/DialogBox" instance=ExtResource("3_v6xga")]
 layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 325.0
+offset_bottom = 328.0

@@ -1,4 +1,5 @@
 extends Node2D
+
 @export var location: String = "Corridor"
 @export var interactiveArea: InteractibleArea
 

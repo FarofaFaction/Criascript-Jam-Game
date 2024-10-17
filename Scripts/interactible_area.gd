@@ -48,7 +48,7 @@ func _player_entered(area) -> void:
 		message.visible = true
 	if messagePanel:
 		messagePanel.visible = true
-	print("Player entered on interctible area")
+	#print("Player entered on interctible area")
 	_player = node
 	pass # Replace with function body.
 
@@ -60,7 +60,7 @@ func _player_exited(area) -> void:
 		message.visible = false
 	if messagePanel:
 		messagePanel.visible = false
-	print("Player exit out interctible area")
+	#print("Player exit out interctible area")
 	_player = null
 	pass 
 	

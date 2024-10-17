@@ -192,7 +192,7 @@ shape = SubResource("CircleShape2D_318iq")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_amjbx")
-animation = &"DoctorRun"
+animation = &"Run"
 autoplay = "Idle"
 
 [node name="AnimatedShadow" parent="Sprite" instance=ExtResource("6_apmse")]

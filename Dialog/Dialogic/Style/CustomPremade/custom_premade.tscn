@@ -6,7 +6,6 @@
 [ext_resource type="Script" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Portraits/vn_portrait_layer.gd" id="5_s78ck"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/animations.gd" id="6_cy138"]
 [ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="6_rgg8c"]
-[ext_resource type="StyleBox" uid="uid://dkv1pl1c1dq6" path="res://Dialog/Dialogic/Style/Premade2/VisualNovelTextbox/vn_textbox_default_panel.tres" id="7_3hc74"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/Choice/node_choice_button.gd" id="8_4wybx"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_dialog_text.gd" id="8_hiji4"]
 [ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="8_jdbgn"]
@@ -20,13 +19,12 @@
 [ext_resource type="AudioStream" uid="uid://c2viukvbub6v6" path="res://addons/dialogic/Example Assets/sound-effects/typing4.wav" id="11_3bb2b"]
 [ext_resource type="Script" path="res://Dialog/Dialogic/Style/CustomPremade/dialog_background_box.gd" id="12_m0kk7"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/autoadvance_indicator.gd" id="12_q4k2y"]
-[ext_resource type="StyleBox" uid="uid://m7gyepkysu83" path="res://Dialog/Dialogic/Style/Premade2/VisualNovelTextbox/vn_textbox_name_label_panel.tres" id="13_3hw0c"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.gd" id="13_4p5k2"]
 [ext_resource type="PackedScene" uid="uid://cvgf4c6gg0tsy" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/text_input_layer.tscn" id="14_owpp1"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_name_label.gd" id="15_ukq37"]
 [ext_resource type="PackedScene" uid="uid://lx24i8fl6uo" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/history_layer.tscn" id="16_ysui7"]
 [ext_resource type="PackedScene" uid="uid://djhnt4bpvoytr" path="res://border.tscn" id="20_1tpmf"]
-[ext_resource type="PackedScene" uid="uid://c1k5m0w3r40xf" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn" id="27_oyvpa"]
+[ext_resource type="PackedScene" uid="uid://c1k5m0w3r40xf" path="res://Dialog/Dialogic/Style/Premade3/FullBackground/custom_full_background_layer.tscn" id="27_oyvpa"]
 
 [sub_resource type="Animation" id="Animation_au0a2"]
 length = 0.001
@@ -216,6 +214,20 @@ _data = {
 "textbox_fade_up": SubResource("Animation_g6k55"),
 "textbox_pop": SubResource("Animation_htbgc")
 }
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ytwu"]
+content_margin_left = 15.0
+content_margin_top = 15.0
+content_margin_right = 15.0
+content_margin_bottom = 15.0
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sy0ts"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
+bg_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_ga3wf"]
 color = Color(0.970945, 8.88012e-06, 7.70092e-07, 1)
@@ -409,7 +421,7 @@ offset_bottom = -61.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_styles/panel = ExtResource("7_3hc74")
+theme_override_styles/panel = SubResource("StyleBoxFlat_3ytwu")
 metadata/_edit_layout_mode = 1
 
 [node name="DialogicNode_DialogText" type="RichTextLabel" parent="VN_TextboxLayer/Anchor/AnimationParent/Sizer/DialogTextPanel" node_paths=PackedStringArray("textbox_root")]
@@ -482,7 +494,7 @@ offset_top = -50.0
 offset_right = 9.0
 offset_bottom = -25.0
 mouse_filter = 2
-theme_override_styles/panel = ExtResource("13_3hw0c")
+theme_override_styles/panel = SubResource("StyleBoxFlat_sy0ts")
 metadata/_edit_layout_mode = 1
 metadata/_edit_use_custom_anchors = true
 metadata/_edit_group_ = true
