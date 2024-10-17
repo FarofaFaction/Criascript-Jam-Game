@@ -6,6 +6,7 @@ class_name Map
 @export var speed := 60
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Global
 	if new_game:
 		GlobalTimer.set_time(init_hour,0)
 		GlobalTimer.set_speed(speed)

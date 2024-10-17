@@ -14,6 +14,7 @@ func _ready() -> void:
 
 const Loading := "res://Interface/Transition/Loading.tscn"
 const MenuMenu := "res://Interface/Menu/menu.tscn"
+const Corridor := "res://Game/Loctions/Corridor2D/Corridor2D.tscn"
 const Game := "res://Game/Loctions/PlayerRoom/PlayerRoom.tscn"
 var current_scene: String
 #const ss := str(1)
@@ -28,9 +29,13 @@ func change_scene(scene: String):
 	elif (scene == "Game"):
 		current_scene = Game
 		#get_tree().change_scene_to_file(Game)
+	elif (scene == "Corridor"):
+		current_scene = Corridor
 	else:
 		return
 	Transition.transition("fade_to_black")
+	if player:
+		player.process_mode = Node.PROCESS_MODE_DISABLED
 	await Transition.on_transition_finished
 	get_tree().change_scene_to_file(Loading)
 	pass

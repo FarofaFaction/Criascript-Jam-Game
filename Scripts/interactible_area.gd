@@ -1,4 +1,5 @@
 extends Area2D
+class_name InteractibleArea
 
 @export var message: Label
 @export var moving_parent: Node

@@ -325,19 +325,19 @@ stretch_mode = 5
 [node name="WhiteBorder" parent="Panel" node_paths=PackedStringArray("reference") instance=ExtResource("20_1tpmf")]
 show_behind_parent = true
 layout_mode = 0
-offset_left = 412.0
-offset_top = -3.0
-offset_right = 452.0
-offset_bottom = 37.0
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 692.0
+offset_bottom = 660.0
 reference = NodePath("../BlackBorder")
 
 [node name="BlackBorder" parent="Panel" node_paths=PackedStringArray("reference") instance=ExtResource("20_1tpmf")]
 show_behind_parent = true
 layout_mode = 0
-offset_left = 412.0
-offset_top = -3.0
-offset_right = 452.0
-offset_bottom = 37.0
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 682.0
+offset_bottom = 650.0
 color = Color(0, 0, 0, 1)
 reference = NodePath("../TextureRect")
 
@@ -493,25 +493,25 @@ mouse_filter = 2
 
 [node name="WhiteBorder3" type="ColorRect" parent="VN_TextboxLayer/Anchor/AnimationParent/Sizer" node_paths=PackedStringArray("reference")]
 layout_mode = 2
-offset_left = 25.0
-offset_top = -30.0
-offset_right = 57.0
-offset_bottom = 2.0
+offset_left = -303.0
+offset_top = -232.0
+offset_right = 603.0
+offset_bottom = -6.0
 script = ExtResource("12_m0kk7")
 reference = NodePath("../DialogTextPanel")
 border = 10
 
 [node name="DialogTextPanel" type="PanelContainer" parent="VN_TextboxLayer/Anchor/AnimationParent/Sizer"]
 unique_name_in_owner = true
-self_modulate = Color(0.00784314, 0.00784314, 0.00784314, 0.843137)
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -234.0
-offset_top = -198.0
-offset_right = 234.0
-offset_bottom = 32.0
+offset_left = -298.0
+offset_top = -227.0
+offset_right = 298.0
+offset_bottom = -61.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -572,17 +572,17 @@ mouse_filter = 2
 
 [node name="WhiteBorder2" type="ColorRect" parent="VN_TextboxLayer/Anchor/AnimationParent/Sizer/DialogTextPanel/NameLabelHolder" node_paths=PackedStringArray("reference")]
 layout_mode = 2
-offset_left = 10.0
-offset_top = -45.0
-offset_right = 42.0
-offset_bottom = -13.0
+offset_left = -5.0
+offset_top = -55.0
+offset_right = 57.0
+offset_bottom = -3.0
 script = ExtResource("12_m0kk7")
 reference = NodePath("../NameLabelPanel")
 border = 10
 
 [node name="NameLabelPanel" type="PanelContainer" parent="VN_TextboxLayer/Anchor/AnimationParent/Sizer/DialogTextPanel/NameLabelHolder"]
 unique_name_in_owner = true
-self_modulate = Color(0.00784314, 0.00784314, 0.00784314, 0.843137)
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 offset_top = -50.0
 offset_right = 9.0
@@ -619,12 +619,18 @@ script = ExtResource("13_4p5k2")
 
 [node name="WhiteBorder" parent="VN_ChoiceLayer" node_paths=PackedStringArray("reference") instance=ExtResource("20_1tpmf")]
 layout_mode = 0
+offset_left = 792.5
+offset_top = 280.0
+offset_right = 1128.5
+offset_bottom = 800.0
 reference = NodePath("../BlackBorder")
 
 [node name="BlackBorder" type="ColorRect" parent="VN_ChoiceLayer" node_paths=PackedStringArray("reference")]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 802.5
+offset_top = 290.0
+offset_right = 1118.5
+offset_bottom = 790.0
 color = Color(0, 0, 0, 1)
 script = ExtResource("12_m0kk7")
 reference = NodePath("../Choices")

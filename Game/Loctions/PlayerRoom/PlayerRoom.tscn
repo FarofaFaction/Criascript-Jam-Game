@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://v7uuiioruv0j"]
+[gd_scene load_steps=62 format=3 uid="uid://v7uuiioruv0j"]
 
 [ext_resource type="Script" path="res://Game/Loctions/PlayerRoom/player_room.gd" id="1_xkoml"]
 [ext_resource type="PackedScene" uid="uid://btibrxj46tnno" path="res://Game/Loctions/illumination.tscn" id="3_1g1fk"]
@@ -29,6 +29,7 @@
 [ext_resource type="Script" path="res://Game/Npcs/Doctor/doctorWalkIn.gd" id="22_oypi2"]
 [ext_resource type="Script" path="res://Game/Npcs/Doctor/doctorWalkout.gd" id="23_wb5fi"]
 [ext_resource type="PackedScene" uid="uid://yje2v65lwodi" path="res://Game/Enemy/enemy_spawning.tscn" id="29_y06wi"]
+[ext_resource type="Script" path="res://Game/Loctions/scene_changer.gd" id="30_hihul"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_icupd"]
 size = Vector2(35, 430)
@@ -214,7 +215,6 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(40, -38, 490, -41, 531,
 [node name="PlayerRoom" type="Node2D"]
 script = ExtResource("1_xkoml")
 new_game = true
-init_hour = 20
 speed = 480
 
 [node name="PlayerInterface" parent="." instance=ExtResource("10_jdqjg")]
@@ -683,3 +683,13 @@ offset_top = -188.0
 offset_right = 990.0
 offset_bottom = 355.0
 color = Color(0, 0, 0, 1)
+
+[node name="Scenes" type="Node2D" parent="."]
+
+[node name="SceneChanger" type="Node2D" parent="Scenes" node_paths=PackedStringArray("interactiveArea")]
+position = Vector2(327, -35)
+script = ExtResource("30_hihul")
+interactiveArea = NodePath("InteractibleArea")
+
+[node name="InteractibleArea" parent="Scenes/SceneChanger" instance=ExtResource("15_8rs3j")]
+modulate = Color(1, 0, 1, 1)

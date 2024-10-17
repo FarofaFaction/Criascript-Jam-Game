@@ -209,7 +209,7 @@ size = Vector2(14, 5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cgdn2"]
 size = Vector2(10, 25)
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("camera", "Sprite", "Hitbox", "StepsAudioPlayer", "DamageAudioPlayer") groups=["Player"]]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("camera", "Sprite", "Hitbox", "StepsAudioPlayer", "DamageAudioPlayer", "DieAudioPlayer") groups=["Player"]]
 y_sort_enabled = true
 collision_layer = 2
 collision_mask = 2
@@ -217,16 +217,19 @@ motion_mode = 1
 script = ExtResource("1_n8fh7")
 camera = NodePath("Camera2D")
 awaking = true
-dying_sound = ExtResource("2_aigqn")
 walking_sound = ExtResource("2_gyrqa")
 running_sound = ExtResource("3_8k3q0")
 Sprite = NodePath("Sprite")
 Hitbox = NodePath("Hitbox")
 StepsAudioPlayer = NodePath("StepsAudioPlayer")
 DamageAudioPlayer = NodePath("DamageAudioPlayer")
+DieAudioPlayer = NodePath("DyingAudioPlayer")
 heartbeat_sound = ExtResource("5_dvyd2")
 metadata/_edit_group_ = true
 metadata/_edit_pinned_properties_ = [&"walking_sound", &"running_sound"]
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+current = true
 
 [node name="PlayerMonsterVision" type="Node2D" parent="." node_paths=PackedStringArray("player", "light")]
 script = ExtResource("6_0xo6q")
@@ -252,7 +255,12 @@ stream = ExtResource("5_dvyd2")
 stream = ExtResource("5_0qbxg")
 volume_db = -8.0
 
+[node name="DyingAudioPlayer" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("2_aigqn")
+
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
+process_mode = 3
 sprite_frames = SubResource("SpriteFrames_amjbx")
 animation = &"WakeUp"
 autoplay = "Idle"

@@ -2,10 +2,9 @@
 
 [ext_resource type="Script" path="res://Game/Loctions/PlayerRoom/enemy_spawning.gd" id="1_0lwrj"]
 
-[node name="EnemySpawning" type="Node" node_paths=PackedStringArray("possible_positions", "spawn_node")]
+[node name="EnemySpawning" type="Node" node_paths=PackedStringArray("possible_positions")]
 script = ExtResource("1_0lwrj")
 possible_positions = [NodePath("Marker2D"), NodePath("Marker2D2"), NodePath("Marker2D3")]
-spawn_node = NodePath("")
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(50, 193)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b4e34twd33abh"]
 
-[ext_resource type="PackedScene" uid="uid://igqrspxvl38d" path="res://Game/Corridor2D/quadrado.tscn" id="1_puhm5"]
+[ext_resource type="PackedScene" uid="uid://igqrspxvl38d" path="res://Game/Loctions/Corridor2D/quadrado.tscn" id="1_puhm5"]
 
 [node name="Floor" type="Node2D"]
 

@@ -6,13 +6,13 @@ class_name PlayerClass
 @export var camera : Camera2D
 @export var awaking := false
 @export var InteractArea: Area2D
-@export var dying_sound: AudioStream
 @export var walking_sound: AudioStream
 @export var running_sound: AudioStream
 @export var Sprite: AnimatedSprite2D
 @export var Hitbox: Area2D
 @export var StepsAudioPlayer: AudioStreamPlayer2D
 @export var DamageAudioPlayer: AudioStreamPlayer2D
+@export var DieAudioPlayer: AudioStreamPlayer2D
 @export var heartbeat_sound: AudioStream
 @export var Sanity := 100.0
 
@@ -94,6 +94,7 @@ func _pushing():
 	move_and_slide()
 
 func _dyng():
+	DamageAudioPlayer.stop()
 	StepsAudioPlayer.stop()
 	_change_animation(AnimationState.DIE)
 	Global.change_scene("Game")
@@ -159,10 +160,6 @@ func take_damage(damage: float):
 		return
 	if Sanity - damage <= 0:
 		Sanity = 0
-		if DamageAudioPlayer.stream != dying_sound:
-			DamageAudioPlayer.stop()
-			DamageAudioPlayer.stream = dying_sound
-			DamageAudioPlayer.play()
 		_change_animation(AnimationState.DIE)
 		PlayerDied.emit()
 		return
@@ -171,4 +168,5 @@ func take_damage(damage: float):
 	Sanity -= damage
 
 func on_player_died():
+	DieAudioPlayer.play()
 	current_state = PlayerState.DIE

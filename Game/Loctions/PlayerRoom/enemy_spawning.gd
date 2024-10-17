@@ -29,7 +29,7 @@ func _process(_delta: float) -> void:
 					enemy.global_position.x += 100
 				if pegadas_spawn_node:
 					if enemy is Enemy:
-						enemy.pegadasSpawnNode =pegadas_spawn_node
+						enemy.pegadasSpawnNode = pegadas_spawn_node
 				spawn_node.add_child(enemy)
 				spawned_times.append(time)  # Track that this time has been used
 				break  # Exit the loop after spawning to prevent multiple spawns in one frame

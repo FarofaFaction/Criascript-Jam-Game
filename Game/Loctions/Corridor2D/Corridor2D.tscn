@@ -1,13 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://cgbofih11kw7m"]
+[gd_scene load_steps=11 format=3 uid="uid://cgbofih11kw7m"]
 
-[ext_resource type="PackedScene" uid="uid://b4e34twd33abh" path="res://Game/Corridor2D/floor.tscn" id="1_22koa"]
-[ext_resource type="PackedScene" uid="uid://cmk1subk8bpb2" path="res://Game/Corridor2D/door.tscn" id="1_hjyqo"]
+[ext_resource type="PackedScene" uid="uid://b4e34twd33abh" path="res://Game/Loctions/Corridor2D/floor.tscn" id="1_22koa"]
+[ext_resource type="PackedScene" uid="uid://cmk1subk8bpb2" path="res://Game/Loctions/Corridor2D/door.tscn" id="1_hjyqo"]
 [ext_resource type="PackedScene" uid="uid://btibrxj46tnno" path="res://Game/Loctions/illumination.tscn" id="1_ntryb"]
-[ext_resource type="Script" path="res://Game/Corridor2D/corridor_2d.gd" id="1_qny7v"]
+[ext_resource type="Script" path="res://Game/Loctions/Corridor2D/corridor_2d.gd" id="1_qny7v"]
 [ext_resource type="PackedScene" uid="uid://7sspjh77o6vm" path="res://Game/Player/player.tscn" id="2_m7p8g"]
 [ext_resource type="PackedScene" uid="uid://cxpyp7yoxaixr" path="res://Objects/room_clock.tscn" id="5_em62a"]
 [ext_resource type="PackedScene" uid="uid://yje2v65lwodi" path="res://Game/Enemy/enemy_spawning.tscn" id="5_shjpq"]
 [ext_resource type="PackedScene" uid="uid://d2d1asq2fkvsq" path="res://Interface/PlayerInterface/player_interface.tscn" id="8_yoneu"]
+[ext_resource type="PackedScene" uid="uid://bjsa2mrlybrr3" path="res://Shaders/portrait_shader.tscn" id="9_qbdjy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ujkmg"]
 size = Vector2(2552, 58)
@@ -15,8 +16,8 @@ size = Vector2(2552, 58)
 [node name="Corridor2d" type="Node2D"]
 script = ExtResource("1_qny7v")
 new_game = true
-init_hour = 18
-speed = 4800
+init_hour = 20
+speed = 1222
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -18664.0
@@ -103,6 +104,7 @@ scale = Vector2(0.5, 0.5)
 [node name="Pegadas" type="Node2D" parent="FloorItems"]
 
 [node name="OrganizadosPorY" type="Node2D" parent="."]
+z_index = 1
 y_sort_enabled = true
 
 [node name="Personagens" type="Node2D" parent="OrganizadosPorY"]
@@ -111,6 +113,7 @@ y_sort_enabled = true
 [node name="Player" parent="OrganizadosPorY/Personagens" instance=ExtResource("2_m7p8g")]
 position = Vector2(-379, -10)
 startAwake = false
+Sanity = 10.0
 
 [node name="EnemySpawning" parent="." node_paths=PackedStringArray("pegadas_spawn_node", "possible_positions", "spawn_node") instance=ExtResource("5_shjpq")]
 pegadas_spawn_node = NodePath("../FloorItems/Pegadas")
@@ -124,3 +127,15 @@ position = Vector2(-268, 6)
 position = Vector2(-306, 8)
 
 [node name="PlayerInterface" parent="." instance=ExtResource("8_yoneu")]
+
+[node name="PortraitShader" parent="PlayerInterface" instance=ExtResource("9_qbdjy")]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1930.0
+offset_top = -1354.0
+offset_right = 1930.0
+offset_bottom = 1354.0
+grow_horizontal = 2
+grow_vertical = 2
