@@ -4,6 +4,7 @@ class_name Enemy
 const pegadas_model := preload("res://Game/Enemy/Redguy/pegadas_vermelhas.tscn")
 var LastTarget: Node
 var Target: Node
+@export var time_to_die : Vector2 = Vector2(6,0)
 @export var time_to_pegadas_die : float = 5
 @export var pegadas_distance := 1000
 @export var DetectionArea: Area2D
@@ -19,6 +20,12 @@ var distance_traveled: float = 0.0  # Distância total percorrida
 func _ready() -> void:
 	if ParticleWeapon:
 		ParticleWeapon.emitting = false
+
+func _process(_delta: float) -> void:
+	if GlobalTimer.is_time(time_to_die[0], time_to_die[1]):
+		get_parent().remove_child(self)
+		queue_free()
+	pass
 
 func _physics_process(_delta: float) -> void:
 	# Move o inimigo

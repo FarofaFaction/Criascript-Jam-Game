@@ -1,8 +1,12 @@
-[gd_scene load_steps=38 format=3 uid="uid://cjvpi1hnypje3"]
+[gd_scene load_steps=45 format=3 uid="uid://cjvpi1hnypje3"]
 
 [ext_resource type="Script" path="res://Game/Npcs/Pacients/pacient.gd" id="1_36pr4"]
+[ext_resource type="Theme" uid="uid://bi5atlkw4djab" path="res://Dialog/Styles/Style.tres" id="2_8qkel"]
 [ext_resource type="Texture2D" uid="uid://bv04l8emn75qh" path="res://Game/Npcs/Doctor/doctor-idle.png" id="2_o0ogn"]
+[ext_resource type="Script" path="res://Game/Npcs/Pacients/phrases.gd" id="2_vrvl7"]
+[ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="3_5g2yk"]
 [ext_resource type="Texture2D" uid="uid://b6pq5blreewrk" path="res://Game/Npcs/Doctor/doctor-runing.png" id="3_gnses"]
+[ext_resource type="PackedScene" uid="uid://djhnt4bpvoytr" path="res://border.tscn" id="4_2oe1v"]
 [ext_resource type="Texture2D" uid="uid://dgq2m1cnwgbv" path="res://Game/Player/idle.png" id="4_e8tgv"]
 [ext_resource type="Texture2D" uid="uid://ji8y8qki3vcm" path="res://Game/Player/run.png" id="5_esj8q"]
 [ext_resource type="PackedScene" uid="uid://bqjg53nmro3w" path="res://Objects/Shadow/animated_shadow.tscn" id="6_apmse"]
@@ -17,6 +21,19 @@
 [ext_resource type="Script" path="res://Game/Npcs/Pacients/pacient_await.gd" id="15_yaa3v"]
 [ext_resource type="Script" path="res://Game/Npcs/Pacients/pacientWalkIn.gd" id="16_1r688"]
 [ext_resource type="Script" path="res://Game/Npcs/Pacients/pacientWalkout.gd" id="17_5kojs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_flyke"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nteog"]
+light_mode = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mqcgn"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8ubhu"]
 radius = 129.557
@@ -172,8 +189,78 @@ DetectionArea = NodePath("DetectionArea")
 SelfArea = NodePath("SelfArea")
 speed = 50
 animationPlayer = NodePath("Sprite")
-metadata/_edit_group_ = true
 metadata/_edit_pinned_properties_ = [&"DetectionArea", &"SelfArea", &"speed", &"animationPlayer"]
+
+[node name="Addons" type="Node2D" parent="."]
+
+[node name="Phrases" type="Node2D" parent="Addons" node_paths=PackedStringArray("actual_label", "label_list")]
+script = ExtResource("2_vrvl7")
+actual_label = NodePath("CurrentPhrase/SacaledTextBallon/Textpanel/TextBallon")
+label_list = NodePath("RoomPhrases")
+
+[node name="CurrentPhrase" type="Node2D" parent="Addons/Phrases"]
+scale = Vector2(0.4, 0.4)
+
+[node name="SacaledTextBallon" type="Node2D" parent="Addons/Phrases/CurrentPhrase"]
+position = Vector2(0, -7.5)
+
+[node name="Textpanel" type="Panel" parent="Addons/Phrases/CurrentPhrase/SacaledTextBallon"]
+offset_left = -113.333
+offset_top = -73.3333
+offset_right = -0.333351
+offset_bottom = -42.3333
+theme_override_styles/panel = SubResource("StyleBoxEmpty_flyke")
+
+[node name="TextBallon" type="Label" parent="Addons/Phrases/CurrentPhrase/SacaledTextBallon/Textpanel"]
+visible = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 0
+offset_right = 1.0
+offset_bottom = 23.0
+theme = ExtResource("2_8qkel")
+theme_override_fonts/font = ExtResource("3_5g2yk")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "[E] Segurar/Soltar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WhiteBorder" parent="Addons/Phrases/CurrentPhrase/SacaledTextBallon/Textpanel/TextBallon" node_paths=PackedStringArray("reference") instance=ExtResource("4_2oe1v")]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 116.0
+offset_bottom = 34.0
+reference = NodePath("..")
+border = 5
+
+[node name="RoomPhrases" type="Node2D" parent="Addons/Phrases"]
+visible = false
+
+[node name="Label" type="Label" parent="Addons/Phrases/RoomPhrases"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Solte minha tv, solte!"
+
+[node name="Label2" type="Label" parent="Addons/Phrases/RoomPhrases"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "ME SOLTA ME SOLTA!"
+
+[node name="Label3" type="Label" parent="Addons/Phrases/RoomPhrases"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Você tem um pirulito?"
+
+[node name="Label4" type="Label" parent="Addons/Phrases/RoomPhrases"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Ta olhando o que ?"
+
+[node name="Label5" type="Label" parent="Addons/Phrases/RoomPhrases"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Sou dev senior eu juro!"
 
 [node name="DetectionArea" type="Area2D" parent="."]
 collision_layer = 0
@@ -387,4 +474,6 @@ pacient = NodePath("../..")
 navigation_agent = NodePath("../../NavigationAgent2D")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-path_postprocessing = 1
+simplify_path = true
+avoidance_enabled = true
+radius = 31.2

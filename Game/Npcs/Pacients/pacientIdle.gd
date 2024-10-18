@@ -31,3 +31,7 @@ func Physics_Update():
 	if !pacient:
 		return
 	pacient.velocity = move_direction * (pacient.speed)
+	if pacient.hour_to_sleep:
+		if GlobalTimer.hours >= pacient.hour_to_sleep[0] && GlobalTimer.minutes >= pacient.hour_to_sleep[1]:
+			Transitioned.emit(self, "PacientWalkout")
+			pass

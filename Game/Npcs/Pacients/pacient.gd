@@ -1,8 +1,7 @@
 extends CharacterBody2D
 class_name Pacient
 
-@export var hour_assingment := 7
-@export var minutes_assingment := 5
+@export var hour_to_sleep : Vector2 = Vector2(18,0)
 @export var exit_area : Marker2D
 @export var target_area : Marker2D
 @export var DetectionArea : Area2D
