@@ -1,5 +1,8 @@
 extends Node
 
+var murmur_ok := false
+@export var murmurAudioPlayer : AudioStreamPlayer2D
+@export var time_to_stop_murmur := Vector2(18, 0)
 @export var positions_to_go: Array[Marker2D]
 @export var positions_to_sleep: Array[Marker2D]
 @export var spawn_node: Node2D
@@ -12,8 +15,23 @@ var pacientsSpawned := false
 func _ready() -> void:
 	pass
 
+func control_murmur():
+	#print(murmur_ok)
+	if !murmurAudioPlayer:
+		return
+	if GlobalTimer.hours >= spawn_time.x and GlobalTimer.minutes >= spawn_time.y:
+		murmur_ok = true
+	if murmur_ok:
+		if !murmurAudioPlayer.playing:
+			murmurAudioPlayer.play()
+	if GlobalTimer.hours >= time_to_stop_murmur.x and GlobalTimer.minutes >= time_to_stop_murmur.y:
+		murmurAudioPlayer.stop()
+		murmur_ok = false
+	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	
+	control_murmur()
 	if !spawn_node:
 		return
 	
@@ -48,4 +66,6 @@ func _spawn_pacients():
 			pacient.global_position = Global.player.global_position
 			pacient.global_position.x += 100
 		# Adiciona o paciente ao nó de spawn
+		var randT := randf_range(0.0,1.5)
+		await get_tree().create_timer(randT).timeout
 		spawn_node.add_child(pacient)

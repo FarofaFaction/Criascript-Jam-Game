@@ -1,10 +1,16 @@
 extends Node2D
 class_name Map
 
+@export var debug := false
+@export var debug_init_time := Vector2(7,0)
+@export var debug_time_speed := 480.0
 @export var destinations : Array[Marker2D]
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GlobalTimer.start()
+	if debug:
+		GlobalTimer.set_speed(debug_time_speed)
+		GlobalTimer.set_time(debug_init_time[0], debug_init_time[1])
 	InGamePause.monitoring = true
 	Transition.transition("fade_out_black")
 	if !Global.current_destination:
