@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6pj3e1k0hfl6"]
+
+[ext_resource type="PackedScene" uid="uid://djhnt4bpvoytr" path="res://border.tscn" id="1_y75wx"]
+[ext_resource type="Texture2D" uid="uid://dhc4g1yghtgi6" path="res://Objects/Cenario/chave vermelha.png" id="2_xe837"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oqgwn"]
+
+[node name="Panel" type="Panel"]
+custom_minimum_size = Vector2(106, 106)
+offset_right = 106.0
+offset_bottom = 106.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_oqgwn")
+
+[node name="WhiteBorder2" parent="." node_paths=PackedStringArray("reference") instance=ExtResource("1_y75wx")]
+layout_mode = 0
+reference = NodePath("../WhiteBorder")
+
+[node name="WhiteBorder" parent="." node_paths=PackedStringArray("reference") instance=ExtResource("1_y75wx")]
+layout_mode = 0
+color = Color(0, 0, 0, 1)
+reference = NodePath("../TextureRect")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_xe837")
+expand_mode = 1
+stretch_mode = 5

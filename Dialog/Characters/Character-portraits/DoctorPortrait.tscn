@@ -103,3 +103,4 @@ offset_right = 411.916
 offset_bottom = 330.543
 color = Color(0, 0, 0, 1)
 reference = NodePath("../TextureRect")
+border = 0
