@@ -27,7 +27,7 @@
 [ext_resource type="Script" path="res://Game/Npcs/Doctor/Dialogo/options_test.gd" id="21_g6cer"]
 [ext_resource type="Script" path="res://Game/Npcs/Doctor/doctorWalkIn.gd" id="22_oypi2"]
 [ext_resource type="Script" path="res://Game/Npcs/Doctor/doctorWalkout.gd" id="23_wb5fi"]
-[ext_resource type="Script" path="res://Game/Loctions/PlayerRoom/pacient_spawning.gd" id="29_swdvw"]
+[ext_resource type="PackedScene" uid="uid://c1d5max6as1qn" path="res://Game/Npcs/Pacients/pacient_spawning.tscn" id="28_usec1"]
 [ext_resource type="PackedScene" uid="uid://yje2v65lwodi" path="res://Game/Enemy/enemy_spawning.tscn" id="29_y06wi"]
 [ext_resource type="PackedScene" uid="uid://cpe4chlg5q0t2" path="res://Game/scene_changer.tscn" id="30_alfp2"]
 
@@ -605,33 +605,8 @@ affect_navigation_mesh = true
 pegadas_spawn_node = NodePath("../BackgroundCenario/Pegadas")
 spawn_node = NodePath("../OrganizadosPorY/Personagens")
 
-[node name="PacientSpawning" type="Node" parent="." node_paths=PackedStringArray("positions_to_go", "positions_to_sleep", "spawn_node")]
-script = ExtResource("29_swdvw")
-positions_to_go = [NodePath("Marker2D"), NodePath("Marker2D2"), NodePath("Marker2D3")]
-positions_to_sleep = [NodePath("BedsTime/Marker2D"), NodePath("BedsTime/Marker2D2"), NodePath("BedsTime/Marker2D3")]
+[node name="PacientSpawning" parent="." node_paths=PackedStringArray("spawn_node") instance=ExtResource("28_usec1")]
 spawn_node = NodePath("../OrganizadosPorY/Personagens/Pacients")
-spawn_times = Array[Vector2]([Vector2(7, 0), Vector2(7, 30)])
-number_of_patients = 5
-
-[node name="Marker2D" type="Marker2D" parent="PacientSpawning"]
-position = Vector2(-17, 140)
-
-[node name="Marker2D2" type="Marker2D" parent="PacientSpawning"]
-position = Vector2(263, 56)
-
-[node name="Marker2D3" type="Marker2D" parent="PacientSpawning"]
-position = Vector2(638, 48)
-
-[node name="BedsTime" type="Node2D" parent="PacientSpawning"]
-
-[node name="Marker2D" type="Marker2D" parent="PacientSpawning/BedsTime"]
-position = Vector2(415, 189)
-
-[node name="Marker2D2" type="Marker2D" parent="PacientSpawning/BedsTime"]
-position = Vector2(631, 223)
-
-[node name="Marker2D3" type="Marker2D" parent="PacientSpawning/BedsTime"]
-position = Vector2(526, 245)
 
 [node name="Border" type="Node2D" parent="."]
 

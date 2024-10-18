@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1d5max6as1qn"]
+
+[ext_resource type="Script" path="res://Game/Loctions/PlayerRoom/pacient_spawning.gd" id="1_ofoff"]
+
+[node name="PacientSpawning" type="Node" node_paths=PackedStringArray("positions_to_go", "positions_to_sleep", "spawn_node")]
+script = ExtResource("1_ofoff")
+positions_to_go = [NodePath("Marker2D"), NodePath("Marker2D2"), NodePath("Marker2D3")]
+positions_to_sleep = [NodePath("BedsTime/Marker2D"), NodePath("BedsTime/Marker2D2"), NodePath("BedsTime/Marker2D3")]
+spawn_node = NodePath("")
+spawn_times = Array[Vector2]([Vector2(7, 0), Vector2(7, 30)])
+number_of_patients = 5
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-17, 140)
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+position = Vector2(263, 56)
+
+[node name="Marker2D3" type="Marker2D" parent="."]
+position = Vector2(638, 48)
+
+[node name="BedsTime" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="BedsTime"]
+position = Vector2(415, 189)
+
+[node name="Marker2D2" type="Marker2D" parent="BedsTime"]
+position = Vector2(631, 223)
+
+[node name="Marker2D3" type="Marker2D" parent="BedsTime"]
+position = Vector2(526, 245)
