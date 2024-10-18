@@ -67,7 +67,6 @@ _data = {
 [node name="Corridor2d" type="Node2D" node_paths=PackedStringArray("destinations")]
 script = ExtResource("1_qny7v")
 destinations = [NodePath("Scenes/Destination/1"), NodePath("Scenes/Destination/2"), NodePath("Scenes/Destination/3"), NodePath("Scenes/Destination/4")]
-speed = 1
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -18664.0

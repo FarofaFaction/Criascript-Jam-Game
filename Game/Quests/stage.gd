@@ -7,7 +7,6 @@ func _ready() -> void:
 	if !init_stage():
 		return
 	GlobalTimer.set_time(18, 0)
-	GlobalTimer.set_speed(6)
 	pass
 #
 #

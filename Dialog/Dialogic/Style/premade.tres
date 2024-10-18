@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("10_foo3m")
-name = "premade"
+name = "MyPremade"
 base_scene = ExtResource("1_ousnw")
 base_overrides = {
 "global_font_size": "32.0"

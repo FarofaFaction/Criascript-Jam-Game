@@ -12,3 +12,4 @@ Doctor: Parece que funcionou #id:12
 	[background scene="res://Dialog/Characters/Character-portraits/PlayerPortrat.tscn" fade="0.0"]
 	Nao, repete #id:16
 	jump 
+[end_timeline]

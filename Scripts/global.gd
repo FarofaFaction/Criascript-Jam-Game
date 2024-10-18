@@ -22,6 +22,10 @@ var current_destination : String
 #const ss := str(1)
 
 func change_scene(scene: String):
+	if Global.first_play:
+		Global.first_play = false
+		GlobalTimer.set_time(7,0)
+		GlobalTimer.set_speed(480)
 	if (scene == "Menu"):
 		GlobalTimer.stop()
 		current_scene = MenuMenu

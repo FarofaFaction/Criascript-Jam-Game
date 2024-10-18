@@ -3,7 +3,6 @@ extends Stage
 func _ready() -> void:
 	if !init_stage():
 		return
-	GlobalTimer.set_speed(60)
 	var pos: Node2D = my_quest.get_tool("door")
 	if pos:
 		for i in 30:

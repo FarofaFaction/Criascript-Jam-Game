@@ -31,7 +31,6 @@ func _ready():
 	InGamePause.monitoring = false
 	if Global.first_play:
 		_load_intro()
-		Global.first_play = false
 	else:
 		var node = preload("res://Interface/Menu/menu_options.tscn").instantiate()
 		add_child(node)

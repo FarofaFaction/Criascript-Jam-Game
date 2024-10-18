@@ -2,15 +2,8 @@ extends Node2D
 class_name Map
 
 @export var destinations : Array[Marker2D]
-@export var new_game := false
-@export var init_hour := 7
-@export var speed := 60
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Global
-	if new_game:
-		GlobalTimer.set_time(init_hour,0)
-		GlobalTimer.set_speed(speed)
 	GlobalTimer.start()
 	InGamePause.monitoring = true
 	Transition.transition("fade_out_black")
@@ -18,7 +11,6 @@ func _ready() -> void:
 		return
 	
 	if destinations.size() > 0:
-		print("Aqui")
 		for dest in destinations:
 			if dest.name == Global.current_destination:
 				if Global.player:

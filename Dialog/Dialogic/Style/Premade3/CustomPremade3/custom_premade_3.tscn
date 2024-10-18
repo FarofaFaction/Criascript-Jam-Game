@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cqpb3ie51rwl5"]
+[gd_scene load_steps=16 format=3 uid="uid://b02hwhrf8i1xg"]
 
 [ext_resource type="Script" path="res://Dialog/Dialogic/Style/Premade3/CustomPremade3/default_layout_base.gd" id="1_ifsho"]
 [ext_resource type="PackedScene" uid="uid://c1k5m0w3r40xf" path="res://Dialog/Dialogic/Style/Premade3/FullBackground/custom_full_background_layer.tscn" id="2_wydxn"]
