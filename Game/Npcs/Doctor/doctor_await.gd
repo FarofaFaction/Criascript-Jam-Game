@@ -17,6 +17,13 @@ func Update():
 	if GlobalTimer.is_time(doctor.hour_assingment, doctor.minutes_assingment):
 		doctor.visible = true
 		Transitioned.emit(self, "DoctorWalkin")
+		return
+	if GlobalTimer.time_passed(Vector2(doctor.hour_assingment, doctor.minutes_assingment)):
+		doctor.visible = true
+		if doctor.target_area:
+			doctor.global_position = doctor.target_area.global_position
+		Transitioned.emit(self, "DoctorWalkin")
+		return
 	pass
 
 func Physics_Update():

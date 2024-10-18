@@ -61,7 +61,7 @@ func is_time_vector(h: Vector2):
 	return is_time(h[0], h[1])
 
 func time_passed(h: Vector2):
-	if h[0] >= hours && h[1] >= minutes:
+	if h[0] < hours && h[1] < minutes:
 		return true
 	return false
 

@@ -34,6 +34,7 @@ func Physics_Update():
 			doctor.velocity = (next_point - doctor.global_position).normalized() * doctor.speed
 	else:
 		doctor.velocity = Vector2.ZERO
-		doctor.get_parent().remove_child(doctor)
-		doctor.queue_free()
+		Transitioned.emit(self, "DoctorAwait")
+		#doctor.get_parent().remove_child(doctor)
+		#doctor.queue_free()
 		# Transitioned.emit(self, "DoctorIdle")
