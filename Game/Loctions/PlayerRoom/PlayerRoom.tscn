@@ -215,7 +215,6 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(40, -38, 490, -41, 531,
 [node name="PlayerRoom" type="Node2D"]
 script = ExtResource("1_xkoml")
 new_game = true
-speed = 480
 
 [node name="PlayerInterface" parent="." instance=ExtResource("10_jdqjg")]
 
@@ -606,9 +605,9 @@ affect_navigation_mesh = true
 pegadas_spawn_node = NodePath("../BackgroundCenario/Pegadas")
 spawn_node = NodePath("../OrganizadosPorY/Personagens")
 
-[node name="PacientSpawning" type="Node" parent="." node_paths=PackedStringArray("positions_to_awake", "positions_to_sleep", "spawn_node")]
+[node name="PacientSpawning" type="Node" parent="." node_paths=PackedStringArray("positions_to_go", "positions_to_sleep", "spawn_node")]
 script = ExtResource("29_swdvw")
-positions_to_awake = [NodePath("Marker2D"), NodePath("Marker2D2"), NodePath("Marker2D3")]
+positions_to_go = [NodePath("Marker2D"), NodePath("Marker2D2"), NodePath("Marker2D3")]
 positions_to_sleep = [NodePath("BedsTime/Marker2D"), NodePath("BedsTime/Marker2D2"), NodePath("BedsTime/Marker2D3")]
 spawn_node = NodePath("../OrganizadosPorY/Personagens/Pacients")
 spawn_times = Array[Vector2]([Vector2(7, 0), Vector2(7, 30)])

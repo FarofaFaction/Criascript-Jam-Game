@@ -290,7 +290,7 @@ shape = SubResource("RectangleShape2D_odx0j")
 
 [node name="State Machine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("7_c6glj")
-initial_state = NodePath("PacientIdle")
+initial_state = NodePath("PacientWalkIn")
 
 [node name="PacientIdle" type="Node" parent="State Machine" node_paths=PackedStringArray("pacient")]
 script = ExtResource("8_2oksb")
@@ -475,5 +475,3 @@ navigation_agent = NodePath("../../NavigationAgent2D")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 simplify_path = true
-avoidance_enabled = true
-radius = 31.2

@@ -1,5 +1,6 @@
 extends Node2D
 
+@export var destination: String = ""
 @export var location: String = "Corridor"
 @export var interactiveArea: InteractibleArea
 
@@ -17,5 +18,6 @@ func _process(_delta: float) -> void:
 	pass
 
 func Interaction():
+	Global.current_destination = destination
 	Global.change_scene(location)
 	pass

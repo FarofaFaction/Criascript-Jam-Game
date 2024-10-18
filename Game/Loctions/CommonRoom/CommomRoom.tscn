@@ -695,3 +695,4 @@ color = Color(0, 0, 0, 1)
 position = Vector2(2, -2)
 
 [node name="SceneChanger" parent="Scenes" instance=ExtResource("30_s02eq")]
+destination = "4"

@@ -16,6 +16,9 @@ func _process(_delta: float) -> void:
 	if !spawn_node:
 		return
 	
+	if GlobalTimer.hours == 12 and GlobalTimer.minutes >= 0:
+		spawned_times.clear()
+
 	for time in spawn_times:
 		if not time in spawned_times:
 			if GlobalTimer.hours >= time.x && GlobalTimer.minutes >= time.y:

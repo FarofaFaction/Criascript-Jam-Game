@@ -64,8 +64,9 @@ _data = {
 "RESET": SubResource("Animation_26rqu")
 }
 
-[node name="Corridor2d" type="Node2D"]
+[node name="Corridor2d" type="Node2D" node_paths=PackedStringArray("destinations")]
 script = ExtResource("1_qny7v")
+destinations = [NodePath("Scenes/Destination/1"), NodePath("Scenes/Destination/2"), NodePath("Scenes/Destination/3"), NodePath("Scenes/Destination/4")]
 speed = 1
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -128,6 +129,7 @@ offset_bottom = -25.0
 color = Color(0.786347, 0.786347, 0.786347, 1)
 
 [node name="Door2" parent="Cenario3/Background/Walls" instance=ExtResource("1_hjyqo")]
+visible = false
 position = Vector2(360, 8)
 
 [node name="Door4" parent="Cenario3/Background/Walls" instance=ExtResource("1_hjyqo")]
@@ -252,6 +254,7 @@ offset_bottom = -25.0
 color = Color(0.786347, 0.786347, 0.786347, 1)
 
 [node name="Door2" parent="Cenario2/Background/Walls" instance=ExtResource("1_hjyqo")]
+visible = false
 position = Vector2(360, 8)
 
 [node name="Door4" parent="Cenario2/Background/Walls" instance=ExtResource("1_hjyqo")]
@@ -304,7 +307,7 @@ y_sort_enabled = true
 y_sort_enabled = true
 
 [node name="Player" parent="OrganizadosPorY/Personagens" instance=ExtResource("2_m7p8g")]
-position = Vector2(267, -6)
+position = Vector2(-175, -5)
 startAwake = false
 
 [node name="Camera2D" parent="OrganizadosPorY/Personagens/Player" index="8"]
@@ -389,6 +392,20 @@ libraries = {
 speed_scale = 2.0
 
 [node name="Timer" type="Timer" parent="Scenes/LocalTeleporter"]
+
+[node name="Destination" type="Node2D" parent="Scenes"]
+
+[node name="1" type="Marker2D" parent="Scenes/Destination"]
+position = Vector2(-467, -1)
+
+[node name="2" type="Marker2D" parent="Scenes/Destination"]
+position = Vector2(-339, -1)
+
+[node name="3" type="Marker2D" parent="Scenes/Destination"]
+position = Vector2(-184, 1)
+
+[node name="4" type="Marker2D" parent="Scenes/Destination"]
+position = Vector2(-54, 2)
 
 [connection signal="timeout" from="Scenes/LocalTeleporter/Timer" to="Scenes/LocalTeleporter" method="_on_Timer_timeout"]
 

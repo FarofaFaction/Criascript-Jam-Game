@@ -3,8 +3,14 @@ extends State
 @export var pacient : Pacient
 var move_direction : Vector2
 var wander_time : float
+var _init_ := true
 
 func randomize_wander():
+	if _init_:
+		move_direction = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()
+		wander_time = randf_range(2, 4)
+		_init_ = false
+		return
 	var stay_parado := randi_range(0,4)
 	if stay_parado:
 		move_direction = Vector2.ZERO

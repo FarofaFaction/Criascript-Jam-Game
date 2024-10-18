@@ -18,6 +18,7 @@ const MenuMenu := "res://Interface/Menu/menu.tscn"
 const Corridor := "res://Game/Loctions/Corridor2D/Corridor2D.tscn"
 const Game := "res://Game/Loctions/PlayerRoom/PlayerRoom.tscn"
 var current_scene: String
+var current_destination : String
 #const ss := str(1)
 
 func change_scene(scene: String):

@@ -1,6 +1,7 @@
 extends Node2D
 class_name Map
 
+@export var destinations : Array[Marker2D]
 @export var new_game := false
 @export var init_hour := 7
 @export var speed := 60
@@ -13,6 +14,17 @@ func _ready() -> void:
 	GlobalTimer.start()
 	InGamePause.monitoring = true
 	Transition.transition("fade_out_black")
+	if !Global.current_destination:
+		return
+	
+	if destinations.size() > 0:
+		print("Aqui")
+		for dest in destinations:
+			if dest.name == Global.current_destination:
+				if Global.player:
+					Global.player.global_position = dest.global_position
+					Global.current_destination = ""
+					return
 	pass # Replace with function body.
 
 
