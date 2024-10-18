@@ -35,7 +35,7 @@ void fragment() {
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n74ap"]
 shader = SubResource("Shader_t4450")
 shader_parameter/level1 = Color(0, 0, 0, 1)
-shader_parameter/level2 = Color(0, 0, 0.14902, 1)
+shader_parameter/level2 = Color(0, 0, 0, 1)
 shader_parameter/level3 = Color(1, 1, 1, 1)
 shader_parameter/level4 = Color(1, 0.909804, 0.215686, 1)
 shader_parameter/threshold1 = 0.097
@@ -56,10 +56,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 704.0
-offset_top = 232.0
-offset_right = -816.0
-offset_bottom = -528.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -68,12 +64,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -0.155396
-offset_right = 1.9158
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_ha1p5")
-expand_mode = 5
+expand_mode = 1
 stretch_mode = 5
 
 [node name="PortraitShader" type="ColorRect" parent="Panel/TextureRect"]

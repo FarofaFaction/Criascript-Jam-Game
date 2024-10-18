@@ -215,6 +215,8 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_flyke")
 
 [node name="TextBallon" type="Label" parent="Addons/Phrases/CurrentPhrase/SacaledTextBallon/Textpanel"]
 visible = false
+z_index = 9
+z_as_relative = false
 material = SubResource("CanvasItemMaterial_nteog")
 layout_mode = 0
 offset_right = 1.0

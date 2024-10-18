@@ -16,6 +16,8 @@ border_width_bottom = 5
 border_color = Color(0, 0, 0, 1)
 
 [node name="TextBallon" type="Label"]
+z_index = 9
+z_as_relative = false
 material = SubResource("CanvasItemMaterial_nteog")
 anchors_preset = 15
 anchor_right = 1.0

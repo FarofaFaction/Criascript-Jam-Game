@@ -41,6 +41,7 @@ func change_scene(scene: String):
 	if player && player is PlayerClass:
 		player.process_mode = PROCESS_MODE_DISABLED
 		player = null
+	GlobalTimer.stop()
 	await Transition.on_transition_finished
 	get_tree().change_scene_to_file(Loading)
 	pass

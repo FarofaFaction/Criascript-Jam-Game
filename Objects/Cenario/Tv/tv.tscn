@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://d2apjj0tfq2bn"]
 
 [ext_resource type="Script" path="res://Objects/Cenario/Tv/tv.gd" id="1_vjexk"]
-[ext_resource type="PackedScene" uid="uid://ck1cjro36gptd" path="res://Game/scaled_text_ballon.tscn" id="2_ggpo7"]
+[ext_resource type="PackedScene" uid="uid://b5l5jcfiebqmr" path="res://Game/textpanel.tscn" id="2_letdk"]
 [ext_resource type="Script" path="res://Scripts/interactible_area.gd" id="4_jmppi"]
 [ext_resource type="Texture2D" uid="uid://cusk8ggfb80y3" path="res://Objects/Cenario/Tv/tv.png" id="6_c6heo"]
 [ext_resource type="PackedScene" uid="uid://kf3xj3qo4pel" path="res://Objects/Shadow/shadow.tscn" id="7_gmejf"]
@@ -26,7 +26,24 @@ script = ExtResource("1_vjexk")
 smallLight = NodePath("Tv/Small")
 bigLight = NodePath("Tv/Biglight")
 
-[node name="SacaledTextBallon" parent="." instance=ExtResource("2_ggpo7")]
+[node name="SacaledTextBallon" type="Node2D" parent="."]
+position = Vector2(-2, -11)
+scale = Vector2(0.3, 0.3)
+
+[node name="Textpanel" parent="SacaledTextBallon" instance=ExtResource("2_letdk")]
+offset_left = -113.333
+offset_top = -73.3333
+offset_right = -0.333351
+offset_bottom = -42.3333
+
+[node name="TextBallon" parent="SacaledTextBallon/Textpanel" index="0"]
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 1
+grow_vertical = 1
+text = "[E] Segurar/Soltar"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 5.5)
@@ -69,5 +86,4 @@ position = Vector2(-2, -6)
 [connection signal="area_entered" from="InteractibleArea" to="InteractibleArea" method="_player_entered"]
 [connection signal="area_exited" from="InteractibleArea" to="InteractibleArea" method="_player_exited"]
 
-[editable path="SacaledTextBallon"]
 [editable path="SacaledTextBallon/Textpanel"]

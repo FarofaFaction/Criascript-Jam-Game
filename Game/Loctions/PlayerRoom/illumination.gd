@@ -12,6 +12,15 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GlobalTimer.time_changed.connect(check_ilumination)
+	if GlobalTimer.time_passed(Vector2(light_off_time, 0)) || GlobalTimer.hours < light_on_time:
+		GlobalIllumination.color = color_night
+		BigLight.color.a = 0
+		SmallLight.color.a = 0
+		pass
+	else:
+		GlobalIllumination.color = color_day
+		BigLight.color.a = 1
+		SmallLight.color.a = 1
 	pass # Replace with function body.
 
 
@@ -26,10 +35,10 @@ func turn_light_off():
 	var color: Color = BigLight.color
 	color.a = 0
 	var tween = create_tween()
-	tween.tween_property(BigLight, "color", color, 2)
-	tween.tween_property(SmallLight, "color", color, 2)
 	if GlobalIllumination:
 		tween.tween_property(GlobalIllumination, "color", color_night, 2)
+	tween.tween_property(BigLight, "color", color, 2)
+	tween.tween_property(SmallLight, "color", color, 2)
 		#tween.tween_property(GlobalIllumination, "color", color_day, 2)
 	pass
 
@@ -39,10 +48,10 @@ func turn_light_on():
 	var color: Color = BigLight.color
 	color.a = 1
 	var tween = create_tween()
-	tween.tween_property(BigLight, "color", color, 2)
-	tween.tween_property(SmallLight, "color", color, 2)
 	if GlobalIllumination:
 		tween.tween_property(GlobalIllumination, "color", color_day, 2)
+	tween.tween_property(BigLight, "color", color, 2)
+	tween.tween_property(SmallLight, "color", color, 2)
 		#tween.tween_property(GlobalIllumination, "color", color_night, 2)
 	pass
 

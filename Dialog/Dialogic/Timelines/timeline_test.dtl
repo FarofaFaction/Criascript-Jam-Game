@@ -1,5 +1,5 @@
 [style name="premade"]
-[background scene="res://Dialog/Characters/Character-portraits/PlayerPortrat.tscn" fade="0.5" transition="Push Right"]
+[background scene="res://Dialog/Characters/Character-portraits/PlayerPortrat.tscn" fade="1.5" transition="Push Up"]
 character: Oi Doutor, estou testando o codigo com muito\
 muito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textwomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito #id:11
 [background scene="res://Dialog/Characters/Character-portraits/DoctorPortrait.tscn" fade="0.0"]

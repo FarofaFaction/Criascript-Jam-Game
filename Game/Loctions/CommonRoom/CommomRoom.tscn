@@ -337,7 +337,6 @@ initial_state = NodePath("DoctorAwait")
 
 [node name="DoctorIdle" type="Node" parent="OrganizadosPorY/Personagens/Doctor/State Machine" node_paths=PackedStringArray("doctor", "DialogScene")]
 script = ExtResource("13_hi45k")
-exit_time = Vector2(18, 5)
 doctor = NodePath("../..")
 DialogScene = NodePath("CanvasLayer/AskForPill")
 
