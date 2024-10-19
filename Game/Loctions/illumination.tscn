@@ -1,13 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://btibrxj46tnno"]
+[gd_scene load_steps=5 format=3 uid="uid://btibrxj46tnno"]
 
 [ext_resource type="Script" path="res://Game/Loctions/PlayerRoom/illumination.gd" id="1_an70h"]
 [ext_resource type="Texture2D" uid="uid://grx8jyxat1kd" path="res://Objects/light/light.png" id="2_7ad20"]
+[ext_resource type="AudioStream" uid="uid://4v7vpuxnp7fm" path="res://Audio/Effects/swictch.wav" id="3_7slrq"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s34ym"]
 load_path = "res://.godot/imported/light.png-8fdf09ef7de5c29c73dfe94c1c1879f5.ctex"
 
-[node name="Illumination" type="Node2D" node_paths=PackedStringArray("ilumination_node", "BigLight", "SmallLight", "GlobalIllumination")]
+[node name="Illumination" type="Node2D" node_paths=PackedStringArray("switchAudioPlayer", "ilumination_node", "BigLight", "SmallLight", "GlobalIllumination")]
 script = ExtResource("1_an70h")
+switchAudioPlayer = NodePath("AudioStreamPlayer2D")
 color_night = Color(8.66354e-07, 0, 0.770133, 1)
 color_day = Color(1, 1, 0.466667, 0.211765)
 ilumination_node = NodePath("RoomLight")
@@ -37,3 +39,7 @@ position = Vector2(321, -82)
 shadow_color = Color(0, 0, 0, 1)
 texture = ExtResource("2_7ad20")
 texture_scale = 7.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_7slrq")
+max_distance = 3000.0

@@ -1,5 +1,6 @@
 extends Node2D
 
+@export var switchAudioPlayer : AudioStreamPlayer2D
 @export var color_night : Color
 @export var color_day : Color
 @export var light_off_time := 20
@@ -32,26 +33,38 @@ func _ready() -> void:
 func turn_light_off():
 	if (!GlobalIllumination || !BigLight || !SmallLight):
 		return
+	if switchAudioPlayer:
+		switchAudioPlayer.play()
+		await get_tree().create_timer(1.1).timeout
 	var color: Color = BigLight.color
 	color.a = 0
 	var tween = create_tween()
+	#tween.set_parallel(true)
 	if GlobalIllumination:
-		tween.tween_property(GlobalIllumination, "color", color_night, 2)
-	tween.tween_property(BigLight, "color", color, 2)
-	tween.tween_property(SmallLight, "color", color, 2)
+		tween.tween_property(GlobalIllumination, "color", color_night, 0)
+	BigLight.color.a = 0
+	SmallLight.color.a = 0
+	#tween.tween_property(BigLight, "color", color, 1)
+	#tween.tween_property(SmallLight, "color", color, 1)
 		#tween.tween_property(GlobalIllumination, "color", color_day, 2)
 	pass
 
 func turn_light_on():
 	if (!GlobalIllumination || !BigLight || !SmallLight):
 		return
+	if switchAudioPlayer:
+		switchAudioPlayer.play()
+		await get_tree().create_timer(1.1).timeout
 	var color: Color = BigLight.color
 	color.a = 1
 	var tween = create_tween()
+	#tween.set_parallel(true)
 	if GlobalIllumination:
-		tween.tween_property(GlobalIllumination, "color", color_day, 2)
-	tween.tween_property(BigLight, "color", color, 2)
-	tween.tween_property(SmallLight, "color", color, 2)
+		tween.tween_property(GlobalIllumination, "color", color_day, 0)
+	BigLight.color.a = 1
+	SmallLight.color.a = 1
+	#tween.tween_property(BigLight, "color", color, 1)
+	#tween.tween_property(SmallLight, "color", color, 1)
 		#tween.tween_property(GlobalIllumination, "color", color_night, 2)
 	pass
 

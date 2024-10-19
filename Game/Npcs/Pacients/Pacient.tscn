@@ -9,8 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://djhnt4bpvoytr" path="res://border.tscn" id="4_2oe1v"]
 [ext_resource type="Texture2D" uid="uid://dgq2m1cnwgbv" path="res://Game/Player/idle.png" id="4_e8tgv"]
 [ext_resource type="Texture2D" uid="uid://ji8y8qki3vcm" path="res://Game/Player/run.png" id="5_esj8q"]
+[ext_resource type="PackedScene" uid="uid://2skcpejdtcma" path="res://Game/Npcs/npc_steps.tscn" id="6_8ihfv"]
 [ext_resource type="PackedScene" uid="uid://bqjg53nmro3w" path="res://Objects/Shadow/animated_shadow.tscn" id="6_apmse"]
-[ext_resource type="AudioStream" uid="uid://8j6ll6qsmdpb" path="res://Audio/Effects/passos_nopavimento.wav" id="6_n7ed4"]
 [ext_resource type="Script" path="res://Game/state_machine.gd" id="7_c6glj"]
 [ext_resource type="Script" path="res://Game/Npcs/Pacients/pacientIdle.gd" id="8_2oksb"]
 [ext_resource type="PackedScene" uid="uid://6fw6kl4t5n7x" path="res://Objects/interactible_area.tscn" id="9_0jkyh"]
@@ -186,7 +186,7 @@ collision_layer = 0
 collision_mask = 2
 motion_mode = 1
 script = ExtResource("1_36pr4")
-stepsAudioPlayer = NodePath("Addons/Sounds/AudioStreamPlayer2D")
+stepsAudioPlayer = NodePath("Addons/Sounds/NpcSteps")
 DetectionArea = NodePath("DetectionArea")
 SelfArea = NodePath("SelfArea")
 speed = 50
@@ -247,6 +247,11 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "Solte minha tv, solte!"
 
+[node name="Label6" type="Label" parent="Addons/Phrases/RoomPhrases"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Porque não sou suficiente ?"
+
 [node name="Label2" type="Label" parent="Addons/Phrases/RoomPhrases"]
 offset_right = 40.0
 offset_bottom = 23.0
@@ -265,7 +270,7 @@ text = "Ta olhando o que ?"
 [node name="Label5" type="Label" parent="Addons/Phrases/RoomPhrases"]
 offset_right = 40.0
 offset_bottom = 23.0
-text = "Sou dev senior eu juro!"
+text = "Sera que ja sou junior ?"
 
 [node name="PlayerClosePhrases" type="Node2D" parent="Addons/Phrases"]
 visible = false
@@ -278,11 +283,7 @@ text = "Sai de perto maluco!"
 
 [node name="Sounds" type="Node2D" parent="Addons"]
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Addons/Sounds"]
-stream = ExtResource("6_n7ed4")
-volume_db = -16.0
-pitch_scale = 0.8
-max_distance = 300.0
+[node name="NpcSteps" parent="Addons/Sounds" instance=ExtResource("6_8ihfv")]
 
 [node name="DetectionArea" type="Area2D" parent="."]
 collision_layer = 0

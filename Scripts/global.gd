@@ -39,6 +39,7 @@ func change_scene(scene: String):
 		return
 	Transition.transition("fade_to_black")
 	if player && player is PlayerClass:
+		GameStatus.PlayerSanity = player.Sanity
 		player.process_mode = PROCESS_MODE_DISABLED
 		player = null
 	GlobalTimer.stop()

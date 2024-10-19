@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://2skcpejdtcma"]
+
+[ext_resource type="AudioStream" uid="uid://8j6ll6qsmdpb" path="res://Audio/Effects/passos_nopavimento.wav" id="1_ajxre"]
+
+[node name="NpcSteps" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_ajxre")
+volume_db = -6.0
+pitch_scale = 0.8
+max_distance = 300.0

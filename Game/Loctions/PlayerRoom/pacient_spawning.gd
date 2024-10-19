@@ -1,5 +1,6 @@
 extends Node
 
+var first_murmur := true
 var murmur_ok := false
 @export var hour_to_sleep : Vector2 = Vector2(18,0)
 @export var murmurAudioPlayer : AudioStreamPlayer2D
@@ -34,8 +35,18 @@ func control_murmur():
 		murmur_ok = true
 	if murmur_ok:
 		if !murmurAudioPlayer.playing:
+			if first_murmur:
+				murmurAudioPlayer.volume_db = -40
 			murmurAudioPlayer.play()
+			if first_murmur:
+				var tween = create_tween()
+				tween.tween_property(murmurAudioPlayer, "volume_db", 0, 5)
+				first_murmur = false
 	if GlobalTimer.hours >= time_to_stop_murmur.x and GlobalTimer.minutes >= time_to_stop_murmur.y:
+		first_murmur = true
+		var tween = create_tween()
+		tween.tween_property(murmurAudioPlayer, "volume_db", -40, 5)
+		await  tween.finished
 		murmurAudioPlayer.stop()
 		murmur_ok = false
 	pass

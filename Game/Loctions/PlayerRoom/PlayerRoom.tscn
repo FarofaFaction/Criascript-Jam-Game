@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://v7uuiioruv0j"]
+[gd_scene load_steps=67 format=3 uid="uid://v7uuiioruv0j"]
 
 [ext_resource type="Script" path="res://Game/Loctions/PlayerRoom/player_room.gd" id="1_xkoml"]
 [ext_resource type="PackedScene" uid="uid://cxpyp7yoxaixr" path="res://Objects/room_clock.tscn" id="3_mx5ei"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c5bj3otn1pl5f" path="res://Game/Loctions/PlayerRoom/mapa 1.png" id="4_enhsl"]
 [ext_resource type="Texture2D" uid="uid://grx8jyxat1kd" path="res://Objects/light/light.png" id="4_hbaos"]
 [ext_resource type="PackedScene" uid="uid://7sspjh77o6vm" path="res://Game/Player/player.tscn" id="5_6s2l1"]
+[ext_resource type="AudioStream" uid="uid://4v7vpuxnp7fm" path="res://Audio/Effects/swictch.wav" id="5_wxbr8"]
 [ext_resource type="Texture2D" uid="uid://cdjdi7e3hfopn" path="res://Game/Loctions/PlayerRoom/comodo cortina 2.png" id="7_ecr0s"]
 [ext_resource type="Script" path="res://Game/Npcs/Doctor/doctor.gd" id="7_fwk6u"]
 [ext_resource type="Texture2D" uid="uid://co2ranalwxee1" path="res://Game/Loctions/PlayerRoom/comodo cortina.png" id="7_unrsb"]
@@ -28,6 +29,7 @@
 [ext_resource type="Script" path="res://Game/Npcs/Doctor/Dialogo/options_test.gd" id="21_g6cer"]
 [ext_resource type="Script" path="res://Game/Npcs/Doctor/doctorWalkIn.gd" id="22_oypi2"]
 [ext_resource type="Script" path="res://Game/Npcs/Doctor/doctorWalkout.gd" id="23_wb5fi"]
+[ext_resource type="PackedScene" uid="uid://2skcpejdtcma" path="res://Game/Npcs/npc_steps.tscn" id="26_0kt6r"]
 [ext_resource type="PackedScene" uid="uid://c1d5max6as1qn" path="res://Game/Npcs/Pacients/pacient_spawning.tscn" id="28_usec1"]
 [ext_resource type="AudioStream" uid="uid://cprvuc2smhmqe" path="res://Audio/Effects/515798__ben_0815__murmur.wav" id="29_6ejwb"]
 [ext_resource type="PackedScene" uid="uid://yje2v65lwodi" path="res://Game/Enemy/enemy_spawning.tscn" id="29_y06wi"]
@@ -217,15 +219,17 @@ vertices = PackedVector2Array(220.102, 189.508, 309.609, 270.891, -28.1406, 270.
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5, 6, 7), PackedInt32Array(0, 2, 8, 9), PackedInt32Array(10, 9, 8, 11, 12), PackedInt32Array(13, 14, 15, 12, 11), PackedInt32Array(6, 10, 12, 7), PackedInt32Array(3, 7, 16)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(40, -38, 490, -41, 531, -55, 739, -52, 738, 282, -41, 280)])
 
-[node name="PlayerRoom" type="Node2D"]
+[node name="PlayerRoom" type="Node2D" node_paths=PackedStringArray("destinations")]
 script = ExtResource("1_xkoml")
 debug = true
-debug_time_speed = 2480.0
+debug_init_time = Vector2(20, 0)
+destinations = [NodePath("Scenes/Destinations/1")]
 
 [node name="PlayerInterface" parent="." instance=ExtResource("10_jdqjg")]
 
-[node name="Illumination" type="Node2D" parent="." node_paths=PackedStringArray("ilumination_node", "BigLight", "SmallLight", "GlobalIllumination")]
+[node name="Illumination" type="Node2D" parent="." node_paths=PackedStringArray("switchAudioPlayer", "ilumination_node", "BigLight", "SmallLight", "GlobalIllumination")]
 script = ExtResource("3_vxtcw")
+switchAudioPlayer = NodePath("AudioStreamPlayer2D")
 color_night = Color(8.66354e-07, 0, 0.770133, 1)
 color_day = Color(1, 1, 0.466667, 0.211765)
 ilumination_node = NodePath("RoomLight")
@@ -255,6 +259,9 @@ position = Vector2(321, -82)
 shadow_color = Color(0, 0, 0, 1)
 texture = ExtResource("4_hbaos")
 texture_scale = 7.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Illumination"]
+stream = ExtResource("5_wxbr8")
 
 [node name="BackgroundCenario" type="Node2D" parent="."]
 
@@ -326,13 +333,14 @@ y_sort_enabled = true
 [node name="Personagens" type="Node2D" parent="OrganizadosPorY"]
 y_sort_enabled = true
 
-[node name="Doctor" type="CharacterBody2D" parent="OrganizadosPorY/Personagens" node_paths=PackedStringArray("exit_area", "target_area", "DetectionArea", "SelfArea", "animationPlayer") groups=["Npc"]]
+[node name="Doctor" type="CharacterBody2D" parent="OrganizadosPorY/Personagens" node_paths=PackedStringArray("stepsAudioPlayer", "exit_area", "target_area", "DetectionArea", "SelfArea", "animationPlayer") groups=["Npc"]]
 y_sort_enabled = true
 position = Vector2(332, -30)
 collision_layer = 0
 collision_mask = 2
 motion_mode = 1
 script = ExtResource("7_fwk6u")
+stepsAudioPlayer = NodePath("NpcSteps")
 minutes_assingment = 30
 exit_area = NodePath("ExitArea")
 target_area = NodePath("TargetArea")
@@ -576,6 +584,8 @@ position = Vector2(638, -32)
 top_level = true
 position = Vector2(328, -36)
 
+[node name="NpcSteps" parent="OrganizadosPorY/Personagens/Doctor" instance=ExtResource("26_0kt6r")]
+
 [node name="Player" parent="OrganizadosPorY/Personagens" instance=ExtResource("5_6s2l1")]
 position = Vector2(518, 206)
 
@@ -694,3 +704,10 @@ color = Color(0, 0, 0, 1)
 position = Vector2(2, -2)
 
 [node name="SceneChanger" parent="Scenes" instance=ExtResource("30_alfp2")]
+position = Vector2(321, -35)
+destination = "4"
+
+[node name="Destinations" type="Node2D" parent="Scenes"]
+
+[node name="1" type="Marker2D" parent="Scenes/Destinations"]
+position = Vector2(325, -18)

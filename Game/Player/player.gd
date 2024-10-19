@@ -53,7 +53,7 @@ var current_state: PlayerState = PlayerState.NORMAL
 func _ready() -> void:
 	Global.player = self
 	PlayerDied.connect(on_player_died)
-
+	Sanity = GameStatus.PlayerSanity
 	if camera:
 		camera.zoom.x = zoom
 		camera.zoom.y = zoom
@@ -66,6 +66,8 @@ func _ready() -> void:
 
 	if awaking && startAwake:
 		current_state = PlayerState.WAKE_UP
+	if Global.current_destination:
+		current_state = PlayerState.NORMAL
 
 func _physics_process(_delta: float) -> void:
 	if current_state == PlayerState.DIE:

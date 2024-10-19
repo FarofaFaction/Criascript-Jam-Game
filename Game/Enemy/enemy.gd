@@ -4,6 +4,8 @@ class_name Enemy
 const pegadas_model := preload("res://Game/Enemy/Redguy/pegadas_vermelhas.tscn")
 var LastTarget: Node
 var Target: Node
+
+@export var stepsAudioPlayer: AudioStreamPlayer2D
 @export var time_to_die : Vector2 = Vector2(6,0)
 @export var time_to_pegadas_die : float = 5
 @export var pegadas_distance := 1000
@@ -30,8 +32,12 @@ func _process(_delta: float) -> void:
 func _physics_process(_delta: float) -> void:
 	# Move o inimigo
 	if (!velocity):
+		if stepsAudioPlayer:
+			stepsAudioPlayer.stop()
 		animationPlayer.play("Idle")
 	else:
+		if stepsAudioPlayer && !stepsAudioPlayer.playing:
+			stepsAudioPlayer.play()
 		animationPlayer.play("Run")
 		distance_traveled += velocity.length() + _delta
 		spawn_pegadas()  # Verifica e spawn pegadas

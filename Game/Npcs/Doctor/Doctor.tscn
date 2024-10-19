@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://b8t0b7kcbu145"]
+[gd_scene load_steps=39 format=3 uid="uid://b8t0b7kcbu145"]
 
 [ext_resource type="Script" path="res://Game/Npcs/Doctor/doctor.gd" id="1_kyepb"]
 [ext_resource type="Texture2D" uid="uid://dgq2m1cnwgbv" path="res://Game/Player/idle.png" id="2_fr85r"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://baklw2eb62qgd" path="res://Dialog/DialogMenuClass/DialogMenu.tscn" id="10_kp211"]
 [ext_resource type="Texture2D" uid="uid://de0dxq4ujoxsc" path="res://Dialog/Characters/Doctor/DoctorPortrait.jpg" id="12_b0lcb"]
 [ext_resource type="Script" path="res://Game/Npcs/Doctor/Dialogo/OpDialogoComoPossoAjudar.gd" id="12_jx1di"]
+[ext_resource type="PackedScene" uid="uid://2skcpejdtcma" path="res://Game/Npcs/npc_steps.tscn" id="18_y1q4w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8ubhu"]
 radius = 129.557
@@ -162,12 +163,13 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_odx0j"]
 size = Vector2(16, 6.5)
 
-[node name="Doctor" type="CharacterBody2D" node_paths=PackedStringArray("DetectionArea", "SelfArea", "animationPlayer") groups=["Npc"]]
+[node name="Doctor" type="CharacterBody2D" node_paths=PackedStringArray("stepsAudioPlayer", "DetectionArea", "SelfArea", "animationPlayer") groups=["Npc"]]
 y_sort_enabled = true
 collision_layer = 0
 collision_mask = 2
 motion_mode = 1
 script = ExtResource("1_kyepb")
+stepsAudioPlayer = NodePath("NpcSteps")
 minutes_assingment = 30
 DetectionArea = NodePath("DetectionArea")
 SelfArea = NodePath("SelfArea")
@@ -391,3 +393,5 @@ navigation_agent = NodePath("../../NavigationAgent2D")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 path_postprocessing = 1
+
+[node name="NpcSteps" parent="." instance=ExtResource("18_y1q4w")]

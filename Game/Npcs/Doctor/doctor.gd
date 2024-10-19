@@ -1,6 +1,7 @@
 extends CharacterBody2D
 class_name Doctor
 
+@export var stepsAudioPlayer: AudioStreamPlayer2D
 @export var exit_time : Vector2 = Vector2(18,20)
 @export var hour_assingment := 7
 @export var minutes_assingment := 5
@@ -18,8 +19,12 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 
 	if (!velocity):
+		if stepsAudioPlayer:
+			stepsAudioPlayer.stop()
 		animationPlayer.play("DoctorIdle")
 	else:
+		if stepsAudioPlayer && !stepsAudioPlayer.playing:
+			stepsAudioPlayer.play()
 		animationPlayer.play("DoctorRun")
 	if (velocity.x < 0):
 		animationPlayer.flip_h = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cw6wpkdy5ckht"]
+[gd_scene load_steps=25 format=3 uid="uid://cw6wpkdy5ckht"]
 
 [ext_resource type="Script" path="res://Game/Enemy/enemy.gd" id="1_dhjc1"]
 [ext_resource type="Texture2D" uid="uid://dgq2m1cnwgbv" path="res://Game/Player/idle.png" id="2_oacfn"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Game/Enemy/State_idle.gd" id="5_vodak"]
 [ext_resource type="Script" path="res://Game/Enemy/State_follow.gd" id="6_d7lxm"]
 [ext_resource type="Script" path="res://Game/Enemy/State_VomitAtack.gd" id="7_2xmc2"]
+[ext_resource type="AudioStream" uid="uid://b2obv3esujl8x" path="res://Audio/Effects/andando.mp3" id="8_mrao0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8ubhu"]
 radius = 129.557
@@ -104,7 +105,7 @@ color_ramp = SubResource("GradientTexture1D_qalwi")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_odx0j"]
 size = Vector2(16, 6.5)
 
-[node name="RedGuy" type="CharacterBody2D" node_paths=PackedStringArray("DetectionArea", "SelfArea", "pegadasSpawnNode", "pegadasSpawnReff", "animationPlayer", "ParticleWeapon")]
+[node name="RedGuy" type="CharacterBody2D" node_paths=PackedStringArray("stepsAudioPlayer", "DetectionArea", "SelfArea", "pegadasSpawnNode", "pegadasSpawnReff", "animationPlayer", "ParticleWeapon")]
 light_mask = 524288
 visibility_layer = 524288
 y_sort_enabled = true
@@ -112,6 +113,7 @@ collision_layer = 0
 collision_mask = 2
 motion_mode = 1
 script = ExtResource("1_dhjc1")
+stepsAudioPlayer = NodePath("NpcSteps")
 pegadas_distance = 800
 DetectionArea = NodePath("DetectionArea")
 SelfArea = NodePath("SelfArea")
@@ -208,3 +210,8 @@ wait_time = 0.25
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(5, 5)
+
+[node name="NpcSteps" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_mrao0")
+pitch_scale = 0.8
+max_distance = 300.0
