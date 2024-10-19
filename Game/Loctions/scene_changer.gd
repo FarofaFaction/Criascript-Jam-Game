@@ -36,8 +36,7 @@ func Interaction():
 			if it.item_id == door_id:
 				locked = false
 				GameStatus.DoorsOppened.append(door_id)
-				GameStatus.PlayerItems.remove_at(GameStatus.PlayerItems.find(it))
-				it.queue_free()
+				it.remove_item()
 		return
 	#GameStatus.pl
 	Global.current_destination = destination

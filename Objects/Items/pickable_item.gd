@@ -7,7 +7,8 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if item_id:
-		item.item_id = item_id
+		if item:
+			item.item_id = item_id
 	if just_one_intance:
 		if GameStatus.ItemsHistory.find(item.item_id) >= 0:
 			get_parent().remove_child.call_deferred(self)
@@ -21,6 +22,8 @@ func _process(_delta: float) -> void:
 
 func Interaction():
 	if !item:
+		return
+	if GameStatus.PlayerItems.size() >= 4:
 		return
 	if just_one_intance:
 		GameStatus.ItemsHistory.append(item.item_id)

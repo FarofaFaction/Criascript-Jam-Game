@@ -15,12 +15,17 @@ func _ready() -> void:
 
 
 func add_items():
-	for i in list.get_children():
+	var children := list.get_children()
+
+	# Remover todos os filhos
+	for i in children:
 		list.remove_child(i)
 		i.queue_free()
-	for i in GameStatus.PlayerItems:
-		var it = i.duplicate()
-		list.add_child(it)
+
+	for j in GameStatus.PlayerItems:
+		var it = j.duplicate()
+		if it:  # Certifique-se de que a duplicação foi bem-sucedida
+			list.add_child(it)
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
