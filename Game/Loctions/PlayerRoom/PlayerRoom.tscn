@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://v7uuiioruv0j"]
+[gd_scene load_steps=68 format=3 uid="uid://v7uuiioruv0j"]
 
 [ext_resource type="Script" path="res://Game/Loctions/PlayerRoom/player_room.gd" id="1_xkoml"]
 [ext_resource type="PackedScene" uid="uid://cxpyp7yoxaixr" path="res://Objects/room_clock.tscn" id="3_mx5ei"]
@@ -34,6 +34,7 @@
 [ext_resource type="AudioStream" uid="uid://cprvuc2smhmqe" path="res://Audio/Effects/515798__ben_0815__murmur.wav" id="29_6ejwb"]
 [ext_resource type="PackedScene" uid="uid://yje2v65lwodi" path="res://Game/Enemy/enemy_spawning.tscn" id="29_y06wi"]
 [ext_resource type="PackedScene" uid="uid://cpe4chlg5q0t2" path="res://Game/scene_changer.tscn" id="30_alfp2"]
+[ext_resource type="PackedScene" uid="uid://dhf0u4kshnwol" path="res://Objects/Items/pickable_item.tscn" id="35_6n8dw"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s34ym"]
 load_path = "res://.godot/imported/light.png-8fdf09ef7de5c29c73dfe94c1c1879f5.ctex"
@@ -711,3 +712,6 @@ destination = "4"
 
 [node name="1" type="Marker2D" parent="Scenes/Destinations"]
 position = Vector2(325, -18)
+
+[node name="Item" parent="." instance=ExtResource("35_6n8dw")]
+position = Vector2(501, 169)

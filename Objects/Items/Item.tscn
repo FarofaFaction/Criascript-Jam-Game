@@ -1,15 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://c6pj3e1k0hfl6"]
+[gd_scene load_steps=5 format=3 uid="uid://c6pj3e1k0hfl6"]
 
+[ext_resource type="Script" path="res://Objects/Items/item.gd" id="1_ahwhv"]
 [ext_resource type="PackedScene" uid="uid://djhnt4bpvoytr" path="res://border.tscn" id="1_y75wx"]
 [ext_resource type="Texture2D" uid="uid://dhc4g1yghtgi6" path="res://Objects/Cenario/chave vermelha.png" id="2_xe837"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oqgwn"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_paole"]
 
-[node name="Panel" type="Panel"]
+[node name="Item" type="Panel"]
 custom_minimum_size = Vector2(106, 106)
 offset_right = 106.0
 offset_bottom = 106.0
-theme_override_styles/panel = SubResource("StyleBoxEmpty_oqgwn")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_paole")
+script = ExtResource("1_ahwhv")
 
 [node name="WhiteBorder2" parent="." node_paths=PackedStringArray("reference") instance=ExtResource("1_y75wx")]
 layout_mode = 0
