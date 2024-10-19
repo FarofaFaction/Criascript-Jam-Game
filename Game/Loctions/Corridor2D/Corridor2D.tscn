@@ -352,7 +352,9 @@ location = "Game"
 
 [node name="SceneChanger3" parent="Scenes" instance=ExtResource("10_5sj7v")]
 position = Vector2(-240, -29)
+door_id = "1"
 locked = true
+destination = "1"
 location = "Game"
 
 [node name="SceneChanger4" parent="Scenes" instance=ExtResource("10_5sj7v")]

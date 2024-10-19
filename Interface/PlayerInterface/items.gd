@@ -16,7 +16,7 @@ func _ready() -> void:
 
 func add_items():
 	for i in list.get_children():
-		remove_child(i)
+		list.remove_child(i)
 		i.queue_free()
 	for i in GameStatus.PlayerItems:
 		var it = i.duplicate()
@@ -25,6 +25,7 @@ func add_items():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	await get_tree().create_timer(1).timeout
 	items_size = GameStatus.PlayerItems.size()
 	if items_size != last_size:
 		add_items()

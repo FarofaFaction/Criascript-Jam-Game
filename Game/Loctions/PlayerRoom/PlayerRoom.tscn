@@ -715,3 +715,4 @@ position = Vector2(325, -18)
 
 [node name="Item" parent="." instance=ExtResource("35_6n8dw")]
 position = Vector2(501, 169)
+item_id = "1"
