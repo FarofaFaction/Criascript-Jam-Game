@@ -99,7 +99,7 @@ func _dyng():
 	DamageAudioPlayer.stop()
 	StepsAudioPlayer.stop()
 	_change_animation(AnimationState.DIE)
-	Global.change_scene("Game")
+	Global.change_scene("Game", true)
 
 func _awaking():
 	_change_animation(AnimationState.WAKE_UP)
@@ -168,6 +168,12 @@ func take_damage(damage: float):
 	if not DamageAudioPlayer.playing:
 		DamageAudioPlayer.play()
 	Sanity -= damage
+
+func cure_damage(cure: float):
+	if Sanity + cure >= 100:
+		Sanity = 100
+		return
+	Sanity += cure
 
 func on_player_died():
 	DieAudioPlayer.play()

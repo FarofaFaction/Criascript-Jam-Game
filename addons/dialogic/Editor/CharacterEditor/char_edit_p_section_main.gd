@@ -121,4 +121,3 @@ func reload_ui(data: Dictionary) -> void:
 		%SceneLabel.tooltip_text = path
 		%SceneLabel.add_theme_color_override("font_color", get_theme_color("property_color_x", "Editor"))
 		%OpenSceneButton.show()
-

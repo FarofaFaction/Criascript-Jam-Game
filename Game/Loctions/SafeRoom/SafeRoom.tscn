@@ -1,16 +1,15 @@
-[gd_scene load_steps=18 format=3 uid="uid://b6kkups318bv"]
+[gd_scene load_steps=17 format=3 uid="uid://dp8rr54p6o811"]
 
-[ext_resource type="Script" path="res://Game/Loctions/LonelinessRoom/loneliness_room.gd" id="1_tjqyy"]
-[ext_resource type="AudioStream" uid="uid://dlxpad3bry0wj" path="res://Audio/Music/fundo_assustador.mp3" id="2_3lkqm"]
-[ext_resource type="PackedScene" uid="uid://djhnt4bpvoytr" path="res://border.tscn" id="3_uvi81"]
-[ext_resource type="PackedScene" uid="uid://mhxd0n1ghe3m" path="res://Objects/Items/Weed/pickable_weed.tscn" id="4_85dmo"]
-[ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="5_j8hfi"]
-[ext_resource type="PackedScene" uid="uid://7sspjh77o6vm" path="res://Game/Player/player.tscn" id="6_btqqf"]
-[ext_resource type="PackedScene" uid="uid://d2d1asq2fkvsq" path="res://Interface/PlayerInterface/player_interface.tscn" id="7_g6467"]
-[ext_resource type="PackedScene" uid="uid://bjsa2mrlybrr3" path="res://Shaders/portrait_shader.tscn" id="8_qnkq0"]
-[ext_resource type="PackedScene" uid="uid://cpe4chlg5q0t2" path="res://Game/scene_changer.tscn" id="9_jx77v"]
-[ext_resource type="Script" path="res://Game/Loctions/Corridor2D/local_teleporter.gd" id="10_wnsci"]
-[ext_resource type="Script" path="res://Scripts/interactible_area.gd" id="11_7kfyb"]
+[ext_resource type="Script" path="res://Game/Loctions/SafeRoom/safe_room.gd" id="1_y42h7"]
+[ext_resource type="AudioStream" uid="uid://dlxpad3bry0wj" path="res://Audio/Music/fundo_assustador.mp3" id="2_06s1c"]
+[ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="3_2enfk"]
+[ext_resource type="PackedScene" uid="uid://djhnt4bpvoytr" path="res://border.tscn" id="4_8t38n"]
+[ext_resource type="PackedScene" uid="uid://7sspjh77o6vm" path="res://Game/Player/player.tscn" id="5_hsdhh"]
+[ext_resource type="PackedScene" uid="uid://d2d1asq2fkvsq" path="res://Interface/PlayerInterface/player_interface.tscn" id="6_vpgg4"]
+[ext_resource type="PackedScene" uid="uid://bjsa2mrlybrr3" path="res://Shaders/portrait_shader.tscn" id="7_useb4"]
+[ext_resource type="PackedScene" uid="uid://cpe4chlg5q0t2" path="res://Game/scene_changer.tscn" id="8_v61rd"]
+[ext_resource type="Script" path="res://Game/Loctions/Corridor2D/local_teleporter.gd" id="9_tmdl1"]
+[ext_resource type="Script" path="res://Scripts/interactible_area.gd" id="10_02wwv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jgknn"]
 size = Vector2(115, 30)
@@ -35,13 +34,13 @@ _data = {
 "RESET": SubResource("Animation_26rqu")
 }
 
-[node name="LonelinessRoom" type="Node2D" node_paths=PackedStringArray("destinations")]
-script = ExtResource("1_tjqyy")
+[node name="SafeRoom" type="Node2D" node_paths=PackedStringArray("destinations")]
+script = ExtResource("1_y42h7")
 timestop = true
 destinations = [NodePath("Scenes/Destination/1")]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_3lkqm")
+stream = ExtResource("2_06s1c")
 autoplay = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -49,7 +48,6 @@ offset_left = -18664.0
 offset_top = -12784.0
 offset_right = 18704.0
 offset_bottom = 12824.0
-color = Color(0, 0, 0, 1)
 
 [node name="Background" type="Node2D" parent="."]
 
@@ -67,7 +65,7 @@ offset_right = 16.0
 offset_bottom = 16.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_j8hfi")
+theme_override_fonts/font = ExtResource("3_2enfk")
 text = "1"
 horizontal_alignment = 1
 
@@ -80,7 +78,7 @@ offset_right = 16.0
 offset_bottom = 16.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_j8hfi")
+theme_override_fonts/font = ExtResource("3_2enfk")
 text = "2
 "
 horizontal_alignment = 1
@@ -94,7 +92,7 @@ offset_right = 16.0
 offset_bottom = 16.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_j8hfi")
+theme_override_fonts/font = ExtResource("3_2enfk")
 text = "3
 "
 horizontal_alignment = 1
@@ -108,7 +106,7 @@ offset_right = 16.0
 offset_bottom = 16.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_j8hfi")
+theme_override_fonts/font = ExtResource("3_2enfk")
 text = "4
 "
 horizontal_alignment = 1
@@ -122,13 +120,10 @@ offset_right = 16.0
 offset_bottom = 16.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_j8hfi")
+theme_override_fonts/font = ExtResource("3_2enfk")
 text = "A
 "
 horizontal_alignment = 1
-
-[node name="Item" parent="Items" instance=ExtResource("4_85dmo")]
-position = Vector2(-143, 19)
 
 [node name="OrganizadosPorY" type="Node2D" parent="."]
 z_index = 1
@@ -138,7 +133,7 @@ y_sort_enabled = true
 position = Vector2(-174, -17)
 scale = Vector2(0.2, 0.2)
 
-[node name="WhiteBorder" parent="OrganizadosPorY/Door" node_paths=PackedStringArray("reference") instance=ExtResource("3_uvi81")]
+[node name="WhiteBorder" parent="OrganizadosPorY/Door" node_paths=PackedStringArray("reference") instance=ExtResource("4_8t38n")]
 offset_left = -55.0
 offset_top = -105.0
 offset_right = 59.0
@@ -157,7 +152,7 @@ pivot_offset = Vector2(49.9999, 100)
 [node name="PedacoPorta" type="Node2D" parent="OrganizadosPorY/Door/ColorRect"]
 position = Vector2(0, -8)
 
-[node name="WhiteBorder" parent="OrganizadosPorY/Door/ColorRect/PedacoPorta" node_paths=PackedStringArray("reference") instance=ExtResource("3_uvi81")]
+[node name="WhiteBorder" parent="OrganizadosPorY/Door/ColorRect/PedacoPorta" node_paths=PackedStringArray("reference") instance=ExtResource("4_8t38n")]
 offset_left = 14.0
 offset_top = 14.0
 offset_right = 44.0
@@ -175,7 +170,7 @@ offset_bottom = 80.0
 [node name="PedacoPorta2" type="Node2D" parent="OrganizadosPorY/Door/ColorRect"]
 position = Vector2(48, -8)
 
-[node name="WhiteBorder" parent="OrganizadosPorY/Door/ColorRect/PedacoPorta2" node_paths=PackedStringArray("reference") instance=ExtResource("3_uvi81")]
+[node name="WhiteBorder" parent="OrganizadosPorY/Door/ColorRect/PedacoPorta2" node_paths=PackedStringArray("reference") instance=ExtResource("4_8t38n")]
 offset_left = 14.0
 offset_top = 14.0
 offset_right = 44.0
@@ -193,7 +188,7 @@ offset_bottom = 80.0
 [node name="PedacoPorta3" type="Node2D" parent="OrganizadosPorY/Door/ColorRect"]
 position = Vector2(0, 104)
 
-[node name="WhiteBorder" parent="OrganizadosPorY/Door/ColorRect/PedacoPorta3" node_paths=PackedStringArray("reference") instance=ExtResource("3_uvi81")]
+[node name="WhiteBorder" parent="OrganizadosPorY/Door/ColorRect/PedacoPorta3" node_paths=PackedStringArray("reference") instance=ExtResource("4_8t38n")]
 offset_left = 14.0
 offset_top = 14.0
 offset_right = 44.0
@@ -212,7 +207,7 @@ offset_bottom = 80.0
 position = Vector2(104, 65)
 rotation = 1.5708
 
-[node name="WhiteBorder" parent="OrganizadosPorY/Door/ColorRect/PedacoPorta5" node_paths=PackedStringArray("reference") instance=ExtResource("3_uvi81")]
+[node name="WhiteBorder" parent="OrganizadosPorY/Door/ColorRect/PedacoPorta5" node_paths=PackedStringArray("reference") instance=ExtResource("4_8t38n")]
 offset_left = 14.0
 offset_top = 14.0
 offset_right = 44.0
@@ -230,7 +225,7 @@ offset_bottom = 87.0
 [node name="PedacoPorta4" type="Node2D" parent="OrganizadosPorY/Door/ColorRect"]
 position = Vector2(48, 104)
 
-[node name="WhiteBorder" parent="OrganizadosPorY/Door/ColorRect/PedacoPorta4" node_paths=PackedStringArray("reference") instance=ExtResource("3_uvi81")]
+[node name="WhiteBorder" parent="OrganizadosPorY/Door/ColorRect/PedacoPorta4" node_paths=PackedStringArray("reference") instance=ExtResource("4_8t38n")]
 offset_left = 14.0
 offset_top = 14.0
 offset_right = 44.0
@@ -256,16 +251,16 @@ shape = SubResource("RectangleShape2D_jgknn")
 [node name="Personagens" type="Node2D" parent="OrganizadosPorY"]
 y_sort_enabled = true
 
-[node name="Player" parent="OrganizadosPorY/Personagens" instance=ExtResource("6_btqqf")]
+[node name="Player" parent="OrganizadosPorY/Personagens" instance=ExtResource("5_hsdhh")]
 position = Vector2(-175, -5)
 startAwake = false
 
 [node name="Camera2D" parent="OrganizadosPorY/Personagens/Player" index="8"]
 position_smoothing_enabled = false
 
-[node name="PlayerInterface" parent="." instance=ExtResource("7_g6467")]
+[node name="PlayerInterface" parent="." instance=ExtResource("6_vpgg4")]
 
-[node name="PortraitShader" parent="PlayerInterface" instance=ExtResource("8_qnkq0")]
+[node name="PortraitShader" parent="PlayerInterface" instance=ExtResource("7_useb4")]
 visible = false
 anchors_preset = 15
 anchor_right = 1.0
@@ -279,12 +274,12 @@ grow_vertical = 2
 
 [node name="Scenes" type="Node2D" parent="."]
 
-[node name="SceneChanger4" parent="Scenes" instance=ExtResource("9_jx77v")]
-position = Vector2(-176, -24)
-destination = "5"
+[node name="SceneChanger4" parent="Scenes" instance=ExtResource("8_v61rd")]
+position = Vector2(-177, -24)
+destination = "6"
 
 [node name="LocalTeleporter" type="Node2D" parent="Scenes" node_paths=PackedStringArray("player", "mark1", "mark2", "markUp", "markDown", "timer", "animation_player")]
-script = ExtResource("10_wnsci")
+script = ExtResource("9_tmdl1")
 player = NodePath("../../OrganizadosPorY/Personagens/Player")
 mark1 = NodePath("InteractibleArea/Marker1")
 mark2 = NodePath("InteractibleArea2/Marker2")
@@ -298,7 +293,7 @@ position = Vector2(-500, -9)
 collision_layer = 2147483650
 collision_mask = 2147483650
 monitorable = false
-script = ExtResource("11_7kfyb")
+script = ExtResource("10_02wwv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scenes/LocalTeleporter/InteractibleArea"]
 position = Vector2(4, 12)
@@ -312,7 +307,7 @@ position = Vector2(180, -9)
 collision_layer = 2147483650
 collision_mask = 2147483650
 monitorable = false
-script = ExtResource("11_7kfyb")
+script = ExtResource("10_02wwv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scenes/LocalTeleporter/InteractibleArea2"]
 position = Vector2(4, 12)
@@ -327,7 +322,7 @@ rotation = 1.5708
 collision_layer = 2147483650
 collision_mask = 2147483650
 monitorable = false
-script = ExtResource("11_7kfyb")
+script = ExtResource("10_02wwv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scenes/LocalTeleporter/Down"]
 position = Vector2(4, 12)
@@ -342,7 +337,7 @@ rotation = 1.5708
 collision_layer = 2147483650
 collision_mask = 2147483650
 monitorable = false
-script = ExtResource("11_7kfyb")
+script = ExtResource("10_02wwv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scenes/LocalTeleporter/Up"]
 position = Vector2(4, 12)

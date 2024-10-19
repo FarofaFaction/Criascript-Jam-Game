@@ -21,6 +21,7 @@ func _ready() -> void:
 	#print(GlobalTimer.time_passed(spawn_time))
 	if GlobalTimer.time_passed(hour_to_sleep) || GlobalTimer.time_not_passed(spawn_time):
 		#pacientsSpawned = true
+		set_process(true)
 		return
 	if GlobalTimer.time_passed(spawn_time):
 		_spawn_pacients_on_midle_day()

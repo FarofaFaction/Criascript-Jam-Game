@@ -12,6 +12,7 @@ func _ready() -> void:
 	_init_audio()
 	pass # Replace with function body.
 
+const Safe := "res://Game/Loctions/SafeRoom/SafeRoom.tscn"
 const Alone := "res://Game/Loctions/LonelinessRoom/LonelinessRoom.tscn"
 const Room := "res://Game/Loctions/CommonRoom/CommomRoom.tscn"
 const Loading := "res://Interface/Transition/Loading.tscn"
@@ -22,7 +23,7 @@ var current_scene: String
 var current_destination : String
 #const ss := str(1)
 
-func change_scene(scene: String):
+func change_scene(scene: String, cutscene : bool = false):
 	if Global.first_play:
 		Global.first_play = false
 		GlobalTimer.set_time(7,0)
@@ -38,15 +39,18 @@ func change_scene(scene: String):
 		current_scene = Corridor
 	elif (scene == "Alone"):
 		current_scene = Alone
+	elif (scene == "Safe"):
+		current_scene = Safe
 	else:
 		return
-	Transition.transition("fade_to_black")
 	if player && player is PlayerClass:
 		GameStatus.PlayerSanity = player.Sanity
 		player.process_mode = PROCESS_MODE_DISABLED
 		player = null
 	GlobalTimer.stop()
-	await Transition.on_transition_finished
+	if cutscene:
+		Transition.transition("fade_to_black")
+		await Transition.on_transition_finished
 	get_tree().change_scene_to_file(Loading)
 	pass
 

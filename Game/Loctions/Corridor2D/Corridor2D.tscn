@@ -363,14 +363,14 @@ destination = "1"
 location = "Game"
 
 [node name="SceneChanger5" parent="Scenes" instance=ExtResource("10_5sj7v")]
-position = Vector2(38, -29)
+position = Vector2(34, -29)
 destination = "1"
 location = "Alone"
 
 [node name="SceneChanger6" parent="Scenes" instance=ExtResource("10_5sj7v")]
 position = Vector2(76, -30)
-locked = true
-location = "Game"
+destination = "1"
+location = "Safe"
 
 [node name="LocalTeleporter" type="Node2D" parent="Scenes" node_paths=PackedStringArray("player", "mark1", "mark2", "timer", "animation_player")]
 script = ExtResource("11_s8mvb")

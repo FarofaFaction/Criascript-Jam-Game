@@ -22,7 +22,7 @@ func _on_config_pressed() -> void:
 
 func _on_exit_menu_pressed() -> void:
 	InGamePause.dispause()
-	Global.change_scene("Menu")
+	Global.change_scene("Menu", true)
 	pass # Replace with function body.
 
 
