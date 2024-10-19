@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Dialog/Dialogic/Style/CustomPremade/dialog_background_box.gd" id="1_lr18e"]
 
-[node name="WhiteBorder" type="ColorRect" node_paths=PackedStringArray("reference")]
+[node name="WhiteBorder" type="ColorRect"]
+visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_lr18e")
-reference = NodePath("")

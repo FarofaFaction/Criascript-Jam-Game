@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dhf0u4kshnwol"]
+[gd_scene load_steps=9 format=3 uid="uid://dhf0u4kshnwol"]
 
 [ext_resource type="Script" path="res://Objects/Items/pickable_item.gd" id="1_pyq0l"]
 [ext_resource type="Script" path="res://Objects/Items/item.gd" id="1_rd4rn"]
 [ext_resource type="PackedScene" uid="uid://djhnt4bpvoytr" path="res://border.tscn" id="2_24558"]
 [ext_resource type="Texture2D" uid="uid://dhc4g1yghtgi6" path="res://Objects/Cenario/chave vermelha.png" id="3_rgx2a"]
 [ext_resource type="PackedScene" uid="uid://6fw6kl4t5n7x" path="res://Objects/interactible_area.tscn" id="5_qc0li"]
+[ext_resource type="PackedScene" uid="uid://cpvmlfbh0cbgm" path="res://Objects/Items/usableItemsPanel.tscn" id="5_ransp"]
 [ext_resource type="PackedScene" uid="uid://b5l5jcfiebqmr" path="res://Game/textpanel.tscn" id="6_s5hae"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_paole"]
@@ -16,19 +17,28 @@ item = NodePath("SizeControler/Item")
 [node name="SizeControler" type="Node2D" parent="."]
 scale = Vector2(0.12, 0.12)
 
-[node name="Item" type="Panel" parent="SizeControler"]
+[node name="Item" type="Panel" parent="SizeControler" node_paths=PackedStringArray("button_warning")]
 custom_minimum_size = Vector2(106, 106)
 offset_right = 106.0
 offset_bottom = 106.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_paole")
 script = ExtResource("1_rd4rn")
+button_warning = NodePath("Textpanel/TextBallon")
 
 [node name="WhiteBorder2" parent="SizeControler/Item" node_paths=PackedStringArray("reference") instance=ExtResource("2_24558")]
 layout_mode = 0
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 126.0
+offset_bottom = 126.0
 reference = NodePath("../WhiteBorder")
 
 [node name="WhiteBorder" parent="SizeControler/Item" node_paths=PackedStringArray("reference") instance=ExtResource("2_24558")]
 layout_mode = 0
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 116.0
+offset_bottom = 116.0
 color = Color(0, 0, 0, 1)
 reference = NodePath("../TextureRect")
 
@@ -42,6 +52,9 @@ grow_vertical = 2
 texture = ExtResource("3_rgx2a")
 expand_mode = 1
 stretch_mode = 5
+
+[node name="Textpanel" parent="SizeControler/Item" instance=ExtResource("5_ransp")]
+layout_mode = 0
 
 [node name="InteractibleArea" parent="." node_paths=PackedStringArray("message") instance=ExtResource("5_qc0li")]
 position = Vector2(6, -7)
@@ -66,4 +79,5 @@ grow_horizontal = 1
 grow_vertical = 1
 text = "[E] Pegar"
 
+[editable path="SizeControler/Item/Textpanel"]
 [editable path="SacaledTextBallon/Textpanel"]

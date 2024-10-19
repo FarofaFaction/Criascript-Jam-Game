@@ -13,6 +13,8 @@ func UseItem():
 	pass
 
 func _ready() -> void:
+	if Global.player:
+		Global.player.PlayerDied.connect(on_player_died)
 	set_process(false)
 	pass
 	
@@ -20,7 +22,15 @@ func _process(_delta: float) -> void:
 	if Global.player:
 		Global.player.take_damage(damage)
 		total_damage += damage
-	if total_damage >= damage_limit:
-		get_parent().remove_child(self)
-		queue_free()
+	if (total_damage >= damage_limit):
+		remove_effect()
+	pass
+
+func on_player_died():
+	remove_effect()
+	pass
+
+func remove_effect():
+	get_parent().remove_child(self)
+	queue_free()
 	pass

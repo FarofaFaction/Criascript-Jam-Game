@@ -44,7 +44,6 @@ func change_scene(scene: String, cutscene : bool = false):
 	else:
 		return
 	if player && player is PlayerClass:
-		GameStatus.PlayerSanity = player.Sanity
 		player.process_mode = PROCESS_MODE_DISABLED
 		player = null
 	GlobalTimer.stop()

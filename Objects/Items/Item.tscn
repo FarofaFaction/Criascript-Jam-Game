@@ -59,14 +59,15 @@ stretch_mode = 5
 
 [node name="Textpanel" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 126.0
+offset_left = 123.0
 offset_top = -13.0
-offset_right = 239.0
+offset_right = 236.0
 offset_bottom = 18.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_flyke")
 metadata/_edit_group_ = true
 
 [node name="TextBallon" type="Label" parent="Textpanel"]
+visible = false
 z_index = 9
 z_as_relative = false
 material = SubResource("CanvasItemMaterial_nteog")

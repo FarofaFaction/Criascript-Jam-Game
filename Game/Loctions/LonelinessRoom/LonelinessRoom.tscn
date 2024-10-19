@@ -139,6 +139,7 @@ position = Vector2(-174, -17)
 scale = Vector2(0.2, 0.2)
 
 [node name="WhiteBorder" parent="OrganizadosPorY/Door" node_paths=PackedStringArray("reference") instance=ExtResource("3_uvi81")]
+visible = true
 offset_left = -55.0
 offset_top = -105.0
 offset_right = 59.0
@@ -158,6 +159,7 @@ pivot_offset = Vector2(49.9999, 100)
 position = Vector2(0, -8)
 
 [node name="WhiteBorder" parent="OrganizadosPorY/Door/ColorRect/PedacoPorta" node_paths=PackedStringArray("reference") instance=ExtResource("3_uvi81")]
+visible = true
 offset_left = 14.0
 offset_top = 14.0
 offset_right = 44.0
@@ -176,6 +178,7 @@ offset_bottom = 80.0
 position = Vector2(48, -8)
 
 [node name="WhiteBorder" parent="OrganizadosPorY/Door/ColorRect/PedacoPorta2" node_paths=PackedStringArray("reference") instance=ExtResource("3_uvi81")]
+visible = true
 offset_left = 14.0
 offset_top = 14.0
 offset_right = 44.0
@@ -194,6 +197,7 @@ offset_bottom = 80.0
 position = Vector2(0, 104)
 
 [node name="WhiteBorder" parent="OrganizadosPorY/Door/ColorRect/PedacoPorta3" node_paths=PackedStringArray("reference") instance=ExtResource("3_uvi81")]
+visible = true
 offset_left = 14.0
 offset_top = 14.0
 offset_right = 44.0
@@ -213,6 +217,7 @@ position = Vector2(104, 65)
 rotation = 1.5708
 
 [node name="WhiteBorder" parent="OrganizadosPorY/Door/ColorRect/PedacoPorta5" node_paths=PackedStringArray("reference") instance=ExtResource("3_uvi81")]
+visible = true
 offset_left = 14.0
 offset_top = 14.0
 offset_right = 44.0
@@ -231,6 +236,7 @@ offset_bottom = 87.0
 position = Vector2(48, 104)
 
 [node name="WhiteBorder" parent="OrganizadosPorY/Door/ColorRect/PedacoPorta4" node_paths=PackedStringArray("reference") instance=ExtResource("3_uvi81")]
+visible = true
 offset_left = 14.0
 offset_top = 14.0
 offset_right = 44.0
