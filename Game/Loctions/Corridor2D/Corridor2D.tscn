@@ -38,7 +38,7 @@ _data = {
 [node name="Corridor2d" type="Node2D" node_paths=PackedStringArray("destinations")]
 script = ExtResource("1_qny7v")
 timestop = true
-destinations = [NodePath("Scenes/Destination/1"), NodePath("Scenes/Destination/2"), NodePath("Scenes/Destination/3"), NodePath("Scenes/Destination/4")]
+destinations = [NodePath("Scenes/Destination/1"), NodePath("Scenes/Destination/2"), NodePath("Scenes/Destination/3"), NodePath("Scenes/Destination/4"), NodePath("Scenes/Destination/5"), NodePath("Scenes/Destination/6")]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -18664.0
@@ -135,7 +135,7 @@ position = Vector2(99.9999, 8)
 position = Vector2(665, 8)
 
 [node name="Door3" parent="Background/Cenario/Background/Walls" instance=ExtResource("1_hjyqo")]
-position = Vector2(1619, 8)
+position = Vector2(1684, 8)
 
 [node name="Door4" parent="Background/Cenario/Background/Walls" instance=ExtResource("1_hjyqo")]
 position = Vector2(1489, 8)
@@ -363,12 +363,12 @@ destination = "1"
 location = "Game"
 
 [node name="SceneChanger5" parent="Scenes" instance=ExtResource("10_5sj7v")]
-position = Vector2(42, -29)
-locked = true
-location = "Game"
+position = Vector2(38, -29)
+destination = "1"
+location = "Alone"
 
 [node name="SceneChanger6" parent="Scenes" instance=ExtResource("10_5sj7v")]
-position = Vector2(68, -30)
+position = Vector2(76, -30)
 locked = true
 location = "Game"
 
@@ -429,6 +429,12 @@ position = Vector2(-236, -3)
 
 [node name="4" type="Marker2D" parent="Scenes/Destination"]
 position = Vector2(-123, -3)
+
+[node name="5" type="Marker2D" parent="Scenes/Destination"]
+position = Vector2(42, 2)
+
+[node name="6" type="Marker2D" parent="Scenes/Destination"]
+position = Vector2(81, 4)
 
 [connection signal="timeout" from="Scenes/LocalTeleporter/Timer" to="Scenes/LocalTeleporter" method="_on_Timer_timeout"]
 

@@ -4,6 +4,6 @@
 
 [node name="NpcSteps" type="AudioStreamPlayer2D"]
 stream = ExtResource("1_ajxre")
-volume_db = -6.0
+volume_db = -10.0
 pitch_scale = 0.8
-max_distance = 300.0
+max_distance = 150.0

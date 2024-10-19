@@ -12,6 +12,7 @@ func _ready() -> void:
 	_init_audio()
 	pass # Replace with function body.
 
+const Alone := "res://Game/Loctions/LonelinessRoom/LonelinessRoom.tscn"
 const Room := "res://Game/Loctions/CommonRoom/CommomRoom.tscn"
 const Loading := "res://Interface/Transition/Loading.tscn"
 const MenuMenu := "res://Interface/Menu/menu.tscn"
@@ -35,6 +36,8 @@ func change_scene(scene: String):
 		current_scene = Room
 	elif (scene == "Corridor"):
 		current_scene = Corridor
+	elif (scene == "Alone"):
+		current_scene = Alone
 	else:
 		return
 	Transition.transition("fade_to_black")

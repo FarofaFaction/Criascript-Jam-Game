@@ -5,6 +5,8 @@ extends Node2D
 @onready var area2 := $InteractibleArea2
 @export var mark1 : Marker2D
 @export var mark2 : Marker2D
+@export var markUp : Marker2D
+@export var markDown : Marker2D
 @export var timer : Timer
 @export var animation_player : AnimationPlayer
 
@@ -54,3 +56,15 @@ func _on_area2_body_entered(body):
 func _on_area2_body_exited(body):
 	if body == player:
 		pass
+
+
+func _on_up_body_entered(body: Node2D) -> void:
+	if body == player:
+		player.global_position.y = markDown.global_position.y
+	pass # Replace with function body.
+
+
+func _on_down_body_entered(body: Node2D) -> void:
+	if body == player:
+		player.global_position.y = markUp.global_position.y
+	pass # Replace with function body.

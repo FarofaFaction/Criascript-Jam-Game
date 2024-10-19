@@ -213,5 +213,6 @@ zoom = Vector2(5, 5)
 
 [node name="NpcSteps" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_mrao0")
-pitch_scale = 0.8
-max_distance = 300.0
+volume_db = 2.0
+pitch_scale = 1.5
+max_distance = 150.0

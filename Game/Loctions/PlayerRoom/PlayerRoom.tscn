@@ -223,7 +223,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(40, -38, 490, -41, 531,
 [node name="PlayerRoom" type="Node2D" node_paths=PackedStringArray("destinations")]
 script = ExtResource("1_xkoml")
 debug = true
-debug_init_time = Vector2(20, 0)
+debug_time_speed = 2890.0
 destinations = [NodePath("Scenes/Destinations/1")]
 
 [node name="PlayerInterface" parent="." instance=ExtResource("10_jdqjg")]

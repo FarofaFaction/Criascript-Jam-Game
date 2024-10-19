@@ -19,10 +19,11 @@ func _ready() -> void:
 	await get_tree().create_timer(1).timeout
 	#print(str(GlobalTimer.hours) + " " + str(GlobalTimer.minutes))
 	#print(GlobalTimer.time_passed(spawn_time))
+	if GlobalTimer.time_passed(hour_to_sleep) || GlobalTimer.time_not_passed(spawn_time):
+		#pacientsSpawned = true
+		return
 	if GlobalTimer.time_passed(spawn_time):
 		_spawn_pacients_on_midle_day()
-		pacientsSpawned = true
-	if GlobalTimer.time_passed(hour_to_sleep):
 		pacientsSpawned = true
 	set_process(true)
 	pass
