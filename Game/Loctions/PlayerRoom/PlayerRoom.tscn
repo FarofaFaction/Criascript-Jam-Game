@@ -586,7 +586,9 @@ position = Vector2(328, -36)
 [node name="NpcSteps" parent="OrganizadosPorY/Personagens/Doctor" instance=ExtResource("26_0kt6r")]
 
 [node name="Player" parent="OrganizadosPorY/Personagens" instance=ExtResource("5_6s2l1")]
-position = Vector2(518, 206)
+position = Vector2(328, -24)
+startAwake = false
+awaking = false
 
 [node name="Pacients" type="Node2D" parent="OrganizadosPorY/Personagens"]
 y_sort_enabled = true

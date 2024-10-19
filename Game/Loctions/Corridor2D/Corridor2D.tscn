@@ -318,8 +318,7 @@ y_sort_enabled = true
 y_sort_enabled = true
 
 [node name="Player" parent="OrganizadosPorY/Personagens" instance=ExtResource("2_m7p8g")]
-position = Vector2(-175, -5)
-startAwake = false
+position = Vector2(-674, -5)
 
 [node name="Camera2D" parent="OrganizadosPorY/Personagens/Player" index="8"]
 position_smoothing_enabled = false
