@@ -195,8 +195,9 @@ metadata/_edit_pinned_properties_ = [&"DetectionArea", &"SelfArea", &"speed", &"
 
 [node name="Addons" type="Node2D" parent="."]
 
-[node name="Phrases" type="Node2D" parent="Addons" node_paths=PackedStringArray("actual_label", "label_list")]
+[node name="Phrases" type="Node2D" parent="Addons" node_paths=PackedStringArray("player_close_label", "actual_label", "label_list")]
 script = ExtResource("2_vrvl7")
+player_close_label = NodePath("PlayerClosePhrases/Label")
 actual_label = NodePath("CurrentPhrase/SacaledTextBallon/Textpanel/TextBallon")
 label_list = NodePath("RoomPhrases")
 
@@ -266,6 +267,15 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "Sou dev senior eu juro!"
 
+[node name="PlayerClosePhrases" type="Node2D" parent="Addons/Phrases"]
+visible = false
+
+[node name="Label" type="Label" parent="Addons/Phrases/PlayerClosePhrases"]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Sai de perto maluco!"
+
 [node name="Sounds" type="Node2D" parent="Addons"]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Addons/Sounds"]
@@ -282,8 +292,8 @@ collision_mask = 2147483648
 shape = SubResource("CircleShape2D_8ubhu")
 
 [node name="SelfArea" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 2147483648
+collision_layer = 2
+collision_mask = 2147483650
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SelfArea"]
 position = Vector2(0, 12)
@@ -487,3 +497,6 @@ navigation_agent = NodePath("../../NavigationAgent2D")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 simplify_path = true
+
+[connection signal="body_entered" from="SelfArea" to="Addons/Phrases" method="_on_self_area_body_entered"]
+[connection signal="body_exited" from="SelfArea" to="Addons/Phrases" method="_on_self_area_body_exited"]
