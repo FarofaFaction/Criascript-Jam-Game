@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://pfdpexo0a6mm"
+
+[deps]
+
+files=["res://Localization/Dialogic/dialogic_timeline_test_translation.pt_BR.translation", "res://Localization/Dialogic/dialogic_timeline_test_translation.en.translation"]
+
+source_file="res://Localization/Dialogic/dialogic_timeline_test_translation.csv"
+dest_files=["res://Localization/Dialogic/dialogic_timeline_test_translation.pt_BR.translation", "res://Localization/Dialogic/dialogic_timeline_test_translation.en.translation"]
+
+[params]
+
+compress=true
+delimiter=0

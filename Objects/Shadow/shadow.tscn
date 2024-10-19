@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://kf3xj3qo4pel"]
+
+[ext_resource type="Shader" path="res://Shaders/shadow.gdshader" id="1_b4fxq"]
+[ext_resource type="Script" path="res://Objects/Shadow/shadow.gd" id="1_k8ug6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vu1gu"]
+shader = ExtResource("1_b4fxq")
+shader_parameter/look_right = true
+
+[node name="Shadow" type="Sprite2D"]
+show_behind_parent = true
+material = SubResource("ShaderMaterial_vu1gu")
+script = ExtResource("1_k8ug6")

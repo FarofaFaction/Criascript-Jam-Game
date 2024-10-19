@@ -7,7 +7,7 @@ var text: String
 var total_time: float = 0.0
 var seconds_per_minute: float = 60 * 8  # 8 hours in seconds (480 seconds) for 1 minute of gameplay
 #var timestop := true
-var timestop := false
+var timestop := true
 var hours: int
 var minutes: int
 #var seconds: int
@@ -57,6 +57,19 @@ func _process(_delta: float) -> void:
 	if (!timestop):
 		_run_clock(_delta)
 
+func is_time_vector(h: Vector2):
+	return is_time(h[0], h[1])
+
+func time_passed(h: Vector2):
+	if h[0] < hours && h[1] < minutes:
+		return true
+	return false
+
+func time_not_passed(h: Vector2):
+	if h[0] < hours && h[1] < minutes:
+		return false
+	return true
+	
 func set_time(hour: int, minute: int):
 	var total_seconds: int = (hour * 3600) + (minute * 60)
 

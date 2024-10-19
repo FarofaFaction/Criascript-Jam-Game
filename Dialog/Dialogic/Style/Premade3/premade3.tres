@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=4 format=3 uid="uid://bqjob6tvc8lnb"]
+
+[ext_resource type="PackedScene" uid="uid://cqpb3ie51rwl5" path="res://Dialog/Dialogic/Style/Premade3/CustomPremade3/custom_premade_3.tscn" id="1_qcoj3"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="1_wi2i5"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style.gd" id="9_621fh"]
+
+[resource]
+script = ExtResource("9_621fh")
+name = "premade3"
+base_scene = ExtResource("1_qcoj3")
+base_overrides = {
+"global_bg_color": "Color(0.298039, 0.2, 0.113725, 0.901961)"
+}
+layers = Array[ExtResource("1_wi2i5")]([])
+metadata/_latest_layer = -1

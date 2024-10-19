@@ -1,0 +1,503 @@
+[gd_scene load_steps=46 format=3 uid="uid://cjvpi1hnypje3"]
+
+[ext_resource type="Script" path="res://Game/Npcs/Pacients/pacient.gd" id="1_36pr4"]
+[ext_resource type="Theme" uid="uid://bi5atlkw4djab" path="res://Dialog/Styles/Style.tres" id="2_8qkel"]
+[ext_resource type="Texture2D" uid="uid://bv04l8emn75qh" path="res://Game/Npcs/Doctor/doctor-idle.png" id="2_o0ogn"]
+[ext_resource type="Script" path="res://Game/Npcs/Pacients/phrases.gd" id="2_vrvl7"]
+[ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="3_5g2yk"]
+[ext_resource type="Texture2D" uid="uid://b6pq5blreewrk" path="res://Game/Npcs/Doctor/doctor-runing.png" id="3_gnses"]
+[ext_resource type="PackedScene" uid="uid://djhnt4bpvoytr" path="res://border.tscn" id="4_2oe1v"]
+[ext_resource type="Texture2D" uid="uid://dgq2m1cnwgbv" path="res://Game/Player/idle.png" id="4_e8tgv"]
+[ext_resource type="Texture2D" uid="uid://ji8y8qki3vcm" path="res://Game/Player/run.png" id="5_esj8q"]
+[ext_resource type="PackedScene" uid="uid://2skcpejdtcma" path="res://Game/Npcs/npc_steps.tscn" id="6_8ihfv"]
+[ext_resource type="PackedScene" uid="uid://bqjg53nmro3w" path="res://Objects/Shadow/animated_shadow.tscn" id="6_apmse"]
+[ext_resource type="Script" path="res://Game/state_machine.gd" id="7_c6glj"]
+[ext_resource type="Script" path="res://Game/Npcs/Pacients/pacientIdle.gd" id="8_2oksb"]
+[ext_resource type="PackedScene" uid="uid://6fw6kl4t5n7x" path="res://Objects/interactible_area.tscn" id="9_0jkyh"]
+[ext_resource type="Script" path="res://Dialog/DialogClass/dialog_class.gd" id="10_2ffu2"]
+[ext_resource type="Script" path="res://Dialog/DialogClass/speak_class.gd" id="11_syx6f"]
+[ext_resource type="Texture2D" uid="uid://de0dxq4ujoxsc" path="res://Dialog/Characters/Doctor/DoctorPortrait.jpg" id="12_yno7m"]
+[ext_resource type="PackedScene" uid="uid://baklw2eb62qgd" path="res://Dialog/DialogMenuClass/DialogMenu.tscn" id="13_6mhgf"]
+[ext_resource type="Script" path="res://Game/Npcs/Doctor/Dialogo/OpDialogoComoPossoAjudar.gd" id="14_p6jkk"]
+[ext_resource type="Script" path="res://Game/Npcs/Pacients/pacient_await.gd" id="15_yaa3v"]
+[ext_resource type="Script" path="res://Game/Npcs/Pacients/pacientWalkIn.gd" id="16_1r688"]
+[ext_resource type="Script" path="res://Game/Npcs/Pacients/pacientWalkout.gd" id="17_5kojs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_flyke"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nteog"]
+light_mode = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mqcgn"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8ubhu"]
+radius = 129.557
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_318iq"]
+radius = 16.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4r2b"]
+atlas = ExtResource("2_o0ogn")
+region = Rect2(0, 0, 17, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpig7"]
+atlas = ExtResource("2_o0ogn")
+region = Rect2(17, 0, 17, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bip1j"]
+atlas = ExtResource("2_o0ogn")
+region = Rect2(34, 0, 17, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxqat"]
+atlas = ExtResource("2_o0ogn")
+region = Rect2(51, 0, 17, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0necr"]
+atlas = ExtResource("3_gnses")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_so6gb"]
+atlas = ExtResource("3_gnses")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0dfs1"]
+atlas = ExtResource("3_gnses")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jutk4"]
+atlas = ExtResource("3_gnses")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsx66"]
+atlas = ExtResource("4_e8tgv")
+region = Rect2(1, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_880vf"]
+atlas = ExtResource("4_e8tgv")
+region = Rect2(18, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yjrqb"]
+atlas = ExtResource("4_e8tgv")
+region = Rect2(35, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55uco"]
+atlas = ExtResource("4_e8tgv")
+region = Rect2(52, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ye423"]
+atlas = ExtResource("5_esj8q")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyfos"]
+atlas = ExtResource("5_esj8q")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1j1xw"]
+atlas = ExtResource("5_esj8q")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84bky"]
+atlas = ExtResource("5_esj8q")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_amjbx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g4r2b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fpig7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bip1j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vxqat")
+}],
+"loop": true,
+"name": &"DoctorIdle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0necr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_so6gb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0dfs1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jutk4")
+}],
+"loop": true,
+"name": &"DoctorRun",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rsx66")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_880vf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yjrqb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55uco")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ye423")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pyfos")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1j1xw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84bky")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_odx0j"]
+size = Vector2(16, 6.5)
+
+[node name="Pacient" type="CharacterBody2D" node_paths=PackedStringArray("stepsAudioPlayer", "DetectionArea", "SelfArea", "animationPlayer") groups=["Npc"]]
+y_sort_enabled = true
+collision_layer = 0
+collision_mask = 2
+motion_mode = 1
+script = ExtResource("1_36pr4")
+stepsAudioPlayer = NodePath("Addons/Sounds/NpcSteps")
+DetectionArea = NodePath("DetectionArea")
+SelfArea = NodePath("SelfArea")
+speed = 50
+animationPlayer = NodePath("Sprite")
+metadata/_edit_pinned_properties_ = [&"DetectionArea", &"SelfArea", &"speed", &"animationPlayer"]
+
+[node name="Addons" type="Node2D" parent="."]
+
+[node name="Phrases" type="Node2D" parent="Addons" node_paths=PackedStringArray("player_close_label", "actual_label", "label_list")]
+script = ExtResource("2_vrvl7")
+player_close_label = NodePath("PlayerClosePhrases/Label")
+actual_label = NodePath("CurrentPhrase/SacaledTextBallon/Textpanel/TextBallon")
+label_list = NodePath("RoomPhrases")
+
+[node name="CurrentPhrase" type="Node2D" parent="Addons/Phrases"]
+scale = Vector2(0.4, 0.4)
+
+[node name="SacaledTextBallon" type="Node2D" parent="Addons/Phrases/CurrentPhrase"]
+position = Vector2(0, -7.5)
+
+[node name="Textpanel" type="Panel" parent="Addons/Phrases/CurrentPhrase/SacaledTextBallon"]
+offset_left = -113.333
+offset_top = -73.3333
+offset_right = -0.333351
+offset_bottom = -42.3333
+theme_override_styles/panel = SubResource("StyleBoxEmpty_flyke")
+
+[node name="TextBallon" type="Label" parent="Addons/Phrases/CurrentPhrase/SacaledTextBallon/Textpanel"]
+visible = false
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 0
+offset_right = 1.0
+offset_bottom = 23.0
+theme = ExtResource("2_8qkel")
+theme_override_fonts/font = ExtResource("3_5g2yk")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "[E] Segurar/Soltar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WhiteBorder" parent="Addons/Phrases/CurrentPhrase/SacaledTextBallon/Textpanel/TextBallon" node_paths=PackedStringArray("reference") instance=ExtResource("4_2oe1v")]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 116.0
+offset_bottom = 34.0
+reference = NodePath("..")
+border = 5
+
+[node name="RoomPhrases" type="Node2D" parent="Addons/Phrases"]
+visible = false
+
+[node name="Label" type="Label" parent="Addons/Phrases/RoomPhrases"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Solte minha tv, solte!"
+
+[node name="Label6" type="Label" parent="Addons/Phrases/RoomPhrases"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Porque não sou suficiente ?"
+
+[node name="Label2" type="Label" parent="Addons/Phrases/RoomPhrases"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "ME SOLTA ME SOLTA!"
+
+[node name="Label3" type="Label" parent="Addons/Phrases/RoomPhrases"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Você tem um pirulito?"
+
+[node name="Label4" type="Label" parent="Addons/Phrases/RoomPhrases"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Ta olhando o que ?"
+
+[node name="Label5" type="Label" parent="Addons/Phrases/RoomPhrases"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Sera que ja sou junior ?"
+
+[node name="PlayerClosePhrases" type="Node2D" parent="Addons/Phrases"]
+visible = false
+
+[node name="Label" type="Label" parent="Addons/Phrases/PlayerClosePhrases"]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Sai de perto maluco!"
+
+[node name="Sounds" type="Node2D" parent="Addons"]
+
+[node name="NpcSteps" parent="Addons/Sounds" instance=ExtResource("6_8ihfv")]
+
+[node name="DetectionArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2147483648
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+shape = SubResource("CircleShape2D_8ubhu")
+
+[node name="SelfArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2147483650
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SelfArea"]
+position = Vector2(0, 12)
+shape = SubResource("CircleShape2D_318iq")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_amjbx")
+animation = &"Run"
+autoplay = "Idle"
+
+[node name="AnimatedShadow" parent="Sprite" instance=ExtResource("6_apmse")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_odx0j")
+
+[node name="State Machine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("7_c6glj")
+initial_state = NodePath("PacientWalkIn")
+
+[node name="PacientIdle" type="Node" parent="State Machine" node_paths=PackedStringArray("pacient")]
+script = ExtResource("8_2oksb")
+pacient = NodePath("../..")
+
+[node name="InteractibleArea" parent="State Machine/PacientIdle" node_paths=PackedStringArray("moving_parent") instance=ExtResource("9_0jkyh")]
+moving_parent = NodePath("../../..")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="State Machine/PacientIdle"]
+
+[node name="AskForPill" type="Control" parent="State Machine/PacientIdle/CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("10_2ffu2")
+auto_start = false
+
+[node name="SpeakClass2" type="RichTextLabel" parent="State Machine/PacientIdle/CanvasLayer/AskForPill"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Bom dia dorminhoco"
+script = ExtResource("11_syx6f")
+texture = ExtResource("12_yno7m")
+speaker = "Doutor"
+
+[node name="SpeakClass3" type="RichTextLabel" parent="State Machine/PacientIdle/CanvasLayer/AskForPill"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Como foi sua noite ?"
+script = ExtResource("11_syx6f")
+texture = ExtResource("12_yno7m")
+speaker = "Doutor"
+
+[node name="DialogMenu" parent="State Machine/PacientIdle/CanvasLayer/AskForPill" node_paths=PackedStringArray("options_conection") instance=ExtResource("13_6mhgf")]
+visible = false
+layout_mode = 1
+options_conection = NodePath("OptionsTest")
+start_visible = false
+option_3_visible = false
+option_4_visible = false
+
+[node name="OptionsTest" type="Control" parent="State Machine/PacientIdle/CanvasLayer/AskForPill/DialogMenu"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("14_p6jkk")
+
+[node name="option1" type="Label" parent="State Machine/PacientIdle/CanvasLayer/AskForPill/DialogMenu/OptionsTest"]
+layout_mode = 0
+offset_top = 136.0
+offset_right = 40.0
+offset_bottom = 159.0
+text = "Dormi bem, obrigado pela preocupação"
+
+[node name="option2" type="Label" parent="State Machine/PacientIdle/CanvasLayer/AskForPill/DialogMenu/OptionsTest"]
+layout_mode = 0
+offset_top = 136.0
+offset_right = 40.0
+offset_bottom = 159.0
+text = "Na verdade, tive um sonho estranho"
+
+[node name="option3" type="Label" parent="State Machine/PacientIdle/CanvasLayer/AskForPill/DialogMenu/OptionsTest"]
+layout_mode = 0
+offset_top = 136.0
+offset_right = 40.0
+offset_bottom = 159.0
+text = "."
+
+[node name="option4" type="Label" parent="State Machine/PacientIdle/CanvasLayer/AskForPill/DialogMenu/OptionsTest"]
+layout_mode = 0
+offset_top = 136.0
+offset_right = 40.0
+offset_bottom = 159.0
+text = "Teste 1"
+
+[node name="SpeakClass4" type="RichTextLabel" parent="State Machine/PacientIdle/CanvasLayer/AskForPill"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Interessante"
+script = ExtResource("11_syx6f")
+texture = ExtResource("12_yno7m")
+speaker = "Doutor"
+
+[node name="SpeakClass5" type="RichTextLabel" parent="State Machine/PacientIdle/CanvasLayer/AskForPill"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Você tem gostado da sua rotina aqui no asilo??"
+script = ExtResource("11_syx6f")
+texture = ExtResource("12_yno7m")
+speaker = "Doutor"
+
+[node name="DialogMenu2" parent="State Machine/PacientIdle/CanvasLayer/AskForPill" node_paths=PackedStringArray("options_conection") instance=ExtResource("13_6mhgf")]
+visible = false
+layout_mode = 1
+options_conection = NodePath("OptionsTest")
+start_visible = false
+option_4_visible = false
+
+[node name="OptionsTest" type="Control" parent="State Machine/PacientIdle/CanvasLayer/AskForPill/DialogMenu2"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("14_p6jkk")
+
+[node name="option1" type="Label" parent="State Machine/PacientIdle/CanvasLayer/AskForPill/DialogMenu2/OptionsTest"]
+layout_mode = 0
+offset_top = 136.0
+offset_right = 40.0
+offset_bottom = 159.0
+text = "Sim, Estou acordando cedo 
+e fazendo exercícios que gosto"
+
+[node name="option2" type="Label" parent="State Machine/PacientIdle/CanvasLayer/AskForPill/DialogMenu2/OptionsTest"]
+layout_mode = 0
+offset_top = 136.0
+offset_right = 40.0
+offset_bottom = 159.0
+text = "Tenho tentado me organizar,
+ mas sinto que não 
+vale a pena"
+
+[node name="option3" type="Label" parent="State Machine/PacientIdle/CanvasLayer/AskForPill/DialogMenu2/OptionsTest"]
+layout_mode = 0
+offset_top = 136.0
+offset_right = 40.0
+offset_bottom = 159.0
+text = "Ando um pouco confuso. 
+Às vezes, não sei se estou
+ acordado ou sonhando."
+
+[node name="option4" type="Label" parent="State Machine/PacientIdle/CanvasLayer/AskForPill/DialogMenu2/OptionsTest"]
+layout_mode = 0
+offset_top = 136.0
+offset_right = 40.0
+offset_bottom = 159.0
+text = "Acho que estou melhor, 
+mas tenho dias em que 
+sinto que o tempo não
+ passa direito."
+
+[node name="PacientAwait" type="Node" parent="State Machine" node_paths=PackedStringArray("pacient")]
+script = ExtResource("15_yaa3v")
+pacient = NodePath("../..")
+
+[node name="PacientWalkIn" type="Node" parent="State Machine" node_paths=PackedStringArray("pacient", "navigation_agent")]
+script = ExtResource("16_1r688")
+pacient = NodePath("../..")
+navigation_agent = NodePath("../../NavigationAgent2D")
+
+[node name="PacientWalkout" type="Node" parent="State Machine" node_paths=PackedStringArray("pacient", "navigation_agent")]
+script = ExtResource("17_5kojs")
+pacient = NodePath("../..")
+navigation_agent = NodePath("../../NavigationAgent2D")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+simplify_path = true
+
+[connection signal="body_entered" from="SelfArea" to="Addons/Phrases" method="_on_self_area_body_entered"]
+[connection signal="body_exited" from="SelfArea" to="Addons/Phrases" method="_on_self_area_body_exited"]

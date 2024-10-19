@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://8lbatxkny6i3"]
+
+[ext_resource type="Script" path="res://Objects/Items/item.gd" id="1_xxga0"]
+[ext_resource type="PackedScene" uid="uid://djhnt4bpvoytr" path="res://border.tscn" id="2_7okfa"]
+[ext_resource type="Texture2D" uid="uid://dhc4g1yghtgi6" path="res://Objects/Cenario/chave vermelha.png" id="3_chtu4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_paole"]
+
+[node name="Item" type="Panel"]
+custom_minimum_size = Vector2(106, 106)
+offset_right = 106.0
+offset_bottom = 106.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_paole")
+script = ExtResource("1_xxga0")
+
+[node name="WhiteBorder2" parent="." node_paths=PackedStringArray("reference") instance=ExtResource("2_7okfa")]
+visible = false
+layout_mode = 0
+reference = NodePath("../WhiteBorder")
+
+[node name="WhiteBorder" parent="." node_paths=PackedStringArray("reference") instance=ExtResource("2_7okfa")]
+visible = false
+layout_mode = 0
+color = Color(0, 0, 0, 1)
+reference = NodePath("../TextureRect")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_chtu4")
+expand_mode = 1
+stretch_mode = 5

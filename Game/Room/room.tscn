@@ -1,6 +1,5 @@
-[gd_scene load_steps=17 format=3 uid="uid://b46ln0l8u82r0"]
+[gd_scene load_steps=12 format=3 uid="uid://b46ln0l8u82r0"]
 
-[ext_resource type="PackedScene" uid="uid://ca2c7jnemw4ie" path="res://Objects/wall.tscn" id="1_2ok7y"]
 [ext_resource type="Script" path="res://Game/Room/room.gd" id="1_3vij1"]
 [ext_resource type="PackedScene" uid="uid://dmkbsln86fgm7" path="res://Objects/CanvasLayer.tscn" id="1_604fw"]
 [ext_resource type="Script" path="res://Game/Quests/DoctorKnocking/doctor_knocking.gd" id="2_4ura0"]
@@ -8,39 +7,24 @@
 [ext_resource type="Shader" path="res://Shaders/pixelart.gdshader" id="4_c38xh"]
 [ext_resource type="PackedScene" uid="uid://7sspjh77o6vm" path="res://Game/Player/player.tscn" id="4_i14w1"]
 [ext_resource type="PackedScene" uid="uid://cxpyp7yoxaixr" path="res://Objects/room_clock.tscn" id="4_yqami"]
+[ext_resource type="Texture2D" uid="uid://d0p74ybivffs7" path="res://icon.svg" id="5_n7bhf"]
 [ext_resource type="AudioStream" uid="uid://dlxpad3bry0wj" path="res://Audio/Music/fundo_assustador.mp3" id="6_457a2"]
 [ext_resource type="PackedScene" uid="uid://c4ofme5aqmxny" path="res://Shaders/ShockWave.tscn" id="7_a8e8t"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jlm1d"]
 shader = ExtResource("4_c38xh")
-shader_parameter/shake = 5.773
+shader_parameter/shake = 4.8
 shader_parameter/noiseQuality = 250.0
 shader_parameter/noiseIntensity = 0.001
 shader_parameter/offsetIntensity = 0.0045
-shader_parameter/colorOffsetIntensity = 0.2
-shader_parameter/pixelSize = 680.5
-shader_parameter/grainIntensity = 0.13
+shader_parameter/colorOffsetIntensity = 1.5
+shader_parameter/pixelSize = 913.0
+shader_parameter/grainIntensity = 0.04
 shader_parameter/use_overlay = true
 shader_parameter/use_lens_distortion = true
 shader_parameter/overlay_color = Color(1, 1, 1, 10)
-shader_parameter/lens_distortion_strength = 0.05
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_nfg62"]
-closed = false
-polygon = PackedVector2Array(1662, 186, 1662, -342, 3506, -326, 3522, 1018, 1642, 1022, 1646, 362)
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_c7v3x"]
-light_mode = 2
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_qg7gp"]
-light_mode = 2
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_2258t"]
-light_mode = 2
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_gjdmj"]
-closed = false
-polygon = PackedVector2Array(1061, -2, 1060, 119, 844, 111, 844, -3)
+shader_parameter/lens_distortion_strength = 0.1
+shader_parameter/overlay_texture = ExtResource("5_n7bhf")
 
 [node name="Room" type="Node2D"]
 y_sort_enabled = true
@@ -70,60 +54,6 @@ metadata/_edit_lock_ = true
 [node name="RoomClock" parent="Room_3" instance=ExtResource("4_yqami")]
 position = Vector2(1025, 360)
 
-[node name="wall" parent="Room_3" instance=ExtResource("1_2ok7y")]
-position = Vector2(195, 506)
-scale = Vector2(0.235935, 1.84936)
-CollisionLayer = 1
-
-[node name="wall2" parent="Room_3" instance=ExtResource("1_2ok7y")]
-position = Vector2(2011, 874.251)
-scale = Vector2(0.235935, 3.15699)
-CollisionLayer = 1
-
-[node name="wall8" parent="Room_3" instance=ExtResource("1_2ok7y")]
-position = Vector2(195, 1180)
-scale = Vector2(0.235935, 2.27314)
-CollisionLayer = 1
-
-[node name="wall3" parent="Room_3" instance=ExtResource("1_2ok7y")]
-position = Vector2(342, 931)
-rotation = 1.5708
-scale = Vector2(0.235935, 3.16159)
-CollisionLayer = 1
-
-[node name="wall7" parent="Room_3" instance=ExtResource("1_2ok7y")]
-position = Vector2(1136.9, 1708)
-rotation = 1.5708
-scale = Vector2(0.235935, 3.60478)
-CollisionLayer = 1
-
-[node name="wall9" parent="Room_3" instance=ExtResource("1_2ok7y")]
-position = Vector2(1259, 1257)
-rotation = 1.5708
-scale = Vector2(0.235935, 3.16159)
-CollisionLayer = 1
-
-[node name="wall4" parent="Room_3" instance=ExtResource("1_2ok7y")]
-visible = false
-position = Vector2(916.752, 326)
-rotation = 1.5708
-scale = Vector2(0.235935, 2.06087)
-CollisionLayer = 1
-
-[node name="wall5" parent="Room_3" instance=ExtResource("1_2ok7y")]
-visible = false
-position = Vector2(1747.32, 240)
-rotation = 1.5708
-scale = Vector2(0.235935, 0.973102)
-CollisionLayer = 1
-
-[node name="wall6" parent="Room_3" instance=ExtResource("1_2ok7y")]
-visible = false
-position = Vector2(305.679, 266)
-rotation = 1.5708
-scale = Vector2(0.235935, 0.204758)
-CollisionLayer = 1
-
 [node name="Quests" type="Node2D" parent="."]
 
 [node name="DoctorKnocking" type="Node2D" parent="Quests" node_paths=PackedStringArray("DoorSoundOrigin")]
@@ -134,150 +64,6 @@ DoorSoundOrigin = NodePath("tools/DoorSoundOrigin")
 
 [node name="DoorSoundOrigin" type="Marker2D" parent="Quests/DoctorKnocking/tools"]
 position = Vector2(1023, 397)
-
-[node name="LightTesting" type="Node2D" parent="."]
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="LightTesting"]
-visible = false
-occluder = SubResource("OccluderPolygon2D_nfg62")
-
-[node name="ColorRect" type="ColorRect" parent="LightTesting"]
-visible = false
-light_mask = 2
-visibility_layer = 2
-material = SubResource("CanvasItemMaterial_c7v3x")
-offset_left = -3954.0
-offset_top = -1929.0
-offset_right = 3994.0
-offset_bottom = 1969.0
-color = Color(0.240606, 0.147279, 0, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="LightTesting"]
-visible = false
-material = SubResource("CanvasItemMaterial_qg7gp")
-offset_left = 1655.0
-offset_top = -329.0
-offset_right = 3523.0
-offset_bottom = 1035.0
-color = Color(0.330057, 0.002266, 0.160166, 1)
-
-[node name="Room_1" type="Node2D" parent="."]
-visible = false
-
-[node name="Floor" type="ColorRect" parent="Room_1"]
-offset_right = 1905.0
-offset_bottom = 1091.0
-color = Color(0.184384, 0.0896672, 1.20327e-08, 1)
-
-[node name="wall3" parent="Room_1" instance=ExtResource("1_2ok7y")]
-position = Vector2(63, 608.5)
-scale = Vector2(0.235935, 1.84936)
-
-[node name="wall4" parent="Room_1" instance=ExtResource("1_2ok7y")]
-position = Vector2(453, 1026)
-rotation = 1.5708
-scale = Vector2(0.235935, 1.25408)
-
-[node name="wall5" parent="Room_1" instance=ExtResource("1_2ok7y")]
-position = Vector2(1094, 1026)
-rotation = 1.5708
-scale = Vector2(0.235935, 1.25408)
-
-[node name="wall6" parent="Room_1" instance=ExtResource("1_2ok7y")]
-position = Vector2(1573, 1026)
-rotation = 1.5708
-scale = Vector2(0.235935, 1.25408)
-
-[node name="wall7" parent="Room_1" instance=ExtResource("1_2ok7y")]
-position = Vector2(1836, 539.75)
-scale = Vector2(0.235935, 1.61071)
-
-[node name="wall8" parent="Room_1" instance=ExtResource("1_2ok7y")]
-position = Vector2(1467.06, 63)
-rotation = 1.5708
-scale = Vector2(0.235935, 1.64589)
-
-[node name="wall9" parent="Room_1" instance=ExtResource("1_2ok7y")]
-position = Vector2(422.825, 63)
-rotation = 1.5708
-scale = Vector2(0.235935, 1.63437)
-
-[node name="Room_2" type="Node2D" parent="."]
-material = SubResource("CanvasItemMaterial_2258t")
-position = Vector2(3523, 462)
-
-[node name="Floor" type="ColorRect" parent="Room_2"]
-use_parent_material = true
-offset_right = 1905.0
-offset_bottom = 1943.0
-color = Color(0.184384, 0.0896672, 1.20327e-08, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="wall3" parent="Room_2" instance=ExtResource("1_2ok7y")]
-position = Vector2(63, 608.5)
-scale = Vector2(0.235935, 1.84936)
-CollisionLayer = 1
-
-[node name="wall13" parent="Room_2" instance=ExtResource("1_2ok7y")]
-position = Vector2(470, 1617)
-scale = Vector2(0.235935, 1.21506)
-CollisionLayer = 1
-
-[node name="wall5" parent="Room_2" instance=ExtResource("1_2ok7y")]
-position = Vector2(55, 1458)
-scale = Vector2(0.235935, 1.84936)
-CollisionLayer = 1
-
-[node name="wall10" parent="Room_2" instance=ExtResource("1_2ok7y")]
-position = Vector2(1845, 1466)
-scale = Vector2(0.235935, 1.84936)
-CollisionLayer = 1
-
-[node name="wall4" parent="Room_2" instance=ExtResource("1_2ok7y")]
-position = Vector2(453, 1026)
-rotation = 1.5708
-scale = Vector2(0.235935, 1.25408)
-CollisionLayer = 1
-
-[node name="wall6" parent="Room_2" instance=ExtResource("1_2ok7y")]
-position = Vector2(1573, 1026)
-rotation = 1.5708
-scale = Vector2(0.235935, 1.25408)
-CollisionLayer = 1
-
-[node name="wall11" parent="Room_2" instance=ExtResource("1_2ok7y")]
-position = Vector2(951.931, 1887)
-rotation = 1.5708
-scale = Vector2(0.235935, 3.50842)
-CollisionLayer = 1
-
-[node name="wall12" parent="Room_2" instance=ExtResource("1_2ok7y")]
-position = Vector2(969, 1350)
-rotation = 1.5708
-scale = Vector2(0.235935, 2.18597)
-CollisionLayer = 1
-
-[node name="wall7" parent="Room_2" instance=ExtResource("1_2ok7y")]
-position = Vector2(1836, 539.75)
-scale = Vector2(0.235935, 1.61071)
-CollisionLayer = 1
-
-[node name="wall8" parent="Room_2" instance=ExtResource("1_2ok7y")]
-position = Vector2(1467.06, 63)
-rotation = 1.5708
-scale = Vector2(0.235935, 1.64589)
-CollisionLayer = 1
-
-[node name="wall9" parent="Room_2" instance=ExtResource("1_2ok7y")]
-position = Vector2(422.825, 63)
-rotation = 1.5708
-scale = Vector2(0.235935, 1.63437)
-CollisionLayer = 1
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Room_2"]
-position = Vector2(-4, 0)
-occluder = SubResource("OccluderPolygon2D_gjdmj")
-occluder_light_mask = 2
 
 [node name="Player" parent="." instance=ExtResource("4_i14w1")]
 position = Vector2(954, 444)

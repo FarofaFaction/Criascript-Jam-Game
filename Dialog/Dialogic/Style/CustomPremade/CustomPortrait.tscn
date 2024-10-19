@@ -1,0 +1,98 @@
+[gd_scene load_steps=6 format=3 uid="uid://cbnjm0hujo7sa"]
+
+[ext_resource type="Script" path="res://Dialog/Dialogic/Style/CustomPremade/CustomPortrait.gd" id="1_7ound"]
+[ext_resource type="Texture2D" uid="uid://de0dxq4ujoxsc" path="res://Dialog/Characters/Doctor/DoctorPortrait.jpg" id="2_8d5w0"]
+[ext_resource type="PackedScene" uid="uid://djhnt4bpvoytr" path="res://border.tscn" id="3_4n2p0"]
+
+[sub_resource type="Shader" id="Shader_t4450"]
+code = "shader_type canvas_item;
+render_mode unshaded; // Credit: LiathTheCrow for original shader code
+
+uniform vec4 level1 : source_color = vec4(0.0, 0.0, 0.0, 1.0);
+uniform vec4 level2 : source_color = vec4(0.5, 0.5, 0.5, 1.0);
+uniform vec4 level3 : source_color = vec4(1.0, 1.0, 1.0, 1.0);
+uniform vec4 level4 : source_color = vec4(1.0, 1.0, 1.0, 1.0);
+
+uniform float threshold1 	: hint_range(0.0,1.0) = .4;
+uniform float threshold2 	: hint_range(0.0,1.0) = .52;
+uniform float threshold3	: hint_range(0.0,1.0) = .8;
+uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
+
+void fragment() {
+	COLOR = texture(SCREEN_TEXTURE, SCREEN_UV).rgba;
+	float rgb_avg = (COLOR.r + COLOR.g + COLOR.b)/3.0;
+	if(rgb_avg < threshold1){
+		COLOR = level1.rgba;
+	}else if(rgb_avg < threshold2){
+		COLOR = level2.rgba;
+	}else if(rgb_avg < threshold3){
+		COLOR = level3.rgba;
+	}else{
+		COLOR = level4.rgba;
+	}
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n74ap"]
+shader = SubResource("Shader_t4450")
+shader_parameter/level1 = Color(0, 0, 0, 1)
+shader_parameter/level2 = Color(0, 0, 0.14902, 1)
+shader_parameter/level3 = Color(1, 1, 1, 1)
+shader_parameter/level4 = Color(0.211765, 0.109804, 1, 1)
+shader_parameter/threshold1 = 0.097
+shader_parameter/threshold2 = 0.747
+shader_parameter/threshold3 = 0.56
+
+[node name="CustomPortrait" type="CanvasLayer"]
+script = ExtResource("1_7ound")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 704.0
+offset_top = 232.0
+offset_right = -816.0
+offset_bottom = -528.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.155396
+offset_right = 1.9158
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_8d5w0")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="PortraitShader" type="ColorRect" parent="Panel/TextureRect"]
+material = SubResource("ShaderMaterial_n74ap")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WhiteBorder" parent="Panel" node_paths=PackedStringArray("reference") instance=ExtResource("3_4n2p0")]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -20.1554
+offset_top = -20.5426
+offset_right = 421.916
+offset_bottom = 340.543
+reference = NodePath("../BlackBorder")
+
+[node name="BlackBorder" parent="Panel" node_paths=PackedStringArray("reference") instance=ExtResource("3_4n2p0")]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -10.1554
+offset_top = -10.5426
+offset_right = 411.916
+offset_bottom = 330.543
+color = Color(0, 0, 0, 1)
+reference = NodePath("../TextureRect")

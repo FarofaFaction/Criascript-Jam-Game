@@ -12,25 +12,44 @@ func _ready() -> void:
 	_init_audio()
 	pass # Replace with function body.
 
+const Safe := "res://Game/Loctions/SafeRoom/SafeRoom.tscn"
+const Alone := "res://Game/Loctions/LonelinessRoom/LonelinessRoom.tscn"
+const Room := "res://Game/Loctions/CommonRoom/CommomRoom.tscn"
 const Loading := "res://Interface/Transition/Loading.tscn"
 const MenuMenu := "res://Interface/Menu/menu.tscn"
-const Game := "res://Game/Room/room.tscn"
+const Corridor := "res://Game/Loctions/Corridor2D/Corridor2D.tscn"
+const Game := "res://Game/Loctions/PlayerRoom/PlayerRoom.tscn"
 var current_scene: String
+var current_destination : String
 #const ss := str(1)
 
-func change_scene(scene: String):
-	#var node
+func change_scene(scene: String, cutscene : bool = false):
+	if Global.first_play:
+		Global.first_play = false
+		GlobalTimer.set_time(7,0)
+		GlobalTimer.set_speed(480)
 	if (scene == "Menu"):
-		#node = preload(MenuMenu).instantiate()
-		#get_tree().change_scene_to_file(MenuMenu)
+		GlobalTimer.stop()
 		current_scene = MenuMenu
 	elif (scene == "Game"):
 		current_scene = Game
-		#get_tree().change_scene_to_file(Game)
+	elif (scene == "Room"):
+		current_scene = Room
+	elif (scene == "Corridor"):
+		current_scene = Corridor
+	elif (scene == "Alone"):
+		current_scene = Alone
+	elif (scene == "Safe"):
+		current_scene = Safe
 	else:
 		return
-	Transition.transition("fade_to_black")
-	await Transition.on_transition_finished
+	if player && player is PlayerClass:
+		player.process_mode = PROCESS_MODE_DISABLED
+		player = null
+	GlobalTimer.stop()
+	if cutscene:
+		Transition.transition("fade_to_black")
+		await Transition.on_transition_finished
 	get_tree().change_scene_to_file(Loading)
 	pass
 

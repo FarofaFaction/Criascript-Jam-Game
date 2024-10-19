@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://cp5et8dq2pjvr"]
+
+[ext_resource type="Theme" uid="uid://bi5atlkw4djab" path="res://Dialog/Styles/Style.tres" id="1_k13ka"]
+[ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="2_x25d3"]
+[ext_resource type="PackedScene" uid="uid://djhnt4bpvoytr" path="res://border.tscn" id="3_ibmj8"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nteog"]
+light_mode = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mqcgn"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
+[node name="TextBallon" type="Label"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_k13ka")
+theme_override_fonts/font = ExtResource("2_x25d3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "interact"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WhiteBorder" parent="." node_paths=PackedStringArray("reference") instance=ExtResource("3_ibmj8")]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 116.0
+offset_bottom = 34.0
+reference = NodePath("..")
+border = 5

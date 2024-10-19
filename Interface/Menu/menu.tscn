@@ -1,11 +1,112 @@
-[gd_scene load_steps=5 format=3 uid="uid://bm25056tyrsyl"]
+[gd_scene load_steps=11 format=3 uid="uid://bm25056tyrsyl"]
 
 [ext_resource type="Texture2D" uid="uid://dbwtrfalr2xno" path="res://Interface/Menu/menu.jpg" id="1_akneg"]
 [ext_resource type="Script" path="res://Interface/Menu/menu.gd" id="1_ejqst"]
+[ext_resource type="PackedScene" uid="uid://bjsa2mrlybrr3" path="res://Shaders/portrait_shader.tscn" id="3_877k6"]
 [ext_resource type="AudioStream" uid="uid://cvk4wj6g3d5io" path="res://Audio/Music/509924__supergamersvk__horror-chase-loop.wav" id="4_2u4d0"]
 [ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="4_5i31b"]
 
-[node name="Menu" type="Control"]
+[sub_resource type="Shader" id="Shader_dq6i5"]
+code = "shader_type canvas_item;
+render_mode unshaded; // Credit: LiathTheCrow for original shader code
+
+uniform vec4 level1 : source_color = vec4(0.0, 0.0, 0.0, 1.0);
+uniform vec4 level2 : source_color = vec4(0.5, 0.5, 0.5, 1.0);
+uniform vec4 level3 : source_color = vec4(1.0, 1.0, 1.0, 1.0);
+uniform vec4 level4 : source_color = vec4(1.0, 1.0, 1.0, 1.0);
+
+uniform float threshold1 	: hint_range(0.0,1.0) = .4;
+uniform float threshold2 	: hint_range(0.0,1.0) = .52;
+uniform float threshold3	: hint_range(0.0,1.0) = .8;
+uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
+
+void fragment() {
+	COLOR = texture(SCREEN_TEXTURE, SCREEN_UV).rgba;
+	float rgb_avg = (COLOR.r + COLOR.g + COLOR.b)/3.0;
+	if(rgb_avg < threshold1){
+		COLOR = level1.rgba;
+	}else if(rgb_avg < threshold2){
+		COLOR = level2.rgba;
+	}else if(rgb_avg < threshold3){
+		COLOR = level3.rgba;
+	}else{
+		COLOR = level4.rgba;
+	}
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xocqh"]
+shader = SubResource("Shader_dq6i5")
+shader_parameter/level1 = Color(0, 0, 0, 0.00784314)
+shader_parameter/level2 = Color(0, 0, 0, 0)
+shader_parameter/level3 = Color(0.294118, 0.294118, 0.294118, 0)
+shader_parameter/level4 = Color(0, 0, 0, 0)
+shader_parameter/threshold1 = 0.4
+shader_parameter/threshold2 = 0.52
+shader_parameter/threshold3 = 0.8
+
+[sub_resource type="Animation" id="Animation_3k8we"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:Color1")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:Color2")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_3jk1p"]
+resource_name = "new_animation"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:Color1")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:Color2")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w8hbj"]
+_data = {
+"RESET": SubResource("Animation_3k8we"),
+"new_animation": SubResource("Animation_3jk1p")
+}
+
+[node name="Menu" type="Control" node_paths=PackedStringArray("shader")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -14,6 +115,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ejqst")
+Color1 = Color(0, 0, 0, 0)
+Color2 = Color(0, 0, 0, 0)
+shader = NodePath("PortraitShader")
 
 [node name="LocalizationTools" type="Control" parent="."]
 anchors_preset = 0
@@ -52,6 +156,14 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_akneg")
 
+[node name="PortraitShader" parent="." instance=ExtResource("3_877k6")]
+material = SubResource("ShaderMaterial_xocqh")
+layout_mode = 0
+offset_left = 265.0
+offset_top = -180.0
+offset_right = 1624.0
+offset_bottom = 1296.0
+
 [node name="Name" type="Label" parent="."]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 1
@@ -74,8 +186,17 @@ Asylum
 "
 horizontal_alignment = 1
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(949, 565)
 stream = ExtResource("4_2u4d0")
-pitch_scale = 0.25
-autoplay = true
-mix_target = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_w8hbj")
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

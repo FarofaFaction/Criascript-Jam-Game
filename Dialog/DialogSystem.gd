@@ -17,7 +17,7 @@ var on_options := false
 
 # Chamado quando o nó entra na árvore
 func _ready() -> void:
-	process_mode = Node.PROCESS_MODE_ALWAYS
+	process_mode = PROCESS_MODE_ALWAYS
 	$CanvasLayer.visible = false
 
 # Métodos de Inicialização
@@ -90,6 +90,10 @@ func _run_dialog(delta: float) -> void:
 				return
 			_step = 0.2 * delta
 			_initialize_dialog()
+
+func _reset_dialog() -> void:
+	data = {}
+	_id = 0
 
 func _finish_dialog() -> void:
 	data = {}

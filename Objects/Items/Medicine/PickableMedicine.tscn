@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=3 uid="uid://canw6k8q4ja1f"]
+
+[ext_resource type="Script" path="res://Objects/Items/pickable_item.gd" id="1_i2mbw"]
+[ext_resource type="PackedScene" uid="uid://c6pj3e1k0hfl6" path="res://Objects/Items/Item.tscn" id="2_v07s6"]
+[ext_resource type="Texture2D" uid="uid://q48g3807mhht" path="res://Objects/Items/Medicine/medicine.png" id="3_a630p"]
+[ext_resource type="Script" path="res://Objects/Items/Medicine/medicine_instructions.gd" id="4_tdg2c"]
+[ext_resource type="PackedScene" uid="uid://6fw6kl4t5n7x" path="res://Objects/interactible_area.tscn" id="5_8y1g4"]
+[ext_resource type="PackedScene" uid="uid://b5l5jcfiebqmr" path="res://Game/textpanel.tscn" id="6_ko3me"]
+
+[node name="Medicine" type="Node2D" node_paths=PackedStringArray("item")]
+script = ExtResource("1_i2mbw")
+just_one_intance = false
+item = NodePath("SizeControler/Item")
+item_id = "Medicine"
+
+[node name="SizeControler" type="Node2D" parent="."]
+scale = Vector2(0.12, 0.12)
+
+[node name="Item" parent="SizeControler" node_paths=PackedStringArray("node_instructions") instance=ExtResource("2_v07s6")]
+node_instructions = NodePath("Node")
+usable = true
+item_id = "Weed"
+
+[node name="WhiteBorder2" parent="SizeControler/Item" index="0"]
+visible = true
+
+[node name="WhiteBorder" parent="SizeControler/Item" index="1"]
+visible = true
+
+[node name="TextureRect" parent="SizeControler/Item" index="2"]
+texture = ExtResource("3_a630p")
+
+[node name="WhiteBorder" parent="SizeControler/Item/Textpanel/TextBallon" index="0"]
+visible = true
+
+[node name="Node" type="Node" parent="SizeControler/Item" node_paths=PackedStringArray("item")]
+script = ExtResource("4_tdg2c")
+item = NodePath("..")
+
+[node name="InteractibleArea" parent="." node_paths=PackedStringArray("message") instance=ExtResource("5_8y1g4")]
+position = Vector2(6, -7)
+message = NodePath("../SacaledTextBallon/Textpanel/TextBallon")
+
+[node name="SacaledTextBallon" type="Node2D" parent="."]
+position = Vector2(22, 9)
+scale = Vector2(0.3, 0.3)
+
+[node name="Textpanel" parent="SacaledTextBallon" instance=ExtResource("6_ko3me")]
+offset_left = -113.333
+offset_top = -73.3333
+offset_right = -0.333351
+offset_bottom = -42.3333
+
+[node name="TextBallon" parent="SacaledTextBallon/Textpanel" index="0"]
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 1
+grow_vertical = 1
+text = "[E] Pegar"
+
+[editable path="SizeControler/Item"]
+[editable path="SacaledTextBallon/Textpanel"]

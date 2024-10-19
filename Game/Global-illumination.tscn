@@ -34,5 +34,6 @@ texture = ExtResource("2_q478q")
 
 [node name="BigLight" type="PointLight2D" parent="RoomLight"]
 position = Vector2(324, -179)
+shadow_enabled = true
 texture = ExtResource("2_q478q")
 texture_scale = 7.0

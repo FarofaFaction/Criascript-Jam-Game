@@ -1,0 +1,15 @@
+[style name="premade"]
+[background scene="res://Dialog/Characters/Character-portraits/PlayerPortrat.tscn" fade="1.5" transition="Push Up"]
+character: Oi Doutor, estou testando o codigo com muito\
+muito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textwomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito mas muito textomuito #id:11
+[background scene="res://Dialog/Characters/Character-portraits/DoctorPortrait.tscn" fade="0.0"]
+Doctor: Parece que funcionou #id:12
+- Sim #id:13
+	[background scene="res://Dialog/Characters/Character-portraits/PlayerPortrat.tscn" fade="0.0" transition="Swipe Diagonal Up Left"]
+	Sim #id:14
+	[end_timeline]
+- Nao #id:15
+	[background scene="res://Dialog/Characters/Character-portraits/PlayerPortrat.tscn" fade="0.0"]
+	Nao, repete #id:16
+	jump 
+[end_timeline]

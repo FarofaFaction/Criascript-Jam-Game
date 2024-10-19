@@ -1,32 +1,329 @@
-[gd_scene load_steps=8 format=3 uid="uid://v7uuiioruv0j"]
+[gd_scene load_steps=68 format=3 uid="uid://v7uuiioruv0j"]
 
-[ext_resource type="PackedScene" uid="uid://b8t0b7kcbu145" path="res://Game/Npcs/Doctor/Doctor.tscn" id="1_413a8"]
 [ext_resource type="Script" path="res://Game/Loctions/PlayerRoom/player_room.gd" id="1_xkoml"]
-[ext_resource type="PackedScene" uid="uid://dj8ktaq2ssm6j" path="res://Game/Global-illumination.tscn" id="2_h147x"]
-[ext_resource type="Texture2D" uid="uid://boce3olqcv7iq" path="res://Objects/mapa 1.png" id="2_lpg70"]
 [ext_resource type="PackedScene" uid="uid://cxpyp7yoxaixr" path="res://Objects/room_clock.tscn" id="3_mx5ei"]
+[ext_resource type="Script" path="res://Game/Loctions/PlayerRoom/illumination.gd" id="3_vxtcw"]
+[ext_resource type="Texture2D" uid="uid://c5bj3otn1pl5f" path="res://Game/Loctions/PlayerRoom/mapa 1.png" id="4_enhsl"]
+[ext_resource type="Texture2D" uid="uid://grx8jyxat1kd" path="res://Objects/light/light.png" id="4_hbaos"]
 [ext_resource type="PackedScene" uid="uid://7sspjh77o6vm" path="res://Game/Player/player.tscn" id="5_6s2l1"]
+[ext_resource type="AudioStream" uid="uid://4v7vpuxnp7fm" path="res://Audio/Effects/swictch.wav" id="5_wxbr8"]
+[ext_resource type="Texture2D" uid="uid://cdjdi7e3hfopn" path="res://Game/Loctions/PlayerRoom/comodo cortina 2.png" id="7_ecr0s"]
+[ext_resource type="Script" path="res://Game/Npcs/Doctor/doctor.gd" id="7_fwk6u"]
+[ext_resource type="Texture2D" uid="uid://co2ranalwxee1" path="res://Game/Loctions/PlayerRoom/comodo cortina.png" id="7_unrsb"]
 [ext_resource type="PackedScene" uid="uid://d2apjj0tfq2bn" path="res://Objects/Cenario/Tv/tv.tscn" id="8_55il4"]
+[ext_resource type="Texture2D" uid="uid://bv04l8emn75qh" path="res://Game/Npcs/Doctor/doctor-idle.png" id="8_peusb"]
+[ext_resource type="Texture2D" uid="uid://b6pq5blreewrk" path="res://Game/Npcs/Doctor/doctor-runing.png" id="9_260ks"]
+[ext_resource type="PackedScene" uid="uid://d2d1asq2fkvsq" path="res://Interface/PlayerInterface/player_interface.tscn" id="10_jdqjg"]
+[ext_resource type="Texture2D" uid="uid://dgq2m1cnwgbv" path="res://Game/Player/idle.png" id="10_md2qc"]
+[ext_resource type="Texture2D" uid="uid://ji8y8qki3vcm" path="res://Game/Player/run.png" id="11_ocnsf"]
+[ext_resource type="PackedScene" uid="uid://bqjg53nmro3w" path="res://Objects/Shadow/animated_shadow.tscn" id="12_kkgh3"]
+[ext_resource type="Script" path="res://Game/state_machine.gd" id="13_b3ekg"]
+[ext_resource type="Script" path="res://Game/Npcs/Doctor/docorIdle.gd" id="14_0an36"]
+[ext_resource type="PackedScene" uid="uid://6fw6kl4t5n7x" path="res://Objects/interactible_area.tscn" id="15_8rs3j"]
+[ext_resource type="Script" path="res://Dialog/DialogClass/dialog_class.gd" id="16_0beo6"]
+[ext_resource type="Script" path="res://Dialog/DialogClass/speak_class.gd" id="17_sb3x4"]
+[ext_resource type="Texture2D" uid="uid://de0dxq4ujoxsc" path="res://Dialog/Characters/Doctor/DoctorPortrait.jpg" id="18_ofo3j"]
+[ext_resource type="PackedScene" uid="uid://baklw2eb62qgd" path="res://Dialog/DialogMenuClass/DialogMenu.tscn" id="19_upg6n"]
+[ext_resource type="Script" path="res://Game/Npcs/Doctor/Dialogo/OpDialogoComoPossoAjudar.gd" id="20_hxwgo"]
+[ext_resource type="Script" path="res://Game/Npcs/Doctor/doctor_await.gd" id="21_5qbkc"]
+[ext_resource type="Script" path="res://Game/Npcs/Doctor/Dialogo/options_test.gd" id="21_g6cer"]
+[ext_resource type="Script" path="res://Game/Npcs/Doctor/doctorWalkIn.gd" id="22_oypi2"]
+[ext_resource type="Script" path="res://Game/Npcs/Doctor/doctorWalkout.gd" id="23_wb5fi"]
+[ext_resource type="PackedScene" uid="uid://2skcpejdtcma" path="res://Game/Npcs/npc_steps.tscn" id="26_0kt6r"]
+[ext_resource type="PackedScene" uid="uid://c1d5max6as1qn" path="res://Game/Npcs/Pacients/pacient_spawning.tscn" id="28_usec1"]
+[ext_resource type="AudioStream" uid="uid://cprvuc2smhmqe" path="res://Audio/Effects/515798__ben_0815__murmur.wav" id="29_6ejwb"]
+[ext_resource type="PackedScene" uid="uid://yje2v65lwodi" path="res://Game/Enemy/enemy_spawning.tscn" id="29_y06wi"]
+[ext_resource type="PackedScene" uid="uid://cpe4chlg5q0t2" path="res://Game/scene_changer.tscn" id="30_alfp2"]
+[ext_resource type="PackedScene" uid="uid://dhf0u4kshnwol" path="res://Objects/Items/pickable_item.tscn" id="35_6n8dw"]
 
-[node name="PlayerRoom" type="Node2D"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s34ym"]
+load_path = "res://.godot/imported/light.png-8fdf09ef7de5c29c73dfe94c1c1879f5.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_icupd"]
+size = Vector2(35, 430)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_asune"]
+size = Vector2(35, 875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ogs2a"]
+size = Vector2(35, 481.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cwiyk"]
+size = Vector2(35, 118)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n3lfm"]
+size = Vector2(35, 278)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8ubhu"]
+radius = 129.557
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_318iq"]
+radius = 16.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4r2b"]
+atlas = ExtResource("8_peusb")
+region = Rect2(0, 0, 17, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpig7"]
+atlas = ExtResource("8_peusb")
+region = Rect2(17, 0, 17, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bip1j"]
+atlas = ExtResource("8_peusb")
+region = Rect2(34, 0, 17, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxqat"]
+atlas = ExtResource("8_peusb")
+region = Rect2(51, 0, 17, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0necr"]
+atlas = ExtResource("9_260ks")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_so6gb"]
+atlas = ExtResource("9_260ks")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0dfs1"]
+atlas = ExtResource("9_260ks")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jutk4"]
+atlas = ExtResource("9_260ks")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsx66"]
+atlas = ExtResource("10_md2qc")
+region = Rect2(1, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_880vf"]
+atlas = ExtResource("10_md2qc")
+region = Rect2(18, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yjrqb"]
+atlas = ExtResource("10_md2qc")
+region = Rect2(35, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55uco"]
+atlas = ExtResource("10_md2qc")
+region = Rect2(52, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ye423"]
+atlas = ExtResource("11_ocnsf")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyfos"]
+atlas = ExtResource("11_ocnsf")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1j1xw"]
+atlas = ExtResource("11_ocnsf")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84bky"]
+atlas = ExtResource("11_ocnsf")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_amjbx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g4r2b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fpig7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bip1j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vxqat")
+}],
+"loop": true,
+"name": &"DoctorIdle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0necr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_so6gb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0dfs1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jutk4")
+}],
+"loop": true,
+"name": &"DoctorRun",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rsx66")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_880vf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yjrqb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55uco")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ye423")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pyfos")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1j1xw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84bky")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_odx0j"]
+size = Vector2(16, 6.5)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_pp5gr"]
+a = Vector2(38, 8)
+b = Vector2(148, 118)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_m4vg1"]
+a = Vector2(50, 12)
+b = Vector2(183, 141)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yn417"]
+size = Vector2(221, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fy54q"]
+size = Vector2(221, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f6fea"]
+size = Vector2(44, 29)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_q05t7"]
+vertices = PackedVector2Array(220.102, 189.508, 309.609, 270.891, -28.1406, 270.031, 728.023, 271.969, 437.398, 271.219, 335, 168, 478.461, 168, 534.672, 173.852, 47.7813, -28.0469, 218.781, 129.133, 472.711, 125.891, 491.688, -31.0078, 536.344, 123.672, 532.57, -44.9688, 728.969, -42.1406, 728.453, 130.188, 728.313, 176.633)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5, 6, 7), PackedInt32Array(0, 2, 8, 9), PackedInt32Array(10, 9, 8, 11, 12), PackedInt32Array(13, 14, 15, 12, 11), PackedInt32Array(6, 10, 12, 7), PackedInt32Array(3, 7, 16)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(40, -38, 490, -41, 531, -55, 739, -52, 738, 282, -41, 280)])
+
+[node name="PlayerRoom" type="Node2D" node_paths=PackedStringArray("destinations")]
 script = ExtResource("1_xkoml")
-speed = 1480
+destinations = [NodePath("Scenes/Destinations/1")]
 
-[node name="Illumination" parent="." instance=ExtResource("2_h147x")]
+[node name="PlayerInterface" parent="." instance=ExtResource("10_jdqjg")]
+
+[node name="Illumination" type="Node2D" parent="." node_paths=PackedStringArray("switchAudioPlayer", "ilumination_node", "BigLight", "SmallLight", "GlobalIllumination")]
+script = ExtResource("3_vxtcw")
+switchAudioPlayer = NodePath("AudioStreamPlayer2D")
+color_night = Color(8.66354e-07, 0, 0.770133, 1)
+color_day = Color(1, 1, 0.466667, 0.211765)
+ilumination_node = NodePath("RoomLight")
+BigLight = NodePath("RoomLight/BigLight")
+SmallLight = NodePath("RoomLight/SmallLight")
+GlobalIllumination = NodePath("BaseIlumination")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Illumination"]
+color = Color(0, 0, 0, 1)
+
+[node name="BaseIlumination" type="PointLight2D" parent="Illumination"]
+position = Vector2(329, 35)
+color = Color(1, 1, 0.466667, 0.211765)
+energy = 0.9
+texture = SubResource("CompressedTexture2D_s34ym")
+texture_scale = 10.0
+
+[node name="RoomLight" type="Node2D" parent="Illumination"]
+position = Vector2(18, -61)
+
+[node name="SmallLight" type="PointLight2D" parent="Illumination/RoomLight"]
+position = Vector2(282, -149)
+texture = ExtResource("4_hbaos")
+
+[node name="BigLight" type="PointLight2D" parent="Illumination/RoomLight"]
+position = Vector2(321, -82)
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("4_hbaos")
+texture_scale = 7.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Illumination"]
+stream = ExtResource("5_wxbr8")
 
 [node name="BackgroundCenario" type="Node2D" parent="."]
 
-[node name="RoomClock" parent="BackgroundCenario" instance=ExtResource("3_mx5ei")]
-position = Vector2(262, -67)
+[node name="ColorRect" type="ColorRect" parent="BackgroundCenario"]
+offset_left = -1462.0
+offset_top = -668.0
+offset_right = 1502.0
+offset_bottom = 708.0
+color = Color(0, 0, 0, 1)
 
-[node name="Mapa1" type="Sprite2D" parent="BackgroundCenario/RoomClock"]
-position = Vector2(79, 135)
-texture = ExtResource("2_lpg70")
+[node name="Fundo" type="Node2D" parent="BackgroundCenario"]
+
+[node name="ColissionBase" type="StaticBody2D" parent="BackgroundCenario/Fundo"]
+top_level = true
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BackgroundCenario/Fundo/ColissionBase"]
+position = Vector2(-75.5, 67)
+shape = SubResource("RectangleShape2D_icupd")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="BackgroundCenario/Fundo/ColissionBase"]
+position = Vector2(758, 68)
+shape = SubResource("RectangleShape2D_icupd")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="BackgroundCenario/Fundo/ColissionBase"]
+position = Vector2(344.5, 300)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_asune")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="BackgroundCenario/Fundo/ColissionBase"]
+position = Vector2(276.25, -42)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_ogs2a")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="BackgroundCenario/Fundo/ColissionBase"]
+position = Vector2(-19, -73)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_cwiyk")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="BackgroundCenario/Fundo/ColissionBase"]
+position = Vector2(521, -85)
+rotation = -2.796
+shape = SubResource("RectangleShape2D_cwiyk")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="BackgroundCenario/Fundo/ColissionBase"]
+position = Vector2(7, -78)
+rotation = 2.4076
+shape = SubResource("RectangleShape2D_cwiyk")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="BackgroundCenario/Fundo/ColissionBase"]
+position = Vector2(635, -74)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_n3lfm")
+
+[node name="Mapa1" type="Sprite2D" parent="BackgroundCenario/Fundo"]
+position = Vector2(341, 68)
+texture = ExtResource("4_enhsl")
 
 [node name="Pegadas" type="Node2D" parent="BackgroundCenario"]
 
-[node name="RoomClock2" parent="BackgroundCenario" instance=ExtResource("3_mx5ei")]
-position = Vector2(263, -67)
+[node name="RoomClock" parent="BackgroundCenario" instance=ExtResource("3_mx5ei")]
+position = Vector2(293, -83)
 
 [node name="OrganizadosPorY" type="Node2D" parent="."]
 z_index = 1
@@ -35,26 +332,387 @@ y_sort_enabled = true
 [node name="Personagens" type="Node2D" parent="OrganizadosPorY"]
 y_sort_enabled = true
 
-[node name="Doctor" parent="OrganizadosPorY/Personagens" node_paths=PackedStringArray("exit_area", "target_area") instance=ExtResource("1_413a8")]
-position = Vector2(299, -20)
-hour_assingment = 10
+[node name="Doctor" type="CharacterBody2D" parent="OrganizadosPorY/Personagens" node_paths=PackedStringArray("stepsAudioPlayer", "exit_area", "target_area", "DetectionArea", "SelfArea", "animationPlayer") groups=["Npc"]]
+y_sort_enabled = true
+position = Vector2(332, -30)
+collision_layer = 0
+collision_mask = 2
+motion_mode = 1
+script = ExtResource("7_fwk6u")
+stepsAudioPlayer = NodePath("NpcSteps")
+minutes_assingment = 30
 exit_area = NodePath("ExitArea")
 target_area = NodePath("TargetArea")
+DetectionArea = NodePath("DetectionArea")
+SelfArea = NodePath("SelfArea")
+animationPlayer = NodePath("Sprite")
+metadata/_edit_group_ = true
+
+[node name="DetectionArea" type="Area2D" parent="OrganizadosPorY/Personagens/Doctor"]
+collision_layer = 0
+collision_mask = 2147483648
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OrganizadosPorY/Personagens/Doctor/DetectionArea"]
+shape = SubResource("CircleShape2D_8ubhu")
+
+[node name="SelfArea" type="Area2D" parent="OrganizadosPorY/Personagens/Doctor"]
+collision_layer = 0
+collision_mask = 2147483648
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OrganizadosPorY/Personagens/Doctor/SelfArea"]
+position = Vector2(0, 12)
+shape = SubResource("CircleShape2D_318iq")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="OrganizadosPorY/Personagens/Doctor"]
+sprite_frames = SubResource("SpriteFrames_amjbx")
+animation = &"DoctorIdle"
+autoplay = "Idle"
+frame_progress = 0.344689
+
+[node name="AnimatedShadow" parent="OrganizadosPorY/Personagens/Doctor/Sprite" instance=ExtResource("12_kkgh3")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OrganizadosPorY/Personagens/Doctor"]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_odx0j")
+
+[node name="State Machine" type="Node" parent="OrganizadosPorY/Personagens/Doctor" node_paths=PackedStringArray("initial_state")]
+script = ExtResource("13_b3ekg")
+initial_state = NodePath("DoctorAwait")
+
+[node name="DoctorIdle" type="Node" parent="OrganizadosPorY/Personagens/Doctor/State Machine" node_paths=PackedStringArray("doctor", "DialogScene")]
+script = ExtResource("14_0an36")
+doctor = NodePath("../..")
+DialogScene = NodePath("CanvasLayer/AskForPill")
+
+[node name="InteractibleArea" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle" node_paths=PackedStringArray("moving_parent") instance=ExtResource("15_8rs3j")]
+moving_parent = NodePath("../../..")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle"]
+visible = false
+
+[node name="AskForPill" type="Control" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle/CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("16_0beo6")
+auto_start = false
+
+[node name="SpeakClass2" type="RichTextLabel" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle/CanvasLayer/AskForPill"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Bom dia dorminhoco"
+script = ExtResource("17_sb3x4")
+texture = ExtResource("18_ofo3j")
+speaker = "Doutor"
+
+[node name="SpeakClass3" type="RichTextLabel" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle/CanvasLayer/AskForPill"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Como foi sua noite ?"
+script = ExtResource("17_sb3x4")
+texture = ExtResource("18_ofo3j")
+speaker = "Doutor"
+
+[node name="DialogMenu" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle/CanvasLayer/AskForPill" node_paths=PackedStringArray("options_conection") instance=ExtResource("19_upg6n")]
+visible = false
+layout_mode = 1
+options_conection = NodePath("OptionsTest")
+start_visible = false
+option_3_visible = false
+option_4_visible = false
+
+[node name="OptionsTest" type="Control" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle/CanvasLayer/AskForPill/DialogMenu"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("20_hxwgo")
+
+[node name="option1" type="Label" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle/CanvasLayer/AskForPill/DialogMenu/OptionsTest"]
+layout_mode = 0
+offset_top = 136.0
+offset_right = 40.0
+offset_bottom = 159.0
+text = "Dormi bem, obrigado pela preocupação"
+
+[node name="option2" type="Label" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle/CanvasLayer/AskForPill/DialogMenu/OptionsTest"]
+layout_mode = 0
+offset_top = 136.0
+offset_right = 40.0
+offset_bottom = 159.0
+text = "Acho  que estou sendo perseguido"
+
+[node name="option3" type="Label" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle/CanvasLayer/AskForPill/DialogMenu/OptionsTest"]
+layout_mode = 0
+offset_top = 136.0
+offset_right = 40.0
+offset_bottom = 159.0
+text = "."
+
+[node name="option4" type="Label" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle/CanvasLayer/AskForPill/DialogMenu/OptionsTest"]
+layout_mode = 0
+offset_top = 136.0
+offset_right = 40.0
+offset_bottom = 159.0
+text = "Teste 1"
+
+[node name="SpeakClass4" type="RichTextLabel" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle/CanvasLayer/AskForPill"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Interessante"
+script = ExtResource("17_sb3x4")
+texture = ExtResource("18_ofo3j")
+speaker = "Doutor"
+
+[node name="SpeakClass5" type="RichTextLabel" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle/CanvasLayer/AskForPill"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Posso te ajudar de alguma forma ?"
+script = ExtResource("17_sb3x4")
+texture = ExtResource("18_ofo3j")
+speaker = "Doutor"
+
+[node name="DialogMenu2" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle/CanvasLayer/AskForPill" node_paths=PackedStringArray("options_conection") instance=ExtResource("19_upg6n")]
+visible = false
+layout_mode = 1
+options_conection = NodePath("OptionsTest")
+start_visible = false
+option_3_visible = false
+option_4_visible = false
+
+[node name="OptionsTest" type="Control" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle/CanvasLayer/AskForPill/DialogMenu2"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("21_g6cer")
+
+[node name="option1" type="Label" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle/CanvasLayer/AskForPill/DialogMenu2/OptionsTest"]
+layout_mode = 0
+offset_top = 136.0
+offset_right = 40.0
+offset_bottom = 159.0
+text = "Sim, acho que os remedios não estao fazendo efeito"
+
+[node name="option2" type="Label" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle/CanvasLayer/AskForPill/DialogMenu2/OptionsTest"]
+layout_mode = 0
+offset_top = 136.0
+offset_right = 40.0
+offset_bottom = 159.0
+text = "Não, obrigado"
+
+[node name="option3" type="Label" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle/CanvasLayer/AskForPill/DialogMenu2/OptionsTest"]
+layout_mode = 0
+offset_top = 136.0
+offset_right = 40.0
+offset_bottom = 159.0
+text = "Ando um pouco confuso. 
+Às vezes, não sei se estou
+ acordado ou sonhando."
+
+[node name="option4" type="Label" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle/CanvasLayer/AskForPill/DialogMenu2/OptionsTest"]
+layout_mode = 0
+offset_top = 136.0
+offset_right = 40.0
+offset_bottom = 159.0
+text = "Acho que estou melhor, 
+mas tenho dias em que 
+sinto que o tempo não
+ passa direito."
+
+[node name="SpeakClass6" type="RichTextLabel" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle/CanvasLayer/AskForPill"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Não esqueça de buscar seus remedios na enfermaria, se cuide!"
+script = ExtResource("17_sb3x4")
+texture = ExtResource("18_ofo3j")
+speaker = "Doutor"
+
+[node name="DoctorAwait" type="Node" parent="OrganizadosPorY/Personagens/Doctor/State Machine" node_paths=PackedStringArray("doctor")]
+script = ExtResource("21_5qbkc")
+doctor = NodePath("../..")
+
+[node name="DoctorWalkIn" type="Node" parent="OrganizadosPorY/Personagens/Doctor/State Machine" node_paths=PackedStringArray("doctor", "navigation_agent")]
+script = ExtResource("22_oypi2")
+doctor = NodePath("../..")
+navigation_agent = NodePath("../../NavigationAgent2D")
+
+[node name="DoctorWalkout" type="Node" parent="OrganizadosPorY/Personagens/Doctor/State Machine" node_paths=PackedStringArray("doctor", "navigation_agent")]
+script = ExtResource("23_wb5fi")
+doctor = NodePath("../..")
+navigation_agent = NodePath("../../NavigationAgent2D")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="OrganizadosPorY/Personagens/Doctor"]
+path_postprocessing = 1
 
 [node name="TargetArea" type="Marker2D" parent="OrganizadosPorY/Personagens/Doctor"]
 top_level = true
-position = Vector2(485, 95)
+position = Vector2(638, -32)
 
 [node name="ExitArea" type="Marker2D" parent="OrganizadosPorY/Personagens/Doctor"]
 top_level = true
-position = Vector2(299, -15)
+position = Vector2(328, -36)
+
+[node name="NpcSteps" parent="OrganizadosPorY/Personagens/Doctor" instance=ExtResource("26_0kt6r")]
 
 [node name="Player" parent="OrganizadosPorY/Personagens" instance=ExtResource("5_6s2l1")]
-position = Vector2(311, 138)
+position = Vector2(328, -24)
+startAwake = false
+awaking = false
+
+[node name="Pacients" type="Node2D" parent="OrganizadosPorY/Personagens"]
+y_sort_enabled = true
 
 [node name="Objects" type="Node2D" parent="OrganizadosPorY"]
 y_sort_enabled = true
 position = Vector2(8, -4)
 
+[node name="Cortina" type="Node2D" parent="OrganizadosPorY/Objects"]
+y_sort_enabled = true
+position = Vector2(112, 28)
+
+[node name="Frontal" type="Sprite2D" parent="OrganizadosPorY/Objects/Cortina"]
+position = Vector2(361, 119)
+texture = ExtResource("7_unrsb")
+offset = Vector2(10, 86)
+
+[node name="Colision" type="StaticBody2D" parent="OrganizadosPorY/Objects/Cortina"]
+z_index = 10
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OrganizadosPorY/Objects/Cortina/Colision"]
+position = Vector2(85, 140)
+shape = SubResource("SegmentShape2D_pp5gr")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="OrganizadosPorY/Objects/Cortina/Colision"]
+position = Vector2(135, 121)
+shape = SubResource("SegmentShape2D_m4vg1")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="OrganizadosPorY/Objects/Cortina/Colision"]
+position = Vector2(232.5, 126.5)
+shape = SubResource("RectangleShape2D_yn417")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="OrganizadosPorY/Objects/Cortina/Colision"]
+position = Vector2(542, 128)
+shape = SubResource("RectangleShape2D_fy54q")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="OrganizadosPorY/Objects/Cortina/Colision"]
+position = Vector2(144, 135.5)
+shape = SubResource("RectangleShape2D_f6fea")
+
 [node name="Tv" parent="OrganizadosPorY/Objects" instance=ExtResource("8_55il4")]
 y_sort_enabled = true
+position = Vector2(58, 0)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+visible = false
+navigation_polygon = SubResource("NavigationPolygon_q05t7")
+
+[node name="NavigationObstacle2D2" type="NavigationObstacle2D" parent="NavigationRegion2D"]
+vertices = PackedVector2Array(435, 283, 311, 158, 467, 158, 464, 136, 229, 139, 230, 185, 340, 285)
+affect_navigation_mesh = true
+
+[node name="NavigationObstacle2D3" type="NavigationObstacle2D" parent="NavigationRegion2D"]
+vertices = PackedVector2Array(753, 167, 545, 164, 546, 134, 752, 141)
+affect_navigation_mesh = true
+
+[node name="EnemySpawning" parent="." node_paths=PackedStringArray("pegadas_spawn_node", "spawn_node") instance=ExtResource("29_y06wi")]
+pegadas_spawn_node = NodePath("../BackgroundCenario/Pegadas")
+spawn_node = NodePath("../OrganizadosPorY/Personagens")
+
+[node name="PacientSpawning" parent="." node_paths=PackedStringArray("murmurAudioPlayer", "spawn_node") instance=ExtResource("28_usec1")]
+murmurAudioPlayer = NodePath("AudioStreamPlayer2D")
+spawn_node = NodePath("../OrganizadosPorY/Personagens/Pacients")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="PacientSpawning"]
+position = Vector2(357, 42)
+stream = ExtResource("29_6ejwb")
+
+[node name="Border" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Border"]
+z_index = 1
+offset_left = 413.0
+offset_top = 266.0
+offset_right = 801.0
+offset_bottom = 387.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Border"]
+z_index = 1
+offset_left = -308.0
+offset_top = -196.0
+offset_right = -56.0
+offset_bottom = 347.0
+color = Color(0, 0, 0, 1)
+
+[node name="CortinaLateral" type="Sprite2D" parent="Border"]
+z_index = 1
+texture_filter = 2
+position = Vector2(455, 297)
+rotation = -0.789851
+texture = ExtResource("7_ecr0s")
+offset = Vector2(118, 80)
+
+[node name="ColorRect2" type="ColorRect" parent="Border"]
+z_index = 1
+offset_left = -118.0
+offset_top = 271.0
+offset_right = 805.0
+offset_bottom = 392.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Border"]
+z_index = 1
+offset_left = 738.0
+offset_top = -188.0
+offset_right = 990.0
+offset_bottom = 355.0
+color = Color(0, 0, 0, 1)
+
+[node name="Scenes" type="Node2D" parent="."]
+position = Vector2(2, -2)
+
+[node name="SceneChanger" parent="Scenes" instance=ExtResource("30_alfp2")]
+position = Vector2(321, -35)
+destination = "4"
+
+[node name="Destinations" type="Node2D" parent="Scenes"]
+
+[node name="1" type="Marker2D" parent="Scenes/Destinations"]
+position = Vector2(325, -18)
+
+[node name="Item" parent="." instance=ExtResource("35_6n8dw")]
+position = Vector2(501, 169)
+item_id = "1"

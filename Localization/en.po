@@ -33,7 +33,7 @@ msgid "PT-BR"
 msgstr "PT-BR"
 
 #: Interface/LenguageMenu/lenguage_menu.tscn
-msgid "Pronto\n"
+msgid "Pronto\r\n"
 msgstr "Ready\n"
 
 #: Interface/Menu/menu_options.tscn Interface/Menu/menu.tscn
@@ -44,7 +44,7 @@ msgstr "Start"
 msgid "Continuar"
 msgstr "Continue"
 
-#: Interface/Menu/menu_options.tscn Interface/ConfigMenu/config_menu.tscn Dialog/DialogMenuClass/DialogMenu.tscn Interface/Pause/pause_options.tscn
+#: Interface/Menu/menu_options.tscn Interface/ConfigMenu/config_menu.tscn Interface/Pause/pause_options.tscn
 msgid "Configurações"
 msgstr "Settings"
 
@@ -113,7 +113,11 @@ msgid "\tNome"
 msgstr "\tName"
 
 #: Dialog/DialogMenuClass/DialogMenu.tscn Game/Quests/DoctorKnocking/stage_1/DoctorKnocking_1.tscn
-msgid "Option 1\n"
+msgid "Escolha"
+msgstr "Choise"
+
+#: Dialog/DialogMenuClass/DialogMenu.tscn Game/Quests/DoctorKnocking/stage_1/DoctorKnocking_1.tscn
+msgid "Option 1\r\n"
 msgstr "Option 1\n"
 
 #: Dialog/DialogMenuClass/DialogMenu.tscn Game/Quests/DoctorKnocking/stage_1/DoctorKnocking_1.tscn
@@ -145,10 +149,6 @@ msgid "Pronto Pra Tomar Seu Remedio ?"
 msgstr "Ready to take your medicine?"
 
 #: Game/Quests/DoctorKnocking/stage_1/DoctorKnocking_1.tscn
-msgid "Escolha"
-msgstr "Choise"
-
-#: Game/Quests/DoctorKnocking/stage_1/DoctorKnocking_1.tscn
 msgid "Sim"
 msgstr "Yes"
 
@@ -178,7 +178,7 @@ msgstr "Menu"
 
 #: Interface/Pause/pause_options.tscn
 msgid ""
-"Fechar\n"
+"Fechar\r\n"
 "Jogo"
 msgstr ""
 "Close\n"
@@ -187,3 +187,254 @@ msgstr ""
 #: Interface/Transition/Loading.tscn
 msgid "Carregando"
 msgstr "Loading"
+
+msgid "New Code Region"
+msgstr "New Code Region"
+
+msgid "Pick a color from the screen."
+msgstr "Pick a color from the screen."
+
+msgid "Pick a color from the application window."
+msgstr "Pick a color from the application window."
+
+msgid ""
+"Color: #%s\n"
+"LMB: Apply color\n"
+"RMB: Remove preset"
+msgstr ""
+"Color: #%s\n"
+"LMB: Apply color\n"
+"RMB: Remove preset"
+
+msgid ""
+"Color: #%s\n"
+"LMB: Apply color"
+msgstr ""
+"Color: #%s\n"
+"LMB: Apply color"
+
+msgid "Enter a hex code (\"#ff0000\") or named color (\"red\")."
+msgstr "Enter a hex code (\"#ff0000\") or named color (\"red\")."
+
+msgid "Select a picker shape."
+msgstr "Select a picker shape."
+
+msgid "Select a picker mode."
+msgstr "Select a picker mode."
+
+msgid "Hex code or named color"
+msgstr "Hex code or named color"
+
+msgid "Add current color as a preset."
+msgstr "Add current color as a preset."
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Alert!"
+msgstr "Alert!"
+
+msgid "Please Confirm..."
+msgstr "Please Confirm..."
+
+msgid "Network"
+msgstr "Network"
+
+msgid ""
+"File \"%s\" already exists.\n"
+"Do you want to overwrite it?"
+msgstr ""
+"File \"%s\" already exists.\n"
+"Do you want to overwrite it?"
+
+msgid "Open"
+msgstr "Open"
+
+msgid "Select Current Folder"
+msgstr "Select Current Folder"
+
+msgid "Select This Folder"
+msgstr "Select This Folder"
+
+msgid "You don't have permission to access contents of this folder."
+msgstr "You don't have permission to access contents of this folder."
+
+msgid "All Recognized"
+msgstr "All Recognized"
+
+msgid "All Files"
+msgstr "All Files"
+
+msgid "Open a File"
+msgstr "Open a File"
+
+msgid "Open File(s)"
+msgstr "Open File(s)"
+
+msgid "Open a Directory"
+msgstr "Open a Directory"
+
+msgid "Open a File or Directory"
+msgstr "Open a File or Directory"
+
+msgid "Save"
+msgstr "Save"
+
+msgid "Save a File"
+msgstr "Save a File"
+
+msgid "Go to previous folder."
+msgstr "Go to previous folder."
+
+msgid "Go to next folder."
+msgstr "Go to next folder."
+
+msgid "Go to parent folder."
+msgstr "Go to parent folder."
+
+msgid "Path:"
+msgstr "Path:"
+
+msgid "Refresh files."
+msgstr "Refresh files."
+
+msgid "Toggle the visibility of hidden files."
+msgstr "Toggle the visibility of hidden files."
+
+msgid "Create a new folder."
+msgstr "Create a new folder."
+
+msgid "Directories & Files:"
+msgstr "Directories & Files:"
+
+msgid "File:"
+msgstr "File:"
+
+msgid "Create Folder"
+msgstr "Create Folder"
+
+msgid "Name:"
+msgstr "Name:"
+
+msgid "Could not create folder."
+msgstr "Could not create folder."
+
+msgid "Invalid extension, or empty filename."
+msgstr "Invalid extension, or empty filename."
+
+msgid "Zoom Out"
+msgstr "Zoom Out"
+
+msgid "Zoom Reset"
+msgstr "Zoom Reset"
+
+msgid "Zoom In"
+msgstr "Zoom In"
+
+msgid "Toggle the visual grid."
+msgstr "Toggle the visual grid."
+
+msgid "Toggle snapping to the grid."
+msgstr "Toggle snapping to the grid."
+
+msgid "Change the snapping distance."
+msgstr "Change the snapping distance."
+
+msgid "Toggle the graph minimap."
+msgstr "Toggle the graph minimap."
+
+msgid "Automatically arrange selected nodes."
+msgstr "Automatically arrange selected nodes."
+
+msgid "Same as Layout Direction"
+msgstr "Same as Layout Direction"
+
+msgid "Auto-Detect Direction"
+msgstr "Auto-Detect Direction"
+
+msgid "Left-to-Right"
+msgstr "Left-to-Right"
+
+msgid "Right-to-Left"
+msgstr "Right-to-Left"
+
+msgid "Left-to-Right Mark (LRM)"
+msgstr "Left-to-Right Mark (LRM)"
+
+msgid "Right-to-Left Mark (RLM)"
+msgstr "Right-to-Left Mark (RLM)"
+
+msgid "Start of Left-to-Right Embedding (LRE)"
+msgstr "Start of Left-to-Right Embedding (LRE)"
+
+msgid "Start of Right-to-Left Embedding (RLE)"
+msgstr "Start of Right-to-Left Embedding (RLE)"
+
+msgid "Start of Left-to-Right Override (LRO)"
+msgstr "Start of Left-to-Right Override (LRO)"
+
+msgid "Start of Right-to-Left Override (RLO)"
+msgstr "Start of Right-to-Left Override (RLO)"
+
+msgid "Pop Direction Formatting (PDF)"
+msgstr "Pop Direction Formatting (PDF)"
+
+msgid "Arabic Letter Mark (ALM)"
+msgstr "Arabic Letter Mark (ALM)"
+
+msgid "Left-to-Right Isolate (LRI)"
+msgstr "Left-to-Right Isolate (LRI)"
+
+msgid "Right-to-Left Isolate (RLI)"
+msgstr "Right-to-Left Isolate (RLI)"
+
+msgid "First Strong Isolate (FSI)"
+msgstr "First Strong Isolate (FSI)"
+
+msgid "Pop Direction Isolate (PDI)"
+msgstr "Pop Direction Isolate (PDI)"
+
+msgid "Zero-Width Joiner (ZWJ)"
+msgstr "Zero-Width Joiner (ZWJ)"
+
+msgid "Zero-Width Non-Joiner (ZWNJ)"
+msgstr "Zero-Width Non-Joiner (ZWNJ)"
+
+msgid "Word Joiner (WJ)"
+msgstr "Word Joiner (WJ)"
+
+msgid "Soft Hyphen (SHY)"
+msgstr "Soft Hyphen (SHY)"
+
+msgid "Cut"
+msgstr "Cut"
+
+msgid "Copy"
+msgstr "Copy"
+
+msgid "Paste"
+msgstr "Paste"
+
+msgid "Select All"
+msgstr "Select All"
+
+msgid "Clear"
+msgstr "Clear"
+
+msgid "Undo"
+msgstr "Undo"
+
+msgid "Redo"
+msgstr "Redo"
+
+msgid "Text Writing Direction"
+msgstr "Text Writing Direction"
+
+msgid "Display Control Characters"
+msgstr "Display Control Characters"
+
+msgid "Insert Control Character"
+msgstr "Insert Control Character"

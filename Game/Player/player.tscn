@@ -1,17 +1,36 @@
-[gd_scene load_steps=21 format=3 uid="uid://7sspjh77o6vm"]
+[gd_scene load_steps=41 format=3 uid="uid://7sspjh77o6vm"]
 
 [ext_resource type="Script" path="res://Game/Player/player.gd" id="1_n8fh7"]
-[ext_resource type="Shader" path="res://Shaders/shadow.gdshader" id="1_vlcu5"]
-[ext_resource type="AudioStream" uid="uid://bgegloq6p5nx7" path="res://Audio/Effects/Male_Hurt_-_Sound_Effect.wav" id="2_4feee"]
 [ext_resource type="AudioStream" uid="uid://cm70m3qagwuin" path="res://Audio/Effects/668349__deltacode__8bit-scream.wav" id="2_aigqn"]
 [ext_resource type="AudioStream" uid="uid://b2obv3esujl8x" path="res://Audio/Effects/andando.mp3" id="2_gyrqa"]
 [ext_resource type="Texture2D" uid="uid://dgq2m1cnwgbv" path="res://Game/Player/idle.png" id="2_jplro"]
 [ext_resource type="AudioStream" uid="uid://cdtjj7teyvys5" path="res://Audio/Effects/correndo.mp3" id="3_8k3q0"]
 [ext_resource type="Texture2D" uid="uid://ji8y8qki3vcm" path="res://Game/Player/run.png" id="3_51uww"]
+[ext_resource type="AudioStream" uid="uid://di042dugmvg12" path="res://Audio/Effects/418788__name__heartbeat-single.wav" id="5_0qbxg"]
+[ext_resource type="AudioStream" uid="uid://bty2t403cjqhw" path="res://Audio/Effects/heart_agidato.wav" id="5_dvyd2"]
+[ext_resource type="Script" path="res://Game/Player/player_monster_vision.gd" id="6_0xo6q"]
+[ext_resource type="Script" path="res://Game/Player/sound_effects.gd" id="6_kpdpk"]
+[ext_resource type="Texture2D" uid="uid://grx8jyxat1kd" path="res://Objects/light/light.png" id="6_w016i"]
+[ext_resource type="Texture2D" uid="uid://blwy6auhe8l7d" path="res://Game/Player/morte.png" id="7_2x3e2"]
+[ext_resource type="Texture2D" uid="uid://bv4hn0rj5lu70" path="res://Game/Player/push.png" id="8_xjgeb"]
+[ext_resource type="Texture2D" uid="uid://fx8001c4scti" path="res://Game/Player/walk.png" id="11_d0fcl"]
+[ext_resource type="PackedScene" uid="uid://bqjg53nmro3w" path="res://Objects/Shadow/animated_shadow.tscn" id="11_w65xm"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ejkmr"]
-shader = ExtResource("1_vlcu5")
-shader_parameter/look_right = true
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqmat"]
+atlas = ExtResource("7_2x3e2")
+region = Rect2(0, 0, 34, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pu1wi"]
+atlas = ExtResource("7_2x3e2")
+region = Rect2(34, 0, 34, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpcmk"]
+atlas = ExtResource("7_2x3e2")
+region = Rect2(68, 0, 34, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejou4"]
+atlas = ExtResource("7_2x3e2")
+region = Rect2(102, 0, 34, 35)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rsx66"]
 atlas = ExtResource("2_jplro")
@@ -29,6 +48,14 @@ region = Rect2(35, 0, 16, 32)
 atlas = ExtResource("2_jplro")
 region = Rect2(52, 0, 16, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_gkukm"]
+atlas = ExtResource("8_xjgeb")
+region = Rect2(0, 0, 25, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5umco"]
+atlas = ExtResource("8_xjgeb")
+region = Rect2(25, 0, 25, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ye423"]
 atlas = ExtResource("3_51uww")
 region = Rect2(0, 0, 16, 32)
@@ -45,8 +72,57 @@ region = Rect2(32, 0, 16, 32)
 atlas = ExtResource("3_51uww")
 region = Rect2(48, 0, 16, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_lm2fd"]
+atlas = ExtResource("7_2x3e2")
+region = Rect2(102, 0, 34, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5snbr"]
+atlas = ExtResource("7_2x3e2")
+region = Rect2(68, 0, 34, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aa28d"]
+atlas = ExtResource("7_2x3e2")
+region = Rect2(34, 0, 34, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnipv"]
+atlas = ExtResource("7_2x3e2")
+region = Rect2(0, 0, 34, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fl62u"]
+atlas = ExtResource("11_d0fcl")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgvy6"]
+atlas = ExtResource("11_d0fcl")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_de37r"]
+atlas = ExtResource("11_d0fcl")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h42qk"]
+atlas = ExtResource("11_d0fcl")
+region = Rect2(48, 0, 16, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_amjbx"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqmat")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pu1wi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dpcmk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejou4")
+}],
+"loop": false,
+"name": &"Die",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rsx66")
@@ -66,6 +142,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_gkukm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5umco")
+}],
+"loop": true,
+"name": &"Push",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_ye423")
 }, {
 "duration": 1.0,
@@ -80,6 +167,40 @@ animations = [{
 "loop": true,
 "name": &"Run",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 10.0,
+"texture": SubResource("AtlasTexture_lm2fd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5snbr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aa28d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xnipv")
+}],
+"loop": true,
+"name": &"WakeUp",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fl62u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgvy6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_de37r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h42qk")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_shqjl"]
@@ -88,47 +209,69 @@ size = Vector2(14, 5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cgdn2"]
 size = Vector2(10, 25)
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("ShadowPlayer", "spritePlayer", "Hitbox", "StepsAudioPlayer", "DamageAudioPlayer") groups=["Player"]]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("camera", "Sprite", "Hitbox", "StepsAudioPlayer", "DamageAudioPlayer", "DieAudioPlayer") groups=["Player"]]
 y_sort_enabled = true
 collision_layer = 2
 collision_mask = 2
 motion_mode = 1
 script = ExtResource("1_n8fh7")
-dying_sound = ExtResource("2_aigqn")
+camera = NodePath("Camera2D")
+awaking = true
 walking_sound = ExtResource("2_gyrqa")
 running_sound = ExtResource("3_8k3q0")
-ShadowPlayer = NodePath("Shadow")
-spritePlayer = NodePath("Sprite")
+Sprite = NodePath("Sprite")
 Hitbox = NodePath("Hitbox")
 StepsAudioPlayer = NodePath("StepsAudioPlayer")
 DamageAudioPlayer = NodePath("DamageAudioPlayer")
+DieAudioPlayer = NodePath("DyingAudioPlayer")
+heartbeat_sound = ExtResource("5_dvyd2")
 metadata/_edit_group_ = true
 metadata/_edit_pinned_properties_ = [&"walking_sound", &"running_sound"]
 
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-offset_left = -91325.0
-offset_top = -61561.0
-offset_right = -91285.0
-offset_bottom = -61521.0
-scale = Vector2(1e+10, 1e+10)
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+current = true
+
+[node name="PlayerMonsterVision" type="Node2D" parent="." node_paths=PackedStringArray("player", "light")]
+script = ExtResource("6_0xo6q")
+player = NodePath("..")
+light = NodePath("PointLight2D")
+
+[node name="PointLight2D" type="PointLight2D" parent="PlayerMonsterVision"]
+color = Color(1, 1, 1, 0)
+range_item_cull_mask = 524289
+texture = ExtResource("6_w016i")
+
+[node name="SoundEffects" type="Node" parent="." node_paths=PackedStringArray("heart_beats_player", "player")]
+script = ExtResource("6_kpdpk")
+heart_beats_player = NodePath("HeartBeats")
+player = NodePath("..")
+
+[node name="HeartBeats" type="AudioStreamPlayer" parent="SoundEffects"]
+stream = ExtResource("5_dvyd2")
 
 [node name="StepsAudioPlayer" type="AudioStreamPlayer2D" parent="."]
+volume_db = -6.0
 
 [node name="DamageAudioPlayer" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_4feee")
+stream = ExtResource("5_0qbxg")
+volume_db = -8.0
 
-[node name="Shadow" type="AnimatedSprite2D" parent="."]
-material = SubResource("ShaderMaterial_ejkmr")
-position = Vector2(0, -1)
-sprite_frames = SubResource("SpriteFrames_amjbx")
-animation = &"Idle"
-autoplay = "Idle"
+[node name="DyingAudioPlayer" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("2_aigqn")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
+process_mode = 3
 sprite_frames = SubResource("SpriteFrames_amjbx")
-animation = &"Idle"
+animation = &"WakeUp"
 autoplay = "Idle"
+frame_progress = 0.922176
+
+[node name="RayCast2D" type="RayCast2D" parent="Sprite"]
+position = Vector2(1, -4)
+target_position = Vector2(25, 0)
+
+[node name="AnimatedShadow" parent="Sprite" instance=ExtResource("11_w65xm")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 12.5)

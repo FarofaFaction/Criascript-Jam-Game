@@ -34,6 +34,7 @@ func Interaction():
 	if player_holding:
 		player_holding = false
 		player._can_run = true
+		player.current_state = player.PlayerState.NORMAL
 		collision_mask = 2
 		collision_layer = 2
 	else:
@@ -42,6 +43,7 @@ func Interaction():
 			offset = global_position - player.global_position
 			player_holding = true
 			player._can_run = false
+			player.current_state = player.PlayerState.PUSH
 			collision_mask = 0
 			collision_layer = 0
 

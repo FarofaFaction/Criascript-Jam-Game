@@ -29,6 +29,21 @@ func _destroy_self():
 	get_parent().remove_child(self)
 	self.queue_free()
 
+func _update_dialog():
+	_id = DialogSystem.data.size()
+	for child in get_children():
+		if child is DialogMenu:
+			_add_menu(child)
+			DialogSystem.data[_id] = _dialog_data[_id]
+			_id += 1
+		if child is SpeakClass:
+			_add_label(child)
+			DialogSystem.data[_id] = _dialog_data[_id]
+			_id += 1
+	if !_dialog_data.is_empty():
+		DialogSystem.start_dialog()
+	pass
+
 func _start_dialog():
 	#visible = true
 	for child in get_children():

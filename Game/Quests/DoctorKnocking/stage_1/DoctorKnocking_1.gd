@@ -12,7 +12,6 @@ func _ready() -> void:
 		return
 	DialogSystem.finish_dialog.connect(_on_dialog_finished)
 	GlobalTimer.set_time(18, 0)
-	GlobalTimer.set_speed(6)
 	var DoorPosition = my_quest.get_tool("door")
 	if (!DoorPosition):
 		my_quest.remove_stage(self.name)

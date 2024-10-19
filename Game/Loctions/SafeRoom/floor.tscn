@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmacplpqnjny0"]
+
+[ext_resource type="PackedScene" uid="uid://igqrspxvl38d" path="res://Game/Loctions/Corridor2D/quadrado.tscn" id="1_hdxo6"]
+
+[node name="Floor" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -238.0
+offset_top = -32.0
+offset_right = 384.0
+offset_bottom = 240.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 384.0
+offset_top = 32.0
+offset_right = 503.0
+offset_bottom = 240.0
+color = Color(0, 0, 0, 1)
+
+[node name="Azulejo" type="Node2D" parent="."]
+
+[node name="Quadrado" parent="Azulejo" instance=ExtResource("1_hdxo6")]
+skew = -1.03847
+
+[node name="Quadrado2" parent="Azulejo" instance=ExtResource("1_hdxo6")]
+position = Vector2(128, 0)
+skew = -1.03847
+
+[node name="Quadrado3" parent="Azulejo" instance=ExtResource("1_hdxo6")]
+position = Vector2(256, 0)
+skew = -1.03847
+
+[node name="Quadrado4" parent="Azulejo" instance=ExtResource("1_hdxo6")]
+position = Vector2(384, 0)
+skew = -1.03847
+
+[node name="Quadrado5" parent="Azulejo" instance=ExtResource("1_hdxo6")]
+position = Vector2(-119, 0)
+skew = -1.03847

@@ -20,7 +20,8 @@ func Update():
 	if !doctor:
 		return
 	#await  GlobalTimer.time_changed
-	if _already_speaked:
+	#if _already_speaked:
+	if GlobalTimer.hours >= doctor.exit_time[0] && GlobalTimer.minutes >= doctor.exit_time[1]:
 		Transitioned.emit(self, "DoctorWalkout")
 	pass
 
@@ -36,5 +37,7 @@ func Interaction():
 	if _already_speaked:
 		return
 	_already_speaked = true
-	DialogScene._start_dialog()
+	
+	Dialogic.start('timeline_test')
+	#DialogScene._start_dialog()
 	pass

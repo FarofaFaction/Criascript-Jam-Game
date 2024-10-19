@@ -1,0 +1,377 @@
+[gd_scene load_steps=18 format=3 uid="uid://b6kkups318bv"]
+
+[ext_resource type="Script" path="res://Game/Loctions/LonelinessRoom/loneliness_room.gd" id="1_tjqyy"]
+[ext_resource type="AudioStream" uid="uid://dlxpad3bry0wj" path="res://Audio/Music/fundo_assustador.mp3" id="2_3lkqm"]
+[ext_resource type="PackedScene" uid="uid://djhnt4bpvoytr" path="res://border.tscn" id="3_uvi81"]
+[ext_resource type="PackedScene" uid="uid://mhxd0n1ghe3m" path="res://Objects/Items/Weed/pickable_weed.tscn" id="4_85dmo"]
+[ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="5_j8hfi"]
+[ext_resource type="PackedScene" uid="uid://7sspjh77o6vm" path="res://Game/Player/player.tscn" id="6_btqqf"]
+[ext_resource type="PackedScene" uid="uid://d2d1asq2fkvsq" path="res://Interface/PlayerInterface/player_interface.tscn" id="7_g6467"]
+[ext_resource type="PackedScene" uid="uid://bjsa2mrlybrr3" path="res://Shaders/portrait_shader.tscn" id="8_qnkq0"]
+[ext_resource type="PackedScene" uid="uid://cpe4chlg5q0t2" path="res://Game/scene_changer.tscn" id="9_jx77v"]
+[ext_resource type="Script" path="res://Game/Loctions/Corridor2D/local_teleporter.gd" id="10_wnsci"]
+[ext_resource type="Script" path="res://Scripts/interactible_area.gd" id="11_7kfyb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jgknn"]
+size = Vector2(115, 30)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_o7x6s"]
+a = Vector2(-4, -300)
+b = Vector2(-4, 300)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ixx0s"]
+a = Vector2(-4, -400)
+b = Vector2(-4, 400)
+
+[sub_resource type="Animation" id="Animation_0sn4p"]
+resource_name = "CorridorLight"
+
+[sub_resource type="Animation" id="Animation_26rqu"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nrhah"]
+_data = {
+"CorridorLight": SubResource("Animation_0sn4p"),
+"RESET": SubResource("Animation_26rqu")
+}
+
+[node name="LonelinessRoom" type="Node2D" node_paths=PackedStringArray("destinations")]
+script = ExtResource("1_tjqyy")
+timestop = true
+destinations = [NodePath("Scenes/Destination/1")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_3lkqm")
+autoplay = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -18664.0
+offset_top = -12784.0
+offset_right = 18704.0
+offset_bottom = 12824.0
+color = Color(0, 0, 0, 1)
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Items" type="Node2D" parent="."]
+
+[node name="CorridorSimbols" type="Node2D" parent="Items"]
+visible = false
+
+[node name="1" type="Node2D" parent="Items/CorridorSimbols"]
+position = Vector2(-464, -52)
+scale = Vector2(0.4, 0.4)
+
+[node name="Label" type="Label" parent="Items/CorridorSimbols/1"]
+offset_right = 16.0
+offset_bottom = 16.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_j8hfi")
+text = "1"
+horizontal_alignment = 1
+
+[node name="2" type="Node2D" parent="Items/CorridorSimbols"]
+position = Vector2(-355, -52)
+scale = Vector2(0.4, 0.4)
+
+[node name="Label" type="Label" parent="Items/CorridorSimbols/2"]
+offset_right = 16.0
+offset_bottom = 16.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_j8hfi")
+text = "2
+"
+horizontal_alignment = 1
+
+[node name="3" type="Node2D" parent="Items/CorridorSimbols"]
+position = Vector2(-242, -52)
+scale = Vector2(0.4, 0.4)
+
+[node name="Label" type="Label" parent="Items/CorridorSimbols/3"]
+offset_right = 16.0
+offset_bottom = 16.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_j8hfi")
+text = "3
+"
+horizontal_alignment = 1
+
+[node name="4" type="Node2D" parent="Items/CorridorSimbols"]
+position = Vector2(-130, -52)
+scale = Vector2(0.4, 0.4)
+
+[node name="Label" type="Label" parent="Items/CorridorSimbols/4"]
+offset_right = 16.0
+offset_bottom = 16.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_j8hfi")
+text = "4
+"
+horizontal_alignment = 1
+
+[node name="Floor" type="Node2D" parent="Items/CorridorSimbols"]
+position = Vector2(-300, -37)
+scale = Vector2(0.7, 0.7)
+
+[node name="Label" type="Label" parent="Items/CorridorSimbols/Floor"]
+offset_right = 16.0
+offset_bottom = 16.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_j8hfi")
+text = "A
+"
+horizontal_alignment = 1
+
+[node name="Weed" parent="Items" instance=ExtResource("4_85dmo")]
+position = Vector2(-180, 127)
+
+[node name="OrganizadosPorY" type="Node2D" parent="."]
+z_index = 1
+y_sort_enabled = true
+
+[node name="Door" type="Node2D" parent="OrganizadosPorY"]
+position = Vector2(-174, -17)
+scale = Vector2(0.2, 0.2)
+
+[node name="WhiteBorder" parent="OrganizadosPorY/Door" node_paths=PackedStringArray("reference") instance=ExtResource("3_uvi81")]
+visible = true
+offset_left = -55.0
+offset_top = -105.0
+offset_right = 59.0
+offset_bottom = 89.0
+color = Color(0, 0, 0, 1)
+reference = NodePath("../ColorRect")
+border = 10
+
+[node name="ColorRect" type="ColorRect" parent="OrganizadosPorY/Door"]
+offset_left = -50.0
+offset_top = -100.0
+offset_right = 54.0
+offset_bottom = 84.0
+pivot_offset = Vector2(49.9999, 100)
+
+[node name="PedacoPorta" type="Node2D" parent="OrganizadosPorY/Door/ColorRect"]
+position = Vector2(0, -8)
+
+[node name="WhiteBorder" parent="OrganizadosPorY/Door/ColorRect/PedacoPorta" node_paths=PackedStringArray("reference") instance=ExtResource("3_uvi81")]
+visible = true
+offset_left = 14.0
+offset_top = 14.0
+offset_right = 44.0
+offset_bottom = 83.0
+color = Color(0.539663, 0.539663, 0.539663, 1)
+reference = NodePath("../ColorRect")
+border = 5
+
+[node name="ColorRect" type="ColorRect" parent="OrganizadosPorY/Door/ColorRect/PedacoPorta"]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 41.0
+offset_bottom = 80.0
+
+[node name="PedacoPorta2" type="Node2D" parent="OrganizadosPorY/Door/ColorRect"]
+position = Vector2(48, -8)
+
+[node name="WhiteBorder" parent="OrganizadosPorY/Door/ColorRect/PedacoPorta2" node_paths=PackedStringArray("reference") instance=ExtResource("3_uvi81")]
+visible = true
+offset_left = 14.0
+offset_top = 14.0
+offset_right = 44.0
+offset_bottom = 83.0
+color = Color(0.539663, 0.539663, 0.539663, 1)
+reference = NodePath("../ColorRect")
+border = 5
+
+[node name="ColorRect" type="ColorRect" parent="OrganizadosPorY/Door/ColorRect/PedacoPorta2"]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 41.0
+offset_bottom = 80.0
+
+[node name="PedacoPorta3" type="Node2D" parent="OrganizadosPorY/Door/ColorRect"]
+position = Vector2(0, 104)
+
+[node name="WhiteBorder" parent="OrganizadosPorY/Door/ColorRect/PedacoPorta3" node_paths=PackedStringArray("reference") instance=ExtResource("3_uvi81")]
+visible = true
+offset_left = 14.0
+offset_top = 14.0
+offset_right = 44.0
+offset_bottom = 83.0
+color = Color(0.539663, 0.539663, 0.539663, 1)
+reference = NodePath("../ColorRect")
+border = 5
+
+[node name="ColorRect" type="ColorRect" parent="OrganizadosPorY/Door/ColorRect/PedacoPorta3"]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 41.0
+offset_bottom = 80.0
+
+[node name="PedacoPorta5" type="Node2D" parent="OrganizadosPorY/Door/ColorRect"]
+position = Vector2(104, 65)
+rotation = 1.5708
+
+[node name="WhiteBorder" parent="OrganizadosPorY/Door/ColorRect/PedacoPorta5" node_paths=PackedStringArray("reference") instance=ExtResource("3_uvi81")]
+visible = true
+offset_left = 14.0
+offset_top = 14.0
+offset_right = 44.0
+offset_bottom = 90.0
+color = Color(0.539663, 0.539663, 0.539663, 1)
+reference = NodePath("../ColorRect")
+border = 5
+
+[node name="ColorRect" type="ColorRect" parent="OrganizadosPorY/Door/ColorRect/PedacoPorta5"]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 41.0
+offset_bottom = 87.0
+
+[node name="PedacoPorta4" type="Node2D" parent="OrganizadosPorY/Door/ColorRect"]
+position = Vector2(48, 104)
+
+[node name="WhiteBorder" parent="OrganizadosPorY/Door/ColorRect/PedacoPorta4" node_paths=PackedStringArray("reference") instance=ExtResource("3_uvi81")]
+visible = true
+offset_left = 14.0
+offset_top = 14.0
+offset_right = 44.0
+offset_bottom = 83.0
+color = Color(0.539663, 0.539663, 0.539663, 1)
+reference = NodePath("../ColorRect")
+border = 5
+
+[node name="ColorRect" type="ColorRect" parent="OrganizadosPorY/Door/ColorRect/PedacoPorta4"]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 41.0
+offset_bottom = 80.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="OrganizadosPorY/Door"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OrganizadosPorY/Door/StaticBody2D"]
+position = Vector2(2.5, 70)
+shape = SubResource("RectangleShape2D_jgknn")
+
+[node name="Personagens" type="Node2D" parent="OrganizadosPorY"]
+y_sort_enabled = true
+
+[node name="Player" parent="OrganizadosPorY/Personagens" instance=ExtResource("6_btqqf")]
+position = Vector2(-175, -5)
+startAwake = false
+
+[node name="Camera2D" parent="OrganizadosPorY/Personagens/Player" index="8"]
+position_smoothing_enabled = false
+
+[node name="PlayerInterface" parent="." instance=ExtResource("7_g6467")]
+
+[node name="PortraitShader" parent="PlayerInterface" instance=ExtResource("8_qnkq0")]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1930.0
+offset_top = -1354.0
+offset_right = 1930.0
+offset_bottom = 1354.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Scenes" type="Node2D" parent="."]
+
+[node name="SceneChanger4" parent="Scenes" instance=ExtResource("9_jx77v")]
+position = Vector2(-176, -24)
+destination = "5"
+
+[node name="LocalTeleporter" type="Node2D" parent="Scenes" node_paths=PackedStringArray("player", "mark1", "mark2", "markUp", "markDown", "timer", "animation_player")]
+script = ExtResource("10_wnsci")
+player = NodePath("../../OrganizadosPorY/Personagens/Player")
+mark1 = NodePath("InteractibleArea/Marker1")
+mark2 = NodePath("InteractibleArea2/Marker2")
+markUp = NodePath("Up/Marker2")
+markDown = NodePath("Down/Marker2")
+timer = NodePath("Timer")
+animation_player = NodePath("AnimationPlayer")
+
+[node name="InteractibleArea" type="Area2D" parent="Scenes/LocalTeleporter"]
+position = Vector2(-500, -9)
+collision_layer = 2147483650
+collision_mask = 2147483650
+monitorable = false
+script = ExtResource("11_7kfyb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scenes/LocalTeleporter/InteractibleArea"]
+position = Vector2(4, 12)
+shape = SubResource("SegmentShape2D_o7x6s")
+
+[node name="Marker1" type="Marker2D" parent="Scenes/LocalTeleporter/InteractibleArea"]
+position = Vector2(9, 11)
+
+[node name="InteractibleArea2" type="Area2D" parent="Scenes/LocalTeleporter"]
+position = Vector2(180, -9)
+collision_layer = 2147483650
+collision_mask = 2147483650
+monitorable = false
+script = ExtResource("11_7kfyb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scenes/LocalTeleporter/InteractibleArea2"]
+position = Vector2(4, 12)
+shape = SubResource("SegmentShape2D_ixx0s")
+
+[node name="Marker2" type="Marker2D" parent="Scenes/LocalTeleporter/InteractibleArea2"]
+position = Vector2(-9.5, 3)
+
+[node name="Down" type="Area2D" parent="Scenes/LocalTeleporter"]
+position = Vector2(-155, 300)
+rotation = 1.5708
+collision_layer = 2147483650
+collision_mask = 2147483650
+monitorable = false
+script = ExtResource("11_7kfyb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scenes/LocalTeleporter/Down"]
+position = Vector2(4, 12)
+shape = SubResource("SegmentShape2D_ixx0s")
+
+[node name="Marker2" type="Marker2D" parent="Scenes/LocalTeleporter/Down"]
+position = Vector2(-24, 7.15256e-07)
+
+[node name="Up" type="Area2D" parent="Scenes/LocalTeleporter"]
+position = Vector2(-181, -298)
+rotation = 1.5708
+collision_layer = 2147483650
+collision_mask = 2147483650
+monitorable = false
+script = ExtResource("11_7kfyb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scenes/LocalTeleporter/Up"]
+position = Vector2(4, 12)
+shape = SubResource("SegmentShape2D_ixx0s")
+
+[node name="Marker2" type="Marker2D" parent="Scenes/LocalTeleporter/Up"]
+position = Vector2(19, 4)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Scenes/LocalTeleporter"]
+libraries = {
+"": SubResource("AnimationLibrary_nrhah")
+}
+speed_scale = 2.0
+
+[node name="Timer" type="Timer" parent="Scenes/LocalTeleporter"]
+
+[node name="Destination" type="Node2D" parent="Scenes"]
+
+[node name="1" type="Marker2D" parent="Scenes/Destination"]
+position = Vector2(-173, 13)
+
+[connection signal="body_entered" from="Scenes/LocalTeleporter/Down" to="Scenes/LocalTeleporter" method="_on_down_body_entered"]
+[connection signal="body_entered" from="Scenes/LocalTeleporter/Up" to="Scenes/LocalTeleporter" method="_on_up_body_entered"]
+[connection signal="timeout" from="Scenes/LocalTeleporter/Timer" to="Scenes/LocalTeleporter" method="_on_Timer_timeout"]
+
+[editable path="OrganizadosPorY/Personagens/Player"]

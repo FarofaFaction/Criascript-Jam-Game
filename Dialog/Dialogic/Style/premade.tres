@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=4 format=3 uid="uid://yc5gnet0yifg"]
+
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="1_31aoi"]
+[ext_resource type="PackedScene" uid="uid://cqpb3ie51rwl5" path="res://Dialog/Dialogic/Style/CustomPremade/custom_premade.tscn" id="1_ousnw"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style.gd" id="10_foo3m"]
+
+[resource]
+script = ExtResource("10_foo3m")
+name = "MyPremade"
+base_scene = ExtResource("1_ousnw")
+base_overrides = {
+"global_font_size": "32.0"
+}
+layers = Array[ExtResource("1_31aoi")]([])
+metadata/_latest_layer = -1

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bt0f7orajocml"]
+
+[ext_resource type="Script" path="res://Dialog/Characters/Character/custom_layered_portrait.gd" id="1_uubi5"]
+[ext_resource type="Texture2D" uid="uid://c2ojth3poy1um" path="res://Dialog/Characters/Character/psychiatric_patient.jpg" id="2_m02ug"]
+
+[node name="LayeredPortrait" type="CanvasGroup"]
+script = ExtResource("1_uubi5")
+
+[node name="Base" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_m02ug")
+
+[node name="Group1" type="Node2D" parent="."]
+
+[node name="Layer1" type="Sprite2D" parent="Group1"]
+
+[node name="Layer2" type="Sprite2D" parent="Group1"]
