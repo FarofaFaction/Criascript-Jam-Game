@@ -1,0 +1,344 @@
+[gd_scene load_steps=9 format=3 uid="uid://dgcblttt1ehsp"]
+
+[ext_resource type="Theme" uid="uid://bi5atlkw4djab" path="res://Dialog/Styles/Style.tres" id="1_qaor1"]
+[ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="2_5hd3w"]
+[ext_resource type="Texture2D" uid="uid://bwb8qu4uohuss" path="res://Sprites/Sprites mundo/area externa/mesa de xadrez.png" id="3_q3oju"]
+[ext_resource type="PackedScene" uid="uid://6fw6kl4t5n7x" path="res://Objects/interactible_area.tscn" id="4_05lim"]
+[ext_resource type="Texture2D" uid="uid://cnenkhy55rum" path="res://Sprites/Sprites mundo/area externa/banco direito.png" id="5_4nnlb"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nteog"]
+light_mode = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mqcgn"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s3cjc"]
+size = Vector2(16, 11)
+
+[node name="ObjetosXadrez" type="Node2D"]
+y_sort_enabled = true
+
+[node name="ConjuntoXadrez" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="MesaXadrez" type="RigidBody2D" parent="ConjuntoXadrez"]
+position = Vector2(657, 148)
+collision_layer = 2
+collision_mask = 2
+mass = 10.0
+lock_rotation = true
+metadata/_edit_group_ = true
+
+[node name="Node2D" type="Node2D" parent="ConjuntoXadrez/MesaXadrez"]
+scale = Vector2(0.3, 0.3)
+
+[node name="Label" type="Label" parent="ConjuntoXadrez/MesaXadrez/Node2D"]
+visible = false
+material = SubResource("CanvasItemMaterial_nteog")
+offset_left = -120.0
+offset_top = -76.6667
+offset_right = 118.0
+offset_bottom = -53.6667
+theme = ExtResource("1_qaor1")
+theme_override_fonts/font = ExtResource("2_5hd3w")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "[E] Segurar/Soltar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConjuntoXadrez/MesaXadrez"]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_s3cjc")
+
+[node name="Sprite2D" type="Sprite2D" parent="ConjuntoXadrez/MesaXadrez"]
+texture = ExtResource("3_q3oju")
+
+[node name="InteractibleArea" parent="ConjuntoXadrez/MesaXadrez" instance=ExtResource("4_05lim")]
+
+[node name="Cadeira1" type="RigidBody2D" parent="ConjuntoXadrez"]
+position = Vector2(638, 147)
+collision_layer = 2
+collision_mask = 2
+mass = 10.0
+lock_rotation = true
+metadata/_edit_group_ = true
+
+[node name="Node2D" type="Node2D" parent="ConjuntoXadrez/Cadeira1"]
+scale = Vector2(0.3, 0.3)
+
+[node name="Label" type="Label" parent="ConjuntoXadrez/Cadeira1/Node2D"]
+visible = false
+material = SubResource("CanvasItemMaterial_nteog")
+offset_left = -120.0
+offset_top = -76.6667
+offset_right = 118.0
+offset_bottom = -53.6667
+theme = ExtResource("1_qaor1")
+theme_override_fonts/font = ExtResource("2_5hd3w")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "[E] Segurar/Soltar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConjuntoXadrez/Cadeira1"]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_s3cjc")
+
+[node name="Sprite2D" type="Sprite2D" parent="ConjuntoXadrez/Cadeira1"]
+texture = ExtResource("5_4nnlb")
+
+[node name="InteractibleArea" parent="ConjuntoXadrez/Cadeira1" instance=ExtResource("4_05lim")]
+
+[node name="Cadeira2" type="RigidBody2D" parent="ConjuntoXadrez"]
+position = Vector2(675, 147)
+collision_layer = 2
+collision_mask = 2
+mass = 10.0
+lock_rotation = true
+metadata/_edit_group_ = true
+
+[node name="Node2D" type="Node2D" parent="ConjuntoXadrez/Cadeira2"]
+scale = Vector2(0.3, 0.3)
+
+[node name="Label" type="Label" parent="ConjuntoXadrez/Cadeira2/Node2D"]
+visible = false
+material = SubResource("CanvasItemMaterial_nteog")
+offset_left = -120.0
+offset_top = -76.6667
+offset_right = 118.0
+offset_bottom = -53.6667
+theme = ExtResource("1_qaor1")
+theme_override_fonts/font = ExtResource("2_5hd3w")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "[E] Segurar/Soltar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConjuntoXadrez/Cadeira2"]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_s3cjc")
+
+[node name="Sprite2D" type="Sprite2D" parent="ConjuntoXadrez/Cadeira2"]
+texture = ExtResource("5_4nnlb")
+flip_h = true
+
+[node name="InteractibleArea" parent="ConjuntoXadrez/Cadeira2" instance=ExtResource("4_05lim")]
+
+[node name="ConjuntoXadrez2" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(-77, -71)
+
+[node name="MesaXadrez" type="RigidBody2D" parent="ConjuntoXadrez2"]
+position = Vector2(657, 148)
+collision_layer = 2
+collision_mask = 2
+mass = 10.0
+lock_rotation = true
+metadata/_edit_group_ = true
+
+[node name="Node2D" type="Node2D" parent="ConjuntoXadrez2/MesaXadrez"]
+scale = Vector2(0.3, 0.3)
+
+[node name="Label" type="Label" parent="ConjuntoXadrez2/MesaXadrez/Node2D"]
+visible = false
+material = SubResource("CanvasItemMaterial_nteog")
+offset_left = -120.0
+offset_top = -76.6667
+offset_right = 118.0
+offset_bottom = -53.6667
+theme = ExtResource("1_qaor1")
+theme_override_fonts/font = ExtResource("2_5hd3w")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "[E] Segurar/Soltar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConjuntoXadrez2/MesaXadrez"]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_s3cjc")
+
+[node name="Sprite2D" type="Sprite2D" parent="ConjuntoXadrez2/MesaXadrez"]
+texture = ExtResource("3_q3oju")
+
+[node name="InteractibleArea" parent="ConjuntoXadrez2/MesaXadrez" instance=ExtResource("4_05lim")]
+
+[node name="Cadeira1" type="RigidBody2D" parent="ConjuntoXadrez2"]
+position = Vector2(638, 147)
+collision_layer = 2
+collision_mask = 2
+mass = 10.0
+lock_rotation = true
+metadata/_edit_group_ = true
+
+[node name="Node2D" type="Node2D" parent="ConjuntoXadrez2/Cadeira1"]
+scale = Vector2(0.3, 0.3)
+
+[node name="Label" type="Label" parent="ConjuntoXadrez2/Cadeira1/Node2D"]
+visible = false
+material = SubResource("CanvasItemMaterial_nteog")
+offset_left = -120.0
+offset_top = -76.6667
+offset_right = 118.0
+offset_bottom = -53.6667
+theme = ExtResource("1_qaor1")
+theme_override_fonts/font = ExtResource("2_5hd3w")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "[E] Segurar/Soltar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConjuntoXadrez2/Cadeira1"]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_s3cjc")
+
+[node name="Sprite2D" type="Sprite2D" parent="ConjuntoXadrez2/Cadeira1"]
+texture = ExtResource("5_4nnlb")
+
+[node name="InteractibleArea" parent="ConjuntoXadrez2/Cadeira1" instance=ExtResource("4_05lim")]
+
+[node name="Cadeira2" type="RigidBody2D" parent="ConjuntoXadrez2"]
+position = Vector2(675, 147)
+collision_layer = 2
+collision_mask = 2
+mass = 10.0
+lock_rotation = true
+metadata/_edit_group_ = true
+
+[node name="Node2D" type="Node2D" parent="ConjuntoXadrez2/Cadeira2"]
+scale = Vector2(0.3, 0.3)
+
+[node name="Label" type="Label" parent="ConjuntoXadrez2/Cadeira2/Node2D"]
+visible = false
+material = SubResource("CanvasItemMaterial_nteog")
+offset_left = -120.0
+offset_top = -76.6667
+offset_right = 118.0
+offset_bottom = -53.6667
+theme = ExtResource("1_qaor1")
+theme_override_fonts/font = ExtResource("2_5hd3w")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "[E] Segurar/Soltar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConjuntoXadrez2/Cadeira2"]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_s3cjc")
+
+[node name="Sprite2D" type="Sprite2D" parent="ConjuntoXadrez2/Cadeira2"]
+texture = ExtResource("5_4nnlb")
+flip_h = true
+
+[node name="InteractibleArea" parent="ConjuntoXadrez2/Cadeira2" instance=ExtResource("4_05lim")]
+
+[node name="ConjuntoXadrez3" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(-91, 76)
+
+[node name="MesaXadrez" type="RigidBody2D" parent="ConjuntoXadrez3"]
+position = Vector2(657, 148)
+collision_layer = 2
+collision_mask = 2
+mass = 10.0
+lock_rotation = true
+metadata/_edit_group_ = true
+
+[node name="Node2D" type="Node2D" parent="ConjuntoXadrez3/MesaXadrez"]
+scale = Vector2(0.3, 0.3)
+
+[node name="Label" type="Label" parent="ConjuntoXadrez3/MesaXadrez/Node2D"]
+visible = false
+material = SubResource("CanvasItemMaterial_nteog")
+offset_left = -120.0
+offset_top = -76.6667
+offset_right = 118.0
+offset_bottom = -53.6667
+theme = ExtResource("1_qaor1")
+theme_override_fonts/font = ExtResource("2_5hd3w")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "[E] Segurar/Soltar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConjuntoXadrez3/MesaXadrez"]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_s3cjc")
+
+[node name="Sprite2D" type="Sprite2D" parent="ConjuntoXadrez3/MesaXadrez"]
+texture = ExtResource("3_q3oju")
+
+[node name="InteractibleArea" parent="ConjuntoXadrez3/MesaXadrez" instance=ExtResource("4_05lim")]
+
+[node name="Cadeira1" type="RigidBody2D" parent="ConjuntoXadrez3"]
+position = Vector2(638, 147)
+collision_layer = 2
+collision_mask = 2
+mass = 10.0
+lock_rotation = true
+metadata/_edit_group_ = true
+
+[node name="Node2D" type="Node2D" parent="ConjuntoXadrez3/Cadeira1"]
+scale = Vector2(0.3, 0.3)
+
+[node name="Label" type="Label" parent="ConjuntoXadrez3/Cadeira1/Node2D"]
+visible = false
+material = SubResource("CanvasItemMaterial_nteog")
+offset_left = -120.0
+offset_top = -76.6667
+offset_right = 118.0
+offset_bottom = -53.6667
+theme = ExtResource("1_qaor1")
+theme_override_fonts/font = ExtResource("2_5hd3w")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "[E] Segurar/Soltar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConjuntoXadrez3/Cadeira1"]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_s3cjc")
+
+[node name="Sprite2D" type="Sprite2D" parent="ConjuntoXadrez3/Cadeira1"]
+texture = ExtResource("5_4nnlb")
+
+[node name="InteractibleArea" parent="ConjuntoXadrez3/Cadeira1" instance=ExtResource("4_05lim")]
+
+[node name="Cadeira2" type="RigidBody2D" parent="ConjuntoXadrez3"]
+position = Vector2(675, 147)
+collision_layer = 2
+collision_mask = 2
+mass = 10.0
+lock_rotation = true
+metadata/_edit_group_ = true
+
+[node name="Node2D" type="Node2D" parent="ConjuntoXadrez3/Cadeira2"]
+scale = Vector2(0.3, 0.3)
+
+[node name="Label" type="Label" parent="ConjuntoXadrez3/Cadeira2/Node2D"]
+visible = false
+material = SubResource("CanvasItemMaterial_nteog")
+offset_left = -120.0
+offset_top = -76.6667
+offset_right = 118.0
+offset_bottom = -53.6667
+theme = ExtResource("1_qaor1")
+theme_override_fonts/font = ExtResource("2_5hd3w")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "[E] Segurar/Soltar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConjuntoXadrez3/Cadeira2"]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_s3cjc")
+
+[node name="Sprite2D" type="Sprite2D" parent="ConjuntoXadrez3/Cadeira2"]
+texture = ExtResource("5_4nnlb")
+flip_h = true
+
+[node name="InteractibleArea" parent="ConjuntoXadrez3/Cadeira2" instance=ExtResource("4_05lim")]

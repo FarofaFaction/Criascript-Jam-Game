@@ -1,17 +1,26 @@
-[gd_scene load_steps=18 format=3 uid="uid://du7q1qtnnvjcy"]
+[gd_scene load_steps=30 format=3 uid="uid://du7q1qtnnvjcy"]
 
 [ext_resource type="Script" path="res://Game/Loctions/AsylumLocations/Arte/art_room.gd" id="1_ytyyg"]
 [ext_resource type="PackedScene" uid="uid://d2d1asq2fkvsq" path="res://Interface/PlayerInterface/player_interface.tscn" id="2_8i1mv"]
 [ext_resource type="Script" path="res://Game/Loctions/Room/illumination.gd" id="3_vj5fu"]
 [ext_resource type="Texture2D" uid="uid://grx8jyxat1kd" path="res://Objects/light/light.png" id="4_ex7hh"]
 [ext_resource type="AudioStream" uid="uid://4v7vpuxnp7fm" path="res://Audio/Effects/swictch.wav" id="5_r0tw5"]
-[ext_resource type="Texture2D" uid="uid://chmvgwuvlf45e" path="res://Game/Loctions/AsylumLocations/Externa/area externa/area externa.png" id="6_ia3nx"]
+[ext_resource type="Texture2D" uid="uid://chmvgwuvlf45e" path="res://Sprites/Sprites mundo/area externa/area externa.png" id="6_ia3nx"]
 [ext_resource type="PackedScene" uid="uid://cxpyp7yoxaixr" path="res://Objects/room_clock.tscn" id="7_0u56d"]
+[ext_resource type="Texture2D" uid="uid://c2xc334vs51uc" path="res://Sprites/Sprites mundo/portas/porta 3.png" id="7_rk2fx"]
 [ext_resource type="PackedScene" uid="uid://7sspjh77o6vm" path="res://Game/Player/player.tscn" id="8_t457x"]
 [ext_resource type="PackedScene" uid="uid://yje2v65lwodi" path="res://Game/Enemy/enemy_spawning.tscn" id="9_qqocc"]
+[ext_resource type="PackedScene" uid="uid://dgcblttt1ehsp" path="res://Game/Loctions/AsylumLocations/Externa/objetos_xadrez.tscn" id="10_3diaf"]
 [ext_resource type="PackedScene" uid="uid://c1d5max6as1qn" path="res://Game/Npcs/Pacients/pacient_spawning.tscn" id="10_i7pvu"]
+[ext_resource type="Theme" uid="uid://bi5atlkw4djab" path="res://Dialog/Styles/Style.tres" id="10_iagwu"]
 [ext_resource type="AudioStream" uid="uid://cprvuc2smhmqe" path="res://Audio/Effects/515798__ben_0815__murmur.wav" id="11_djps2"]
+[ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="11_ufry0"]
+[ext_resource type="Texture2D" uid="uid://bb7hu7q2rmpmy" path="res://Game/Loctions/AsylumLocations/Externa/area externa/caixa de truco.png" id="12_81rc7"]
 [ext_resource type="PackedScene" uid="uid://cpe4chlg5q0t2" path="res://Game/scene_changer.tscn" id="12_ax4fq"]
+[ext_resource type="Texture2D" uid="uid://bnocvgs4yabqu" path="res://Game/Loctions/AsylumLocations/Externa/area externa/cexta de basquete direita.png" id="13_rjs3q"]
+[ext_resource type="PackedScene" uid="uid://dsi4m4d18k833" path="res://Game/Loctions/AsylumLocations/Externa/truco.tscn" id="15_lx3yt"]
+[ext_resource type="Texture2D" uid="uid://e3xpa2jolde4" path="res://Game/Loctions/AsylumLocations/Externa/area externa/sexta de basquete esquerda.png" id="15_q56qv"]
+[ext_resource type="PackedScene" uid="uid://6fw6kl4t5n7x" path="res://Objects/interactible_area.tscn" id="16_uy6gr"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s34ym"]
 load_path = "res://.godot/imported/light.png-8fdf09ef7de5c29c73dfe94c1c1879f5.ctex"
@@ -25,6 +34,20 @@ size = Vector2(35, 875)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ogs2a"]
 size = Vector2(35, 797.875)
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nteog"]
+light_mode = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mqcgn"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s3cjc"]
+size = Vector2(16, 9)
+
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_q05t7"]
 vertices = PackedVector2Array(728.023, 271.969, -28.1406, 270.031, 47.7813, -28.0469, 491.688, -31.0078, 728.969, -42.1406, 532.57, -44.9688)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 0, 3, 5)])
@@ -32,7 +55,6 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(40, -38, 490, -41, 531,
 
 [node name="ArtRoom" type="Node2D"]
 script = ExtResource("1_ytyyg")
-metadata/_edit_group_ = true
 
 [node name="PlayerInterface" parent="." instance=ExtResource("2_8i1mv")]
 visible = false
@@ -74,9 +96,9 @@ texture_scale = 7.0
 stream = ExtResource("5_r0tw5")
 
 [node name="BackgroundCenario" type="Node2D" parent="."]
+metadata/_edit_group_ = true
 
 [node name="ColorRect" type="ColorRect" parent="BackgroundCenario"]
-visible = false
 offset_left = -1462.0
 offset_top = -668.0
 offset_right = 1502.0
@@ -84,6 +106,7 @@ offset_bottom = 708.0
 color = Color(0, 0, 0, 1)
 
 [node name="Fundo" type="Node2D" parent="BackgroundCenario"]
+metadata/_edit_group_ = true
 
 [node name="ColissionBase" type="StaticBody2D" parent="BackgroundCenario/Fundo"]
 top_level = true
@@ -92,6 +115,11 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BackgroundCenario/Fundo/ColissionBase"]
 position = Vector2(-64, 54)
+shape = SubResource("RectangleShape2D_icupd")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="BackgroundCenario/Fundo/ColissionBase"]
+position = Vector2(656, 16)
+rotation = -0.843767
 shape = SubResource("RectangleShape2D_icupd")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="BackgroundCenario/Fundo/ColissionBase"]
@@ -112,7 +140,63 @@ shape = SubResource("RectangleShape2D_ogs2a")
 position = Vector2(341, 68)
 texture = ExtResource("6_ia3nx")
 
+[node name="ColorRect3" type="ColorRect" parent="BackgroundCenario/Fundo"]
+offset_left = 587.0
+offset_top = -134.0
+offset_right = 908.0
+offset_bottom = -24.0
+pivot_offset = Vector2(158, 52)
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="BackgroundCenario/Fundo"]
+offset_left = 663.0
+offset_top = -68.0
+offset_right = 985.0
+offset_bottom = 44.0
+pivot_offset = Vector2(158, 52)
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="BackgroundCenario/Fundo"]
+offset_left = 733.0
+offset_top = -5.0
+offset_right = 1055.0
+offset_bottom = 107.0
+pivot_offset = Vector2(158, 52)
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="BackgroundCenario/Fundo"]
+offset_left = 762.0
+offset_top = 20.0
+offset_right = 1084.0
+offset_bottom = 132.0
+pivot_offset = Vector2(158, 52)
+color = Color(0, 0, 0, 1)
+
+[node name="Node2" type="Node2D" parent="BackgroundCenario/Fundo"]
+position = Vector2(829, 192)
+rotation = -2.41728
+skew = -0.724312
+
+[node name="ColorRect2" type="ColorRect" parent="BackgroundCenario/Fundo/Node2"]
+offset_left = 2.67039
+offset_top = 1.23056
+offset_right = 324.67
+offset_bottom = 107.231
+pivot_offset = Vector2(158, 52)
+color = Color(0.258294, 0.258276, 0.228413, 1)
+
 [node name="Pegadas" type="Node2D" parent="BackgroundCenario"]
+
+[node name="Porta" type="Node2D" parent="BackgroundCenario"]
+position = Vector2(522, -6)
+
+[node name="SpriteDistorcion" type="Node2D" parent="BackgroundCenario/Porta"]
+rotation = -2.41728
+skew = -0.698132
+
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundCenario/Porta/SpriteDistorcion"]
+position = Vector2(-177.161, 88.4205)
+texture = ExtResource("7_rk2fx")
 
 [node name="RoomClock" parent="BackgroundCenario" instance=ExtResource("7_0u56d")]
 visible = false
@@ -126,7 +210,7 @@ y_sort_enabled = true
 y_sort_enabled = true
 
 [node name="Player" parent="OrganizadosPorY/Personagens" instance=ExtResource("8_t457x")]
-position = Vector2(343, 118)
+position = Vector2(613, 149)
 startAwake = false
 awaking = false
 
@@ -136,6 +220,158 @@ y_sort_enabled = true
 [node name="Objects" type="Node2D" parent="OrganizadosPorY"]
 y_sort_enabled = true
 position = Vector2(8, -4)
+
+[node name="ObjetosXadrez" parent="OrganizadosPorY/Objects" instance=ExtResource("10_3diaf")]
+
+[node name="CestasBasquete" type="Node2D" parent="OrganizadosPorY/Objects"]
+y_sort_enabled = true
+
+[node name="CestaDireita" type="RigidBody2D" parent="OrganizadosPorY/Objects/CestasBasquete"]
+position = Vector2(481, 113)
+collision_layer = 2
+collision_mask = 2
+mass = 10.0
+lock_rotation = true
+metadata/_edit_group_ = true
+
+[node name="Node2D" type="Node2D" parent="OrganizadosPorY/Objects/CestasBasquete/CestaDireita"]
+scale = Vector2(0.3, 0.3)
+
+[node name="Label" type="Label" parent="OrganizadosPorY/Objects/CestasBasquete/CestaDireita/Node2D"]
+visible = false
+material = SubResource("CanvasItemMaterial_nteog")
+offset_left = -120.0
+offset_top = -76.6667
+offset_right = 118.0
+offset_bottom = -53.6667
+theme = ExtResource("10_iagwu")
+theme_override_fonts/font = ExtResource("11_ufry0")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "[E] Segurar/Soltar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OrganizadosPorY/Objects/CestasBasquete/CestaDireita"]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_s3cjc")
+
+[node name="Sprite2D" type="Sprite2D" parent="OrganizadosPorY/Objects/CestasBasquete/CestaDireita"]
+position = Vector2(0, 5)
+texture = ExtResource("13_rjs3q")
+offset = Vector2(-23, -46)
+
+[node name="InteractibleArea" parent="OrganizadosPorY/Objects/CestasBasquete/CestaDireita" instance=ExtResource("16_uy6gr")]
+position = Vector2(-2, -9)
+
+[node name="CestaEsquerda" type="RigidBody2D" parent="OrganizadosPorY/Objects/CestasBasquete"]
+position = Vector2(19, 116)
+collision_layer = 2
+collision_mask = 2
+mass = 10.0
+lock_rotation = true
+metadata/_edit_group_ = true
+
+[node name="Node2D" type="Node2D" parent="OrganizadosPorY/Objects/CestasBasquete/CestaEsquerda"]
+scale = Vector2(0.3, 0.3)
+
+[node name="Label" type="Label" parent="OrganizadosPorY/Objects/CestasBasquete/CestaEsquerda/Node2D"]
+visible = false
+material = SubResource("CanvasItemMaterial_nteog")
+offset_left = -120.0
+offset_top = -76.6667
+offset_right = 118.0
+offset_bottom = -53.6667
+theme = ExtResource("10_iagwu")
+theme_override_fonts/font = ExtResource("11_ufry0")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "[E] Segurar/Soltar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OrganizadosPorY/Objects/CestasBasquete/CestaEsquerda"]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_s3cjc")
+
+[node name="Sprite2D" type="Sprite2D" parent="OrganizadosPorY/Objects/CestasBasquete/CestaEsquerda"]
+position = Vector2(39, 12)
+texture = ExtResource("15_q56qv")
+offset = Vector2(-23, -46)
+
+[node name="InteractibleArea" parent="OrganizadosPorY/Objects/CestasBasquete/CestaEsquerda" instance=ExtResource("16_uy6gr")]
+position = Vector2(-2, -9)
+
+[node name="Truco" type="Node2D" parent="OrganizadosPorY/Objects"]
+y_sort_enabled = true
+
+[node name="Truco" parent="OrganizadosPorY/Objects/Truco" instance=ExtResource("15_lx3yt")]
+
+[node name="Truco2" type="RigidBody2D" parent="OrganizadosPorY/Objects/Truco"]
+position = Vector2(544, 204)
+collision_layer = 2
+collision_mask = 2
+mass = 10.0
+lock_rotation = true
+metadata/_edit_group_ = true
+
+[node name="Node2D" type="Node2D" parent="OrganizadosPorY/Objects/Truco/Truco2"]
+scale = Vector2(0.3, 0.3)
+
+[node name="Label" type="Label" parent="OrganizadosPorY/Objects/Truco/Truco2/Node2D"]
+visible = false
+material = SubResource("CanvasItemMaterial_nteog")
+offset_left = -120.0
+offset_top = -76.6667
+offset_right = 118.0
+offset_bottom = -53.6667
+theme = ExtResource("10_iagwu")
+theme_override_fonts/font = ExtResource("11_ufry0")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "[E] Segurar/Soltar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OrganizadosPorY/Objects/Truco/Truco2"]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_s3cjc")
+
+[node name="Sprite2D" type="Sprite2D" parent="OrganizadosPorY/Objects/Truco/Truco2"]
+texture = ExtResource("12_81rc7")
+
+[node name="InteractibleArea" parent="OrganizadosPorY/Objects/Truco/Truco2" instance=ExtResource("16_uy6gr")]
+
+[node name="Truco3" type="RigidBody2D" parent="OrganizadosPorY/Objects/Truco"]
+position = Vector2(644, 165)
+collision_layer = 2
+collision_mask = 2
+mass = 10.0
+lock_rotation = true
+metadata/_edit_group_ = true
+
+[node name="Node2D" type="Node2D" parent="OrganizadosPorY/Objects/Truco/Truco3"]
+scale = Vector2(0.3, 0.3)
+
+[node name="Label" type="Label" parent="OrganizadosPorY/Objects/Truco/Truco3/Node2D"]
+visible = false
+material = SubResource("CanvasItemMaterial_nteog")
+offset_left = -120.0
+offset_top = -76.6667
+offset_right = 118.0
+offset_bottom = -53.6667
+theme = ExtResource("10_iagwu")
+theme_override_fonts/font = ExtResource("11_ufry0")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "[E] Segurar/Soltar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OrganizadosPorY/Objects/Truco/Truco3"]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_s3cjc")
+
+[node name="Sprite2D" type="Sprite2D" parent="OrganizadosPorY/Objects/Truco/Truco3"]
+texture = ExtResource("12_81rc7")
+
+[node name="InteractibleArea" parent="OrganizadosPorY/Objects/Truco/Truco3" instance=ExtResource("16_uy6gr")]
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 visible = false
@@ -154,38 +390,37 @@ position = Vector2(357, 42)
 stream = ExtResource("11_djps2")
 
 [node name="Border" type="Node2D" parent="."]
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Border"]
 z_index = 1
-offset_left = 413.0
-offset_top = 266.0
-offset_right = 801.0
-offset_bottom = 387.0
+offset_left = -79.0
+offset_top = -249.0
+offset_right = 872.0
+offset_bottom = -128.0
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect4" type="ColorRect" parent="Border"]
 z_index = 1
-offset_left = -308.0
+offset_left = -302.0
 offset_top = -196.0
-offset_right = -56.0
+offset_right = -40.0
 offset_bottom = 347.0
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="Border"]
 z_index = 1
 offset_left = -118.0
-offset_top = 271.0
+offset_top = 246.0
 offset_right = 805.0
-offset_bottom = 392.0
+offset_bottom = 375.0
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect3" type="ColorRect" parent="Border"]
 z_index = 1
-offset_left = 738.0
-offset_top = -188.0
-offset_right = 990.0
-offset_bottom = 355.0
+offset_left = 728.0
+offset_top = -187.0
+offset_right = 986.0
+offset_bottom = 356.0
 color = Color(0, 0, 0, 1)
 
 [node name="Scenes" type="Node2D" parent="."]
