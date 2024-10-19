@@ -1,35 +1,43 @@
-[gd_scene load_steps=62 format=3 uid="uid://b0yqs8yljwc8l"]
+[gd_scene load_steps=68 format=3 uid="uid://ba63guflp617h"]
 
-[ext_resource type="Script" path="res://Game/Loctions/CommonRoom/commom_room.gd" id="1_ye48k"]
-[ext_resource type="PackedScene" uid="uid://d2d1asq2fkvsq" path="res://Interface/PlayerInterface/player_interface.tscn" id="2_08d7v"]
-[ext_resource type="PackedScene" uid="uid://btibrxj46tnno" path="res://Game/Loctions/illumination.tscn" id="3_5vaet"]
-[ext_resource type="Texture2D" uid="uid://c5bj3otn1pl5f" path="res://Game/Loctions/PlayerRoom/mapa 1.png" id="4_73lq7"]
-[ext_resource type="PackedScene" uid="uid://cxpyp7yoxaixr" path="res://Objects/room_clock.tscn" id="5_vbgrb"]
-[ext_resource type="Script" path="res://Game/Npcs/Doctor/doctor.gd" id="6_a877c"]
-[ext_resource type="Texture2D" uid="uid://bv04l8emn75qh" path="res://Game/Npcs/Doctor/doctor-idle.png" id="7_6jrdq"]
-[ext_resource type="Texture2D" uid="uid://b6pq5blreewrk" path="res://Game/Npcs/Doctor/doctor-runing.png" id="8_grluo"]
-[ext_resource type="Texture2D" uid="uid://dgq2m1cnwgbv" path="res://Game/Player/idle.png" id="9_d1uue"]
-[ext_resource type="Texture2D" uid="uid://ji8y8qki3vcm" path="res://Game/Player/run.png" id="10_6vawb"]
-[ext_resource type="PackedScene" uid="uid://bqjg53nmro3w" path="res://Objects/Shadow/animated_shadow.tscn" id="11_6esi2"]
-[ext_resource type="Script" path="res://Game/state_machine.gd" id="12_2u6ee"]
-[ext_resource type="Script" path="res://Game/Npcs/Doctor/docorIdle.gd" id="13_hi45k"]
-[ext_resource type="PackedScene" uid="uid://6fw6kl4t5n7x" path="res://Objects/interactible_area.tscn" id="14_ng3rc"]
-[ext_resource type="Script" path="res://Dialog/DialogClass/dialog_class.gd" id="15_oxa81"]
-[ext_resource type="Script" path="res://Dialog/DialogClass/speak_class.gd" id="16_cfn4k"]
-[ext_resource type="Texture2D" uid="uid://de0dxq4ujoxsc" path="res://Dialog/Characters/Doctor/DoctorPortrait.jpg" id="17_pq5gg"]
-[ext_resource type="PackedScene" uid="uid://baklw2eb62qgd" path="res://Dialog/DialogMenuClass/DialogMenu.tscn" id="18_3isyw"]
-[ext_resource type="Script" path="res://Game/Npcs/Doctor/Dialogo/OpDialogoComoPossoAjudar.gd" id="19_6g16f"]
-[ext_resource type="Script" path="res://Game/Npcs/Doctor/Dialogo/options_test.gd" id="20_em17d"]
-[ext_resource type="Script" path="res://Game/Npcs/Doctor/doctor_await.gd" id="21_0ms0w"]
-[ext_resource type="Script" path="res://Game/Npcs/Doctor/doctorWalkIn.gd" id="22_8n24k"]
-[ext_resource type="Script" path="res://Game/Npcs/Doctor/doctorWalkout.gd" id="23_7w3kn"]
-[ext_resource type="PackedScene" uid="uid://7sspjh77o6vm" path="res://Game/Player/player.tscn" id="24_kvq5j"]
-[ext_resource type="PackedScene" uid="uid://cjvpi1hnypje3" path="res://Game/Npcs/Pacients/Pacient.tscn" id="25_javpq"]
-[ext_resource type="Texture2D" uid="uid://co2ranalwxee1" path="res://Game/Loctions/PlayerRoom/comodo cortina.png" id="26_sf81a"]
-[ext_resource type="PackedScene" uid="uid://d2apjj0tfq2bn" path="res://Objects/Cenario/Tv/tv.tscn" id="27_w4ncm"]
-[ext_resource type="PackedScene" uid="uid://yje2v65lwodi" path="res://Game/Enemy/enemy_spawning.tscn" id="28_vj0wb"]
-[ext_resource type="Texture2D" uid="uid://cdjdi7e3hfopn" path="res://Game/Loctions/PlayerRoom/comodo cortina 2.png" id="29_ecpsi"]
-[ext_resource type="PackedScene" uid="uid://cpe4chlg5q0t2" path="res://Game/scene_changer.tscn" id="30_s02eq"]
+[ext_resource type="Script" path="res://Game/Loctions/Room/player_room.gd" id="1_my7ak"]
+[ext_resource type="PackedScene" uid="uid://d2d1asq2fkvsq" path="res://Interface/PlayerInterface/player_interface.tscn" id="2_5url3"]
+[ext_resource type="Script" path="res://Game/Loctions/Room/illumination.gd" id="3_r3mui"]
+[ext_resource type="Texture2D" uid="uid://grx8jyxat1kd" path="res://Objects/light/light.png" id="4_5gw1w"]
+[ext_resource type="AudioStream" uid="uid://4v7vpuxnp7fm" path="res://Audio/Effects/swictch.wav" id="5_yyvfi"]
+[ext_resource type="Texture2D" uid="uid://c5bj3otn1pl5f" path="res://Game/Loctions/Room/mapa 1.png" id="6_rw56q"]
+[ext_resource type="PackedScene" uid="uid://cxpyp7yoxaixr" path="res://Objects/room_clock.tscn" id="7_vjx25"]
+[ext_resource type="Script" path="res://Game/Npcs/Doctor/doctor.gd" id="8_ulrrb"]
+[ext_resource type="Texture2D" uid="uid://bv04l8emn75qh" path="res://Game/Npcs/Doctor/doctor-idle.png" id="9_db21s"]
+[ext_resource type="Texture2D" uid="uid://b6pq5blreewrk" path="res://Game/Npcs/Doctor/doctor-runing.png" id="10_ll0lb"]
+[ext_resource type="Texture2D" uid="uid://dgq2m1cnwgbv" path="res://Game/Player/idle.png" id="11_c41ln"]
+[ext_resource type="Texture2D" uid="uid://ji8y8qki3vcm" path="res://Game/Player/run.png" id="12_xlmd5"]
+[ext_resource type="PackedScene" uid="uid://bqjg53nmro3w" path="res://Objects/Shadow/animated_shadow.tscn" id="13_n2ub5"]
+[ext_resource type="Script" path="res://Game/state_machine.gd" id="14_ti7kj"]
+[ext_resource type="Script" path="res://Game/Npcs/Doctor/docorIdle.gd" id="15_nfbyv"]
+[ext_resource type="PackedScene" uid="uid://6fw6kl4t5n7x" path="res://Objects/interactible_area.tscn" id="16_uy6gr"]
+[ext_resource type="Script" path="res://Dialog/DialogClass/dialog_class.gd" id="17_ddqhc"]
+[ext_resource type="Script" path="res://Dialog/DialogClass/speak_class.gd" id="18_37rlt"]
+[ext_resource type="Texture2D" uid="uid://de0dxq4ujoxsc" path="res://Dialog/Characters/Doctor/DoctorPortrait.jpg" id="19_4u253"]
+[ext_resource type="PackedScene" uid="uid://baklw2eb62qgd" path="res://Dialog/DialogMenuClass/DialogMenu.tscn" id="20_hnrsw"]
+[ext_resource type="Script" path="res://Game/Npcs/Doctor/Dialogo/OpDialogoComoPossoAjudar.gd" id="21_84uit"]
+[ext_resource type="Script" path="res://Game/Npcs/Doctor/Dialogo/options_test.gd" id="22_xcikj"]
+[ext_resource type="Script" path="res://Game/Npcs/Doctor/doctor_await.gd" id="23_1wgqc"]
+[ext_resource type="Script" path="res://Game/Npcs/Doctor/doctorWalkIn.gd" id="24_aqupg"]
+[ext_resource type="Script" path="res://Game/Npcs/Doctor/doctorWalkout.gd" id="25_3yqap"]
+[ext_resource type="PackedScene" uid="uid://2skcpejdtcma" path="res://Game/Npcs/npc_steps.tscn" id="26_j6e8r"]
+[ext_resource type="PackedScene" uid="uid://7sspjh77o6vm" path="res://Game/Player/player.tscn" id="27_4umvf"]
+[ext_resource type="Texture2D" uid="uid://co2ranalwxee1" path="res://Game/Loctions/Room/comodo cortina.png" id="28_suqah"]
+[ext_resource type="PackedScene" uid="uid://d2apjj0tfq2bn" path="res://Objects/Cenario/Tv/tv.tscn" id="29_1me4t"]
+[ext_resource type="PackedScene" uid="uid://yje2v65lwodi" path="res://Game/Enemy/enemy_spawning.tscn" id="30_7incr"]
+[ext_resource type="PackedScene" uid="uid://c1d5max6as1qn" path="res://Game/Npcs/Pacients/pacient_spawning.tscn" id="31_hgw56"]
+[ext_resource type="AudioStream" uid="uid://cprvuc2smhmqe" path="res://Audio/Effects/515798__ben_0815__murmur.wav" id="32_163t6"]
+[ext_resource type="Texture2D" uid="uid://cdjdi7e3hfopn" path="res://Game/Loctions/Room/comodo cortina 2.png" id="33_g5atw"]
+[ext_resource type="PackedScene" uid="uid://cpe4chlg5q0t2" path="res://Game/scene_changer.tscn" id="34_n1efx"]
+[ext_resource type="PackedScene" uid="uid://dhf0u4kshnwol" path="res://Objects/Items/pickable_item.tscn" id="35_0bmgi"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s34ym"]
+load_path = "res://.godot/imported/light.png-8fdf09ef7de5c29c73dfe94c1c1879f5.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_icupd"]
 size = Vector2(35, 430)
@@ -53,67 +61,67 @@ radius = 129.557
 radius = 16.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g4r2b"]
-atlas = ExtResource("7_6jrdq")
+atlas = ExtResource("9_db21s")
 region = Rect2(0, 0, 17, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fpig7"]
-atlas = ExtResource("7_6jrdq")
+atlas = ExtResource("9_db21s")
 region = Rect2(17, 0, 17, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bip1j"]
-atlas = ExtResource("7_6jrdq")
+atlas = ExtResource("9_db21s")
 region = Rect2(34, 0, 17, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vxqat"]
-atlas = ExtResource("7_6jrdq")
+atlas = ExtResource("9_db21s")
 region = Rect2(51, 0, 17, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0necr"]
-atlas = ExtResource("8_grluo")
+atlas = ExtResource("10_ll0lb")
 region = Rect2(0, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_so6gb"]
-atlas = ExtResource("8_grluo")
+atlas = ExtResource("10_ll0lb")
 region = Rect2(16, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0dfs1"]
-atlas = ExtResource("8_grluo")
+atlas = ExtResource("10_ll0lb")
 region = Rect2(32, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jutk4"]
-atlas = ExtResource("8_grluo")
+atlas = ExtResource("10_ll0lb")
 region = Rect2(48, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rsx66"]
-atlas = ExtResource("9_d1uue")
+atlas = ExtResource("11_c41ln")
 region = Rect2(1, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_880vf"]
-atlas = ExtResource("9_d1uue")
+atlas = ExtResource("11_c41ln")
 region = Rect2(18, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yjrqb"]
-atlas = ExtResource("9_d1uue")
+atlas = ExtResource("11_c41ln")
 region = Rect2(35, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_55uco"]
-atlas = ExtResource("9_d1uue")
+atlas = ExtResource("11_c41ln")
 region = Rect2(52, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ye423"]
-atlas = ExtResource("10_6vawb")
+atlas = ExtResource("12_xlmd5")
 region = Rect2(0, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pyfos"]
-atlas = ExtResource("10_6vawb")
+atlas = ExtResource("12_xlmd5")
 region = Rect2(16, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1j1xw"]
-atlas = ExtResource("10_6vawb")
+atlas = ExtResource("12_xlmd5")
 region = Rect2(32, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_84bky"]
-atlas = ExtResource("10_6vawb")
+atlas = ExtResource("12_xlmd5")
 region = Rect2(48, 0, 16, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_amjbx"]
@@ -212,12 +220,47 @@ vertices = PackedVector2Array(220.102, 189.508, 309.609, 270.891, -28.1406, 270.
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5, 6, 7), PackedInt32Array(0, 2, 8, 9), PackedInt32Array(10, 9, 8, 11, 12), PackedInt32Array(13, 14, 15, 12, 11), PackedInt32Array(6, 10, 12, 7), PackedInt32Array(3, 7, 16)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(40, -38, 490, -41, 531, -55, 739, -52, 738, 282, -41, 280)])
 
-[node name="CommomRoom" type="Node2D"]
-script = ExtResource("1_ye48k")
+[node name="Room" type="Node2D" node_paths=PackedStringArray("destinations")]
+script = ExtResource("1_my7ak")
+destinations = [NodePath("Scenes/Destinations/1")]
 
-[node name="PlayerInterface" parent="." instance=ExtResource("2_08d7v")]
+[node name="PlayerInterface" parent="." instance=ExtResource("2_5url3")]
 
-[node name="Illumination" parent="." instance=ExtResource("3_5vaet")]
+[node name="Illumination" type="Node2D" parent="." node_paths=PackedStringArray("switchAudioPlayer", "ilumination_node", "BigLight", "SmallLight", "GlobalIllumination")]
+script = ExtResource("3_r3mui")
+switchAudioPlayer = NodePath("AudioStreamPlayer2D")
+color_night = Color(8.66354e-07, 0, 0.770133, 1)
+color_day = Color(1, 1, 0.466667, 0.211765)
+ilumination_node = NodePath("RoomLight")
+BigLight = NodePath("RoomLight/BigLight")
+SmallLight = NodePath("RoomLight/SmallLight")
+GlobalIllumination = NodePath("BaseIlumination")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Illumination"]
+color = Color(0, 0, 0, 1)
+
+[node name="BaseIlumination" type="PointLight2D" parent="Illumination"]
+position = Vector2(329, 35)
+color = Color(1, 1, 0.466667, 0.211765)
+energy = 0.9
+texture = SubResource("CompressedTexture2D_s34ym")
+texture_scale = 10.0
+
+[node name="RoomLight" type="Node2D" parent="Illumination"]
+position = Vector2(18, -61)
+
+[node name="SmallLight" type="PointLight2D" parent="Illumination/RoomLight"]
+position = Vector2(282, -149)
+texture = ExtResource("4_5gw1w")
+
+[node name="BigLight" type="PointLight2D" parent="Illumination/RoomLight"]
+position = Vector2(321, -82)
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("4_5gw1w")
+texture_scale = 7.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Illumination"]
+stream = ExtResource("5_yyvfi")
 
 [node name="BackgroundCenario" type="Node2D" parent="."]
 
@@ -275,11 +318,11 @@ shape = SubResource("RectangleShape2D_n3lfm")
 
 [node name="Mapa1" type="Sprite2D" parent="BackgroundCenario/Fundo"]
 position = Vector2(341, 68)
-texture = ExtResource("4_73lq7")
+texture = ExtResource("6_rw56q")
 
 [node name="Pegadas" type="Node2D" parent="BackgroundCenario"]
 
-[node name="RoomClock" parent="BackgroundCenario" instance=ExtResource("5_vbgrb")]
+[node name="RoomClock" parent="BackgroundCenario" instance=ExtResource("7_vjx25")]
 position = Vector2(293, -83)
 
 [node name="OrganizadosPorY" type="Node2D" parent="."]
@@ -289,13 +332,14 @@ y_sort_enabled = true
 [node name="Personagens" type="Node2D" parent="OrganizadosPorY"]
 y_sort_enabled = true
 
-[node name="Doctor" type="CharacterBody2D" parent="OrganizadosPorY/Personagens" node_paths=PackedStringArray("exit_area", "target_area", "DetectionArea", "SelfArea", "animationPlayer") groups=["Npc"]]
+[node name="Doctor" type="CharacterBody2D" parent="OrganizadosPorY/Personagens" node_paths=PackedStringArray("stepsAudioPlayer", "exit_area", "target_area", "DetectionArea", "SelfArea", "animationPlayer") groups=["Npc"]]
 y_sort_enabled = true
 position = Vector2(332, -30)
 collision_layer = 0
 collision_mask = 2
 motion_mode = 1
-script = ExtResource("6_a877c")
+script = ExtResource("8_ulrrb")
+stepsAudioPlayer = NodePath("NpcSteps")
 minutes_assingment = 30
 exit_area = NodePath("ExitArea")
 target_area = NodePath("TargetArea")
@@ -325,22 +369,22 @@ animation = &"DoctorIdle"
 autoplay = "Idle"
 frame_progress = 0.344689
 
-[node name="AnimatedShadow" parent="OrganizadosPorY/Personagens/Doctor/Sprite" instance=ExtResource("11_6esi2")]
+[node name="AnimatedShadow" parent="OrganizadosPorY/Personagens/Doctor/Sprite" instance=ExtResource("13_n2ub5")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OrganizadosPorY/Personagens/Doctor"]
 position = Vector2(0, 12)
 shape = SubResource("RectangleShape2D_odx0j")
 
 [node name="State Machine" type="Node" parent="OrganizadosPorY/Personagens/Doctor" node_paths=PackedStringArray("initial_state")]
-script = ExtResource("12_2u6ee")
+script = ExtResource("14_ti7kj")
 initial_state = NodePath("DoctorAwait")
 
 [node name="DoctorIdle" type="Node" parent="OrganizadosPorY/Personagens/Doctor/State Machine" node_paths=PackedStringArray("doctor", "DialogScene")]
-script = ExtResource("13_hi45k")
+script = ExtResource("15_nfbyv")
 doctor = NodePath("../..")
 DialogScene = NodePath("CanvasLayer/AskForPill")
 
-[node name="InteractibleArea" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle" node_paths=PackedStringArray("moving_parent") instance=ExtResource("14_ng3rc")]
+[node name="InteractibleArea" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle" node_paths=PackedStringArray("moving_parent") instance=ExtResource("16_uy6gr")]
 moving_parent = NodePath("../../..")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle"]
@@ -354,7 +398,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("15_oxa81")
+script = ExtResource("17_ddqhc")
 auto_start = false
 
 [node name="SpeakClass2" type="RichTextLabel" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle/CanvasLayer/AskForPill"]
@@ -365,8 +409,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Bom dia dorminhoco"
-script = ExtResource("16_cfn4k")
-texture = ExtResource("17_pq5gg")
+script = ExtResource("18_37rlt")
+texture = ExtResource("19_4u253")
 speaker = "Doutor"
 
 [node name="SpeakClass3" type="RichTextLabel" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle/CanvasLayer/AskForPill"]
@@ -377,11 +421,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Como foi sua noite ?"
-script = ExtResource("16_cfn4k")
-texture = ExtResource("17_pq5gg")
+script = ExtResource("18_37rlt")
+texture = ExtResource("19_4u253")
 speaker = "Doutor"
 
-[node name="DialogMenu" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle/CanvasLayer/AskForPill" node_paths=PackedStringArray("options_conection") instance=ExtResource("18_3isyw")]
+[node name="DialogMenu" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle/CanvasLayer/AskForPill" node_paths=PackedStringArray("options_conection") instance=ExtResource("20_hnrsw")]
 visible = false
 layout_mode = 1
 options_conection = NodePath("OptionsTest")
@@ -397,7 +441,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("19_6g16f")
+script = ExtResource("21_84uit")
 
 [node name="option1" type="Label" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle/CanvasLayer/AskForPill/DialogMenu/OptionsTest"]
 layout_mode = 0
@@ -435,8 +479,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Interessante"
-script = ExtResource("16_cfn4k")
-texture = ExtResource("17_pq5gg")
+script = ExtResource("18_37rlt")
+texture = ExtResource("19_4u253")
 speaker = "Doutor"
 
 [node name="SpeakClass5" type="RichTextLabel" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle/CanvasLayer/AskForPill"]
@@ -447,11 +491,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Posso te ajudar de alguma forma ?"
-script = ExtResource("16_cfn4k")
-texture = ExtResource("17_pq5gg")
+script = ExtResource("18_37rlt")
+texture = ExtResource("19_4u253")
 speaker = "Doutor"
 
-[node name="DialogMenu2" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle/CanvasLayer/AskForPill" node_paths=PackedStringArray("options_conection") instance=ExtResource("18_3isyw")]
+[node name="DialogMenu2" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle/CanvasLayer/AskForPill" node_paths=PackedStringArray("options_conection") instance=ExtResource("20_hnrsw")]
 visible = false
 layout_mode = 1
 options_conection = NodePath("OptionsTest")
@@ -467,7 +511,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("20_em17d")
+script = ExtResource("22_xcikj")
 
 [node name="option1" type="Label" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle/CanvasLayer/AskForPill/DialogMenu2/OptionsTest"]
 layout_mode = 0
@@ -510,21 +554,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Não esqueça de buscar seus remedios na enfermaria, se cuide!"
-script = ExtResource("16_cfn4k")
-texture = ExtResource("17_pq5gg")
+script = ExtResource("18_37rlt")
+texture = ExtResource("19_4u253")
 speaker = "Doutor"
 
 [node name="DoctorAwait" type="Node" parent="OrganizadosPorY/Personagens/Doctor/State Machine" node_paths=PackedStringArray("doctor")]
-script = ExtResource("21_0ms0w")
+script = ExtResource("23_1wgqc")
 doctor = NodePath("../..")
 
 [node name="DoctorWalkIn" type="Node" parent="OrganizadosPorY/Personagens/Doctor/State Machine" node_paths=PackedStringArray("doctor", "navigation_agent")]
-script = ExtResource("22_8n24k")
+script = ExtResource("24_aqupg")
 doctor = NodePath("../..")
 navigation_agent = NodePath("../../NavigationAgent2D")
 
 [node name="DoctorWalkout" type="Node" parent="OrganizadosPorY/Personagens/Doctor/State Machine" node_paths=PackedStringArray("doctor", "navigation_agent")]
-script = ExtResource("23_7w3kn")
+script = ExtResource("25_3yqap")
 doctor = NodePath("../..")
 navigation_agent = NodePath("../../NavigationAgent2D")
 
@@ -539,48 +583,15 @@ position = Vector2(638, -32)
 top_level = true
 position = Vector2(328, -36)
 
-[node name="Player" parent="OrganizadosPorY/Personagens" instance=ExtResource("24_kvq5j")]
-position = Vector2(312, -22)
+[node name="NpcSteps" parent="OrganizadosPorY/Personagens/Doctor" instance=ExtResource("26_j6e8r")]
+
+[node name="Player" parent="OrganizadosPorY/Personagens" instance=ExtResource("27_4umvf")]
+position = Vector2(328, -24)
 startAwake = false
+awaking = false
 
 [node name="Pacients" type="Node2D" parent="OrganizadosPorY/Personagens"]
 y_sort_enabled = true
-
-[node name="Pacient" parent="OrganizadosPorY/Personagens/Pacients" node_paths=PackedStringArray("exit_area") instance=ExtResource("25_javpq")]
-position = Vector2(576, 59)
-exit_area = NodePath("../../Doctor/ExitArea")
-
-[node name="Pacient4" parent="OrganizadosPorY/Personagens/Pacients" node_paths=PackedStringArray("exit_area") instance=ExtResource("25_javpq")]
-position = Vector2(626, 194)
-exit_area = NodePath("../../Doctor/ExitArea")
-
-[node name="Pacient5" parent="OrganizadosPorY/Personagens/Pacients" node_paths=PackedStringArray("exit_area") instance=ExtResource("25_javpq")]
-position = Vector2(450, 218)
-exit_area = NodePath("../../Doctor/ExitArea")
-
-[node name="Pacient6" parent="OrganizadosPorY/Personagens/Pacients" node_paths=PackedStringArray("exit_area") instance=ExtResource("25_javpq")]
-position = Vector2(542, 249)
-exit_area = NodePath("../../Doctor/ExitArea")
-
-[node name="Pacient7" parent="OrganizadosPorY/Personagens/Pacients" node_paths=PackedStringArray("exit_area") instance=ExtResource("25_javpq")]
-position = Vector2(122, 214)
-exit_area = NodePath("../../Doctor/ExitArea")
-
-[node name="Pacient8" parent="OrganizadosPorY/Personagens/Pacients" node_paths=PackedStringArray("exit_area") instance=ExtResource("25_javpq")]
-position = Vector2(-4, 114)
-exit_area = NodePath("../../Doctor/ExitArea")
-
-[node name="Pacient9" parent="OrganizadosPorY/Personagens/Pacients" node_paths=PackedStringArray("exit_area") instance=ExtResource("25_javpq")]
-position = Vector2(244, 235)
-exit_area = NodePath("../../Doctor/ExitArea")
-
-[node name="Pacient3" parent="OrganizadosPorY/Personagens/Pacients" node_paths=PackedStringArray("exit_area") instance=ExtResource("25_javpq")]
-position = Vector2(501, 47)
-exit_area = NodePath("../../Doctor/ExitArea")
-
-[node name="Pacient2" parent="OrganizadosPorY/Personagens/Pacients" node_paths=PackedStringArray("exit_area") instance=ExtResource("25_javpq")]
-position = Vector2(448, 88)
-exit_area = NodePath("../../Doctor/ExitArea")
 
 [node name="Objects" type="Node2D" parent="OrganizadosPorY"]
 y_sort_enabled = true
@@ -592,7 +603,7 @@ position = Vector2(112, 28)
 
 [node name="Frontal" type="Sprite2D" parent="OrganizadosPorY/Objects/Cortina"]
 position = Vector2(361, 119)
-texture = ExtResource("26_sf81a")
+texture = ExtResource("28_suqah")
 offset = Vector2(10, 86)
 
 [node name="Colision" type="StaticBody2D" parent="OrganizadosPorY/Objects/Cortina"]
@@ -620,17 +631,9 @@ shape = SubResource("RectangleShape2D_fy54q")
 position = Vector2(144, 135.5)
 shape = SubResource("RectangleShape2D_f6fea")
 
-[node name="Tv" parent="OrganizadosPorY/Objects" instance=ExtResource("27_w4ncm")]
+[node name="Tv" parent="OrganizadosPorY/Objects" instance=ExtResource("29_1me4t")]
 y_sort_enabled = true
-position = Vector2(245, 14)
-
-[node name="Tv2" parent="OrganizadosPorY/Objects" instance=ExtResource("27_w4ncm")]
-y_sort_enabled = true
-position = Vector2(311, 33)
-
-[node name="Tv3" parent="OrganizadosPorY/Objects" instance=ExtResource("27_w4ncm")]
-y_sort_enabled = true
-position = Vector2(379, 11)
+position = Vector2(58, 0)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 visible = false
@@ -644,9 +647,17 @@ affect_navigation_mesh = true
 vertices = PackedVector2Array(753, 167, 545, 164, 546, 134, 752, 141)
 affect_navigation_mesh = true
 
-[node name="EnemySpawning" parent="." node_paths=PackedStringArray("pegadas_spawn_node", "spawn_node") instance=ExtResource("28_vj0wb")]
+[node name="EnemySpawning" parent="." node_paths=PackedStringArray("pegadas_spawn_node", "spawn_node") instance=ExtResource("30_7incr")]
 pegadas_spawn_node = NodePath("../BackgroundCenario/Pegadas")
 spawn_node = NodePath("../OrganizadosPorY/Personagens")
+
+[node name="PacientSpawning" parent="." node_paths=PackedStringArray("murmurAudioPlayer", "spawn_node") instance=ExtResource("31_hgw56")]
+murmurAudioPlayer = NodePath("AudioStreamPlayer2D")
+spawn_node = NodePath("../OrganizadosPorY/Personagens/Pacients")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="PacientSpawning"]
+position = Vector2(357, 42)
+stream = ExtResource("32_163t6")
 
 [node name="Border" type="Node2D" parent="."]
 
@@ -671,7 +682,7 @@ z_index = 1
 texture_filter = 2
 position = Vector2(455, 297)
 rotation = -0.789851
-texture = ExtResource("29_ecpsi")
+texture = ExtResource("33_g5atw")
 offset = Vector2(118, 80)
 
 [node name="ColorRect2" type="ColorRect" parent="Border"]
@@ -693,5 +704,16 @@ color = Color(0, 0, 0, 1)
 [node name="Scenes" type="Node2D" parent="."]
 position = Vector2(2, -2)
 
-[node name="SceneChanger" parent="Scenes" instance=ExtResource("30_s02eq")]
+[node name="SceneChanger" parent="Scenes" instance=ExtResource("34_n1efx")]
+position = Vector2(321, -35)
 destination = "4"
+location = "CorridorA"
+
+[node name="Destinations" type="Node2D" parent="Scenes"]
+
+[node name="1" type="Marker2D" parent="Scenes/Destinations"]
+position = Vector2(325, -18)
+
+[node name="Item" parent="." instance=ExtResource("35_0bmgi")]
+position = Vector2(501, 169)
+item_id = "1"

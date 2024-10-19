@@ -1,15 +1,15 @@
 [gd_scene load_steps=18 format=3 uid="uid://cgbofih11kw7m"]
 
-[ext_resource type="PackedScene" uid="uid://b4e34twd33abh" path="res://Game/Loctions/Corridor2D/floor.tscn" id="1_22koa"]
-[ext_resource type="PackedScene" uid="uid://cmk1subk8bpb2" path="res://Game/Loctions/Corridor2D/door.tscn" id="1_hjyqo"]
-[ext_resource type="Script" path="res://Game/Loctions/Corridor2D/corridor_2d.gd" id="1_qny7v"]
+[ext_resource type="PackedScene" uid="uid://b4e34twd33abh" path="res://Game/Loctions/Corridors/CorridorA/floor.tscn" id="1_22koa"]
+[ext_resource type="PackedScene" uid="uid://cmk1subk8bpb2" path="res://Game/Loctions/Corridors/CorridorA/door.tscn" id="1_hjyqo"]
+[ext_resource type="Script" path="res://Game/Loctions/Corridors/CorridorA/corridor_2d.gd" id="1_qny7v"]
 [ext_resource type="PackedScene" uid="uid://7sspjh77o6vm" path="res://Game/Player/player.tscn" id="2_m7p8g"]
 [ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="5_8ejuo"]
 [ext_resource type="PackedScene" uid="uid://cxpyp7yoxaixr" path="res://Objects/room_clock.tscn" id="5_em62a"]
 [ext_resource type="PackedScene" uid="uid://d2d1asq2fkvsq" path="res://Interface/PlayerInterface/player_interface.tscn" id="8_yoneu"]
 [ext_resource type="PackedScene" uid="uid://bjsa2mrlybrr3" path="res://Shaders/portrait_shader.tscn" id="9_qbdjy"]
 [ext_resource type="PackedScene" uid="uid://cpe4chlg5q0t2" path="res://Game/scene_changer.tscn" id="10_5sj7v"]
-[ext_resource type="Script" path="res://Game/Loctions/Corridor2D/local_teleporter.gd" id="11_s8mvb"]
+[ext_resource type="Script" path="res://Game/Loctions/Corridors/CorridorA/local_teleporter.gd" id="11_s8mvb"]
 [ext_resource type="Script" path="res://Scripts/interactible_area.gd" id="12_i7lkc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ujkmg"]
@@ -347,19 +347,19 @@ location = "Room"
 [node name="SceneChanger2" parent="Scenes" instance=ExtResource("10_5sj7v")]
 position = Vector2(-352, -29)
 locked = true
-location = "Game"
+location = "Room"
 
 [node name="SceneChanger3" parent="Scenes" instance=ExtResource("10_5sj7v")]
 position = Vector2(-240, -29)
 door_id = "1"
 locked = true
 destination = "1"
-location = "Game"
+location = "Room"
 
 [node name="SceneChanger4" parent="Scenes" instance=ExtResource("10_5sj7v")]
 position = Vector2(-126, -29)
 destination = "1"
-location = "Game"
+location = "Room"
 
 [node name="SceneChanger5" parent="Scenes" instance=ExtResource("10_5sj7v")]
 position = Vector2(34, -29)

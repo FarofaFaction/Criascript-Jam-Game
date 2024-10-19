@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://b20tkid811gi4"]
 
-[ext_resource type="Script" path="res://Game/Loctions/Corridor2D/player_2d.gd" id="1_s55d3"]
+[ext_resource type="Script" path="res://Game/Loctions/Corridors/CorridorA/player_2d.gd" id="1_s55d3"]
 [ext_resource type="Texture2D" uid="uid://blwy6auhe8l7d" path="res://Game/Player/morte.png" id="2_crn6q"]
 [ext_resource type="Texture2D" uid="uid://dgq2m1cnwgbv" path="res://Game/Player/idle.png" id="3_1q3pa"]
 [ext_resource type="Texture2D" uid="uid://ji8y8qki3vcm" path="res://Game/Player/run.png" id="4_c182s"]

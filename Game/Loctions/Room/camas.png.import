@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://g0b87bfopak7"
-path="res://.godot/imported/comodo cortina 2.png-8c26146b39d61b4eb0b042d4188596cf.ctex"
+uid="uid://gpapwjiksqsh"
+path="res://.godot/imported/camas.png-78b14842676c466ae4deb914511009f0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Loctions/Enfermaria/comodo cortina 2.png"
-dest_files=["res://.godot/imported/comodo cortina 2.png-8c26146b39d61b4eb0b042d4188596cf.ctex"]
+source_file="res://Game/Loctions/Room/camas.png"
+dest_files=["res://.godot/imported/camas.png-78b14842676c466ae4deb914511009f0.ctex"]
 
 [params]
 

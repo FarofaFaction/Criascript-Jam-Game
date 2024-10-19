@@ -1,15 +1,15 @@
 [gd_scene load_steps=68 format=3 uid="uid://v7uuiioruv0j"]
 
-[ext_resource type="Script" path="res://Game/Loctions/PlayerRoom/player_room.gd" id="1_xkoml"]
+[ext_resource type="Script" path="res://Game/Loctions/Room/player_room.gd" id="1_xkoml"]
 [ext_resource type="PackedScene" uid="uid://cxpyp7yoxaixr" path="res://Objects/room_clock.tscn" id="3_mx5ei"]
-[ext_resource type="Script" path="res://Game/Loctions/PlayerRoom/illumination.gd" id="3_vxtcw"]
-[ext_resource type="Texture2D" uid="uid://c5bj3otn1pl5f" path="res://Game/Loctions/PlayerRoom/mapa 1.png" id="4_enhsl"]
+[ext_resource type="Script" path="res://Game/Loctions/Room/illumination.gd" id="3_vxtcw"]
+[ext_resource type="Texture2D" uid="uid://c5bj3otn1pl5f" path="res://Game/Loctions/Room/mapa 1.png" id="4_enhsl"]
 [ext_resource type="Texture2D" uid="uid://grx8jyxat1kd" path="res://Objects/light/light.png" id="4_hbaos"]
 [ext_resource type="PackedScene" uid="uid://7sspjh77o6vm" path="res://Game/Player/player.tscn" id="5_6s2l1"]
 [ext_resource type="AudioStream" uid="uid://4v7vpuxnp7fm" path="res://Audio/Effects/swictch.wav" id="5_wxbr8"]
-[ext_resource type="Texture2D" uid="uid://cdjdi7e3hfopn" path="res://Game/Loctions/PlayerRoom/comodo cortina 2.png" id="7_ecr0s"]
+[ext_resource type="Texture2D" uid="uid://cdjdi7e3hfopn" path="res://Game/Loctions/Room/comodo cortina 2.png" id="7_ecr0s"]
 [ext_resource type="Script" path="res://Game/Npcs/Doctor/doctor.gd" id="7_fwk6u"]
-[ext_resource type="Texture2D" uid="uid://co2ranalwxee1" path="res://Game/Loctions/PlayerRoom/comodo cortina.png" id="7_unrsb"]
+[ext_resource type="Texture2D" uid="uid://co2ranalwxee1" path="res://Game/Loctions/Room/comodo cortina.png" id="7_unrsb"]
 [ext_resource type="PackedScene" uid="uid://d2apjj0tfq2bn" path="res://Objects/Cenario/Tv/tv.tscn" id="8_55il4"]
 [ext_resource type="Texture2D" uid="uid://bv04l8emn75qh" path="res://Game/Npcs/Doctor/doctor-idle.png" id="8_peusb"]
 [ext_resource type="Texture2D" uid="uid://b6pq5blreewrk" path="res://Game/Npcs/Doctor/doctor-runing.png" id="9_260ks"]
@@ -220,7 +220,7 @@ vertices = PackedVector2Array(220.102, 189.508, 309.609, 270.891, -28.1406, 270.
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5, 6, 7), PackedInt32Array(0, 2, 8, 9), PackedInt32Array(10, 9, 8, 11, 12), PackedInt32Array(13, 14, 15, 12, 11), PackedInt32Array(6, 10, 12, 7), PackedInt32Array(3, 7, 16)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(40, -38, 490, -41, 531, -55, 739, -52, 738, 282, -41, 280)])
 
-[node name="PlayerRoom" type="Node2D" node_paths=PackedStringArray("destinations")]
+[node name="Room" type="Node2D" node_paths=PackedStringArray("destinations")]
 script = ExtResource("1_xkoml")
 destinations = [NodePath("Scenes/Destinations/1")]
 
@@ -707,6 +707,7 @@ position = Vector2(2, -2)
 [node name="SceneChanger" parent="Scenes" instance=ExtResource("30_alfp2")]
 position = Vector2(321, -35)
 destination = "4"
+location = "CorridorA"
 
 [node name="Destinations" type="Node2D" parent="Scenes"]
 

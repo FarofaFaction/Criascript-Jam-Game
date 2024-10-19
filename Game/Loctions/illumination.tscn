@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://btibrxj46tnno"]
 
-[ext_resource type="Script" path="res://Game/Loctions/PlayerRoom/illumination.gd" id="1_an70h"]
+[ext_resource type="Script" path="res://Game/Loctions/Room/illumination.gd" id="1_an70h"]
 [ext_resource type="Texture2D" uid="uid://grx8jyxat1kd" path="res://Objects/light/light.png" id="2_7ad20"]
 [ext_resource type="AudioStream" uid="uid://4v7vpuxnp7fm" path="res://Audio/Effects/swictch.wav" id="3_7slrq"]
 

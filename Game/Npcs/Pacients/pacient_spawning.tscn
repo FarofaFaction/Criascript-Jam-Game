@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c1d5max6as1qn"]
 
-[ext_resource type="Script" path="res://Game/Loctions/PlayerRoom/pacient_spawning.gd" id="1_ofoff"]
+[ext_resource type="Script" path="res://Game/Loctions/Room/pacient_spawning.gd" id="1_ofoff"]
 
 [node name="PacientSpawning" type="Node" node_paths=PackedStringArray("positions_to_go", "positions_to_sleep")]
 script = ExtResource("1_ofoff")

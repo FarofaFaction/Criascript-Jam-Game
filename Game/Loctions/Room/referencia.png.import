@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://m2uxd2ca7yc0"
-path="res://.godot/imported/comodo cortina.png-8f7575b0abd58a0119d8e45cffb6f2b7.ctex"
+uid="uid://db5l4k1cjw0f6"
+path="res://.godot/imported/referencia.png-f7db21d70f6ff21f5c7b1229d733d690.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Loctions/CommonRoom/comodo cortina.png"
-dest_files=["res://.godot/imported/comodo cortina.png-8f7575b0abd58a0119d8e45cffb6f2b7.ctex"]
+source_file="res://Game/Loctions/Room/referencia.png"
+dest_files=["res://.godot/imported/referencia.png-f7db21d70f6ff21f5c7b1229d733d690.ctex"]
 
 [params]
 

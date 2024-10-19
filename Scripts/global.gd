@@ -12,13 +12,18 @@ func _ready() -> void:
 	_init_audio()
 	pass # Replace with function body.
 
+const Art := "res://Game/Loctions/AsylumLocations/Arte/ArtRoom.tscn"
+const Extern := "res://Game/Loctions/AsylumLocations/Externa/ExternRoom.tscn"
+const Refeitorio := "res://Game/Loctions/AsylumLocations/Refeitorio/RefeitorioRoom.tscn"
 const Safe := "res://Game/Loctions/SafeRoom/SafeRoom.tscn"
 const Alone := "res://Game/Loctions/LonelinessRoom/LonelinessRoom.tscn"
-const Room := "res://Game/Loctions/CommonRoom/CommomRoom.tscn"
 const Loading := "res://Interface/Transition/Loading.tscn"
 const MenuMenu := "res://Interface/Menu/menu.tscn"
-const Corridor := "res://Game/Loctions/Corridor2D/Corridor2D.tscn"
-const Game := "res://Game/Loctions/PlayerRoom/PlayerRoom.tscn"
+const CorridorA := "res://Game/Loctions/Corridors/CorridorA/CorridorA.tscn"
+const CorridorB := "res://Game/Loctions/Corridors/CorridorB/CorridorB.tscn"
+const CorridorC := "res://Game/Loctions/Corridors/CorridorC/CorridorC.tscn"
+const CorridorD := "res://Game/Loctions/Corridors/CorridorD/CorridorD.tscn"
+const Room := "res://Game/Loctions/Room/Room.tscn"
 var current_scene: String
 var current_destination : String
 #const ss := str(1)
@@ -31,16 +36,28 @@ func change_scene(scene: String, cutscene : bool = false):
 	if (scene == "Menu"):
 		GlobalTimer.stop()
 		current_scene = MenuMenu
-	elif (scene == "Game"):
-		current_scene = Game
 	elif (scene == "Room"):
 		current_scene = Room
-	elif (scene == "Corridor"):
-		current_scene = Corridor
+	elif (scene == "Room"):
+		current_scene = Room
+	elif (scene == "CorridorA"):
+		current_scene = CorridorA
+	elif (scene == "CorridorB"):
+		current_scene = CorridorB
+	elif (scene == "CorridorC"):
+		current_scene = CorridorC
+	elif (scene == "CorridorD"):
+		current_scene = CorridorD
 	elif (scene == "Alone"):
 		current_scene = Alone
 	elif (scene == "Safe"):
 		current_scene = Safe
+	elif (scene == "Art"):
+		current_scene ="Art"
+	elif (scene == "Extern"):
+		current_scene ="Extern"
+	elif (scene == "Refeitorio"):
+		current_scene ="Refeitorio"
 	else:
 		return
 	if player && player is PlayerClass:

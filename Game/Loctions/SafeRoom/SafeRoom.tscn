@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://d2d1asq2fkvsq" path="res://Interface/PlayerInterface/player_interface.tscn" id="6_vpgg4"]
 [ext_resource type="PackedScene" uid="uid://bjsa2mrlybrr3" path="res://Shaders/portrait_shader.tscn" id="7_useb4"]
 [ext_resource type="PackedScene" uid="uid://cpe4chlg5q0t2" path="res://Game/scene_changer.tscn" id="8_v61rd"]
-[ext_resource type="Script" path="res://Game/Loctions/Corridor2D/local_teleporter.gd" id="9_tmdl1"]
+[ext_resource type="Script" path="res://Game/Loctions/Corridors/CorridorA/local_teleporter.gd" id="9_tmdl1"]
 [ext_resource type="Script" path="res://Scripts/interactible_area.gd" id="10_02wwv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jgknn"]
@@ -287,6 +287,7 @@ grow_vertical = 2
 [node name="SceneChanger4" parent="Scenes" instance=ExtResource("8_v61rd")]
 position = Vector2(-177, -24)
 destination = "6"
+location = "CorridorA"
 
 [node name="LocalTeleporter" type="Node2D" parent="Scenes" node_paths=PackedStringArray("player", "mark1", "mark2", "markUp", "markDown", "timer", "animation_player")]
 script = ExtResource("9_tmdl1")

@@ -9,7 +9,7 @@ func _process(_delta: float) -> void:
 	pass
 
 func _on_init_pressed() -> void:
-	Global.change_scene("Corridor", true)
+	Global.change_scene("CorridorA", true)
 	pass # Replace with function body.
 
 func _on_config_pressed() -> void:
