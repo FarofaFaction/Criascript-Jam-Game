@@ -128,7 +128,7 @@ text = "A
 horizontal_alignment = 1
 
 [node name="Weed" parent="Items" instance=ExtResource("4_85dmo")]
-position = Vector2(-121, 12)
+position = Vector2(-178, 115)
 
 [node name="OrganizadosPorY" type="Node2D" parent="."]
 z_index = 1
