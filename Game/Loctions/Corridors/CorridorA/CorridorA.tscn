@@ -6,13 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://7sspjh77o6vm" path="res://Game/Player/player.tscn" id="2_m7p8g"]
 [ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="5_8ejuo"]
 [ext_resource type="PackedScene" uid="uid://cxpyp7yoxaixr" path="res://Objects/room_clock.tscn" id="5_em62a"]
-[ext_resource type="Script" path="res://Objects/SanityVisualizer/sanity_visualizer.gd" id="6_j2anm"]
 [ext_resource type="PackedScene" uid="uid://d2d1asq2fkvsq" path="res://Interface/PlayerInterface/player_interface.tscn" id="8_yoneu"]
 [ext_resource type="PackedScene" uid="uid://bjsa2mrlybrr3" path="res://Shaders/portrait_shader.tscn" id="9_qbdjy"]
 [ext_resource type="PackedScene" uid="uid://cpe4chlg5q0t2" path="res://Game/scene_changer.tscn" id="10_5sj7v"]
 [ext_resource type="Script" path="res://Game/Loctions/Corridors/CorridorA/local_teleporter.gd" id="11_s8mvb"]
 [ext_resource type="PackedScene" uid="uid://dhf0u4kshnwol" path="res://Objects/Items/pickable_item.tscn" id="12_ak1qa"]
 [ext_resource type="Script" path="res://Scripts/interactible_area.gd" id="12_i7lkc"]
+[ext_resource type="PackedScene" uid="uid://b0okojf7u2xo2" path="res://Objects/SanityVisualizer/sanity_visualizer.tscn" id="12_ji1ls"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ujkmg"]
 size = Vector2(2552, 58)
@@ -440,13 +440,12 @@ position = Vector2(42, 2)
 [node name="6" type="Marker2D" parent="Scenes/Destination"]
 position = Vector2(81, 4)
 
-[node name="SanityVisualizer" type="Node2D" parent="." node_paths=PackedStringArray("list_of_nodes")]
-script = ExtResource("6_j2anm")
+[node name="SanityVisualizer" parent="." node_paths=PackedStringArray("list_of_nodes") instance=ExtResource("12_ji1ls")]
 list_of_nodes = [NodePath("../Items/CorridorSimbols/1"), NodePath("../Items/CorridorSimbols/2"), NodePath("../Items/CorridorSimbols/3"), NodePath("../Items/CorridorSimbols/4"), NodePath("../Items/CorridorSimbols/Floor"), NodePath("../Key")]
 
 [node name="Key" parent="." instance=ExtResource("12_ak1qa")]
 position = Vector2(-298, -11)
-just_one_intance = false
+item_id = "GenericKeyA"
 
 [connection signal="timeout" from="Scenes/LocalTeleporter/Timer" to="Scenes/LocalTeleporter" method="_on_Timer_timeout"]
 

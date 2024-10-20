@@ -47,6 +47,7 @@ func Interaction():
 			if it.item_type == "Key":
 				locked = false
 				GameStatus.DoorsOppened.append(door_id)
+				$AudioStreamPlayer2D.play()
 				it.remove_item()
 		return
 	#GameStatus.pl

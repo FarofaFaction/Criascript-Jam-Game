@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://du7q1qtnnvjcy"]
+[gd_scene load_steps=62 format=3 uid="uid://du7q1qtnnvjcy"]
 
 [ext_resource type="Script" path="res://Game/Loctions/AsylumLocations/Arte/art_room.gd" id="1_ytyyg"]
 [ext_resource type="PackedScene" uid="uid://d2d1asq2fkvsq" path="res://Interface/PlayerInterface/player_interface.tscn" id="2_8i1mv"]
@@ -13,14 +13,26 @@
 [ext_resource type="PackedScene" uid="uid://dgcblttt1ehsp" path="res://Game/Loctions/AsylumLocations/Externa/objetos_xadrez.tscn" id="10_3diaf"]
 [ext_resource type="PackedScene" uid="uid://c1d5max6as1qn" path="res://Game/Npcs/Pacients/pacient_spawning.tscn" id="10_i7pvu"]
 [ext_resource type="Theme" uid="uid://bi5atlkw4djab" path="res://Dialog/Styles/Style.tres" id="10_iagwu"]
+[ext_resource type="Script" path="res://Game/Npcs/Pacients/pacient.gd" id="10_n8rp6"]
 [ext_resource type="AudioStream" uid="uid://cprvuc2smhmqe" path="res://Audio/Effects/515798__ben_0815__murmur.wav" id="11_djps2"]
 [ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="11_ufry0"]
 [ext_resource type="Texture2D" uid="uid://bb7hu7q2rmpmy" path="res://Sprites/Sprites mundo/area externa/caixa de truco.png" id="12_81rc7"]
 [ext_resource type="PackedScene" uid="uid://cpe4chlg5q0t2" path="res://Game/scene_changer.tscn" id="12_ax4fq"]
 [ext_resource type="Texture2D" uid="uid://bnocvgs4yabqu" path="res://Sprites/Sprites mundo/area externa/cexta de basquete direita.png" id="13_rjs3q"]
+[ext_resource type="PackedScene" uid="uid://2skcpejdtcma" path="res://Game/Npcs/npc_steps.tscn" id="15_gbe3y"]
 [ext_resource type="PackedScene" uid="uid://dsi4m4d18k833" path="res://Game/Loctions/AsylumLocations/Externa/truco.tscn" id="15_lx3yt"]
 [ext_resource type="Texture2D" uid="uid://e3xpa2jolde4" path="res://Sprites/Sprites mundo/area externa/sexta de basquete esquerda.png" id="15_q56qv"]
 [ext_resource type="PackedScene" uid="uid://6fw6kl4t5n7x" path="res://Objects/interactible_area.tscn" id="16_uy6gr"]
+[ext_resource type="Texture2D" uid="uid://bv04l8emn75qh" path="res://Game/Npcs/Doctor/doctor-idle.png" id="16_vx5cf"]
+[ext_resource type="Texture2D" uid="uid://b6pq5blreewrk" path="res://Game/Npcs/Doctor/doctor-runing.png" id="17_suyey"]
+[ext_resource type="Texture2D" uid="uid://dgq2m1cnwgbv" path="res://Game/Player/idle.png" id="18_fi0fj"]
+[ext_resource type="Texture2D" uid="uid://ji8y8qki3vcm" path="res://Game/Player/run.png" id="19_djmhl"]
+[ext_resource type="PackedScene" uid="uid://bqjg53nmro3w" path="res://Objects/Shadow/animated_shadow.tscn" id="20_l3t0i"]
+[ext_resource type="Script" path="res://Game/state_machine.gd" id="21_wd1q6"]
+[ext_resource type="Script" path="res://Game/Npcs/Pacients/pacientIdle.gd" id="22_1h2tf"]
+[ext_resource type="Script" path="res://Game/Npcs/Pacients/pacient_await.gd" id="29_rpnw4"]
+[ext_resource type="Script" path="res://Game/Npcs/Pacients/pacientWalkIn.gd" id="30_0yha6"]
+[ext_resource type="Script" path="res://Game/Npcs/Pacients/pacientWalkout.gd" id="31_7mb67"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s34ym"]
 load_path = "res://.godot/imported/light.png-8fdf09ef7de5c29c73dfe94c1c1879f5.ctex"
@@ -34,10 +46,154 @@ size = Vector2(35, 875)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ogs2a"]
 size = Vector2(35, 797.875)
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nteog"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_8ubhu"]
+radius = 129.557
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_318iq"]
+radius = 16.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4r2b"]
+atlas = ExtResource("16_vx5cf")
+region = Rect2(0, 0, 17, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpig7"]
+atlas = ExtResource("16_vx5cf")
+region = Rect2(17, 0, 17, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bip1j"]
+atlas = ExtResource("16_vx5cf")
+region = Rect2(34, 0, 17, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxqat"]
+atlas = ExtResource("16_vx5cf")
+region = Rect2(51, 0, 17, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0necr"]
+atlas = ExtResource("17_suyey")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_so6gb"]
+atlas = ExtResource("17_suyey")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0dfs1"]
+atlas = ExtResource("17_suyey")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jutk4"]
+atlas = ExtResource("17_suyey")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsx66"]
+atlas = ExtResource("18_fi0fj")
+region = Rect2(1, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_880vf"]
+atlas = ExtResource("18_fi0fj")
+region = Rect2(18, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yjrqb"]
+atlas = ExtResource("18_fi0fj")
+region = Rect2(35, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55uco"]
+atlas = ExtResource("18_fi0fj")
+region = Rect2(52, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ye423"]
+atlas = ExtResource("19_djmhl")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyfos"]
+atlas = ExtResource("19_djmhl")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1j1xw"]
+atlas = ExtResource("19_djmhl")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84bky"]
+atlas = ExtResource("19_djmhl")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_amjbx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g4r2b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fpig7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bip1j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vxqat")
+}],
+"loop": true,
+"name": &"DoctorIdle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0necr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_so6gb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0dfs1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jutk4")
+}],
+"loop": true,
+"name": &"DoctorRun",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rsx66")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_880vf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yjrqb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55uco")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ye423")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pyfos")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1j1xw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84bky")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_odx0j"]
+size = Vector2(16, 6.5)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_wganc"]
 light_mode = 1
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mqcgn"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ib2g"]
 bg_color = Color(0, 0, 0, 1)
 border_width_left = 5
 border_width_top = 5
@@ -216,6 +372,78 @@ awaking = false
 [node name="Pacients" type="Node2D" parent="OrganizadosPorY/Personagens"]
 y_sort_enabled = true
 
+[node name="Desafiante" type="CharacterBody2D" parent="OrganizadosPorY/Personagens" node_paths=PackedStringArray("stepsAudioPlayer", "DetectionArea", "SelfArea", "animationPlayer") groups=["Npc"]]
+y_sort_enabled = true
+position = Vector2(269, 100)
+collision_layer = 0
+collision_mask = 2
+motion_mode = 1
+script = ExtResource("10_n8rp6")
+stepsAudioPlayer = NodePath("Addons/Sounds/NpcSteps")
+DetectionArea = NodePath("DetectionArea")
+SelfArea = NodePath("SelfArea")
+animationPlayer = NodePath("Sprite")
+
+[node name="Addons" type="Node2D" parent="OrganizadosPorY/Personagens/Desafiante"]
+
+[node name="Sounds" type="Node2D" parent="OrganizadosPorY/Personagens/Desafiante/Addons"]
+
+[node name="NpcSteps" parent="OrganizadosPorY/Personagens/Desafiante/Addons/Sounds" instance=ExtResource("15_gbe3y")]
+
+[node name="DetectionArea" type="Area2D" parent="OrganizadosPorY/Personagens/Desafiante"]
+collision_layer = 0
+collision_mask = 2147483648
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OrganizadosPorY/Personagens/Desafiante/DetectionArea"]
+shape = SubResource("CircleShape2D_8ubhu")
+
+[node name="SelfArea" type="Area2D" parent="OrganizadosPorY/Personagens/Desafiante"]
+collision_layer = 2
+collision_mask = 2147483650
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OrganizadosPorY/Personagens/Desafiante/SelfArea"]
+position = Vector2(0, 12)
+shape = SubResource("CircleShape2D_318iq")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="OrganizadosPorY/Personagens/Desafiante"]
+sprite_frames = SubResource("SpriteFrames_amjbx")
+animation = &"Run"
+autoplay = "Idle"
+
+[node name="AnimatedShadow" parent="OrganizadosPorY/Personagens/Desafiante/Sprite" instance=ExtResource("20_l3t0i")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OrganizadosPorY/Personagens/Desafiante"]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_odx0j")
+
+[node name="State Machine" type="Node" parent="OrganizadosPorY/Personagens/Desafiante" node_paths=PackedStringArray("initial_state")]
+script = ExtResource("21_wd1q6")
+initial_state = NodePath("PacientWalkIn")
+
+[node name="PacientIdle" type="Node" parent="OrganizadosPorY/Personagens/Desafiante/State Machine" node_paths=PackedStringArray("pacient")]
+script = ExtResource("22_1h2tf")
+pacient = NodePath("../..")
+
+[node name="InteractibleArea" parent="OrganizadosPorY/Personagens/Desafiante/State Machine/PacientIdle" node_paths=PackedStringArray("moving_parent") instance=ExtResource("16_uy6gr")]
+moving_parent = NodePath("../../..")
+
+[node name="PacientAwait" type="Node" parent="OrganizadosPorY/Personagens/Desafiante/State Machine" node_paths=PackedStringArray("pacient")]
+script = ExtResource("29_rpnw4")
+pacient = NodePath("../..")
+
+[node name="PacientWalkIn" type="Node" parent="OrganizadosPorY/Personagens/Desafiante/State Machine" node_paths=PackedStringArray("pacient", "navigation_agent")]
+script = ExtResource("30_0yha6")
+pacient = NodePath("../..")
+navigation_agent = NodePath("../../NavigationAgent2D")
+
+[node name="PacientWalkout" type="Node" parent="OrganizadosPorY/Personagens/Desafiante/State Machine" node_paths=PackedStringArray("pacient", "navigation_agent")]
+script = ExtResource("31_7mb67")
+pacient = NodePath("../..")
+navigation_agent = NodePath("../../NavigationAgent2D")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="OrganizadosPorY/Personagens/Desafiante"]
+simplify_path = true
+
 [node name="Objects" type="Node2D" parent="OrganizadosPorY"]
 y_sort_enabled = true
 position = Vector2(8, -4)
@@ -238,14 +466,14 @@ scale = Vector2(0.3, 0.3)
 
 [node name="Label" type="Label" parent="OrganizadosPorY/Objects/CestasBasquete/CestaDireita/Node2D"]
 visible = false
-material = SubResource("CanvasItemMaterial_nteog")
+material = SubResource("CanvasItemMaterial_wganc")
 offset_left = -120.0
 offset_top = -76.6667
 offset_right = 118.0
 offset_bottom = -53.6667
 theme = ExtResource("10_iagwu")
 theme_override_fonts/font = ExtResource("11_ufry0")
-theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3ib2g")
 text = "[E] Segurar/Soltar"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -275,14 +503,14 @@ scale = Vector2(0.3, 0.3)
 
 [node name="Label" type="Label" parent="OrganizadosPorY/Objects/CestasBasquete/CestaEsquerda/Node2D"]
 visible = false
-material = SubResource("CanvasItemMaterial_nteog")
+material = SubResource("CanvasItemMaterial_wganc")
 offset_left = -120.0
 offset_top = -76.6667
 offset_right = 118.0
 offset_bottom = -53.6667
 theme = ExtResource("10_iagwu")
 theme_override_fonts/font = ExtResource("11_ufry0")
-theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3ib2g")
 text = "[E] Segurar/Soltar"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -317,14 +545,14 @@ scale = Vector2(0.3, 0.3)
 
 [node name="Label" type="Label" parent="OrganizadosPorY/Objects/Truco/Truco2/Node2D"]
 visible = false
-material = SubResource("CanvasItemMaterial_nteog")
+material = SubResource("CanvasItemMaterial_wganc")
 offset_left = -120.0
 offset_top = -76.6667
 offset_right = 118.0
 offset_bottom = -53.6667
 theme = ExtResource("10_iagwu")
 theme_override_fonts/font = ExtResource("11_ufry0")
-theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3ib2g")
 text = "[E] Segurar/Soltar"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -351,14 +579,14 @@ scale = Vector2(0.3, 0.3)
 
 [node name="Label" type="Label" parent="OrganizadosPorY/Objects/Truco/Truco3/Node2D"]
 visible = false
-material = SubResource("CanvasItemMaterial_nteog")
+material = SubResource("CanvasItemMaterial_wganc")
 offset_left = -120.0
 offset_top = -76.6667
 offset_right = 118.0
 offset_bottom = -53.6667
 theme = ExtResource("10_iagwu")
 theme_override_fonts/font = ExtResource("11_ufry0")
-theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3ib2g")
 text = "[E] Segurar/Soltar"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -476,6 +704,8 @@ location = "CorridorA"
 
 [node name="1" type="Marker2D" parent="Scenes/Destinations"]
 position = Vector2(325, -18)
+
+[node name="Minigame" type="Node2D" parent="."]
 
 [editable path="EnemySpawning"]
 [editable path="PacientSpawning"]

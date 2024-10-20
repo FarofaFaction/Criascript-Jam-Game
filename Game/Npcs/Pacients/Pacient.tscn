@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://cjvpi1hnypje3"]
+[gd_scene load_steps=41 format=3 uid="uid://cjvpi1hnypje3"]
 
 [ext_resource type="Script" path="res://Game/Npcs/Pacients/pacient.gd" id="1_36pr4"]
 [ext_resource type="Theme" uid="uid://bi5atlkw4djab" path="res://Dialog/Styles/Style.tres" id="2_8qkel"]
@@ -14,11 +14,6 @@
 [ext_resource type="Script" path="res://Game/state_machine.gd" id="7_c6glj"]
 [ext_resource type="Script" path="res://Game/Npcs/Pacients/pacientIdle.gd" id="8_2oksb"]
 [ext_resource type="PackedScene" uid="uid://6fw6kl4t5n7x" path="res://Objects/interactible_area.tscn" id="9_0jkyh"]
-[ext_resource type="Script" path="res://Dialog/DialogClass/dialog_class.gd" id="10_2ffu2"]
-[ext_resource type="Script" path="res://Dialog/DialogClass/speak_class.gd" id="11_syx6f"]
-[ext_resource type="Texture2D" uid="uid://de0dxq4ujoxsc" path="res://Dialog/Characters/Doctor/DoctorPortrait.jpg" id="12_yno7m"]
-[ext_resource type="PackedScene" uid="uid://baklw2eb62qgd" path="res://Dialog/DialogMenuClass/DialogMenu.tscn" id="13_6mhgf"]
-[ext_resource type="Script" path="res://Game/Npcs/Doctor/Dialogo/OpDialogoComoPossoAjudar.gd" id="14_p6jkk"]
 [ext_resource type="Script" path="res://Game/Npcs/Pacients/pacient_await.gd" id="15_yaa3v"]
 [ext_resource type="Script" path="res://Game/Npcs/Pacients/pacientWalkIn.gd" id="16_1r688"]
 [ext_resource type="Script" path="res://Game/Npcs/Pacients/pacientWalkout.gd" id="17_5kojs"]
@@ -328,166 +323,6 @@ pacient = NodePath("../..")
 
 [node name="InteractibleArea" parent="State Machine/PacientIdle" node_paths=PackedStringArray("moving_parent") instance=ExtResource("9_0jkyh")]
 moving_parent = NodePath("../../..")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="State Machine/PacientIdle"]
-
-[node name="AskForPill" type="Control" parent="State Machine/PacientIdle/CanvasLayer"]
-visible = false
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("10_2ffu2")
-auto_start = false
-
-[node name="SpeakClass2" type="RichTextLabel" parent="State Machine/PacientIdle/CanvasLayer/AskForPill"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Bom dia dorminhoco"
-script = ExtResource("11_syx6f")
-texture = ExtResource("12_yno7m")
-speaker = "Doutor"
-
-[node name="SpeakClass3" type="RichTextLabel" parent="State Machine/PacientIdle/CanvasLayer/AskForPill"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Como foi sua noite ?"
-script = ExtResource("11_syx6f")
-texture = ExtResource("12_yno7m")
-speaker = "Doutor"
-
-[node name="DialogMenu" parent="State Machine/PacientIdle/CanvasLayer/AskForPill" node_paths=PackedStringArray("options_conection") instance=ExtResource("13_6mhgf")]
-visible = false
-layout_mode = 1
-options_conection = NodePath("OptionsTest")
-start_visible = false
-option_3_visible = false
-option_4_visible = false
-
-[node name="OptionsTest" type="Control" parent="State Machine/PacientIdle/CanvasLayer/AskForPill/DialogMenu"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("14_p6jkk")
-
-[node name="option1" type="Label" parent="State Machine/PacientIdle/CanvasLayer/AskForPill/DialogMenu/OptionsTest"]
-layout_mode = 0
-offset_top = 136.0
-offset_right = 40.0
-offset_bottom = 159.0
-text = "Dormi bem, obrigado pela preocupação"
-
-[node name="option2" type="Label" parent="State Machine/PacientIdle/CanvasLayer/AskForPill/DialogMenu/OptionsTest"]
-layout_mode = 0
-offset_top = 136.0
-offset_right = 40.0
-offset_bottom = 159.0
-text = "Na verdade, tive um sonho estranho"
-
-[node name="option3" type="Label" parent="State Machine/PacientIdle/CanvasLayer/AskForPill/DialogMenu/OptionsTest"]
-layout_mode = 0
-offset_top = 136.0
-offset_right = 40.0
-offset_bottom = 159.0
-text = "."
-
-[node name="option4" type="Label" parent="State Machine/PacientIdle/CanvasLayer/AskForPill/DialogMenu/OptionsTest"]
-layout_mode = 0
-offset_top = 136.0
-offset_right = 40.0
-offset_bottom = 159.0
-text = "Teste 1"
-
-[node name="SpeakClass4" type="RichTextLabel" parent="State Machine/PacientIdle/CanvasLayer/AskForPill"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Interessante"
-script = ExtResource("11_syx6f")
-texture = ExtResource("12_yno7m")
-speaker = "Doutor"
-
-[node name="SpeakClass5" type="RichTextLabel" parent="State Machine/PacientIdle/CanvasLayer/AskForPill"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Você tem gostado da sua rotina aqui no asilo??"
-script = ExtResource("11_syx6f")
-texture = ExtResource("12_yno7m")
-speaker = "Doutor"
-
-[node name="DialogMenu2" parent="State Machine/PacientIdle/CanvasLayer/AskForPill" node_paths=PackedStringArray("options_conection") instance=ExtResource("13_6mhgf")]
-visible = false
-layout_mode = 1
-options_conection = NodePath("OptionsTest")
-start_visible = false
-option_4_visible = false
-
-[node name="OptionsTest" type="Control" parent="State Machine/PacientIdle/CanvasLayer/AskForPill/DialogMenu2"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("14_p6jkk")
-
-[node name="option1" type="Label" parent="State Machine/PacientIdle/CanvasLayer/AskForPill/DialogMenu2/OptionsTest"]
-layout_mode = 0
-offset_top = 136.0
-offset_right = 40.0
-offset_bottom = 159.0
-text = "Sim, Estou acordando cedo 
-e fazendo exercícios que gosto"
-
-[node name="option2" type="Label" parent="State Machine/PacientIdle/CanvasLayer/AskForPill/DialogMenu2/OptionsTest"]
-layout_mode = 0
-offset_top = 136.0
-offset_right = 40.0
-offset_bottom = 159.0
-text = "Tenho tentado me organizar,
- mas sinto que não 
-vale a pena"
-
-[node name="option3" type="Label" parent="State Machine/PacientIdle/CanvasLayer/AskForPill/DialogMenu2/OptionsTest"]
-layout_mode = 0
-offset_top = 136.0
-offset_right = 40.0
-offset_bottom = 159.0
-text = "Ando um pouco confuso. 
-Às vezes, não sei se estou
- acordado ou sonhando."
-
-[node name="option4" type="Label" parent="State Machine/PacientIdle/CanvasLayer/AskForPill/DialogMenu2/OptionsTest"]
-layout_mode = 0
-offset_top = 136.0
-offset_right = 40.0
-offset_bottom = 159.0
-text = "Acho que estou melhor, 
-mas tenho dias em que 
-sinto que o tempo não
- passa direito."
 
 [node name="PacientAwait" type="Node" parent="State Machine" node_paths=PackedStringArray("pacient")]
 script = ExtResource("15_yaa3v")

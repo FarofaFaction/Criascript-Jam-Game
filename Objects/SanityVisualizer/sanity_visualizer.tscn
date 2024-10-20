@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0okojf7u2xo2"]
+
+[ext_resource type="Script" path="res://Objects/SanityVisualizer/sanity_visualizer.gd" id="1_8htp6"]
+
+[node name="SanityVisualizer" type="Node2D" node_paths=PackedStringArray("list_of_nodes")]
+script = ExtResource("1_8htp6")
+list_of_nodes = [NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath("")]

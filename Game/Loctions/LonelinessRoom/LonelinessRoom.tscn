@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b6kkups318bv"]
+[gd_scene load_steps=19 format=3 uid="uid://b6kkups318bv"]
 
 [ext_resource type="Script" path="res://Game/Loctions/LonelinessRoom/loneliness_room.gd" id="1_tjqyy"]
 [ext_resource type="AudioStream" uid="uid://dlxpad3bry0wj" path="res://Audio/Music/fundo_assustador.mp3" id="2_3lkqm"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cpe4chlg5q0t2" path="res://Game/scene_changer.tscn" id="9_jx77v"]
 [ext_resource type="Script" path="res://Game/Loctions/Corridors/CorridorA/local_teleporter.gd" id="10_wnsci"]
 [ext_resource type="Script" path="res://Scripts/interactible_area.gd" id="11_7kfyb"]
+[ext_resource type="PackedScene" uid="uid://b0okojf7u2xo2" path="res://Objects/SanityVisualizer/sanity_visualizer.tscn" id="12_jdob4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jgknn"]
 size = Vector2(115, 30)
@@ -129,6 +130,24 @@ horizontal_alignment = 1
 
 [node name="Weed" parent="Items" instance=ExtResource("4_85dmo")]
 position = Vector2(-180, 127)
+
+[node name="Weed2" parent="Items" instance=ExtResource("4_85dmo")]
+position = Vector2(-14, 85)
+
+[node name="Weed3" parent="Items" instance=ExtResource("4_85dmo")]
+position = Vector2(-395, 84)
+
+[node name="Weed4" parent="Items" instance=ExtResource("4_85dmo")]
+position = Vector2(-405, -162)
+
+[node name="Weed5" parent="Items" instance=ExtResource("4_85dmo")]
+position = Vector2(123, -179)
+
+[node name="Weed6" parent="Items" instance=ExtResource("4_85dmo")]
+position = Vector2(-52, 196)
+
+[node name="Weed7" parent="Items" instance=ExtResource("4_85dmo")]
+position = Vector2(-193, -179)
 
 [node name="OrganizadosPorY" type="Node2D" parent="."]
 z_index = 1
@@ -370,6 +389,9 @@ speed_scale = 2.0
 
 [node name="1" type="Marker2D" parent="Scenes/Destination"]
 position = Vector2(-173, 13)
+
+[node name="SanityVisualizer" parent="." node_paths=PackedStringArray("list_of_nodes") instance=ExtResource("12_jdob4")]
+list_of_nodes = [NodePath("../Items/Weed2"), NodePath("../Items/Weed3"), NodePath("../Items/Weed4"), NodePath("../Items/Weed5"), NodePath("../Items/Weed6"), NodePath("../Items/Weed7")]
 
 [connection signal="body_entered" from="Scenes/LocalTeleporter/Down" to="Scenes/LocalTeleporter" method="_on_down_body_entered"]
 [connection signal="body_entered" from="Scenes/LocalTeleporter/Up" to="Scenes/LocalTeleporter" method="_on_up_body_entered"]
