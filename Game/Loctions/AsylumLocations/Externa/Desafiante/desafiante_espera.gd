@@ -6,18 +6,21 @@ extends State
 func Enter():
 	if !pacient || !SpeakingArea:
 		return
-	SpeakingArea.monitoring = true
+	SpeakingArea.enable()
 	#pacient.visible = false
 
 func Exit():
 	if !pacient || !SpeakingArea:
 		return
-	SpeakingArea.monitoring = false
+	SpeakingArea.message.visible = false
+	SpeakingArea.disable()
 	pass
 
 func Update():
 	if !pacient:
 		return
+	if Dialogic.VAR.DesafianteExterna.PartidaComeçou:
+		Transitioned.emit(self, "ModoFutebol")
 	if GlobalTimer.time_passed(pacient.hour_to_sleep):
 		Transitioned.emit(self, "PacientWalkout")
 	pass
@@ -28,3 +31,6 @@ func Physics_Update():
 	pacient.velocity = Vector2.ZERO
 	pass
 	
+func Interaction():
+	Dialogic.start('timelineDesafio')
+	pass

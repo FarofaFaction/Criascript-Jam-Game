@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://du7q1qtnnvjcy"]
+[gd_scene load_steps=73 format=3 uid="uid://du7q1qtnnvjcy"]
 
 [ext_resource type="Script" path="res://Game/Loctions/AsylumLocations/Arte/art_room.gd" id="1_ytyyg"]
 [ext_resource type="PackedScene" uid="uid://d2d1asq2fkvsq" path="res://Interface/PlayerInterface/player_interface.tscn" id="2_8i1mv"]
@@ -18,6 +18,7 @@
 [ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="11_ufry0"]
 [ext_resource type="Texture2D" uid="uid://bb7hu7q2rmpmy" path="res://Sprites/Sprites mundo/area externa/caixa de truco.png" id="12_81rc7"]
 [ext_resource type="PackedScene" uid="uid://cpe4chlg5q0t2" path="res://Game/scene_changer.tscn" id="12_ax4fq"]
+[ext_resource type="Script" path="res://Game/Loctions/AsylumLocations/Externa/Desafiante/pe.gd" id="13_bw6d0"]
 [ext_resource type="Texture2D" uid="uid://bnocvgs4yabqu" path="res://Sprites/Sprites mundo/area externa/cexta de basquete direita.png" id="13_rjs3q"]
 [ext_resource type="PackedScene" uid="uid://2skcpejdtcma" path="res://Game/Npcs/npc_steps.tscn" id="15_gbe3y"]
 [ext_resource type="PackedScene" uid="uid://dsi4m4d18k833" path="res://Game/Loctions/AsylumLocations/Externa/truco.tscn" id="15_lx3yt"]
@@ -32,6 +33,9 @@
 [ext_resource type="Script" path="res://Game/Npcs/Pacients/pacientIdle.gd" id="22_1h2tf"]
 [ext_resource type="Script" path="res://Game/Loctions/AsylumLocations/Externa/Desafiante/desafiante_espera.gd" id="23_wqfvr"]
 [ext_resource type="PackedScene" uid="uid://cp5et8dq2pjvr" path="res://Game/text_ballon.tscn" id="24_5vbag"]
+[ext_resource type="Script" path="res://Game/Loctions/AsylumLocations/Externa/Desafiante/modo_futebol.gd" id="25_dvx4d"]
+[ext_resource type="Texture2D" uid="uid://dhgapj2hpqgss" path="res://Objects/bola_de_basquete.png" id="27_gvva6"]
+[ext_resource type="PackedScene" uid="uid://dhf0u4kshnwol" path="res://Objects/Items/pickable_item.tscn" id="28_m25cb"]
 [ext_resource type="Script" path="res://Game/Npcs/Pacients/pacient_await.gd" id="29_rpnw4"]
 [ext_resource type="Script" path="res://Game/Npcs/Pacients/pacientWalkIn.gd" id="30_0yha6"]
 [ext_resource type="Script" path="res://Game/Npcs/Pacients/pacientWalkout.gd" id="31_7mb67"]
@@ -47,6 +51,9 @@ size = Vector2(35, 875)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ogs2a"]
 size = Vector2(35, 797.875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_82gty"]
+size = Vector2(8, 24)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_flyke"]
 
@@ -194,6 +201,15 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_odx0j"]
 size = Vector2(16, 6.5)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_748qu"]
+radius = 7.07109
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a8cv6"]
+size = Vector2(20, 210)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xx5lv"]
+size = Vector2(20, 809.99)
+
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_wganc"]
 light_mode = 1
 
@@ -215,8 +231,11 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-30, -24, 585, -21, 706
 
 [node name="ExternRoom" type="Node2D"]
 script = ExtResource("1_ytyyg")
+debug = true
+debug_time_speed = 0.0
 
 [node name="PlayerInterface" parent="." instance=ExtResource("2_8i1mv")]
+visible = false
 
 [node name="Illumination" type="Node2D" parent="." node_paths=PackedStringArray("switchAudioPlayer", "ilumination_node", "BigLight", "SmallLight", "GlobalIllumination")]
 script = ExtResource("3_vj5fu")
@@ -369,14 +388,24 @@ y_sort_enabled = true
 y_sort_enabled = true
 
 [node name="Player" parent="OrganizadosPorY/Personagens" instance=ExtResource("8_t457x")]
-position = Vector2(635, 28)
+position = Vector2(530, 68)
 startAwake = false
+zoom = 5.0
 awaking = false
+
+[node name="PeDireito" type="Area2D" parent="OrganizadosPorY/Personagens/Player"]
+position = Vector2(-8, 11)
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("13_bw6d0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OrganizadosPorY/Personagens/Player/PeDireito"]
+shape = SubResource("RectangleShape2D_82gty")
 
 [node name="Pacients" type="Node2D" parent="OrganizadosPorY/Personagens"]
 y_sort_enabled = true
 
-[node name="Desafiante" type="CharacterBody2D" parent="OrganizadosPorY/Personagens" node_paths=PackedStringArray("stepsAudioPlayer", "DetectionArea", "SelfArea", "animationPlayer") groups=["Npc"]]
+[node name="Desafiante" type="CharacterBody2D" parent="OrganizadosPorY/Personagens" node_paths=PackedStringArray("stepsAudioPlayer", "exit_area", "target_area", "DetectionArea", "SelfArea", "animationPlayer") groups=["Npc"]]
 y_sort_enabled = true
 position = Vector2(269, 100)
 collision_layer = 0
@@ -384,6 +413,8 @@ collision_mask = 2
 motion_mode = 1
 script = ExtResource("10_n8rp6")
 stepsAudioPlayer = NodePath("Addons/Sounds/NpcSteps")
+exit_area = NodePath("../../../PacientSpawning/BedsTime/Marker2D")
+target_area = NodePath("State Machine/ModoFutebol/PosicionamentoDesafiante")
 DetectionArea = NodePath("DetectionArea")
 SelfArea = NodePath("SelfArea")
 animationPlayer = NodePath("Sprite")
@@ -414,6 +445,17 @@ grow_horizontal = 1
 grow_vertical = 1
 text = "[E] para falar"
 
+[node name="DesafianteAreadaBola" type="Node2D" parent="OrganizadosPorY/Personagens/Desafiante/Addons"]
+
+[node name="PeEsquerdo" type="Area2D" parent="OrganizadosPorY/Personagens/Desafiante/Addons/DesafianteAreadaBola"]
+position = Vector2(3, 13)
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("13_bw6d0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OrganizadosPorY/Personagens/Desafiante/Addons/DesafianteAreadaBola/PeEsquerdo"]
+shape = SubResource("RectangleShape2D_82gty")
+
 [node name="DetectionArea" type="Area2D" parent="OrganizadosPorY/Personagens/Desafiante"]
 collision_layer = 0
 collision_mask = 2147483648
@@ -442,7 +484,7 @@ shape = SubResource("RectangleShape2D_odx0j")
 
 [node name="State Machine" type="Node" parent="OrganizadosPorY/Personagens/Desafiante" node_paths=PackedStringArray("initial_state")]
 script = ExtResource("21_wd1q6")
-initial_state = NodePath("PacientWalkIn")
+initial_state = NodePath("DesafianteEspera")
 
 [node name="PacientIdle" type="Node" parent="OrganizadosPorY/Personagens/Desafiante/State Machine" node_paths=PackedStringArray("pacient")]
 script = ExtResource("22_1h2tf")
@@ -473,6 +515,75 @@ SpeakingArea = NodePath("DesafianteArea")
 [node name="DesafianteArea" parent="OrganizadosPorY/Personagens/Desafiante/State Machine/DesafianteEspera" node_paths=PackedStringArray("message", "moving_parent") instance=ExtResource("16_uy6gr")]
 message = NodePath("../../../Addons/DesafianteSpeakTextSize/Textpanel/DesafianteBaloon")
 moving_parent = NodePath("../../..")
+
+[node name="ModoFutebol" type="Node" parent="OrganizadosPorY/Personagens/Desafiante/State Machine" node_paths=PackedStringArray("key", "Bola", "pacient", "startBolaPosition", "navigation_agent")]
+script = ExtResource("25_dvx4d")
+key = NodePath("Key")
+Bola = NodePath("Bola")
+pacient = NodePath("../..")
+startBolaPosition = NodePath("InicioBola")
+navigation_agent = NodePath("../../NavigationAgent2D")
+
+[node name="Bola" type="Area2D" parent="OrganizadosPorY/Personagens/Desafiante/State Machine/ModoFutebol"]
+visible = false
+position = Vector2(258, 114)
+rotation = -1.55878
+collision_layer = 536870916
+collision_mask = 536870916
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OrganizadosPorY/Personagens/Desafiante/State Machine/ModoFutebol/Bola"]
+shape = SubResource("CircleShape2D_748qu")
+
+[node name="Sprite2D" type="Sprite2D" parent="OrganizadosPorY/Personagens/Desafiante/State Machine/ModoFutebol/Bola"]
+texture = ExtResource("27_gvva6")
+
+[node name="GolEsquerdo" type="Area2D" parent="OrganizadosPorY/Personagens/Desafiante/State Machine/ModoFutebol"]
+position = Vector2(19, 112)
+rotation = 0.144796
+collision_layer = 536870912
+collision_mask = 536870912
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OrganizadosPorY/Personagens/Desafiante/State Machine/ModoFutebol/GolEsquerdo"]
+shape = SubResource("RectangleShape2D_a8cv6")
+
+[node name="GolDireito" type="Area2D" parent="OrganizadosPorY/Personagens/Desafiante/State Machine/ModoFutebol"]
+position = Vector2(496, 111)
+rotation = 2.9815
+collision_layer = 536870912
+collision_mask = 536870912
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OrganizadosPorY/Personagens/Desafiante/State Machine/ModoFutebol/GolDireito"]
+shape = SubResource("RectangleShape2D_a8cv6")
+
+[node name="BarreiraEmCima" type="Area2D" parent="OrganizadosPorY/Personagens/Desafiante/State Machine/ModoFutebol"]
+position = Vector2(128, 11)
+rotation = -1.56224
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OrganizadosPorY/Personagens/Desafiante/State Machine/ModoFutebol/BarreiraEmCima"]
+position = Vector2(-0.966889, 86.0178)
+shape = SubResource("RectangleShape2D_xx5lv")
+
+[node name="BarreiraEmBaixo" type="Area2D" parent="OrganizadosPorY/Personagens/Desafiante/State Machine/ModoFutebol"]
+position = Vector2(104, 216)
+rotation = 4.7244
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OrganizadosPorY/Personagens/Desafiante/State Machine/ModoFutebol/BarreiraEmBaixo"]
+position = Vector2(-0.966889, 86.0178)
+shape = SubResource("RectangleShape2D_xx5lv")
+
+[node name="InicioBola" type="Marker2D" parent="OrganizadosPorY/Personagens/Desafiante/State Machine/ModoFutebol"]
+position = Vector2(257, 114)
+
+[node name="Key" parent="OrganizadosPorY/Personagens/Desafiante/State Machine/ModoFutebol" instance=ExtResource("28_m25cb")]
+position = Vector2(250, 109)
+item_id = "GenericKeyBola"
+
+[node name="PosicionamentoDesafiante" type="Marker2D" parent="OrganizadosPorY/Personagens/Desafiante/State Machine/ModoFutebol"]
+position = Vector2(55, 103)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="OrganizadosPorY/Personagens/Desafiante"]
 simplify_path = true
@@ -739,6 +850,13 @@ location = "CorridorA"
 position = Vector2(325, -18)
 
 [node name="Minigame" type="Node2D" parent="."]
+
+[connection signal="area_entered" from="OrganizadosPorY/Personagens/Player/PeDireito" to="OrganizadosPorY/Personagens/Desafiante/State Machine/ModoFutebol" method="_on_pe_direito_area_entered"]
+[connection signal="area_entered" from="OrganizadosPorY/Personagens/Desafiante/Addons/DesafianteAreadaBola/PeEsquerdo" to="OrganizadosPorY/Personagens/Desafiante/State Machine/ModoFutebol" method="_on_pe_esquerdo_area_entered"]
+[connection signal="area_entered" from="OrganizadosPorY/Personagens/Desafiante/State Machine/ModoFutebol/GolEsquerdo" to="OrganizadosPorY/Personagens/Desafiante/State Machine/ModoFutebol" method="_on_gol_esquerdo_area_entered"]
+[connection signal="area_entered" from="OrganizadosPorY/Personagens/Desafiante/State Machine/ModoFutebol/GolDireito" to="OrganizadosPorY/Personagens/Desafiante/State Machine/ModoFutebol" method="_on_gol_direito_area_entered"]
+[connection signal="area_entered" from="OrganizadosPorY/Personagens/Desafiante/State Machine/ModoFutebol/BarreiraEmCima" to="OrganizadosPorY/Personagens/Desafiante/State Machine/ModoFutebol" method="_on_barreira_em_cima_area_entered"]
+[connection signal="area_entered" from="OrganizadosPorY/Personagens/Desafiante/State Machine/ModoFutebol/BarreiraEmBaixo" to="OrganizadosPorY/Personagens/Desafiante/State Machine/ModoFutebol" method="_on_barreira_em_baixo_area_entered"]
 
 [editable path="EnemySpawning"]
 [editable path="PacientSpawning"]

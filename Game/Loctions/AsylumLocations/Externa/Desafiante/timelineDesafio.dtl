@@ -1,0 +1,23 @@
+[background scene="res://Dialog/Characters/Character-portraits/PlayerPortrat.tscn" fade="0.5"]
+if {DesafianteExterna.Venceu} == true:
+	desafiante: Quero revanche, vamos ?
+	jump Escolha
+	[end_timeline]
+if {DesafianteExterna.QuisJogar} == true:
+	desafiante: Ta afim de perder outra vez ?
+	jump Escolha
+	[end_timeline]
+desafiante: Quer jogar futebol comigo ?
+[background scene="res://Dialog/Characters/Character-portraits/PlayerPortrat.tscn" fade="0.5"]
+character: Mas estamos numa quadra de basquete
+[background scene="res://Dialog/Characters/Character-portraits/PlayerPortrat.tscn" fade="0.5"]
+desafiante: Tanto faz, quer ou não?
+label Escolha
+- Vamos jogar "Futebol"
+	set {DesafianteExterna.QuisJogar} = true
+	set {DesafianteExterna.PartidaComeçou} = true
+	desafiante: Vamos então
+	[end_timeline]
+- Não quero
+desafiante: Fodase, agora que ja esta aqui na quadra, vai jogar jogar do mesmo jeito!
+set {DesafianteExterna.PartidaComeçou} = true

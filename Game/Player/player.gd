@@ -54,9 +54,6 @@ func _ready() -> void:
 	Global.player = self
 	PlayerDied.connect(on_player_died)
 	Sanity = GameStatus.PlayerSanity
-	if camera:
-		camera.zoom.x = zoom
-		camera.zoom.y = zoom
 	# Initialize heartbeat audio player
 	
 	heartbeat_audio_player = AudioStreamPlayer2D.new()
@@ -70,6 +67,9 @@ func _ready() -> void:
 		current_state = PlayerState.NORMAL
 
 func _physics_process(_delta: float) -> void:
+	#if camera:
+		#camera.zoom.x = zoom
+		#camera.zoom.y = zoom
 	if current_state == PlayerState.DIE:
 		_dyng()
 		return
@@ -110,7 +110,7 @@ func _awaking():
 func _set_movement_input():
 	_input_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	_is_running = Input.is_action_pressed("Run")
-	Sprite.flip_h = _input_direction.x < 0
+	Sprite.flip_h = _input_direction.x <= 0
 
 func _normal_movement():
 	if _is_running and _can_run:
@@ -181,3 +181,9 @@ func cure_damage(cure: float):
 func on_player_died():
 	DieAudioPlayer.play()
 	current_state = PlayerState.DIE
+
+#func _process(delta: float) -> void:
+	#if camera:
+		#camera.zoom.x = zoom
+		#camera.zoom.y = zoom
+	#pass

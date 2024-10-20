@@ -32,9 +32,11 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 directories/dch_directory={
 "Doctor": "res://Dialog/Characters/Doctor/Doctor.dch",
-"character": "res://Dialog/Characters/Character/character.dch"
+"character": "res://Dialog/Characters/Character/character.dch",
+"desafiante": "res://Dialog/Characters/Desafiante/desafiante.dch"
 }
 directories/dtl_directory={
+"timelineDesafio": "res://Game/Loctions/AsylumLocations/Externa/Desafiante/timelineDesafio.dtl",
 "timeline_test": "res://Dialog/Dialogic/Timelines/timeline_test.dtl"
 }
 layout/style_list=["res://Dialog/Dialogic/Style/premade.tres"]
@@ -72,7 +74,13 @@ translation/intern/file_mode=1
 translation/intern/translation_folder="res://Localization/Dialogic"
 translation/id_counter=24
 translation/locales=["en", "pt_BR"]
-variables={}
+variables={
+"DesafianteExterna": {
+"PartidaComeçou": false,
+"QuisJogar": false,
+"Venceu": false
+}
+}
 
 [display]
 
@@ -188,6 +196,7 @@ locale/test="en"
 [layer_names]
 
 2d_render/layer_20="Criaturas"
+2d_physics/layer_30="Bola"
 
 [physics]
 

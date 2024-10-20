@@ -1,6 +1,7 @@
 extends Area2D
 class_name InteractibleArea
 
+@export var enabled := true
 @export var messagePanel : Panel
 @export var message: Label
 @export var moving_parent: Node
@@ -19,15 +20,21 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	if !enabled:
+		return
 	_interaction_controler()
 	pass
 
 func _physics_process(_delta: float) -> void:
+	if !enabled:
+		return
 	if moving_parent:
 		self.global_position = moving_parent.global_position
 	pass
 
 func _interaction_controler():
+	if !enabled:
+		return
 	if !_player || !_interactible:
 		return
 	if _player._died:
@@ -39,13 +46,15 @@ func _interaction_controler():
 	pass
 
 func _player_entered(area) -> void:
+	if !enabled:
+		return
 	var node = area.get_parent()
 	if !node:
 		return
 	if node is not PlayerClass:
 		return
 	if message:
-		print("oK")
+		print(enabled)
 		message.visible = true
 	if messagePanel:
 		messagePanel.visible = true
@@ -53,6 +62,8 @@ func _player_entered(area) -> void:
 	pass # Replace with function body.
 
 func _player_exited(area) -> void:
+	if !enabled:
+		return
 	var node = area.get_parent()
 	if !node || node != _player:
 		return
@@ -70,4 +81,11 @@ func show_message():
 
 func hide_message():
 	message.visible = false
+	pass
+
+func enable():
+	enabled = true
+	pass
+func disable():
+	enabled = false
 	pass
