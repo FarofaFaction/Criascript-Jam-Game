@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://cuds6ay2py5wr"]
+
+[ext_resource type="Theme" uid="uid://bi5atlkw4djab" path="res://Dialog/Styles/Style.tres" id="1_aif3x"]
+[ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="2_ai71g"]
+[ext_resource type="Texture2D" uid="uid://cnenkhy55rum" path="res://Sprites/Sprites mundo/area externa/banco direito.png" id="3_tp3jb"]
+[ext_resource type="PackedScene" uid="uid://6fw6kl4t5n7x" path="res://Objects/interactible_area.tscn" id="4_s6x8x"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nteog"]
+light_mode = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mqcgn"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s3cjc"]
+size = Vector2(16, 11)
+
+[node name="Cadeira1" type="RigidBody2D"]
+position = Vector2(638, 147)
+collision_layer = 2
+collision_mask = 2
+mass = 10.0
+lock_rotation = true
+metadata/_edit_group_ = true
+
+[node name="Node2D" type="Node2D" parent="."]
+scale = Vector2(0.3, 0.3)
+
+[node name="Label" type="Label" parent="Node2D"]
+visible = false
+material = SubResource("CanvasItemMaterial_nteog")
+offset_left = -120.0
+offset_top = -76.6667
+offset_right = 118.0
+offset_bottom = -53.6667
+theme = ExtResource("1_aif3x")
+theme_override_fonts/font = ExtResource("2_ai71g")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "[E] Segurar/Soltar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_s3cjc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_tp3jb")
+
+[node name="InteractibleArea" parent="." instance=ExtResource("4_s6x8x")]

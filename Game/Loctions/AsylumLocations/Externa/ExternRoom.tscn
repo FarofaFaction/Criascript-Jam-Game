@@ -53,8 +53,10 @@ vertices = PackedVector2Array(728.023, 271.969, -28.1406, 270.031, 47.7813, -28.
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 0, 3, 5)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(40, -38, 490, -41, 531, -55, 739, -52, 738, 282, -41, 280)])
 
-[node name="ArtRoom" type="Node2D"]
+[node name="ExternRoom" type="Node2D"]
 script = ExtResource("1_ytyyg")
+debug = true
+debug_time_speed = 0.0
 
 [node name="PlayerInterface" parent="." instance=ExtResource("2_8i1mv")]
 visible = false

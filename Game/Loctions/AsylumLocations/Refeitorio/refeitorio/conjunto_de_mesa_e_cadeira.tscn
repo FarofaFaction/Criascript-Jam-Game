@@ -1,0 +1,72 @@
+[gd_scene load_steps=9 format=3 uid="uid://cbxurlbetdr64"]
+
+[ext_resource type="PackedScene" uid="uid://cuds6ay2py5wr" path="res://Game/Loctions/AsylumLocations/Externa/cadeira_1.tscn" id="1_5jdmf"]
+[ext_resource type="Theme" uid="uid://bi5atlkw4djab" path="res://Dialog/Styles/Style.tres" id="2_1nsgs"]
+[ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="3_ebfgs"]
+[ext_resource type="Texture2D" uid="uid://cwjrrl26k68u4" path="res://Game/Loctions/AsylumLocations/Refeitorio/refeitorio/mesa.png" id="4_8u7o8"]
+[ext_resource type="PackedScene" uid="uid://6fw6kl4t5n7x" path="res://Objects/interactible_area.tscn" id="5_iaw7q"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nteog"]
+light_mode = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mqcgn"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3yt1y"]
+size = Vector2(104, 11)
+
+[node name="ConjuntoDeMesaECadeira" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Cadeira1" parent="." instance=ExtResource("1_5jdmf")]
+position = Vector2(235, 210)
+
+[node name="Cadeira2" parent="." instance=ExtResource("1_5jdmf")]
+position = Vector2(250, 210)
+
+[node name="Cadeira3" parent="." instance=ExtResource("1_5jdmf")]
+position = Vector2(279, 212)
+
+[node name="Cadeira4" parent="." instance=ExtResource("1_5jdmf")]
+position = Vector2(295, 211)
+
+[node name="Mesa" type="RigidBody2D" parent="."]
+position = Vector2(268, 194)
+collision_layer = 2
+collision_mask = 2
+mass = 10.0
+lock_rotation = true
+metadata/_edit_group_ = true
+
+[node name="Node2D" type="Node2D" parent="Mesa"]
+scale = Vector2(0.3, 0.3)
+
+[node name="Label" type="Label" parent="Mesa/Node2D"]
+visible = false
+material = SubResource("CanvasItemMaterial_nteog")
+offset_left = -120.0
+offset_top = -76.6667
+offset_right = 118.0
+offset_bottom = -53.6667
+theme = ExtResource("2_1nsgs")
+theme_override_fonts/font = ExtResource("3_ebfgs")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "[E] Segurar/Soltar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mesa"]
+position = Vector2(0, 10.5)
+shape = SubResource("RectangleShape2D_3yt1y")
+
+[node name="Sprite2D" type="Sprite2D" parent="Mesa"]
+position = Vector2(0, 4)
+texture = ExtResource("4_8u7o8")
+
+[node name="InteractibleArea" parent="Mesa" instance=ExtResource("5_iaw7q")]
+position = Vector2(0, 4)
