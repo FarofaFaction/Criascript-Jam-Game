@@ -7,16 +7,16 @@
 [ext_resource type="AudioStream" uid="uid://4v7vpuxnp7fm" path="res://Audio/Effects/swictch.wav" id="5_p0hnh"]
 [ext_resource type="Texture2D" uid="uid://bckfbim7v1vtg" path="res://Sprites/Sprites mundo/area arte/Area arte.png" id="6_pc1ed"]
 [ext_resource type="PackedScene" uid="uid://cxpyp7yoxaixr" path="res://Objects/room_clock.tscn" id="7_mad67"]
-[ext_resource type="Texture2D" uid="uid://bajckolo8y6cy" path="res://Game/Loctions/AsylumLocations/Arte/area arte/Estante.png" id="7_u8x7q"]
+[ext_resource type="Texture2D" uid="uid://bajckolo8y6cy" path="res://Sprites/Sprites mundo/area arte/Estante.png" id="7_u8x7q"]
 [ext_resource type="Texture2D" uid="uid://c3nlc0y4hmaiy" path="res://Sprites/Sprites mundo/portas/porta 1.png" id="9_uxk0l"]
 [ext_resource type="Theme" uid="uid://bi5atlkw4djab" path="res://Dialog/Styles/Style.tres" id="11_twxya"]
 [ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="12_6vqdj"]
-[ext_resource type="Texture2D" uid="uid://bfqmojulmweoe" path="res://Game/Loctions/AsylumLocations/Arte/area arte/mesas com coisas.png" id="13_jsphl"]
+[ext_resource type="Texture2D" uid="uid://bfqmojulmweoe" path="res://Sprites/Sprites mundo/area arte/mesas com coisas.png" id="13_jsphl"]
 [ext_resource type="PackedScene" uid="uid://6fw6kl4t5n7x" path="res://Objects/interactible_area.tscn" id="14_7wt0p"]
-[ext_resource type="Texture2D" uid="uid://dwqyxhc31odgq" path="res://Game/Loctions/AsylumLocations/Arte/area arte/lixo com papel colorido.png" id="15_c4tpn"]
-[ext_resource type="Texture2D" uid="uid://byi3mwsu7pumo" path="res://Game/Loctions/AsylumLocations/Arte/area arte/tela de pintura pequena.png" id="16_e0ajv"]
-[ext_resource type="Texture2D" uid="uid://c7typnja6eef8" path="res://Game/Loctions/AsylumLocations/Arte/area arte/tela de pintura virada.png" id="17_ymd2q"]
-[ext_resource type="Texture2D" uid="uid://d0pdbdu5sagcl" path="res://Game/Loctions/AsylumLocations/Arte/area arte/tela de pintura grande.png" id="18_f4evs"]
+[ext_resource type="Texture2D" uid="uid://dwqyxhc31odgq" path="res://Sprites/Sprites mundo/area arte/lixo com papel colorido.png" id="15_c4tpn"]
+[ext_resource type="Texture2D" uid="uid://byi3mwsu7pumo" path="res://Sprites/Sprites mundo/area arte/tela de pintura pequena.png" id="16_e0ajv"]
+[ext_resource type="Texture2D" uid="uid://c7typnja6eef8" path="res://Sprites/Sprites mundo/area arte/tela de pintura virada.png" id="17_ymd2q"]
+[ext_resource type="Texture2D" uid="uid://d0pdbdu5sagcl" path="res://Sprites/Sprites mundo/area arte/tela de pintura grande.png" id="18_f4evs"]
 [ext_resource type="PackedScene" uid="uid://7sspjh77o6vm" path="res://Game/Player/player.tscn" id="27_6kv8p"]
 [ext_resource type="PackedScene" uid="uid://yje2v65lwodi" path="res://Game/Enemy/enemy_spawning.tscn" id="30_rwj6c"]
 [ext_resource type="PackedScene" uid="uid://c1d5max6as1qn" path="res://Game/Npcs/Pacients/pacient_spawning.tscn" id="31_h7315"]
@@ -155,6 +155,7 @@ texture = ExtResource("7_u8x7q")
 [node name="Pegadas" type="Node2D" parent="BackgroundCenario"]
 
 [node name="RoomClock" parent="BackgroundCenario" instance=ExtResource("7_mad67")]
+visible = false
 position = Vector2(248, -12)
 
 [node name="Door" type="Node2D" parent="BackgroundCenario"]
@@ -171,7 +172,7 @@ y_sort_enabled = true
 y_sort_enabled = true
 
 [node name="Player" parent="OrganizadosPorY/Personagens" instance=ExtResource("27_6kv8p")]
-position = Vector2(343, 118)
+position = Vector2(280, 43)
 startAwake = false
 awaking = false
 

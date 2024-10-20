@@ -210,7 +210,7 @@ y_sort_enabled = true
 y_sort_enabled = true
 
 [node name="Player" parent="OrganizadosPorY/Personagens" instance=ExtResource("8_t457x")]
-position = Vector2(613, 149)
+position = Vector2(635, 28)
 startAwake = false
 awaking = false
 
@@ -400,6 +400,21 @@ spawn_node = NodePath("../OrganizadosPorY/Personagens/Pacients")
 [node name="Marker2D" parent="PacientSpawning" index="0"]
 position = Vector2(100, 20)
 
+[node name="Marker2D2" parent="PacientSpawning" index="1"]
+position = Vector2(365, 182)
+
+[node name="Marker2D3" parent="PacientSpawning" index="2"]
+position = Vector2(248, 112)
+
+[node name="Marker2D" parent="PacientSpawning/BedsTime" index="0"]
+position = Vector2(641, 36)
+
+[node name="Marker2D2" parent="PacientSpawning/BedsTime" index="1"]
+position = Vector2(1531, 319)
+
+[node name="Marker2D3" parent="PacientSpawning/BedsTime" index="2"]
+position = Vector2(1606, 381)
+
 [node name="Marker2D4" type="Marker2D" parent="PacientSpawning"]
 position = Vector2(561, 158)
 
@@ -411,21 +426,6 @@ position = Vector2(100, 20)
 
 [node name="Marker2D7" type="Marker2D" parent="PacientSpawning"]
 position = Vector2(100, 20)
-
-[node name="Marker2D2" parent="PacientSpawning" index="5"]
-position = Vector2(365, 182)
-
-[node name="Marker2D3" parent="PacientSpawning" index="6"]
-position = Vector2(248, 112)
-
-[node name="Marker2D" parent="PacientSpawning/BedsTime" index="0"]
-position = Vector2(641, 36)
-
-[node name="Marker2D2" parent="PacientSpawning/BedsTime" index="1"]
-position = Vector2(1531, 319)
-
-[node name="Marker2D3" parent="PacientSpawning/BedsTime" index="2"]
-position = Vector2(1606, 381)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="PacientSpawning"]
 position = Vector2(357, 42)
