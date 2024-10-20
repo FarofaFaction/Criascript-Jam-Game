@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://du7q1qtnnvjcy"]
+[gd_scene load_steps=65 format=3 uid="uid://du7q1qtnnvjcy"]
 
 [ext_resource type="Script" path="res://Game/Loctions/AsylumLocations/Arte/art_room.gd" id="1_ytyyg"]
 [ext_resource type="PackedScene" uid="uid://d2d1asq2fkvsq" path="res://Interface/PlayerInterface/player_interface.tscn" id="2_8i1mv"]
@@ -30,6 +30,8 @@
 [ext_resource type="PackedScene" uid="uid://bqjg53nmro3w" path="res://Objects/Shadow/animated_shadow.tscn" id="20_l3t0i"]
 [ext_resource type="Script" path="res://Game/state_machine.gd" id="21_wd1q6"]
 [ext_resource type="Script" path="res://Game/Npcs/Pacients/pacientIdle.gd" id="22_1h2tf"]
+[ext_resource type="Script" path="res://Game/Loctions/AsylumLocations/Externa/Desafiante/desafiante_espera.gd" id="23_wqfvr"]
+[ext_resource type="PackedScene" uid="uid://cp5et8dq2pjvr" path="res://Game/text_ballon.tscn" id="24_5vbag"]
 [ext_resource type="Script" path="res://Game/Npcs/Pacients/pacient_await.gd" id="29_rpnw4"]
 [ext_resource type="Script" path="res://Game/Npcs/Pacients/pacientWalkIn.gd" id="30_0yha6"]
 [ext_resource type="Script" path="res://Game/Npcs/Pacients/pacientWalkout.gd" id="31_7mb67"]
@@ -45,6 +47,8 @@ size = Vector2(35, 875)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ogs2a"]
 size = Vector2(35, 797.875)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_flyke"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8ubhu"]
 radius = 129.557
@@ -390,6 +394,26 @@ animationPlayer = NodePath("Sprite")
 
 [node name="NpcSteps" parent="OrganizadosPorY/Personagens/Desafiante/Addons/Sounds" instance=ExtResource("15_gbe3y")]
 
+[node name="DesafianteSpeakTextSize" type="Node2D" parent="OrganizadosPorY/Personagens/Desafiante/Addons"]
+position = Vector2(-25, -26)
+scale = Vector2(0.3, 0.3)
+
+[node name="Textpanel" type="Panel" parent="OrganizadosPorY/Personagens/Desafiante/Addons/DesafianteSpeakTextSize"]
+offset_right = 113.0
+offset_bottom = 31.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_flyke")
+
+[node name="DesafianteBaloon" parent="OrganizadosPorY/Personagens/Desafiante/Addons/DesafianteSpeakTextSize/Textpanel" instance=ExtResource("24_5vbag")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 1
+grow_vertical = 1
+text = "[E] para falar"
+
 [node name="DetectionArea" type="Area2D" parent="OrganizadosPorY/Personagens/Desafiante"]
 collision_layer = 0
 collision_mask = 2147483648
@@ -440,6 +464,15 @@ navigation_agent = NodePath("../../NavigationAgent2D")
 script = ExtResource("31_7mb67")
 pacient = NodePath("../..")
 navigation_agent = NodePath("../../NavigationAgent2D")
+
+[node name="DesafianteEspera" type="Node" parent="OrganizadosPorY/Personagens/Desafiante/State Machine" node_paths=PackedStringArray("pacient", "SpeakingArea")]
+script = ExtResource("23_wqfvr")
+pacient = NodePath("../..")
+SpeakingArea = NodePath("DesafianteArea")
+
+[node name="DesafianteArea" parent="OrganizadosPorY/Personagens/Desafiante/State Machine/DesafianteEspera" node_paths=PackedStringArray("message", "moving_parent") instance=ExtResource("16_uy6gr")]
+message = NodePath("../../../Addons/DesafianteSpeakTextSize/Textpanel/DesafianteBaloon")
+moving_parent = NodePath("../../..")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="OrganizadosPorY/Personagens/Desafiante"]
 simplify_path = true

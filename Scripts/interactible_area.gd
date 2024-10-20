@@ -45,10 +45,10 @@ func _player_entered(area) -> void:
 	if node is not PlayerClass:
 		return
 	if message:
+		print("oK")
 		message.visible = true
 	if messagePanel:
 		messagePanel.visible = true
-	#print("Player entered on interctible area")
 	_player = node
 	pass # Replace with function body.
 
