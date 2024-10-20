@@ -77,7 +77,6 @@ stream = ExtResource("5_b5sxc")
 [node name="BackgroundCenario" type="Node2D" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="BackgroundCenario"]
-visible = false
 offset_left = -1462.0
 offset_top = -668.0
 offset_right = 1502.0

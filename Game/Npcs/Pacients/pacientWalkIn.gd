@@ -31,7 +31,7 @@ func Physics_Update():
 	
 	var target_position = pacient.target_area.global_position
 
-	if pacient.global_position.distance_to(target_position) > 30:
+	if pacient.global_position.distance_to(target_position) > 35:
 		navigation_agent.set_target_position(target_position)
 		var next_point = navigation_agent.get_next_path_position()
 		if next_point:

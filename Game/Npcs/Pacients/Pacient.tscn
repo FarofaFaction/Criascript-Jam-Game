@@ -230,12 +230,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="WhiteBorder" parent="Addons/Phrases/CurrentPhrase/SacaledTextBallon/Textpanel/TextBallon" node_paths=PackedStringArray("reference") instance=ExtResource("4_2oe1v")]
+visible = true
 show_behind_parent = true
 layout_mode = 0
 offset_left = -2.0
 offset_top = -2.0
-offset_right = 116.0
-offset_bottom = 34.0
+offset_right = 229.0
+offset_bottom = 26.0
 reference = NodePath("..")
 border = 5
 

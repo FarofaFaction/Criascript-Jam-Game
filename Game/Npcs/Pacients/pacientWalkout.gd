@@ -31,7 +31,7 @@ func Physics_Update():
 	# Obter a posição alvo e calcular um deslocamento aleatório
 	var target_position = pacient.exit_area.global_position
 	# Verifique a distância até a posição alvo
-	if pacient.global_position.distance_to(target_position) > 40:
+	if pacient.global_position.distance_to(target_position) > 15:
 		navigation_agent.set_target_position(target_position)
 		var next_point = navigation_agent.get_next_path_position()
 		if next_point:

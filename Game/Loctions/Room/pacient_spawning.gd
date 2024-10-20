@@ -13,50 +13,55 @@ var murmur_ok := false
 var pacientScene := preload("res://Game/Npcs/Pacients/Pacient.tscn")
 var pacientsSpawned := false
 
-# Called when the pacient enters the scene tree for the first time.
+# Função para verificar se a hora atual está no intervalo permitido
+func is_within_active_hours() -> bool:
+	# Verifica se estamos entre o horário de spawn_time e hour_to_sleep
+	return GlobalTimer.time_passed(spawn_time) and not GlobalTimer.time_passed(hour_to_sleep)
+
 func _ready() -> void:
 	set_process(false)
 	await get_tree().create_timer(1).timeout
-	#print(str(GlobalTimer.hours) + " " + str(GlobalTimer.minutes))
-	#print(GlobalTimer.time_passed(spawn_time))
-	if GlobalTimer.time_passed(hour_to_sleep) || GlobalTimer.time_not_passed(spawn_time):
-		#pacientsSpawned = true
-		set_process(true)
-		return
-	if GlobalTimer.time_passed(spawn_time):
+	
+	# Só inicia o processamento se estiver dentro do horário válido
+	if is_within_active_hours():
 		_spawn_pacients_on_midle_day()
 		pacientsSpawned = true
+	
 	set_process(true)
 	pass
 
 func control_murmur():
-	#print(murmur_ok)
 	if !murmurAudioPlayer:
 		return
-	if GlobalTimer.hours >= spawn_time.x and GlobalTimer.minutes >= spawn_time.y:
-		murmur_ok = true
-	if murmur_ok:
-		if !murmurAudioPlayer.playing:
-			if first_murmur:
-				murmurAudioPlayer.volume_db = -40
-			murmurAudioPlayer.play()
-			if first_murmur:
-				var tween = create_tween()
-				tween.tween_property(murmurAudioPlayer, "volume_db", 0, 5)
-				first_murmur = false
-	if GlobalTimer.hours >= time_to_stop_murmur.x and GlobalTimer.minutes >= time_to_stop_murmur.y:
-		first_murmur = true
-		var tween = create_tween()
-		tween.tween_property(murmurAudioPlayer, "volume_db", -40, 5)
-		await  tween.finished
-		murmurAudioPlayer.stop()
-		murmur_ok = false
+	
+	# Só realiza controle do murmúrio se estiver no horário permitido
+	if is_within_active_hours():
+		if GlobalTimer.hours >= spawn_time.x and GlobalTimer.minutes >= spawn_time.y:
+			murmur_ok = true
+		if murmur_ok:
+			if !murmurAudioPlayer.playing:
+				if first_murmur:
+					murmurAudioPlayer.volume_db = -40
+				murmurAudioPlayer.play()
+				if first_murmur:
+					var tween = create_tween()
+					tween.tween_property(murmurAudioPlayer, "volume_db", 0, 5)
+					first_murmur = false
+		if GlobalTimer.hours >= time_to_stop_murmur.x and GlobalTimer.minutes >= time_to_stop_murmur.y:
+			first_murmur = true
+			var tween = create_tween()
+			tween.tween_property(murmurAudioPlayer, "volume_db", -40, 5)
+			await tween.finished
+			murmurAudioPlayer.stop()
+			murmur_ok = false
 	pass
 
 func _process(_delta: float) -> void:
-	control_pacients_spawning()
-	control_murmur()
-
+	# Só processa os pacientes e murmúrio se estiver no horário permitido
+	if is_within_active_hours():
+		control_pacients_spawning()
+		control_murmur()
+	pass
 
 func control_pacients_spawning():
 	if !spawn_node:
@@ -64,13 +69,14 @@ func control_pacients_spawning():
 	# Reseta o array pacientsSpawned à meia-noite
 	if GlobalTimer.hours == 0 and GlobalTimer.minutes >= 0:
 		pacientsSpawned = false
-	if 	pacientsSpawned:
+	if pacientsSpawned:
 		return
-	if GlobalTimer.hours >= spawn_time.x and GlobalTimer.minutes >= spawn_time.y:
+	
+	# Só faz o spawn se estiver dentro do horário permitido
+	if is_within_active_hours():
 		_spawn_pacients()
 		pacientsSpawned = true
 	pass
-
 
 func _spawn_pacients():
 	for i in range(number_of_patients):
@@ -94,8 +100,6 @@ func _spawn_pacients():
 		var randT := randf_range(0.0,1.5)
 		await get_tree().create_timer(randT).timeout
 		spawn_node.add_child(pacient)
-
-
 
 func _spawn_pacients_on_midle_day():
 	for i in range(number_of_patients):

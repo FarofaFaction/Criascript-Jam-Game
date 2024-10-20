@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b4s8hurqwpqky"]
+[gd_scene load_steps=35 format=3 uid="uid://b4s8hurqwpqky"]
 
 [ext_resource type="Script" path="res://Game/Loctions/AsylumLocations/Arte/art_room.gd" id="1_b6j8p"]
 [ext_resource type="PackedScene" uid="uid://d2d1asq2fkvsq" path="res://Interface/PlayerInterface/player_interface.tscn" id="2_6gpul"]
@@ -7,6 +7,16 @@
 [ext_resource type="AudioStream" uid="uid://4v7vpuxnp7fm" path="res://Audio/Effects/swictch.wav" id="5_p0hnh"]
 [ext_resource type="Texture2D" uid="uid://bckfbim7v1vtg" path="res://Sprites/Sprites mundo/area arte/Area arte.png" id="6_pc1ed"]
 [ext_resource type="PackedScene" uid="uid://cxpyp7yoxaixr" path="res://Objects/room_clock.tscn" id="7_mad67"]
+[ext_resource type="Texture2D" uid="uid://bajckolo8y6cy" path="res://Game/Loctions/AsylumLocations/Arte/area arte/Estante.png" id="7_u8x7q"]
+[ext_resource type="Texture2D" uid="uid://c3nlc0y4hmaiy" path="res://Sprites/Sprites mundo/portas/porta 1.png" id="9_uxk0l"]
+[ext_resource type="Theme" uid="uid://bi5atlkw4djab" path="res://Dialog/Styles/Style.tres" id="11_twxya"]
+[ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="12_6vqdj"]
+[ext_resource type="Texture2D" uid="uid://bfqmojulmweoe" path="res://Game/Loctions/AsylumLocations/Arte/area arte/mesas com coisas.png" id="13_jsphl"]
+[ext_resource type="PackedScene" uid="uid://6fw6kl4t5n7x" path="res://Objects/interactible_area.tscn" id="14_7wt0p"]
+[ext_resource type="Texture2D" uid="uid://dwqyxhc31odgq" path="res://Game/Loctions/AsylumLocations/Arte/area arte/lixo com papel colorido.png" id="15_c4tpn"]
+[ext_resource type="Texture2D" uid="uid://byi3mwsu7pumo" path="res://Game/Loctions/AsylumLocations/Arte/area arte/tela de pintura pequena.png" id="16_e0ajv"]
+[ext_resource type="Texture2D" uid="uid://c7typnja6eef8" path="res://Game/Loctions/AsylumLocations/Arte/area arte/tela de pintura virada.png" id="17_ymd2q"]
+[ext_resource type="Texture2D" uid="uid://d0pdbdu5sagcl" path="res://Game/Loctions/AsylumLocations/Arte/area arte/tela de pintura grande.png" id="18_f4evs"]
 [ext_resource type="PackedScene" uid="uid://7sspjh77o6vm" path="res://Game/Player/player.tscn" id="27_6kv8p"]
 [ext_resource type="PackedScene" uid="uid://yje2v65lwodi" path="res://Game/Enemy/enemy_spawning.tscn" id="30_rwj6c"]
 [ext_resource type="PackedScene" uid="uid://c1d5max6as1qn" path="res://Game/Npcs/Pacients/pacient_spawning.tscn" id="31_h7315"]
@@ -25,14 +35,41 @@ size = Vector2(35, 875)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ogs2a"]
 size = Vector2(35, 643.75)
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nteog"]
+light_mode = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mqcgn"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eevwk"]
+size = Vector2(44, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s3cjc"]
+size = Vector2(21, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tek50"]
+size = Vector2(14, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g02ms"]
+size = Vector2(17, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y34k5"]
+size = Vector2(43, 10)
+
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_q05t7"]
-vertices = PackedVector2Array(728.023, 271.969, -28.1406, 270.031, 47.7813, -28.0469, 491.688, -31.0078, 728.969, -42.1406, 532.57, -44.9688)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 0, 3, 5)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(40, -38, 490, -41, 531, -55, 739, -52, 738, 282, -41, 280)])
+vertices = PackedVector2Array(617.07, 59.9766, 617.922, 177.008, 65.9219, 177.977, 65.0703, 59.0078)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(55, 49, 627, 50, 628, 187, 56, 188)])
 
 [node name="ArtRoom" type="Node2D"]
 script = ExtResource("1_b6j8p")
-metadata/_edit_group_ = true
+debug = true
+debug_init_time = Vector2(5, 0)
 
 [node name="PlayerInterface" parent="." instance=ExtResource("2_6gpul")]
 visible = false
@@ -76,7 +113,6 @@ stream = ExtResource("5_p0hnh")
 [node name="BackgroundCenario" type="Node2D" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="BackgroundCenario"]
-visible = false
 offset_left = -1462.0
 offset_top = -668.0
 offset_right = 1502.0
@@ -112,11 +148,20 @@ shape = SubResource("RectangleShape2D_ogs2a")
 position = Vector2(341, 68)
 texture = ExtResource("6_pc1ed")
 
+[node name="Mapa2" type="Sprite2D" parent="BackgroundCenario/Fundo"]
+position = Vector2(480, 26)
+texture = ExtResource("7_u8x7q")
+
 [node name="Pegadas" type="Node2D" parent="BackgroundCenario"]
 
 [node name="RoomClock" parent="BackgroundCenario" instance=ExtResource("7_mad67")]
-visible = false
-position = Vector2(293, -83)
+position = Vector2(248, -12)
+
+[node name="Door" type="Node2D" parent="BackgroundCenario"]
+position = Vector2(281, 30)
+
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundCenario/Door"]
+texture = ExtResource("9_uxk0l")
 
 [node name="OrganizadosPorY" type="Node2D" parent="."]
 z_index = 1
@@ -137,67 +182,285 @@ y_sort_enabled = true
 y_sort_enabled = true
 position = Vector2(8, -4)
 
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+[node name="Mesa" type="RigidBody2D" parent="OrganizadosPorY/Objects"]
+position = Vector2(434, 111)
+collision_layer = 2
+collision_mask = 2
+mass = 10.0
+lock_rotation = true
+metadata/_edit_group_ = true
+
+[node name="Node2D" type="Node2D" parent="OrganizadosPorY/Objects/Mesa"]
+scale = Vector2(0.3, 0.3)
+
+[node name="Label" type="Label" parent="OrganizadosPorY/Objects/Mesa/Node2D"]
 visible = false
+material = SubResource("CanvasItemMaterial_nteog")
+offset_left = -120.0
+offset_top = -76.6667
+offset_right = 118.0
+offset_bottom = -53.6667
+theme = ExtResource("11_twxya")
+theme_override_fonts/font = ExtResource("12_6vqdj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "[E] Segurar/Soltar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OrganizadosPorY/Objects/Mesa"]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_eevwk")
+
+[node name="Sprite2D" type="Sprite2D" parent="OrganizadosPorY/Objects/Mesa"]
+texture = ExtResource("13_jsphl")
+
+[node name="InteractibleArea" parent="OrganizadosPorY/Objects/Mesa" instance=ExtResource("14_7wt0p")]
+
+[node name="Lixeira" type="RigidBody2D" parent="OrganizadosPorY/Objects"]
+position = Vector2(539, 45)
+collision_layer = 2
+collision_mask = 2
+mass = 10.0
+lock_rotation = true
+metadata/_edit_group_ = true
+
+[node name="Node2D" type="Node2D" parent="OrganizadosPorY/Objects/Lixeira"]
+scale = Vector2(0.3, 0.3)
+
+[node name="Label" type="Label" parent="OrganizadosPorY/Objects/Lixeira/Node2D"]
+visible = false
+material = SubResource("CanvasItemMaterial_nteog")
+offset_left = -120.0
+offset_top = -76.6667
+offset_right = 118.0
+offset_bottom = -53.6667
+theme = ExtResource("11_twxya")
+theme_override_fonts/font = ExtResource("12_6vqdj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "[E] Segurar/Soltar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OrganizadosPorY/Objects/Lixeira"]
+position = Vector2(6.5, 8)
+shape = SubResource("RectangleShape2D_s3cjc")
+
+[node name="Sprite2D" type="Sprite2D" parent="OrganizadosPorY/Objects/Lixeira"]
+texture = ExtResource("15_c4tpn")
+
+[node name="InteractibleArea" parent="OrganizadosPorY/Objects/Lixeira" instance=ExtResource("14_7wt0p")]
+position = Vector2(7, -3)
+
+[node name="CavaleteFrente" type="RigidBody2D" parent="OrganizadosPorY/Objects"]
+position = Vector2(521, 79)
+collision_layer = 2
+collision_mask = 2
+mass = 10.0
+lock_rotation = true
+metadata/_edit_group_ = true
+
+[node name="Node2D" type="Node2D" parent="OrganizadosPorY/Objects/CavaleteFrente"]
+scale = Vector2(0.3, 0.3)
+
+[node name="Label" type="Label" parent="OrganizadosPorY/Objects/CavaleteFrente/Node2D"]
+visible = false
+material = SubResource("CanvasItemMaterial_nteog")
+offset_left = -120.0
+offset_top = -76.6667
+offset_right = 118.0
+offset_bottom = -53.6667
+theme = ExtResource("11_twxya")
+theme_override_fonts/font = ExtResource("12_6vqdj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "[E] Segurar/Soltar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OrganizadosPorY/Objects/CavaleteFrente"]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_tek50")
+
+[node name="Sprite2D" type="Sprite2D" parent="OrganizadosPorY/Objects/CavaleteFrente"]
+texture = ExtResource("16_e0ajv")
+
+[node name="InteractibleArea" parent="OrganizadosPorY/Objects/CavaleteFrente" instance=ExtResource("14_7wt0p")]
+position = Vector2(7, -3)
+
+[node name="CavaleteLado" type="RigidBody2D" parent="OrganizadosPorY/Objects"]
+position = Vector2(479, 73)
+collision_layer = 2
+collision_mask = 2
+mass = 10.0
+lock_rotation = true
+metadata/_edit_group_ = true
+
+[node name="Node2D" type="Node2D" parent="OrganizadosPorY/Objects/CavaleteLado"]
+scale = Vector2(0.3, 0.3)
+
+[node name="Label" type="Label" parent="OrganizadosPorY/Objects/CavaleteLado/Node2D"]
+visible = false
+material = SubResource("CanvasItemMaterial_nteog")
+offset_left = -120.0
+offset_top = -76.6667
+offset_right = 118.0
+offset_bottom = -53.6667
+theme = ExtResource("11_twxya")
+theme_override_fonts/font = ExtResource("12_6vqdj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "[E] Segurar/Soltar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OrganizadosPorY/Objects/CavaleteLado"]
+position = Vector2(0.5, 17)
+shape = SubResource("RectangleShape2D_g02ms")
+
+[node name="Sprite2D" type="Sprite2D" parent="OrganizadosPorY/Objects/CavaleteLado"]
+texture = ExtResource("17_ymd2q")
+
+[node name="InteractibleArea" parent="OrganizadosPorY/Objects/CavaleteLado" instance=ExtResource("14_7wt0p")]
+position = Vector2(7, -3)
+
+[node name="CavaleteGrande" type="RigidBody2D" parent="OrganizadosPorY/Objects"]
+position = Vector2(379, 74)
+collision_layer = 2
+collision_mask = 2
+mass = 10.0
+lock_rotation = true
+metadata/_edit_group_ = true
+
+[node name="Node2D" type="Node2D" parent="OrganizadosPorY/Objects/CavaleteGrande"]
+scale = Vector2(0.3, 0.3)
+
+[node name="Label" type="Label" parent="OrganizadosPorY/Objects/CavaleteGrande/Node2D"]
+visible = false
+material = SubResource("CanvasItemMaterial_nteog")
+offset_left = -120.0
+offset_top = -76.6667
+offset_right = 118.0
+offset_bottom = -53.6667
+theme = ExtResource("11_twxya")
+theme_override_fonts/font = ExtResource("12_6vqdj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "[E] Segurar/Soltar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OrganizadosPorY/Objects/CavaleteGrande"]
+position = Vector2(0.5, 11)
+shape = SubResource("RectangleShape2D_y34k5")
+
+[node name="Sprite2D" type="Sprite2D" parent="OrganizadosPorY/Objects/CavaleteGrande"]
+texture = ExtResource("18_f4evs")
+
+[node name="InteractibleArea" parent="OrganizadosPorY/Objects/CavaleteGrande" instance=ExtResource("14_7wt0p")]
+position = Vector2(7, -3)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(13, -37)
 navigation_polygon = SubResource("NavigationPolygon_q05t7")
 
 [node name="EnemySpawning" parent="." node_paths=PackedStringArray("pegadas_spawn_node", "spawn_node") instance=ExtResource("30_rwj6c")]
 pegadas_spawn_node = NodePath("../BackgroundCenario/Pegadas")
 spawn_node = NodePath("../OrganizadosPorY/Personagens")
+spawn_times = Array[Vector2]([Vector2(20, 0), Vector2(20, 30), Vector2(20, 0), Vector2(20, 0)])
 
-[node name="PacientSpawning" parent="." node_paths=PackedStringArray("murmurAudioPlayer", "spawn_node") instance=ExtResource("31_h7315")]
+[node name="Marker2D" parent="EnemySpawning" index="0"]
+position = Vector2(192, 72)
+
+[node name="Marker2D2" parent="EnemySpawning" index="1"]
+position = Vector2(239, 74)
+
+[node name="Marker2D3" parent="EnemySpawning" index="2"]
+position = Vector2(453, 73)
+
+[node name="PacientSpawning" parent="." node_paths=PackedStringArray("murmurAudioPlayer", "positions_to_go", "positions_to_sleep", "spawn_node") instance=ExtResource("31_h7315")]
 murmurAudioPlayer = NodePath("AudioStreamPlayer2D")
+positions_to_go = [NodePath("PointsToGo/Marker2D"), NodePath("PointsToGo/Marker2D2"), NodePath("PointsToGo/Marker2D3"), NodePath("PointsToGo/Marker2D4"), NodePath("PointsToGo/Marker2D5"), NodePath("PointsToGo/Marker2D6"), NodePath("PointsToGo/Marker2D7"), NodePath("PointsToGo/Marker2D8")]
+positions_to_sleep = [NodePath("Exit/Marker2D")]
 spawn_node = NodePath("../OrganizadosPorY/Personagens/Pacients")
+number_of_patients = 10
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="PacientSpawning"]
 position = Vector2(357, 42)
 stream = ExtResource("32_vgbxf")
 
-[node name="Border" type="Node2D" parent="."]
-visible = false
+[node name="PointsToGo" type="Node2D" parent="PacientSpawning"]
 
-[node name="ColorRect" type="ColorRect" parent="Border"]
-z_index = 1
-offset_left = 413.0
-offset_top = 266.0
-offset_right = 801.0
-offset_bottom = 387.0
-color = Color(0, 0, 0, 1)
+[node name="Marker2D" type="Marker2D" parent="PacientSpawning/PointsToGo"]
+position = Vector2(132, 69)
+
+[node name="Marker2D2" type="Marker2D" parent="PacientSpawning/PointsToGo"]
+position = Vector2(155, 119)
+
+[node name="Marker2D3" type="Marker2D" parent="PacientSpawning/PointsToGo"]
+position = Vector2(116, 147)
+
+[node name="Marker2D4" type="Marker2D" parent="PacientSpawning/PointsToGo"]
+position = Vector2(257, 157)
+
+[node name="Marker2D5" type="Marker2D" parent="PacientSpawning/PointsToGo"]
+position = Vector2(412, 152)
+
+[node name="Marker2D6" type="Marker2D" parent="PacientSpawning/PointsToGo"]
+position = Vector2(487, 146)
+
+[node name="Marker2D7" type="Marker2D" parent="PacientSpawning/PointsToGo"]
+position = Vector2(570, 158)
+
+[node name="Marker2D8" type="Marker2D" parent="PacientSpawning/PointsToGo"]
+position = Vector2(583, 97)
+
+[node name="Exit" type="Node2D" parent="PacientSpawning"]
+
+[node name="Marker2D" type="Marker2D" parent="PacientSpawning/Exit"]
+position = Vector2(282, 43)
+
+[node name="Border" type="Node2D" parent="."]
 
 [node name="ColorRect4" type="ColorRect" parent="Border"]
 z_index = 1
-offset_left = -308.0
+offset_left = -424.0
 offset_top = -196.0
-offset_right = -56.0
+offset_right = 60.0
 offset_bottom = 347.0
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="Border"]
 z_index = 1
-offset_left = -118.0
-offset_top = 271.0
-offset_right = 805.0
-offset_bottom = 392.0
+offset_left = -385.0
+offset_top = -283.0
+offset_right = 986.0
+offset_bottom = -52.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="Border"]
+z_index = 1
+offset_left = -389.0
+offset_top = 181.0
+offset_right = 982.0
+offset_bottom = 412.0
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect3" type="ColorRect" parent="Border"]
 z_index = 1
-offset_left = 738.0
-offset_top = -188.0
-offset_right = 990.0
-offset_bottom = 355.0
+offset_left = 622.0
+offset_top = -174.0
+offset_right = 1012.0
+offset_bottom = 369.0
 color = Color(0, 0, 0, 1)
 
 [node name="Scenes" type="Node2D" parent="."]
-visible = false
 position = Vector2(2, -2)
 
 [node name="SceneChanger" parent="Scenes" instance=ExtResource("34_cn12h")]
-position = Vector2(321, -35)
+position = Vector2(277, 40)
 destination = "4"
 location = "CorridorA"
 
 [node name="Destinations" type="Node2D" parent="Scenes"]
 
 [node name="1" type="Marker2D" parent="Scenes/Destinations"]
-position = Vector2(325, -18)
+position = Vector2(278, 54)
+
+[editable path="EnemySpawning"]
