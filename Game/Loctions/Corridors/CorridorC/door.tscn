@@ -1,0 +1,111 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddtjq31bta7m4"]
+
+[ext_resource type="PackedScene" uid="uid://djhnt4bpvoytr" path="res://border.tscn" id="1_b8xll"]
+
+[node name="Door" type="Node2D"]
+
+[node name="WhiteBorder" parent="." node_paths=PackedStringArray("reference") instance=ExtResource("1_b8xll")]
+offset_left = -1352.0
+offset_top = -224.0
+offset_right = -1312.0
+offset_bottom = -184.0
+color = Color(0, 0, 0, 1)
+reference = NodePath("../ColorRect")
+border = 10
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -1352.0
+offset_top = -224.0
+offset_right = -1248.0
+offset_bottom = -40.0
+
+[node name="PedacoPorta" type="Node2D" parent="ColorRect"]
+position = Vector2(0, -8)
+
+[node name="WhiteBorder" parent="ColorRect/PedacoPorta" node_paths=PackedStringArray("reference") instance=ExtResource("1_b8xll")]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 56.0
+offset_bottom = 56.0
+color = Color(0.539663, 0.539663, 0.539663, 1)
+reference = NodePath("../ColorRect")
+border = 5
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/PedacoPorta"]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 41.0
+offset_bottom = 80.0
+
+[node name="PedacoPorta2" type="Node2D" parent="ColorRect"]
+position = Vector2(48, -8)
+
+[node name="WhiteBorder" parent="ColorRect/PedacoPorta2" node_paths=PackedStringArray("reference") instance=ExtResource("1_b8xll")]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 56.0
+offset_bottom = 56.0
+color = Color(0.539663, 0.539663, 0.539663, 1)
+reference = NodePath("../ColorRect")
+border = 5
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/PedacoPorta2"]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 41.0
+offset_bottom = 80.0
+
+[node name="PedacoPorta3" type="Node2D" parent="ColorRect"]
+position = Vector2(0, 104)
+
+[node name="WhiteBorder" parent="ColorRect/PedacoPorta3" node_paths=PackedStringArray("reference") instance=ExtResource("1_b8xll")]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 56.0
+offset_bottom = 56.0
+color = Color(0.539663, 0.539663, 0.539663, 1)
+reference = NodePath("../ColorRect")
+border = 5
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/PedacoPorta3"]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 41.0
+offset_bottom = 80.0
+
+[node name="PedacoPorta5" type="Node2D" parent="ColorRect"]
+position = Vector2(104, 65)
+rotation = 1.5708
+
+[node name="WhiteBorder" parent="ColorRect/PedacoPorta5" node_paths=PackedStringArray("reference") instance=ExtResource("1_b8xll")]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 56.0
+offset_bottom = 56.0
+color = Color(0.539663, 0.539663, 0.539663, 1)
+reference = NodePath("../ColorRect")
+border = 5
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/PedacoPorta5"]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 41.0
+offset_bottom = 87.0
+
+[node name="PedacoPorta4" type="Node2D" parent="ColorRect"]
+position = Vector2(48, 104)
+
+[node name="WhiteBorder" parent="ColorRect/PedacoPorta4" node_paths=PackedStringArray("reference") instance=ExtResource("1_b8xll")]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 56.0
+offset_bottom = 56.0
+color = Color(0.539663, 0.539663, 0.539663, 1)
+reference = NodePath("../ColorRect")
+border = 5
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/PedacoPorta4"]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 41.0
+offset_bottom = 80.0

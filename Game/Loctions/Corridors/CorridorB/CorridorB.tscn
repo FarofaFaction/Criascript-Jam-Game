@@ -1,17 +1,17 @@
-[gd_scene load_steps=19 format=3 uid="uid://cgbofih11kw7m"]
+[gd_scene load_steps=19 format=3 uid="uid://2r6hgnbv5cye"]
 
-[ext_resource type="PackedScene" uid="uid://b4e34twd33abh" path="res://Game/Loctions/Corridors/CorridorA/floor.tscn" id="1_22koa"]
-[ext_resource type="PackedScene" uid="uid://cmk1subk8bpb2" path="res://Game/Loctions/Corridors/CorridorA/door.tscn" id="1_hjyqo"]
-[ext_resource type="Script" path="res://Game/Loctions/Corridors/CorridorA/corridor_2d.gd" id="1_qny7v"]
-[ext_resource type="PackedScene" uid="uid://7sspjh77o6vm" path="res://Game/Player/player.tscn" id="2_m7p8g"]
-[ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="5_8ejuo"]
-[ext_resource type="PackedScene" uid="uid://cxpyp7yoxaixr" path="res://Objects/room_clock.tscn" id="5_em62a"]
-[ext_resource type="PackedScene" uid="uid://d2d1asq2fkvsq" path="res://Interface/PlayerInterface/player_interface.tscn" id="8_yoneu"]
-[ext_resource type="PackedScene" uid="uid://bjsa2mrlybrr3" path="res://Shaders/portrait_shader.tscn" id="9_qbdjy"]
-[ext_resource type="PackedScene" uid="uid://cpe4chlg5q0t2" path="res://Game/scene_changer.tscn" id="10_5sj7v"]
-[ext_resource type="Script" path="res://Game/Loctions/Corridors/CorridorA/local_teleporter.gd" id="11_s8mvb"]
-[ext_resource type="PackedScene" uid="uid://dhf0u4kshnwol" path="res://Objects/Items/pickable_item.tscn" id="12_ak1qa"]
-[ext_resource type="Script" path="res://Scripts/interactible_area.gd" id="12_i7lkc"]
+[ext_resource type="Script" path="res://Game/Loctions/Corridors/CorridorA/corridor_2d.gd" id="1_fn6o5"]
+[ext_resource type="PackedScene" uid="uid://cmk1subk8bpb2" path="res://Game/Loctions/Corridors/CorridorA/door.tscn" id="2_v82dp"]
+[ext_resource type="PackedScene" uid="uid://b4e34twd33abh" path="res://Game/Loctions/Corridors/CorridorA/floor.tscn" id="3_vfu5o"]
+[ext_resource type="PackedScene" uid="uid://cxpyp7yoxaixr" path="res://Objects/room_clock.tscn" id="4_to35i"]
+[ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="5_pyaoh"]
+[ext_resource type="PackedScene" uid="uid://7sspjh77o6vm" path="res://Game/Player/player.tscn" id="6_7ih5s"]
+[ext_resource type="PackedScene" uid="uid://d2d1asq2fkvsq" path="res://Interface/PlayerInterface/player_interface.tscn" id="7_vl220"]
+[ext_resource type="PackedScene" uid="uid://bjsa2mrlybrr3" path="res://Shaders/portrait_shader.tscn" id="8_aklko"]
+[ext_resource type="PackedScene" uid="uid://cpe4chlg5q0t2" path="res://Game/scene_changer.tscn" id="9_8sxwb"]
+[ext_resource type="Script" path="res://Game/Loctions/Corridors/CorridorA/local_teleporter.gd" id="10_sfjet"]
+[ext_resource type="Script" path="res://Scripts/interactible_area.gd" id="11_rgdw4"]
+[ext_resource type="PackedScene" uid="uid://dhf0u4kshnwol" path="res://Objects/Items/pickable_item.tscn" id="12_cik5k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ujkmg"]
 size = Vector2(2552, 58)
@@ -36,8 +36,8 @@ _data = {
 "RESET": SubResource("Animation_26rqu")
 }
 
-[node name="Corridor2d" type="Node2D" node_paths=PackedStringArray("destinations")]
-script = ExtResource("1_qny7v")
+[node name="CorridorB" type="Node2D" node_paths=PackedStringArray("destinations")]
+script = ExtResource("1_fn6o5")
 timestop = true
 destinations = [NodePath("Scenes/Destination/1"), NodePath("Scenes/Destination/2"), NodePath("Scenes/Destination/3"), NodePath("Scenes/Destination/4"), NodePath("Scenes/Destination/5"), NodePath("Scenes/Destination/6")]
 
@@ -71,24 +71,24 @@ offset_right = 392.0
 offset_bottom = -25.0
 color = Color(0.786347, 0.786347, 0.786347, 1)
 
-[node name="Door2" parent="Background/Cenario3/Background/Walls" instance=ExtResource("1_hjyqo")]
+[node name="Door2" parent="Background/Cenario3/Background/Walls" instance=ExtResource("2_v82dp")]
 visible = false
 position = Vector2(360, 8)
 
-[node name="Door4" parent="Background/Cenario3/Background/Walls" instance=ExtResource("1_hjyqo")]
+[node name="Door4" parent="Background/Cenario3/Background/Walls" instance=ExtResource("2_v82dp")]
 position = Vector2(1464, 8)
 
 [node name="Floor" type="Node2D" parent="Background/Cenario3"]
 
-[node name="Floor" parent="Background/Cenario3/Floor" instance=ExtResource("1_22koa")]
+[node name="Floor" parent="Background/Cenario3/Floor" instance=ExtResource("3_vfu5o")]
 
-[node name="Floor2" parent="Background/Cenario3/Floor" instance=ExtResource("1_22koa")]
+[node name="Floor2" parent="Background/Cenario3/Floor" instance=ExtResource("3_vfu5o")]
 position = Vector2(-632, 0)
 
-[node name="Floor3" parent="Background/Cenario3/Floor" instance=ExtResource("1_22koa")]
+[node name="Floor3" parent="Background/Cenario3/Floor" instance=ExtResource("3_vfu5o")]
 position = Vector2(-1256, 0)
 
-[node name="Floor4" parent="Background/Cenario3/Floor" instance=ExtResource("1_22koa")]
+[node name="Floor4" parent="Background/Cenario3/Floor" instance=ExtResource("3_vfu5o")]
 position = Vector2(-1888, 0)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Background/Cenario3/Floor"]
@@ -129,32 +129,32 @@ offset_right = 392.0
 offset_bottom = -25.0
 color = Color(0.786347, 0.786347, 0.786347, 1)
 
-[node name="Door" parent="Background/Cenario/Background/Walls" instance=ExtResource("1_hjyqo")]
+[node name="Door" parent="Background/Cenario/Background/Walls" instance=ExtResource("2_v82dp")]
 position = Vector2(99.9999, 8)
 
-[node name="Door2" parent="Background/Cenario/Background/Walls" instance=ExtResource("1_hjyqo")]
+[node name="Door2" parent="Background/Cenario/Background/Walls" instance=ExtResource("2_v82dp")]
 position = Vector2(665, 8)
 
-[node name="Door3" parent="Background/Cenario/Background/Walls" instance=ExtResource("1_hjyqo")]
+[node name="Door3" parent="Background/Cenario/Background/Walls" instance=ExtResource("2_v82dp")]
 position = Vector2(1684, 8)
 
-[node name="Door4" parent="Background/Cenario/Background/Walls" instance=ExtResource("1_hjyqo")]
+[node name="Door4" parent="Background/Cenario/Background/Walls" instance=ExtResource("2_v82dp")]
 position = Vector2(1489, 8)
 
-[node name="Door5" parent="Background/Cenario/Background/Walls" instance=ExtResource("1_hjyqo")]
+[node name="Door5" parent="Background/Cenario/Background/Walls" instance=ExtResource("2_v82dp")]
 position = Vector2(-463, 8)
 
 [node name="Floor" type="Node2D" parent="Background/Cenario"]
 
-[node name="Floor" parent="Background/Cenario/Floor" instance=ExtResource("1_22koa")]
+[node name="Floor" parent="Background/Cenario/Floor" instance=ExtResource("3_vfu5o")]
 
-[node name="Floor2" parent="Background/Cenario/Floor" instance=ExtResource("1_22koa")]
+[node name="Floor2" parent="Background/Cenario/Floor" instance=ExtResource("3_vfu5o")]
 position = Vector2(-632, 0)
 
-[node name="Floor3" parent="Background/Cenario/Floor" instance=ExtResource("1_22koa")]
+[node name="Floor3" parent="Background/Cenario/Floor" instance=ExtResource("3_vfu5o")]
 position = Vector2(-1256, 0)
 
-[node name="Floor4" parent="Background/Cenario/Floor" instance=ExtResource("1_22koa")]
+[node name="Floor4" parent="Background/Cenario/Floor" instance=ExtResource("3_vfu5o")]
 position = Vector2(-1888, 0)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Background/Cenario/Floor"]
@@ -196,24 +196,24 @@ offset_right = 392.0
 offset_bottom = -25.0
 color = Color(0.786347, 0.786347, 0.786347, 1)
 
-[node name="Door2" parent="Background/Cenario2/Background/Walls" instance=ExtResource("1_hjyqo")]
+[node name="Door2" parent="Background/Cenario2/Background/Walls" instance=ExtResource("2_v82dp")]
 visible = false
 position = Vector2(360, 8)
 
-[node name="Door4" parent="Background/Cenario2/Background/Walls" instance=ExtResource("1_hjyqo")]
+[node name="Door4" parent="Background/Cenario2/Background/Walls" instance=ExtResource("2_v82dp")]
 position = Vector2(1489, 8)
 
 [node name="Floor" type="Node2D" parent="Background/Cenario2"]
 
-[node name="Floor" parent="Background/Cenario2/Floor" instance=ExtResource("1_22koa")]
+[node name="Floor" parent="Background/Cenario2/Floor" instance=ExtResource("3_vfu5o")]
 
-[node name="Floor2" parent="Background/Cenario2/Floor" instance=ExtResource("1_22koa")]
+[node name="Floor2" parent="Background/Cenario2/Floor" instance=ExtResource("3_vfu5o")]
 position = Vector2(-632, 0)
 
-[node name="Floor3" parent="Background/Cenario2/Floor" instance=ExtResource("1_22koa")]
+[node name="Floor3" parent="Background/Cenario2/Floor" instance=ExtResource("3_vfu5o")]
 position = Vector2(-1256, 0)
 
-[node name="Floor4" parent="Background/Cenario2/Floor" instance=ExtResource("1_22koa")]
+[node name="Floor4" parent="Background/Cenario2/Floor" instance=ExtResource("3_vfu5o")]
 position = Vector2(-1888, 0)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Background/Cenario2/Floor"]
@@ -236,7 +236,7 @@ shape = SubResource("RectangleShape2D_ujkmg")
 
 [node name="Items" type="Node2D" parent="."]
 
-[node name="RoomClock" parent="Items" instance=ExtResource("5_em62a")]
+[node name="RoomClock" parent="Items" instance=ExtResource("4_to35i")]
 position = Vector2(-312, -58)
 scale = Vector2(0.5, 0.5)
 
@@ -251,7 +251,7 @@ offset_right = 16.0
 offset_bottom = 16.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_8ejuo")
+theme_override_fonts/font = ExtResource("5_pyaoh")
 text = "1"
 horizontal_alignment = 1
 
@@ -264,7 +264,7 @@ offset_right = 16.0
 offset_bottom = 16.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_8ejuo")
+theme_override_fonts/font = ExtResource("5_pyaoh")
 text = "2
 "
 horizontal_alignment = 1
@@ -278,7 +278,7 @@ offset_right = 16.0
 offset_bottom = 16.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_8ejuo")
+theme_override_fonts/font = ExtResource("5_pyaoh")
 text = "3
 "
 horizontal_alignment = 1
@@ -292,7 +292,7 @@ offset_right = 16.0
 offset_bottom = 16.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_8ejuo")
+theme_override_fonts/font = ExtResource("5_pyaoh")
 text = "4
 "
 horizontal_alignment = 1
@@ -306,8 +306,8 @@ offset_right = 16.0
 offset_bottom = 16.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_8ejuo")
-text = "E"
+theme_override_fonts/font = ExtResource("5_pyaoh")
+text = "X"
 horizontal_alignment = 1
 
 [node name="OrganizadosPorY" type="Node2D" parent="."]
@@ -317,15 +317,15 @@ y_sort_enabled = true
 [node name="Personagens" type="Node2D" parent="OrganizadosPorY"]
 y_sort_enabled = true
 
-[node name="Player" parent="OrganizadosPorY/Personagens" instance=ExtResource("2_m7p8g")]
+[node name="Player" parent="OrganizadosPorY/Personagens" instance=ExtResource("6_7ih5s")]
 position = Vector2(-674, -5)
 
 [node name="Camera2D" parent="OrganizadosPorY/Personagens/Player" index="8"]
 position_smoothing_enabled = false
 
-[node name="PlayerInterface" parent="." instance=ExtResource("8_yoneu")]
+[node name="PlayerInterface" parent="." instance=ExtResource("7_vl220")]
 
-[node name="PortraitShader" parent="PlayerInterface" instance=ExtResource("9_qbdjy")]
+[node name="PortraitShader" parent="PlayerInterface" instance=ExtResource("8_aklko")]
 visible = false
 anchors_preset = 15
 anchor_right = 1.0
@@ -339,44 +339,44 @@ grow_vertical = 2
 
 [node name="Scenes" type="Node2D" parent="."]
 
-[node name="AB" parent="Scenes" instance=ExtResource("10_5sj7v")]
+[node name="Refeitorio" parent="Scenes" instance=ExtResource("9_8sxwb")]
 position = Vector2(-460, -27)
+door_id = "Refeitorio"
+locked = true
+location = "Refeitorio"
+
+[node name="AB" parent="Scenes" instance=ExtResource("9_8sxwb")]
+position = Vector2(-352, -29)
 door_id = "AB"
 locked = true
-destination = "2"
-location = "CorridorB"
-
-[node name="AC" parent="Scenes" instance=ExtResource("10_5sj7v")]
-position = Vector2(-352, -29)
-door_id = "AC"
-locked = true
 destination = "1"
+location = "CorridorA"
+
+[node name="DarkRoom" parent="Scenes" instance=ExtResource("9_8sxwb")]
+position = Vector2(-240, -29)
+door_id = "DarkRoom"
+locked = true
+location = "DarkRoom"
+
+[node name="BC" parent="Scenes" instance=ExtResource("9_8sxwb")]
+position = Vector2(-126, -29)
+door_id = "BC"
+locked = true
+destination = "4"
 location = "CorridorC"
 
-[node name="Extern" parent="Scenes" instance=ExtResource("10_5sj7v")]
-position = Vector2(-240, -29)
-door_id = "Extern"
-locked = true
-location = "Extern"
-
-[node name="Room" parent="Scenes" instance=ExtResource("10_5sj7v")]
-position = Vector2(-126, -29)
-door_id = "Room"
-locked = true
-location = "Room"
-
-[node name="SceneChanger5" parent="Scenes" instance=ExtResource("10_5sj7v")]
+[node name="SceneChanger5" parent="Scenes" instance=ExtResource("9_8sxwb")]
 position = Vector2(34, -29)
 destination = "1"
 location = "Alone"
 
-[node name="SceneChanger6" parent="Scenes" instance=ExtResource("10_5sj7v")]
+[node name="SceneChanger6" parent="Scenes" instance=ExtResource("9_8sxwb")]
 position = Vector2(76, -30)
 destination = "1"
 location = "Safe"
 
 [node name="LocalTeleporter" type="Node2D" parent="Scenes" node_paths=PackedStringArray("player", "mark1", "mark2", "timer", "animation_player")]
-script = ExtResource("11_s8mvb")
+script = ExtResource("10_sfjet")
 player = NodePath("../../OrganizadosPorY/Personagens/Player")
 mark1 = NodePath("InteractibleArea/Marker1")
 mark2 = NodePath("InteractibleArea2/Marker2")
@@ -388,7 +388,7 @@ position = Vector2(-697, -9)
 collision_layer = 2147483650
 collision_mask = 2147483650
 monitorable = false
-script = ExtResource("12_i7lkc")
+script = ExtResource("11_rgdw4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scenes/LocalTeleporter/InteractibleArea"]
 position = Vector2(4, 12)
@@ -402,7 +402,7 @@ position = Vector2(317, -9)
 collision_layer = 2147483650
 collision_mask = 2147483650
 monitorable = false
-script = ExtResource("12_i7lkc")
+script = ExtResource("11_rgdw4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scenes/LocalTeleporter/InteractibleArea2"]
 position = Vector2(4, 12)
@@ -439,8 +439,8 @@ position = Vector2(42, 2)
 [node name="6" type="Marker2D" parent="Scenes/Destination"]
 position = Vector2(81, 4)
 
-[node name="Item" parent="." instance=ExtResource("12_ak1qa")]
-position = Vector2(-202, -4)
+[node name="Item" parent="." instance=ExtResource("12_cik5k")]
+position = Vector2(-298, -6)
 just_one_intance = false
 
 [connection signal="timeout" from="Scenes/LocalTeleporter/Timer" to="Scenes/LocalTeleporter" method="_on_Timer_timeout"]

@@ -12,6 +12,7 @@ func _ready() -> void:
 	_init_audio()
 	pass # Replace with function body.
 
+const DarkRoom := "res://Game/Loctions/DarkRoom/DarkRoom.tscn"
 const Art := "res://Game/Loctions/AsylumLocations/Arte/ArtRoom.tscn"
 const Extern := "res://Game/Loctions/AsylumLocations/Externa/ExternRoom.tscn"
 const Refeitorio := "res://Game/Loctions/AsylumLocations/Refeitorio/RefeitorioRoom.tscn"
@@ -38,8 +39,8 @@ func change_scene(scene: String, cutscene : bool = false):
 		current_scene = MenuMenu
 	elif (scene == "Room"):
 		current_scene = Room
-	elif (scene == "Room"):
-		current_scene = Room
+	elif (scene == "DarkRoom"):
+		current_scene = DarkRoom
 	elif (scene == "CorridorA"):
 		current_scene = CorridorA
 	elif (scene == "CorridorB"):
@@ -53,11 +54,11 @@ func change_scene(scene: String, cutscene : bool = false):
 	elif (scene == "Safe"):
 		current_scene = Safe
 	elif (scene == "Art"):
-		current_scene ="Art"
+		current_scene = Art
 	elif (scene == "Extern"):
-		current_scene ="Extern"
+		current_scene = Extern
 	elif (scene == "Refeitorio"):
-		current_scene ="Refeitorio"
+		current_scene = Refeitorio
 	else:
 		return
 	if player && player is PlayerClass:

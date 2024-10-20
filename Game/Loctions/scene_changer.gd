@@ -1,5 +1,9 @@
 extends Node2D
 
+var timeBlocked := false
+@export var timelocked := false
+@export var LockLimitTimeFinal := 6
+@export var LockLimitTimeInit := 20
 @export var door_id : String
 @export var current_message : Label
 @export var lockedMessage : Label
@@ -15,7 +19,6 @@ func _ready() -> void:
 		if GameStatus.DoorsOppened.find(door_id) >= 0:
 			locked = false
 		pass
-		
 	pass # Replace with function body.
 
 
@@ -24,16 +27,24 @@ func _process(_delta: float) -> void:
 	#if !interactiveArea:
 		#return
 	#if interactiveArea._player:
-	if locked:
+	#if T
+	if timelocked:
+		if GlobalTimer.hours <= LockLimitTimeFinal || GlobalTimer.hours >= LockLimitTimeInit:
+			timeBlocked = true
+		else:
+			timeBlocked = false
+	if locked || timeBlocked:
 		current_message.text = lockedMessage.text
 	else:
 		current_message.text = openMessage.text
 	pass
 
 func Interaction():
+	if timeBlocked:
+		return
 	if locked:
 		for it in GameStatus.PlayerItems:
-			if it.item_id == door_id:
+			if it.item_type == "Key":
 				locked = false
 				GameStatus.DoorsOppened.append(door_id)
 				it.remove_item()

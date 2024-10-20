@@ -456,8 +456,8 @@ position = Vector2(2, -2)
 
 [node name="SceneChanger" parent="Scenes" instance=ExtResource("34_cn12h")]
 position = Vector2(277, 40)
-destination = "4"
-location = "CorridorA"
+destination = "2"
+location = "CorridorC"
 
 [node name="Destinations" type="Node2D" parent="Scenes"]
 

@@ -11,7 +11,7 @@
 size = Vector2(15, 9)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h5h37"]
-radius = 12.0416
+radius = 5.09902
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_j8i1h"]
 load_path = "res://.godot/imported/light.png-8fdf09ef7de5c29c73dfe94c1c1879f5.ctex"

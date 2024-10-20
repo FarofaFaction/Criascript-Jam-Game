@@ -6,6 +6,7 @@ class_name Item
 var button : String
 @export var usable := false
 @export var item_id : String
+@export var item_type : String
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

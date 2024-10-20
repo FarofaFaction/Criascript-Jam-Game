@@ -248,6 +248,12 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "Solte minha tv, solte!"
 
+[node name="Label7" type="Label" parent="Addons/Phrases/RoomPhrases"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Se eu soltar meu cachorro,
+ele vai moreder seu calcanhar"
+
 [node name="Label6" type="Label" parent="Addons/Phrases/RoomPhrases"]
 offset_right = 40.0
 offset_bottom = 23.0

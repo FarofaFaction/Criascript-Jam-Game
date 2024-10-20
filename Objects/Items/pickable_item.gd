@@ -2,13 +2,17 @@ extends Node2D
 
 @export var just_one_intance := true
 @export var item : Item
-@export var item_id : String
+@export var item_id : String = "GenericKey"
+@export var item_type : String = "Key"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if item_id:
 		if item:
 			item.item_id = item_id
+	if item_type:
+		if item:
+			item.item_type = item_type
 	if just_one_intance:
 		if GameStatus.ItemsHistory.find(item.item_id) >= 0:
 			get_parent().remove_child.call_deferred(self)
