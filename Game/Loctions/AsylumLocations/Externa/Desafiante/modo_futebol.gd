@@ -50,6 +50,7 @@ func Update():
 	if PlayerPoints >= 3:
 		Dialogic.VAR.DesafianteExterna.Venceu = true
 		if is_instance_valid(key):
+			key.global_position = pacient.global_position
 			key.visible = true
 		Transitioned.emit(self, "PacientWalkout")
 	if GlobalTimer.time_passed(pacient.hour_to_sleep):

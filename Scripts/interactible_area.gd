@@ -54,7 +54,7 @@ func _player_entered(area) -> void:
 	if node is not PlayerClass:
 		return
 	if message:
-		print(enabled)
+		#print(enabled)
 		message.visible = true
 	if messagePanel:
 		messagePanel.visible = true

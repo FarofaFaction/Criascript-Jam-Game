@@ -5,7 +5,7 @@ extends State
 
 func Enter():
 	if (!doctor):
-		print("Eenter DoctorFollow (!doctor || !doctor.DetectionArea):")
+		#print("Eenter DoctorFollow (!doctor || !doctor.DetectionArea):")
 		return
 	#timer = Timer.new()
 	#timer.wait_time = 1
