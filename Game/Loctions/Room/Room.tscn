@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://v7uuiioruv0j"]
+[gd_scene load_steps=69 format=3 uid="uid://v7uuiioruv0j"]
 
 [ext_resource type="Script" path="res://Game/Loctions/Room/player_room.gd" id="1_xkoml"]
 [ext_resource type="PackedScene" uid="uid://cxpyp7yoxaixr" path="res://Objects/room_clock.tscn" id="3_mx5ei"]
@@ -34,6 +34,7 @@
 [ext_resource type="AudioStream" uid="uid://cprvuc2smhmqe" path="res://Audio/Effects/515798__ben_0815__murmur.wav" id="29_6ejwb"]
 [ext_resource type="PackedScene" uid="uid://yje2v65lwodi" path="res://Game/Enemy/enemy_spawning.tscn" id="29_y06wi"]
 [ext_resource type="PackedScene" uid="uid://cpe4chlg5q0t2" path="res://Game/scene_changer.tscn" id="30_alfp2"]
+[ext_resource type="PackedScene" uid="uid://fapehm3dhx0l" path="res://Objects/Cenario/Cama/cama.tscn" id="30_n8etb"]
 [ext_resource type="PackedScene" uid="uid://dhf0u4kshnwol" path="res://Objects/Items/pickable_item.tscn" id="35_6n8dw"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s34ym"]
@@ -634,6 +635,43 @@ shape = SubResource("RectangleShape2D_f6fea")
 [node name="Tv" parent="OrganizadosPorY/Objects" instance=ExtResource("8_55il4")]
 y_sort_enabled = true
 position = Vector2(58, 0)
+
+[node name="Camas" type="Node2D" parent="OrganizadosPorY/Objects"]
+
+[node name="Cama" parent="OrganizadosPorY/Objects/Camas" instance=ExtResource("30_n8etb")]
+
+[node name="Cama2" parent="OrganizadosPorY/Objects/Camas" instance=ExtResource("30_n8etb")]
+position = Vector2(671, 203)
+
+[node name="Cama3" parent="OrganizadosPorY/Objects/Camas" instance=ExtResource("30_n8etb")]
+position = Vector2(691, 235)
+
+[node name="Cama4" parent="OrganizadosPorY/Objects/Camas" instance=ExtResource("30_n8etb")]
+position = Vector2(570, 181)
+
+[node name="Cama5" parent="OrganizadosPorY/Objects/Camas" instance=ExtResource("30_n8etb")]
+position = Vector2(388, 250)
+
+[node name="Cama6" parent="OrganizadosPorY/Objects/Camas" instance=ExtResource("30_n8etb")]
+position = Vector2(361, 219)
+
+[node name="Cama7" parent="OrganizadosPorY/Objects/Camas" instance=ExtResource("30_n8etb")]
+position = Vector2(331, 187)
+
+[node name="Cama8" parent="OrganizadosPorY/Objects/Camas" instance=ExtResource("30_n8etb")]
+position = Vector2(457, 183)
+
+[node name="Cama9" parent="OrganizadosPorY/Objects/Camas" instance=ExtResource("30_n8etb")]
+position = Vector2(476, 212)
+
+[node name="Cama10" parent="OrganizadosPorY/Objects/Camas" instance=ExtResource("30_n8etb")]
+position = Vector2(494, 243)
+
+[node name="Cama11" parent="OrganizadosPorY/Objects/Camas" instance=ExtResource("30_n8etb")]
+position = Vector2(584, 208)
+
+[node name="Cama12" parent="OrganizadosPorY/Objects/Camas" instance=ExtResource("30_n8etb")]
+position = Vector2(604, 238)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 visible = false

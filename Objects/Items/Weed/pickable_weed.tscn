@@ -12,6 +12,7 @@ script = ExtResource("1_1pl50")
 just_one_intance = false
 item = NodePath("SizeControler/Item")
 item_id = "Weed"
+item_type = "Consum"
 
 [node name="SizeControler" type="Node2D" parent="."]
 scale = Vector2(0.12, 0.12)
@@ -21,8 +22,17 @@ node_instructions = NodePath("Node")
 usable = true
 item_id = "Weed"
 
+[node name="WhiteBorder2" parent="SizeControler/Item" index="0"]
+visible = true
+
+[node name="WhiteBorder" parent="SizeControler/Item" index="1"]
+visible = true
+
 [node name="TextureRect" parent="SizeControler/Item" index="2"]
 texture = ExtResource("4_8qeqg")
+
+[node name="WhiteBorder" parent="SizeControler/Item/Textpanel/TextBallon" index="0"]
+visible = true
 
 [node name="Node" type="Node" parent="SizeControler/Item" node_paths=PackedStringArray("item")]
 script = ExtResource("3_4xpwv")

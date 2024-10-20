@@ -36,7 +36,6 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(70, -34, 612, -34, 618,
 script = ExtResource("1_d0oqy")
 
 [node name="PlayerInterface" parent="." instance=ExtResource("2_rmi5a")]
-visible = false
 
 [node name="Illumination" type="Node2D" parent="." node_paths=PackedStringArray("switchAudioPlayer", "ilumination_node", "BigLight", "SmallLight", "GlobalIllumination")]
 script = ExtResource("3_op70c")

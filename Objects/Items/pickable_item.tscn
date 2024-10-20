@@ -26,6 +26,7 @@ script = ExtResource("1_rd4rn")
 button_warning = NodePath("Textpanel/TextBallon")
 
 [node name="WhiteBorder2" parent="SizeControler/Item" node_paths=PackedStringArray("reference") instance=ExtResource("2_24558")]
+visible = true
 layout_mode = 0
 offset_left = -20.0
 offset_top = -20.0
@@ -34,6 +35,7 @@ offset_bottom = 126.0
 reference = NodePath("../WhiteBorder")
 
 [node name="WhiteBorder" parent="SizeControler/Item" node_paths=PackedStringArray("reference") instance=ExtResource("2_24558")]
+visible = true
 layout_mode = 0
 offset_left = -10.0
 offset_top = -10.0
@@ -55,6 +57,13 @@ stretch_mode = 5
 
 [node name="Textpanel" parent="SizeControler/Item" instance=ExtResource("5_ransp")]
 layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 113.0
+offset_bottom = 31.0
+
+[node name="WhiteBorder" parent="SizeControler/Item/Textpanel/TextBallon" index="0"]
+visible = true
 
 [node name="InteractibleArea" parent="." node_paths=PackedStringArray("message") instance=ExtResource("5_qc0li")]
 position = Vector2(6, -7)

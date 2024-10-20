@@ -12,6 +12,7 @@ script = ExtResource("1_i2mbw")
 just_one_intance = false
 item = NodePath("SizeControler/Item")
 item_id = "Medicine"
+item_type = "Consum"
 
 [node name="SizeControler" type="Node2D" parent="."]
 scale = Vector2(0.12, 0.12)

@@ -14,13 +14,21 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_paole")
 script = ExtResource("1_xxga0")
 
 [node name="WhiteBorder2" parent="." node_paths=PackedStringArray("reference") instance=ExtResource("2_7okfa")]
-visible = false
+visible = true
 layout_mode = 0
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 126.0
+offset_bottom = 126.0
 reference = NodePath("../WhiteBorder")
 
 [node name="WhiteBorder" parent="." node_paths=PackedStringArray("reference") instance=ExtResource("2_7okfa")]
-visible = false
+visible = true
 layout_mode = 0
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 116.0
+offset_bottom = 116.0
 color = Color(0, 0, 0, 1)
 reference = NodePath("../TextureRect")
 

@@ -25,6 +25,8 @@ func _process(_delta: float) -> void:
 	pass
 
 func Interaction():
+	if !visible:
+		return
 	if !item:
 		return
 	if GameStatus.PlayerItems.size() >= 4:

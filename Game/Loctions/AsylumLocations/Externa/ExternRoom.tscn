@@ -15,11 +15,11 @@
 [ext_resource type="Theme" uid="uid://bi5atlkw4djab" path="res://Dialog/Styles/Style.tres" id="10_iagwu"]
 [ext_resource type="AudioStream" uid="uid://cprvuc2smhmqe" path="res://Audio/Effects/515798__ben_0815__murmur.wav" id="11_djps2"]
 [ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="11_ufry0"]
-[ext_resource type="Texture2D" uid="uid://bb7hu7q2rmpmy" path="res://Game/Loctions/AsylumLocations/Externa/area externa/caixa de truco.png" id="12_81rc7"]
+[ext_resource type="Texture2D" uid="uid://bb7hu7q2rmpmy" path="res://Sprites/Sprites mundo/area externa/caixa de truco.png" id="12_81rc7"]
 [ext_resource type="PackedScene" uid="uid://cpe4chlg5q0t2" path="res://Game/scene_changer.tscn" id="12_ax4fq"]
-[ext_resource type="Texture2D" uid="uid://bnocvgs4yabqu" path="res://Game/Loctions/AsylumLocations/Externa/area externa/cexta de basquete direita.png" id="13_rjs3q"]
+[ext_resource type="Texture2D" uid="uid://bnocvgs4yabqu" path="res://Sprites/Sprites mundo/area externa/cexta de basquete direita.png" id="13_rjs3q"]
 [ext_resource type="PackedScene" uid="uid://dsi4m4d18k833" path="res://Game/Loctions/AsylumLocations/Externa/truco.tscn" id="15_lx3yt"]
-[ext_resource type="Texture2D" uid="uid://e3xpa2jolde4" path="res://Game/Loctions/AsylumLocations/Externa/area externa/sexta de basquete esquerda.png" id="15_q56qv"]
+[ext_resource type="Texture2D" uid="uid://e3xpa2jolde4" path="res://Sprites/Sprites mundo/area externa/sexta de basquete esquerda.png" id="15_q56qv"]
 [ext_resource type="PackedScene" uid="uid://6fw6kl4t5n7x" path="res://Objects/interactible_area.tscn" id="16_uy6gr"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s34ym"]
@@ -57,7 +57,6 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-30, -24, 585, -21, 706
 script = ExtResource("1_ytyyg")
 
 [node name="PlayerInterface" parent="." instance=ExtResource("2_8i1mv")]
-visible = false
 
 [node name="Illumination" type="Node2D" parent="." node_paths=PackedStringArray("switchAudioPlayer", "ilumination_node", "BigLight", "SmallLight", "GlobalIllumination")]
 script = ExtResource("3_vj5fu")
