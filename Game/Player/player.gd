@@ -1,6 +1,7 @@
 extends CharacterBody2D
 class_name PlayerClass
 
+var holding := false
 @export var startAwake := true
 @export var zoom : float = 5
 @export var camera : Camera2D

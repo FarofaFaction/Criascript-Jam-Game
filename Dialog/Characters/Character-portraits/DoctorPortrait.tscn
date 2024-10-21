@@ -82,21 +82,22 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="WhiteBorder" parent="Panel" node_paths=PackedStringArray("reference") instance=ExtResource("3_xmylg")]
-show_behind_parent = true
-layout_mode = 0
-offset_left = -20.1554
-offset_top = -20.5426
-offset_right = 421.916
-offset_bottom = 340.543
-reference = NodePath("../BlackBorder")
-
-[node name="BlackBorder" parent="Panel" node_paths=PackedStringArray("reference") instance=ExtResource("3_xmylg")]
+visible = true
 show_behind_parent = true
 layout_mode = 0
 offset_left = -10.1554
-offset_top = -10.5426
-offset_right = 411.916
-offset_bottom = 330.543
+offset_top = -10.0
+offset_right = 1931.92
+offset_bottom = 1090.0
+reference = NodePath("../BlackBorder")
+
+[node name="BlackBorder" parent="Panel" node_paths=PackedStringArray("reference") instance=ExtResource("3_xmylg")]
+visible = true
+show_behind_parent = true
+layout_mode = 0
+offset_left = -0.155396
+offset_right = 1921.92
+offset_bottom = 1080.0
 color = Color(0, 0, 0, 1)
 reference = NodePath("../TextureRect")
 border = 0

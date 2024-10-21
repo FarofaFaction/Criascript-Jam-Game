@@ -38,6 +38,6 @@ func Interaction():
 		return
 	_already_speaked = true
 	
-	Dialogic.start('timeline_test')
+	Dialogic.start('timelineDoctor')
 	#DialogScene._start_dialog()
 	pass

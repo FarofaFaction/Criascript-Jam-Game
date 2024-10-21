@@ -38,3 +38,7 @@ func Interaction():
 	get_parent().remove_child(self)
 	queue_free()
 	pass
+
+func reveal():
+	show()
+	pass

@@ -33,7 +33,7 @@ func change_scene(scene: String, cutscene : bool = false):
 	if Global.first_play:
 		Global.first_play = false
 		GlobalTimer.set_time(7,0)
-		GlobalTimer.set_speed(480)
+		GlobalTimer.set_speed(60)
 	if (scene == "Menu"):
 		GlobalTimer.stop()
 		current_scene = MenuMenu

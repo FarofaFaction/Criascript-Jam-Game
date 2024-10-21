@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://b4s8hurqwpqky"]
+[gd_scene load_steps=49 format=3 uid="uid://b4s8hurqwpqky"]
 
 [ext_resource type="Script" path="res://Game/Loctions/AsylumLocations/Arte/art_room.gd" id="1_b6j8p"]
 [ext_resource type="PackedScene" uid="uid://d2d1asq2fkvsq" path="res://Interface/PlayerInterface/player_interface.tscn" id="2_6gpul"]
@@ -16,12 +16,18 @@
 [ext_resource type="Texture2D" uid="uid://dwqyxhc31odgq" path="res://Sprites/Sprites mundo/area arte/lixo com papel colorido.png" id="15_c4tpn"]
 [ext_resource type="Texture2D" uid="uid://byi3mwsu7pumo" path="res://Sprites/Sprites mundo/area arte/tela de pintura pequena.png" id="16_e0ajv"]
 [ext_resource type="Texture2D" uid="uid://c7typnja6eef8" path="res://Sprites/Sprites mundo/area arte/tela de pintura virada.png" id="17_ymd2q"]
-[ext_resource type="Texture2D" uid="uid://d0pdbdu5sagcl" path="res://Sprites/Sprites mundo/area arte/tela de pintura grande.png" id="18_f4evs"]
+[ext_resource type="PackedScene" uid="uid://bmrwqaq2n4l5f" path="res://Game/Loctions/AsylumLocations/Arte/cavalete_grande.tscn" id="18_4rlaj"]
+[ext_resource type="Texture2D" uid="uid://di5pdndal1qgv" path="res://Sprites/Mushroom.jpg" id="19_i5plf"]
+[ext_resource type="Script" path="res://Game/Loctions/AsylumLocations/Arte/cavaletes_observer.gd" id="20_6b2d0"]
+[ext_resource type="PackedScene" uid="uid://dhf0u4kshnwol" path="res://Objects/Items/pickable_item.tscn" id="21_obuuh"]
+[ext_resource type="Script" path="res://Game/Loctions/scene_changer.gd" id="24_2if0r"]
+[ext_resource type="PackedScene" uid="uid://ck1cjro36gptd" path="res://Game/scaled_text_ballon.tscn" id="25_rnwt5"]
+[ext_resource type="AudioStream" uid="uid://o3gis5x4f5te" path="res://Audio/Effects/hotel-room-door-unlocking.mp3" id="26_ew3wd"]
 [ext_resource type="PackedScene" uid="uid://7sspjh77o6vm" path="res://Game/Player/player.tscn" id="27_6kv8p"]
+[ext_resource type="PackedScene" uid="uid://b0okojf7u2xo2" path="res://Objects/SanityVisualizer/sanity_visualizer.tscn" id="28_vcja8"]
 [ext_resource type="PackedScene" uid="uid://yje2v65lwodi" path="res://Game/Enemy/enemy_spawning.tscn" id="30_rwj6c"]
 [ext_resource type="PackedScene" uid="uid://c1d5max6as1qn" path="res://Game/Npcs/Pacients/pacient_spawning.tscn" id="31_h7315"]
 [ext_resource type="AudioStream" uid="uid://cprvuc2smhmqe" path="res://Audio/Effects/515798__ben_0815__murmur.wav" id="32_vgbxf"]
-[ext_resource type="PackedScene" uid="uid://cpe4chlg5q0t2" path="res://Game/scene_changer.tscn" id="34_cn12h"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s34ym"]
 load_path = "res://.godot/imported/light.png-8fdf09ef7de5c29c73dfe94c1c1879f5.ctex"
@@ -58,8 +64,69 @@ size = Vector2(14, 12)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g02ms"]
 size = Vector2(17, 12)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y34k5"]
-size = Vector2(43, 10)
+[sub_resource type="AtlasTexture" id="AtlasTexture_r53gx"]
+atlas = ExtResource("19_i5plf")
+region = Rect2(0, 36, 512, 198)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1he8"]
+atlas = ExtResource("19_i5plf")
+region = Rect2(512, 36, 512, 198)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8t6u"]
+atlas = ExtResource("19_i5plf")
+region = Rect2(0, 234, 512, 198)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fjp4"]
+atlas = ExtResource("19_i5plf")
+region = Rect2(512, 234, 512, 198)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ofuac"]
+atlas = ExtResource("19_i5plf")
+region = Rect2(0, 432, 512, 198)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7lhw"]
+atlas = ExtResource("19_i5plf")
+region = Rect2(512, 432, 512, 198)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qb2yi"]
+atlas = ExtResource("19_i5plf")
+region = Rect2(0, 630, 512, 198)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vni6u"]
+atlas = ExtResource("19_i5plf")
+region = Rect2(512, 630, 512, 198)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ms5fu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r53gx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d1he8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k8t6u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3fjp4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ofuac")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7lhw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qb2yi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vni6u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_q05t7"]
 vertices = PackedVector2Array(617.07, 59.9766, 617.922, 177.008, 65.9219, 177.977, 65.0703, 59.0078)
@@ -120,11 +187,13 @@ offset_bottom = 708.0
 color = Color(0, 0, 0, 1)
 
 [node name="Fundo" type="Node2D" parent="BackgroundCenario"]
+metadata/_edit_lock_ = true
 
 [node name="ColissionBase" type="StaticBody2D" parent="BackgroundCenario/Fundo"]
 top_level = true
 collision_layer = 2
 collision_mask = 2
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BackgroundCenario/Fundo/ColissionBase"]
 position = Vector2(36, 67)
@@ -147,15 +216,16 @@ shape = SubResource("RectangleShape2D_ogs2a")
 [node name="Mapa1" type="Sprite2D" parent="BackgroundCenario/Fundo"]
 position = Vector2(341, 68)
 texture = ExtResource("6_pc1ed")
+metadata/_edit_lock_ = true
 
 [node name="Mapa2" type="Sprite2D" parent="BackgroundCenario/Fundo"]
 position = Vector2(480, 26)
 texture = ExtResource("7_u8x7q")
+metadata/_edit_lock_ = true
 
 [node name="Pegadas" type="Node2D" parent="BackgroundCenario"]
 
 [node name="RoomClock" parent="BackgroundCenario" instance=ExtResource("7_mad67")]
-visible = false
 position = Vector2(248, -12)
 
 [node name="Door" type="Node2D" parent="BackgroundCenario"]
@@ -172,7 +242,7 @@ y_sort_enabled = true
 y_sort_enabled = true
 
 [node name="Player" parent="OrganizadosPorY/Personagens" instance=ExtResource("27_6kv8p")]
-position = Vector2(280, 43)
+position = Vector2(320, 85)
 startAwake = false
 awaking = false
 
@@ -218,7 +288,7 @@ texture = ExtResource("13_jsphl")
 [node name="InteractibleArea" parent="OrganizadosPorY/Objects/Mesa" instance=ExtResource("14_7wt0p")]
 
 [node name="Lixeira" type="RigidBody2D" parent="OrganizadosPorY/Objects"]
-position = Vector2(539, 45)
+position = Vector2(547, 46)
 collision_layer = 2
 collision_mask = 2
 mass = 10.0
@@ -287,8 +357,43 @@ texture = ExtResource("16_e0ajv")
 [node name="InteractibleArea" parent="OrganizadosPorY/Objects/CavaleteFrente" instance=ExtResource("14_7wt0p")]
 position = Vector2(7, -3)
 
+[node name="CavaleteFrente2" type="RigidBody2D" parent="OrganizadosPorY/Objects"]
+position = Vector2(283, 104)
+collision_layer = 2
+collision_mask = 2
+mass = 10.0
+lock_rotation = true
+metadata/_edit_group_ = true
+
+[node name="Node2D" type="Node2D" parent="OrganizadosPorY/Objects/CavaleteFrente2"]
+scale = Vector2(0.3, 0.3)
+
+[node name="Label" type="Label" parent="OrganizadosPorY/Objects/CavaleteFrente2/Node2D"]
+visible = false
+material = SubResource("CanvasItemMaterial_nteog")
+offset_left = -120.0
+offset_top = -76.6667
+offset_right = 118.0
+offset_bottom = -53.6667
+theme = ExtResource("11_twxya")
+theme_override_fonts/font = ExtResource("12_6vqdj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "[E] Segurar/Soltar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OrganizadosPorY/Objects/CavaleteFrente2"]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_tek50")
+
+[node name="Sprite2D" type="Sprite2D" parent="OrganizadosPorY/Objects/CavaleteFrente2"]
+texture = ExtResource("16_e0ajv")
+
+[node name="InteractibleArea" parent="OrganizadosPorY/Objects/CavaleteFrente2" instance=ExtResource("14_7wt0p")]
+position = Vector2(7, -3)
+
 [node name="CavaleteLado" type="RigidBody2D" parent="OrganizadosPorY/Objects"]
-position = Vector2(479, 73)
+position = Vector2(318, 66)
 collision_layer = 2
 collision_mask = 2
 mass = 10.0
@@ -322,18 +427,18 @@ texture = ExtResource("17_ymd2q")
 [node name="InteractibleArea" parent="OrganizadosPorY/Objects/CavaleteLado" instance=ExtResource("14_7wt0p")]
 position = Vector2(7, -3)
 
-[node name="CavaleteGrande" type="RigidBody2D" parent="OrganizadosPorY/Objects"]
-position = Vector2(379, 74)
+[node name="CavaleteLado2" type="RigidBody2D" parent="OrganizadosPorY/Objects"]
+position = Vector2(365, 104)
 collision_layer = 2
 collision_mask = 2
 mass = 10.0
 lock_rotation = true
 metadata/_edit_group_ = true
 
-[node name="Node2D" type="Node2D" parent="OrganizadosPorY/Objects/CavaleteGrande"]
+[node name="Node2D" type="Node2D" parent="OrganizadosPorY/Objects/CavaleteLado2"]
 scale = Vector2(0.3, 0.3)
 
-[node name="Label" type="Label" parent="OrganizadosPorY/Objects/CavaleteGrande/Node2D"]
+[node name="Label" type="Label" parent="OrganizadosPorY/Objects/CavaleteLado2/Node2D"]
 visible = false
 material = SubResource("CanvasItemMaterial_nteog")
 offset_left = -120.0
@@ -347,18 +452,167 @@ text = "[E] Segurar/Soltar"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="OrganizadosPorY/Objects/CavaleteGrande"]
-position = Vector2(0.5, 11)
-shape = SubResource("RectangleShape2D_y34k5")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OrganizadosPorY/Objects/CavaleteLado2"]
+position = Vector2(0.5, 17)
+shape = SubResource("RectangleShape2D_g02ms")
 
-[node name="Sprite2D" type="Sprite2D" parent="OrganizadosPorY/Objects/CavaleteGrande"]
-texture = ExtResource("18_f4evs")
+[node name="Sprite2D" type="Sprite2D" parent="OrganizadosPorY/Objects/CavaleteLado2"]
+texture = ExtResource("17_ymd2q")
 
-[node name="InteractibleArea" parent="OrganizadosPorY/Objects/CavaleteGrande" instance=ExtResource("14_7wt0p")]
+[node name="InteractibleArea" parent="OrganizadosPorY/Objects/CavaleteLado2" instance=ExtResource("14_7wt0p")]
 position = Vector2(7, -3)
 
+[node name="CavaleteLado3" type="RigidBody2D" parent="OrganizadosPorY/Objects"]
+position = Vector2(385, 62)
+collision_layer = 2
+collision_mask = 2
+mass = 10.0
+lock_rotation = true
+metadata/_edit_group_ = true
+
+[node name="Node2D" type="Node2D" parent="OrganizadosPorY/Objects/CavaleteLado3"]
+scale = Vector2(0.3, 0.3)
+
+[node name="Label" type="Label" parent="OrganizadosPorY/Objects/CavaleteLado3/Node2D"]
+visible = false
+material = SubResource("CanvasItemMaterial_nteog")
+offset_left = -120.0
+offset_top = -76.6667
+offset_right = 118.0
+offset_bottom = -53.6667
+theme = ExtResource("11_twxya")
+theme_override_fonts/font = ExtResource("12_6vqdj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "[E] Segurar/Soltar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OrganizadosPorY/Objects/CavaleteLado3"]
+position = Vector2(0.5, 17)
+shape = SubResource("RectangleShape2D_g02ms")
+
+[node name="Sprite2D" type="Sprite2D" parent="OrganizadosPorY/Objects/CavaleteLado3"]
+texture = ExtResource("17_ymd2q")
+
+[node name="InteractibleArea" parent="OrganizadosPorY/Objects/CavaleteLado3" instance=ExtResource("14_7wt0p")]
+position = Vector2(7, -3)
+
+[node name="Cavaletes" type="Node2D" parent="OrganizadosPorY/Objects"]
+y_sort_enabled = true
+
+[node name="Coluna1" type="Node2D" parent="OrganizadosPorY/Objects/Cavaletes"]
+y_sort_enabled = true
+position = Vector2(-179, -7)
+
+[node name="CavaleteGrande" parent="OrganizadosPorY/Objects/Cavaletes/Coluna1" instance=ExtResource("18_4rlaj")]
+position = Vector2(683, 123)
+id = 1
+need_id = 2
+
+[node name="Part" type="AnimatedSprite2D" parent="OrganizadosPorY/Objects/Cavaletes/Coluna1/CavaleteGrande"]
+position = Vector2(0.600006, -7)
+scale = Vector2(0.0765625, 0.075)
+sprite_frames = SubResource("SpriteFrames_ms5fu")
+
+[node name="CavaleteGrande2" parent="OrganizadosPorY/Objects/Cavaletes/Coluna1" instance=ExtResource("18_4rlaj")]
+position = Vector2(290, 81)
+id = 2
+need_id = 3
+
+[node name="Part2" type="AnimatedSprite2D" parent="OrganizadosPorY/Objects/Cavaletes/Coluna1/CavaleteGrande2"]
+position = Vector2(0.600006, -7)
+scale = Vector2(0.0765625, 0.075)
+sprite_frames = SubResource("SpriteFrames_ms5fu")
+frame = 2
+
+[node name="CavaleteGrande3" parent="OrganizadosPorY/Objects/Cavaletes/Coluna1" instance=ExtResource("18_4rlaj")]
+position = Vector2(295, 145)
+id = 3
+need_id = 4
+
+[node name="Part2" type="AnimatedSprite2D" parent="OrganizadosPorY/Objects/Cavaletes/Coluna1/CavaleteGrande3"]
+position = Vector2(0.600006, -7)
+scale = Vector2(0.0765625, 0.075)
+sprite_frames = SubResource("SpriteFrames_ms5fu")
+frame = 4
+
+[node name="CavaleteGrande4" parent="OrganizadosPorY/Objects/Cavaletes/Coluna1" instance=ExtResource("18_4rlaj")]
+position = Vector2(297, 163)
+_sobrou = true
+id = 4
+need_id = 5
+
+[node name="Part2" type="AnimatedSprite2D" parent="OrganizadosPorY/Objects/Cavaletes/Coluna1/CavaleteGrande4"]
+position = Vector2(0.600006, -7)
+scale = Vector2(0.0765625, 0.075)
+sprite_frames = SubResource("SpriteFrames_ms5fu")
+frame = 6
+
+[node name="Coluna2" type="Node2D" parent="OrganizadosPorY/Objects/Cavaletes"]
+y_sort_enabled = true
+position = Vector2(-101, -1)
+
+[node name="CavaleteGrande" parent="OrganizadosPorY/Objects/Cavaletes/Coluna2" instance=ExtResource("18_4rlaj")]
+position = Vector2(323, 112)
+lado = true
+id = 5
+need_id = 1
+
+[node name="Part2" type="AnimatedSprite2D" parent="OrganizadosPorY/Objects/Cavaletes/Coluna2/CavaleteGrande"]
+position = Vector2(1, -8)
+scale = Vector2(0.0765625, 0.075)
+sprite_frames = SubResource("SpriteFrames_ms5fu")
+frame = 1
+
+[node name="CavaleteGrande2" parent="OrganizadosPorY/Objects/Cavaletes/Coluna2" instance=ExtResource("18_4rlaj")]
+position = Vector2(416, 153)
+lado = true
+id = 6
+need_id = 2
+
+[node name="Part2" type="AnimatedSprite2D" parent="OrganizadosPorY/Objects/Cavaletes/Coluna2/CavaleteGrande2"]
+position = Vector2(0.600006, -7)
+scale = Vector2(0.0765625, 0.075)
+sprite_frames = SubResource("SpriteFrames_ms5fu")
+frame = 3
+
+[node name="CavaleteGrande3" parent="OrganizadosPorY/Objects/Cavaletes/Coluna2" instance=ExtResource("18_4rlaj")]
+position = Vector2(307, 62)
+lado = true
+id = 7
+need_id = 3
+
+[node name="Part2" type="AnimatedSprite2D" parent="OrganizadosPorY/Objects/Cavaletes/Coluna2/CavaleteGrande3"]
+position = Vector2(0.600006, -7)
+scale = Vector2(0.0765625, 0.075)
+sprite_frames = SubResource("SpriteFrames_ms5fu")
+frame = 5
+
+[node name="CavaleteGrande4" parent="OrganizadosPorY/Objects/Cavaletes/Coluna2" instance=ExtResource("18_4rlaj")]
+position = Vector2(258, 157)
+lado = true
+id = 8
+need_id = 4
+
+[node name="Part2" type="AnimatedSprite2D" parent="OrganizadosPorY/Objects/Cavaletes/Coluna2/CavaleteGrande4"]
+position = Vector2(0.600006, -7)
+scale = Vector2(0.0765625, 0.075)
+sprite_frames = SubResource("SpriteFrames_ms5fu")
+frame = 7
+
+[node name="Cavaletes Observer" type="Node2D" parent="OrganizadosPorY/Objects/Cavaletes" node_paths=PackedStringArray("key")]
+script = ExtResource("20_6b2d0")
+key = NodePath("../Key")
+
+[node name="Key" parent="OrganizadosPorY/Objects/Cavaletes" instance=ExtResource("21_obuuh")]
+visible = false
+z_index = 1
+position = Vector2(213, 62)
+item_id = "GenericKeyArt"
+
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-position = Vector2(13, -37)
+visible = false
+position = Vector2(1, -2)
 navigation_polygon = SubResource("NavigationPolygon_q05t7")
 
 [node name="EnemySpawning" parent="." node_paths=PackedStringArray("pegadas_spawn_node", "spawn_node") instance=ExtResource("30_rwj6c")]
@@ -454,14 +708,56 @@ color = Color(0, 0, 0, 1)
 [node name="Scenes" type="Node2D" parent="."]
 position = Vector2(2, -2)
 
-[node name="SceneChanger" parent="Scenes" instance=ExtResource("34_cn12h")]
-position = Vector2(277, 40)
+[node name="SceneChanger" type="Node2D" parent="Scenes" node_paths=PackedStringArray("current_message", "lockedMessage", "openMessage", "interactiveArea")]
+position = Vector2(278, 16)
+script = ExtResource("24_2if0r")
+current_message = NodePath("ScaledTextBallon/Textpanel/TextBallon")
+lockedMessage = NodePath("Messages/LockedMessage")
+openMessage = NodePath("Messages/OpenMessage")
 destination = "2"
 location = "CorridorC"
+interactiveArea = NodePath("InteractibleArea")
+
+[node name="ScaledTextBallon" parent="Scenes/SceneChanger" instance=ExtResource("25_rnwt5")]
+position = Vector2(20, 3)
+
+[node name="Textpanel" parent="Scenes/SceneChanger/ScaledTextBallon" index="0"]
+offset_left = -116.667
+offset_top = -10.0
+offset_right = -3.66699
+offset_bottom = 21.0
+
+[node name="TextBallon" parent="Scenes/SceneChanger/ScaledTextBallon/Textpanel" index="0"]
+text = "[E] Sair"
+
+[node name="InteractibleArea" parent="Scenes/SceneChanger" node_paths=PackedStringArray("messagePanel") instance=ExtResource("14_7wt0p")]
+modulate = Color(1, 0, 1, 1)
+messagePanel = NodePath("../ScaledTextBallon/Textpanel")
+
+[node name="Messages" type="Node2D" parent="Scenes/SceneChanger"]
+visible = false
+
+[node name="LockedMessage" type="Label" parent="Scenes/SceneChanger/Messages"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Trancado"
+
+[node name="OpenMessage" type="Label" parent="Scenes/SceneChanger/Messages"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "[E] Entrar"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Scenes/SceneChanger"]
+stream = ExtResource("26_ew3wd")
 
 [node name="Destinations" type="Node2D" parent="Scenes"]
 
 [node name="1" type="Marker2D" parent="Scenes/Destinations"]
 position = Vector2(278, 54)
 
+[node name="SanityVisualizer" parent="." node_paths=PackedStringArray("list_of_nodes") instance=ExtResource("28_vcja8")]
+list_of_nodes = [NodePath("../OrganizadosPorY/Objects/Cavaletes/Coluna1/CavaleteGrande/Part"), NodePath("../OrganizadosPorY/Objects/Cavaletes/Coluna1/CavaleteGrande2/Part2"), NodePath("../OrganizadosPorY/Objects/Cavaletes/Coluna1/CavaleteGrande3/Part2"), NodePath("../OrganizadosPorY/Objects/Cavaletes/Coluna1/CavaleteGrande4/Part2"), NodePath("../OrganizadosPorY/Objects/Cavaletes/Coluna2/CavaleteGrande/Part2"), NodePath("../OrganizadosPorY/Objects/Cavaletes/Coluna2/CavaleteGrande2/Part2"), NodePath("../OrganizadosPorY/Objects/Cavaletes/Coluna2/CavaleteGrande3/Part2"), NodePath("../OrganizadosPorY/Objects/Cavaletes/Coluna2/CavaleteGrande4/Part2")]
+
 [editable path="EnemySpawning"]
+[editable path="Scenes/SceneChanger/ScaledTextBallon"]
+[editable path="Scenes/SceneChanger/ScaledTextBallon/Textpanel"]

@@ -13,7 +13,7 @@
 radius = 129.557
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_318iq"]
-radius = 16.0
+radius = 27.0
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7shof"]
 light_mode = 2
@@ -117,7 +117,7 @@ stepsAudioPlayer = NodePath("NpcSteps")
 pegadas_distance = 800
 DetectionArea = NodePath("DetectionArea")
 SelfArea = NodePath("SelfArea")
-speed = 50
+speed = 75
 pegadasSpawnNode = NodePath("pegadas")
 pegadasSpawnReff = NodePath("Marker2D")
 animationPlayer = NodePath("Sprite")
@@ -171,7 +171,7 @@ collision_base_size = 2.0
 
 [node name="VomitRayCast" type="RayCast2D" parent="Sprite/VomitAtack"]
 position = Vector2(1, 1)
-target_position = Vector2(24, 0)
+target_position = Vector2(37, 0)
 collision_mask = 2147483648
 collide_with_areas = true
 collide_with_bodies = false

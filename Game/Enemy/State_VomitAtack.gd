@@ -5,7 +5,7 @@ var _vomited_object
 @export var vomit_raycast: RayCast2D
 @export var vomit : GPUParticles2D
 @export var enemy : Enemy
-@export var vomit_duration := 1
+@export var vomit_duration := 3
 @export var vomit_timer : Timer
 @export var damage_start_timer : Timer
 var _doing_damage := false
@@ -50,7 +50,7 @@ func Physics_Update():
 	_vomited_object = vomit_raycast.get_collider()
 	if (_vomited_object && (_vomited_object.get_parent() == enemy.LastTarget)):
 		if enemy.LastTarget is PlayerClass:
-			enemy.LastTarget.take_damage(0.1)
+			enemy.LastTarget.take_damage(0.2)
 	pass
 
 func vomit_timeout():

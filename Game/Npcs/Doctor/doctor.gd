@@ -1,6 +1,8 @@
 extends CharacterBody2D
 class_name Doctor
 
+@export var key_Reveal_time : Vector2 = Vector2(20,20)
+@export var key : Node2D
 @export var stepsAudioPlayer: AudioStreamPlayer2D
 @export var exit_time : Vector2 = Vector2(18,20)
 @export var hour_assingment := 7
@@ -31,3 +33,11 @@ func _physics_process(_delta: float) -> void:
 	else:
 		animationPlayer.flip_h = false
 	move_and_slide()
+
+
+func _process(_delta: float) -> void:
+	if GlobalTimer.time_passed(key_Reveal_time):
+		if key:
+			if is_instance_valid(key):
+				key.reveal()
+	pass

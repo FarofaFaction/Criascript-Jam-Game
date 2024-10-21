@@ -16,6 +16,10 @@ var pacientsSpawned := false
 # Função para verificar se a hora atual está no intervalo permitido
 func is_within_active_hours() -> bool:
 	# Verifica se estamos entre o horário de spawn_time e hour_to_sleep
+	#print(spawn_time)
+	#print(Vector2(GlobalTimer.hours, GlobalTimer.minutes))
+	#print(GlobalTimer.time_passed(spawn_time))
+	#print(GlobalTimer.time_passed(hour_to_sleep))
 	return GlobalTimer.time_passed(spawn_time) and not GlobalTimer.time_passed(hour_to_sleep)
 
 func _ready() -> void:
@@ -25,7 +29,7 @@ func _ready() -> void:
 	# Só inicia o processamento se estiver dentro do horário válido
 	if is_within_active_hours():
 		_spawn_pacients_on_midle_day()
-		pacientsSpawned = true
+		#pacientsSpawned = true
 	
 	set_process(true)
 	pass
@@ -66,6 +70,7 @@ func _process(_delta: float) -> void:
 func control_pacients_spawning():
 	if !spawn_node:
 		return
+		
 	# Reseta o array pacientsSpawned à meia-noite
 	if GlobalTimer.hours == 0 and GlobalTimer.minutes >= 0:
 		pacientsSpawned = false
@@ -99,6 +104,7 @@ func _spawn_pacients():
 		# Adiciona o paciente ao nó de spawn
 		var randT := randf_range(0.0,1.5)
 		await get_tree().create_timer(randT).timeout
+		pacient.add_to_group("Pacients")
 		spawn_node.add_child(pacient)
 
 func _spawn_pacients_on_midle_day():
@@ -122,4 +128,5 @@ func _spawn_pacients_on_midle_day():
 		# Adiciona o paciente ao nó de spawn
 		var randT := randf_range(0.0,1.5)
 		await get_tree().create_timer(randT).timeout
+		pacient.add_to_group("Pacients")
 		spawn_node.add_child(pacient)

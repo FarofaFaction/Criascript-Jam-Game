@@ -57,11 +57,17 @@ func Update():
 		Transitioned.emit(self, "PacientWalkout")
 	pass
 
+var BolaRotation := 0.2
+
 func Physics_Update():
 	if !pacient:
 		return
 	move_pacient()
 	Bola.global_position += BolaVelocity
+	if BolaVelocity.x > 0:
+		Bola.rotation += BolaRotation
+	elif BolaVelocity.x < 0:
+		Bola.rotation -= BolaRotation
 	pass
 
 func move_pacient():
@@ -140,4 +146,10 @@ func _on_pe_esquerdo_area_entered(area: Area2D) -> void:
 	if area.name != "Bola":
 		return
 	BolaVelocity.x *= -1
+	pass # Replace with function body.
+
+
+func _on_quadra_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Pacients"):
+		body.change_state("PacientWalkIn")
 	pass # Replace with function body.

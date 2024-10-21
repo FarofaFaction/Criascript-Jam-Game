@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbb21tcq8fok1"]
+
+[ext_resource type="PackedScene" uid="uid://cp5et8dq2pjvr" path="res://Game/text_ballon.tscn" id="1_opp2o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_flyke"]
+
+[node name="DesafianteSpeakTextSize2" type="Node2D"]
+position = Vector2(-25, -26)
+scale = Vector2(0.3, 0.3)
+
+[node name="Textpanel" type="Panel" parent="."]
+offset_right = 113.0
+offset_bottom = 31.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_flyke")
+
+[node name="DesafianteBaloon" parent="Textpanel" instance=ExtResource("1_opp2o")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 1
+grow_vertical = 1
+text = "[E] para falar"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://uj7yp8ht0jla"]
+[gd_scene load_steps=72 format=3 uid="uid://uj7yp8ht0jla"]
 
 [ext_resource type="Script" path="res://Game/Loctions/Room/player_room.gd" id="1_13q18"]
 [ext_resource type="PackedScene" uid="uid://d2d1asq2fkvsq" path="res://Interface/PlayerInterface/player_interface.tscn" id="2_k01qi"]
@@ -7,34 +7,30 @@
 [ext_resource type="AudioStream" uid="uid://4v7vpuxnp7fm" path="res://Audio/Effects/swictch.wav" id="5_8adeb"]
 [ext_resource type="Texture2D" uid="uid://c5bj3otn1pl5f" path="res://Game/Loctions/Room/mapa 1.png" id="6_pi7ew"]
 [ext_resource type="PackedScene" uid="uid://cxpyp7yoxaixr" path="res://Objects/room_clock.tscn" id="7_0a4wr"]
-[ext_resource type="Script" path="res://Game/Npcs/Doctor/doctor.gd" id="8_bqmsx"]
 [ext_resource type="Texture2D" uid="uid://bv04l8emn75qh" path="res://Game/Npcs/Doctor/doctor-idle.png" id="9_ff4ju"]
+[ext_resource type="Script" path="res://Game/Npcs/Pacients/pacient.gd" id="10_fpx83"]
 [ext_resource type="Texture2D" uid="uid://b6pq5blreewrk" path="res://Game/Npcs/Doctor/doctor-runing.png" id="10_njqus"]
 [ext_resource type="Texture2D" uid="uid://dgq2m1cnwgbv" path="res://Game/Player/idle.png" id="11_ov2ei"]
 [ext_resource type="Texture2D" uid="uid://ji8y8qki3vcm" path="res://Game/Player/run.png" id="12_7n0s6"]
+[ext_resource type="PackedScene" uid="uid://cp5et8dq2pjvr" path="res://Game/text_ballon.tscn" id="12_17apr"]
 [ext_resource type="PackedScene" uid="uid://bqjg53nmro3w" path="res://Objects/Shadow/animated_shadow.tscn" id="13_jn72q"]
 [ext_resource type="Script" path="res://Game/state_machine.gd" id="14_tav5k"]
-[ext_resource type="Script" path="res://Game/Npcs/Doctor/docorIdle.gd" id="15_1eab6"]
 [ext_resource type="PackedScene" uid="uid://6fw6kl4t5n7x" path="res://Objects/interactible_area.tscn" id="16_bbywb"]
-[ext_resource type="Script" path="res://Dialog/DialogClass/dialog_class.gd" id="17_y50bq"]
-[ext_resource type="Script" path="res://Dialog/DialogClass/speak_class.gd" id="18_ykemd"]
-[ext_resource type="Texture2D" uid="uid://de0dxq4ujoxsc" path="res://Dialog/Characters/Doctor/DoctorPortrait.jpg" id="19_mk0io"]
-[ext_resource type="PackedScene" uid="uid://baklw2eb62qgd" path="res://Dialog/DialogMenuClass/DialogMenu.tscn" id="20_gi4m5"]
-[ext_resource type="Script" path="res://Game/Npcs/Doctor/Dialogo/OpDialogoComoPossoAjudar.gd" id="21_pslob"]
-[ext_resource type="Script" path="res://Game/Npcs/Doctor/Dialogo/options_test.gd" id="22_j3cpa"]
-[ext_resource type="Script" path="res://Game/Npcs/Doctor/doctor_await.gd" id="23_1v4s5"]
-[ext_resource type="Script" path="res://Game/Npcs/Doctor/doctorWalkIn.gd" id="24_tyhyb"]
-[ext_resource type="Script" path="res://Game/Npcs/Doctor/doctorWalkout.gd" id="25_swflr"]
+[ext_resource type="PackedScene" uid="uid://fapehm3dhx0l" path="res://Objects/Cenario/Cama/cama.tscn" id="17_rtuhv"]
+[ext_resource type="Texture2D" uid="uid://bcufmduoe61cs" path="res://Sprites/Sprites mundo/area inicio/camas direita/cama 4.png" id="18_mbx0v"]
+[ext_resource type="Script" path="res://Game/Npcs/Pacients/pacientIdle.gd" id="22_qby6v"]
+[ext_resource type="Script" path="res://Game/Loctions/DarkRoom/await_darkroom.gd" id="23_lscx1"]
+[ext_resource type="Script" path="res://Game/Npcs/Pacients/pacient_await.gd" id="24_ijcab"]
+[ext_resource type="Script" path="res://Game/Npcs/Pacients/pacientWalkIn.gd" id="25_co7on"]
+[ext_resource type="Script" path="res://Game/Npcs/Pacients/pacientWalkout.gd" id="26_idjc6"]
 [ext_resource type="PackedScene" uid="uid://2skcpejdtcma" path="res://Game/Npcs/npc_steps.tscn" id="26_jxtdy"]
 [ext_resource type="PackedScene" uid="uid://7sspjh77o6vm" path="res://Game/Player/player.tscn" id="27_024cc"]
 [ext_resource type="Texture2D" uid="uid://co2ranalwxee1" path="res://Game/Loctions/Room/comodo cortina.png" id="28_ajfqu"]
 [ext_resource type="Script" path="res://Objects/Cenario/Tv/tv.gd" id="29_y01hk"]
 [ext_resource type="PackedScene" uid="uid://yje2v65lwodi" path="res://Game/Enemy/enemy_spawning.tscn" id="30_3rkjj"]
 [ext_resource type="PackedScene" uid="uid://b5l5jcfiebqmr" path="res://Game/textpanel.tscn" id="30_e0ply"]
-[ext_resource type="PackedScene" uid="uid://c1d5max6as1qn" path="res://Game/Npcs/Pacients/pacient_spawning.tscn" id="31_e4ymg"]
 [ext_resource type="Script" path="res://Scripts/interactible_area.gd" id="31_kkckd"]
 [ext_resource type="Texture2D" uid="uid://cusk8ggfb80y3" path="res://Objects/Cenario/Tv/tv.png" id="32_logp5"]
-[ext_resource type="AudioStream" uid="uid://cprvuc2smhmqe" path="res://Audio/Effects/515798__ben_0815__murmur.wav" id="32_v8t3o"]
 [ext_resource type="PackedScene" uid="uid://kf3xj3qo4pel" path="res://Objects/Shadow/shadow.tscn" id="33_0o4be"]
 [ext_resource type="Texture2D" uid="uid://cdjdi7e3hfopn" path="res://Game/Loctions/Room/comodo cortina 2.png" id="33_27utl"]
 [ext_resource type="PackedScene" uid="uid://cpe4chlg5q0t2" path="res://Game/scene_changer.tscn" id="34_cgvom"]
@@ -57,6 +53,8 @@ size = Vector2(35, 118)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n3lfm"]
 size = Vector2(35, 278)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_flyke"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8ubhu"]
 radius = 129.557
@@ -223,7 +221,7 @@ size = Vector2(44, 29)
 size = Vector2(15, 9)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h5h37"]
-radius = 5.09902
+radius = 11.6619
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_j8i1h"]
 load_path = "res://.godot/imported/light.png-8fdf09ef7de5c29c73dfe94c1c1879f5.ctex"
@@ -238,6 +236,7 @@ script = ExtResource("1_13q18")
 destinations = [NodePath("Scenes/Destinations/1")]
 
 [node name="PlayerInterface" parent="." instance=ExtResource("2_k01qi")]
+visible = false
 
 [node name="Illumination" type="Node2D" parent="." node_paths=PackedStringArray("switchAudioPlayer", "ilumination_node", "BigLight", "SmallLight", "GlobalIllumination")]
 script = ExtResource("3_83uti")
@@ -347,259 +346,6 @@ y_sort_enabled = true
 [node name="Personagens" type="Node2D" parent="OrganizadosPorY"]
 y_sort_enabled = true
 
-[node name="Doctor" type="CharacterBody2D" parent="OrganizadosPorY/Personagens" node_paths=PackedStringArray("stepsAudioPlayer", "exit_area", "target_area", "DetectionArea", "SelfArea", "animationPlayer") groups=["Npc"]]
-y_sort_enabled = true
-position = Vector2(332, -30)
-collision_layer = 0
-collision_mask = 2
-motion_mode = 1
-script = ExtResource("8_bqmsx")
-stepsAudioPlayer = NodePath("NpcSteps")
-minutes_assingment = 30
-exit_area = NodePath("ExitArea")
-target_area = NodePath("TargetArea")
-DetectionArea = NodePath("DetectionArea")
-SelfArea = NodePath("SelfArea")
-animationPlayer = NodePath("Sprite")
-metadata/_edit_group_ = true
-
-[node name="DetectionArea" type="Area2D" parent="OrganizadosPorY/Personagens/Doctor"]
-collision_layer = 0
-collision_mask = 2147483648
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="OrganizadosPorY/Personagens/Doctor/DetectionArea"]
-shape = SubResource("CircleShape2D_8ubhu")
-
-[node name="SelfArea" type="Area2D" parent="OrganizadosPorY/Personagens/Doctor"]
-collision_layer = 0
-collision_mask = 2147483648
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="OrganizadosPorY/Personagens/Doctor/SelfArea"]
-position = Vector2(0, 12)
-shape = SubResource("CircleShape2D_318iq")
-
-[node name="Sprite" type="AnimatedSprite2D" parent="OrganizadosPorY/Personagens/Doctor"]
-sprite_frames = SubResource("SpriteFrames_amjbx")
-animation = &"DoctorIdle"
-autoplay = "Idle"
-frame_progress = 0.344689
-
-[node name="AnimatedShadow" parent="OrganizadosPorY/Personagens/Doctor/Sprite" instance=ExtResource("13_jn72q")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="OrganizadosPorY/Personagens/Doctor"]
-position = Vector2(0, 12)
-shape = SubResource("RectangleShape2D_odx0j")
-
-[node name="State Machine" type="Node" parent="OrganizadosPorY/Personagens/Doctor" node_paths=PackedStringArray("initial_state")]
-script = ExtResource("14_tav5k")
-initial_state = NodePath("DoctorAwait")
-
-[node name="DoctorIdle" type="Node" parent="OrganizadosPorY/Personagens/Doctor/State Machine" node_paths=PackedStringArray("doctor", "DialogScene")]
-script = ExtResource("15_1eab6")
-doctor = NodePath("../..")
-DialogScene = NodePath("CanvasLayer/AskForPill")
-
-[node name="InteractibleArea" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle" node_paths=PackedStringArray("moving_parent") instance=ExtResource("16_bbywb")]
-moving_parent = NodePath("../../..")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle"]
-visible = false
-
-[node name="AskForPill" type="Control" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle/CanvasLayer"]
-visible = false
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("17_y50bq")
-auto_start = false
-
-[node name="SpeakClass2" type="RichTextLabel" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle/CanvasLayer/AskForPill"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Bom dia dorminhoco"
-script = ExtResource("18_ykemd")
-texture = ExtResource("19_mk0io")
-speaker = "Doutor"
-
-[node name="SpeakClass3" type="RichTextLabel" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle/CanvasLayer/AskForPill"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Como foi sua noite ?"
-script = ExtResource("18_ykemd")
-texture = ExtResource("19_mk0io")
-speaker = "Doutor"
-
-[node name="DialogMenu" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle/CanvasLayer/AskForPill" node_paths=PackedStringArray("options_conection") instance=ExtResource("20_gi4m5")]
-visible = false
-layout_mode = 1
-options_conection = NodePath("OptionsTest")
-start_visible = false
-option_3_visible = false
-option_4_visible = false
-
-[node name="OptionsTest" type="Control" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle/CanvasLayer/AskForPill/DialogMenu"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("21_pslob")
-
-[node name="option1" type="Label" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle/CanvasLayer/AskForPill/DialogMenu/OptionsTest"]
-layout_mode = 0
-offset_top = 136.0
-offset_right = 40.0
-offset_bottom = 159.0
-text = "Dormi bem, obrigado pela preocupação"
-
-[node name="option2" type="Label" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle/CanvasLayer/AskForPill/DialogMenu/OptionsTest"]
-layout_mode = 0
-offset_top = 136.0
-offset_right = 40.0
-offset_bottom = 159.0
-text = "Acho  que estou sendo perseguido"
-
-[node name="option3" type="Label" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle/CanvasLayer/AskForPill/DialogMenu/OptionsTest"]
-layout_mode = 0
-offset_top = 136.0
-offset_right = 40.0
-offset_bottom = 159.0
-text = "."
-
-[node name="option4" type="Label" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle/CanvasLayer/AskForPill/DialogMenu/OptionsTest"]
-layout_mode = 0
-offset_top = 136.0
-offset_right = 40.0
-offset_bottom = 159.0
-text = "Teste 1"
-
-[node name="SpeakClass4" type="RichTextLabel" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle/CanvasLayer/AskForPill"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Interessante"
-script = ExtResource("18_ykemd")
-texture = ExtResource("19_mk0io")
-speaker = "Doutor"
-
-[node name="SpeakClass5" type="RichTextLabel" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle/CanvasLayer/AskForPill"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Posso te ajudar de alguma forma ?"
-script = ExtResource("18_ykemd")
-texture = ExtResource("19_mk0io")
-speaker = "Doutor"
-
-[node name="DialogMenu2" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle/CanvasLayer/AskForPill" node_paths=PackedStringArray("options_conection") instance=ExtResource("20_gi4m5")]
-visible = false
-layout_mode = 1
-options_conection = NodePath("OptionsTest")
-start_visible = false
-option_3_visible = false
-option_4_visible = false
-
-[node name="OptionsTest" type="Control" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle/CanvasLayer/AskForPill/DialogMenu2"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("22_j3cpa")
-
-[node name="option1" type="Label" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle/CanvasLayer/AskForPill/DialogMenu2/OptionsTest"]
-layout_mode = 0
-offset_top = 136.0
-offset_right = 40.0
-offset_bottom = 159.0
-text = "Sim, acho que os remedios não estao fazendo efeito"
-
-[node name="option2" type="Label" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle/CanvasLayer/AskForPill/DialogMenu2/OptionsTest"]
-layout_mode = 0
-offset_top = 136.0
-offset_right = 40.0
-offset_bottom = 159.0
-text = "Não, obrigado"
-
-[node name="option3" type="Label" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle/CanvasLayer/AskForPill/DialogMenu2/OptionsTest"]
-layout_mode = 0
-offset_top = 136.0
-offset_right = 40.0
-offset_bottom = 159.0
-text = "Ando um pouco confuso. 
-Às vezes, não sei se estou
- acordado ou sonhando."
-
-[node name="option4" type="Label" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle/CanvasLayer/AskForPill/DialogMenu2/OptionsTest"]
-layout_mode = 0
-offset_top = 136.0
-offset_right = 40.0
-offset_bottom = 159.0
-text = "Acho que estou melhor, 
-mas tenho dias em que 
-sinto que o tempo não
- passa direito."
-
-[node name="SpeakClass6" type="RichTextLabel" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle/CanvasLayer/AskForPill"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Não esqueça de buscar seus remedios na enfermaria, se cuide!"
-script = ExtResource("18_ykemd")
-texture = ExtResource("19_mk0io")
-speaker = "Doutor"
-
-[node name="DoctorAwait" type="Node" parent="OrganizadosPorY/Personagens/Doctor/State Machine" node_paths=PackedStringArray("doctor")]
-script = ExtResource("23_1v4s5")
-doctor = NodePath("../..")
-
-[node name="DoctorWalkIn" type="Node" parent="OrganizadosPorY/Personagens/Doctor/State Machine" node_paths=PackedStringArray("doctor", "navigation_agent")]
-script = ExtResource("24_tyhyb")
-doctor = NodePath("../..")
-navigation_agent = NodePath("../../NavigationAgent2D")
-
-[node name="DoctorWalkout" type="Node" parent="OrganizadosPorY/Personagens/Doctor/State Machine" node_paths=PackedStringArray("doctor", "navigation_agent")]
-script = ExtResource("25_swflr")
-doctor = NodePath("../..")
-navigation_agent = NodePath("../../NavigationAgent2D")
-
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="OrganizadosPorY/Personagens/Doctor"]
-path_postprocessing = 1
-
-[node name="TargetArea" type="Marker2D" parent="OrganizadosPorY/Personagens/Doctor"]
-top_level = true
-position = Vector2(638, -32)
-
-[node name="ExitArea" type="Marker2D" parent="OrganizadosPorY/Personagens/Doctor"]
-top_level = true
-position = Vector2(328, -36)
-
-[node name="NpcSteps" parent="OrganizadosPorY/Personagens/Doctor" instance=ExtResource("26_jxtdy")]
-
 [node name="Player" parent="OrganizadosPorY/Personagens" instance=ExtResource("27_024cc")]
 position = Vector2(328, -24)
 startAwake = false
@@ -607,6 +353,110 @@ awaking = false
 
 [node name="Pacients" type="Node2D" parent="OrganizadosPorY/Personagens"]
 y_sort_enabled = true
+
+[node name="AntiPlayer" type="CharacterBody2D" parent="OrganizadosPorY/Personagens" node_paths=PackedStringArray("stepsAudioPlayer", "exit_area", "DetectionArea", "SelfArea", "animationPlayer") groups=["Npc"]]
+y_sort_enabled = true
+position = Vector2(715, 223)
+collision_layer = 0
+collision_mask = 2
+motion_mode = 1
+script = ExtResource("10_fpx83")
+stepsAudioPlayer = NodePath("Addons/Sounds/NpcSteps")
+exit_area = NodePath("../../../Scenes/Destinations/1")
+DetectionArea = NodePath("DetectionArea")
+SelfArea = NodePath("SelfArea")
+animationPlayer = NodePath("Sprite")
+
+[node name="Addons" type="Node2D" parent="OrganizadosPorY/Personagens/AntiPlayer"]
+
+[node name="Sounds" type="Node2D" parent="OrganizadosPorY/Personagens/AntiPlayer/Addons"]
+
+[node name="NpcSteps" parent="OrganizadosPorY/Personagens/AntiPlayer/Addons/Sounds" instance=ExtResource("26_jxtdy")]
+
+[node name="DesafianteSpeakTextSize2" type="Node2D" parent="OrganizadosPorY/Personagens/AntiPlayer/Addons"]
+position = Vector2(-25, -26)
+scale = Vector2(0.3, 0.3)
+
+[node name="Textpanel" type="Panel" parent="OrganizadosPorY/Personagens/AntiPlayer/Addons/DesafianteSpeakTextSize2"]
+offset_right = 113.0
+offset_bottom = 31.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_flyke")
+
+[node name="DesafianteBaloon" parent="OrganizadosPorY/Personagens/AntiPlayer/Addons/DesafianteSpeakTextSize2/Textpanel" instance=ExtResource("12_17apr")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 1
+grow_vertical = 1
+text = "[E] para falar"
+
+[node name="DetectionArea" type="Area2D" parent="OrganizadosPorY/Personagens/AntiPlayer"]
+collision_layer = 0
+collision_mask = 2147483648
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OrganizadosPorY/Personagens/AntiPlayer/DetectionArea"]
+shape = SubResource("CircleShape2D_8ubhu")
+
+[node name="SelfArea" type="Area2D" parent="OrganizadosPorY/Personagens/AntiPlayer"]
+collision_layer = 2
+collision_mask = 2147483650
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OrganizadosPorY/Personagens/AntiPlayer/SelfArea"]
+position = Vector2(0, 12)
+shape = SubResource("CircleShape2D_318iq")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="OrganizadosPorY/Personagens/AntiPlayer"]
+sprite_frames = SubResource("SpriteFrames_amjbx")
+animation = &"Run"
+autoplay = "Idle"
+
+[node name="AnimatedShadow" parent="OrganizadosPorY/Personagens/AntiPlayer/Sprite" instance=ExtResource("13_jn72q")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OrganizadosPorY/Personagens/AntiPlayer"]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_odx0j")
+
+[node name="State Machine" type="Node" parent="OrganizadosPorY/Personagens/AntiPlayer" node_paths=PackedStringArray("initial_state")]
+script = ExtResource("14_tav5k")
+initial_state = NodePath("AwaitDarkroom")
+
+[node name="PacientIdle" type="Node" parent="OrganizadosPorY/Personagens/AntiPlayer/State Machine" node_paths=PackedStringArray("pacient")]
+script = ExtResource("22_qby6v")
+pacient = NodePath("../..")
+
+[node name="InteractibleArea" parent="OrganizadosPorY/Personagens/AntiPlayer/State Machine/PacientIdle" node_paths=PackedStringArray("moving_parent") instance=ExtResource("16_bbywb")]
+moving_parent = NodePath("../../..")
+
+[node name="PacientAwait" type="Node" parent="OrganizadosPorY/Personagens/AntiPlayer/State Machine" node_paths=PackedStringArray("pacient")]
+script = ExtResource("24_ijcab")
+pacient = NodePath("../..")
+
+[node name="PacientWalkIn" type="Node" parent="OrganizadosPorY/Personagens/AntiPlayer/State Machine" node_paths=PackedStringArray("pacient", "navigation_agent")]
+script = ExtResource("25_co7on")
+pacient = NodePath("../..")
+navigation_agent = NodePath("../../NavigationAgent2D")
+
+[node name="PacientWalkout" type="Node" parent="OrganizadosPorY/Personagens/AntiPlayer/State Machine" node_paths=PackedStringArray("pacient", "navigation_agent")]
+script = ExtResource("26_idjc6")
+pacient = NodePath("../..")
+navigation_agent = NodePath("../../NavigationAgent2D")
+
+[node name="AwaitDarkroom" type="Node" parent="OrganizadosPorY/Personagens/AntiPlayer/State Machine" node_paths=PackedStringArray("key", "pacient", "SpeakingArea")]
+script = ExtResource("23_lscx1")
+key = NodePath("../../../../../Key")
+pacient = NodePath("../..")
+SpeakingArea = NodePath("InteractibleArea")
+
+[node name="InteractibleArea" parent="OrganizadosPorY/Personagens/AntiPlayer/State Machine/AwaitDarkroom" node_paths=PackedStringArray("message", "moving_parent") instance=ExtResource("16_bbywb")]
+position = Vector2(715, 224)
+message = NodePath("../../../Addons/DesafianteSpeakTextSize2/Textpanel/DesafianteBaloon")
+moving_parent = NodePath("../../..")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="OrganizadosPorY/Personagens/AntiPlayer"]
+simplify_path = true
 
 [node name="Objects" type="Node2D" parent="OrganizadosPorY"]
 y_sort_enabled = true
@@ -689,7 +539,7 @@ script = ExtResource("31_kkckd")
 messagePanel = NodePath("../SacaledTextBallon/Textpanel")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OrganizadosPorY/Objects/Tv/InteractibleArea"]
-position = Vector2(0, 12)
+position = Vector2(-1, 5)
 shape = SubResource("CircleShape2D_h5h37")
 
 [node name="Tv" type="Sprite2D" parent="OrganizadosPorY/Objects/Tv"]
@@ -714,6 +564,151 @@ texture_scale = 0.03
 [node name="Shadow" parent="OrganizadosPorY/Objects/Tv/Tv" instance=ExtResource("33_0o4be")]
 position = Vector2(-2, -6)
 
+[node name="Camas" type="Node2D" parent="OrganizadosPorY/Objects"]
+y_sort_enabled = true
+
+[node name="Cama" parent="OrganizadosPorY/Objects/Camas" instance=ExtResource("17_rtuhv")]
+position = Vector2(645, 172)
+
+[node name="Sprite2D" parent="OrganizadosPorY/Objects/Camas/Cama" index="2"]
+texture = ExtResource("18_mbx0v")
+
+[node name="Cama2" parent="OrganizadosPorY/Objects/Camas" instance=ExtResource("17_rtuhv")]
+position = Vector2(580, 214)
+
+[node name="Sprite2D" parent="OrganizadosPorY/Objects/Camas/Cama2" index="2"]
+texture = ExtResource("18_mbx0v")
+
+[node name="Cama3" parent="OrganizadosPorY/Objects/Camas" instance=ExtResource("17_rtuhv")]
+position = Vector2(619, 185)
+
+[node name="Sprite2D" parent="OrganizadosPorY/Objects/Camas/Cama3" index="2"]
+texture = ExtResource("18_mbx0v")
+
+[node name="Cama4" parent="OrganizadosPorY/Objects/Camas" instance=ExtResource("17_rtuhv")]
+position = Vector2(559, 230)
+
+[node name="Sprite2D" parent="OrganizadosPorY/Objects/Camas/Cama4" index="2"]
+texture = ExtResource("18_mbx0v")
+
+[node name="Cama5" parent="OrganizadosPorY/Objects/Camas" instance=ExtResource("17_rtuhv")]
+position = Vector2(583, 247)
+
+[node name="Sprite2D" parent="OrganizadosPorY/Objects/Camas/Cama5" index="2"]
+texture = ExtResource("18_mbx0v")
+
+[node name="Cama6" parent="OrganizadosPorY/Objects/Camas" instance=ExtResource("17_rtuhv")]
+position = Vector2(691, 181)
+
+[node name="Sprite2D" parent="OrganizadosPorY/Objects/Camas/Cama6" index="2"]
+texture = ExtResource("18_mbx0v")
+
+[node name="Cama7" parent="OrganizadosPorY/Objects/Camas" instance=ExtResource("17_rtuhv")]
+position = Vector2(619, 261)
+
+[node name="Sprite2D" parent="OrganizadosPorY/Objects/Camas/Cama7" index="2"]
+texture = ExtResource("18_mbx0v")
+
+[node name="Cama8" parent="OrganizadosPorY/Objects/Camas" instance=ExtResource("17_rtuhv")]
+position = Vector2(503, 259)
+
+[node name="Sprite2D" parent="OrganizadosPorY/Objects/Camas/Cama8" index="2"]
+texture = ExtResource("18_mbx0v")
+
+[node name="Cama9" parent="OrganizadosPorY/Objects/Camas" instance=ExtResource("17_rtuhv")]
+position = Vector2(515, 244)
+
+[node name="Sprite2D" parent="OrganizadosPorY/Objects/Camas/Cama9" index="2"]
+texture = ExtResource("18_mbx0v")
+
+[node name="Camas2" type="Node2D" parent="OrganizadosPorY/Objects"]
+y_sort_enabled = true
+position = Vector2(-473, -144)
+
+[node name="Cama" parent="OrganizadosPorY/Objects/Camas2" instance=ExtResource("17_rtuhv")]
+position = Vector2(886, 166)
+
+[node name="Sprite2D" parent="OrganizadosPorY/Objects/Camas2/Cama" index="2"]
+texture = ExtResource("18_mbx0v")
+
+[node name="Cama2" parent="OrganizadosPorY/Objects/Camas2" instance=ExtResource("17_rtuhv")]
+position = Vector2(732, 144)
+
+[node name="Sprite2D" parent="OrganizadosPorY/Objects/Camas2/Cama2" index="2"]
+texture = ExtResource("18_mbx0v")
+
+[node name="Cama3" parent="OrganizadosPorY/Objects/Camas2" instance=ExtResource("17_rtuhv")]
+position = Vector2(635, 350)
+
+[node name="Sprite2D" parent="OrganizadosPorY/Objects/Camas2/Cama3" index="2"]
+texture = ExtResource("18_mbx0v")
+
+[node name="Cama4" parent="OrganizadosPorY/Objects/Camas2" instance=ExtResource("17_rtuhv")]
+position = Vector2(583, 165)
+
+[node name="Sprite2D" parent="OrganizadosPorY/Objects/Camas2/Cama4" index="2"]
+texture = ExtResource("18_mbx0v")
+
+[node name="Cama5" parent="OrganizadosPorY/Objects/Camas2" instance=ExtResource("17_rtuhv")]
+position = Vector2(908, 234)
+
+[node name="Sprite2D" parent="OrganizadosPorY/Objects/Camas2/Cama5" index="2"]
+texture = ExtResource("18_mbx0v")
+
+[node name="Cama6" parent="OrganizadosPorY/Objects/Camas2" instance=ExtResource("17_rtuhv")]
+position = Vector2(989, 233)
+
+[node name="Sprite2D" parent="OrganizadosPorY/Objects/Camas2/Cama6" index="2"]
+texture = ExtResource("18_mbx0v")
+
+[node name="Cama7" parent="OrganizadosPorY/Objects/Camas2" instance=ExtResource("17_rtuhv")]
+position = Vector2(443, 367)
+
+[node name="Sprite2D" parent="OrganizadosPorY/Objects/Camas2/Cama7" index="2"]
+texture = ExtResource("18_mbx0v")
+
+[node name="Cama8" parent="OrganizadosPorY/Objects/Camas2" instance=ExtResource("17_rtuhv")]
+position = Vector2(636, 299)
+
+[node name="Sprite2D" parent="OrganizadosPorY/Objects/Camas2/Cama8" index="2"]
+texture = ExtResource("18_mbx0v")
+
+[node name="Cama9" parent="OrganizadosPorY/Objects/Camas2" instance=ExtResource("17_rtuhv")]
+position = Vector2(509, 287)
+
+[node name="Sprite2D" parent="OrganizadosPorY/Objects/Camas2/Cama9" index="2"]
+texture = ExtResource("18_mbx0v")
+
+[node name="Cama10" parent="OrganizadosPorY/Objects/Camas2" instance=ExtResource("17_rtuhv")]
+position = Vector2(1038, 122)
+
+[node name="Sprite2D" parent="OrganizadosPorY/Objects/Camas2/Cama10" index="2"]
+texture = ExtResource("18_mbx0v")
+
+[node name="Cama11" parent="OrganizadosPorY/Objects/Camas2" instance=ExtResource("17_rtuhv")]
+position = Vector2(1171, 193)
+
+[node name="Sprite2D" parent="OrganizadosPorY/Objects/Camas2/Cama11" index="2"]
+texture = ExtResource("18_mbx0v")
+
+[node name="Cama12" parent="OrganizadosPorY/Objects/Camas2" instance=ExtResource("17_rtuhv")]
+position = Vector2(1141, 144)
+
+[node name="Sprite2D" parent="OrganizadosPorY/Objects/Camas2/Cama12" index="2"]
+texture = ExtResource("18_mbx0v")
+
+[node name="Cama13" parent="OrganizadosPorY/Objects/Camas2" instance=ExtResource("17_rtuhv")]
+position = Vector2(1060, 192)
+
+[node name="Sprite2D" parent="OrganizadosPorY/Objects/Camas2/Cama13" index="2"]
+texture = ExtResource("18_mbx0v")
+
+[node name="Cama14" parent="OrganizadosPorY/Objects/Camas2" instance=ExtResource("17_rtuhv")]
+position = Vector2(647, 224)
+
+[node name="Sprite2D" parent="OrganizadosPorY/Objects/Camas2/Cama14" index="2"]
+texture = ExtResource("18_mbx0v")
+
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 visible = false
 navigation_polygon = SubResource("NavigationPolygon_q05t7")
@@ -726,17 +721,17 @@ affect_navigation_mesh = true
 vertices = PackedVector2Array(753, 167, 545, 164, 546, 134, 752, 141)
 affect_navigation_mesh = true
 
-[node name="EnemySpawning" parent="." node_paths=PackedStringArray("pegadas_spawn_node", "spawn_node") instance=ExtResource("30_3rkjj")]
+[node name="EnemySpawning" parent="." node_paths=PackedStringArray("pegadas_spawn_node", "possible_positions", "spawn_node") instance=ExtResource("30_3rkjj")]
 pegadas_spawn_node = NodePath("../BackgroundCenario/Pegadas")
+possible_positions = [NodePath("Marker2D"), NodePath("Marker2D2"), NodePath("Marker2D3"), NodePath("Marker2D4"), NodePath("Marker2D5")]
 spawn_node = NodePath("../OrganizadosPorY/Personagens")
+spawn_times = Array[Vector2]([Vector2(0, 2), Vector2(0, 30), Vector2(0, 34), Vector2(0, 22)])
 
-[node name="PacientSpawning" parent="." node_paths=PackedStringArray("murmurAudioPlayer", "spawn_node") instance=ExtResource("31_e4ymg")]
-murmurAudioPlayer = NodePath("AudioStreamPlayer2D")
-spawn_node = NodePath("../OrganizadosPorY/Personagens/Pacients")
+[node name="Marker2D4" type="Marker2D" parent="EnemySpawning"]
+position = Vector2(465, 188)
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="PacientSpawning"]
-position = Vector2(357, 42)
-stream = ExtResource("32_v8t3o")
+[node name="Marker2D5" type="Marker2D" parent="EnemySpawning"]
+position = Vector2(472, 7)
 
 [node name="Border" type="Node2D" parent="."]
 
@@ -793,11 +788,36 @@ location = "CorridorB"
 [node name="1" type="Marker2D" parent="Scenes/Destinations"]
 position = Vector2(325, -18)
 
-[node name="Item" parent="." instance=ExtResource("35_760d4")]
-position = Vector2(501, 169)
-item_id = "1"
+[node name="Key" parent="." instance=ExtResource("35_760d4")]
+visible = false
+position = Vector2(681, 228)
+item_id = "DarkRoomKey"
 
 [connection signal="area_entered" from="OrganizadosPorY/Objects/Tv/InteractibleArea" to="OrganizadosPorY/Objects/Tv/InteractibleArea" method="_player_entered"]
 [connection signal="area_exited" from="OrganizadosPorY/Objects/Tv/InteractibleArea" to="OrganizadosPorY/Objects/Tv/InteractibleArea" method="_player_exited"]
 
 [editable path="OrganizadosPorY/Objects/Tv/SacaledTextBallon/Textpanel"]
+[editable path="OrganizadosPorY/Objects/Camas/Cama"]
+[editable path="OrganizadosPorY/Objects/Camas/Cama2"]
+[editable path="OrganizadosPorY/Objects/Camas/Cama3"]
+[editable path="OrganizadosPorY/Objects/Camas/Cama4"]
+[editable path="OrganizadosPorY/Objects/Camas/Cama5"]
+[editable path="OrganizadosPorY/Objects/Camas/Cama6"]
+[editable path="OrganizadosPorY/Objects/Camas/Cama7"]
+[editable path="OrganizadosPorY/Objects/Camas/Cama8"]
+[editable path="OrganizadosPorY/Objects/Camas/Cama9"]
+[editable path="OrganizadosPorY/Objects/Camas2/Cama"]
+[editable path="OrganizadosPorY/Objects/Camas2/Cama2"]
+[editable path="OrganizadosPorY/Objects/Camas2/Cama3"]
+[editable path="OrganizadosPorY/Objects/Camas2/Cama4"]
+[editable path="OrganizadosPorY/Objects/Camas2/Cama5"]
+[editable path="OrganizadosPorY/Objects/Camas2/Cama6"]
+[editable path="OrganizadosPorY/Objects/Camas2/Cama7"]
+[editable path="OrganizadosPorY/Objects/Camas2/Cama8"]
+[editable path="OrganizadosPorY/Objects/Camas2/Cama9"]
+[editable path="OrganizadosPorY/Objects/Camas2/Cama10"]
+[editable path="OrganizadosPorY/Objects/Camas2/Cama11"]
+[editable path="OrganizadosPorY/Objects/Camas2/Cama12"]
+[editable path="OrganizadosPorY/Objects/Camas2/Cama13"]
+[editable path="OrganizadosPorY/Objects/Camas2/Cama14"]
+[editable path="EnemySpawning"]

@@ -28,3 +28,7 @@ func _physics_process(_delta: float) -> void:
 	else:
 		animationPlayer.flip_h = false
 	move_and_slide()
+	
+func change_state(sss: State):
+	$"State Machine".current_state.Transitioned.emit(self, sss)
+	pass

@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://du7q1qtnnvjcy"]
+[gd_scene load_steps=74 format=3 uid="uid://du7q1qtnnvjcy"]
 
 [ext_resource type="Script" path="res://Game/Loctions/AsylumLocations/Arte/art_room.gd" id="1_ytyyg"]
 [ext_resource type="PackedScene" uid="uid://d2d1asq2fkvsq" path="res://Interface/PlayerInterface/player_interface.tscn" id="2_8i1mv"]
@@ -210,6 +210,9 @@ size = Vector2(20, 210)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xx5lv"]
 size = Vector2(20, 809.99)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4mdsb"]
+size = Vector2(428, 199)
+
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_wganc"]
 light_mode = 1
 
@@ -231,8 +234,6 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-30, -24, 585, -21, 706
 
 [node name="ExternRoom" type="Node2D"]
 script = ExtResource("1_ytyyg")
-debug = true
-debug_time_speed = 0.0
 
 [node name="PlayerInterface" parent="." instance=ExtResource("2_8i1mv")]
 visible = false
@@ -363,6 +364,10 @@ offset_bottom = 107.231
 pivot_offset = Vector2(158, 52)
 color = Color(0.258294, 0.258276, 0.228413, 1)
 
+[node name="RoomClock" parent="BackgroundCenario/Fundo/Node2" instance=ExtResource("7_0u56d")]
+position = Vector2(255.022, 62.0171)
+scale = Vector2(-1, -1)
+
 [node name="Pegadas" type="Node2D" parent="BackgroundCenario"]
 
 [node name="Porta" type="Node2D" parent="BackgroundCenario"]
@@ -388,9 +393,8 @@ y_sort_enabled = true
 y_sort_enabled = true
 
 [node name="Player" parent="OrganizadosPorY/Personagens" instance=ExtResource("8_t457x")]
-position = Vector2(530, 68)
+position = Vector2(641, 30)
 startAwake = false
-zoom = 5.0
 awaking = false
 
 [node name="PeDireito" type="Area2D" parent="OrganizadosPorY/Personagens/Player"]
@@ -586,6 +590,14 @@ item_id = "GenericKeyBola"
 [node name="PosicionamentoDesafiante" type="Marker2D" parent="OrganizadosPorY/Personagens/Desafiante/State Machine/ModoFutebol"]
 position = Vector2(55, 103)
 
+[node name="Quadra" type="Area2D" parent="OrganizadosPorY/Personagens/Desafiante/State Machine/ModoFutebol"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OrganizadosPorY/Personagens/Desafiante/State Machine/ModoFutebol/Quadra"]
+position = Vector2(260, 118)
+shape = SubResource("RectangleShape2D_4mdsb")
+
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="OrganizadosPorY/Personagens/Desafiante"]
 simplify_path = true
 
@@ -768,15 +780,17 @@ murmurAudioPlayer = NodePath("AudioStreamPlayer2D")
 positions_to_go = [NodePath("Marker2D"), NodePath("Marker2D4"), NodePath("Marker2D5"), NodePath("Marker2D6"), NodePath("Marker2D7"), NodePath("Marker2D2"), NodePath("Marker2D3")]
 positions_to_sleep = [NodePath("BedsTime/Marker2D")]
 spawn_node = NodePath("../OrganizadosPorY/Personagens/Pacients")
+spawn_time = Vector2(7, 10)
+number_of_patients = 20
 
 [node name="Marker2D" parent="PacientSpawning" index="0"]
-position = Vector2(100, 20)
+position = Vector2(52, -7)
 
 [node name="Marker2D2" parent="PacientSpawning" index="1"]
-position = Vector2(365, 182)
+position = Vector2(-20, 123)
 
 [node name="Marker2D3" parent="PacientSpawning" index="2"]
-position = Vector2(248, 112)
+position = Vector2(290, -8)
 
 [node name="Marker2D" parent="PacientSpawning/BedsTime" index="0"]
 position = Vector2(641, 36)
@@ -788,16 +802,16 @@ position = Vector2(1531, 319)
 position = Vector2(1606, 381)
 
 [node name="Marker2D4" type="Marker2D" parent="PacientSpawning"]
-position = Vector2(561, 158)
+position = Vector2(591, 164)
 
 [node name="Marker2D5" type="Marker2D" parent="PacientSpawning"]
-position = Vector2(675, 104)
+position = Vector2(546, 34)
 
 [node name="Marker2D6" type="Marker2D" parent="PacientSpawning"]
-position = Vector2(100, 20)
+position = Vector2(-3, 61)
 
 [node name="Marker2D7" type="Marker2D" parent="PacientSpawning"]
-position = Vector2(100, 20)
+position = Vector2(379, -15)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="PacientSpawning"]
 position = Vector2(357, 42)
@@ -858,6 +872,7 @@ position = Vector2(325, -18)
 [connection signal="area_entered" from="OrganizadosPorY/Personagens/Desafiante/State Machine/ModoFutebol/GolDireito" to="OrganizadosPorY/Personagens/Desafiante/State Machine/ModoFutebol" method="_on_gol_direito_area_entered"]
 [connection signal="area_entered" from="OrganizadosPorY/Personagens/Desafiante/State Machine/ModoFutebol/BarreiraEmCima" to="OrganizadosPorY/Personagens/Desafiante/State Machine/ModoFutebol" method="_on_barreira_em_cima_area_entered"]
 [connection signal="area_entered" from="OrganizadosPorY/Personagens/Desafiante/State Machine/ModoFutebol/BarreiraEmBaixo" to="OrganizadosPorY/Personagens/Desafiante/State Machine/ModoFutebol" method="_on_barreira_em_baixo_area_entered"]
+[connection signal="body_entered" from="OrganizadosPorY/Personagens/Desafiante/State Machine/ModoFutebol/Quadra" to="OrganizadosPorY/Personagens/Desafiante/State Machine/ModoFutebol" method="_on_quadra_body_entered"]
 
 [editable path="EnemySpawning"]
 [editable path="PacientSpawning"]

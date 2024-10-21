@@ -225,7 +225,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="WhiteBorder" parent="Addons/Phrases/CurrentPhrase/SacaledTextBallon/Textpanel/TextBallon" node_paths=PackedStringArray("reference") instance=ExtResource("4_2oe1v")]
-visible = true
 show_behind_parent = true
 layout_mode = 0
 offset_left = -2.0
@@ -248,6 +247,13 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "Se eu soltar meu cachorro,
 ele vai moreder seu calcanhar"
+
+[node name="Label8" type="Label" parent="Addons/Phrases/RoomPhrases"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Eu não acredito que você
+não é inscrito no canal do
+minatoSam"
 
 [node name="Label6" type="Label" parent="Addons/Phrases/RoomPhrases"]
 offset_right = 40.0

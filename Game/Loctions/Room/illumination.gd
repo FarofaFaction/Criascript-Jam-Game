@@ -1,5 +1,6 @@
 extends Node2D
 
+var on_night := false
 @export var switchAudioPlayer : AudioStreamPlayer2D
 @export var color_night : Color
 @export var color_day : Color
@@ -12,23 +13,28 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	GlobalTimer.time_changed.connect(check_ilumination)
-	if GlobalTimer.time_passed(Vector2(light_off_time, 0)) || GlobalTimer.hours < light_on_time:
+	set_process(false)
+	await  get_tree().create_timer(0.1).timeout
+	#print(GlobalTimer.hours)
+	if GlobalTimer.hours >= light_off_time or GlobalTimer.hours < light_on_time:
+		#print(GlobalTimer.hours)
 		GlobalIllumination.color = color_night
 		BigLight.color.a = 0
 		SmallLight.color.a = 0
-		pass
+		on_night = true
 	else:
 		GlobalIllumination.color = color_day
 		BigLight.color.a = 1
 		SmallLight.color.a = 1
-	pass # Replace with function body.
+		on_night = false
+	set_process(true)
+
 
 
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta: float) -> void:
-	#
-	#pass
+func _process(delta: float) -> void:
+	check_ilumination()
+	pass
 
 func turn_light_off():
 	if (!GlobalIllumination || !BigLight || !SmallLight):
@@ -47,6 +53,7 @@ func turn_light_off():
 	#tween.tween_property(BigLight, "color", color, 1)
 	#tween.tween_property(SmallLight, "color", color, 1)
 		#tween.tween_property(GlobalIllumination, "color", color_day, 2)
+	on_night = true
 	pass
 
 func turn_light_on():
@@ -66,6 +73,7 @@ func turn_light_on():
 	#tween.tween_property(BigLight, "color", color, 1)
 	#tween.tween_property(SmallLight, "color", color, 1)
 		#tween.tween_property(GlobalIllumination, "color", color_night, 2)
+	on_night = false
 	pass
 
 func check_ilumination():

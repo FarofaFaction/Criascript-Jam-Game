@@ -447,6 +447,10 @@ list_of_nodes = [NodePath("../Items/CorridorSimbols/1"), NodePath("../Items/Corr
 position = Vector2(-298, -11)
 item_id = "GenericKeyA"
 
+[node name="Item" parent="." instance=ExtResource("12_ak1qa")]
+position = Vector2(-210, -4)
+just_one_intance = false
+
 [connection signal="timeout" from="Scenes/LocalTeleporter/Timer" to="Scenes/LocalTeleporter" method="_on_Timer_timeout"]
 
 [editable path="OrganizadosPorY/Personagens/Player"]

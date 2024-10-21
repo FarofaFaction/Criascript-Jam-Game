@@ -21,8 +21,9 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if reference:
+		#if reference is Animate
 		if reference is Label:
-			if reference.text.is_empty():
+			if reference.text.is_empty() || !reference.visible:
 				visible = false
 			else:
 				visible = true

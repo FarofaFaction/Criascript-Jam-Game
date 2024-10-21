@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cedeuoqcqfw7b"]
+[gd_scene load_steps=22 format=3 uid="uid://cedeuoqcqfw7b"]
 
 [ext_resource type="Script" path="res://Game/Loctions/AsylumLocations/Refeitorio/refeitorio_room.gd" id="1_d0oqy"]
 [ext_resource type="PackedScene" uid="uid://d2d1asq2fkvsq" path="res://Interface/PlayerInterface/player_interface.tscn" id="2_rmi5a"]
@@ -7,6 +7,8 @@
 [ext_resource type="AudioStream" uid="uid://4v7vpuxnp7fm" path="res://Audio/Effects/swictch.wav" id="5_b5sxc"]
 [ext_resource type="Texture2D" uid="uid://b6f5gppgl8opr" path="res://Sprites/Sprites mundo/refeitorio/refeitorio.png" id="6_rnc57"]
 [ext_resource type="PackedScene" uid="uid://cxpyp7yoxaixr" path="res://Objects/room_clock.tscn" id="7_id1sm"]
+[ext_resource type="Texture2D" uid="uid://bcgqrcju1vesx" path="res://Sprites/comida/ninguem_na_cozinha.png" id="7_lcc6n"]
+[ext_resource type="Script" path="res://Game/Loctions/AsylumLocations/Refeitorio/balcao.gd" id="8_kjcdx"]
 [ext_resource type="Texture2D" uid="uid://c8me8q0hj5b0x" path="res://Sprites/Sprites mundo/portas/porta 2.png" id="8_o8osj"]
 [ext_resource type="PackedScene" uid="uid://7sspjh77o6vm" path="res://Game/Player/player.tscn" id="8_rk7j8"]
 [ext_resource type="PackedScene" uid="uid://yje2v65lwodi" path="res://Game/Enemy/enemy_spawning.tscn" id="9_viref"]
@@ -34,8 +36,11 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(70, -34, 612, -34, 618,
 
 [node name="RefeitorioRoom" type="Node2D"]
 script = ExtResource("1_d0oqy")
+debug = true
+debug_init_time = Vector2(5, 0)
 
 [node name="PlayerInterface" parent="." instance=ExtResource("2_rmi5a")]
+visible = false
 
 [node name="Illumination" type="Node2D" parent="." node_paths=PackedStringArray("switchAudioPlayer", "ilumination_node", "BigLight", "SmallLight", "GlobalIllumination")]
 script = ExtResource("3_op70c")
@@ -111,11 +116,15 @@ shape = SubResource("RectangleShape2D_ogs2a")
 position = Vector2(341, 68)
 texture = ExtResource("6_rnc57")
 
+[node name="Balcao" type="Sprite2D" parent="BackgroundCenario/Fundo/Mapa1"]
+position = Vector2(-23, -128)
+texture = ExtResource("7_lcc6n")
+script = ExtResource("8_kjcdx")
+
 [node name="Pegadas" type="Node2D" parent="BackgroundCenario"]
 
 [node name="RoomClock" parent="BackgroundCenario" instance=ExtResource("7_id1sm")]
-visible = false
-position = Vector2(293, -83)
+position = Vector2(87, -90)
 
 [node name="Door" type="Node2D" parent="BackgroundCenario"]
 position = Vector2(120, -42)
@@ -168,6 +177,8 @@ position = Vector2(-135, -92)
 
 [node name="ConjuntoDeMesaECadeira8" parent="OrganizadosPorY/Objects/Mesas" instance=ExtResource("11_hcucb")]
 position = Vector2(-139, -1)
+
+[node name="Bandeixa" type="Node2D" parent="OrganizadosPorY/Objects"]
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_q05t7")

@@ -1,0 +1,658 @@
+[gd_scene load_steps=48 format=3 uid="uid://b4s8hurqwpqky"]
+
+[ext_resource type="Script" path="res://Game/Loctions/AsylumLocations/Arte/art_room.gd" id="1_b6j8p"]
+[ext_resource type="PackedScene" uid="uid://d2d1asq2fkvsq" path="res://Interface/PlayerInterface/player_interface.tscn" id="2_6gpul"]
+[ext_resource type="Script" path="res://Game/Loctions/Room/illumination.gd" id="3_psl6o"]
+[ext_resource type="Texture2D" uid="uid://grx8jyxat1kd" path="res://Objects/light/light.png" id="4_3yrbs"]
+[ext_resource type="AudioStream" uid="uid://4v7vpuxnp7fm" path="res://Audio/Effects/swictch.wav" id="5_p0hnh"]
+[ext_resource type="Texture2D" uid="uid://bckfbim7v1vtg" path="res://Sprites/Sprites mundo/area arte/Area arte.png" id="6_pc1ed"]
+[ext_resource type="PackedScene" uid="uid://cxpyp7yoxaixr" path="res://Objects/room_clock.tscn" id="7_mad67"]
+[ext_resource type="Texture2D" uid="uid://bajckolo8y6cy" path="res://Sprites/Sprites mundo/area arte/Estante.png" id="7_u8x7q"]
+[ext_resource type="Texture2D" uid="uid://c3nlc0y4hmaiy" path="res://Sprites/Sprites mundo/portas/porta 1.png" id="9_uxk0l"]
+[ext_resource type="Theme" uid="uid://bi5atlkw4djab" path="res://Dialog/Styles/Style.tres" id="11_twxya"]
+[ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="12_6vqdj"]
+[ext_resource type="Texture2D" uid="uid://bfqmojulmweoe" path="res://Sprites/Sprites mundo/area arte/mesas com coisas.png" id="13_jsphl"]
+[ext_resource type="PackedScene" uid="uid://6fw6kl4t5n7x" path="res://Objects/interactible_area.tscn" id="14_7wt0p"]
+[ext_resource type="Texture2D" uid="uid://dwqyxhc31odgq" path="res://Sprites/Sprites mundo/area arte/lixo com papel colorido.png" id="15_c4tpn"]
+[ext_resource type="Texture2D" uid="uid://byi3mwsu7pumo" path="res://Sprites/Sprites mundo/area arte/tela de pintura pequena.png" id="16_e0ajv"]
+[ext_resource type="Texture2D" uid="uid://c7typnja6eef8" path="res://Sprites/Sprites mundo/area arte/tela de pintura virada.png" id="17_ymd2q"]
+[ext_resource type="PackedScene" uid="uid://bmrwqaq2n4l5f" path="res://Game/Loctions/AsylumLocations/Arte/cavalete_grande.tscn" id="18_4rlaj"]
+[ext_resource type="Texture2D" uid="uid://di5pdndal1qgv" path="res://Sprites/Mushroom.jpg" id="19_i5plf"]
+[ext_resource type="Shader" path="res://Shaders/pasteurization.gdshader" id="20_yl06i"]
+[ext_resource type="Script" path="res://Game/Loctions/scene_changer.gd" id="24_2if0r"]
+[ext_resource type="PackedScene" uid="uid://ck1cjro36gptd" path="res://Game/scaled_text_ballon.tscn" id="25_rnwt5"]
+[ext_resource type="AudioStream" uid="uid://o3gis5x4f5te" path="res://Audio/Effects/hotel-room-door-unlocking.mp3" id="26_ew3wd"]
+[ext_resource type="PackedScene" uid="uid://7sspjh77o6vm" path="res://Game/Player/player.tscn" id="27_6kv8p"]
+[ext_resource type="PackedScene" uid="uid://yje2v65lwodi" path="res://Game/Enemy/enemy_spawning.tscn" id="30_rwj6c"]
+[ext_resource type="PackedScene" uid="uid://c1d5max6as1qn" path="res://Game/Npcs/Pacients/pacient_spawning.tscn" id="31_h7315"]
+[ext_resource type="AudioStream" uid="uid://cprvuc2smhmqe" path="res://Audio/Effects/515798__ben_0815__murmur.wav" id="32_vgbxf"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s34ym"]
+load_path = "res://.godot/imported/light.png-8fdf09ef7de5c29c73dfe94c1c1879f5.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_icupd"]
+size = Vector2(35, 430)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_asune"]
+size = Vector2(35, 875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ogs2a"]
+size = Vector2(35, 643.75)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nteog"]
+light_mode = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mqcgn"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eevwk"]
+size = Vector2(44, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s3cjc"]
+size = Vector2(21, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tek50"]
+size = Vector2(14, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g02ms"]
+size = Vector2(17, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r53gx"]
+atlas = ExtResource("19_i5plf")
+region = Rect2(0, 36, 512, 198)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1he8"]
+atlas = ExtResource("19_i5plf")
+region = Rect2(512, 36, 512, 198)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8t6u"]
+atlas = ExtResource("19_i5plf")
+region = Rect2(0, 234, 512, 198)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fjp4"]
+atlas = ExtResource("19_i5plf")
+region = Rect2(512, 234, 512, 198)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ofuac"]
+atlas = ExtResource("19_i5plf")
+region = Rect2(0, 432, 512, 198)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7lhw"]
+atlas = ExtResource("19_i5plf")
+region = Rect2(512, 432, 512, 198)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qb2yi"]
+atlas = ExtResource("19_i5plf")
+region = Rect2(0, 630, 512, 198)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vni6u"]
+atlas = ExtResource("19_i5plf")
+region = Rect2(512, 630, 512, 198)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ms5fu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r53gx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d1he8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k8t6u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3fjp4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ofuac")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7lhw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qb2yi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vni6u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ciacv"]
+shader = ExtResource("20_yl06i")
+shader_parameter/level1 = Color(0, 0, 0, 1)
+shader_parameter/level2 = Color(0.5, 0.5, 0.5, 1)
+shader_parameter/level3 = Color(1, 1, 1, 1)
+shader_parameter/level4 = Color(1, 1, 1, 1)
+shader_parameter/threshold1 = 0.4
+shader_parameter/threshold2 = 0.52
+shader_parameter/threshold3 = 0.8
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_q05t7"]
+vertices = PackedVector2Array(617.07, 59.9766, 617.922, 177.008, 65.9219, 177.977, 65.0703, 59.0078)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(55, 49, 627, 50, 628, 187, 56, 188)])
+
+[node name="ArtRoom" type="Node2D"]
+script = ExtResource("1_b6j8p")
+debug = true
+debug_init_time = Vector2(5, 0)
+
+[node name="PlayerInterface" parent="." instance=ExtResource("2_6gpul")]
+visible = false
+
+[node name="Illumination" type="Node2D" parent="." node_paths=PackedStringArray("switchAudioPlayer", "ilumination_node", "BigLight", "SmallLight", "GlobalIllumination")]
+script = ExtResource("3_psl6o")
+switchAudioPlayer = NodePath("AudioStreamPlayer2D")
+color_night = Color(8.66354e-07, 0, 0.770133, 1)
+color_day = Color(1, 1, 0.466667, 0.211765)
+ilumination_node = NodePath("RoomLight")
+BigLight = NodePath("RoomLight/BigLight")
+SmallLight = NodePath("RoomLight/SmallLight")
+GlobalIllumination = NodePath("BaseIlumination")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Illumination"]
+color = Color(0, 0, 0, 1)
+
+[node name="BaseIlumination" type="PointLight2D" parent="Illumination"]
+position = Vector2(329, 35)
+color = Color(1, 1, 0.466667, 0.211765)
+energy = 0.9
+texture = SubResource("CompressedTexture2D_s34ym")
+texture_scale = 10.0
+
+[node name="RoomLight" type="Node2D" parent="Illumination"]
+position = Vector2(18, -61)
+
+[node name="SmallLight" type="PointLight2D" parent="Illumination/RoomLight"]
+position = Vector2(282, -149)
+texture = ExtResource("4_3yrbs")
+
+[node name="BigLight" type="PointLight2D" parent="Illumination/RoomLight"]
+position = Vector2(321, -82)
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("4_3yrbs")
+texture_scale = 7.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Illumination"]
+stream = ExtResource("5_p0hnh")
+
+[node name="BackgroundCenario" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="BackgroundCenario"]
+offset_left = -1462.0
+offset_top = -668.0
+offset_right = 1502.0
+offset_bottom = 708.0
+color = Color(0, 0, 0, 1)
+
+[node name="Fundo" type="Node2D" parent="BackgroundCenario"]
+metadata/_edit_lock_ = true
+
+[node name="ColissionBase" type="StaticBody2D" parent="BackgroundCenario/Fundo"]
+top_level = true
+collision_layer = 2
+collision_mask = 2
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BackgroundCenario/Fundo/ColissionBase"]
+position = Vector2(36, 67)
+shape = SubResource("RectangleShape2D_icupd")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="BackgroundCenario/Fundo/ColissionBase"]
+position = Vector2(646, 65)
+shape = SubResource("RectangleShape2D_icupd")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="BackgroundCenario/Fundo/ColissionBase"]
+position = Vector2(340, 207)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_asune")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="BackgroundCenario/Fundo/ColissionBase"]
+position = Vector2(345.125, 30.0003)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_ogs2a")
+
+[node name="Mapa1" type="Sprite2D" parent="BackgroundCenario/Fundo"]
+position = Vector2(341, 68)
+texture = ExtResource("6_pc1ed")
+metadata/_edit_lock_ = true
+
+[node name="Mapa2" type="Sprite2D" parent="BackgroundCenario/Fundo"]
+position = Vector2(480, 26)
+texture = ExtResource("7_u8x7q")
+metadata/_edit_lock_ = true
+
+[node name="Pegadas" type="Node2D" parent="BackgroundCenario"]
+
+[node name="RoomClock" parent="BackgroundCenario" instance=ExtResource("7_mad67")]
+position = Vector2(248, -12)
+
+[node name="Door" type="Node2D" parent="BackgroundCenario"]
+position = Vector2(281, 30)
+
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundCenario/Door"]
+texture = ExtResource("9_uxk0l")
+
+[node name="OrganizadosPorY" type="Node2D" parent="."]
+z_index = 1
+y_sort_enabled = true
+
+[node name="Personagens" type="Node2D" parent="OrganizadosPorY"]
+y_sort_enabled = true
+
+[node name="Player" parent="OrganizadosPorY/Personagens" instance=ExtResource("27_6kv8p")]
+position = Vector2(320, 85)
+startAwake = false
+awaking = false
+
+[node name="Pacients" type="Node2D" parent="OrganizadosPorY/Personagens"]
+y_sort_enabled = true
+
+[node name="Objects" type="Node2D" parent="OrganizadosPorY"]
+y_sort_enabled = true
+position = Vector2(8, -4)
+
+[node name="Mesa" type="RigidBody2D" parent="OrganizadosPorY/Objects"]
+position = Vector2(434, 111)
+collision_layer = 2
+collision_mask = 2
+mass = 10.0
+lock_rotation = true
+metadata/_edit_group_ = true
+
+[node name="Node2D" type="Node2D" parent="OrganizadosPorY/Objects/Mesa"]
+scale = Vector2(0.3, 0.3)
+
+[node name="Label" type="Label" parent="OrganizadosPorY/Objects/Mesa/Node2D"]
+visible = false
+material = SubResource("CanvasItemMaterial_nteog")
+offset_left = -120.0
+offset_top = -76.6667
+offset_right = 118.0
+offset_bottom = -53.6667
+theme = ExtResource("11_twxya")
+theme_override_fonts/font = ExtResource("12_6vqdj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "[E] Segurar/Soltar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OrganizadosPorY/Objects/Mesa"]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_eevwk")
+
+[node name="Sprite2D" type="Sprite2D" parent="OrganizadosPorY/Objects/Mesa"]
+texture = ExtResource("13_jsphl")
+
+[node name="InteractibleArea" parent="OrganizadosPorY/Objects/Mesa" instance=ExtResource("14_7wt0p")]
+
+[node name="Lixeira" type="RigidBody2D" parent="OrganizadosPorY/Objects"]
+position = Vector2(539, 45)
+collision_layer = 2
+collision_mask = 2
+mass = 10.0
+lock_rotation = true
+metadata/_edit_group_ = true
+
+[node name="Node2D" type="Node2D" parent="OrganizadosPorY/Objects/Lixeira"]
+scale = Vector2(0.3, 0.3)
+
+[node name="Label" type="Label" parent="OrganizadosPorY/Objects/Lixeira/Node2D"]
+visible = false
+material = SubResource("CanvasItemMaterial_nteog")
+offset_left = -120.0
+offset_top = -76.6667
+offset_right = 118.0
+offset_bottom = -53.6667
+theme = ExtResource("11_twxya")
+theme_override_fonts/font = ExtResource("12_6vqdj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "[E] Segurar/Soltar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OrganizadosPorY/Objects/Lixeira"]
+position = Vector2(6.5, 8)
+shape = SubResource("RectangleShape2D_s3cjc")
+
+[node name="Sprite2D" type="Sprite2D" parent="OrganizadosPorY/Objects/Lixeira"]
+texture = ExtResource("15_c4tpn")
+
+[node name="InteractibleArea" parent="OrganizadosPorY/Objects/Lixeira" instance=ExtResource("14_7wt0p")]
+position = Vector2(7, -3)
+
+[node name="CavaleteFrente" type="RigidBody2D" parent="OrganizadosPorY/Objects"]
+position = Vector2(521, 79)
+collision_layer = 2
+collision_mask = 2
+mass = 10.0
+lock_rotation = true
+metadata/_edit_group_ = true
+
+[node name="Node2D" type="Node2D" parent="OrganizadosPorY/Objects/CavaleteFrente"]
+scale = Vector2(0.3, 0.3)
+
+[node name="Label" type="Label" parent="OrganizadosPorY/Objects/CavaleteFrente/Node2D"]
+visible = false
+material = SubResource("CanvasItemMaterial_nteog")
+offset_left = -120.0
+offset_top = -76.6667
+offset_right = 118.0
+offset_bottom = -53.6667
+theme = ExtResource("11_twxya")
+theme_override_fonts/font = ExtResource("12_6vqdj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "[E] Segurar/Soltar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OrganizadosPorY/Objects/CavaleteFrente"]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_tek50")
+
+[node name="Sprite2D" type="Sprite2D" parent="OrganizadosPorY/Objects/CavaleteFrente"]
+texture = ExtResource("16_e0ajv")
+
+[node name="InteractibleArea" parent="OrganizadosPorY/Objects/CavaleteFrente" instance=ExtResource("14_7wt0p")]
+position = Vector2(7, -3)
+
+[node name="CavaleteLado" type="RigidBody2D" parent="OrganizadosPorY/Objects"]
+position = Vector2(479, 73)
+collision_layer = 2
+collision_mask = 2
+mass = 10.0
+lock_rotation = true
+metadata/_edit_group_ = true
+
+[node name="Node2D" type="Node2D" parent="OrganizadosPorY/Objects/CavaleteLado"]
+scale = Vector2(0.3, 0.3)
+
+[node name="Label" type="Label" parent="OrganizadosPorY/Objects/CavaleteLado/Node2D"]
+visible = false
+material = SubResource("CanvasItemMaterial_nteog")
+offset_left = -120.0
+offset_top = -76.6667
+offset_right = 118.0
+offset_bottom = -53.6667
+theme = ExtResource("11_twxya")
+theme_override_fonts/font = ExtResource("12_6vqdj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "[E] Segurar/Soltar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OrganizadosPorY/Objects/CavaleteLado"]
+position = Vector2(0.5, 17)
+shape = SubResource("RectangleShape2D_g02ms")
+
+[node name="Sprite2D" type="Sprite2D" parent="OrganizadosPorY/Objects/CavaleteLado"]
+texture = ExtResource("17_ymd2q")
+
+[node name="InteractibleArea" parent="OrganizadosPorY/Objects/CavaleteLado" instance=ExtResource("14_7wt0p")]
+position = Vector2(7, -3)
+
+[node name="Cavaletes" type="Node2D" parent="OrganizadosPorY/Objects"]
+y_sort_enabled = true
+
+[node name="Coluna2" type="Node2D" parent="OrganizadosPorY/Objects/Cavaletes"]
+y_sort_enabled = true
+
+[node name="CavaleteGrande" parent="OrganizadosPorY/Objects/Cavaletes/Coluna2" instance=ExtResource("18_4rlaj")]
+position = Vector2(0, 0)
+
+[node name="Part2" type="AnimatedSprite2D" parent="OrganizadosPorY/Objects/Cavaletes/Coluna2/CavaleteGrande"]
+position = Vector2(379.6, 67)
+scale = Vector2(0.0765625, 0.075)
+sprite_frames = SubResource("SpriteFrames_ms5fu")
+frame = 1
+
+[node name="Shader" type="AnimatedSprite2D" parent="OrganizadosPorY/Objects/Cavaletes/Coluna2/CavaleteGrande/Part2"]
+material = SubResource("ShaderMaterial_ciacv")
+sprite_frames = SubResource("SpriteFrames_ms5fu")
+
+[node name="CavaleteGrande2" parent="OrganizadosPorY/Objects/Cavaletes/Coluna2" instance=ExtResource("18_4rlaj")]
+position = Vector2(379, 91)
+
+[node name="Part2" type="AnimatedSprite2D" parent="OrganizadosPorY/Objects/Cavaletes/Coluna2/CavaleteGrande2"]
+position = Vector2(0.600006, -7)
+scale = Vector2(0.0765625, 0.075)
+sprite_frames = SubResource("SpriteFrames_ms5fu")
+frame = 3
+
+[node name="Shader" type="AnimatedSprite2D" parent="OrganizadosPorY/Objects/Cavaletes/Coluna2/CavaleteGrande2/Part2"]
+material = SubResource("ShaderMaterial_ciacv")
+sprite_frames = SubResource("SpriteFrames_ms5fu")
+
+[node name="CavaleteGrande3" parent="OrganizadosPorY/Objects/Cavaletes/Coluna2" instance=ExtResource("18_4rlaj")]
+position = Vector2(379, 105)
+
+[node name="Part2" type="AnimatedSprite2D" parent="OrganizadosPorY/Objects/Cavaletes/Coluna2/CavaleteGrande3"]
+position = Vector2(0.600006, -7)
+scale = Vector2(0.0765625, 0.075)
+sprite_frames = SubResource("SpriteFrames_ms5fu")
+frame = 5
+
+[node name="Shader" type="AnimatedSprite2D" parent="OrganizadosPorY/Objects/Cavaletes/Coluna2/CavaleteGrande3/Part2"]
+material = SubResource("ShaderMaterial_ciacv")
+sprite_frames = SubResource("SpriteFrames_ms5fu")
+
+[node name="CavaleteGrande4" parent="OrganizadosPorY/Objects/Cavaletes/Coluna2" instance=ExtResource("18_4rlaj")]
+position = Vector2(379, 121)
+
+[node name="Part2" type="AnimatedSprite2D" parent="OrganizadosPorY/Objects/Cavaletes/Coluna2/CavaleteGrande4"]
+position = Vector2(0.600006, -7)
+scale = Vector2(0.0765625, 0.075)
+sprite_frames = SubResource("SpriteFrames_ms5fu")
+frame = 7
+
+[node name="Shader" type="AnimatedSprite2D" parent="OrganizadosPorY/Objects/Cavaletes/Coluna2/CavaleteGrande4/Part2"]
+material = SubResource("ShaderMaterial_ciacv")
+sprite_frames = SubResource("SpriteFrames_ms5fu")
+
+[node name="Coluna1" type="Node2D" parent="OrganizadosPorY/Objects/Cavaletes"]
+y_sort_enabled = true
+
+[node name="CavaleteGrande" parent="OrganizadosPorY/Objects/Cavaletes/Coluna1" instance=ExtResource("18_4rlaj")]
+
+[node name="Part" type="AnimatedSprite2D" parent="OrganizadosPorY/Objects/Cavaletes/Coluna1/CavaleteGrande"]
+position = Vector2(0.600006, -7)
+scale = Vector2(0.0765625, 0.075)
+sprite_frames = SubResource("SpriteFrames_ms5fu")
+
+[node name="Shader" type="AnimatedSprite2D" parent="OrganizadosPorY/Objects/Cavaletes/Coluna1/CavaleteGrande/Part"]
+material = SubResource("ShaderMaterial_ciacv")
+sprite_frames = SubResource("SpriteFrames_ms5fu")
+
+[node name="CavaleteGrande2" parent="OrganizadosPorY/Objects/Cavaletes/Coluna1" instance=ExtResource("18_4rlaj")]
+
+[node name="Part2" type="AnimatedSprite2D" parent="OrganizadosPorY/Objects/Cavaletes/Coluna1/CavaleteGrande2"]
+position = Vector2(0.600006, -7)
+scale = Vector2(0.0765625, 0.075)
+sprite_frames = SubResource("SpriteFrames_ms5fu")
+frame = 2
+
+[node name="Shader" type="AnimatedSprite2D" parent="OrganizadosPorY/Objects/Cavaletes/Coluna1/CavaleteGrande2/Part2"]
+material = SubResource("ShaderMaterial_ciacv")
+sprite_frames = SubResource("SpriteFrames_ms5fu")
+
+[node name="CavaleteGrande3" parent="OrganizadosPorY/Objects/Cavaletes/Coluna1" instance=ExtResource("18_4rlaj")]
+
+[node name="Part2" type="AnimatedSprite2D" parent="OrganizadosPorY/Objects/Cavaletes/Coluna1/CavaleteGrande3"]
+position = Vector2(0.600006, -7)
+scale = Vector2(0.0765625, 0.075)
+sprite_frames = SubResource("SpriteFrames_ms5fu")
+frame = 4
+
+[node name="Shader" type="AnimatedSprite2D" parent="OrganizadosPorY/Objects/Cavaletes/Coluna1/CavaleteGrande3/Part2"]
+material = SubResource("ShaderMaterial_ciacv")
+sprite_frames = SubResource("SpriteFrames_ms5fu")
+
+[node name="CavaleteGrande4" parent="OrganizadosPorY/Objects/Cavaletes/Coluna1" instance=ExtResource("18_4rlaj")]
+
+[node name="Part2" type="AnimatedSprite2D" parent="OrganizadosPorY/Objects/Cavaletes/Coluna1/CavaleteGrande4"]
+position = Vector2(0.600006, -7)
+scale = Vector2(0.0765625, 0.075)
+sprite_frames = SubResource("SpriteFrames_ms5fu")
+frame = 6
+
+[node name="Shader" type="AnimatedSprite2D" parent="OrganizadosPorY/Objects/Cavaletes/Coluna1/CavaleteGrande4/Part2"]
+material = SubResource("ShaderMaterial_ciacv")
+sprite_frames = SubResource("SpriteFrames_ms5fu")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+visible = false
+position = Vector2(1, -2)
+navigation_polygon = SubResource("NavigationPolygon_q05t7")
+
+[node name="EnemySpawning" parent="." node_paths=PackedStringArray("pegadas_spawn_node", "spawn_node") instance=ExtResource("30_rwj6c")]
+pegadas_spawn_node = NodePath("../BackgroundCenario/Pegadas")
+spawn_node = NodePath("../OrganizadosPorY/Personagens")
+spawn_times = Array[Vector2]([Vector2(20, 0), Vector2(20, 30), Vector2(20, 0), Vector2(20, 0)])
+
+[node name="Marker2D" parent="EnemySpawning" index="0"]
+position = Vector2(192, 72)
+
+[node name="Marker2D2" parent="EnemySpawning" index="1"]
+position = Vector2(239, 74)
+
+[node name="Marker2D3" parent="EnemySpawning" index="2"]
+position = Vector2(453, 73)
+
+[node name="PacientSpawning" parent="." node_paths=PackedStringArray("murmurAudioPlayer", "positions_to_go", "positions_to_sleep", "spawn_node") instance=ExtResource("31_h7315")]
+murmurAudioPlayer = NodePath("AudioStreamPlayer2D")
+positions_to_go = [NodePath("PointsToGo/Marker2D"), NodePath("PointsToGo/Marker2D2"), NodePath("PointsToGo/Marker2D3"), NodePath("PointsToGo/Marker2D4"), NodePath("PointsToGo/Marker2D5"), NodePath("PointsToGo/Marker2D6"), NodePath("PointsToGo/Marker2D7"), NodePath("PointsToGo/Marker2D8")]
+positions_to_sleep = [NodePath("Exit/Marker2D")]
+spawn_node = NodePath("../OrganizadosPorY/Personagens/Pacients")
+number_of_patients = 10
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="PacientSpawning"]
+position = Vector2(357, 42)
+stream = ExtResource("32_vgbxf")
+
+[node name="PointsToGo" type="Node2D" parent="PacientSpawning"]
+
+[node name="Marker2D" type="Marker2D" parent="PacientSpawning/PointsToGo"]
+position = Vector2(132, 69)
+
+[node name="Marker2D2" type="Marker2D" parent="PacientSpawning/PointsToGo"]
+position = Vector2(155, 119)
+
+[node name="Marker2D3" type="Marker2D" parent="PacientSpawning/PointsToGo"]
+position = Vector2(116, 147)
+
+[node name="Marker2D4" type="Marker2D" parent="PacientSpawning/PointsToGo"]
+position = Vector2(257, 157)
+
+[node name="Marker2D5" type="Marker2D" parent="PacientSpawning/PointsToGo"]
+position = Vector2(412, 152)
+
+[node name="Marker2D6" type="Marker2D" parent="PacientSpawning/PointsToGo"]
+position = Vector2(487, 146)
+
+[node name="Marker2D7" type="Marker2D" parent="PacientSpawning/PointsToGo"]
+position = Vector2(570, 158)
+
+[node name="Marker2D8" type="Marker2D" parent="PacientSpawning/PointsToGo"]
+position = Vector2(583, 97)
+
+[node name="Exit" type="Node2D" parent="PacientSpawning"]
+
+[node name="Marker2D" type="Marker2D" parent="PacientSpawning/Exit"]
+position = Vector2(282, 43)
+
+[node name="Border" type="Node2D" parent="."]
+
+[node name="ColorRect4" type="ColorRect" parent="Border"]
+z_index = 1
+offset_left = -424.0
+offset_top = -196.0
+offset_right = 60.0
+offset_bottom = 347.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Border"]
+z_index = 1
+offset_left = -385.0
+offset_top = -283.0
+offset_right = 986.0
+offset_bottom = -52.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="Border"]
+z_index = 1
+offset_left = -389.0
+offset_top = 181.0
+offset_right = 982.0
+offset_bottom = 412.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Border"]
+z_index = 1
+offset_left = 622.0
+offset_top = -174.0
+offset_right = 1012.0
+offset_bottom = 369.0
+color = Color(0, 0, 0, 1)
+
+[node name="Scenes" type="Node2D" parent="."]
+position = Vector2(2, -2)
+
+[node name="SceneChanger" type="Node2D" parent="Scenes" node_paths=PackedStringArray("current_message", "lockedMessage", "openMessage", "interactiveArea")]
+position = Vector2(278, 16)
+script = ExtResource("24_2if0r")
+current_message = NodePath("ScaledTextBallon/Textpanel/TextBallon")
+lockedMessage = NodePath("Messages/LockedMessage")
+openMessage = NodePath("Messages/OpenMessage")
+destination = "2"
+location = "CorridorC"
+interactiveArea = NodePath("InteractibleArea")
+
+[node name="ScaledTextBallon" parent="Scenes/SceneChanger" instance=ExtResource("25_rnwt5")]
+position = Vector2(20, 3)
+
+[node name="Textpanel" parent="Scenes/SceneChanger/ScaledTextBallon" index="0"]
+offset_left = -116.667
+offset_top = -10.0
+offset_right = -3.66699
+offset_bottom = 21.0
+
+[node name="TextBallon" parent="Scenes/SceneChanger/ScaledTextBallon/Textpanel" index="0"]
+text = "[E] Sair"
+
+[node name="InteractibleArea" parent="Scenes/SceneChanger" node_paths=PackedStringArray("messagePanel") instance=ExtResource("14_7wt0p")]
+modulate = Color(1, 0, 1, 1)
+messagePanel = NodePath("../ScaledTextBallon/Textpanel")
+
+[node name="Messages" type="Node2D" parent="Scenes/SceneChanger"]
+visible = false
+
+[node name="LockedMessage" type="Label" parent="Scenes/SceneChanger/Messages"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Trancado"
+
+[node name="OpenMessage" type="Label" parent="Scenes/SceneChanger/Messages"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "[E] Entrar"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Scenes/SceneChanger"]
+stream = ExtResource("26_ew3wd")
+
+[node name="Destinations" type="Node2D" parent="Scenes"]
+
+[node name="1" type="Marker2D" parent="Scenes/Destinations"]
+position = Vector2(278, 54)
+
+[editable path="EnemySpawning"]
+[editable path="Scenes/SceneChanger/ScaledTextBallon"]
+[editable path="Scenes/SceneChanger/ScaledTextBallon/Textpanel"]

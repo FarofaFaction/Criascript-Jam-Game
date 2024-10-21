@@ -1,0 +1,68 @@
+[background scene="res://Dialog/Characters/Character-portraits/BlackScreen.tscn" fade="0.0"]
+[Você se aproxima de um desconhecido que parece estar chorando]
+[background scene="res://Dialog/Characters/Character-portraits/PlayerPortrat.tscn" fade="0.0"]
+character: Ei amigo você viu uma chave por aqui ?
+[background scene="res://Dialog/Characters/Character-portraits/NormalDarkroomPortrait.tscn" fade="0.0"]
+Antiplayer: Por que você quer a chave? Você só quer fazer como eles\: me usar e descartar como lixo, de novo e de novo...
+- Amigo, eu só quero a chave e já vou embora.
+	jump 
+- Eu não vim aqui pra abusar de você, vim buscar liberdade.
+- Ô, irmão, vou te dar um soco, hein!
+	jump 
+Antiplayer: Liberdade? Pra um lixo como eu?
+- Lembra da música:"Você não vale nada,mas eu gosto de você"
+- Prefere ficar aí moscando?
+- Só me dá logo essa merda de chave, maluco!
+	jump 
+Antiplayer: Hahaha, você é engraçado, mas por que eu deveria confiar em você?
+- Toda porta fechada tem chave,você é a minha,eu sou a sua
+- Tem alguma ideia melhor?
+- Me dá logo essa porra!
+	jump 
+Antiplayer: A chave não está comigo, está com a Amélia.
+[background scene="res://Dialog/Characters/Character-portraits/PlayerPortrat.tscn" fade="0.0"]
+character: Quem?
+Antiplayer: Eu vou chamá-la.
+label Apaixonada
+[background scene="res://Dialog/Characters/Character-portraits/ApaixonadaDarkroomPortrait.tscn" fade="0.0"]
+ [O desconhecido coloca uma peruca, passa batom e passa a te olhar de forma sedutora]
+Antiplayer: Ora ora, o que os ventos trazem pra mim? Um pedaço de mau caminho pra eu brincar?
+- Sai fora, maluco!
+	jump Apaixonada
+- Que papo torto,tio? Sai fora,não sou desse tipo,não.
+	jump Apaixonada
+- Cuidado, quem brinca com fogo pode se queimar.
+Antiplayer: Ui ui, senti o calor. Por que alguém como você veio procurar minha chave?
+- Porque eu preciso abrir uma porta. Meio óbvio, né?
+	jump Apaixonada
+- Pra conseguir abrir o cadeado do seu coração.
+- Pra catar manga! Oxe, cada pergunta besta!
+	jump Apaixonada
+Antiplayer: Ora ora, temos aqui um garanhão. Você parece ser bem forte. Teria coragem de pegar a chave com o Francis, meu ex-namorado?
+- Por você, eu enfrento até um batalhão!
+- Não quero problema com ninguém.
+	jump Apaixonada
+- Sai fora, tribufu! Não tô tão desesperado assim, não.
+	jump Apaixonada
+Antiplayer: Ótimo. Aí vem ele.
+label Raivoso
+[background scene="res://Dialog/Characters/Character-portraits/RaivosoDarkroomPortrait.tscn" fade="0.0"]
+[Ela limpa a boca e joga a peruca fora, franze a testa e parece te encarar com muita raiva]
+Antiplayer: O que um bosta como você tá fazendo falando com a minha mulher?
+- Vacilou, é dentro.
+- Aceita que é corno e me passa logo a porra da chave!
+- Era só uma conversa de amigos.
+	jump Raivoso
+Antiplayer: Ora, seu bostinha, tá doido pra ficar com a boca cheia de formiga?
+- Olha, cara, eu só quero a chave.
+	jump Raivoso
+- Cai dentro! Tô doido pra virar você do avesso.
+- Que merda, agora tô lidando com um corno bravinho.
+Antiplayer: Coragem você tem. Quero ver se é homem de palavra.
+- Sai fora, tiozão.
+	jump Raivoso
+- Vem, mocreia!
+	Antiplayer: Pega logo essa merda de chave e some daqui!
+- Dá um soco no nariz dele.
+	Antiplayer: Ai, meu nariz! Pega logo essa merda de chave e some daqui!
+set {Darkroom.Convencido} = true

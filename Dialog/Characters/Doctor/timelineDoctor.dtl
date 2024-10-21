@@ -1,0 +1,16 @@
+if {Doctor.Speaked} == true:
+	jump fim
+[background scene="res://Dialog/Characters/Character-portraits/PlayerPortrat.tscn" fade="1.0" transition="Simple Fade"]
+character: Com licença, sabe onde estou ?
+[background scene="res://Dialog/Characters/Character-portraits/DoctorPortrait.tscn" fade="1.0" transition="Simple Fade"]
+Doctor: No quarto 101, por que ?
+[background scene="res://Dialog/Characters/Character-portraits/PlayerPortrat.tscn" fade="1.0" transition="Simple Fade"]
+character: Não lembro como vim parar aqui
+[background scene="res://Dialog/Characters/Character-portraits/DoctorPortrait.tscn" fade="1.0" transition="Simple Fade"]
+Doctor: Ah já sei o que esta acontecendo, ficou sem seus remedios mais uma vez, não é ?
+- Sim
+- Não
+label fim
+[background scene="res://Dialog/Characters/Character-portraits/DoctorPortrait.tscn" fade="1.0" transition="Simple Fade"]
+Doctor: Seu remedio está meio em falta, posso trazer ele hoje a noite, me aguarde no quarto, se quiser
+set {Doctor.Speaked} = true

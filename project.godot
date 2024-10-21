@@ -31,12 +31,15 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
+"Antiplayer": "res://Dialog/Characters/DarkroomAntiPlayer/Antiplayer.dch",
 "Doctor": "res://Dialog/Characters/Doctor/Doctor.dch",
 "character": "res://Dialog/Characters/Character/character.dch",
 "desafiante": "res://Dialog/Characters/Desafiante/desafiante.dch"
 }
 directories/dtl_directory={
+"timelineDarkroom": "res://Dialog/Dialogic/Timelines/timelineDarkroom.dtl",
 "timelineDesafio": "res://Game/Loctions/AsylumLocations/Externa/Desafiante/timelineDesafio.dtl",
+"timelineDoctor": "res://Dialog/Characters/Doctor/timelineDoctor.dtl",
 "timeline_test": "res://Dialog/Dialogic/Timelines/timeline_test.dtl"
 }
 layout/style_list=["res://Dialog/Dialogic/Style/premade.tres"]
@@ -75,10 +78,16 @@ translation/intern/translation_folder="res://Localization/Dialogic"
 translation/id_counter=24
 translation/locales=["en", "pt_BR"]
 variables={
+"Darkroom": {
+"Convencido": false
+},
 "DesafianteExterna": {
 "PartidaComeçou": false,
 "QuisJogar": false,
 "Venceu": false
+},
+"Doctor": {
+"Speaked": false
 }
 }
 
@@ -196,7 +205,6 @@ locale/test="en"
 [layer_names]
 
 2d_render/layer_20="Criaturas"
-2d_physics/layer_30="Bola"
 
 [physics]
 

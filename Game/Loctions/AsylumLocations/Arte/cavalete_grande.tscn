@@ -1,0 +1,96 @@
+[gd_scene load_steps=11 format=3 uid="uid://bmrwqaq2n4l5f"]
+
+[ext_resource type="Script" path="res://Game/Loctions/AsylumLocations/Arte/MovibleObject.gd" id="1_kryb8"]
+[ext_resource type="Theme" uid="uid://bi5atlkw4djab" path="res://Dialog/Styles/Style.tres" id="2_ke84n"]
+[ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="3_kweym"]
+[ext_resource type="PackedScene" uid="uid://djhnt4bpvoytr" path="res://border.tscn" id="4_dw0l5"]
+[ext_resource type="Texture2D" uid="uid://d0pdbdu5sagcl" path="res://Sprites/Sprites mundo/area arte/tela de pintura grande.png" id="4_nqxoo"]
+[ext_resource type="Script" path="res://Scripts/interactible_area.gd" id="5_u14ys"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nteog"]
+light_mode = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mqcgn"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y34k5"]
+size = Vector2(43, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6gxf4"]
+size = Vector2(50.5, 8.5)
+
+[node name="CavaleteGrande" type="RigidBody2D" node_paths=PackedStringArray("rayLado", "rayBaixo")]
+position = Vector2(379, 74)
+collision_layer = 2
+collision_mask = 2
+mass = 10.0
+lock_rotation = true
+script = ExtResource("1_kryb8")
+rayLado = NodePath("RayCast2Dlado")
+rayBaixo = NodePath("RayCast2Dbaixo")
+metadata/_edit_group_ = true
+
+[node name="Node2D" type="Node2D" parent="."]
+scale = Vector2(0.3, 0.3)
+
+[node name="WhiteBorder" parent="Node2D" node_paths=PackedStringArray("reference") instance=ExtResource("4_dw0l5")]
+offset_left = -118.333
+offset_top = -98.3333
+offset_right = 129.667
+offset_bottom = -65.3333
+reference = NodePath("../Label")
+border = 10
+
+[node name="Label" type="Label" parent="Node2D"]
+visible = false
+material = SubResource("CanvasItemMaterial_nteog")
+offset_left = -113.333
+offset_top = -93.3333
+offset_right = 124.667
+offset_bottom = -70.3333
+theme = ExtResource("2_ke84n")
+theme_override_fonts/font = ExtResource("3_kweym")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "[E] Segurar/Soltar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 11)
+shape = SubResource("RectangleShape2D_y34k5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("4_nqxoo")
+
+[node name="InteractibleArea" type="Area2D" parent="." node_paths=PackedStringArray("message")]
+position = Vector2(1, -3)
+collision_layer = 0
+collision_mask = 2147483648
+monitorable = false
+script = ExtResource("5_u14ys")
+message = NodePath("../Node2D/Label")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractibleArea"]
+position = Vector2(-0.25, 2.75)
+shape = SubResource("RectangleShape2D_6gxf4")
+
+[node name="RayCast2Dbaixo" type="RayCast2D" parent="."]
+position = Vector2(0, 11)
+target_position = Vector2(0, 16)
+collision_mask = 3
+hit_from_inside = true
+
+[node name="RayCast2Dlado" type="RayCast2D" parent="."]
+position = Vector2(-20, 10)
+rotation = 1.5708
+target_position = Vector2(0, 16)
+collision_mask = 3
+hit_from_inside = true
+
+[connection signal="area_entered" from="InteractibleArea" to="InteractibleArea" method="_player_entered"]
+[connection signal="area_exited" from="InteractibleArea" to="InteractibleArea" method="_player_exited"]

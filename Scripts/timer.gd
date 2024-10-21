@@ -60,15 +60,16 @@ func _process(_delta: float) -> void:
 func is_time_vector(h: Vector2):
 	return is_time(h[0], h[1])
 
-func time_passed(h: Vector2):
-	if h[0] < hours && h[1] < minutes:
+func time_not_passed(h: Vector2) -> bool:
+	return !time_passed(h)
+
+func time_passed(h: Vector2) -> bool:
+	if h[0] < hours:
+		return true
+	elif h[0] == hours and h[1] < minutes:
 		return true
 	return false
 
-func time_not_passed(h: Vector2):
-	if h[0] < hours && h[1] < minutes:
-		return false
-	return true
 	
 func set_time(hour: int, minute: int):
 	var total_seconds: int = (hour * 3600) + (minute * 60)
