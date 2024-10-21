@@ -1,6 +1,7 @@
-if {Doctor.Speaked} == true:
-	jump fim
 [background scene="res://Dialog/Characters/Character-portraits/PlayerPortrat.tscn" fade="1.0" transition="Simple Fade"]
+if {Doctor.Speaked} == true:
+	character: [Melhor evitar falar com o doutor, preciso da chave mais do que ele...]
+	[end_timeline]
 character: Com licença, sabe onde estou ?
 [background scene="res://Dialog/Characters/Character-portraits/DoctorPortrait.tscn" fade="1.0" transition="Simple Fade"]
 Doctor: No quarto 101, por que ?
@@ -12,5 +13,5 @@ Doctor: Ah já sei o que esta acontecendo, ficou sem seus remedios mais uma vez,
 - Não
 label fim
 [background scene="res://Dialog/Characters/Character-portraits/DoctorPortrait.tscn" fade="1.0" transition="Simple Fade"]
-Doctor: Seu remedio está meio em falta, posso trazer ele hoje a noite, me aguarde no quarto, se quiser
+Doctor: Seu remedio está meio em falta, mas talvez eu possa te ajudar, um dos pacientes roubou meu molho de chaves, se encontrar elas pra mim posso te ajudar
 set {Doctor.Speaked} = true

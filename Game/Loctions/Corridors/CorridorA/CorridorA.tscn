@@ -1,9 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://cgbofih11kw7m"]
+[gd_scene load_steps=21 format=3 uid="uid://cgbofih11kw7m"]
 
 [ext_resource type="PackedScene" uid="uid://b4e34twd33abh" path="res://Game/Loctions/Corridors/CorridorA/floor.tscn" id="1_22koa"]
 [ext_resource type="PackedScene" uid="uid://cmk1subk8bpb2" path="res://Game/Loctions/Corridors/CorridorA/door.tscn" id="1_hjyqo"]
 [ext_resource type="Script" path="res://Game/Loctions/Corridors/CorridorA/corridor_2d.gd" id="1_qny7v"]
 [ext_resource type="PackedScene" uid="uid://7sspjh77o6vm" path="res://Game/Player/player.tscn" id="2_m7p8g"]
+[ext_resource type="Texture2D" uid="uid://ddklx1g2f8oka" path="res://Sprites/Sprites mundo/area arte/caixa de som parede.png" id="4_4f2kv"]
 [ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="5_8ejuo"]
 [ext_resource type="PackedScene" uid="uid://cxpyp7yoxaixr" path="res://Objects/room_clock.tscn" id="5_em62a"]
 [ext_resource type="PackedScene" uid="uid://d2d1asq2fkvsq" path="res://Interface/PlayerInterface/player_interface.tscn" id="8_yoneu"]
@@ -235,6 +236,14 @@ collision_mask = 3
 position = Vector2(-836, 27)
 shape = SubResource("RectangleShape2D_ujkmg")
 
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+position = Vector2(-183, -53)
+texture = ExtResource("4_4f2kv")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Background"]
+position = Vector2(-409, -53)
+texture = ExtResource("4_4f2kv")
+
 [node name="Items" type="Node2D" parent="."]
 
 [node name="RoomClock" parent="Items" instance=ExtResource("5_em62a")]
@@ -441,6 +450,7 @@ position = Vector2(81, 4)
 
 [node name="SanityVisualizer" parent="." node_paths=PackedStringArray("list_of_nodes") instance=ExtResource("12_ji1ls")]
 list_of_nodes = [NodePath("../Items/CorridorSimbols/1"), NodePath("../Items/CorridorSimbols/2"), NodePath("../Items/CorridorSimbols/3"), NodePath("../Items/CorridorSimbols/4"), NodePath("../Items/CorridorSimbols/Floor"), NodePath("../Key")]
+sanity_range = Vector2(45, 70)
 
 [node name="Key" parent="." instance=ExtResource("12_ak1qa")]
 position = Vector2(-7, -6)

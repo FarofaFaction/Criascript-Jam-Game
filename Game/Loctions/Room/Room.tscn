@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://v7uuiioruv0j"]
+[gd_scene load_steps=70 format=3 uid="uid://v7uuiioruv0j"]
 
 [ext_resource type="Script" path="res://Game/Loctions/Room/player_room.gd" id="1_xkoml"]
 [ext_resource type="PackedScene" uid="uid://cxpyp7yoxaixr" path="res://Objects/room_clock.tscn" id="3_mx5ei"]
@@ -21,6 +21,7 @@
 [ext_resource type="Script" path="res://Game/Npcs/Doctor/docorIdle.gd" id="14_0an36"]
 [ext_resource type="PackedScene" uid="uid://6fw6kl4t5n7x" path="res://Objects/interactible_area.tscn" id="15_8rs3j"]
 [ext_resource type="Script" path="res://Dialog/DialogClass/dialog_class.gd" id="16_0beo6"]
+[ext_resource type="PackedScene" uid="uid://b5l5jcfiebqmr" path="res://Game/textpanel.tscn" id="17_qllse"]
 [ext_resource type="Script" path="res://Dialog/DialogClass/speak_class.gd" id="17_sb3x4"]
 [ext_resource type="Texture2D" uid="uid://de0dxq4ujoxsc" path="res://Dialog/Characters/Doctor/DoctorPortrait.jpg" id="18_ofo3j"]
 [ext_resource type="PackedScene" uid="uid://baklw2eb62qgd" path="res://Dialog/DialogMenuClass/DialogMenu.tscn" id="19_upg6n"]
@@ -340,7 +341,7 @@ collision_layer = 0
 collision_mask = 2
 motion_mode = 1
 script = ExtResource("7_fwk6u")
-key = NodePath("../../../Item")
+key = NodePath("")
 stepsAudioPlayer = NodePath("NpcSteps")
 minutes_assingment = 30
 exit_area = NodePath("ExitArea")
@@ -349,6 +350,25 @@ DetectionArea = NodePath("DetectionArea")
 SelfArea = NodePath("SelfArea")
 animationPlayer = NodePath("Sprite")
 metadata/_edit_group_ = true
+
+[node name="SacaledTextBallon" type="Node2D" parent="OrganizadosPorY/Personagens/Doctor"]
+position = Vector2(14, -5)
+scale = Vector2(0.3, 0.3)
+
+[node name="Textpanel" parent="OrganizadosPorY/Personagens/Doctor/SacaledTextBallon" instance=ExtResource("17_qllse")]
+offset_left = -113.333
+offset_top = -73.3333
+offset_right = -0.333351
+offset_bottom = -42.3333
+
+[node name="TextBallon" parent="OrganizadosPorY/Personagens/Doctor/SacaledTextBallon/Textpanel" index="0"]
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 1
+grow_vertical = 1
+text = "[E] Falar"
 
 [node name="DetectionArea" type="Area2D" parent="OrganizadosPorY/Personagens/Doctor"]
 collision_layer = 0
@@ -386,7 +406,8 @@ script = ExtResource("14_0an36")
 doctor = NodePath("../..")
 DialogScene = NodePath("CanvasLayer/AskForPill")
 
-[node name="InteractibleArea" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle" node_paths=PackedStringArray("moving_parent") instance=ExtResource("15_8rs3j")]
+[node name="InteractibleArea" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle" node_paths=PackedStringArray("message", "moving_parent") instance=ExtResource("15_8rs3j")]
+message = NodePath("../../../SacaledTextBallon/Textpanel/TextBallon")
 moving_parent = NodePath("../../..")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="OrganizadosPorY/Personagens/Doctor/State Machine/DoctorIdle"]
@@ -701,9 +722,10 @@ position = Vector2(683, -34)
 [node name="Marker2D3" parent="EnemySpawning" index="2"]
 position = Vector2(708, -5)
 
-[node name="PacientSpawning" parent="." node_paths=PackedStringArray("murmurAudioPlayer", "spawn_node") instance=ExtResource("28_usec1")]
+[node name="PacientSpawning" parent="." node_paths=PackedStringArray("murmurAudioPlayer", "spawn_node", "key") instance=ExtResource("28_usec1")]
 murmurAudioPlayer = NodePath("AudioStreamPlayer2D")
 spawn_node = NodePath("../OrganizadosPorY/Personagens/Pacients")
+key = NodePath("../Key")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="PacientSpawning"]
 position = Vector2(357, 42)
@@ -764,9 +786,9 @@ location = "CorridorA"
 [node name="1" type="Marker2D" parent="Scenes/Destinations"]
 position = Vector2(325, -18)
 
-[node name="Item" parent="." instance=ExtResource("35_6n8dw")]
-visible = false
-position = Vector2(695, -57)
+[node name="Key" parent="." instance=ExtResource("35_6n8dw")]
+position = Vector2(399, 249)
 item_id = "RomKey"
 
+[editable path="OrganizadosPorY/Personagens/Doctor/SacaledTextBallon/Textpanel"]
 [editable path="EnemySpawning"]

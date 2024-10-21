@@ -1,0 +1,6 @@
+[background scene="res://Dialog/Characters/Character-portraits/PlayerPortrat.tscn" fade="0.0"]
+character: É Impossivel sair daqui
+character: Uma prisão sem paredes
+character: Não á pra fugir de si mesmo...
+set {FinalGame.Fim} = true
+[end_timeline]

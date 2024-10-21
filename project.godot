@@ -40,6 +40,7 @@ directories/dtl_directory={
 "timelineDarkroom": "res://Dialog/Dialogic/Timelines/timelineDarkroom.dtl",
 "timelineDesafio": "res://Game/Loctions/AsylumLocations/Externa/Desafiante/timelineDesafio.dtl",
 "timelineDoctor": "res://Dialog/Characters/Doctor/timelineDoctor.dtl",
+"timelineFinal": "res://Dialog/Dialogic/Timelines/timelineFinal.dtl",
 "timeline_test": "res://Dialog/Dialogic/Timelines/timeline_test.dtl"
 }
 layout/style_list=["res://Dialog/Dialogic/Style/premade.tres"]
@@ -88,6 +89,9 @@ variables={
 },
 "Doctor": {
 "Speaked": false
+},
+"FinalGame": {
+"Fim": false
 }
 }
 

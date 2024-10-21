@@ -1,5 +1,6 @@
 extends Node2D
 
+@export var last_door := false
 @export var enabled := true
 var timeBlocked := false
 #@export var timelocked := false
@@ -26,6 +27,12 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	if last_door:
+		if GameStatus.DoorsOppened.size() < 4:
+			visible = false
+			return
+		else:
+			visible = true
 	#if !interactiveArea:
 		#return
 	#if interactiveArea._player:
@@ -42,6 +49,9 @@ func _process(_delta: float) -> void:
 	pass
 
 func Interaction():
+	if last_door:
+		if GameStatus.DoorsOppened.size() < 4:
+			return
 	if timeBlocked:
 		return
 	if locked:

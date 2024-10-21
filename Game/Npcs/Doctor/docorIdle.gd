@@ -34,9 +34,6 @@ func Physics_Update():
 func Interaction():
 	if !_on_scene:
 		return
-	if _already_speaked:
-		return
-	_already_speaked = true
 	
 	Dialogic.start('timelineDoctor')
 	#DialogScene._start_dialog()

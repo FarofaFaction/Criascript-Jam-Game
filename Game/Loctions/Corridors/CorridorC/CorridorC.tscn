@@ -356,6 +356,7 @@ location = "Art"
 
 [node name="CD" parent="Scenes" instance=ExtResource("9_asmwf")]
 position = Vector2(-240, -29)
+last_door = true
 door_id = "CD"
 locked = true
 destination = "3"
@@ -448,6 +449,7 @@ item_id = "GenericKeyC"
 
 [node name="SanityVisualizer" parent="." node_paths=PackedStringArray("list_of_nodes") instance=ExtResource("13_mxuyk")]
 list_of_nodes = [NodePath("../Items/CorridorSimbols/1"), NodePath("../Items/CorridorSimbols/2"), NodePath("../Items/CorridorSimbols/3"), NodePath("../Items/CorridorSimbols/4"), NodePath("../Items/CorridorSimbols/Floor"), NodePath("../Key")]
+sanity_range = Vector2(45, 70)
 
 [connection signal="timeout" from="Scenes/LocalTeleporter/Timer" to="Scenes/LocalTeleporter" method="_on_Timer_timeout"]
 

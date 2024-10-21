@@ -1,11 +1,14 @@
-[gd_scene load_steps=20 format=3 uid="uid://2r6hgnbv5cye"]
+[gd_scene load_steps=23 format=3 uid="uid://2r6hgnbv5cye"]
 
 [ext_resource type="Script" path="res://Game/Loctions/Corridors/CorridorA/corridor_2d.gd" id="1_fn6o5"]
 [ext_resource type="PackedScene" uid="uid://cmk1subk8bpb2" path="res://Game/Loctions/Corridors/CorridorA/door.tscn" id="2_v82dp"]
 [ext_resource type="PackedScene" uid="uid://b4e34twd33abh" path="res://Game/Loctions/Corridors/CorridorA/floor.tscn" id="3_vfu5o"]
+[ext_resource type="Texture2D" uid="uid://c4fbd0ybvhuva" path="res://Sprites/comida/suco.png" id="4_n1sxy"]
 [ext_resource type="PackedScene" uid="uid://cxpyp7yoxaixr" path="res://Objects/room_clock.tscn" id="4_to35i"]
 [ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="5_pyaoh"]
+[ext_resource type="Texture2D" uid="uid://bqwnu0a58md0" path="res://Sprites/comida/Carrinho_de_comida.png" id="5_y5isr"]
 [ext_resource type="PackedScene" uid="uid://7sspjh77o6vm" path="res://Game/Player/player.tscn" id="6_7ih5s"]
+[ext_resource type="Texture2D" uid="uid://df18k1oycyo4e" path="res://Sprites/comida/pizza.png" id="6_qnn26"]
 [ext_resource type="PackedScene" uid="uid://d2d1asq2fkvsq" path="res://Interface/PlayerInterface/player_interface.tscn" id="7_vl220"]
 [ext_resource type="PackedScene" uid="uid://bjsa2mrlybrr3" path="res://Shaders/portrait_shader.tscn" id="8_aklko"]
 [ext_resource type="PackedScene" uid="uid://cpe4chlg5q0t2" path="res://Game/scene_changer.tscn" id="9_8sxwb"]
@@ -235,6 +238,18 @@ collision_mask = 3
 position = Vector2(-836, 27)
 shape = SubResource("RectangleShape2D_ujkmg")
 
+[node name="Sprite2D2" type="Sprite2D" parent="Background"]
+position = Vector2(-429, -13)
+texture = ExtResource("5_y5isr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-434, -18)
+texture = ExtResource("4_n1sxy")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-427, -17)
+texture = ExtResource("6_qnn26")
+
 [node name="Items" type="Node2D" parent="."]
 
 [node name="RoomClock" parent="Items" instance=ExtResource("4_to35i")]
@@ -445,6 +460,7 @@ item_id = "GenericKeyB"
 
 [node name="SanityVisualizer" parent="." node_paths=PackedStringArray("list_of_nodes") instance=ExtResource("13_4s2qu")]
 list_of_nodes = [NodePath("../Items/CorridorSimbols/1"), NodePath("../Items/CorridorSimbols/2"), NodePath("../Items/CorridorSimbols/3"), NodePath("../Items/CorridorSimbols/4"), NodePath("../Items/CorridorSimbols/Floor"), NodePath("../Key")]
+sanity_range = Vector2(45, 70)
 
 [connection signal="timeout" from="Scenes/LocalTeleporter/Timer" to="Scenes/LocalTeleporter" method="_on_Timer_timeout"]
 

@@ -1,0 +1,1126 @@
+[gd_scene load_steps=6 format=3 uid="uid://dc5hcsgbgnkfk"]
+
+[ext_resource type="Script" path="res://credits.gd" id="1_eg41f"]
+[ext_resource type="Theme" uid="uid://bi5atlkw4djab" path="res://Dialog/Styles/Style.tres" id="1_t0jrt"]
+[ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="2_y400h"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nteog"]
+light_mode = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mqcgn"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
+[node name="Credits" type="Control"]
+z_index = 9
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eg41f")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+offset_left = 457.0
+offset_top = -3.0
+offset_right = 1466.0
+offset_bottom = 1081.0
+
+[node name="BoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -901.0
+offset_top = 455.225
+offset_right = 901.0
+offset_bottom = 4085.23
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextBallon" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "Muito Obrigado Por Jogar!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon2" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon3" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "Escape From Asylum"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon4" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "por:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon5" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "Gabriel Smereka"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon6" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "e"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon7" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "Sr.Pedro, o Chapeleiro"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon8" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon9" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon10" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon11" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon12" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "Programação - Gabriel Smereka"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon13" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "Arte e Cenários - Sr.Pedro"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon14" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon15" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon16" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon17" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon18" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "Agradecimentos Especias"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon19" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "Gustavo Gimenes"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon20" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "Samuel Moura"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon21" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "Thiago Nobre"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon22" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "Bezaliel Lucas"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon23" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon24" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "Sem eles, Este jogo não seria possivel"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon25" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon64" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon65" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon66" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon67" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon68" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon26" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "Assets Colhidos na internet:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon27" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon28" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "Bandeiras de Idioma - lukasfdahl"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon36" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon29" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "Grito Masculino - DeltaCode"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon37" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon30" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "Hearth Beat - freesound.org/people/.name/sounds/418788/"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon38" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon31" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "Som Coração Agitado - newlocknew"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon39" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon32" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "Som de passos - Robinhood76"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon40" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon33" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "Ruido branco de fundo - kwahmah_02"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon41" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon34" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "CRT Shader - Yui Kinomoto"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon42" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon35" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "Pasteurization Shader - q4-level-posterization-fragment/"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon43" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon44" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon45" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon46" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon47" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon69" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon70" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon71" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon72" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon73" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon74" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon75" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon76" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon78" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon79" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon80" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon48" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "farofafaction@gmail.com"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon49" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon50" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon51" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon52" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon53" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon54" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon55" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon56" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon57" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon58" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon59" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon60" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon61" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon62" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon63" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+horizontal_alignment = 1
+vertical_alignment = 1

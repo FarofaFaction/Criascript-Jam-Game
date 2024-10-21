@@ -1,5 +1,6 @@
 extends Node
 
+@export var primeira_sala := false
 var first_murmur := true
 var murmur_ok := false
 @export var hour_to_sleep : Vector2 = Vector2(18,0)
@@ -12,7 +13,7 @@ var murmur_ok := false
 @export var number_of_patients: int = 10  # Número de pacientes a serem instanciados
 var pacientScene := preload("res://Game/Npcs/Pacients/Pacient.tscn")
 var pacientsSpawned := false
-
+var primeiro_paciente := false
 # Função para verificar se a hora atual está no intervalo permitido
 func is_within_active_hours() -> bool:
 	# Verifica se estamos entre o horário de spawn_time e hour_to_sleep
@@ -65,6 +66,27 @@ func _process(_delta: float) -> void:
 	if is_within_active_hours():
 		control_pacients_spawning()
 		control_murmur()
+	if primeira_sala:
+		await  get_tree().create_timer(1).timeout
+		check_quem_fica_chave()
+	pass
+
+@export var key : Node2D
+
+func check_quem_fica_chave():
+	if primeiro_paciente:
+		return
+	if key:
+		if is_instance_valid(key):
+			var parent = key.get_parent()
+			if parent:
+				parent.remove_child(key)
+				for node in spawn_node.get_children():
+					print("heregere")
+					node.add_child(key)
+					key.visible = true
+					primeiro_paciente = true
+					return
 	pass
 
 func control_pacients_spawning():
