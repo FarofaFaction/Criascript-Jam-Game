@@ -101,6 +101,7 @@ func _dyng():
 	StepsAudioPlayer.stop()
 	_change_animation(AnimationState.DIE)
 	GameStatus.PlayerSanity = 100
+	GlobalTimer.set_time(7,0)
 	Global.change_scene("CorridorA", true)
 
 func _awaking():

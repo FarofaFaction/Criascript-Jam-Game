@@ -31,13 +31,9 @@ visible = true
 [node name="TextureRect" parent="SizeControler/Item" index="2"]
 texture = ExtResource("4_8qeqg")
 
-[node name="WhiteBorder" parent="SizeControler/Item/Textpanel/TextBallon" index="0"]
-visible = true
-
 [node name="Node" type="Node" parent="SizeControler/Item" node_paths=PackedStringArray("item")]
 script = ExtResource("3_4xpwv")
 item = NodePath("..")
-damage = 0.2
 
 [node name="InteractibleArea" parent="." node_paths=PackedStringArray("message") instance=ExtResource("5_24qdu")]
 position = Vector2(6, -7)

@@ -31,6 +31,8 @@ func on_player_died():
 	pass
 
 func remove_effect():
-	get_parent().remove_child(self)
+	var parent = get_parent()
+	if parent:
+		parent.remove_child(self)
 	queue_free()
 	pass

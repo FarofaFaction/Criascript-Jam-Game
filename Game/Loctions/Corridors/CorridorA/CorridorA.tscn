@@ -343,7 +343,6 @@ grow_vertical = 2
 [node name="AB" parent="Scenes" instance=ExtResource("10_5sj7v")]
 position = Vector2(-460, -27)
 door_id = "AB"
-locked = true
 destination = "2"
 location = "CorridorB"
 
@@ -446,10 +445,6 @@ list_of_nodes = [NodePath("../Items/CorridorSimbols/1"), NodePath("../Items/Corr
 [node name="Key" parent="." instance=ExtResource("12_ak1qa")]
 position = Vector2(-298, -11)
 item_id = "GenericKeyA"
-
-[node name="Item" parent="." instance=ExtResource("12_ak1qa")]
-position = Vector2(-210, -4)
-just_one_intance = false
 
 [connection signal="timeout" from="Scenes/LocalTeleporter/Timer" to="Scenes/LocalTeleporter" method="_on_Timer_timeout"]
 

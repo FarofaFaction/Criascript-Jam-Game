@@ -1,7 +1,8 @@
 extends Node2D
 
+@export var enabled := true
 var timeBlocked := false
-@export var timelocked := false
+#@export var timelocked := false
 @export var LockLimitTimeFinal := 6
 @export var LockLimitTimeInit := 20
 @export var door_id : String
@@ -15,6 +16,7 @@ var timeBlocked := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	interactiveArea.enabled = enabled
 	if GameStatus.DoorsOppened.size() > 0:
 		if GameStatus.DoorsOppened.find(door_id) >= 0:
 			locked = false
@@ -28,11 +30,11 @@ func _process(_delta: float) -> void:
 		#return
 	#if interactiveArea._player:
 	#if T
-	if timelocked:
-		if GlobalTimer.hours <= LockLimitTimeFinal || GlobalTimer.hours >= LockLimitTimeInit:
-			timeBlocked = true
-		else:
-			timeBlocked = false
+	#if timelocked:
+		#if GlobalTimer.hours <= LockLimitTimeFinal || GlobalTimer.hours >= LockLimitTimeInit:
+			#timeBlocked = true
+		#else:
+			#timeBlocked = false
 	if locked || timeBlocked:
 		current_message.text = lockedMessage.text
 	else:
@@ -43,6 +45,8 @@ func Interaction():
 	if timeBlocked:
 		return
 	if locked:
+		locked = false
+		GameStatus.DoorsOppened.append(door_id)
 		for it in GameStatus.PlayerItems:
 			if it.item_type == "Key":
 				locked = false
@@ -51,6 +55,10 @@ func Interaction():
 				it.remove_item()
 		return
 	#GameStatus.pl
+	if Global.player:
+		if Global.player.Sanity < 50:
+			var tw = create_tween()
+			tw.tween_property(Global.player, "Sanity", 50, 2)
 	Global.current_destination = destination
 	Global.change_scene(location)
 	pass

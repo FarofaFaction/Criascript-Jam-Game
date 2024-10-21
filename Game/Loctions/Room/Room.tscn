@@ -223,8 +223,6 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(40, -38, 490, -41, 531,
 
 [node name="Room" type="Node2D" node_paths=PackedStringArray("destinations")]
 script = ExtResource("1_xkoml")
-debug = true
-debug_init_time = Vector2(16, 0)
 destinations = [NodePath("Scenes/Destinations/1")]
 
 [node name="PlayerInterface" parent="." instance=ExtResource("10_jdqjg")]
@@ -758,7 +756,6 @@ position = Vector2(2, -2)
 
 [node name="SceneChanger" parent="Scenes" instance=ExtResource("30_alfp2")]
 position = Vector2(321, -35)
-timelocked = true
 destination = "4"
 location = "CorridorA"
 

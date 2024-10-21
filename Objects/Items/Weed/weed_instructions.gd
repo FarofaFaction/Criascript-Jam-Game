@@ -2,8 +2,8 @@ extends Node
 
 @export var item : Item
 @export var total_damage := 0.0
-@export var damage := 0.1
-@export var damage_limit = 50
+@export var damage := 0.2
+@export var damage_limit = 40
 
 func UseItem():
 	item.remove_item()
@@ -31,6 +31,8 @@ func on_player_died():
 	pass
 
 func remove_effect():
-	get_parent().remove_child(self)
+	var parent = get_parent()
+	if parent:
+		parent.remove_child(self)
 	queue_free()
 	pass

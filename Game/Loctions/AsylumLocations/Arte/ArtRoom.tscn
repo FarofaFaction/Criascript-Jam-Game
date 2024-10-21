@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://b4s8hurqwpqky"]
+[gd_scene load_steps=50 format=3 uid="uid://b4s8hurqwpqky"]
 
 [ext_resource type="Script" path="res://Game/Loctions/AsylumLocations/Arte/art_room.gd" id="1_b6j8p"]
 [ext_resource type="PackedScene" uid="uid://d2d1asq2fkvsq" path="res://Interface/PlayerInterface/player_interface.tscn" id="2_6gpul"]
@@ -25,6 +25,7 @@
 [ext_resource type="AudioStream" uid="uid://o3gis5x4f5te" path="res://Audio/Effects/hotel-room-door-unlocking.mp3" id="26_ew3wd"]
 [ext_resource type="PackedScene" uid="uid://7sspjh77o6vm" path="res://Game/Player/player.tscn" id="27_6kv8p"]
 [ext_resource type="PackedScene" uid="uid://b0okojf7u2xo2" path="res://Objects/SanityVisualizer/sanity_visualizer.tscn" id="28_vcja8"]
+[ext_resource type="PackedScene" uid="uid://mhxd0n1ghe3m" path="res://Objects/Items/Weed/pickable_weed.tscn" id="29_4svy8"]
 [ext_resource type="PackedScene" uid="uid://yje2v65lwodi" path="res://Game/Enemy/enemy_spawning.tscn" id="30_rwj6c"]
 [ext_resource type="PackedScene" uid="uid://c1d5max6as1qn" path="res://Game/Npcs/Pacients/pacient_spawning.tscn" id="31_h7315"]
 [ext_resource type="AudioStream" uid="uid://cprvuc2smhmqe" path="res://Audio/Effects/515798__ben_0815__murmur.wav" id="32_vgbxf"]
@@ -135,8 +136,6 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(55, 49, 627, 50, 628, 1
 
 [node name="ArtRoom" type="Node2D"]
 script = ExtResource("1_b6j8p")
-debug = true
-debug_init_time = Vector2(5, 0)
 
 [node name="PlayerInterface" parent="." instance=ExtResource("2_6gpul")]
 visible = false
@@ -242,7 +241,7 @@ y_sort_enabled = true
 y_sort_enabled = true
 
 [node name="Player" parent="OrganizadosPorY/Personagens" instance=ExtResource("27_6kv8p")]
-position = Vector2(320, 85)
+position = Vector2(280, 40)
 startAwake = false
 awaking = false
 
@@ -757,6 +756,15 @@ position = Vector2(278, 54)
 
 [node name="SanityVisualizer" parent="." node_paths=PackedStringArray("list_of_nodes") instance=ExtResource("28_vcja8")]
 list_of_nodes = [NodePath("../OrganizadosPorY/Objects/Cavaletes/Coluna1/CavaleteGrande/Part"), NodePath("../OrganizadosPorY/Objects/Cavaletes/Coluna1/CavaleteGrande2/Part2"), NodePath("../OrganizadosPorY/Objects/Cavaletes/Coluna1/CavaleteGrande3/Part2"), NodePath("../OrganizadosPorY/Objects/Cavaletes/Coluna1/CavaleteGrande4/Part2"), NodePath("../OrganizadosPorY/Objects/Cavaletes/Coluna2/CavaleteGrande/Part2"), NodePath("../OrganizadosPorY/Objects/Cavaletes/Coluna2/CavaleteGrande2/Part2"), NodePath("../OrganizadosPorY/Objects/Cavaletes/Coluna2/CavaleteGrande3/Part2"), NodePath("../OrganizadosPorY/Objects/Cavaletes/Coluna2/CavaleteGrande4/Part2")]
+
+[node name="Weed" parent="." instance=ExtResource("29_4svy8")]
+position = Vector2(461, 29)
+
+[node name="Weed3" parent="." instance=ExtResource("29_4svy8")]
+position = Vector2(417, 29)
+
+[node name="Weed2" parent="." instance=ExtResource("29_4svy8")]
+position = Vector2(506, 30)
 
 [editable path="EnemySpawning"]
 [editable path="Scenes/SceneChanger/ScaledTextBallon"]

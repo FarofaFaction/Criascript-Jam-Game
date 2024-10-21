@@ -23,9 +23,10 @@ func _process(_delta: float) -> void:
 			#tr(button_warning.text)
 		if Input.is_action_just_pressed(button):
 			if node_instructions:
-				if node_instructions.has_method("UseItem"):
-					node_instructions.UseItem()
-					return
+				if is_instance_valid(node_instructions):
+					if node_instructions.has_method("UseItem"):
+						node_instructions.UseItem()
+						return
 	pass
 
 func _is_on_player():
@@ -42,7 +43,7 @@ func _is_on_player():
 func remove_item():
 	var parent = get_parent()
 	if parent:
-		remove_child(self)
+		parent.remove_child(self)
 	for it in GameStatus.PlayerItems:
 		if it.item_id == item_id:
 			GameStatus.PlayerItems.remove_at(GameStatus.PlayerItems.find(it))

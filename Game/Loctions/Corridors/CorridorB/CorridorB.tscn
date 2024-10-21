@@ -349,7 +349,6 @@ location = "Refeitorio"
 [node name="AB" parent="Scenes" instance=ExtResource("9_8sxwb")]
 position = Vector2(-352, -29)
 door_id = "AB"
-locked = true
 destination = "1"
 location = "CorridorA"
 

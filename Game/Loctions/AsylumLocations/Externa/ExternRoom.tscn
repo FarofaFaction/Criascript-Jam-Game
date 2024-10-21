@@ -393,7 +393,7 @@ y_sort_enabled = true
 y_sort_enabled = true
 
 [node name="Player" parent="OrganizadosPorY/Personagens" instance=ExtResource("8_t457x")]
-position = Vector2(641, 30)
+position = Vector2(640, 30)
 startAwake = false
 awaking = false
 
