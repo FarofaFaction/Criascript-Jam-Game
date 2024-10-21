@@ -38,7 +38,6 @@ func _is_on_player():
 		button = str(result + 1)
 		return true
 	return false
-	pass
 
 func remove_item():
 	var parent = get_parent()

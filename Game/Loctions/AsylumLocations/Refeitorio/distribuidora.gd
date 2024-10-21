@@ -1,5 +1,6 @@
 extends Node2D
 
+var completed := false
 @export var Key : Node2D
 @export var working := false
 @export var NomesDeComida : Node2D
@@ -38,6 +39,8 @@ func _start_instantiation_process() -> void:
 
 # Função chamada quando o timer expira
 func _on_timer_timeout() -> void:
+	if completed:
+		return
 	if working and distributionLine.get_child_count() <= 4:
 		select_new_index()
 
@@ -62,13 +65,15 @@ func _instantiate_bandeija() -> void:
 				return
 	bandeja.queue_free()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
+	if completed:
+		return
 	# Se o turno da noite começar, para de trabalhar
 	var count := 0
 	for mesa in mesas:
 		if mesa.completed:
 			count += 1
-	if count == 1:
+	if count == 8:
 		if Key:
 			if is_instance_valid(Key):
 				Key.reveal()

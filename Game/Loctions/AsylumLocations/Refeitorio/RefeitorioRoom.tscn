@@ -40,6 +40,8 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(70, -34, 612, -34, 618,
 [node name="RefeitorioRoom" type="Node2D"]
 script = ExtResource("1_d0oqy")
 timestop = true
+debug = true
+debug_init_time = Vector2(8, 0)
 
 [node name="PlayerInterface" parent="." instance=ExtResource("2_rmi5a")]
 visible = false

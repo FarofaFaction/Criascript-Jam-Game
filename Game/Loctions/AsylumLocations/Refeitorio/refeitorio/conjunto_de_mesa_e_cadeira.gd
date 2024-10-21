@@ -1,10 +1,12 @@
 extends Node2D
 
+var insatisfied := false
 @export var PacientBallon := Label
 @export var id := "Nada"
 var pedindo := false
 var completed := false
 @export var Central : Node2D
+var insatisfaction := 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,9 +14,16 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if !Central:
 		return
+	if insatisfied:
+		show_arguing()
+		insatisfaction -= 1
+		if insatisfaction <= 0:
+			insatisfaction = 100
+			insatisfied = false
+			hide_arguing()
 	pass
 
 func get_mesa_id():

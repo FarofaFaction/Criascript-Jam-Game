@@ -27,7 +27,6 @@ func _process(_delta: float) -> void:
 		var node1 = rayOficial.get_collider()
 		var node = node1.get_parent()
 		if node.has_method("get_mesa_id"):
-			node.hide_arguing()
 			if node.get_mesa_id() == comida.item_id:
 				_completed = true
 				if !player_holding:
@@ -38,9 +37,9 @@ func _process(_delta: float) -> void:
 					queue_free()
 					pass
 			else:
-				node.show_arguing()
 				_completed = false
 				if !player_holding:
+					node.insatisfied = true
 					if Global.player:
 						Global.player.take_damage(0.2)
 	else:
