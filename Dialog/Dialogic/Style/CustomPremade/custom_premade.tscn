@@ -342,6 +342,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 100.0
+offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -524,6 +526,7 @@ mouse_filter = 2
 script = ExtResource("13_4p5k2")
 
 [node name="WhiteBorder" parent="VN_ChoiceLayer" node_paths=PackedStringArray("reference") instance=ExtResource("20_1tpmf")]
+visible = true
 layout_mode = 0
 offset_left = 792.5
 offset_top = 280.0
