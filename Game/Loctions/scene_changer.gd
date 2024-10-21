@@ -45,8 +45,8 @@ func Interaction():
 	if timeBlocked:
 		return
 	if locked:
-		locked = false
-		GameStatus.DoorsOppened.append(door_id)
+		#locked = false
+		#GameStatus.DoorsOppened.append(door_id)
 		for it in GameStatus.PlayerItems:
 			if it.item_type == "Key":
 				locked = false
