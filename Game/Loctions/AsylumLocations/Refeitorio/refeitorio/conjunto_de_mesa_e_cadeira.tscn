@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cbxurlbetdr64"]
+[gd_scene load_steps=10 format=3 uid="uid://cbxurlbetdr64"]
 
 [ext_resource type="PackedScene" uid="uid://cuds6ay2py5wr" path="res://Game/Loctions/AsylumLocations/Externa/cadeira_1.tscn" id="1_5jdmf"]
+[ext_resource type="Script" path="res://Game/Loctions/AsylumLocations/Refeitorio/refeitorio/conjunto_de_mesa_e_cadeira.gd" id="1_58qhm"]
 [ext_resource type="Theme" uid="uid://bi5atlkw4djab" path="res://Dialog/Styles/Style.tres" id="2_1nsgs"]
 [ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="3_ebfgs"]
-[ext_resource type="Texture2D" uid="uid://cwjrrl26k68u4" path="res://Game/Loctions/AsylumLocations/Refeitorio/refeitorio/mesa.png" id="4_8u7o8"]
+[ext_resource type="Texture2D" uid="uid://cwjrrl26k68u4" path="res://Sprites/Sprites mundo/refeitorio/mesa.png" id="4_8u7o8"]
 [ext_resource type="PackedScene" uid="uid://6fw6kl4t5n7x" path="res://Objects/interactible_area.tscn" id="5_iaw7q"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nteog"]
@@ -22,6 +23,7 @@ size = Vector2(104, 11)
 
 [node name="ConjuntoDeMesaECadeira" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_58qhm")
 
 [node name="Cadeira1" parent="." instance=ExtResource("1_5jdmf")]
 position = Vector2(235, 210)

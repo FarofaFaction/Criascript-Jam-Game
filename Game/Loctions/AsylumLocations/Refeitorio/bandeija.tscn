@@ -1,0 +1,95 @@
+[gd_scene load_steps=11 format=3 uid="uid://esefibiyug2c"]
+
+[ext_resource type="Script" path="res://Game/Loctions/AsylumLocations/Refeitorio/bandeija.gd" id="1_n1fjg"]
+[ext_resource type="PackedScene" uid="uid://djhnt4bpvoytr" path="res://border.tscn" id="2_fdrtl"]
+[ext_resource type="Theme" uid="uid://bi5atlkw4djab" path="res://Dialog/Styles/Style.tres" id="3_fl700"]
+[ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="4_iyk0m"]
+[ext_resource type="Texture2D" uid="uid://bqwnu0a58md0" path="res://Sprites/comida/Carrinho_de_comida.png" id="5_2kfln"]
+[ext_resource type="Script" path="res://Scripts/interactible_area.gd" id="6_ar28w"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nteog"]
+light_mode = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mqcgn"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y34k5"]
+size = Vector2(23, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6gxf4"]
+size = Vector2(34, 8.5)
+
+[node name="Bandeija" type="RigidBody2D" node_paths=PackedStringArray("rayOficial", "comidasPlace")]
+position = Vector2(191, 11)
+collision_layer = 2
+collision_mask = 2
+mass = 10.0
+lock_rotation = true
+script = ExtResource("1_n1fjg")
+rayOficial = NodePath("RayCasts/RayCast2Dbaixo")
+comidasPlace = NodePath("Comida")
+metadata/_edit_group_ = true
+
+[node name="Node2D" type="Node2D" parent="."]
+scale = Vector2(0.3, 0.3)
+
+[node name="WhiteBorder" parent="Node2D" node_paths=PackedStringArray("reference") instance=ExtResource("2_fdrtl")]
+offset_left = -118.333
+offset_top = -98.3333
+offset_right = 129.667
+offset_bottom = -65.3333
+reference = NodePath("../Label")
+border = 10
+
+[node name="Label" type="Label" parent="Node2D"]
+visible = false
+material = SubResource("CanvasItemMaterial_nteog")
+offset_left = -113.333
+offset_top = -93.3333
+offset_right = 124.667
+offset_bottom = -70.3333
+theme = ExtResource("3_fl700")
+theme_override_fonts/font = ExtResource("4_iyk0m")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "[E] Segurar/Soltar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 8)
+shape = SubResource("RectangleShape2D_y34k5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("5_2kfln")
+
+[node name="InteractibleArea" type="Area2D" parent="." node_paths=PackedStringArray("message")]
+position = Vector2(1, -3)
+collision_layer = 0
+collision_mask = 2147483648
+monitorable = false
+script = ExtResource("6_ar28w")
+message = NodePath("../Node2D/Label")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractibleArea"]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_6gxf4")
+
+[node name="RayCasts" type="Node2D" parent="."]
+
+[node name="RayCast2Dbaixo" type="RayCast2D" parent="RayCasts"]
+position = Vector2(0, 6)
+target_position = Vector2(0, 16)
+collision_mask = 3
+hit_from_inside = true
+
+[node name="Comida" type="Sprite2D" parent="."]
+position = Vector2(-5, -11)
+scale = Vector2(0.08, 0.08)
+
+[connection signal="area_entered" from="InteractibleArea" to="InteractibleArea" method="_player_entered"]
+[connection signal="area_exited" from="InteractibleArea" to="InteractibleArea" method="_player_exited"]

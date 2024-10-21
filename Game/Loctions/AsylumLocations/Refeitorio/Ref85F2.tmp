@@ -228,6 +228,9 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "Coxa de Galinha"
 
+[node name="MesasPedido" type="Timer" parent="OrganizadosPorY/Objects/Distribuidora"]
+autostart = true
+
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 visible = false
 navigation_polygon = SubResource("NavigationPolygon_q05t7")
@@ -376,6 +379,8 @@ location = "CorridorB"
 
 [node name="1" type="Marker2D" parent="Scenes/Destinations"]
 position = Vector2(325, -18)
+
+[connection signal="timeout" from="OrganizadosPorY/Objects/Distribuidora/MesasPedido" to="OrganizadosPorY/Objects/Distribuidora" method="_on_mesas_pedido_timeout"]
 
 [editable path="EnemySpawning"]
 [editable path="PacientSpawning"]
