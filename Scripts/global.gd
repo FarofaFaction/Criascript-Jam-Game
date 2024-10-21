@@ -1,7 +1,9 @@
 extends Node
 
 var first_play := true
+signal using_item_signal
 
+var using_item := false
 var player : PlayerClass
 # AUDIO
 var bus_name: String = "Master"
@@ -10,7 +12,14 @@ var bus_index: int
 
 func _ready() -> void:
 	_init_audio()
+	using_item_signal.connect(change_using_item)
 	pass # Replace with function body.
+
+func change_using_item():
+	using_item = true
+	await get_tree().create_timer(randf_range(0.0, 1.0)).timeout
+	using_item = false
+	pass
 
 const DarkRoom := "res://Game/Loctions/DarkRoom/DarkRoom.tscn"
 const Art := "res://Game/Loctions/AsylumLocations/Arte/ArtRoom.tscn"

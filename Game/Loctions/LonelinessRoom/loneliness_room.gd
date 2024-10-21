@@ -10,7 +10,7 @@ func delay_sanity_damage():
 func _process(_delta: float) -> void:
 	if _lonelinesRoomDelay:
 		delay_sanity_damage()
-		
 		return
 	if Global.player:
-		Global.player.take_damage(0.1)
+		if Global.player.Sanity > 20:
+			Global.player.take_damage(0.1)

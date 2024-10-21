@@ -19,5 +19,5 @@ label Escolha
 	desafiante: Vamos então
 	[end_timeline]
 - Não quero
-desafiante: Fodase, agora que ja esta aqui na quadra, vai jogar jogar do mesmo jeito!
+desafiante: Fodase, agora que ja esta aqui na quadra, vai jogar do mesmo jeito!
 set {DesafianteExterna.PartidaComeçou} = true

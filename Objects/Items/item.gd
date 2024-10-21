@@ -22,6 +22,9 @@ func _process(_delta: float) -> void:
 			button_warning.text = "Use [" + button + "]"
 			#tr(button_warning.text)
 		if Input.is_action_just_pressed(button):
+			if Global.using_item:
+				return
+			Global.using_item_signal.emit()
 			if node_instructions:
 				if is_instance_valid(node_instructions):
 					if node_instructions.has_method("UseItem"):
@@ -30,6 +33,7 @@ func _process(_delta: float) -> void:
 	pass
 
 func _is_on_player():
+	
 	var node = get_parent()
 	if node is not VBoxContainer:
 		return false

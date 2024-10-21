@@ -443,7 +443,7 @@ position = Vector2(81, 4)
 list_of_nodes = [NodePath("../Items/CorridorSimbols/1"), NodePath("../Items/CorridorSimbols/2"), NodePath("../Items/CorridorSimbols/3"), NodePath("../Items/CorridorSimbols/4"), NodePath("../Items/CorridorSimbols/Floor"), NodePath("../Key")]
 
 [node name="Key" parent="." instance=ExtResource("12_ak1qa")]
-position = Vector2(-298, -11)
+position = Vector2(-7, -6)
 item_id = "GenericKeyA"
 
 [connection signal="timeout" from="Scenes/LocalTeleporter/Timer" to="Scenes/LocalTeleporter" method="_on_Timer_timeout"]

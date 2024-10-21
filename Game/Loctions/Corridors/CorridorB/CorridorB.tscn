@@ -440,7 +440,7 @@ position = Vector2(42, 2)
 position = Vector2(81, 4)
 
 [node name="Key" parent="." instance=ExtResource("12_cik5k")]
-position = Vector2(-658, -9)
+position = Vector2(103, -6)
 item_id = "GenericKeyB"
 
 [node name="SanityVisualizer" parent="." node_paths=PackedStringArray("list_of_nodes") instance=ExtResource("13_4s2qu")]

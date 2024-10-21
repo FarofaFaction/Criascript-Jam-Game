@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://uj7yp8ht0jla"]
+[gd_scene load_steps=83 format=3 uid="uid://uj7yp8ht0jla"]
 
 [ext_resource type="Script" path="res://Game/Loctions/Room/player_room.gd" id="1_13q18"]
 [ext_resource type="PackedScene" uid="uid://d2d1asq2fkvsq" path="res://Interface/PlayerInterface/player_interface.tscn" id="2_k01qi"]
@@ -14,7 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://ji8y8qki3vcm" path="res://Game/Player/run.png" id="12_7n0s6"]
 [ext_resource type="PackedScene" uid="uid://cp5et8dq2pjvr" path="res://Game/text_ballon.tscn" id="12_17apr"]
 [ext_resource type="PackedScene" uid="uid://bqjg53nmro3w" path="res://Objects/Shadow/animated_shadow.tscn" id="13_jn72q"]
+[ext_resource type="Texture2D" uid="uid://cavgco4u8n8pl" path="res://Sprites/idle.png" id="14_jif5f"]
 [ext_resource type="Script" path="res://Game/state_machine.gd" id="14_tav5k"]
+[ext_resource type="Texture2D" uid="uid://bsu6taenbungd" path="res://Sprites/run.png" id="15_kxjkm"]
 [ext_resource type="PackedScene" uid="uid://6fw6kl4t5n7x" path="res://Objects/interactible_area.tscn" id="16_bbywb"]
 [ext_resource type="PackedScene" uid="uid://fapehm3dhx0l" path="res://Objects/Cenario/Cama/cama.tscn" id="17_rtuhv"]
 [ext_resource type="Texture2D" uid="uid://bcufmduoe61cs" path="res://Sprites/Sprites mundo/area inicio/camas direita/cama 4.png" id="18_mbx0v"]
@@ -94,6 +96,22 @@ region = Rect2(32, 0, 16, 32)
 atlas = ExtResource("10_njqus")
 region = Rect2(48, 0, 16, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_obefi"]
+atlas = ExtResource("14_jif5f")
+region = Rect2(0, 0, 17, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rfxgc"]
+atlas = ExtResource("14_jif5f")
+region = Rect2(17, 0, 17, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nylgk"]
+atlas = ExtResource("14_jif5f")
+region = Rect2(34, 0, 17, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qq7x"]
+atlas = ExtResource("14_jif5f")
+region = Rect2(51, 0, 17, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_rsx66"]
 atlas = ExtResource("11_ov2ei")
 region = Rect2(1, 0, 16, 32)
@@ -109,6 +127,22 @@ region = Rect2(35, 0, 16, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_55uco"]
 atlas = ExtResource("11_ov2ei")
 region = Rect2(52, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6a3n"]
+atlas = ExtResource("15_kxjkm")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2plp"]
+atlas = ExtResource("15_kxjkm")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yikpb"]
+atlas = ExtResource("15_kxjkm")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1wvo"]
+atlas = ExtResource("15_kxjkm")
+region = Rect2(48, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ye423"]
 atlas = ExtResource("12_7n0s6")
@@ -126,7 +160,7 @@ region = Rect2(32, 0, 16, 32)
 atlas = ExtResource("12_7n0s6")
 region = Rect2(48, 0, 16, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_amjbx"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_0i3ao"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -164,6 +198,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_obefi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rfxgc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nylgk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1qq7x")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_rsx66")
 }, {
 "duration": 1.0,
@@ -176,7 +227,24 @@ animations = [{
 "texture": SubResource("AtlasTexture_55uco")
 }],
 "loop": true,
-"name": &"Idle",
+"name": &"Idles",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v6a3n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2plp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yikpb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a1wvo")
+}],
+"loop": true,
+"name": &"Run",
 "speed": 5.0
 }, {
 "frames": [{
@@ -193,7 +261,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_84bky")
 }],
 "loop": true,
-"name": &"Run",
+"name": &"ssss",
 "speed": 5.0
 }]
 
@@ -230,6 +298,9 @@ load_path = "res://.godot/imported/light.png-8fdf09ef7de5c29c73dfe94c1c1879f5.ct
 vertices = PackedVector2Array(220.102, 189.508, 309.609, 270.891, -28.1406, 270.031, 728.023, 271.969, 437.398, 271.219, 335, 168, 478.461, 168, 534.672, 173.852, 47.7813, -28.0469, 218.781, 129.133, 472.711, 125.891, 491.688, -31.0078, 536.344, 123.672, 532.57, -44.9688, 728.969, -42.1406, 728.453, 130.188, 728.313, 176.633)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5, 6, 7), PackedInt32Array(0, 2, 8, 9), PackedInt32Array(10, 9, 8, 11, 12), PackedInt32Array(13, 14, 15, 12, 11), PackedInt32Array(6, 10, 12, 7), PackedInt32Array(3, 7, 16)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(40, -38, 490, -41, 531, -55, 739, -52, 738, 282, -41, 280)])
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1j6q8"]
+radius = 287.92
 
 [node name="Room" type="Node2D" node_paths=PackedStringArray("destinations")]
 script = ExtResource("1_13q18")
@@ -409,8 +480,8 @@ position = Vector2(0, 12)
 shape = SubResource("CircleShape2D_318iq")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="OrganizadosPorY/Personagens/AntiPlayer"]
-sprite_frames = SubResource("SpriteFrames_amjbx")
-animation = &"Run"
+sprite_frames = SubResource("SpriteFrames_0i3ao")
+animation = &"Idle"
 autoplay = "Idle"
 
 [node name="AnimatedShadow" parent="OrganizadosPorY/Personagens/AntiPlayer/Sprite" instance=ExtResource("13_jn72q")]
@@ -498,7 +569,7 @@ shape = SubResource("RectangleShape2D_f6fea")
 
 [node name="Tv" type="RigidBody2D" parent="OrganizadosPorY/Objects" node_paths=PackedStringArray("smallLight", "bigLight")]
 y_sort_enabled = true
-position = Vector2(320, 68)
+position = Vector2(218, -1)
 collision_layer = 2
 collision_mask = 0
 mass = 10.0
@@ -551,7 +622,6 @@ position = Vector2(0, -5)
 color = Color(1, 0, 1, 1)
 range_item_cull_mask = 524289
 texture = SubResource("CompressedTexture2D_j8i1h")
-texture_scale = 0.5
 
 [node name="Small" type="PointLight2D" parent="OrganizadosPorY/Objects/Tv/Tv"]
 position = Vector2(0, -5)
@@ -574,43 +644,43 @@ position = Vector2(645, 172)
 texture = ExtResource("18_mbx0v")
 
 [node name="Cama2" parent="OrganizadosPorY/Objects/Camas" instance=ExtResource("17_rtuhv")]
-position = Vector2(580, 214)
+position = Vector2(559, 201)
 
 [node name="Sprite2D" parent="OrganizadosPorY/Objects/Camas/Cama2" index="2"]
 texture = ExtResource("18_mbx0v")
 
 [node name="Cama3" parent="OrganizadosPorY/Objects/Camas" instance=ExtResource("17_rtuhv")]
-position = Vector2(619, 185)
+position = Vector2(599, 176)
 
 [node name="Sprite2D" parent="OrganizadosPorY/Objects/Camas/Cama3" index="2"]
 texture = ExtResource("18_mbx0v")
 
 [node name="Cama4" parent="OrganizadosPorY/Objects/Camas" instance=ExtResource("17_rtuhv")]
-position = Vector2(559, 230)
+position = Vector2(527, 224)
 
 [node name="Sprite2D" parent="OrganizadosPorY/Objects/Camas/Cama4" index="2"]
 texture = ExtResource("18_mbx0v")
 
 [node name="Cama5" parent="OrganizadosPorY/Objects/Camas" instance=ExtResource("17_rtuhv")]
-position = Vector2(583, 247)
+position = Vector2(576, 228)
 
 [node name="Sprite2D" parent="OrganizadosPorY/Objects/Camas/Cama5" index="2"]
 texture = ExtResource("18_mbx0v")
 
 [node name="Cama6" parent="OrganizadosPorY/Objects/Camas" instance=ExtResource("17_rtuhv")]
-position = Vector2(691, 181)
+position = Vector2(698, 175)
 
 [node name="Sprite2D" parent="OrganizadosPorY/Objects/Camas/Cama6" index="2"]
 texture = ExtResource("18_mbx0v")
 
 [node name="Cama7" parent="OrganizadosPorY/Objects/Camas" instance=ExtResource("17_rtuhv")]
-position = Vector2(619, 261)
+position = Vector2(617, 243)
 
 [node name="Sprite2D" parent="OrganizadosPorY/Objects/Camas/Cama7" index="2"]
 texture = ExtResource("18_mbx0v")
 
 [node name="Cama8" parent="OrganizadosPorY/Objects/Camas" instance=ExtResource("17_rtuhv")]
-position = Vector2(503, 259)
+position = Vector2(632, 190)
 
 [node name="Sprite2D" parent="OrganizadosPorY/Objects/Camas/Cama8" index="2"]
 texture = ExtResource("18_mbx0v")
@@ -727,11 +797,23 @@ possible_positions = [NodePath("Marker2D"), NodePath("Marker2D2"), NodePath("Mar
 spawn_node = NodePath("../OrganizadosPorY/Personagens")
 spawn_times = Array[Vector2]([Vector2(0, 2), Vector2(0, 30), Vector2(0, 34), Vector2(0, 22)])
 
+[node name="Marker2D2" parent="EnemySpawning" index="1"]
+position = Vector2(738, 9)
+
 [node name="Marker2D4" type="Marker2D" parent="EnemySpawning"]
-position = Vector2(465, 188)
+position = Vector2(118, 0)
 
 [node name="Marker2D5" type="Marker2D" parent="EnemySpawning"]
 position = Vector2(472, 7)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="EnemySpawning"]
+position = Vector2(700, 381)
+collision_layer = 1073741824
+collision_mask = 1073741824
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemySpawning/StaticBody2D"]
+position = Vector2(8, 42)
+shape = SubResource("CircleShape2D_1j6q8")
 
 [node name="Border" type="Node2D" parent="."]
 
