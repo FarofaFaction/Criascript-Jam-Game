@@ -21,17 +21,28 @@ func _ready() -> void:
 	pass
 
 func _process(_delta: float) -> void:
-	if !comida || comidasPlace:
+	if !comida:
 		return
 	if rayOficial.is_colliding():
-		var node = rayOficial.get_collider()
+		var node1 = rayOficial.get_collider()
+		var node = node1.get_parent()
 		if node.has_method("get_mesa_id"):
+			node.hide_arguing()
 			if node.get_mesa_id() == comida.item_id:
 				_completed = true
-				print("É  a comida certa")
+				if !player_holding:
+					get_node("Comida").remove_child(comida)
+					node.get_node("Comida").add_child(comida)
+					node.completed = true
+					get_parent().remove_child(self)
+					queue_free()
+					pass
 			else:
+				node.show_arguing()
 				_completed = false
-				print("Não É  a comida certa")
+				if !player_holding:
+					if Global.player:
+						Global.player.take_damage(0.2)
 	else:
 		_completed = false
 		pass

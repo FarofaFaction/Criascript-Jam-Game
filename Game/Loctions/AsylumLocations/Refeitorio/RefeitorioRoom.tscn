@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cedeuoqcqfw7b"]
+[gd_scene load_steps=25 format=3 uid="uid://cedeuoqcqfw7b"]
 
 [ext_resource type="Script" path="res://Game/Loctions/AsylumLocations/Refeitorio/refeitorio_room.gd" id="1_d0oqy"]
 [ext_resource type="PackedScene" uid="uid://d2d1asq2fkvsq" path="res://Interface/PlayerInterface/player_interface.tscn" id="2_rmi5a"]
@@ -17,6 +17,8 @@
 [ext_resource type="PackedScene" uid="uid://cbxurlbetdr64" path="res://Game/Loctions/AsylumLocations/Refeitorio/refeitorio/conjunto_de_mesa_e_cadeira.tscn" id="11_hcucb"]
 [ext_resource type="PackedScene" uid="uid://cpe4chlg5q0t2" path="res://Game/scene_changer.tscn" id="12_72dsu"]
 [ext_resource type="Script" path="res://Game/Loctions/AsylumLocations/Refeitorio/distribuidora.gd" id="14_hg1fr"]
+[ext_resource type="Texture2D" uid="uid://bqwnu0a58md0" path="res://Sprites/comida/Carrinho_de_comida.png" id="17_d1jmq"]
+[ext_resource type="PackedScene" uid="uid://dhf0u4kshnwol" path="res://Objects/Items/pickable_item.tscn" id="19_sq5qd"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s34ym"]
 load_path = "res://.godot/imported/light.png-8fdf09ef7de5c29c73dfe94c1c1879f5.ctex"
@@ -37,8 +39,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(70, -34, 612, -34, 618,
 
 [node name="RefeitorioRoom" type="Node2D"]
 script = ExtResource("1_d0oqy")
-debug = true
-debug_init_time = Vector2(8, 0)
+timestop = true
 
 [node name="PlayerInterface" parent="." instance=ExtResource("2_rmi5a")]
 visible = false
@@ -183,8 +184,9 @@ position = Vector2(-139, -1)
 y_sort_enabled = true
 position = Vector2(143, -19)
 
-[node name="Distribuidora" type="Node2D" parent="OrganizadosPorY/Objects" node_paths=PackedStringArray("NomesDeComida", "distributionLine", "mesas")]
+[node name="Distribuidora" type="Node2D" parent="OrganizadosPorY/Objects" node_paths=PackedStringArray("Key", "NomesDeComida", "distributionLine", "mesas")]
 script = ExtResource("14_hg1fr")
+Key = NodePath("../../../CarrinhoDeComida/Item")
 working = true
 NomesDeComida = NodePath("NomesDeComida")
 distributionLine = NodePath("../Bandeijas")
@@ -291,7 +293,7 @@ murmurAudioPlayer = NodePath("AudioStreamPlayer2D")
 positions_to_go = [NodePath("Marker2D"), NodePath("Marker2D2"), NodePath("Marker2D3"), NodePath("Marker2D4"), NodePath("Marker2D5"), NodePath("Marker2D5"), NodePath("Marker2D6"), NodePath("Marker2D8")]
 positions_to_sleep = [NodePath("BedsTime/Marker2D")]
 spawn_node = NodePath("../OrganizadosPorY/Personagens/Pacients")
-number_of_patients = 15
+number_of_patients = 10
 
 [node name="Marker2D" parent="PacientSpawning" index="0"]
 position = Vector2(399, 111)
@@ -376,6 +378,16 @@ location = "CorridorB"
 
 [node name="1" type="Marker2D" parent="Scenes/Destinations"]
 position = Vector2(325, -18)
+
+[node name="CarrinhoDeComida" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(396, -22)
+texture = ExtResource("17_d1jmq")
+
+[node name="Item" parent="CarrinhoDeComida" instance=ExtResource("19_sq5qd")]
+visible = false
+position = Vector2(-7, -14)
+item_id = "GenericKeyCozinha"
 
 [editable path="EnemySpawning"]
 [editable path="PacientSpawning"]

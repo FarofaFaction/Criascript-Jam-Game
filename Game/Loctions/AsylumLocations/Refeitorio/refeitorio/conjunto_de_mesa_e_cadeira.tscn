@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cbxurlbetdr64"]
+[gd_scene load_steps=47 format=3 uid="uid://cbxurlbetdr64"]
 
 [ext_resource type="PackedScene" uid="uid://cuds6ay2py5wr" path="res://Game/Loctions/AsylumLocations/Externa/cadeira_1.tscn" id="1_5jdmf"]
 [ext_resource type="Script" path="res://Game/Loctions/AsylumLocations/Refeitorio/refeitorio/conjunto_de_mesa_e_cadeira.gd" id="1_58qhm"]
@@ -6,6 +6,20 @@
 [ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="3_ebfgs"]
 [ext_resource type="Texture2D" uid="uid://cwjrrl26k68u4" path="res://Sprites/Sprites mundo/refeitorio/mesa.png" id="4_8u7o8"]
 [ext_resource type="PackedScene" uid="uid://6fw6kl4t5n7x" path="res://Objects/interactible_area.tscn" id="5_iaw7q"]
+[ext_resource type="Script" path="res://Game/Npcs/Pacients/pacient.gd" id="7_v7rkp"]
+[ext_resource type="PackedScene" uid="uid://djhnt4bpvoytr" path="res://border.tscn" id="9_av4o1"]
+[ext_resource type="PackedScene" uid="uid://2skcpejdtcma" path="res://Game/Npcs/npc_steps.tscn" id="10_5meht"]
+[ext_resource type="Texture2D" uid="uid://bv04l8emn75qh" path="res://Game/Npcs/Doctor/doctor-idle.png" id="11_j57mi"]
+[ext_resource type="Texture2D" uid="uid://b6pq5blreewrk" path="res://Game/Npcs/Doctor/doctor-runing.png" id="12_o61c6"]
+[ext_resource type="Texture2D" uid="uid://dgq2m1cnwgbv" path="res://Game/Player/idle.png" id="13_2s2gg"]
+[ext_resource type="Texture2D" uid="uid://ji8y8qki3vcm" path="res://Game/Player/run.png" id="14_puvty"]
+[ext_resource type="PackedScene" uid="uid://bqjg53nmro3w" path="res://Objects/Shadow/animated_shadow.tscn" id="15_f8g7d"]
+[ext_resource type="Script" path="res://Game/state_machine.gd" id="16_fhaeh"]
+[ext_resource type="Script" path="res://Game/Npcs/Pacients/pacientIdle.gd" id="17_ls6ec"]
+[ext_resource type="Script" path="res://Game/Npcs/Pacients/pacient_await.gd" id="18_vvy3l"]
+[ext_resource type="Script" path="res://Game/Npcs/Pacients/pacientWalkIn.gd" id="19_gffmv"]
+[ext_resource type="PackedScene" uid="uid://d3h6uwsadhpor" path="res://Game/Loctions/AsylumLocations/Refeitorio/comida.tscn" id="20_7rx26"]
+[ext_resource type="Script" path="res://Game/Npcs/Pacients/pacientWalkout.gd" id="20_aqkiv"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nteog"]
 light_mode = 1
@@ -21,9 +35,167 @@ border_color = Color(0, 0, 0, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3yt1y"]
 size = Vector2(104, 11)
 
-[node name="ConjuntoDeMesaECadeira" type="Node2D"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_flyke"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_co7mu"]
+light_mode = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vgjli"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8ubhu"]
+radius = 129.557
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_318iq"]
+radius = 16.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4r2b"]
+atlas = ExtResource("11_j57mi")
+region = Rect2(0, 0, 17, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpig7"]
+atlas = ExtResource("11_j57mi")
+region = Rect2(17, 0, 17, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bip1j"]
+atlas = ExtResource("11_j57mi")
+region = Rect2(34, 0, 17, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxqat"]
+atlas = ExtResource("11_j57mi")
+region = Rect2(51, 0, 17, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0necr"]
+atlas = ExtResource("12_o61c6")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_so6gb"]
+atlas = ExtResource("12_o61c6")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0dfs1"]
+atlas = ExtResource("12_o61c6")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jutk4"]
+atlas = ExtResource("12_o61c6")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsx66"]
+atlas = ExtResource("13_2s2gg")
+region = Rect2(1, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_880vf"]
+atlas = ExtResource("13_2s2gg")
+region = Rect2(18, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yjrqb"]
+atlas = ExtResource("13_2s2gg")
+region = Rect2(35, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55uco"]
+atlas = ExtResource("13_2s2gg")
+region = Rect2(52, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ye423"]
+atlas = ExtResource("14_puvty")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyfos"]
+atlas = ExtResource("14_puvty")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1j1xw"]
+atlas = ExtResource("14_puvty")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84bky"]
+atlas = ExtResource("14_puvty")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_amjbx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g4r2b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fpig7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bip1j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vxqat")
+}],
+"loop": true,
+"name": &"DoctorIdle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0necr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_so6gb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0dfs1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jutk4")
+}],
+"loop": true,
+"name": &"DoctorRun",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rsx66")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_880vf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yjrqb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55uco")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ye423")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pyfos")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1j1xw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84bky")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_odx0j"]
+size = Vector2(16, 6.5)
+
+[node name="ConjuntoDeMesaECadeira" type="Node2D" node_paths=PackedStringArray("PacientBallon")]
 y_sort_enabled = true
 script = ExtResource("1_58qhm")
+PacientBallon = NodePath("Pacient/SacaledTextBallon/Textpanel/TextBallon")
 
 [node name="Cadeira1" parent="." instance=ExtResource("1_5jdmf")]
 position = Vector2(235, 210)
@@ -39,8 +211,8 @@ position = Vector2(295, 211)
 
 [node name="Mesa" type="RigidBody2D" parent="."]
 position = Vector2(268, 194)
-collision_layer = 2
-collision_mask = 2
+collision_layer = 66
+collision_mask = 66
 mass = 10.0
 lock_rotation = true
 metadata/_edit_group_ = true
@@ -72,3 +244,161 @@ texture = ExtResource("4_8u7o8")
 
 [node name="InteractibleArea" parent="Mesa" instance=ExtResource("5_iaw7q")]
 position = Vector2(0, 4)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="Pacient" type="CharacterBody2D" parent="." node_paths=PackedStringArray("stepsAudioPlayer", "DetectionArea", "SelfArea", "animationPlayer") groups=["Npc"]]
+y_sort_enabled = true
+position = Vector2(263, 182)
+collision_layer = 2
+collision_mask = 2
+motion_mode = 1
+script = ExtResource("7_v7rkp")
+stepsAudioPlayer = NodePath("Addons/Sounds/NpcSteps")
+DetectionArea = NodePath("DetectionArea")
+SelfArea = NodePath("SelfArea")
+animationPlayer = NodePath("Sprite")
+
+[node name="SacaledTextBallon" type="Node2D" parent="Pacient"]
+position = Vector2(15, 1)
+scale = Vector2(0.4, 0.4)
+
+[node name="Textpanel" type="Panel" parent="Pacient/SacaledTextBallon"]
+offset_left = -113.333
+offset_top = -73.3333
+offset_right = -0.333351
+offset_bottom = -42.3333
+theme_override_styles/panel = SubResource("StyleBoxEmpty_flyke")
+
+[node name="TextBallon" type="Label" parent="Pacient/SacaledTextBallon/Textpanel"]
+visible = false
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_co7mu")
+layout_mode = 0
+offset_right = 1.0
+offset_bottom = 23.0
+theme = ExtResource("2_1nsgs")
+theme_override_fonts/font = ExtResource("3_ebfgs")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vgjli")
+text = "[E] Segurar/Soltar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WhiteBorder" parent="Pacient/SacaledTextBallon/Textpanel/TextBallon" node_paths=PackedStringArray("reference") instance=ExtResource("9_av4o1")]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 229.0
+offset_bottom = 26.0
+reference = NodePath("..")
+border = 5
+
+[node name="SacaledTextBallon2" type="Node2D" parent="Pacient"]
+position = Vector2(0, 1)
+scale = Vector2(0.4, 0.4)
+
+[node name="Textpanel" type="Panel" parent="Pacient/SacaledTextBallon2"]
+offset_left = -113.333
+offset_top = -73.3333
+offset_right = -0.333351
+offset_bottom = -42.3333
+theme_override_styles/panel = SubResource("StyleBoxEmpty_flyke")
+
+[node name="Arguing" type="Label" parent="Pacient/SacaledTextBallon2/Textpanel"]
+visible = false
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_co7mu")
+layout_mode = 0
+offset_right = 1.0
+offset_bottom = 23.0
+theme = ExtResource("2_1nsgs")
+theme_override_fonts/font = ExtResource("3_ebfgs")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vgjli")
+text = "Tira esse lixo de perto"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WhiteBorder" parent="Pacient/SacaledTextBallon2/Textpanel/Arguing" node_paths=PackedStringArray("reference") instance=ExtResource("9_av4o1")]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 289.0
+offset_bottom = 26.0
+reference = NodePath("..")
+border = 5
+
+[node name="Addons" type="Node2D" parent="Pacient"]
+
+[node name="Sounds" type="Node2D" parent="Pacient/Addons"]
+
+[node name="NpcSteps" parent="Pacient/Addons/Sounds" instance=ExtResource("10_5meht")]
+
+[node name="DetectionArea" type="Area2D" parent="Pacient"]
+collision_layer = 0
+collision_mask = 2147483648
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pacient/DetectionArea"]
+shape = SubResource("CircleShape2D_8ubhu")
+
+[node name="SelfArea" type="Area2D" parent="Pacient"]
+collision_layer = 2
+collision_mask = 2147483650
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pacient/SelfArea"]
+position = Vector2(0, 12)
+shape = SubResource("CircleShape2D_318iq")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Pacient"]
+sprite_frames = SubResource("SpriteFrames_amjbx")
+animation = &"Run"
+autoplay = "Idle"
+
+[node name="AnimatedShadow" parent="Pacient/Sprite" instance=ExtResource("15_f8g7d")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pacient"]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_odx0j")
+
+[node name="State Machine" type="Node" parent="Pacient" node_paths=PackedStringArray("initial_state")]
+script = ExtResource("16_fhaeh")
+initial_state = NodePath("PacientWalkIn")
+
+[node name="PacientIdle" type="Node" parent="Pacient/State Machine" node_paths=PackedStringArray("pacient")]
+script = ExtResource("17_ls6ec")
+pacient = NodePath("../..")
+
+[node name="InteractibleArea" parent="Pacient/State Machine/PacientIdle" node_paths=PackedStringArray("moving_parent") instance=ExtResource("5_iaw7q")]
+moving_parent = NodePath("../../..")
+
+[node name="PacientAwait" type="Node" parent="Pacient/State Machine" node_paths=PackedStringArray("pacient")]
+script = ExtResource("18_vvy3l")
+pacient = NodePath("../..")
+
+[node name="PacientWalkIn" type="Node" parent="Pacient/State Machine" node_paths=PackedStringArray("pacient", "navigation_agent")]
+script = ExtResource("19_gffmv")
+pacient = NodePath("../..")
+navigation_agent = NodePath("../../NavigationAgent2D")
+
+[node name="PacientWalkout" type="Node" parent="Pacient/State Machine" node_paths=PackedStringArray("pacient", "navigation_agent")]
+script = ExtResource("20_aqkiv")
+pacient = NodePath("../..")
+navigation_agent = NodePath("../../NavigationAgent2D")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Pacient"]
+simplify_path = true
+
+[node name="Comida" parent="." instance=ExtResource("20_7rx26")]
+z_index = 1
+position = Vector2(256, 189)
+
+[node name="Pedido" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Pedido" to="." method="_on_pedido_timeout"]

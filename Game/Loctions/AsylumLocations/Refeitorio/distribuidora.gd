@@ -1,5 +1,6 @@
 extends Node2D
 
+@export var Key : Node2D
 @export var working := false
 @export var NomesDeComida : Node2D
 @export var distributionLine : Node2D
@@ -18,10 +19,12 @@ var list_ := [
 var _actual_index := 0
 
 # Tempo de espera para instanciar uma nova bandeja (em segundos)
-var instantiation_timer := 3.0
+var instantiation_timer := 0.5
 
 func _ready() -> void:
 	# Iniciar o timer que cria novas bandejas de comida a cada 3 segundos
+	for mesa in mesas:
+		mesa.Central = self
 	_start_instantiation_process()
 
 func _start_instantiation_process() -> void:
@@ -51,12 +54,25 @@ func _instantiate_bandeija() -> void:
 	# Adiciona a comida à bandeja
 	bandeja.get_node("Comida").add_child(node)
 	bandeja.comida = node
-	
-	# Adiciona a bandeja à linha de distribuição
-	distributionLine.add_child(bandeja)
-	bandeja.position.x = 25 * distributionLine.get_child_count()
+	for it in mesas:
+		if bandeja.comida.item_id == it.id:
+			if !it.completed:
+				distributionLine.add_child(bandeja)
+				bandeja.position.x = 25 * distributionLine.get_child_count()
+				return
+	bandeja.queue_free()
 
 func _process(delta: float) -> void:
 	# Se o turno da noite começar, para de trabalhar
+	var count := 0
+	for mesa in mesas:
+		if mesa.completed:
+			count += 1
+	if count == 1:
+		if Key:
+			if is_instance_valid(Key):
+				Key.reveal()
+		$"../../../CarrinhoDeComida".visible = true
+		working = false
 	if $"../../../Illumination".on_night:
 		working = false

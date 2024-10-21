@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://esefibiyug2c"]
+[gd_scene load_steps=12 format=3 uid="uid://esefibiyug2c"]
 
 [ext_resource type="Script" path="res://Game/Loctions/AsylumLocations/Refeitorio/bandeija.gd" id="1_n1fjg"]
 [ext_resource type="PackedScene" uid="uid://djhnt4bpvoytr" path="res://border.tscn" id="2_fdrtl"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="4_iyk0m"]
 [ext_resource type="Texture2D" uid="uid://bqwnu0a58md0" path="res://Sprites/comida/Carrinho_de_comida.png" id="5_2kfln"]
 [ext_resource type="Script" path="res://Scripts/interactible_area.gd" id="6_ar28w"]
+[ext_resource type="PackedScene" uid="uid://d3h6uwsadhpor" path="res://Game/Loctions/AsylumLocations/Refeitorio/comida.tscn" id="7_sgyh7"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nteog"]
 light_mode = 1
@@ -22,7 +23,7 @@ border_color = Color(0, 0, 0, 1)
 size = Vector2(23, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6gxf4"]
-size = Vector2(34, 8.5)
+size = Vector2(34, 16)
 
 [node name="Bandeija" type="RigidBody2D" node_paths=PackedStringArray("rayOficial", "comidasPlace")]
 position = Vector2(191, 11)
@@ -32,7 +33,7 @@ mass = 10.0
 lock_rotation = true
 script = ExtResource("1_n1fjg")
 rayOficial = NodePath("RayCasts/RayCast2Dbaixo")
-comidasPlace = NodePath("Comida")
+comidasPlace = NodePath("")
 metadata/_edit_group_ = true
 
 [node name="Node2D" type="Node2D" parent="."]
@@ -84,12 +85,10 @@ shape = SubResource("RectangleShape2D_6gxf4")
 [node name="RayCast2Dbaixo" type="RayCast2D" parent="RayCasts"]
 position = Vector2(0, 6)
 target_position = Vector2(0, 16)
-collision_mask = 3
+collision_mask = 64
 hit_from_inside = true
 
-[node name="Comida" type="Sprite2D" parent="."]
-position = Vector2(-5, -11)
-scale = Vector2(0.08, 0.08)
+[node name="Comida" parent="." instance=ExtResource("7_sgyh7")]
 
 [connection signal="area_entered" from="InteractibleArea" to="InteractibleArea" method="_player_entered"]
 [connection signal="area_exited" from="InteractibleArea" to="InteractibleArea" method="_player_exited"]

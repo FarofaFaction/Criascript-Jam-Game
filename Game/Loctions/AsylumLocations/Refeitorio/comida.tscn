@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://d3h6uwsadhpor"]
+
+[node name="Comida" type="Sprite2D"]
+position = Vector2(-5, -11)
+scale = Vector2(0.08, 0.08)
