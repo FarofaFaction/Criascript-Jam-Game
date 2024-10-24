@@ -3,6 +3,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	InGamePause.monitoring = false
 	var twe := create_tween()
 	var np = $CanvasLayer/Panel/BoxContainer.position
 	np.y = -2400
@@ -17,4 +18,10 @@ func on_animation_stopped():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("ui_cancel"):
+		GameStatus.reset_game()
+		Global.change_scene("Menu")
+		get_parent().remove_child(self)
+		queue_free()
+		pass
 	pass

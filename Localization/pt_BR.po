@@ -36,7 +36,6 @@ msgid "PT-BR"
 msgstr "PT-BR"
 
 #: Interface/LenguageMenu/lenguage_menu.tscn
-#| msgid "Pronto\n"
 msgid "Pronto\r\n"
 msgstr "Pronto\r\n"
 
@@ -111,11 +110,11 @@ msgstr "Entao Ta Bom"
 msgid "ATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACAR"
 msgstr "ATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACAR"
 
-#: Dialog/dialog_system.tscn
+#: Dialog/dialog_system.tscn Dialog/Dialogic/PortraitScene/dialog_portrait.tscn
 msgid "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 msgstr "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 
-#: Dialog/dialog_system.tscn
+#: Dialog/dialog_system.tscn Dialog/Dialogic/PortraitScene/dialog_portrait.tscn
 msgid "\tNome"
 msgstr "\tNome"
 
@@ -126,7 +125,6 @@ msgstr "Escolha"
 
 #: Dialog/DialogMenuClass/DialogMenu.tscn
 #: Game/Quests/DoctorKnocking/stage_1/DoctorKnocking_1.tscn
-#| msgid "Option 1\n"
 msgid "Option 1\r\n"
 msgstr "Option 1\r\n"
 
@@ -190,9 +188,6 @@ msgid "Menu"
 msgstr "Menu"
 
 #: Interface/Pause/pause_options.tscn
-#| msgid ""
-#| "Fechar\n"
-#| "Jogo"
 msgid ""
 "Fechar\r\n"
 "Jogo"
@@ -203,6 +198,260 @@ msgstr ""
 #: Interface/Transition/Loading.tscn
 msgid "Carregando"
 msgstr "Carregando"
+
+#: Dialog/Dialogic/Style/CustomPremade/custom_premade.tscn
+msgid "Some default text"
+msgstr "Some default text"
+
+#: Dialog/Dialogic/Style/CustomPremade/custom_premade.tscn
+msgid "S"
+msgstr "S"
+
+#: Dialog/Dialogic/Style/CustomPremade/custom_premade.tscn
+msgid "Some text"
+msgstr "Some text"
+
+#: Game/Loctions/AsylumLocations/Arte/ArtRoom.tscn
+#: Game/Loctions/AsylumLocations/Arte/cavalete_grande.tscn
+#: Game/Loctions/AsylumLocations/Externa/cadeira_1.tscn
+#: Game/Loctions/AsylumLocations/Externa/ExternRoom.tscn
+#: Game/Loctions/AsylumLocations/Externa/objetos_xadrez.tscn
+#: Game/Loctions/AsylumLocations/Externa/truco.tscn
+#: Game/Loctions/AsylumLocations/Refeitorio/bandeija.tscn
+#: Game/Loctions/AsylumLocations/Refeitorio/refeitorio/conjunto_de_mesa_e_cadeira.tscn
+#: Game/Npcs/Pacients/Pacient.tscn
+msgid "[E] Segurar/Soltar"
+msgstr "[E] Segurar/Soltar"
+
+#: Game/Loctions/AsylumLocations/Arte/ArtRoom.tscn Game/scene_changer.tscn
+#| msgid "Sair"
+msgid "[E] Sair"
+msgstr "[E] Sair"
+
+#: Game/Loctions/AsylumLocations/Arte/ArtRoom.tscn Game/scene_changer.tscn
+msgid "Trancado"
+msgstr "Trancado"
+
+#: Game/Loctions/AsylumLocations/Arte/ArtRoom.tscn Game/scene_changer.tscn
+msgid "[E] Entrar"
+msgstr "[E] Entrar"
+
+#: Game/Loctions/AsylumLocations/Externa/ExternRoom.tscn
+#: Game/speaknpcballontext.tscn
+msgid "[E] para falar"
+msgstr "[E] para falar"
+
+#: Game/Loctions/AsylumLocations/Refeitorio/RefeitorioRoom.tscn
+msgid "Cachorro Quente"
+msgstr "Cachorro Quente"
+
+#: Game/Loctions/AsylumLocations/Refeitorio/RefeitorioRoom.tscn
+msgid "Hamburguer"
+msgstr "Hamburguer"
+
+#: Game/Loctions/AsylumLocations/Refeitorio/RefeitorioRoom.tscn
+msgid "Pizza"
+msgstr "Pizza"
+
+#: Game/Loctions/AsylumLocations/Refeitorio/RefeitorioRoom.tscn
+msgid "Melancia"
+msgstr "Melancia"
+
+#: Game/Loctions/AsylumLocations/Refeitorio/RefeitorioRoom.tscn
+msgid "Refrigerante"
+msgstr "Refrigerante"
+
+#: Game/Loctions/AsylumLocations/Refeitorio/RefeitorioRoom.tscn
+msgid "Suco de Laranja"
+msgstr "Suco de Laranja"
+
+#: Game/Loctions/AsylumLocations/Refeitorio/RefeitorioRoom.tscn
+msgid "Coxa de Galinha"
+msgstr "Coxa de Galinha"
+
+#: Game/Loctions/AsylumLocations/Refeitorio/refeitorio/conjunto_de_mesa_e_cadeira.tscn
+msgid "Tira esse lixo de perto"
+msgstr "Tira esse lixo de perto"
+
+#: Game/Loctions/LonelinessRoom/LonelinessRoom.tscn
+#: Game/Loctions/SafeRoom/SafeRoom.tscn
+msgid "1"
+msgstr "1"
+
+#: Game/Loctions/LonelinessRoom/LonelinessRoom.tscn
+#: Game/Loctions/SafeRoom/SafeRoom.tscn
+msgid "2\n"
+msgstr "2\n"
+
+#: Game/Loctions/LonelinessRoom/LonelinessRoom.tscn
+#: Game/Loctions/SafeRoom/SafeRoom.tscn
+msgid "3\n"
+msgstr "3\n"
+
+#: Game/Loctions/LonelinessRoom/LonelinessRoom.tscn
+#: Game/Loctions/SafeRoom/SafeRoom.tscn
+msgid "4\n"
+msgstr "4\n"
+
+#: Game/Loctions/LonelinessRoom/LonelinessRoom.tscn
+#: Game/Loctions/SafeRoom/SafeRoom.tscn
+msgid "A\n"
+msgstr "A\n"
+
+#: Game/Loctions/Room/Room.tscn
+msgid "[E] Falar"
+msgstr "[E] Falar"
+
+#: Game/Loctions/Room/Room.tscn Game/Npcs/Doctor/Doctor.tscn
+#| msgid "Bom Dia Dorminhoco"
+msgid "Bom dia dorminhoco"
+msgstr "Bom dia dorminhoco"
+
+#: Game/Loctions/Room/Room.tscn Game/Npcs/Doctor/Doctor.tscn
+msgid "Como foi sua noite ?"
+msgstr "Como foi sua noite ?"
+
+#: Game/Loctions/Room/Room.tscn Game/Npcs/Doctor/Doctor.tscn
+msgid "Dormi bem, obrigado pela preocupação"
+msgstr "Dormi bem, obrigado pela preocupação"
+
+#: Game/Loctions/Room/Room.tscn
+msgid "Acho  que estou sendo perseguido"
+msgstr "Acho  que estou sendo perseguido"
+
+#: Game/Loctions/Room/Room.tscn Game/Npcs/Doctor/Doctor.tscn
+msgid "."
+msgstr "."
+
+#: Game/Loctions/Room/Room.tscn Game/Npcs/Doctor/Doctor.tscn
+msgid "Teste 1"
+msgstr "Teste 1"
+
+#: Game/Loctions/Room/Room.tscn Game/Npcs/Doctor/Doctor.tscn
+msgid "Interessante"
+msgstr "Interessante"
+
+#: Game/Loctions/Room/Room.tscn
+msgid "Posso te ajudar de alguma forma ?"
+msgstr "Posso te ajudar de alguma forma ?"
+
+#: Game/Loctions/Room/Room.tscn
+msgid "Sim, acho que os remedios não estao fazendo efeito"
+msgstr "Sim, acho que os remedios não estao fazendo efeito"
+
+#: Game/Loctions/Room/Room.tscn
+msgid "Não, obrigado"
+msgstr "Não, obrigado"
+
+#: Game/Loctions/Room/Room.tscn Game/Npcs/Doctor/Doctor.tscn
+msgid ""
+"Ando um pouco confuso. \r\n"
+"Às vezes, não sei se estou\r\n"
+" acordado ou sonhando."
+msgstr ""
+"Ando um pouco confuso. \r\n"
+"Às vezes, não sei se estou\r\n"
+" acordado ou sonhando."
+
+#: Game/Loctions/Room/Room.tscn Game/Npcs/Doctor/Doctor.tscn
+msgid ""
+"Acho que estou melhor, \r\n"
+"mas tenho dias em que \r\n"
+"sinto que o tempo não\r\n"
+" passa direito."
+msgstr ""
+"Acho que estou melhor, \r\n"
+"mas tenho dias em que \r\n"
+"sinto que o tempo não\r\n"
+" passa direito."
+
+#: Game/Loctions/Room/Room.tscn
+msgid "Não esqueça de buscar seus remedios na enfermaria, se cuide!"
+msgstr "Não esqueça de buscar seus remedios na enfermaria, se cuide!"
+
+#: Game/Npcs/Doctor/Doctor.tscn
+msgid "Na verdade, tive um sonho estranho"
+msgstr "Na verdade, tive um sonho estranho"
+
+#: Game/Npcs/Doctor/Doctor.tscn
+msgid "Você tem gostado da sua rotina aqui no asilo??"
+msgstr "Você tem gostado da sua rotina aqui no asilo??"
+
+#: Game/Npcs/Doctor/Doctor.tscn
+msgid ""
+"Sim, Estou acordando cedo \r\n"
+"e fazendo exercícios que gosto"
+msgstr ""
+"Sim, Estou acordando cedo \r\n"
+"e fazendo exercícios que gosto"
+
+#: Game/Npcs/Doctor/Doctor.tscn
+msgid ""
+"Tenho tentado me organizar,\r\n"
+" mas sinto que não \r\n"
+"vale a pena"
+msgstr ""
+"Tenho tentado me organizar,\r\n"
+" mas sinto que não \r\n"
+"vale a pena"
+
+#: Game/Npcs/Doctor/Dialogo/possotedar.tscn
+msgid "Vou ver o que posso fazer, me encontre na enfermaria"
+msgstr "Vou ver o que posso fazer, me encontre na enfermaria"
+
+#: Game/Npcs/Pacients/Pacient.tscn
+msgid "Solte minha tv, solte!"
+msgstr "Solte minha tv, solte!"
+
+#: Game/Npcs/Pacients/Pacient.tscn
+msgid ""
+"Se eu soltar meu cachorro,\n"
+"ele vai moreder seu calcanhar"
+msgstr ""
+"Se eu soltar meu cachorro,\n"
+"ele vai moreder seu calcanhar"
+
+#: Game/Npcs/Pacients/Pacient.tscn
+msgid ""
+"Eu não acredito que você\n"
+"não é inscrito no canal do\n"
+"minatoSam"
+msgstr ""
+"Eu não acredito que você\n"
+"não é inscrito no canal do\n"
+"minatoSam"
+
+#: Game/Npcs/Pacients/Pacient.tscn
+msgid "Porque não sou suficiente ?"
+msgstr "Porque não sou suficiente ?"
+
+#: Game/Npcs/Pacients/Pacient.tscn
+msgid "ME SOLTA ME SOLTA!"
+msgstr "ME SOLTA ME SOLTA!"
+
+#: Game/Npcs/Pacients/Pacient.tscn
+msgid "Você tem um pirulito?"
+msgstr "Você tem um pirulito?"
+
+#: Game/Npcs/Pacients/Pacient.tscn
+msgid "Ta olhando o que ?"
+msgstr "Ta olhando o que ?"
+
+#: Game/Npcs/Pacients/Pacient.tscn
+msgid "Sera que ja sou junior ?"
+msgstr "Sera que ja sou junior ?"
+
+#: Game/Npcs/Pacients/Pacient.tscn
+msgid "Sai de perto maluco!"
+msgstr "Sai de perto maluco!"
+
+#: Game/text_ballon.tscn
+msgid "interact"
+msgstr "interact"
+
+#: Interface/PlayerInterface/player_interface.tscn
+msgid "Sanidade"
+msgstr "Sanidade"
 
 msgid "New Code Region"
 msgstr "New Code Region"

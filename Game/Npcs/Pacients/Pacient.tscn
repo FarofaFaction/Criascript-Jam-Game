@@ -242,6 +242,26 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "Solte minha tv, solte!"
 
+[node name="Label9" type="Label" parent="Addons/Phrases/RoomPhrases"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Você já ouviu a piada do não e nem eu?"
+
+[node name="Label10" type="Label" parent="Addons/Phrases/RoomPhrases"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Me tira daqui, me tira daqui, me tira daqui"
+
+[node name="Label12" type="Label" parent="Addons/Phrases/RoomPhrases"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Cafééééééé"
+
+[node name="Label11" type="Label" parent="Addons/Phrases/RoomPhrases"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Aaaaaaaaaaaaaaaaaaaa"
+
 [node name="Label7" type="Label" parent="Addons/Phrases/RoomPhrases"]
 offset_right = 40.0
 offset_bottom = 23.0
@@ -265,10 +285,60 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "ME SOLTA ME SOLTA!"
 
+[node name="Label13" type="Label" parent="Addons/Phrases/RoomPhrases"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "ME SOLTA ME SOLTA!"
+
+[node name="Label14" type="Label" parent="Addons/Phrases/RoomPhrases"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "ME SOLTA ME SOLTA!"
+
+[node name="Label15" type="Label" parent="Addons/Phrases/RoomPhrases"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "ME SOLTA ME SOLTA!"
+
+[node name="Label16" type="Label" parent="Addons/Phrases/RoomPhrases"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "ME SOLTA ME SOLTA!"
+
+[node name="Label22" type="Label" parent="Addons/Phrases/RoomPhrases"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Meu nome não é johnny"
+
+[node name="Label17" type="Label" parent="Addons/Phrases/RoomPhrases"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "ME SOLTA ME SOLTA!"
+
+[node name="Label19" type="Label" parent="Addons/Phrases/RoomPhrases"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "EU QUERO CAFÉ!!"
+
 [node name="Label3" type="Label" parent="Addons/Phrases/RoomPhrases"]
 offset_right = 40.0
 offset_bottom = 23.0
 text = "Você tem um pirulito?"
+
+[node name="Label20" type="Label" parent="Addons/Phrases/RoomPhrases"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Hamburguer"
+
+[node name="Label18" type="Label" parent="Addons/Phrases/RoomPhrases"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Eu não to Loko !?"
+
+[node name="Label21" type="Label" parent="Addons/Phrases/RoomPhrases"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Refri"
 
 [node name="Label4" type="Label" parent="Addons/Phrases/RoomPhrases"]
 offset_right = 40.0

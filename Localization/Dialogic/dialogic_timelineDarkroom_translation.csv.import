@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://wtgtyeox07ga"
+
+[deps]
+
+files=["res://Localization/Dialogic/dialogic_timelineDarkroom_translation.pt_BR.translation", "res://Localization/Dialogic/dialogic_timelineDarkroom_translation.en.translation"]
+
+source_file="res://Localization/Dialogic/dialogic_timelineDarkroom_translation.csv"
+dest_files=["res://Localization/Dialogic/dialogic_timelineDarkroom_translation.pt_BR.translation", "res://Localization/Dialogic/dialogic_timelineDarkroom_translation.en.translation"]
+
+[params]
+
+compress=true
+delimiter=0

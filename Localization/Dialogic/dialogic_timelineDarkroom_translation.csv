@@ -1,0 +1,76 @@
+keys,pt_BR,en
+Text/22/text,[Você se aproxima de um desconhecido que parece estar chorando],[You approach a stranger who seems to be crying]
+Text/23/text,Ei amigo você viu uma chave por aqui ?,"Hey friend, have you seen a key around here?"
+Text/24/text,"Por que você quer a chave? Você só quer fazer como eles: me usar e descartar como lixo, de novo e de novo...","Why do you want the key? You just want to do what they did: use me and throw me away like trash, over and over..."
+Choice/25/text,"Amigo, eu só quero a chave e já vou embora.","Friend, I just want the key and I’ll be on my way."
+Choice/25/disabled_text,,
+Choice/26/text,"Eu não vim aqui pra abusar de você, vim buscar liberdade.",I didn’t come here to take advantage of you; I came to seek freedom.
+Choice/26/disabled_text,,
+Choice/27/text,"Ô, irmão, vou te dar um soco, hein!","Hey, brother, I’m going to punch you, you know!"
+Choice/27/disabled_text,,
+Text/28/text,Liberdade? Pra um lixo como eu?,Freedom? For trash like me?
+Choice/29/text,"Lembra da música:""Você não vale nada,mas eu gosto de você""","Remember the song: ""You’re worth nothing, but I like you."""
+Choice/29/disabled_text,,
+Choice/2a/text,Prefere ficar aí moscando?,Do you prefer to just hang around there?
+Choice/2a/disabled_text,,
+Choice/2b/text,"Só me dá logo essa merda de chave, maluco!","Just give me that damn key already, crazy!"
+Choice/2b/disabled_text,,
+Text/2c/text,"Hahaha, você é engraçado, mas por que eu deveria confiar em você?","Hahaha, you’re funny, but why should I trust you?"
+Choice/2d/text,"Toda porta fechada tem chave,você é a minha,eu sou a sua","Every closed door has a key; you are mine, and I am yours."
+Choice/2d/disabled_text,,
+Choice/2e/text,Tem alguma ideia melhor?,Got any better ideas?
+Choice/2e/disabled_text,,
+Choice/2f/text,Me dá logo essa porra!,Just give me that damn thing!
+Choice/2f/disabled_text,,
+Text/30/text,"A chave não está comigo, está com a Amélia.",The key isn’t with me; it’s with Amélia.
+Text/31/text,Quem?,Who?
+Text/32/text,Eu vou chamá-la.,I’m going to call her.
+Label/33/display_name,,
+Text/34/text,"[O desconhecido coloca uma peruca, passa batom e passa a te olhar de forma sedutora]","[The stranger puts on a wig, applies lipstick, and starts looking at you seductively]"
+Text/35/text,"Ora ora, o que os ventos trazem pra mim? Um pedaço de mau caminho pra eu brincar?","Well, well, what do the winds bring to me? A piece of bad company for me to play with?"
+Choice/36/text,"Sai fora, maluco!","Get lost, crazy!"
+Choice/36/disabled_text,,
+Choice/37/text,"Que papo torto,tio? Sai fora,não sou desse tipo,não.","What a weird talk, dude? Get lost, I’m not that type, no."
+Choice/37/disabled_text,,
+Choice/38/text,"Cuidado, quem brinca com fogo pode se queimar.","Be careful, those who play with fire might get burned."
+Choice/38/disabled_text,,
+Text/39/text,"Ui ui, senti o calor. Por que alguém como você veio procurar minha chave?","Ooh, I felt the heat. Why did someone like you come looking for my key?"
+Choice/3a/text,"Porque eu preciso abrir uma porta. Meio óbvio, né?","Because I need to open a door. Pretty obvious, right?"
+Choice/3a/disabled_text,,
+Choice/3b/text,Pra conseguir abrir o cadeado do seu coração.,To unlock the padlock on your heart.
+Choice/3b/disabled_text,,
+Choice/3c/text,"Pra catar manga! Oxe, cada pergunta besta!","To pick mangoes! Wow, what a stupid question!"
+Choice/3c/disabled_text,,
+Text/3d/text,"Ora ora, temos aqui um garanhão. Você parece ser bem forte. Teria coragem de pegar a chave com o Francis, meu ex-namorado?","Well, well, we have a stallion here. You seem pretty strong. Would you have the courage to take the key from Francis, my ex-boyfriend?"
+Choice/3e/text,"Por você, eu enfrento até um batalhão!","For you, I’d face a whole battalion!"
+Choice/3e/disabled_text,,
+Choice/3f/text,Não quero problema com ninguém.,I don’t want trouble with anyone.
+Choice/3f/disabled_text,,
+Choice/40/text,"Sai fora, tribufu! Não tô tão desesperado assim, não.","Get lost, weirdo! I’m not that desperate, no."
+Choice/40/disabled_text,,
+Text/41/text,Ótimo. Aí vem ele.,Great. Here he comes.
+Label/42/display_name,,
+Text/43/text,"[Ela limpa a boca e joga a peruca fora, franze a testa e parece te encarar com muita raiva]","[She wipes her mouth and throws the wig away, frowning and staring at you with great anger]"
+Text/44/text,O que um bosta como você tá fazendo falando com a minha mulher?,What’s a loser like you doing talking to my woman?
+Choice/45/text,"Vacilou, é dentro.",You messed up; it’s over for you.
+Choice/45/disabled_text,,
+Choice/46/text,Aceita que é corno e me passa logo a porra da chave!,Accept that you’re a cuckold and just give me the damn key!
+Choice/46/disabled_text,,
+Choice/47/text,Era só uma conversa de amigos.,It was just a conversation between friends.
+Choice/47/disabled_text,,
+Text/48/text,"Ora, seu bostinha, tá doido pra ficar com a boca cheia de formiga?","Oh, you little loser, are you crazy enough to get your mouth full of ants?"
+Choice/49/text,"Olha, cara, eu só quero a chave.","Look, man, I just want the key."
+Choice/49/disabled_text,,
+Choice/4a/text,Cai dentro! Tô doido pra virar você do avesso.,Get lost! I’m itching to turn you inside out.
+Choice/4a/disabled_text,,
+Choice/4b/text,"Que merda, agora tô lidando com um corno bravinho.","What the hell, now I’m dealing with an angry cuckold."
+Choice/4b/disabled_text,,
+Text/4c/text,Coragem você tem. Quero ver se é homem de palavra.,You have guts. I want to see if you’re a man of your word.
+Choice/4d/text,"Sai fora, tiozão.","Get lost, old man."
+Choice/4d/disabled_text,,
+Choice/4e/text,"Vem, mocreia!","Come on, you brat!"
+Choice/4e/disabled_text,,
+Text/4f/text,Pega logo essa merda de chave e some daqui!,Just grab that damn key and get out of here!
+Choice/50/text,Dá um soco no nariz dele.,Punch him in the nose.
+Choice/50/disabled_text,,
+Text/51/text,"Ai, meu nariz! Pega logo essa merda de chave e some daqui!","Ouch, my nose! Just grab that damn key and get out of here!"

@@ -1,17 +1,17 @@
 [background scene="res://Dialog/Characters/Character-portraits/PlayerPortrat.tscn" fade="1.0" transition="Simple Fade"]
 if {Doctor.Speaked} == true:
-	character: [Melhor evitar falar com o doutor, preciso da chave mais do que ele...]
+	character: [Melhor evitar falar com o doutor, preciso da chave mais do que ele...] #id:19
 	[end_timeline]
-character: Com licença, sabe onde estou ?
+character: Com licença, sabe onde estou ? #id:1a
 [background scene="res://Dialog/Characters/Character-portraits/DoctorPortrait.tscn" fade="1.0" transition="Simple Fade"]
-Doctor: No quarto 101, por que ?
+Doctor: No quarto 101, por que ? #id:1b
 [background scene="res://Dialog/Characters/Character-portraits/PlayerPortrat.tscn" fade="1.0" transition="Simple Fade"]
-character: Não lembro como vim parar aqui
+character: Não lembro como vim parar aqui #id:1c
 [background scene="res://Dialog/Characters/Character-portraits/DoctorPortrait.tscn" fade="1.0" transition="Simple Fade"]
-Doctor: Ah já sei o que esta acontecendo, ficou sem seus remedios mais uma vez, não é ?
-- Sim
-- Não
-label fim
+Doctor: Ah já sei o que esta acontecendo, ficou sem seus remedios mais uma vez, não é ? #id:1d
+- Sim #id:1e
+- Não #id:1f
+label fim #id:20
 [background scene="res://Dialog/Characters/Character-portraits/DoctorPortrait.tscn" fade="1.0" transition="Simple Fade"]
-Doctor: Seu remedio está meio em falta, mas talvez eu possa te ajudar, um dos pacientes roubou meu molho de chaves, se encontrar elas pra mim posso te ajudar
+Doctor: Seu remedio está meio em falta, mas talvez eu possa te ajudar, um dos pacientes roubou meu molho de chaves, se encontrar elas pra mim posso te ajudar #id:21
 set {Doctor.Speaked} = true

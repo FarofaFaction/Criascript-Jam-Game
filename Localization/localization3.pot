@@ -1,0 +1,759 @@
+# LANGUAGE translation for Psicose for the following files:
+# res://Interface/LenguageMenu/lenguage_menu.tscn
+# res://Interface/Menu/menu_options.tscn
+# res://Interface/ConfigMenu/config_menu.tscn
+# res://Interface/ResolutionMenu/resoltutionMenu.tscn
+# res://Dialog/DialogClass/DialogClass.tscn
+# res://Dialog/dialog_system.tscn
+# res://Dialog/DialogMenuClass/DialogMenu.tscn
+# res://Dialog/DialogWithOptionsExample/DialogWithOptions.tscn
+# res://Game/Room/room.tscn
+# res://Game/Quests/DoctorKnocking/stage_1/knocking_sound.tscn
+# res://Game/Quests/DoctorKnocking/stage_1/DoctorKnocking_1.tscn
+# res://Game/Quests/DoctorKnocking/RedGuyTime/RedGuyTime.tscn
+# res://Game/Enemy/red_guy.tscn
+# res://Interface/Menu/menu.tscn
+# res://Interface/Pause/in_game_pause.tscn
+# res://Interface/Pause/pause_options.tscn
+# res://Interface/Transition/Loading.tscn
+# res://Interface/Transition/Transition.tscn
+# res://Interface/Menu/menuOptions.gd
+# res://Interface/Menu/menu.gd
+# res://Interface/Menu/button_shadow.gd
+# res://Interface/DefaultMenu/default_menu.gd
+# res://Interface/LenguageMenu/lenguage_menu.gd
+# res://Dialog/Characters/Character/custom_layered_portrait.gd
+# res://Dialog/Characters/Character/layered_portrait_character.tscn
+# res://Dialog/Characters/Character-portraits/ApaixonadaDarkroomPortrait.tscn
+# res://Dialog/Characters/Character-portraits/BlackScreen.tscn
+# res://Dialog/Characters/Character-portraits/DarkroomPortrait.tscn
+# res://Dialog/Characters/Character-portraits/DoctorPortrait.tscn
+# res://Dialog/Characters/Character-portraits/Moon.tscn
+# res://Dialog/Characters/Character-portraits/NormalDarkroomPortrait.tscn
+# res://Dialog/Characters/Character-portraits/PlayerPortrat.tscn
+# res://Dialog/Characters/Character-portraits/RaivosoDarkroomPortrait.tscn
+# res://Dialog/DialogClass/dialog_class.gd
+# res://Dialog/DialogClass/speak_class.gd
+# res://Dialog/Dialogic/PortraitScene/dialog_portrait.gd
+# res://Dialog/Dialogic/PortraitScene/dialog_portrait.tscn
+# res://Dialog/Dialogic/Style/CustomPremade/background_layer.tscn
+# res://Dialog/Dialogic/Style/CustomPremade/CustomPortrait.gd
+# res://Dialog/Dialogic/Style/CustomPremade/CustomPortrait.tscn
+# res://Dialog/Dialogic/Style/CustomPremade/custom_premade.tscn
+# res://Dialog/Dialogic/Style/CustomPremade/default_layout_base.gd
+# res://Dialog/Dialogic/Style/CustomPremade/DialogicMenu.gd
+# res://Dialog/Dialogic/Style/CustomPremade/dialog_background_box.gd
+# res://Dialog/Dialogic/Style/CustomPremade/panel_portrait.tscn
+# res://Dialog/Dialogic/Style/CustomPremade/Portrait.gd
+# res://Game/Enemy/enemy.gd
+# res://Game/Enemy/enemy_spawning.tscn
+# res://Game/Loctions/AsylumLocations/Arte/ArtRoom.tscn
+# res://Game/Loctions/AsylumLocations/Arte/cavalete_grande.tscn
+# res://Game/Loctions/AsylumLocations/Externa/cadeira_1.tscn
+# res://Game/Loctions/AsylumLocations/Externa/ExternRoom.tscn
+# res://Game/Loctions/AsylumLocations/Externa/objetos_xadrez.tscn
+# res://Game/Loctions/AsylumLocations/Externa/truco.tscn
+# res://Game/Loctions/AsylumLocations/Refeitorio/bandeija.tscn
+# res://Game/Loctions/AsylumLocations/Refeitorio/comida.tscn
+# res://Game/Loctions/AsylumLocations/Refeitorio/distribuidora.gd
+# res://Game/Loctions/AsylumLocations/Refeitorio/RefeitorioRoom.tscn
+# res://Game/Loctions/AsylumLocations/Refeitorio/refeitorio/conjunto_de_mesa_e_cadeira.tscn
+# res://Game/Loctions/LonelinessRoom/LonelinessRoom.tscn
+# res://Game/Loctions/Room/Room.tscn
+# res://Game/Loctions/Room/enemy_spawning.gd
+# res://Game/Loctions/SafeRoom/SafeRoom.tscn
+# res://Game/Loctions/SafeRoom/floor.tscn
+# res://Game/Loctions/illumination.tscn
+# res://Game/Loctions/map_class.gd
+# res://Game/Loctions/scene_changer.gd
+# res://Game/Npcs/Doctor/Doctor.tscn
+# res://Game/Npcs/Doctor/Dialogo/possotedar.tscn
+# res://Game/Npcs/Pacients/Pacient.tscn
+# res://Game/Npcs/Pacients/pacient_spawning.tscn
+# res://Game/Npcs/npc_steps.tscn
+# res://Game/Global-illumination.tscn
+# res://Game/scene_changer.tscn
+# res://Game/textpanel.tscn
+# res://Game/text_ballon.tscn
+# res://Game/speaknpcballontext.tscn
+# res://Interface/PlayerInterface/player_interface.tscn
+# res://Interface/PlayerInterface/sanity.gd
+# res://Interface/PlayerInterface/player_interface.gd
+#
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Psicose\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: Interface/LenguageMenu/lenguage_menu.tscn
+#: Interface/ConfigMenu/config_menu.tscn
+msgid "Idioma"
+msgstr ""
+
+#: Interface/LenguageMenu/lenguage_menu.tscn
+msgid "English"
+msgstr ""
+
+#: Interface/LenguageMenu/lenguage_menu.tscn
+msgid "PT-BR"
+msgstr ""
+
+#: Interface/LenguageMenu/lenguage_menu.tscn
+msgid "Pronto\r\n"
+msgstr ""
+
+#: Interface/Menu/menu_options.tscn
+#: Interface/Menu/menu.tscn
+msgid "Iniciar"
+msgstr ""
+
+#: Interface/Menu/menu_options.tscn
+#: Interface/Pause/pause_options.tscn
+msgid "Continuar"
+msgstr ""
+
+#: Interface/Menu/menu_options.tscn
+#: Interface/ConfigMenu/config_menu.tscn
+#: Interface/Pause/pause_options.tscn
+msgid "Configurações"
+msgstr ""
+
+#: Interface/Menu/menu_options.tscn
+msgid "Sair"
+msgstr ""
+
+#: Interface/ConfigMenu/config_menu.tscn
+#: Interface/ResolutionMenu/resoltutionMenu.tscn
+msgid "Resolução"
+msgstr ""
+
+#: Interface/ConfigMenu/config_menu.tscn
+msgid "Vol"
+msgstr ""
+
+#: Interface/ConfigMenu/config_menu.tscn
+#: Interface/ResolutionMenu/resoltutionMenu.tscn
+msgid "Fechar"
+msgstr ""
+
+#: Interface/ResolutionMenu/resoltutionMenu.tscn
+msgid "Tela Cheia"
+msgstr ""
+
+#: Interface/ResolutionMenu/resoltutionMenu.tscn
+msgid "Janela = 1920 : 1080"
+msgstr ""
+
+#: Interface/ResolutionMenu/resoltutionMenu.tscn
+msgid "Janela = 1280 : 720"
+msgstr ""
+
+#: Dialog/DialogClass/DialogClass.tscn
+msgid "Ola"
+msgstr ""
+
+#: Dialog/DialogClass/DialogClass.tscn
+msgid "Queria Apenas"
+msgstr ""
+
+#: Dialog/DialogClass/DialogClass.tscn
+msgid "Testar Esse Sistema de Dialogo"
+msgstr ""
+
+#: Dialog/DialogClass/DialogClass.tscn
+msgid "Acho que nao funcionou"
+msgstr ""
+
+#: Dialog/DialogClass/DialogClass.tscn
+msgid "Funcionou Sim"
+msgstr ""
+
+#: Dialog/DialogClass/DialogClass.tscn
+msgid "Entao Ta Bom"
+msgstr ""
+
+#: Dialog/DialogClass/DialogClass.tscn
+msgid "ATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACARATACAR"
+msgstr ""
+
+#: Dialog/dialog_system.tscn
+#: Dialog/Dialogic/PortraitScene/dialog_portrait.tscn
+msgid "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+msgstr ""
+
+#: Dialog/dialog_system.tscn
+#: Dialog/Dialogic/PortraitScene/dialog_portrait.tscn
+msgid "\tNome"
+msgstr ""
+
+#: Dialog/DialogMenuClass/DialogMenu.tscn
+#: Game/Quests/DoctorKnocking/stage_1/DoctorKnocking_1.tscn
+msgid "Escolha"
+msgstr ""
+
+#: Dialog/DialogMenuClass/DialogMenu.tscn
+#: Game/Quests/DoctorKnocking/stage_1/DoctorKnocking_1.tscn
+msgid "Option 1\r\n"
+msgstr ""
+
+#: Dialog/DialogMenuClass/DialogMenu.tscn
+#: Game/Quests/DoctorKnocking/stage_1/DoctorKnocking_1.tscn
+msgid "Option 2"
+msgstr ""
+
+#: Dialog/DialogMenuClass/DialogMenu.tscn
+#: Game/Quests/DoctorKnocking/stage_1/DoctorKnocking_1.tscn
+msgid "Option 3"
+msgstr ""
+
+#: Dialog/DialogMenuClass/DialogMenu.tscn
+#: Game/Quests/DoctorKnocking/stage_1/DoctorKnocking_1.tscn
+msgid "Option 4"
+msgstr ""
+
+#: Dialog/DialogWithOptionsExample/DialogWithOptions.tscn
+msgid "aaaaaaaaaaaa"
+msgstr ""
+
+#: Dialog/DialogWithOptionsExample/DialogWithOptions.tscn
+msgid "bbbbbbbbbbb"
+msgstr ""
+
+#: Game/Quests/DoctorKnocking/stage_1/DoctorKnocking_1.tscn
+msgid "Bom Dia Dorminhoco"
+msgstr ""
+
+#: Game/Quests/DoctorKnocking/stage_1/DoctorKnocking_1.tscn
+msgid "Pronto Pra Tomar Seu Remedio ?"
+msgstr ""
+
+#: Game/Quests/DoctorKnocking/stage_1/DoctorKnocking_1.tscn
+msgid "Sim"
+msgstr ""
+
+#: Game/Quests/DoctorKnocking/stage_1/DoctorKnocking_1.tscn
+msgid "Não"
+msgstr ""
+
+#: Game/Quests/DoctorKnocking/stage_1/DoctorKnocking_1.tscn
+msgid "Muito Bem, Até Mais Tarde"
+msgstr ""
+
+#: Interface/Menu/menu.tscn
+msgid ""
+"Escapefrom\r\n"
+"Asylum\r\n"
+msgstr ""
+
+#: Interface/Pause/pause_options.tscn
+msgid "Pause"
+msgstr ""
+
+#: Interface/Pause/pause_options.tscn
+msgid "Menu"
+msgstr ""
+
+#: Interface/Pause/pause_options.tscn
+msgid ""
+"Fechar\r\n"
+"Jogo"
+msgstr ""
+
+#: Interface/Transition/Loading.tscn
+msgid "Carregando"
+msgstr ""
+
+#: Dialog/Dialogic/Style/CustomPremade/custom_premade.tscn
+msgid "Some default text"
+msgstr ""
+
+#: Dialog/Dialogic/Style/CustomPremade/custom_premade.tscn
+msgid "S"
+msgstr ""
+
+#: Dialog/Dialogic/Style/CustomPremade/custom_premade.tscn
+msgid "Some text"
+msgstr ""
+
+#: Game/Loctions/AsylumLocations/Arte/ArtRoom.tscn
+#: Game/Loctions/AsylumLocations/Arte/cavalete_grande.tscn
+#: Game/Loctions/AsylumLocations/Externa/cadeira_1.tscn
+#: Game/Loctions/AsylumLocations/Externa/ExternRoom.tscn
+#: Game/Loctions/AsylumLocations/Externa/objetos_xadrez.tscn
+#: Game/Loctions/AsylumLocations/Externa/truco.tscn
+#: Game/Loctions/AsylumLocations/Refeitorio/bandeija.tscn
+#: Game/Loctions/AsylumLocations/Refeitorio/refeitorio/conjunto_de_mesa_e_cadeira.tscn
+#: Game/Npcs/Pacients/Pacient.tscn
+msgid "[E] Segurar/Soltar"
+msgstr ""
+
+#: Game/Loctions/AsylumLocations/Arte/ArtRoom.tscn
+#: Game/scene_changer.tscn
+msgid "[E] Sair"
+msgstr ""
+
+#: Game/Loctions/AsylumLocations/Arte/ArtRoom.tscn
+#: Game/scene_changer.tscn
+msgid "Trancado"
+msgstr ""
+
+#: Game/Loctions/AsylumLocations/Arte/ArtRoom.tscn
+#: Game/scene_changer.tscn
+msgid "[E] Entrar"
+msgstr ""
+
+#: Game/Loctions/AsylumLocations/Externa/ExternRoom.tscn
+#: Game/speaknpcballontext.tscn
+msgid "[E] para falar"
+msgstr ""
+
+#: Game/Loctions/AsylumLocations/Refeitorio/RefeitorioRoom.tscn
+msgid "Cachorro Quente"
+msgstr ""
+
+#: Game/Loctions/AsylumLocations/Refeitorio/RefeitorioRoom.tscn
+msgid "Hamburguer"
+msgstr ""
+
+#: Game/Loctions/AsylumLocations/Refeitorio/RefeitorioRoom.tscn
+msgid "Pizza"
+msgstr ""
+
+#: Game/Loctions/AsylumLocations/Refeitorio/RefeitorioRoom.tscn
+msgid "Melancia"
+msgstr ""
+
+#: Game/Loctions/AsylumLocations/Refeitorio/RefeitorioRoom.tscn
+msgid "Refrigerante"
+msgstr ""
+
+#: Game/Loctions/AsylumLocations/Refeitorio/RefeitorioRoom.tscn
+msgid "Suco de Laranja"
+msgstr ""
+
+#: Game/Loctions/AsylumLocations/Refeitorio/RefeitorioRoom.tscn
+msgid "Coxa de Galinha"
+msgstr ""
+
+#: Game/Loctions/AsylumLocations/Refeitorio/refeitorio/conjunto_de_mesa_e_cadeira.tscn
+msgid "Tira esse lixo de perto"
+msgstr ""
+
+#: Game/Loctions/LonelinessRoom/LonelinessRoom.tscn
+#: Game/Loctions/SafeRoom/SafeRoom.tscn
+msgid "1"
+msgstr ""
+
+#: Game/Loctions/LonelinessRoom/LonelinessRoom.tscn
+#: Game/Loctions/SafeRoom/SafeRoom.tscn
+msgid "2\n"
+msgstr ""
+
+#: Game/Loctions/LonelinessRoom/LonelinessRoom.tscn
+#: Game/Loctions/SafeRoom/SafeRoom.tscn
+msgid "3\n"
+msgstr ""
+
+#: Game/Loctions/LonelinessRoom/LonelinessRoom.tscn
+#: Game/Loctions/SafeRoom/SafeRoom.tscn
+msgid "4\n"
+msgstr ""
+
+#: Game/Loctions/LonelinessRoom/LonelinessRoom.tscn
+#: Game/Loctions/SafeRoom/SafeRoom.tscn
+msgid "A\n"
+msgstr ""
+
+#: Game/Loctions/Room/Room.tscn
+msgid "[E] Falar"
+msgstr ""
+
+#: Game/Loctions/Room/Room.tscn
+#: Game/Npcs/Doctor/Doctor.tscn
+msgid "Bom dia dorminhoco"
+msgstr ""
+
+#: Game/Loctions/Room/Room.tscn
+#: Game/Npcs/Doctor/Doctor.tscn
+msgid "Como foi sua noite ?"
+msgstr ""
+
+#: Game/Loctions/Room/Room.tscn
+#: Game/Npcs/Doctor/Doctor.tscn
+msgid "Dormi bem, obrigado pela preocupação"
+msgstr ""
+
+#: Game/Loctions/Room/Room.tscn
+msgid "Acho  que estou sendo perseguido"
+msgstr ""
+
+#: Game/Loctions/Room/Room.tscn
+#: Game/Npcs/Doctor/Doctor.tscn
+msgid "."
+msgstr ""
+
+#: Game/Loctions/Room/Room.tscn
+#: Game/Npcs/Doctor/Doctor.tscn
+msgid "Teste 1"
+msgstr ""
+
+#: Game/Loctions/Room/Room.tscn
+#: Game/Npcs/Doctor/Doctor.tscn
+msgid "Interessante"
+msgstr ""
+
+#: Game/Loctions/Room/Room.tscn
+msgid "Posso te ajudar de alguma forma ?"
+msgstr ""
+
+#: Game/Loctions/Room/Room.tscn
+msgid "Sim, acho que os remedios não estao fazendo efeito"
+msgstr ""
+
+#: Game/Loctions/Room/Room.tscn
+msgid "Não, obrigado"
+msgstr ""
+
+#: Game/Loctions/Room/Room.tscn
+#: Game/Npcs/Doctor/Doctor.tscn
+msgid ""
+"Ando um pouco confuso. \r\n"
+"Às vezes, não sei se estou\r\n"
+" acordado ou sonhando."
+msgstr ""
+
+#: Game/Loctions/Room/Room.tscn
+#: Game/Npcs/Doctor/Doctor.tscn
+msgid ""
+"Acho que estou melhor, \r\n"
+"mas tenho dias em que \r\n"
+"sinto que o tempo não\r\n"
+" passa direito."
+msgstr ""
+
+#: Game/Loctions/Room/Room.tscn
+msgid "Não esqueça de buscar seus remedios na enfermaria, se cuide!"
+msgstr ""
+
+#: Game/Npcs/Doctor/Doctor.tscn
+msgid "Na verdade, tive um sonho estranho"
+msgstr ""
+
+#: Game/Npcs/Doctor/Doctor.tscn
+msgid "Você tem gostado da sua rotina aqui no asilo??"
+msgstr ""
+
+#: Game/Npcs/Doctor/Doctor.tscn
+msgid ""
+"Sim, Estou acordando cedo \r\n"
+"e fazendo exercícios que gosto"
+msgstr ""
+
+#: Game/Npcs/Doctor/Doctor.tscn
+msgid ""
+"Tenho tentado me organizar,\r\n"
+" mas sinto que não \r\n"
+"vale a pena"
+msgstr ""
+
+#: Game/Npcs/Doctor/Dialogo/possotedar.tscn
+msgid "Vou ver o que posso fazer, me encontre na enfermaria"
+msgstr ""
+
+#: Game/Npcs/Pacients/Pacient.tscn
+msgid "Solte minha tv, solte!"
+msgstr ""
+
+#: Game/Npcs/Pacients/Pacient.tscn
+msgid ""
+"Se eu soltar meu cachorro,\n"
+"ele vai moreder seu calcanhar"
+msgstr ""
+
+#: Game/Npcs/Pacients/Pacient.tscn
+msgid ""
+"Eu não acredito que você\n"
+"não é inscrito no canal do\n"
+"minatoSam"
+msgstr ""
+
+#: Game/Npcs/Pacients/Pacient.tscn
+msgid "Porque não sou suficiente ?"
+msgstr ""
+
+#: Game/Npcs/Pacients/Pacient.tscn
+msgid "ME SOLTA ME SOLTA!"
+msgstr ""
+
+#: Game/Npcs/Pacients/Pacient.tscn
+msgid "Você tem um pirulito?"
+msgstr ""
+
+#: Game/Npcs/Pacients/Pacient.tscn
+msgid "Ta olhando o que ?"
+msgstr ""
+
+#: Game/Npcs/Pacients/Pacient.tscn
+msgid "Sera que ja sou junior ?"
+msgstr ""
+
+#: Game/Npcs/Pacients/Pacient.tscn
+msgid "Sai de perto maluco!"
+msgstr ""
+
+#: Game/text_ballon.tscn
+msgid "interact"
+msgstr ""
+
+#: Interface/PlayerInterface/player_interface.tscn
+msgid "Sanidade"
+msgstr ""
+
+msgid "New Code Region"
+msgstr ""
+
+msgid "Pick a color from the screen."
+msgstr ""
+
+msgid "Pick a color from the application window."
+msgstr ""
+
+msgid ""
+"Color: #%s\n"
+"LMB: Apply color\n"
+"RMB: Remove preset"
+msgstr ""
+
+msgid ""
+"Color: #%s\n"
+"LMB: Apply color"
+msgstr ""
+
+msgid "Enter a hex code (\"#ff0000\") or named color (\"red\")."
+msgstr ""
+
+msgid "Select a picker shape."
+msgstr ""
+
+msgid "Select a picker mode."
+msgstr ""
+
+msgid "Hex code or named color"
+msgstr ""
+
+msgid "Add current color as a preset."
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid "OK"
+msgstr ""
+
+msgid "Alert!"
+msgstr ""
+
+msgid "Please Confirm..."
+msgstr ""
+
+msgid "Network"
+msgstr ""
+
+msgid ""
+"File \"%s\" already exists.\n"
+"Do you want to overwrite it?"
+msgstr ""
+
+msgid "Open"
+msgstr ""
+
+msgid "Select Current Folder"
+msgstr ""
+
+msgid "Select This Folder"
+msgstr ""
+
+msgid "You don't have permission to access contents of this folder."
+msgstr ""
+
+msgid "All Recognized"
+msgstr ""
+
+msgid "All Files"
+msgstr ""
+
+msgid "Open a File"
+msgstr ""
+
+msgid "Open File(s)"
+msgstr ""
+
+msgid "Open a Directory"
+msgstr ""
+
+msgid "Open a File or Directory"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "Save a File"
+msgstr ""
+
+msgid "Go to previous folder."
+msgstr ""
+
+msgid "Go to next folder."
+msgstr ""
+
+msgid "Go to parent folder."
+msgstr ""
+
+msgid "Path:"
+msgstr ""
+
+msgid "Refresh files."
+msgstr ""
+
+msgid "Toggle the visibility of hidden files."
+msgstr ""
+
+msgid "Create a new folder."
+msgstr ""
+
+msgid "Directories & Files:"
+msgstr ""
+
+msgid "File:"
+msgstr ""
+
+msgid "Create Folder"
+msgstr ""
+
+msgid "Name:"
+msgstr ""
+
+msgid "Could not create folder."
+msgstr ""
+
+msgid "Invalid extension, or empty filename."
+msgstr ""
+
+msgid "Zoom Out"
+msgstr ""
+
+msgid "Zoom Reset"
+msgstr ""
+
+msgid "Zoom In"
+msgstr ""
+
+msgid "Toggle the visual grid."
+msgstr ""
+
+msgid "Toggle snapping to the grid."
+msgstr ""
+
+msgid "Change the snapping distance."
+msgstr ""
+
+msgid "Toggle the graph minimap."
+msgstr ""
+
+msgid "Automatically arrange selected nodes."
+msgstr ""
+
+msgid "Same as Layout Direction"
+msgstr ""
+
+msgid "Auto-Detect Direction"
+msgstr ""
+
+msgid "Left-to-Right"
+msgstr ""
+
+msgid "Right-to-Left"
+msgstr ""
+
+msgid "Left-to-Right Mark (LRM)"
+msgstr ""
+
+msgid "Right-to-Left Mark (RLM)"
+msgstr ""
+
+msgid "Start of Left-to-Right Embedding (LRE)"
+msgstr ""
+
+msgid "Start of Right-to-Left Embedding (RLE)"
+msgstr ""
+
+msgid "Start of Left-to-Right Override (LRO)"
+msgstr ""
+
+msgid "Start of Right-to-Left Override (RLO)"
+msgstr ""
+
+msgid "Pop Direction Formatting (PDF)"
+msgstr ""
+
+msgid "Arabic Letter Mark (ALM)"
+msgstr ""
+
+msgid "Left-to-Right Isolate (LRI)"
+msgstr ""
+
+msgid "Right-to-Left Isolate (RLI)"
+msgstr ""
+
+msgid "First Strong Isolate (FSI)"
+msgstr ""
+
+msgid "Pop Direction Isolate (PDI)"
+msgstr ""
+
+msgid "Zero-Width Joiner (ZWJ)"
+msgstr ""
+
+msgid "Zero-Width Non-Joiner (ZWNJ)"
+msgstr ""
+
+msgid "Word Joiner (WJ)"
+msgstr ""
+
+msgid "Soft Hyphen (SHY)"
+msgstr ""
+
+msgid "Cut"
+msgstr ""
+
+msgid "Copy"
+msgstr ""
+
+msgid "Paste"
+msgstr ""
+
+msgid "Select All"
+msgstr ""
+
+msgid "Clear"
+msgstr ""
+
+msgid "Undo"
+msgstr ""
+
+msgid "Redo"
+msgstr ""
+
+msgid "Text Writing Direction"
+msgstr ""
+
+msgid "Display Control Characters"
+msgstr ""
+
+msgid "Insert Control Character"
+msgstr ""

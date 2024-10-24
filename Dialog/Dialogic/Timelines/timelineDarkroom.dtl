@@ -1,68 +1,68 @@
 [background scene="res://Dialog/Characters/Character-portraits/BlackScreen.tscn" fade="0.0"]
-[Você se aproxima de um desconhecido que parece estar chorando]
+[Você se aproxima de um desconhecido que parece estar chorando] #id:22
 [background scene="res://Dialog/Characters/Character-portraits/PlayerPortrat.tscn" fade="0.0"]
-character: Ei amigo você viu uma chave por aqui ?
+character: Ei amigo você viu uma chave por aqui ? #id:23
 [background scene="res://Dialog/Characters/Character-portraits/NormalDarkroomPortrait.tscn" fade="0.0"]
-Antiplayer: Por que você quer a chave? Você só quer fazer como eles\: me usar e descartar como lixo, de novo e de novo...
-- Amigo, eu só quero a chave e já vou embora.
+Antiplayer: Por que você quer a chave? Você só quer fazer como eles\: me usar e descartar como lixo, de novo e de novo... #id:24
+- Amigo, eu só quero a chave e já vou embora. #id:25
 	jump 
-- Eu não vim aqui pra abusar de você, vim buscar liberdade.
-- Ô, irmão, vou te dar um soco, hein!
+- Eu não vim aqui pra abusar de você, vim buscar liberdade. #id:26
+- Ô, irmão, vou te dar um soco, hein! #id:27
 	jump 
-Antiplayer: Liberdade? Pra um lixo como eu?
-- Lembra da música:"Você não vale nada,mas eu gosto de você"
-- Prefere ficar aí moscando?
-- Só me dá logo essa merda de chave, maluco!
+Antiplayer: Liberdade? Pra um lixo como eu? #id:28
+- Lembra da música:"Você não vale nada,mas eu gosto de você" #id:29
+- Prefere ficar aí moscando? #id:2a
+- Só me dá logo essa merda de chave, maluco! #id:2b
 	jump 
-Antiplayer: Hahaha, você é engraçado, mas por que eu deveria confiar em você?
-- Toda porta fechada tem chave,você é a minha,eu sou a sua
-- Tem alguma ideia melhor?
-- Me dá logo essa porra!
+Antiplayer: Hahaha, você é engraçado, mas por que eu deveria confiar em você? #id:2c
+- Toda porta fechada tem chave,você é a minha,eu sou a sua #id:2d
+- Tem alguma ideia melhor? #id:2e
+- Me dá logo essa porra! #id:2f
 	jump 
-Antiplayer: A chave não está comigo, está com a Amélia.
+Antiplayer: A chave não está comigo, está com a Amélia. #id:30
 [background scene="res://Dialog/Characters/Character-portraits/PlayerPortrat.tscn" fade="0.0"]
-character: Quem?
-Antiplayer: Eu vou chamá-la.
-label Apaixonada
+character: Quem? #id:31
+Antiplayer: Eu vou chamá-la. #id:32
+label Apaixonada #id:33
 [background scene="res://Dialog/Characters/Character-portraits/ApaixonadaDarkroomPortrait.tscn" fade="0.0"]
- [O desconhecido coloca uma peruca, passa batom e passa a te olhar de forma sedutora]
-Antiplayer: Ora ora, o que os ventos trazem pra mim? Um pedaço de mau caminho pra eu brincar?
-- Sai fora, maluco!
+[O desconhecido coloca uma peruca, passa batom e passa a te olhar de forma sedutora] #id:34
+Antiplayer: Ora ora, o que os ventos trazem pra mim? Um pedaço de mau caminho pra eu brincar? #id:35
+- Sai fora, maluco! #id:36
 	jump Apaixonada
-- Que papo torto,tio? Sai fora,não sou desse tipo,não.
+- Que papo torto,tio? Sai fora,não sou desse tipo,não. #id:37
 	jump Apaixonada
-- Cuidado, quem brinca com fogo pode se queimar.
-Antiplayer: Ui ui, senti o calor. Por que alguém como você veio procurar minha chave?
-- Porque eu preciso abrir uma porta. Meio óbvio, né?
+- Cuidado, quem brinca com fogo pode se queimar. #id:38
+Antiplayer: Ui ui, senti o calor. Por que alguém como você veio procurar minha chave? #id:39
+- Porque eu preciso abrir uma porta. Meio óbvio, né? #id:3a
 	jump Apaixonada
-- Pra conseguir abrir o cadeado do seu coração.
-- Pra catar manga! Oxe, cada pergunta besta!
+- Pra conseguir abrir o cadeado do seu coração. #id:3b
+- Pra catar manga! Oxe, cada pergunta besta! #id:3c
 	jump Apaixonada
-Antiplayer: Ora ora, temos aqui um garanhão. Você parece ser bem forte. Teria coragem de pegar a chave com o Francis, meu ex-namorado?
-- Por você, eu enfrento até um batalhão!
-- Não quero problema com ninguém.
+Antiplayer: Ora ora, temos aqui um garanhão. Você parece ser bem forte. Teria coragem de pegar a chave com o Francis, meu ex-namorado? #id:3d
+- Por você, eu enfrento até um batalhão! #id:3e
+- Não quero problema com ninguém. #id:3f
 	jump Apaixonada
-- Sai fora, tribufu! Não tô tão desesperado assim, não.
+- Sai fora, tribufu! Não tô tão desesperado assim, não. #id:40
 	jump Apaixonada
-Antiplayer: Ótimo. Aí vem ele.
-label Raivoso
+Antiplayer: Ótimo. Aí vem ele. #id:41
+label Raivoso #id:42
 [background scene="res://Dialog/Characters/Character-portraits/RaivosoDarkroomPortrait.tscn" fade="0.0"]
-[Ela limpa a boca e joga a peruca fora, franze a testa e parece te encarar com muita raiva]
-Antiplayer: O que um bosta como você tá fazendo falando com a minha mulher?
-- Vacilou, é dentro.
-- Aceita que é corno e me passa logo a porra da chave!
-- Era só uma conversa de amigos.
+[Ela limpa a boca e joga a peruca fora, franze a testa e parece te encarar com muita raiva] #id:43
+Antiplayer: O que um bosta como você tá fazendo falando com a minha mulher? #id:44
+- Vacilou, é dentro. #id:45
+- Aceita que é corno e me passa logo a porra da chave! #id:46
+- Era só uma conversa de amigos. #id:47
 	jump Raivoso
-Antiplayer: Ora, seu bostinha, tá doido pra ficar com a boca cheia de formiga?
-- Olha, cara, eu só quero a chave.
+Antiplayer: Ora, seu bostinha, tá doido pra ficar com a boca cheia de formiga? #id:48
+- Olha, cara, eu só quero a chave. #id:49
 	jump Raivoso
-- Cai dentro! Tô doido pra virar você do avesso.
-- Que merda, agora tô lidando com um corno bravinho.
-Antiplayer: Coragem você tem. Quero ver se é homem de palavra.
-- Sai fora, tiozão.
+- Cai dentro! Tô doido pra virar você do avesso. #id:4a
+- Que merda, agora tô lidando com um corno bravinho. #id:4b
+Antiplayer: Coragem você tem. Quero ver se é homem de palavra. #id:4c
+- Sai fora, tiozão. #id:4d
 	jump Raivoso
-- Vem, mocreia!
-	Antiplayer: Pega logo essa merda de chave e some daqui!
-- Dá um soco no nariz dele.
-	Antiplayer: Ai, meu nariz! Pega logo essa merda de chave e some daqui!
+- Vem, mocreia! #id:4e
+	Antiplayer: Pega logo essa merda de chave e some daqui! #id:4f
+- Dá um soco no nariz dele. #id:50
+	Antiplayer: Ai, meu nariz! Pega logo essa merda de chave e some daqui! #id:51
 set {Darkroom.Convencido} = true

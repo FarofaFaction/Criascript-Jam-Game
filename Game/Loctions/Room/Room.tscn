@@ -334,14 +334,13 @@ y_sort_enabled = true
 [node name="Personagens" type="Node2D" parent="OrganizadosPorY"]
 y_sort_enabled = true
 
-[node name="Doctor" type="CharacterBody2D" parent="OrganizadosPorY/Personagens" node_paths=PackedStringArray("key", "stepsAudioPlayer", "exit_area", "target_area", "DetectionArea", "SelfArea", "animationPlayer") groups=["Npc"]]
+[node name="Doctor" type="CharacterBody2D" parent="OrganizadosPorY/Personagens" node_paths=PackedStringArray("stepsAudioPlayer", "exit_area", "target_area", "DetectionArea", "SelfArea", "animationPlayer") groups=["Npc"]]
 y_sort_enabled = true
 position = Vector2(332, -30)
 collision_layer = 0
 collision_mask = 2
 motion_mode = 1
 script = ExtResource("7_fwk6u")
-key = NodePath("")
 stepsAudioPlayer = NodePath("NpcSteps")
 minutes_assingment = 30
 exit_area = NodePath("ExitArea")

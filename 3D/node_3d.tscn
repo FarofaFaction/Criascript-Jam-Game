@@ -1,0 +1,1028 @@
+[gd_scene load_steps=89 format=3 uid="uid://bafiq5qokigck"]
+
+[ext_resource type="Script" path="res://Game/Loctions/AsylumLocations/Arte/art_room.gd" id="1_4v5iv"]
+[ext_resource type="PackedScene" uid="uid://dsg8e4jb1ea8u" path="res://3D/wooden_cup_wgymaaq_high.glb" id="1_h8epm"]
+[ext_resource type="PackedScene" uid="uid://d2d1asq2fkvsq" path="res://Interface/PlayerInterface/player_interface.tscn" id="2_172oo"]
+[ext_resource type="Script" path="res://Game/Loctions/Room/illumination.gd" id="3_6gf51"]
+[ext_resource type="Texture2D" uid="uid://grx8jyxat1kd" path="res://Objects/light/light.png" id="4_senmu"]
+[ext_resource type="AudioStream" uid="uid://4v7vpuxnp7fm" path="res://Audio/Effects/swictch.wav" id="5_6fg65"]
+[ext_resource type="Texture2D" uid="uid://bckfbim7v1vtg" path="res://Sprites/Sprites mundo/area arte/Area arte.png" id="6_ehr82"]
+[ext_resource type="Texture2D" uid="uid://bajckolo8y6cy" path="res://Sprites/Sprites mundo/area arte/Estante.png" id="7_p713l"]
+[ext_resource type="PackedScene" uid="uid://cxpyp7yoxaixr" path="res://Objects/room_clock.tscn" id="8_o0ajv"]
+[ext_resource type="Texture2D" uid="uid://c3nlc0y4hmaiy" path="res://Sprites/Sprites mundo/portas/porta 1.png" id="9_vbybb"]
+[ext_resource type="Script" path="res://Game/Player/player.gd" id="10_swfe6"]
+[ext_resource type="AudioStream" uid="uid://b2obv3esujl8x" path="res://Audio/Effects/andando.mp3" id="11_cdrc1"]
+[ext_resource type="AudioStream" uid="uid://cdtjj7teyvys5" path="res://Audio/Effects/correndo.mp3" id="12_dm4r7"]
+[ext_resource type="AudioStream" uid="uid://bty2t403cjqhw" path="res://Audio/Effects/heart_agidato.wav" id="13_n56xt"]
+[ext_resource type="Script" path="res://Game/Player/player_monster_vision.gd" id="14_ydgke"]
+[ext_resource type="Script" path="res://Game/Player/sound_effects.gd" id="15_yxi1q"]
+[ext_resource type="AudioStream" uid="uid://di042dugmvg12" path="res://Audio/Effects/418788__name__heartbeat-single.wav" id="16_pkfnm"]
+[ext_resource type="AudioStream" uid="uid://cm70m3qagwuin" path="res://Audio/Effects/668349__deltacode__8bit-scream.wav" id="17_v005d"]
+[ext_resource type="Texture2D" uid="uid://blwy6auhe8l7d" path="res://Game/Player/morte.png" id="18_j42lg"]
+[ext_resource type="Texture2D" uid="uid://dgq2m1cnwgbv" path="res://Game/Player/idle.png" id="19_4ukax"]
+[ext_resource type="Texture2D" uid="uid://bv4hn0rj5lu70" path="res://Game/Player/push.png" id="20_m184k"]
+[ext_resource type="Texture2D" uid="uid://ji8y8qki3vcm" path="res://Game/Player/run.png" id="21_s7jdb"]
+[ext_resource type="Texture2D" uid="uid://fx8001c4scti" path="res://Game/Player/walk.png" id="22_ou27j"]
+[ext_resource type="PackedScene" uid="uid://bqjg53nmro3w" path="res://Objects/Shadow/animated_shadow.tscn" id="23_v05rg"]
+[ext_resource type="Theme" uid="uid://bi5atlkw4djab" path="res://Dialog/Styles/Style.tres" id="24_by163"]
+[ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="25_isafu"]
+[ext_resource type="Texture2D" uid="uid://bfqmojulmweoe" path="res://Sprites/Sprites mundo/area arte/mesas com coisas.png" id="26_2dbd3"]
+[ext_resource type="PackedScene" uid="uid://6fw6kl4t5n7x" path="res://Objects/interactible_area.tscn" id="27_wrfh8"]
+[ext_resource type="Texture2D" uid="uid://dwqyxhc31odgq" path="res://Sprites/Sprites mundo/area arte/lixo com papel colorido.png" id="28_gsf20"]
+[ext_resource type="Texture2D" uid="uid://byi3mwsu7pumo" path="res://Sprites/Sprites mundo/area arte/tela de pintura pequena.png" id="29_o7lm5"]
+[ext_resource type="Texture2D" uid="uid://c7typnja6eef8" path="res://Sprites/Sprites mundo/area arte/tela de pintura virada.png" id="30_r25um"]
+[ext_resource type="PackedScene" uid="uid://bmrwqaq2n4l5f" path="res://Game/Loctions/AsylumLocations/Arte/cavalete_grande.tscn" id="31_iujgf"]
+[ext_resource type="Texture2D" uid="uid://di5pdndal1qgv" path="res://Sprites/Mushroom.jpg" id="32_87dk0"]
+[ext_resource type="Script" path="res://Game/Loctions/AsylumLocations/Arte/cavaletes_observer.gd" id="33_nb8yg"]
+[ext_resource type="PackedScene" uid="uid://dhf0u4kshnwol" path="res://Objects/Items/pickable_item.tscn" id="34_cd41j"]
+[ext_resource type="PackedScene" uid="uid://yje2v65lwodi" path="res://Game/Enemy/enemy_spawning.tscn" id="35_y2rux"]
+[ext_resource type="PackedScene" uid="uid://c1d5max6as1qn" path="res://Game/Npcs/Pacients/pacient_spawning.tscn" id="36_nqkh8"]
+[ext_resource type="AudioStream" uid="uid://cprvuc2smhmqe" path="res://Audio/Effects/515798__ben_0815__murmur.wav" id="37_o0f6j"]
+[ext_resource type="Script" path="res://Game/Loctions/scene_changer.gd" id="38_8gn0o"]
+[ext_resource type="PackedScene" uid="uid://ck1cjro36gptd" path="res://Game/scaled_text_ballon.tscn" id="39_1lil5"]
+[ext_resource type="AudioStream" uid="uid://o3gis5x4f5te" path="res://Audio/Effects/hotel-room-door-unlocking.mp3" id="40_6m7nc"]
+[ext_resource type="PackedScene" uid="uid://b0okojf7u2xo2" path="res://Objects/SanityVisualizer/sanity_visualizer.tscn" id="41_5p1fu"]
+[ext_resource type="PackedScene" uid="uid://mhxd0n1ghe3m" path="res://Objects/Items/Weed/pickable_weed.tscn" id="42_fao6j"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s34ym"]
+load_path = "res://.godot/imported/light.png-8fdf09ef7de5c29c73dfe94c1c1879f5.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_icupd"]
+size = Vector2(35, 430)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_asune"]
+size = Vector2(35, 875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ogs2a"]
+size = Vector2(35, 643.75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqmat"]
+atlas = ExtResource("18_j42lg")
+region = Rect2(0, 0, 34, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pu1wi"]
+atlas = ExtResource("18_j42lg")
+region = Rect2(34, 0, 34, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpcmk"]
+atlas = ExtResource("18_j42lg")
+region = Rect2(68, 0, 34, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejou4"]
+atlas = ExtResource("18_j42lg")
+region = Rect2(102, 0, 34, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsx66"]
+atlas = ExtResource("19_4ukax")
+region = Rect2(1, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_880vf"]
+atlas = ExtResource("19_4ukax")
+region = Rect2(18, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yjrqb"]
+atlas = ExtResource("19_4ukax")
+region = Rect2(35, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55uco"]
+atlas = ExtResource("19_4ukax")
+region = Rect2(52, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gkukm"]
+atlas = ExtResource("20_m184k")
+region = Rect2(0, 0, 25, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5umco"]
+atlas = ExtResource("20_m184k")
+region = Rect2(25, 0, 25, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ye423"]
+atlas = ExtResource("21_s7jdb")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyfos"]
+atlas = ExtResource("21_s7jdb")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1j1xw"]
+atlas = ExtResource("21_s7jdb")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84bky"]
+atlas = ExtResource("21_s7jdb")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lm2fd"]
+atlas = ExtResource("18_j42lg")
+region = Rect2(102, 0, 34, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5snbr"]
+atlas = ExtResource("18_j42lg")
+region = Rect2(68, 0, 34, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aa28d"]
+atlas = ExtResource("18_j42lg")
+region = Rect2(34, 0, 34, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnipv"]
+atlas = ExtResource("18_j42lg")
+region = Rect2(0, 0, 34, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fl62u"]
+atlas = ExtResource("22_ou27j")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgvy6"]
+atlas = ExtResource("22_ou27j")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_de37r"]
+atlas = ExtResource("22_ou27j")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h42qk"]
+atlas = ExtResource("22_ou27j")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_amjbx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqmat")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pu1wi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dpcmk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejou4")
+}],
+"loop": false,
+"name": &"Die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rsx66")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_880vf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yjrqb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55uco")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gkukm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5umco")
+}],
+"loop": true,
+"name": &"Push",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ye423")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pyfos")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1j1xw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84bky")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 10.0,
+"texture": SubResource("AtlasTexture_lm2fd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5snbr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aa28d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xnipv")
+}],
+"loop": true,
+"name": &"WakeUp",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fl62u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgvy6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_de37r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h42qk")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_shqjl"]
+size = Vector2(14, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cgdn2"]
+size = Vector2(10, 9)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nteog"]
+light_mode = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mqcgn"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eevwk"]
+size = Vector2(44, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s3cjc"]
+size = Vector2(21, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tek50"]
+size = Vector2(14, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g02ms"]
+size = Vector2(17, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r53gx"]
+atlas = ExtResource("32_87dk0")
+region = Rect2(0, 36, 512, 198)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1he8"]
+atlas = ExtResource("32_87dk0")
+region = Rect2(512, 36, 512, 198)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8t6u"]
+atlas = ExtResource("32_87dk0")
+region = Rect2(0, 234, 512, 198)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fjp4"]
+atlas = ExtResource("32_87dk0")
+region = Rect2(512, 234, 512, 198)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ofuac"]
+atlas = ExtResource("32_87dk0")
+region = Rect2(0, 432, 512, 198)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7lhw"]
+atlas = ExtResource("32_87dk0")
+region = Rect2(512, 432, 512, 198)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qb2yi"]
+atlas = ExtResource("32_87dk0")
+region = Rect2(0, 630, 512, 198)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vni6u"]
+atlas = ExtResource("32_87dk0")
+region = Rect2(512, 630, 512, 198)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ms5fu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r53gx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d1he8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k8t6u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3fjp4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ofuac")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7lhw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qb2yi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vni6u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_q05t7"]
+vertices = PackedVector2Array(617.07, 59.9766, 617.922, 177.008, 65.9219, 177.977, 65.0703, 59.0078)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(55, 49, 627, 50, 628, 187, 56, 188)])
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_h8epm")]
+transform = Transform3D(0.951721, -0.199682, 0.233141, 0.295032, 0.385321, -0.874348, 0.0847575, 0.900919, 0.425631, -0.185207, -0.147177, -0.700441)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.341792, 0.0271298, 1.19724)
+
+[node name="SubViewport" type="SubViewport" parent="."]
+
+[node name="Control" type="Control" parent="SubViewport"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ArtRoom" type="Node2D" parent="SubViewport/Control"]
+position = Vector2(631, 472)
+script = ExtResource("1_4v5iv")
+
+[node name="PlayerInterface" parent="SubViewport/Control/ArtRoom" instance=ExtResource("2_172oo")]
+visible = false
+
+[node name="Illumination" type="Node2D" parent="SubViewport/Control/ArtRoom" node_paths=PackedStringArray("switchAudioPlayer", "ilumination_node", "BigLight", "SmallLight", "GlobalIllumination")]
+script = ExtResource("3_6gf51")
+switchAudioPlayer = NodePath("AudioStreamPlayer2D")
+color_night = Color(8.66354e-07, 0, 0.770133, 1)
+color_day = Color(1, 1, 0.466667, 0.211765)
+ilumination_node = NodePath("RoomLight")
+BigLight = NodePath("RoomLight/BigLight")
+SmallLight = NodePath("RoomLight/SmallLight")
+GlobalIllumination = NodePath("BaseIlumination")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="SubViewport/Control/ArtRoom/Illumination"]
+color = Color(0, 0, 0, 1)
+
+[node name="BaseIlumination" type="PointLight2D" parent="SubViewport/Control/ArtRoom/Illumination"]
+position = Vector2(329, 35)
+color = Color(1, 1, 0.466667, 0.211765)
+energy = 0.9
+texture = SubResource("CompressedTexture2D_s34ym")
+texture_scale = 10.0
+
+[node name="RoomLight" type="Node2D" parent="SubViewport/Control/ArtRoom/Illumination"]
+position = Vector2(18, -61)
+
+[node name="SmallLight" type="PointLight2D" parent="SubViewport/Control/ArtRoom/Illumination/RoomLight"]
+position = Vector2(282, -149)
+texture = ExtResource("4_senmu")
+
+[node name="BigLight" type="PointLight2D" parent="SubViewport/Control/ArtRoom/Illumination/RoomLight"]
+position = Vector2(321, -82)
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("4_senmu")
+texture_scale = 7.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="SubViewport/Control/ArtRoom/Illumination"]
+stream = ExtResource("5_6fg65")
+
+[node name="BackgroundCenario" type="Node2D" parent="SubViewport/Control/ArtRoom"]
+
+[node name="Fundo" type="Node2D" parent="SubViewport/Control/ArtRoom/BackgroundCenario"]
+metadata/_edit_lock_ = true
+
+[node name="ColissionBase" type="StaticBody2D" parent="SubViewport/Control/ArtRoom/BackgroundCenario/Fundo"]
+top_level = true
+collision_layer = 2
+collision_mask = 2
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SubViewport/Control/ArtRoom/BackgroundCenario/Fundo/ColissionBase"]
+position = Vector2(36, 67)
+shape = SubResource("RectangleShape2D_icupd")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="SubViewport/Control/ArtRoom/BackgroundCenario/Fundo/ColissionBase"]
+position = Vector2(646, 65)
+shape = SubResource("RectangleShape2D_icupd")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="SubViewport/Control/ArtRoom/BackgroundCenario/Fundo/ColissionBase"]
+position = Vector2(340, 207)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_asune")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="SubViewport/Control/ArtRoom/BackgroundCenario/Fundo/ColissionBase"]
+position = Vector2(345.125, 30.0003)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_ogs2a")
+
+[node name="Mapa1" type="Sprite2D" parent="SubViewport/Control/ArtRoom/BackgroundCenario/Fundo"]
+position = Vector2(341, 68)
+texture = ExtResource("6_ehr82")
+metadata/_edit_lock_ = true
+
+[node name="Mapa2" type="Sprite2D" parent="SubViewport/Control/ArtRoom/BackgroundCenario/Fundo"]
+position = Vector2(480, 26)
+texture = ExtResource("7_p713l")
+metadata/_edit_lock_ = true
+
+[node name="Pegadas" type="Node2D" parent="SubViewport/Control/ArtRoom/BackgroundCenario"]
+
+[node name="RoomClock" parent="SubViewport/Control/ArtRoom/BackgroundCenario" instance=ExtResource("8_o0ajv")]
+position = Vector2(248, -12)
+
+[node name="Door" type="Node2D" parent="SubViewport/Control/ArtRoom/BackgroundCenario"]
+position = Vector2(281, 30)
+
+[node name="Sprite2D" type="Sprite2D" parent="SubViewport/Control/ArtRoom/BackgroundCenario/Door"]
+texture = ExtResource("9_vbybb")
+
+[node name="OrganizadosPorY" type="Node2D" parent="SubViewport/Control/ArtRoom"]
+z_index = 1
+y_sort_enabled = true
+
+[node name="Personagens" type="Node2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY"]
+y_sort_enabled = true
+
+[node name="Player" type="CharacterBody2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Personagens" node_paths=PackedStringArray("camera", "Sprite", "Hitbox", "StepsAudioPlayer", "DamageAudioPlayer", "DieAudioPlayer") groups=["Player"]]
+y_sort_enabled = true
+position = Vector2(280, 40)
+collision_layer = 2
+collision_mask = 2
+motion_mode = 1
+script = ExtResource("10_swfe6")
+startAwake = false
+camera = NodePath("")
+walking_sound = ExtResource("11_cdrc1")
+running_sound = ExtResource("12_dm4r7")
+Sprite = NodePath("Sprite")
+Hitbox = NodePath("Hitbox")
+StepsAudioPlayer = NodePath("StepsAudioPlayer")
+DamageAudioPlayer = NodePath("DamageAudioPlayer")
+DieAudioPlayer = NodePath("DyingAudioPlayer")
+heartbeat_sound = ExtResource("13_n56xt")
+metadata/_edit_group_ = true
+
+[node name="AudioListener2D" type="AudioListener2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Personagens/Player"]
+current = true
+
+[node name="PlayerMonsterVision" type="Node2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Personagens/Player" node_paths=PackedStringArray("player", "light")]
+script = ExtResource("14_ydgke")
+player = NodePath("..")
+light = NodePath("PointLight2D")
+
+[node name="PointLight2D" type="PointLight2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Personagens/Player/PlayerMonsterVision"]
+color = Color(1, 1, 1, 0)
+range_item_cull_mask = 524289
+texture = ExtResource("4_senmu")
+
+[node name="SoundEffects" type="Node" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Personagens/Player" node_paths=PackedStringArray("heart_beats_player", "player")]
+script = ExtResource("15_yxi1q")
+heart_beats_player = NodePath("HeartBeats")
+player = NodePath("..")
+
+[node name="HeartBeats" type="AudioStreamPlayer" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Personagens/Player/SoundEffects"]
+stream = ExtResource("13_n56xt")
+
+[node name="StepsAudioPlayer" type="AudioStreamPlayer2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Personagens/Player"]
+volume_db = -6.0
+
+[node name="DamageAudioPlayer" type="AudioStreamPlayer2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Personagens/Player"]
+stream = ExtResource("16_pkfnm")
+volume_db = -8.0
+
+[node name="DyingAudioPlayer" type="AudioStreamPlayer2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Personagens/Player"]
+process_mode = 3
+stream = ExtResource("17_v005d")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Personagens/Player"]
+process_mode = 3
+sprite_frames = SubResource("SpriteFrames_amjbx")
+animation = &"WakeUp"
+autoplay = "Idle"
+frame_progress = 0.922176
+
+[node name="RayCast2D" type="RayCast2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Personagens/Player/Sprite"]
+position = Vector2(1, -4)
+target_position = Vector2(25, 0)
+
+[node name="AnimatedShadow" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Personagens/Player/Sprite" instance=ExtResource("23_v05rg")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Personagens/Player"]
+position = Vector2(0, 12.5)
+shape = SubResource("RectangleShape2D_shqjl")
+disabled = true
+
+[node name="Hitbox" type="Area2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Personagens/Player"]
+collision_layer = 2147483648
+collision_mask = 0
+
+[node name="Hitbox" type="CollisionShape2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Personagens/Player/Hitbox"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_cgdn2")
+
+[node name="Pacients" type="Node2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Personagens"]
+y_sort_enabled = true
+
+[node name="Objects" type="Node2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY"]
+y_sort_enabled = true
+position = Vector2(8, -4)
+
+[node name="Mesa" type="RigidBody2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects"]
+position = Vector2(434, 111)
+collision_layer = 2
+collision_mask = 2
+mass = 10.0
+lock_rotation = true
+metadata/_edit_group_ = true
+
+[node name="Node2D" type="Node2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/Mesa"]
+scale = Vector2(0.3, 0.3)
+
+[node name="Label" type="Label" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/Mesa/Node2D"]
+visible = false
+material = SubResource("CanvasItemMaterial_nteog")
+offset_left = -120.0
+offset_top = -76.6667
+offset_right = 118.0
+offset_bottom = -53.6667
+theme = ExtResource("24_by163")
+theme_override_fonts/font = ExtResource("25_isafu")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "[E] Segurar/Soltar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/Mesa"]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_eevwk")
+
+[node name="Sprite2D" type="Sprite2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/Mesa"]
+texture = ExtResource("26_2dbd3")
+
+[node name="InteractibleArea" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/Mesa" instance=ExtResource("27_wrfh8")]
+
+[node name="Lixeira" type="RigidBody2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects"]
+position = Vector2(547, 46)
+collision_layer = 2
+collision_mask = 2
+mass = 10.0
+lock_rotation = true
+metadata/_edit_group_ = true
+
+[node name="Node2D" type="Node2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/Lixeira"]
+scale = Vector2(0.3, 0.3)
+
+[node name="Label" type="Label" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/Lixeira/Node2D"]
+visible = false
+material = SubResource("CanvasItemMaterial_nteog")
+offset_left = -120.0
+offset_top = -76.6667
+offset_right = 118.0
+offset_bottom = -53.6667
+theme = ExtResource("24_by163")
+theme_override_fonts/font = ExtResource("25_isafu")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "[E] Segurar/Soltar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/Lixeira"]
+position = Vector2(6.5, 8)
+shape = SubResource("RectangleShape2D_s3cjc")
+
+[node name="Sprite2D" type="Sprite2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/Lixeira"]
+texture = ExtResource("28_gsf20")
+
+[node name="InteractibleArea" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/Lixeira" instance=ExtResource("27_wrfh8")]
+position = Vector2(7, -3)
+
+[node name="CavaleteFrente" type="RigidBody2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects"]
+position = Vector2(521, 79)
+collision_layer = 2
+collision_mask = 2
+mass = 10.0
+lock_rotation = true
+metadata/_edit_group_ = true
+
+[node name="Node2D" type="Node2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/CavaleteFrente"]
+scale = Vector2(0.3, 0.3)
+
+[node name="Label" type="Label" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/CavaleteFrente/Node2D"]
+visible = false
+material = SubResource("CanvasItemMaterial_nteog")
+offset_left = -120.0
+offset_top = -76.6667
+offset_right = 118.0
+offset_bottom = -53.6667
+theme = ExtResource("24_by163")
+theme_override_fonts/font = ExtResource("25_isafu")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "[E] Segurar/Soltar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/CavaleteFrente"]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_tek50")
+
+[node name="Sprite2D" type="Sprite2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/CavaleteFrente"]
+texture = ExtResource("29_o7lm5")
+
+[node name="InteractibleArea" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/CavaleteFrente" instance=ExtResource("27_wrfh8")]
+position = Vector2(7, -3)
+
+[node name="CavaleteFrente2" type="RigidBody2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects"]
+position = Vector2(283, 104)
+collision_layer = 2
+collision_mask = 2
+mass = 10.0
+lock_rotation = true
+metadata/_edit_group_ = true
+
+[node name="Node2D" type="Node2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/CavaleteFrente2"]
+scale = Vector2(0.3, 0.3)
+
+[node name="Label" type="Label" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/CavaleteFrente2/Node2D"]
+visible = false
+material = SubResource("CanvasItemMaterial_nteog")
+offset_left = -120.0
+offset_top = -76.6667
+offset_right = 118.0
+offset_bottom = -53.6667
+theme = ExtResource("24_by163")
+theme_override_fonts/font = ExtResource("25_isafu")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "[E] Segurar/Soltar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/CavaleteFrente2"]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_tek50")
+
+[node name="Sprite2D" type="Sprite2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/CavaleteFrente2"]
+texture = ExtResource("29_o7lm5")
+
+[node name="InteractibleArea" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/CavaleteFrente2" instance=ExtResource("27_wrfh8")]
+position = Vector2(7, -3)
+
+[node name="CavaleteLado" type="RigidBody2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects"]
+position = Vector2(318, 66)
+collision_layer = 2
+collision_mask = 2
+mass = 10.0
+lock_rotation = true
+metadata/_edit_group_ = true
+
+[node name="Node2D" type="Node2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/CavaleteLado"]
+scale = Vector2(0.3, 0.3)
+
+[node name="Label" type="Label" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/CavaleteLado/Node2D"]
+visible = false
+material = SubResource("CanvasItemMaterial_nteog")
+offset_left = -120.0
+offset_top = -76.6667
+offset_right = 118.0
+offset_bottom = -53.6667
+theme = ExtResource("24_by163")
+theme_override_fonts/font = ExtResource("25_isafu")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "[E] Segurar/Soltar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/CavaleteLado"]
+position = Vector2(0.5, 17)
+shape = SubResource("RectangleShape2D_g02ms")
+
+[node name="Sprite2D" type="Sprite2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/CavaleteLado"]
+texture = ExtResource("30_r25um")
+
+[node name="InteractibleArea" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/CavaleteLado" instance=ExtResource("27_wrfh8")]
+position = Vector2(7, -3)
+
+[node name="CavaleteLado2" type="RigidBody2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects"]
+position = Vector2(365, 104)
+collision_layer = 2
+collision_mask = 2
+mass = 10.0
+lock_rotation = true
+metadata/_edit_group_ = true
+
+[node name="Node2D" type="Node2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/CavaleteLado2"]
+scale = Vector2(0.3, 0.3)
+
+[node name="Label" type="Label" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/CavaleteLado2/Node2D"]
+visible = false
+material = SubResource("CanvasItemMaterial_nteog")
+offset_left = -120.0
+offset_top = -76.6667
+offset_right = 118.0
+offset_bottom = -53.6667
+theme = ExtResource("24_by163")
+theme_override_fonts/font = ExtResource("25_isafu")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "[E] Segurar/Soltar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/CavaleteLado2"]
+position = Vector2(0.5, 17)
+shape = SubResource("RectangleShape2D_g02ms")
+
+[node name="Sprite2D" type="Sprite2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/CavaleteLado2"]
+texture = ExtResource("30_r25um")
+
+[node name="InteractibleArea" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/CavaleteLado2" instance=ExtResource("27_wrfh8")]
+position = Vector2(7, -3)
+
+[node name="CavaleteLado3" type="RigidBody2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects"]
+position = Vector2(385, 62)
+collision_layer = 2
+collision_mask = 2
+mass = 10.0
+lock_rotation = true
+metadata/_edit_group_ = true
+
+[node name="Node2D" type="Node2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/CavaleteLado3"]
+scale = Vector2(0.3, 0.3)
+
+[node name="Label" type="Label" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/CavaleteLado3/Node2D"]
+visible = false
+material = SubResource("CanvasItemMaterial_nteog")
+offset_left = -120.0
+offset_top = -76.6667
+offset_right = 118.0
+offset_bottom = -53.6667
+theme = ExtResource("24_by163")
+theme_override_fonts/font = ExtResource("25_isafu")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "[E] Segurar/Soltar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/CavaleteLado3"]
+position = Vector2(0.5, 17)
+shape = SubResource("RectangleShape2D_g02ms")
+
+[node name="Sprite2D" type="Sprite2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/CavaleteLado3"]
+texture = ExtResource("30_r25um")
+
+[node name="InteractibleArea" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/CavaleteLado3" instance=ExtResource("27_wrfh8")]
+position = Vector2(7, -3)
+
+[node name="Cavaletes" type="Node2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects"]
+y_sort_enabled = true
+
+[node name="Coluna1" type="Node2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/Cavaletes"]
+y_sort_enabled = true
+position = Vector2(-179, -7)
+
+[node name="CavaleteGrande" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/Cavaletes/Coluna1" instance=ExtResource("31_iujgf")]
+position = Vector2(683, 123)
+id = 1
+need_id = 2
+
+[node name="Part" type="AnimatedSprite2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/Cavaletes/Coluna1/CavaleteGrande"]
+position = Vector2(0.600006, -7)
+scale = Vector2(0.0765625, 0.075)
+sprite_frames = SubResource("SpriteFrames_ms5fu")
+
+[node name="CavaleteGrande2" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/Cavaletes/Coluna1" instance=ExtResource("31_iujgf")]
+position = Vector2(290, 81)
+id = 2
+need_id = 3
+
+[node name="Part2" type="AnimatedSprite2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/Cavaletes/Coluna1/CavaleteGrande2"]
+position = Vector2(0.600006, -7)
+scale = Vector2(0.0765625, 0.075)
+sprite_frames = SubResource("SpriteFrames_ms5fu")
+frame = 2
+
+[node name="CavaleteGrande3" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/Cavaletes/Coluna1" instance=ExtResource("31_iujgf")]
+position = Vector2(295, 145)
+id = 3
+need_id = 4
+
+[node name="Part2" type="AnimatedSprite2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/Cavaletes/Coluna1/CavaleteGrande3"]
+position = Vector2(0.600006, -7)
+scale = Vector2(0.0765625, 0.075)
+sprite_frames = SubResource("SpriteFrames_ms5fu")
+frame = 4
+
+[node name="CavaleteGrande4" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/Cavaletes/Coluna1" instance=ExtResource("31_iujgf")]
+position = Vector2(297, 163)
+_sobrou = true
+id = 4
+need_id = 5
+
+[node name="Part2" type="AnimatedSprite2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/Cavaletes/Coluna1/CavaleteGrande4"]
+position = Vector2(0.600006, -7)
+scale = Vector2(0.0765625, 0.075)
+sprite_frames = SubResource("SpriteFrames_ms5fu")
+frame = 6
+
+[node name="Coluna2" type="Node2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/Cavaletes"]
+y_sort_enabled = true
+position = Vector2(-101, -1)
+
+[node name="CavaleteGrande" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/Cavaletes/Coluna2" instance=ExtResource("31_iujgf")]
+position = Vector2(323, 112)
+lado = true
+id = 5
+need_id = 1
+
+[node name="Part2" type="AnimatedSprite2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/Cavaletes/Coluna2/CavaleteGrande"]
+position = Vector2(1, -8)
+scale = Vector2(0.0765625, 0.075)
+sprite_frames = SubResource("SpriteFrames_ms5fu")
+frame = 1
+
+[node name="CavaleteGrande2" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/Cavaletes/Coluna2" instance=ExtResource("31_iujgf")]
+position = Vector2(416, 153)
+lado = true
+id = 6
+need_id = 2
+
+[node name="Part2" type="AnimatedSprite2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/Cavaletes/Coluna2/CavaleteGrande2"]
+position = Vector2(0.600006, -7)
+scale = Vector2(0.0765625, 0.075)
+sprite_frames = SubResource("SpriteFrames_ms5fu")
+frame = 3
+
+[node name="CavaleteGrande3" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/Cavaletes/Coluna2" instance=ExtResource("31_iujgf")]
+position = Vector2(307, 62)
+lado = true
+id = 7
+need_id = 3
+
+[node name="Part2" type="AnimatedSprite2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/Cavaletes/Coluna2/CavaleteGrande3"]
+position = Vector2(0.600006, -7)
+scale = Vector2(0.0765625, 0.075)
+sprite_frames = SubResource("SpriteFrames_ms5fu")
+frame = 5
+
+[node name="CavaleteGrande4" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/Cavaletes/Coluna2" instance=ExtResource("31_iujgf")]
+position = Vector2(258, 157)
+lado = true
+id = 8
+need_id = 4
+
+[node name="Part2" type="AnimatedSprite2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/Cavaletes/Coluna2/CavaleteGrande4"]
+position = Vector2(0.600006, -7)
+scale = Vector2(0.0765625, 0.075)
+sprite_frames = SubResource("SpriteFrames_ms5fu")
+frame = 7
+
+[node name="Cavaletes Observer" type="Node2D" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/Cavaletes" node_paths=PackedStringArray("key")]
+script = ExtResource("33_nb8yg")
+key = NodePath("../Key")
+
+[node name="Key" parent="SubViewport/Control/ArtRoom/OrganizadosPorY/Objects/Cavaletes" instance=ExtResource("34_cd41j")]
+visible = false
+z_index = 1
+position = Vector2(213, 62)
+item_id = "GenericKeyArt"
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="SubViewport/Control/ArtRoom"]
+visible = false
+position = Vector2(1, -2)
+navigation_polygon = SubResource("NavigationPolygon_q05t7")
+
+[node name="EnemySpawning" parent="SubViewport/Control/ArtRoom" node_paths=PackedStringArray("pegadas_spawn_node", "spawn_node") instance=ExtResource("35_y2rux")]
+pegadas_spawn_node = NodePath("../BackgroundCenario/Pegadas")
+spawn_node = NodePath("../OrganizadosPorY/Personagens")
+spawn_times = Array[Vector2]([Vector2(20, 0), Vector2(20, 30), Vector2(20, 0), Vector2(20, 0)])
+
+[node name="Marker2D" parent="SubViewport/Control/ArtRoom/EnemySpawning" index="0"]
+position = Vector2(192, 72)
+
+[node name="Marker2D2" parent="SubViewport/Control/ArtRoom/EnemySpawning" index="1"]
+position = Vector2(239, 74)
+
+[node name="Marker2D3" parent="SubViewport/Control/ArtRoom/EnemySpawning" index="2"]
+position = Vector2(453, 73)
+
+[node name="PacientSpawning" parent="SubViewport/Control/ArtRoom" node_paths=PackedStringArray("murmurAudioPlayer", "positions_to_go", "positions_to_sleep", "spawn_node") instance=ExtResource("36_nqkh8")]
+murmurAudioPlayer = NodePath("AudioStreamPlayer2D")
+positions_to_go = [NodePath("PointsToGo/Marker2D"), NodePath("PointsToGo/Marker2D2"), NodePath("PointsToGo/Marker2D3"), NodePath("PointsToGo/Marker2D4"), NodePath("PointsToGo/Marker2D5"), NodePath("PointsToGo/Marker2D6"), NodePath("PointsToGo/Marker2D7"), NodePath("PointsToGo/Marker2D8")]
+positions_to_sleep = [NodePath("Exit/Marker2D")]
+spawn_node = NodePath("../OrganizadosPorY/Personagens/Pacients")
+number_of_patients = 10
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="SubViewport/Control/ArtRoom/PacientSpawning"]
+position = Vector2(357, 42)
+stream = ExtResource("37_o0f6j")
+
+[node name="PointsToGo" type="Node2D" parent="SubViewport/Control/ArtRoom/PacientSpawning"]
+
+[node name="Marker2D" type="Marker2D" parent="SubViewport/Control/ArtRoom/PacientSpawning/PointsToGo"]
+position = Vector2(132, 69)
+
+[node name="Marker2D2" type="Marker2D" parent="SubViewport/Control/ArtRoom/PacientSpawning/PointsToGo"]
+position = Vector2(155, 119)
+
+[node name="Marker2D3" type="Marker2D" parent="SubViewport/Control/ArtRoom/PacientSpawning/PointsToGo"]
+position = Vector2(116, 147)
+
+[node name="Marker2D4" type="Marker2D" parent="SubViewport/Control/ArtRoom/PacientSpawning/PointsToGo"]
+position = Vector2(257, 157)
+
+[node name="Marker2D5" type="Marker2D" parent="SubViewport/Control/ArtRoom/PacientSpawning/PointsToGo"]
+position = Vector2(412, 152)
+
+[node name="Marker2D6" type="Marker2D" parent="SubViewport/Control/ArtRoom/PacientSpawning/PointsToGo"]
+position = Vector2(487, 146)
+
+[node name="Marker2D7" type="Marker2D" parent="SubViewport/Control/ArtRoom/PacientSpawning/PointsToGo"]
+position = Vector2(570, 158)
+
+[node name="Marker2D8" type="Marker2D" parent="SubViewport/Control/ArtRoom/PacientSpawning/PointsToGo"]
+position = Vector2(583, 97)
+
+[node name="Exit" type="Node2D" parent="SubViewport/Control/ArtRoom/PacientSpawning"]
+
+[node name="Marker2D" type="Marker2D" parent="SubViewport/Control/ArtRoom/PacientSpawning/Exit"]
+position = Vector2(282, 43)
+
+[node name="Scenes" type="Node2D" parent="SubViewport/Control/ArtRoom"]
+position = Vector2(2, -2)
+
+[node name="SceneChanger" type="Node2D" parent="SubViewport/Control/ArtRoom/Scenes" node_paths=PackedStringArray("current_message", "lockedMessage", "openMessage", "interactiveArea")]
+position = Vector2(278, 16)
+script = ExtResource("38_8gn0o")
+current_message = NodePath("ScaledTextBallon/Textpanel/TextBallon")
+lockedMessage = NodePath("Messages/LockedMessage")
+openMessage = NodePath("Messages/OpenMessage")
+destination = "2"
+location = "CorridorC"
+interactiveArea = NodePath("InteractibleArea")
+
+[node name="ScaledTextBallon" parent="SubViewport/Control/ArtRoom/Scenes/SceneChanger" instance=ExtResource("39_1lil5")]
+position = Vector2(20, 3)
+
+[node name="Textpanel" parent="SubViewport/Control/ArtRoom/Scenes/SceneChanger/ScaledTextBallon" index="0"]
+offset_left = -116.667
+offset_top = -10.0
+offset_right = -3.66699
+offset_bottom = 21.0
+
+[node name="TextBallon" parent="SubViewport/Control/ArtRoom/Scenes/SceneChanger/ScaledTextBallon/Textpanel" index="0"]
+text = "[E] Sair"
+
+[node name="InteractibleArea" parent="SubViewport/Control/ArtRoom/Scenes/SceneChanger" node_paths=PackedStringArray("messagePanel") instance=ExtResource("27_wrfh8")]
+modulate = Color(1, 0, 1, 1)
+messagePanel = NodePath("../ScaledTextBallon/Textpanel")
+
+[node name="Messages" type="Node2D" parent="SubViewport/Control/ArtRoom/Scenes/SceneChanger"]
+visible = false
+
+[node name="LockedMessage" type="Label" parent="SubViewport/Control/ArtRoom/Scenes/SceneChanger/Messages"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Trancado"
+
+[node name="OpenMessage" type="Label" parent="SubViewport/Control/ArtRoom/Scenes/SceneChanger/Messages"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "[E] Entrar"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="SubViewport/Control/ArtRoom/Scenes/SceneChanger"]
+stream = ExtResource("40_6m7nc")
+
+[node name="Destinations" type="Node2D" parent="SubViewport/Control/ArtRoom/Scenes"]
+
+[node name="1" type="Marker2D" parent="SubViewport/Control/ArtRoom/Scenes/Destinations"]
+position = Vector2(278, 54)
+
+[node name="SanityVisualizer" parent="SubViewport/Control/ArtRoom" node_paths=PackedStringArray("list_of_nodes") instance=ExtResource("41_5p1fu")]
+list_of_nodes = [NodePath("../OrganizadosPorY/Objects/Cavaletes/Coluna1/CavaleteGrande/Part"), NodePath("../OrganizadosPorY/Objects/Cavaletes/Coluna1/CavaleteGrande2/Part2"), NodePath("../OrganizadosPorY/Objects/Cavaletes/Coluna1/CavaleteGrande3/Part2"), NodePath("../OrganizadosPorY/Objects/Cavaletes/Coluna1/CavaleteGrande4/Part2"), NodePath("../OrganizadosPorY/Objects/Cavaletes/Coluna2/CavaleteGrande/Part2"), NodePath("../OrganizadosPorY/Objects/Cavaletes/Coluna2/CavaleteGrande2/Part2"), NodePath("../OrganizadosPorY/Objects/Cavaletes/Coluna2/CavaleteGrande3/Part2"), NodePath("../OrganizadosPorY/Objects/Cavaletes/Coluna2/CavaleteGrande4/Part2")]
+
+[node name="Weed" parent="SubViewport/Control/ArtRoom" instance=ExtResource("42_fao6j")]
+position = Vector2(461, 29)
+
+[node name="Weed3" parent="SubViewport/Control/ArtRoom" instance=ExtResource("42_fao6j")]
+position = Vector2(417, 29)
+
+[node name="Weed2" parent="SubViewport/Control/ArtRoom" instance=ExtResource("42_fao6j")]
+position = Vector2(506, 30)
+
+[editable path="SubViewport/Control/ArtRoom/EnemySpawning"]
+[editable path="SubViewport/Control/ArtRoom/Scenes/SceneChanger/ScaledTextBallon"]
+[editable path="SubViewport/Control/ArtRoom/Scenes/SceneChanger/ScaledTextBallon/Textpanel"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://ckgfl047qxs13"]
+[gd_scene load_steps=57 format=3 uid="uid://ckgfl047qxs13"]
 
 [ext_resource type="Script" path="res://Game/Loctions/Corridors/CorridorA/corridor_2d.gd" id="1_adqou"]
 [ext_resource type="PackedScene" uid="uid://cmk1subk8bpb2" path="res://Game/Loctions/Corridors/CorridorA/door.tscn" id="2_ne8ej"]
@@ -22,6 +22,46 @@
 [ext_resource type="AudioStream" uid="uid://cylbygxsbbmkr" path="res://Audio/Music/Frédéric Chopin - Nocturne_ Op. 9 No. 2 [8 bits].mp3" id="14_g072p"]
 [ext_resource type="PackedScene" uid="uid://bqjg53nmro3w" path="res://Objects/Shadow/animated_shadow.tscn" id="14_lbt5w"]
 [ext_resource type="PackedScene" uid="uid://b5l5jcfiebqmr" path="res://Game/textpanel.tscn" id="16_sj7tu"]
+[ext_resource type="Script" path="res://Dialog/Dialogic/Style/CustomPremade/CustomPortrait.gd" id="23_sbtwk"]
+[ext_resource type="Texture2D" uid="uid://7dihht0ppm0u" path="res://Sprites/Moon.jpg" id="24_5vhwr"]
+
+[sub_resource type="Shader" id="Shader_t4450"]
+code = "shader_type canvas_item;
+render_mode unshaded; // Credit: LiathTheCrow for original shader code
+
+uniform vec4 level1 : source_color = vec4(0.0, 0.0, 0.0, 1.0);
+uniform vec4 level2 : source_color = vec4(0.5, 0.5, 0.5, 1.0);
+uniform vec4 level3 : source_color = vec4(1.0, 1.0, 1.0, 1.0);
+uniform vec4 level4 : source_color = vec4(1.0, 1.0, 1.0, 1.0);
+
+uniform float threshold1 	: hint_range(0.0,1.0) = .4;
+uniform float threshold2 	: hint_range(0.0,1.0) = .52;
+uniform float threshold3	: hint_range(0.0,1.0) = .8;
+uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
+
+void fragment() {
+	COLOR = texture(SCREEN_TEXTURE, SCREEN_UV).rgba;
+	float rgb_avg = (COLOR.r + COLOR.g + COLOR.b)/3.0;
+	if(rgb_avg < threshold1){
+		COLOR = level1.rgba;
+	}else if(rgb_avg < threshold2){
+		COLOR = level2.rgba;
+	}else if(rgb_avg < threshold3){
+		COLOR = level3.rgba;
+	}else{
+		COLOR = level4.rgba;
+	}
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n74ap"]
+shader = SubResource("Shader_t4450")
+shader_parameter/level1 = Color(0, 0, 0, 1)
+shader_parameter/level2 = Color(0.501961, 0.501961, 1, 0.690196)
+shader_parameter/level3 = Color(1, 1, 0, 0.486275)
+shader_parameter/level4 = Color(1, 1, 1, 1)
+shader_parameter/threshold1 = 0.117
+shader_parameter/threshold2 = 0.874
+shader_parameter/threshold3 = 0.677
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ujkmg"]
 size = Vector2(2552, 58)
@@ -246,6 +286,83 @@ offset_left = -18664.0
 offset_top = -12784.0
 offset_right = 18704.0
 offset_bottom = 12824.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = -15864.0
+offset_top = -13040.0
+offset_right = 21504.0
+offset_bottom = 12568.0
+color = Color(0, 0, 0, 1)
+
+[node name="CustomPortrait" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4759.0
+offset_top = 204.0
+offset_right = 4759.0
+offset_bottom = 204.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("23_sbtwk")
+
+[node name="Panel" type="Panel" parent="CustomPortrait"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CustomPortrait/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -963.0
+offset_top = -910.0
+offset_right = 509.0
+offset_bottom = 322.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("24_5vhwr")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PortraitShader" type="ColorRect" parent="CustomPortrait/Panel/TextureRect"]
+material = SubResource("ShaderMaterial_n74ap")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CustomPortrait/Panel"]
+layout_mode = 0
+offset_left = -1099.0
+offset_top = -924.0
+offset_right = 665.0
+offset_bottom = -706.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="CustomPortrait/Panel"]
+layout_mode = 0
+offset_left = -1104.0
+offset_top = 163.0
+offset_right = 660.0
+offset_bottom = 381.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="CustomPortrait/Panel"]
+layout_mode = 0
+offset_left = 568.0
+offset_top = -1060.0
+offset_right = 2332.0
+offset_bottom = -842.0
+rotation = 1.55416
 color = Color(0, 0, 0, 1)
 
 [node name="Background" type="Node2D" parent="."]
@@ -910,11 +1027,12 @@ target_position = Vector2(25, 0)
 
 [node name="AnimatedShadow" parent="OrganizadosPorY/Personagens/Sprite2" instance=ExtResource("14_lbt5w")]
 
-[node name="InteractibleArea" type="Area2D" parent="OrganizadosPorY/Personagens/Sprite2"]
+[node name="InteractibleArea" type="Area2D" parent="OrganizadosPorY/Personagens/Sprite2" node_paths=PackedStringArray("message")]
 collision_layer = 0
 collision_mask = 2147483648
 monitorable = false
 script = ExtResource("11_3d0sa")
+message = NodePath("../SacaledTextBallon/Textpanel/TextBallon")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OrganizadosPorY/Personagens/Sprite2/InteractibleArea"]
 position = Vector2(0, 12)

@@ -1,0 +1,12 @@
+keys,pt_BR,en
+Text/19/text,"[Melhor evitar falar com o doutor, preciso da chave mais do que ele...]",[Better avoid talking to the doctor; I need the key more than he does...]
+Text/1a/text,"Com licença, sabe onde estou ?","Excuse me, do you know where I am?"
+Text/1b/text,"No quarto 101, por que ?","In room 101, why?"
+Text/1c/text,Não lembro como vim parar aqui,I don’t remember how I ended up here.
+Text/1d/text,"Ah já sei o que esta acontecendo, ficou sem seus remedios mais uma vez, não é ?","Ah, now I know what’s going on; you’ve run out of your medication again, haven’t you?"
+Choice/1e/text,Sim,Yes.
+Choice/1e/disabled_text,,
+Choice/1f/text,Não,No.
+Choice/1f/disabled_text,,
+Label/20/display_name,,
+Text/21/text,"Seu remedio está meio em falta, mas talvez eu possa te ajudar, um dos pacientes roubou meu molho de chaves, se encontrar elas pra mim posso te ajudar","Your medication is a bit short, but maybe I can help you; one of the patients stole my keyring. If you find it for me, I can help you."

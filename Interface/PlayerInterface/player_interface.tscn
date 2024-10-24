@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://d2d1asq2fkvsq"]
+[gd_scene load_steps=6 format=3 uid="uid://d2d1asq2fkvsq"]
 
 [ext_resource type="Script" path="res://Interface/PlayerInterface/sanity.gd" id="1_e0i1x"]
 [ext_resource type="Script" path="res://Interface/PlayerInterface/player_interface.gd" id="1_o67cv"]
 [ext_resource type="FontFile" uid="uid://b572bvrcrok26" path="res://Fontes/Press_Start_2P/PressStart2P-Regular.ttf" id="2_2ikon"]
 [ext_resource type="Script" path="res://Interface/PlayerInterface/items.gd" id="3_ecdyg"]
+[ext_resource type="Texture2D" uid="uid://dbqyb6unv312j" path="res://Localization/Dialogic/cerebrouuu.png" id="4_nlifn"]
 
 [node name="PlayerInterface" type="CanvasLayer"]
 script = ExtResource("1_o67cv")
@@ -17,13 +18,117 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_e0i1x")
 
+[node name="Icon2" type="ColorRect" parent="Sanity"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.084
+anchor_top = 0.15
+anchor_right = 0.084
+anchor_bottom = 0.15
+offset_left = -97.28
+offset_top = -115.0
+offset_right = 38.72
+offset_bottom = 21.0
+
 [node name="Bar" type="ColorRect" parent="Sanity"]
 layout_mode = 0
 offset_left = 195.0
 offset_top = 87.0
-offset_right = 255.0
+offset_right = 295.0
 offset_bottom = 137.0
 color = Color(1, 1, 0, 1)
+
+[node name="Control" type="Control" parent="Sanity"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Sanity/Control"]
+layout_mode = 0
+offset_left = 194.0
+offset_top = 87.0
+offset_right = 296.0
+offset_bottom = 91.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Sanity/Control"]
+layout_mode = 0
+offset_left = 193.0
+offset_top = 133.0
+offset_right = 295.0
+offset_bottom = 137.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Sanity/Control"]
+layout_mode = 0
+offset_left = 296.0
+offset_top = 87.0
+offset_right = 346.0
+offset_bottom = 91.0
+rotation = 1.5708
+color = Color(0, 0, 0, 1)
+
+[node name="Control2" type="Control" parent="Sanity"]
+anchors_preset = 0
+offset_left = 102.0
+offset_right = 142.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Sanity/Control2"]
+layout_mode = 0
+offset_left = 194.0
+offset_top = 87.0
+offset_right = 296.0
+offset_bottom = 91.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Sanity/Control2"]
+layout_mode = 0
+offset_left = 193.0
+offset_top = 133.0
+offset_right = 295.0
+offset_bottom = 137.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Sanity/Control2"]
+layout_mode = 0
+offset_left = 296.0
+offset_top = 87.0
+offset_right = 346.0
+offset_bottom = 91.0
+rotation = 1.5708
+color = Color(0, 0, 0, 1)
+
+[node name="Control3" type="Control" parent="Sanity"]
+anchors_preset = 0
+offset_left = 204.0
+offset_right = 244.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Sanity/Control3"]
+layout_mode = 0
+offset_left = 194.0
+offset_top = 87.0
+offset_right = 296.0
+offset_bottom = 91.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Sanity/Control3"]
+layout_mode = 0
+offset_left = 193.0
+offset_top = 133.0
+offset_right = 295.0
+offset_bottom = 137.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Sanity/Control3"]
+layout_mode = 0
+offset_left = 296.0
+offset_top = 87.0
+offset_right = 346.0
+offset_bottom = 91.0
+rotation = 1.5708
+color = Color(0, 0, 0, 1)
 
 [node name="Icon" type="ColorRect" parent="Sanity"]
 layout_mode = 1
@@ -40,15 +145,21 @@ color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="Sanity/Icon"]
 layout_mode = 0
-offset_left = -29.0
-offset_top = 126.0
-offset_right = 163.0
-offset_bottom = 150.0
+offset_left = -11.0
+offset_top = 136.0
+offset_right = 181.0
+offset_bottom = 160.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 6
 theme_override_fonts/font = ExtResource("2_2ikon")
 theme_override_font_sizes/font_size = 24
 text = "Sanidade"
+
+[node name="Cerebrouuu" type="Sprite2D" parent="Sanity/Icon"]
+self_modulate = Color(1, 0, 0, 1)
+position = Vector2(61, 62)
+scale = Vector2(3, 3)
+texture = ExtResource("4_nlifn")
 
 [node name="Items" type="Control" parent="." node_paths=PackedStringArray("list")]
 layout_mode = 3

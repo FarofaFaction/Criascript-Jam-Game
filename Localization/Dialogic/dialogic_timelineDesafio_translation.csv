@@ -1,0 +1,14 @@
+keys,pt_BR,en
+Text/55/text,"Quero revanche, vamos ?","I want a rematch, shall we?"
+Text/56/text,Ta afim de perder outra vez ?,Are you up for losing again?
+Text/57/text,Quer jogar futebol comigo ?,Do you want to play soccer with me?
+Text/58/text,Mas estamos numa quadra de basquete,But we’re in a basketball court.
+Text/59/text,"Tanto faz, quer ou não?","Doesn’t matter, do you want to or not?"
+Label/5a/display_name,,
+Choice/5b/text,"Vamos jogar ""Futebol""","Let’s play ""Soccer."""
+Choice/5b/disabled_text,,
+Text/5c/text,Vamos então,Okay then.
+Choice/5d/text,Não quero,I don’t want to.
+Choice/5d/disabled_text,,
+Text/5e/text,"Fodase, agora que ja esta aqui na quadra, vai jogar do mesmo jeito!","Whatever, now that you’re already on the court, you’re going to play anyway!"
+,,

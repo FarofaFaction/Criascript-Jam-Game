@@ -66,11 +66,39 @@ theme = ExtResource("1_t0jrt")
 theme_override_fonts/font = ExtResource("2_y400h")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
-text = "Muito Obrigado Por Jogar!!"
+text = "Parabéns!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon77" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "Você quase completou todos os desafios"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TextBallon2" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
+z_index = 9
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_nteog")
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t0jrt")
+theme_override_fonts/font = ExtResource("2_y400h")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
+text = "Muito Obrigado Por Jogar!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBallon81" type="Label" parent="CanvasLayer/Panel/BoxContainer"]
 z_index = 9
 z_as_relative = false
 material = SubResource("CanvasItemMaterial_nteog")
@@ -229,7 +257,7 @@ theme = ExtResource("1_t0jrt")
 theme_override_fonts/font = ExtResource("2_y400h")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_mqcgn")
-text = "Arte e Cenários - Sr.Pedro"
+text = "Arte e Cenários - Ziboo Studios"
 horizontal_alignment = 1
 vertical_alignment = 1
 
